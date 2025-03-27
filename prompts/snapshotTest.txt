@@ -1,0 +1,539 @@
+<context>
+Focus on a clear, concise, and developer-friendly style that highlights best practices for snapshot testing in Nuxt 3.
+Aim for straightforward language, minimal complexity, and a logical structure that includes: 
+1) An import section.
+2) A mock section for external dependencies. (when necessary)
+3) A snapshot test section that uses using Vitest and Nuxt testing utilities, possibly with `it.each` to test multiple scenarios. (all valid prop combinations should be tested)
+</context>
+
+<examples>
+<example1>
+### UpvoteButton
+<template>
+  <div class="flex w-full items-center sm:w-auto">
+    <Ubutton
+      class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800"
+      :class="{
+        'text-blue-500 dark:text-blue-400': localUpvotes.includes(user?.email)
+      }"
+      :disabled="loading"
+      @click="upvote"
+    >
+      <span
+        v-if="loading"
+        class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent"
+      ></span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-chevron-up"
+      >
+        <path d="m18 15-6-6-6 6" />
+      </svg>
+      <span>Upvotes {{ localUpvotes.length }}</span>
+    </Ubutton>
+  </div>
+</template>
+
+<script setup lang="ts">
+const { loggedIn, user } = useUserSession();
+const props = defineProps<{
+  id: number | string;
+  module: string;
+  upvotes: string[];
+}>();
+
+const localUpvotes = ref<string[]>([]);
+const toast = useToast();
+const loading = ref(false);
+
+const buttonColor = computed(() =>
+  localUpvotes.value.includes(user?.value?.email) ? 'primary' : 'neutral'
+);
+
+watch(
+  () => props.upvotes,
+  (newUpvotes) => {
+    if (newUpvotes && newUpvotes.length) {
+      localUpvotes.value = [...newUpvotes];
+    } else {
+      localUpvotes.value = [];
+    }
+  },
+  { immediate: true }
+);
+
+async function upvote() {
+  try {
+    loading.value = true;
+
+    if (loggedIn.value) {
+      if (!user?.value?.email) {
+        throw new Error('User not authenticated');
+      }
+
+      const { data: response, error } = await useFetch('/api/upvote', {
+        method: 'POST',
+        headers: useRequestHeaders(['cookie']),
+        body: JSON.stringify({ id: props.id, module: props.module })
+      });
+
+      if (error.value) {
+        throw new Error(`Failed to upvote - ${error.value.message}`);
+      }
+
+      if (response.value.message === 'success') {
+        if (localUpvotes.value.includes(user.value.email)) {
+          localUpvotes.value = localUpvotes.value.filter(
+            (email) => email !== user.value.email
+          );
+        } else {
+          localUpvotes.value.push(user.value.email);
+        }
+
+        toast.add({
+          id: 'upvote-success',
+          title: 'Upvoted',
+          description: 'Your upvote has been recorded',
+          icon: 'check-circle'
+        });
+      } else {
+        toast.add({
+          id: 'upvote-error',
+          title: 'Error upvoting',
+          description: response.value.message,
+          icon: 'exclamation-circle'
+        });
+      }
+    } else {
+      toast.add({
+        id: 'upvote-login',
+        title: 'Login required',
+        description: 'You need to login to upvote',
+        icon: 'exclamation-circle'
+      });
+    }
+  } catch (error) {
+    toast.add({
+      id: 'upvote-error',
+      title: 'Error upvoting',
+      description: error.message,
+      icon: 'exclamation-circle'
+    });
+  } finally {
+    loading.value = false;
+  }
+}
+</script>
+### End
+
+import { mockNuxtImport } from '@nuxt/test-utils/runtime'
+import { describe, expect, it } from 'vitest'
+import SHeader from '../../components/SHeader.vue'
+import ComponentRender from '../componentRender'
+import '../mockUseUserSession'
+
+// We're testing different runtime config setups to ensure SHeader renders correctly under various conditions.
+let config_: Record<string, unknown> = {
+    public: {
+        headerNavItems: [
+        { name: 'Home', href: '/' },
+        { name: 'About', href: '/about' }
+        ],
+        useAuth: true
+    }
+}
+
+describe('SHeader Snapshot', () => {
+  // Test scenarios with different runtime config values.
+  const scenarios: [string, { config: Record<string, unknown> }][] = [
+    [
+      'with auth enabled',
+      {
+        config: {
+          public: {
+            headerNavItems: [
+              { name: 'Home', href: '/' },
+              { name: 'About', href: '/about' }
+            ],
+            useAuth: true
+          }
+        }
+      }
+    ],
+    [
+      'with auth disabled',
+      {
+        config: {
+          public: {
+            headerNavItems: [
+              { name: 'Home', href: '/' },
+              { name: 'About', href: '/about' }
+            ],
+            useAuth: false
+          }
+        }
+      }
+    ],
+    [
+      'with empty navigation items',
+      {
+        config: {
+          public: {
+            headerNavItems: [],
+            useAuth: true
+          }
+        }
+      }
+    ]
+  ]
+
+  it.each(scenarios)('renders %s correctly', async (desc: string, { config }) => {
+    // Set up the runtime config for this test scenario
+    config_ = config
+    mockNuxtImport('useRuntimeConfig', () => () => config_)
+
+    const html = await ComponentRender(`SHeader ${desc}`, {}, SHeader)
+    expect(html).toMatchSnapshot()
+  })
+})
+</example1>
+
+<example2>
+### SScriptYouTubePlayer
+<template>
+  <div ref="rootEl" v-bind="rootAttrs">
+    <div
+      ref="youtubeEl"
+      style="width: 100%; height: 100%; position: absolute; top: 0; left: 0"
+    ></div>
+    <slot v-if="!ready" :placeholder="placeholder" name="placeholder">
+      <img v-bind="placeholderAttrs" >
+    </slot>
+    <slot v-if="status === 'loading'" name="loading">
+      <ScriptLoadingIndicator />
+    </slot>
+    <slot v-if="status === 'awaitingLoad'" name="awaitingLoad"></slot>
+    <slot v-else-if="status === 'error'" name="error"></slot>
+    <slot></slot>
+  </div>
+</template>
+
+<script setup lang="ts">
+/// <reference types="youtube" />
+import { computed, onMounted, ref, watch } from 'vue';
+import type { HTMLAttributes, ImgHTMLAttributes, Ref } from 'vue';
+import { defu } from 'defu';
+import type { ElementScriptTrigger } from '../types';
+import { useHead } from '#imports';
+
+const props = withDefaults(
+  defineProps<{
+    placeholderAttrs?: ImgHTMLAttributes;
+    rootAttrs?: HTMLAttributes;
+    aboveTheFold?: boolean;
+    trigger?: ElementScriptTrigger;
+    videoId: string;
+    playerVars?: YT.PlayerVars;
+    width?: number;
+    height?: number;
+  }>(),
+  {
+    trigger: 'mousedown',
+    // @ts-expect-error untyped 10 chars or longer
+    playerVars: { autoplay: 0, playsinline: 1 },
+    width: 640,
+    height: 360
+  }
+);
+
+const emits = defineEmits<{
+  ready: [e: YT.PlayerEvent];
+  'state-change': [e: YT.OnStateChangeEvent, target: YT.Player];
+  'playback-quality-change': [
+    e: YT.OnPlaybackQualityChangeEvent,
+    target: YT.Player
+  ];
+  'playback-rate-change': [e: YT.OnPlaybackRateChangeEvent, target: YT.Player];
+  error: [e: YT.OnErrorEvent, target: YT.Player];
+}>();
+const events: (keyof YT.Events)[] = [
+  'onReady',
+  'onStateChange',
+  'onPlaybackQualityChange',
+  'onPlaybackRateChange',
+  'onError',
+  'onApiChange'
+];
+const rootEl = ref();
+const youtubeEl = ref();
+const ready = ref(false);
+const trigger = useScriptTriggerElement({
+  trigger: () => props.trigger,
+  el: rootEl
+});
+const script = useScriptYouTubePlayer({
+  scriptOptions: {
+    trigger
+  }
+});
+const { onLoaded, status } = script;
+
+const player: Ref<YT.Player | undefined> = ref();
+let clickTriggered = false;
+if (props.trigger === 'mousedown' && trigger instanceof Promise) {
+  trigger.then((triggered) => {
+    if (triggered) {
+      clickTriggered = true;
+    }
+  });
+}
+onMounted(() => {
+  onLoaded(async (instance) => {
+    const YouTube =
+      instance.YT instanceof Promise ? await instance.YT : instance.YT;
+    await new Promise<void>((resolve) => {
+      if (typeof YT.Player === 'undefined') YouTube.ready(resolve);
+      else resolve();
+    });
+    player.value = new YT.Player(youtubeEl.value, {
+      ...props,
+      events: Object.fromEntries(
+        events.map((event) => [
+          event,
+          (e: unknown) => {
+            const emitEventName = event
+              .replace(/([A-Z])/g, '-$1')
+              .replace('on-', '')
+              .toLowerCase();
+            // @ts-expect-error untyped  10 chars or longer
+            emits(emitEventName, e);
+            if (event === 'onReady') {
+              ready.value = true;
+              if (clickTriggered) {
+                player.value?.playVideo();
+                clickTriggered = false;
+              }
+              watch(
+                () => props.videoId,
+                () => {
+                  player.value?.loadVideoById(props.videoId);
+                }
+              );
+            }
+          }
+        ])
+      )
+    });
+  });
+  watch(status, (status) => {
+    if (status === 'error') {
+      // @ts-expect-error untyped  10 chars or longer
+      emits('error');
+    }
+  });
+});
+
+defineExpose({
+  player
+});
+
+const rootAttrs = computed(() => {
+  return defu(props.rootAttrs, {
+    'aria-busy': status.value === 'loading',
+    'aria-label':
+      status.value === 'awaitingLoad'
+        ? 'YouTube Player - Placeholder'
+        : status.value === 'loading'
+          ? 'YouTube Player - Loading'
+          : 'YouTube Player - Loaded',
+    'aria-live': 'polite',
+    role: 'application',
+    style: {
+      cursor: 'pointer',
+      position: 'relative',
+      backgroundColor: 'black',
+      maxWidth: '100%',
+      width: `${props.width}px`,
+      height: 'auto',
+      aspectRatio: `${props.width}/${props.height}`
+    },
+    ...(trigger instanceof Promise ? trigger.ssrAttrs || {} : {})
+  }) as HTMLAttributes;
+});
+
+const placeholder = computed(
+  () => `https://i.ytimg.com/vi_webp/${props.videoId}/sddefault.webp`
+);
+
+if (import.meta.server) {
+  // dns-prefetch https://i.vimeocdn.com
+  useHead({
+    link: [
+      {
+        key: `nuxt-script-youtube-img`,
+        rel: props.aboveTheFold ? 'preconnect' : 'dns-prefetch',
+        href: 'https://i.ytimg.com'
+      },
+      props.aboveTheFold
+        ? // we can preload the placeholder image
+          {
+            key: `nuxt-script-youtube-img`,
+            rel: 'preload',
+            as: 'image',
+            href: placeholder.value
+          }
+        : {}
+    ]
+  });
+}
+
+const placeholderAttrs = computed(() => {
+  return defu(props.placeholderAttrs, {
+    src: placeholder.value,
+    alt: '',
+    loading: props.aboveTheFold ? 'eager' : 'lazy',
+    style: {
+      width: '100%',
+      objectFit: 'cover',
+      height: '100%'
+    }
+  } satisfies ImgHTMLAttributes);
+});
+</script>
+### End
+
+import { mockNuxtImport } from '@nuxt/test-utils/runtime';
+import { describe, expect, it } from 'vitest';
+import { ref } from 'vue';
+import SScriptYouTubePlayer from '../../components/SScriptYouTubePlayer.vue';
+import ComponentRender from '../componentRender';
+
+if (typeof globalThis.YT === 'undefined') {
+    globalThis.YT = {
+      Player: class {
+        constructor(el: unknown, options: unknown) {}
+        playVideo() {}
+        loadVideoById(id: string) {}
+      },
+      ready: (callback: () => void) => callback()
+    };
+  }
+
+mockNuxtImport('useHead', () => () => {});
+mockNuxtImport('useScriptTriggerElement', () => () => ({ ssrAttrs: {} }));
+
+let youtubePlayerStatus = 'awaitingLoad';
+
+describe('SScriptYouTubePlayer', () => {
+  const baseProps = { videoId: 'dQw4w9WgXcQ', width: 640, height: 360 };
+
+  it.each([
+    // Default state: no slot overrides, status will be 'awaitingLoad'
+    ['default (awaitingLoad)', { props: { ...baseProps } }],
+    // Custom placeholder slot (still 'awaitingLoad')
+    ['with custom placeholder slot', { props: { ...baseProps }, slots: { placeholder: () => '<img alt="Custom Placeholder" />' } }],
+    // Loading state: simulate status 'loading'
+    ['with loading slot', { props: { ...baseProps }, slots: { loading: () => '<div>Loading...</div>' } }],
+    // Awaiting load state: simulate status 'awaitingLoad' with a custom slot
+    ['with awaitingLoad slot', { props: { ...baseProps }, slots: { awaitingLoad: () => '<div>Awaiting load</div>' } }],
+    // Error state: simulate status 'error'
+    ['with error slot', { props: { ...baseProps }, slots: { error: () => '<div>Error occurred</div>' } }],
+  ])('renders %s correctly', async (desc: string, options: { props: unknown, slots?: unknown }) => {
+    // Determine status based on the provided slots
+    let status = 'awaitingLoad';
+    if (options.slots?.loading) status = 'loading';
+    if (options.slots?.error) status = 'error';
+
+    youtubePlayerStatus = status;
+
+    mockNuxtImport('useScriptYouTubePlayer', () => () => ({
+        onLoaded: (cb: Function) => {
+          if (youtubePlayerStatus !== 'awaitingLoad') {
+            cb({ YT: { Player: class {} } });
+          }
+        },
+        status: ref(youtubePlayerStatus)
+      }));
+
+    const html = await ComponentRender(`SScriptYouTubePlayer ${desc}`, options, SScriptYouTubePlayer);
+    expect(html).toMatchSnapshot();
+  });
+});
+</example2>
+
+</example3>
+### SPill
+<template>
+  <div class="flex flex-wrap gap-2">
+    <NuxtLink
+      v-for="item in items"
+      :key="item.id"
+      :to="`/${baseSlug}/${item.slug}/`"
+      class="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-800/50"
+    >
+      {{ item.name }}
+    </NuxtLink>
+  </div>
+</template>
+
+<script setup lang="ts">
+import type { Category } from '@serp/types/types';
+
+defineProps<{
+  items: Category[];
+  baseSlug: string;
+}>();
+</script>
+### End
+
+import { describe, expect, it } from 'vitest'
+import SPill from '../../components/SPill.vue'
+import ComponentRender from '../componentRender'
+
+describe('SPill', () => {
+  const baseSlug = 'category'
+
+  it.each([
+    ['with no items', { props: { items: [], baseSlug } }],
+    [
+      'with one item',
+      { props: { items: [{ id: 1, slug: 'item-1', name: 'Item 1' }], baseSlug } }
+    ],
+    [
+      'with multiple items',
+      {
+        props: {
+          items: [
+            { id: 1, slug: 'item-1', name: 'Item 1' },
+            { id: 2, slug: 'item-2', name: 'Item 2' },
+            { id: 3, slug: 'item-3', name: 'Item 3' }
+          ],
+          baseSlug
+        }
+      }
+    ]
+  ])('renders %s correctly', async (desc: string, options: { props: unknown }) => {
+    const html = await ComponentRender(`SPill ${desc}`, options, SPill)
+    expect(html).toMatchSnapshot()
+  })
+})
+</examples> 
+
+<instructions>
+You will be given vue component/page code.
+Generate a Nuxt 3 snapshot test file that follows the writing style, tone, and structure from the examples.
+Emphasize best practices for Nuxt 3 snapshot tests, including clear code organization, minimal yet effective mocks, and easily readable test cases.
+The final output should be concise and self-contained.
+</instructions>
+
+### NAME HERE
+CODE HERE
+### End
