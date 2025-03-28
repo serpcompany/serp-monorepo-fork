@@ -1,20 +1,23 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { ref } from 'vue'
-import ProfileDropdown from '../../components/ProfileDropdown.vue'
-import ComponentRender from '../componentRender'
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { ref } from 'vue';
+import ProfileDropdown from '../../components/ProfileDropdown.vue';
+import ComponentRender from '../componentRender';
 
 // Declare a mutable session_ variable.
-let session_: { loggedIn: any; user: any; clear: any }
+let session_: { loggedIn: unknown; user: unknown; clear: unknown };
 // Set the global mock once.
-(globalThis as any).useUserSession = () => session_
+(globalThis as unknown).useUserSession = () => session_;
 
 describe('ProfileDropdown Snapshot', () => {
   // Reset session_ before each test.
   beforeEach(() => {
-    session_ = { loggedIn: ref(false), user: ref(null), clear: vi.fn() }
-  })
+    session_ = { loggedIn: ref(false), user: ref(null), clear: vi.fn() };
+  });
 
-  const scenarios: [string, { session: { loggedIn: any; user: any; clear: any } }][] = [
+  const scenarios: [
+    string,
+    { session: { loggedIn: unknown; user: unknown; clear: unknown } }
+  ][] = [
     [
       'when logged in',
       {
@@ -39,14 +42,18 @@ describe('ProfileDropdown Snapshot', () => {
         }
       }
     ]
-  ]
+  ];
 
   it.each(scenarios)('renders %s correctly', async (desc, { session }) => {
     // Update the global session for this scenario.
-    session_ = session
+    session_ = session;
 
     // Render the component and generate the snapshot.
-    const html = await ComponentRender(`ProfileDropdown ${desc}`, {}, ProfileDropdown)
-    expect(html).toMatchSnapshot()
-  })
-})
+    const html = await ComponentRender(
+      `ProfileDropdown ${desc}`,
+      {},
+      ProfileDropdown
+    );
+    expect(html).toMatchSnapshot();
+  });
+});

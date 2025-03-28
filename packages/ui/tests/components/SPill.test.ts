@@ -1,15 +1,17 @@
-import { describe, expect, it } from 'vitest'
-import SPill from '../../components/SPill.vue'
-import ComponentRender from '../componentRender'
+import { describe, expect, it } from 'vitest';
+import SPill from '../../components/SPill.vue';
+import ComponentRender from '../componentRender';
 
 describe('SPill', () => {
-  const baseSlug = 'category'
+  const baseSlug = 'category';
 
   it.each([
     ['with no items', { props: { items: [], baseSlug } }],
     [
       'with one item',
-      { props: { items: [{ id: 1, slug: 'item-1', name: 'Item 1' }], baseSlug } }
+      {
+        props: { items: [{ id: 1, slug: 'item-1', name: 'Item 1' }], baseSlug }
+      }
     ],
     [
       'with multiple items',
@@ -24,8 +26,11 @@ describe('SPill', () => {
         }
       }
     ]
-  ])('renders %s correctly', async (desc: string, options: { props: unknown }) => {
-    const html = await ComponentRender(`SPill ${desc}`, options, SPill)
-    expect(html).toMatchSnapshot()
-  })
-})
+  ])(
+    'renders %s correctly',
+    async (desc: string, options: { props: unknown }) => {
+      const html = await ComponentRender(`SPill ${desc}`, options, SPill);
+      expect(html).toMatchSnapshot();
+    }
+  );
+});

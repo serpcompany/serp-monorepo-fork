@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest'
-import SongsLinkHub from '../../components/SongsLinkHub.vue'
-import ComponentRender from '../componentRender'
+import { describe, expect, it } from 'vitest';
+import SongsLinkHub from '../../components/SongsLinkHub.vue';
+import ComponentRender from '../componentRender';
 
 describe('SongsLinkHub', () => {
   it.each([
@@ -33,7 +33,11 @@ describe('SongsLinkHub', () => {
               slug: 'song-1',
               name: 'Song One',
               artists: [
-                { slug: 'artist-1', credit_name: 'Artist One', join_phrase: ', ' },
+                {
+                  slug: 'artist-1',
+                  credit_name: 'Artist One',
+                  join_phrase: ', '
+                },
                 { slug: 'artist-2', credit_name: 'Artist Two', join_phrase: '' }
               ]
             },
@@ -41,16 +45,31 @@ describe('SongsLinkHub', () => {
               slug: 'song-2',
               name: 'Song Two',
               artists: [
-                { slug: 'artist-3', credit_name: 'Artist Three', join_phrase: ' feat. ' },
-                { slug: 'artist-4', credit_name: 'Artist Four', join_phrase: '' }
+                {
+                  slug: 'artist-3',
+                  credit_name: 'Artist Three',
+                  join_phrase: ' feat. '
+                },
+                {
+                  slug: 'artist-4',
+                  credit_name: 'Artist Four',
+                  join_phrase: ''
+                }
               ]
             }
           ]
         }
       }
     ]
-  ])('renders %s correctly', async (desc: string, options: { props: unknown }) => {
-    const html = await ComponentRender(`SongsLinkHub ${desc}`, options, SongsLinkHub)
-    expect(html).toMatchSnapshot()
-  })
-})
+  ])(
+    'renders %s correctly',
+    async (desc: string, options: { props: unknown }) => {
+      const html = await ComponentRender(
+        `SongsLinkHub ${desc}`,
+        options,
+        SongsLinkHub
+      );
+      expect(html).toMatchSnapshot();
+    }
+  );
+});
