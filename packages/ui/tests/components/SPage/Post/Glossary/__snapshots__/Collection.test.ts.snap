@@ -1,0 +1,485 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SPagePostGlossaryCollection Snapshot > renders with posts and categories (with auth) correctly 1`] = `
+"<div>
+  <section>
+    <section class="py-20">
+      <h1 class="md:text-center">Glossary</h1>
+      <!--v-if-->
+    </section>
+    <nav class="mx-auto flex justify-between overflow-x-scroll"><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->A
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->B
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->C
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->D
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->E
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->F
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->G
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->H
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->I
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->J
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->K
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->L
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->M
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->N
+        <!--v-if-->
+      </a><a href="#O" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->O
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->P
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Q
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->R
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->S
+        <!--v-if-->
+      </a><a href="#T" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->T
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->U
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->V
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->W
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->X
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Y
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Z
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->*
+        <!--v-if-->
+      </a></nav>
+  </section><!-- character section (character + cards) -->
+  <main>
+    <div class="px-6 lg:px-8">
+      <div id="O" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">O</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-one/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">One</h2>
+                <p class="mt-4 text-sm"></p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+      <div id="T" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">T</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-two/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">Two</h2>
+                <p class="mt-4 text-sm">Test one-liner</p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>"
+`;
+
+exports[`SPagePostGlossaryCollection Snapshot > renders with posts and categories (without auth) correctly 1`] = `
+"<div>
+  <section>
+    <section class="py-20">
+      <h1 class="md:text-center">Glossary</h1>
+      <!--v-if-->
+    </section>
+    <nav class="mx-auto flex justify-between overflow-x-scroll"><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->A
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->B
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->C
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->D
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->E
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->F
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->G
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->H
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->I
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->J
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->K
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->L
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->M
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->N
+        <!--v-if-->
+      </a><a href="#O" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->O
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->P
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Q
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->R
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->S
+        <!--v-if-->
+      </a><a href="#T" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->T
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->U
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->V
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->W
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->X
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Y
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Z
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->*
+        <!--v-if-->
+      </a></nav>
+  </section><!-- character section (character + cards) -->
+  <main>
+    <div class="px-6 lg:px-8">
+      <div id="O" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">O</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-one/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">One</h2>
+                <p class="mt-4 text-sm"></p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+      <div id="T" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">T</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-two/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">Two</h2>
+                <p class="mt-4 text-sm">Test one-liner</p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>"
+`;
+
+exports[`SPagePostGlossaryCollection Snapshot > renders with posts but no categories (with auth) correctly 1`] = `
+"<div>
+  <section>
+    <section class="py-20">
+      <h1 class="md:text-center">Glossary</h1>
+      <!--v-if-->
+    </section>
+    <nav class="mx-auto flex justify-between overflow-x-scroll"><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->A
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->B
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->C
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->D
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->E
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->F
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->G
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->H
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->I
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->J
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->K
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->L
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->M
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->N
+        <!--v-if-->
+      </a><a href="#O" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->O
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->P
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Q
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->R
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->S
+        <!--v-if-->
+      </a><a href="#T" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->T
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->U
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->V
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->W
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->X
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Y
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Z
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->*
+        <!--v-if-->
+      </a></nav>
+  </section><!-- character section (character + cards) -->
+  <main>
+    <div class="px-6 lg:px-8">
+      <div id="O" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">O</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-one/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">One</h2>
+                <p class="mt-4 text-sm"></p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+      <div id="T" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">T</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-two/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">Two</h2>
+                <p class="mt-4 text-sm">Test one-liner</p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>"
+`;
+
+exports[`SPagePostGlossaryCollection Snapshot > renders with posts but no categories (without auth) correctly 1`] = `
+"<div>
+  <section>
+    <section class="py-20">
+      <h1 class="md:text-center">Glossary</h1>
+      <!--v-if-->
+    </section>
+    <nav class="mx-auto flex justify-between overflow-x-scroll"><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->A
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->B
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->C
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->D
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->E
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->F
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->G
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->H
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->I
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->J
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->K
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->L
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->M
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->N
+        <!--v-if-->
+      </a><a href="#O" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->O
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->P
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Q
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->R
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->S
+        <!--v-if-->
+      </a><a href="#T" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->T
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->U
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->V
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->W
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->X
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Y
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->Z
+        <!--v-if-->
+      </a><a aria-disabled="true" role="link" tabindex="-1" class="rounded-none font-medium inline-flex focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) h-10 w-10 items-center bg-none text-2xl lg:justify-center">
+        <!--v-if-->*
+        <!--v-if-->
+      </a></nav>
+  </section><!-- character section (character + cards) -->
+  <main>
+    <div class="px-6 lg:px-8">
+      <div id="O" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">O</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-one/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">One</h2>
+                <p class="mt-4 text-sm"></p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+      <div id="T" class="pt-12 lg:pt-24">
+        <div>
+          <!-- character section top (character) -->
+          <h2 class="text-4xl font-semibold">T</h2><!-- character section bottom (cards) -->
+          <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+            <div><a href="/posts/post-two/" class="group hover:border-primary relative flex flex-col border-2 px-4 pt-4 pb-8">
+                <h2 class="text-sm font-medium">Two</h2>
+                <p class="mt-4 text-sm">Test one-liner</p>
+              </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>"
+`;

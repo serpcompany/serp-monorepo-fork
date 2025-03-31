@@ -1,0 +1,169 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SPageArtistSingle Snapshot > renders complete artist with upvotes and auth enabled correctly 1`] = `
+"<div>
+  <div class="bg-background sticky top-0 z-10 transition-all duration-300">
+    <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- header top -->
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <!-- image -->
+          <div class="flex w-full items-start justify-between">
+            <!--v-if-->
+            <!-- name -->
+            <div class="flex-grow">
+              <h1 class="text-xl font-bold text-(--ui-primary) transition-all duration-300 sm:text-3xl">Test Artist</h1><span class="text-xs"></span>
+            </div>
+          </div><!-- action buttons -->
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+            <!-- upvote button slot -->
+            <div class="flex w-full items-center sm:w-auto">
+              <ubutton class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800" disabled="false">
+                <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
+                  <path d="m18 15-6-6-6 6"></path>
+                </svg><span>Upvotes 1</span>
+              </ubutton>
+            </div><!-- visit website button --><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Listen Free <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg></a>
+          </div>
+        </div><!-- header bottom (nav links) -->
+        <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
+          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#overview" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Overview</a><a href="#albums" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Albums</a><a href="#songs" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Songs</a></nav>
+        </div>
+      </div>
+    </header>
+  </div><!-- Main content with grid -->
+  <div class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
+    <!-- Main Content (70%) -->
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <div>
+          <!-- section: overview -->
+          <h2 id="overview" class="scroll-mt-60">About Test Artist</h2>
+          <div class="prose dark:prose-invert">
+            <p>Overview content for Test Artist.</p>
+          </div>
+          <h2 id="albums" class="scroll-mt-60">Test Artist Albums</h2>
+          <div>
+            <!-- Album Section -->
+            <div>
+              <div class="flex"><a href="/albums/album-1/" aria-label="link to the album">
+                  <div><img alt="Album One" data-nuxt-img="" srcset="/_ipx/_/album-1.jpg 1x, /_ipx/_/album-1.jpg 2x" src="/_ipx/_/album-1.jpg"> Album One</div>
+                </a>
+                <div>
+                  <!-- Songs for the Album -->
+                  <ol>
+                    <li>
+                      <div>
+                        <div>1. <a href="/songs/song-1/">Song One</a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div>2. <span>Song Two</span></div>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- Sidebar (30%) -->
+      <div class="space-y-6 lg:col-span-1">
+        <!-- General Info Section -->
+        <div class="border p-4">
+          <ul class="list-disc pl-4">
+            <li>Founded: Test City</li>
+            <li>From: 2000</li>
+            <li>Dissolved: 2020</li>
+          </ul>
+        </div><!-- Links Section -->
+        <div class="border p-4">
+          <div class="flex space-y-4">
+            <div><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer">Amazon Music</a></div>
+          </div>
+        </div><!-- Stats Section -->
+        <div class="border p-4">
+          <div>
+            <div><span>Genres: Rock, Pop</span></div><br>
+            <div><span>Tags: Live, Studio</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`SPageArtistSingle Snapshot > renders minimal artist without upvotes and auth disabled correctly 1`] = `
+"<div>
+  <div class="bg-background sticky top-0 z-10 transition-all duration-300">
+    <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- header top -->
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <!-- image -->
+          <div class="flex w-full items-start justify-between">
+            <!--v-if-->
+            <!-- name -->
+            <div class="flex-grow">
+              <h1 class="text-xl font-bold text-(--ui-primary) transition-all duration-300 sm:text-3xl">Minimal Artist</h1><span class="text-xs"></span>
+            </div>
+          </div><!-- action buttons -->
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+            <!-- upvote button slot -->
+            <!-- visit website button --><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Listen Free <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg></a>
+          </div>
+        </div><!-- header bottom (nav links) -->
+        <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
+          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#overview" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Overview</a><a href="#albums" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Albums</a><a href="#songs" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Songs</a></nav>
+        </div>
+      </div>
+    </header>
+  </div><!-- Main content with grid -->
+  <div class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
+    <!-- Main Content (70%) -->
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <div>
+          <!-- section: overview -->
+          <h2 id="overview" class="scroll-mt-60">About Minimal Artist</h2>
+          <div class="prose dark:prose-invert">
+            <p>Minimal overview content.</p>
+          </div>
+          <h2 id="albums" class="scroll-mt-60">Minimal Artist Albums</h2>
+        </div>
+      </div><!-- Sidebar (30%) -->
+      <div class="space-y-6 lg:col-span-1">
+        <!-- General Info Section -->
+        <div class="border p-4">
+          <ul class="list-disc pl-4">
+            <li>Founded: </li>
+            <li>From: </li>
+            <li>Dissolved: </li>
+          </ul>
+        </div><!-- Links Section -->
+        <div class="border p-4">
+          <div class="flex space-y-4">
+            <div><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer">Amazon Music</a></div>
+          </div>
+        </div><!-- Stats Section -->
+        <div class="border p-4">
+          <div>
+            <div><span>Genres: </span></div><br>
+            <div><span>Tags: </span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
