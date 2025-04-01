@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CompanyArticleSection Snapshot > renders with empty article correctly 1`] = `"<!--v-if-->"`;
+
+exports[`CompanyArticleSection Snapshot > renders with valid article content correctly 1`] = `
+"<article role="article" aria-labelledby="article-title">
+  <div role="document">
+    <h1 id="article-title">Breaking News</h1>
+    <p>This is an amazing article content!</p>
+  </div>
+</article>"
+`;

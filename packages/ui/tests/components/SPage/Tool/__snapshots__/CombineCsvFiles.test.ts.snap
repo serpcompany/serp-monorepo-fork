@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SPageToolCombineCsvFiles Snapshot > renders the default snapshot correctly 1`] = `
+"<div class="container">
+  <div class="px-4 py-10 sm:px-6 sm:py-16 md:px-8 md:py-20">
+    <section class="py-20">
+      <h1 class="md:text-center">Combine CSV Files</h1>
+      <p data-testid="subtitle" class="sm:text-md text-left text-base md:text-center">Merge multiple spreadsheet or excel files like .csv, .xls and .xlxs.</p>
+    </section><!-- box -->
+    <div class="flex justify-center">
+      <div class="relative inline-flex items-center mb-10"><input type="file" class="w-full rounded-[calc(var(--ui-radius)*1.5)] border-0 placeholder:text-(--ui-text-dimmed) focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-text-highlighted) bg-(--ui-bg) ring ring-inset ring-(--ui-border-accented) file:me-1.5 file:font-medium file:text-(--ui-text-muted) file:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-(--ui-primary)" autocomplete="off" multiple="" accept=".csv,.xls,.xlsx">
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+    </div><!-- button --><button type="button" class="rounded-none font-medium items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto flex">
+      <!--v-if-->Submit
+      <!--v-if-->
+    </button>
+  </div>
+</div>"
+`;

@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ProfileDropdown Snapshot > renders when logged in correctly 1`] = `
+"<span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-8 text-base"><img width="32" height="32" data-nuxt-img="" srcset="https://example.com/test.jpg 1x, https://example.com/test.jpg 2x" role="button" id="reka-dropdown-menu-trigger-v-0-0-0" type="button" aria-haspopup="menu" aria-expanded="false" disabled="false" data-state="closed" class="h-full w-full rounded-[inherit] object-cover" src="https://example.com/test.jpg"></span>
+<!--teleport start-->
+<!--teleport end-->"
+`;
+
+exports[`ProfileDropdown Snapshot > renders when not logged in correctly 1`] = `"<a href="/login" class="text-sm font-medium hover:underline">Login</a>"`;
