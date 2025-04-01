@@ -6,6 +6,8 @@ RUN apt-get install -y git make g++ python3
 # install pnpm
 RUN npm install -g pnpm
 
+ARG NUXT_UI_PRO_LICENSE
+
 WORKDIR /app
 COPY . .
 RUN pnpm --filter @serp-ai install --shamefully-hoist
@@ -19,3 +21,4 @@ ENV HOST=0.0.0.0
 ENV PORT=80
 EXPOSE 80
 ENTRYPOINT ["node", "/app/output/server/index.mjs"]
+

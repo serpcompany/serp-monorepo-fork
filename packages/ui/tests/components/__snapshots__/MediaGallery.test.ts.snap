@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MediaGallery Snapshot > renders with a single screenshot correctly 1`] = `
+"<section class="flex w-full flex-col gap-2 md:max-w-[444px]">
+  <div class="aspect-video">
+    <div class="relative flex h-full w-full cursor-pointer items-center justify-center"><img alt="Main Image" data-nuxt-img="" srcset="https://example.com/screenshot1.jpg 1x, https://example.com/screenshot1.jpg 2x" class="h-full w-full cursor-pointer object-cover" src="https://example.com/screenshot1.jpg"></div>
+  </div>
+  <div class="grid grid-cols-4 gap-2">
+    <div>
+      <div class="flex h-full w-full items-center justify-center"><img alt="Beta Inc screenshots" data-nuxt-img="" srcset="https://example.com/screenshot1.jpg 1x, https://example.com/screenshot1.jpg 2x" class="h-full w-full object-contain" src="https://example.com/screenshot1.jpg"></div>
+    </div>
+  </div>
+</section>"
+`;
+
+exports[`MediaGallery Snapshot > renders with multiple screenshots correctly 1`] = `
+"<section class="flex w-full flex-col gap-2 md:max-w-[444px]">
+  <div class="aspect-video">
+    <div class="relative flex h-full w-full cursor-pointer items-center justify-center"><img alt="Main Image" data-nuxt-img="" srcset="https://example.com/screenshot1.jpg 1x, https://example.com/screenshot1.jpg 2x" class="h-full w-full cursor-pointer object-cover" src="https://example.com/screenshot1.jpg"></div>
+  </div>
+  <div class="grid grid-cols-4 gap-2">
+    <div>
+      <div class="flex h-full w-full items-center justify-center"><img alt="Gamma LLC screenshots" data-nuxt-img="" srcset="https://example.com/screenshot1.jpg 1x, https://example.com/screenshot1.jpg 2x" class="h-full w-full object-contain" src="https://example.com/screenshot1.jpg"></div>
+    </div>
+    <div>
+      <div class="flex h-full w-full items-center justify-center"><img alt="Gamma LLC screenshots" data-nuxt-img="" srcset="https://example.com/screenshot2.jpg 1x, https://example.com/screenshot2.jpg 2x" class="h-full w-full object-contain" src="https://example.com/screenshot2.jpg"></div>
+    </div>
+    <div>
+      <div class="flex h-full w-full items-center justify-center"><img alt="Gamma LLC screenshots" data-nuxt-img="" srcset="https://example.com/screenshot3.jpg 1x, https://example.com/screenshot3.jpg 2x" class="h-full w-full object-contain" src="https://example.com/screenshot3.jpg"></div>
+    </div>
+  </div>
+</section>"
+`;
+
+exports[`MediaGallery Snapshot > renders with no screenshots correctly 1`] = `
+"<section class="flex w-full flex-col gap-2 md:max-w-[444px]">
+  <div class="aspect-video">
+    <div class="relative flex h-full w-full cursor-pointer items-center justify-center">
+      <!--v-if-->
+    </div>
+  </div>
+  <div class="grid grid-cols-4 gap-2"></div>
+</section>"
+`;

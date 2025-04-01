@@ -1,0 +1,243 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CommentWrapper Snapshot > renders comment with nested replies correctly 1`] = `
+"<div data-v-d830712d="" class="comment-wrapper">
+  <div data-v-d830712d="" class="wrapper">
+    <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/avatar.jpg 1x, https://example.com/avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/avatar.jpg"></div>
+    <div data-v-d830712d="" class="comment-wrapper">
+      <div data-v-d830712d="" class="name-wrapper">
+        <div data-v-d830712d="" class="name text-(--ui-primary)">Test User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span>
+        <!--v-if-->
+        <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+      </div>
+      <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a test comment.
+        It has two lines.</div>
+      <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+        <div data-v-d830712d="" class="user-name text-(--ui-primary)">Test User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+        <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+      </div>
+      <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+        <div data-v-d830712d="">Never mind</div>
+      </div>
+      <div data-v-d830712d="" class="reply">
+        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div><span data-v-d830712d="" class="dot">•</span>
+        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Hide replies</div>
+        <!--v-if-->
+      </div>
+      <!--v-if-->
+      <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true">
+        <div data-v-d830712d="" class="comment-wrapper">
+          <div data-v-d830712d="" class="wrapper">
+            <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/reply-avatar.jpg 1x, https://example.com/reply-avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/reply-avatar.jpg"></div>
+            <div data-v-d830712d="" class="comment-wrapper">
+              <div data-v-d830712d="" class="name-wrapper">
+                <div data-v-d830712d="" class="name text-(--ui-primary)">Reply User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span>
+                <!--v-if-->
+                <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+              </div>
+              <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a reply.</div>
+              <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+                <div data-v-d830712d="" class="user-name text-(--ui-primary)">Reply User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+                <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+              </div>
+              <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+                <div data-v-d830712d="">Never mind</div>
+              </div>
+              <div data-v-d830712d="" class="reply">
+                <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div><span data-v-d830712d="" class="dot">•</span>
+                <div data-v-d830712d="" class="hover:text-(--ui-primary)">Hide replies</div>
+                <!--v-if-->
+              </div>
+              <!--v-if-->
+              <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true">
+                <div data-v-d830712d="" class="comment-wrapper">
+                  <div data-v-d830712d="" class="wrapper">
+                    <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/reply-avatar.jpg 1x, https://example.com/reply-avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/reply-avatar.jpg"></div>
+                    <div data-v-d830712d="" class="comment-wrapper">
+                      <div data-v-d830712d="" class="name-wrapper">
+                        <div data-v-d830712d="" class="name text-(--ui-primary)">Reply User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span>
+                        <!--v-if-->
+                        <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+                      </div>
+                      <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a reply.</div>
+                      <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+                        <div data-v-d830712d="" class="user-name text-(--ui-primary)">Reply User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+                        <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+                      </div>
+                      <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+                        <div data-v-d830712d="">Never mind</div>
+                      </div>
+                      <div data-v-d830712d="" class="reply">
+                        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
+                        <!--v-if-->
+                        <!--v-if-->
+                      </div>
+                      <!--v-if-->
+                      <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
+                      <!--v-if-->
+                    </div>
+                  </div>
+                </div>
+                <div data-v-d830712d="" class="comment-wrapper">
+                  <div data-v-d830712d="" class="wrapper">
+                    <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/reply-avatar.jpg 1x, https://example.com/reply-avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/reply-avatar.jpg"></div>
+                    <div data-v-d830712d="" class="comment-wrapper">
+                      <div data-v-d830712d="" class="name-wrapper">
+                        <div data-v-d830712d="" class="name text-(--ui-primary)">Reply User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span>
+                        <!--v-if-->
+                        <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+                      </div>
+                      <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a reply.</div>
+                      <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+                        <div data-v-d830712d="" class="user-name text-(--ui-primary)">Reply User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+                        <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+                      </div>
+                      <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+                        <div data-v-d830712d="">Never mind</div>
+                      </div>
+                      <div data-v-d830712d="" class="reply">
+                        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
+                        <!--v-if-->
+                        <!--v-if-->
+                      </div>
+                      <!--v-if-->
+                      <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
+                      <!--v-if-->
+                    </div>
+                  </div>
+                </div>
+              </transition-group-stub>
+              <!--v-if-->
+            </div>
+          </div>
+        </div>
+      </transition-group-stub>
+      <!--v-if-->
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`CommentWrapper Snapshot > renders comment with replies correctly 1`] = `
+"<div data-v-d830712d="" class="comment-wrapper">
+  <div data-v-d830712d="" class="wrapper">
+    <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/avatar.jpg 1x, https://example.com/avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/avatar.jpg"></div>
+    <div data-v-d830712d="" class="comment-wrapper">
+      <div data-v-d830712d="" class="name-wrapper">
+        <div data-v-d830712d="" class="name text-(--ui-primary)">Test User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span>
+        <!--v-if-->
+        <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+      </div>
+      <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a test comment.
+        It has two lines.</div>
+      <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+        <div data-v-d830712d="" class="user-name text-(--ui-primary)">Test User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+        <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+      </div>
+      <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+        <div data-v-d830712d="">Never mind</div>
+      </div>
+      <div data-v-d830712d="" class="reply">
+        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div><span data-v-d830712d="" class="dot">•</span>
+        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Hide replies</div>
+        <!--v-if-->
+      </div>
+      <!--v-if-->
+      <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true">
+        <div data-v-d830712d="" class="comment-wrapper">
+          <div data-v-d830712d="" class="wrapper">
+            <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/reply-avatar.jpg 1x, https://example.com/reply-avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/reply-avatar.jpg"></div>
+            <div data-v-d830712d="" class="comment-wrapper">
+              <div data-v-d830712d="" class="name-wrapper">
+                <div data-v-d830712d="" class="name text-(--ui-primary)">Reply User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span>
+                <!--v-if-->
+                <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+              </div>
+              <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a reply.</div>
+              <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+                <div data-v-d830712d="" class="user-name text-(--ui-primary)">Reply User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+                <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+              </div>
+              <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+                <div data-v-d830712d="">Never mind</div>
+              </div>
+              <div data-v-d830712d="" class="reply">
+                <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
+                <!--v-if-->
+                <!--v-if-->
+              </div>
+              <!--v-if-->
+              <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
+              <!--v-if-->
+            </div>
+          </div>
+        </div>
+      </transition-group-stub>
+      <!--v-if-->
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`CommentWrapper Snapshot > renders default comment correctly 1`] = `
+"<div data-v-d830712d="" class="comment-wrapper">
+  <div data-v-d830712d="" class="wrapper">
+    <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/avatar.jpg 1x, https://example.com/avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/avatar.jpg"></div>
+    <div data-v-d830712d="" class="comment-wrapper">
+      <div data-v-d830712d="" class="name-wrapper">
+        <div data-v-d830712d="" class="name text-(--ui-primary)">Test User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span>
+        <!--v-if-->
+        <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+      </div>
+      <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a test comment.
+        It has two lines.</div>
+      <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+        <div data-v-d830712d="" class="user-name text-(--ui-primary)">Test User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+        <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+      </div>
+      <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+        <div data-v-d830712d="">Never mind</div>
+      </div>
+      <div data-v-d830712d="" class="reply">
+        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!--v-if-->
+      <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
+      <!--v-if-->
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`CommentWrapper Snapshot > renders updated comment (with Updated badge) correctly 1`] = `
+"<div data-v-d830712d="" class="comment-wrapper">
+  <div data-v-d830712d="" class="wrapper">
+    <div data-v-d830712d="" class="w-12 rounded-t-full"><img data-v-d830712d="" alt="Avatar" data-nuxt-img="" srcset="https://example.com/avatar.jpg 1x, https://example.com/avatar.jpg 2x" class="h-12 w-12 rounded-full p-1" src="https://example.com/avatar.jpg"></div>
+    <div data-v-d830712d="" class="comment-wrapper">
+      <div data-v-d830712d="" class="name-wrapper">
+        <div data-v-d830712d="" class="name text-(--ui-primary)">Test User</div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Friday, January 2, 1970 at 3:17:36 AM">56 years ago</span><span data-v-d830712d="" class="font-medium inline-flex items-center text-xs px-2 py-1 gap-1 rounded-[calc(var(--ui-radius)*1.5)] bg-(--ui-primary) text-(--ui-bg) updated"><!--v-if-->Updated<!--v-if--></span>
+        <div data-v-d830712d="" class="expand hover:text-(--ui-primary)" style="display: none;"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+      </div>
+      <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">This is a test comment.
+        It has two lines.</div>
+      <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+        <div data-v-d830712d="" class="user-name text-(--ui-primary)">Test User</div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+        <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+      </div>
+      <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+        <div data-v-d830712d="">Never mind</div>
+      </div>
+      <div data-v-d830712d="" class="reply">
+        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <!--v-if-->
+      <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
+      <!--v-if-->
+    </div>
+  </div>
+</div>"
+`;

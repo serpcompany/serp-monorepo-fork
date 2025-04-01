@@ -9,6 +9,8 @@ services:
   serp-co-app:
     build:
       context: ../..
+      args:
+        - NUXT_UI_PRO_LICENSE=${NUXT_UI_PRO_LICENSE}
       dockerfile: ./apps/serp-co/Dockerfile
     container_name: serp-co-app
     restart: unless-stopped
@@ -38,6 +40,7 @@ services:
       - CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}
       - CLOUDFLARE_AUTH_DATABASE_ID=${CLOUDFLARE_AUTH_DATABASE_ID}
       - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
+      - NUXT_UI_PRO_LICENSE=${NUXT_UI_PRO_LICENSE}
       - REDIS_URL=redis://serp-co-redis:6379
     depends_on:
       - serp-co-redis

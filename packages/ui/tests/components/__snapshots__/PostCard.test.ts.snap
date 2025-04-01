@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PostCard Snapshot > renders with complete post data correctly 1`] = `
+"<article class="py-16"><a href="/posts/undefined/"><img alt="Test Title" data-nuxt-img="" srcset="https://example.com/image.jpg 1x, https://example.com/image.jpg 2x" class="mb-6 h-64 w-full object-cover" src="https://example.com/image.jpg"><!-- Title -->
+    <h2 class="mb-2 text-xl font-medium hover:underline">Test Title</h2>
+  </a>
+  <p class="mb-2 italic"><span>By John Doe</span><span> | 2022-10-01</span></p>
+  <p class="mb-8">This is a test excerpt for the post.</p>
+  <div class="flex flex-wrap gap-2"><a href="/posts/category/tech/" class="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-800/50">Tech</a></div>
+</article>"
+`;
+
+exports[`PostCard Snapshot > renders with custom title prop overriding display title correctly 1`] = `
+"<article class="py-16"><a href="/posts/undefined/"><img alt="Custom Title" data-nuxt-img="" srcset="https://example.com/image2.jpg 1x, https://example.com/image2.jpg 2x" class="mb-6 h-64 w-full object-cover" src="https://example.com/image2.jpg"><!-- Title -->
+    <h2 class="mb-2 text-xl font-medium hover:underline">Custom Title</h2>
+  </a>
+  <p class="mb-2 italic"><span>By Jane Doe</span><span> | 2023-03-01</span></p>
+  <p class="mb-8">Post with custom title prop.</p>
+  <div class="flex flex-wrap gap-2"><a href="/posts/category/news/" class="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-800/50">News</a></div>
+</article>"
+`;
+
+exports[`PostCard Snapshot > renders without featured image and author correctly 1`] = `
+"<article class="py-16"><a href="/posts/undefined/">
+    <!--v-if-->
+    <!-- Title -->
+    <h2 class="mb-2 text-xl font-medium hover:underline">No Image Post</h2>
+  </a>
+  <!--v-if-->
+  <p class="mb-8">Post without featured image and author info.</p>
+  <!--v-if-->
+</article>"
+`;

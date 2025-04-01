@@ -1,3 +1,139 @@
+<script setup lang="ts">
+  import type { Link } from '@serp/types/types/Link';
+
+  const { loggedIn, user } = useUserSession();
+  if (!loggedIn.value) {
+    navigateTo('/');
+  }
+
+  interface LinkFormData {
+    url: string;
+    slug: string;
+    comment: string;
+    title: string;
+    description: string;
+    image: string;
+  }
+
+  const linkData = ref<LinkFormData>({
+    url: '',
+    slug: '',
+    comment: '',
+    title: '',
+    description: '',
+    image: ''
+  });
+
+  const shortLink = ref('');
+  const loading = ref(false);
+  const toast = useToast();
+
+  interface FieldDefinition {
+    key: keyof LinkFormData;
+    label: string;
+  }
+
+  const requiredFields: FieldDefinition[] = [{ key: 'url', label: 'URL' }];
+
+  const isFormValid = computed(() => {
+    return requiredFields.every(
+      (field) =>
+        linkData.value[field.key] && linkData.value[field.key].trim() !== ''
+    );
+  });
+
+  interface LinkResponse {
+    link?: Link;
+    shortLink?: string;
+    status?: number;
+    message?: string;
+  }
+
+  async function createLink() {
+    try {
+      loading.value = true;
+
+      if (!isFormValid.value) {
+        throw new Error('Please fill in all required fields');
+      }
+
+      if (!user.value?.email) {
+        throw new Error('Please login to create a short link');
+      }
+
+      const { data: response, error } = await useFetch<LinkResponse>(
+        '/api/link/create',
+        {
+          method: 'POST',
+          headers: useRequestHeaders(['cookie']),
+          body: linkData.value
+        }
+      );
+
+      if (error.value) {
+        throw new Error(`Failed to create link - ${error.value.message}`);
+      }
+
+      if (response.value?.shortLink) {
+        shortLink.value = response.value.shortLink;
+        toast.add({
+          id: 'link-created',
+          title: 'Link Created',
+          description: 'Your short link has been created successfully',
+          icon: 'check-circle'
+        });
+      } else {
+        throw new Error('Failed to create link - No response received');
+      }
+    } catch (error: unknown) {
+      toast.add({
+        id: 'link-create-error',
+        title: 'Error creating link',
+        description:
+          error instanceof Error ? error.message : 'Unknown error occurred',
+        icon: 'exclamation-circle'
+      });
+    } finally {
+      loading.value = false;
+    }
+  }
+
+  function resetForm() {
+    linkData.value = {
+      url: '',
+      slug: '',
+      comment: '',
+      title: '',
+      description: '',
+      image: ''
+    };
+    shortLink.value = '';
+  }
+
+  function copyToClipboard() {
+    if (shortLink.value) {
+      navigator.clipboard
+        .writeText(shortLink.value)
+        .then(() => {
+          toast.add({
+            id: 'copy-success',
+            title: 'Copied!',
+            description: 'Link copied to clipboard',
+            icon: 'check-circle'
+          });
+        })
+        .catch(() => {
+          toast.add({
+            id: 'copy-error',
+            title: 'Copy Failed',
+            description: 'Failed to copy link to clipboard',
+            icon: 'exclamation-circle'
+          });
+        });
+    }
+  }
+</script>
+
 <template>
   <div class="p-4">
     <div class="grid grid-cols-3 gap-4">
@@ -7,7 +143,7 @@
         <UCard v-if="shortLink">
           <div class="p-3">
             <h3 class="text-lg font-medium">Your Short Link</h3>
-            <p class="mb-2 text-sm text-gray-600">
+            <p class="mb-2 text-sm text-neutral-600">
               This is your generated short link
             </p>
             <UInput v-model="shortLink" readonly class="mb-2" />
@@ -23,7 +159,7 @@
             <h3 class="text-lg font-medium">
               {{ isFormValid ? '✅ Valid' : '❌ Invalid' }}
             </h3>
-            <p class="mb-2 text-xs text-gray-600">
+            <p class="mb-2 text-xs text-neutral-600">
               Required fields must be filled before creating a link
             </p>
             <div class="grid grid-cols-2 gap-1">
@@ -140,139 +276,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import type { Link } from '@serp/types/types/Link';
-
-const { loggedIn, user } = useUserSession();
-if (!loggedIn.value) {
-  navigateTo('/');
-}
-
-interface LinkFormData {
-  url: string;
-  slug: string;
-  comment: string;
-  title: string;
-  description: string;
-  image: string;
-}
-
-const linkData = ref<LinkFormData>({
-  url: '',
-  slug: '',
-  comment: '',
-  title: '',
-  description: '',
-  image: ''
-});
-
-const shortLink = ref('');
-const loading = ref(false);
-const toast = useToast();
-
-interface FieldDefinition {
-  key: keyof LinkFormData;
-  label: string;
-}
-
-const requiredFields: FieldDefinition[] = [{ key: 'url', label: 'URL' }];
-
-const isFormValid = computed(() => {
-  return requiredFields.every(
-    (field) =>
-      linkData.value[field.key] && linkData.value[field.key].trim() !== ''
-  );
-});
-
-interface LinkResponse {
-  link?: Link;
-  shortLink?: string;
-  status?: number;
-  message?: string;
-}
-
-async function createLink() {
-  try {
-    loading.value = true;
-
-    if (!isFormValid.value) {
-      throw new Error('Please fill in all required fields');
-    }
-
-    if (!user.value?.email) {
-      throw new Error('Please login to create a short link');
-    }
-
-    const { data: response, error } = await useFetch<LinkResponse>(
-      '/api/link/create',
-      {
-        method: 'POST',
-        headers: useRequestHeaders(['cookie']),
-        body: linkData.value
-      }
-    );
-
-    if (error.value) {
-      throw new Error(`Failed to create link - ${error.value.message}`);
-    }
-
-    if (response.value?.shortLink) {
-      shortLink.value = response.value.shortLink;
-      toast.add({
-        id: 'link-created',
-        title: 'Link Created',
-        description: 'Your short link has been created successfully',
-        icon: 'check-circle'
-      });
-    } else {
-      throw new Error('Failed to create link - No response received');
-    }
-  } catch (error: unknown) {
-    toast.add({
-      id: 'link-create-error',
-      title: 'Error creating link',
-      description:
-        error instanceof Error ? error.message : 'Unknown error occurred',
-      icon: 'exclamation-circle'
-    });
-  } finally {
-    loading.value = false;
-  }
-}
-
-function resetForm() {
-  linkData.value = {
-    url: '',
-    slug: '',
-    comment: '',
-    title: '',
-    description: '',
-    image: ''
-  };
-  shortLink.value = '';
-}
-
-function copyToClipboard() {
-  if (shortLink.value) {
-    navigator.clipboard
-      .writeText(shortLink.value)
-      .then(() => {
-        toast.add({
-          id: 'copy-success',
-          title: 'Copied!',
-          description: 'Link copied to clipboard',
-          icon: 'check-circle'
-        });
-      })
-      .catch(() => {
-        toast.add({
-          id: 'copy-error',
-          title: 'Copy Failed',
-          description: 'Failed to copy link to clipboard',
-          icon: 'exclamation-circle'
-        });
-      });
-  }
-}
-</script>

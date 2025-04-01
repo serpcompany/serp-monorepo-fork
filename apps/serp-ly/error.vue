@@ -1,5 +1,14 @@
+<script setup>
+  const error = useError();
+  const handleError = () => {
+    clearError({
+      redirect: '/'
+    });
+  };
+</script>
+
 <template>
-  <nuxt-layout>
+  <NuxtLayout>
     <div class="mt-40 flex h-full flex-col items-center justify-center">
       <template v-if="error.statusCode === 404">
         <h1>404</h1>
@@ -13,14 +22,5 @@
         >Go Home</UButton
       >
     </div>
-  </nuxt-layout>
+  </NuxtLayout>
 </template>
-
-<script setup>
-const error = useError();
-const handleError = () => {
-  clearError({
-    redirect: '/'
-  });
-};
-</script>

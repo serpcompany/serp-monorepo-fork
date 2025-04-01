@@ -6,3 +6,5 @@ dist/
 build/
 .playground/
 .nuxt/
+.turbo/
+.wrangler/

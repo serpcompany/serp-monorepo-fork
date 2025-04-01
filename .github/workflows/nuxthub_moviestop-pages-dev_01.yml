@@ -1,0 +1,57 @@
+name: Deploy moviestop.pages.dev to NuxtHub
+
+on:
+  workflow_run:
+    workflows:
+      - ci_1
+    types:
+      - completed
+
+jobs:
+  deploy:
+    name: 'Deploy moviestop.pages.dev to NuxtHub'
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
+      url: ${{ steps.deploy.outputs.deployment-url }}
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: ./apps/moviestop-pages-dev
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.6
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --filter @moviestop --filter @serp/configs --filter @serp/types --filter @serp/ui --filter @serp/utils-cloudflare-pages
+        env:
+          FOR_CLOUDFLARE: true
+
+      - name: Ensure NuxtHub module is installed
+        run: pnpx nuxthub@latest ensure
+
+      - name: Build application
+        run: pnpm build
+        env:
+          NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
+          FOR_CLOUDFLARE: true
+
+      - name: Deploy to NuxtHub
+        uses: nuxt-hub/action@v1
+        id: deploy
+        with:
+          project-key: moviestop-w2tl
+          directory: ./apps/moviestop-pages-dev/dist

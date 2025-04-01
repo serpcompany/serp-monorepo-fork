@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UpvoteButton > renders with no upvotes correctly 1`] = `
+"<div class="flex w-full items-center sm:w-auto">
+  <ubutton class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800" disabled="false">
+    <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
+      <path d="m18 15-6-6-6 6"></path>
+    </svg><span>Upvotes 0</span>
+  </ubutton>
+</div>"
+`;
+
+exports[`UpvoteButton > renders with upvotes containing user email correctly 1`] = `
+"<div class="flex w-full items-center sm:w-auto">
+  <ubutton class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800 text-blue-500 dark:text-blue-400" disabled="false">
+    <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
+      <path d="m18 15-6-6-6 6"></path>
+    </svg><span>Upvotes 1</span>
+  </ubutton>
+</div>"
+`;
+
+exports[`UpvoteButton > renders with upvotes not containing user email correctly 1`] = `
+"<div class="flex w-full items-center sm:w-auto">
+  <ubutton class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800" disabled="false">
+    <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
+      <path d="m18 15-6-6-6 6"></path>
+    </svg><span>Upvotes 1</span>
+  </ubutton>
+</div>"
+`;

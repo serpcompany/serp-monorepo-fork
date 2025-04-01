@@ -12,6 +12,9 @@ export default defineNuxtConfig({
   ui: {
     colorMode: true
   },
+  uiPro: {
+    license: process.env.NUXT_UI_PRO_LICENSE
+  },
   tsConfig: {
     compilerOptions: {
       baseUrl: '.',
@@ -68,7 +71,7 @@ export default defineNuxtConfig({
       brandLinks: [
         {
           name: 'About',
-          href: 'https://github.com/serpcompany'
+          href: 'https://github.com/serp-ai'
         },
         {
           name: 'Add Your Product',

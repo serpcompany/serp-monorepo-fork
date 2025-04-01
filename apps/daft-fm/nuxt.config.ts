@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['@serp/ui', '@serp/types', '@serp/utils'],
   modules: [
-    '@nuxt/ui',
+    '@nuxt/ui-pro',
     '@nuxtjs/html-validator',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -17,6 +17,9 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   ui: {
     colorMode: true
+  },
+  uiPro: {
+    license: process.env.NUXT_UI_PRO_LICENSE
   },
   tsConfig: {
     compilerOptions: {

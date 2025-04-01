@@ -1,20 +1,50 @@
+<script setup lang="ts">
+  const sections = ['Overview', 'Albums', 'Songs'];
+  const route = useRoute();
+  const { slug } = route.params;
+  const artist = await useArtist(encodeURIComponent(slug));
+
+  const config = useRuntimeConfig();
+  const useAuth = config.public.useAuth;
+
+  // Get upvotes
+  const { upvotes } = (await useFetchWithCache<{ upvotes: string[] }>(
+    `/upvotes/${encodeURIComponent(artist.slug)}?module=artist`
+  )) || { upvotes: [] };
+
+  const genres = computed(() => {
+    return artist?.genres ? artist.genres.join(', ') : '';
+  });
+
+  const tags = computed(() => {
+    return artist?.tags ? artist.tags.join(', ') : '';
+  });
+
+  const seoDescription = computed(() => artist?.seoDescription);
+
+  useSeoMeta({
+    title: artist.name + ' - Songs, Albums, and More',
+    description: seoDescription
+  });
+</script>
+
 <template>
   <div>
-    <MultipageHeader
+    <MultipageHeaderMusic
       :name="artist.name"
       :sections="sections"
       class="bg-background sticky top-0 z-10 transition-all duration-300"
-      :serply_link="getArtistUrl(artist.name)"
+      serply-link="https://serp.ly/@daftfm/amazon/music/unlimited"
     >
       <template #upvote>
         <UpvoteButton
           v-if="useAuth"
-          :id="artist.slug"
+          :id="encodeURIComponent(artist.slug)"
           module="artist"
           :upvotes="upvotes"
         />
       </template>
-    </MultipageHeader>
+    </MultipageHeaderMusic>
 
     <!-- Main content with grid -->
     <div class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
@@ -24,6 +54,7 @@
           <div>
             <!-- section: overview -->
             <h2 id="overview" class="scroll-mt-60">About {{ artist.name }}</h2>
+            <!-- eslint-disable-next-line vue/no-v-html-->
             <div class="prose dark:prose-invert" v-html="artist.overview"></div>
 
             <h2 id="albums" class="scroll-mt-60">{{ artist.name }} Albums</h2>
@@ -33,7 +64,7 @@
                 <div class="flex">
                   <NuxtLink
                     aria-label="link to the album"
-                    :to="`/albums/${album.slug}/`"
+                    :to="`/albums/${encodeURIComponent(album.slug)}/`"
                   >
                     <div>
                       <LazyNuxtImg
@@ -52,7 +83,7 @@
                             {{ song.position }}.
                             <NuxtLink
                               v-if="song.has_lyrics"
-                              :to="`/songs/${song.slug}/`"
+                              :to="`/songs/${encodeURIComponent(song.slug)}/`"
                             >
                               {{ song.name }}
                             </NuxtLink>
@@ -106,39 +137,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const sections = ['Overview', 'Albums', 'Songs'];
-const route = useRoute();
-const { slug } = route.params;
-const artist = await useArtist(slug);
-
-const config = useRuntimeConfig();
-const useAuth = config.public.useAuth;
-
-// Get upvotes
-const { upvotes } = (await useFetchWithCache<{ upvotes: string[] }>(
-  `/upvotes/${artist.slug}?module=artist`
-)) || { upvotes: [] };
-
-const genres = computed(() => {
-  return artist?.genres ? artist.genres.join(', ') : '';
-});
-
-const tags = computed(() => {
-  return artist?.tags ? artist.tags.join(', ') : '';
-});
-
-// Helper function to create a URL for the artist
-function getArtistUrl(name: string) {
-  return `https://musicbrainz.org/artist/${artist.id}`;
-}
-
-const seoTitle = computed(() => artist?.seoTitle);
-const seoDescription = computed(() => artist?.seoDescription);
-
-useSeoMeta({
-  title: artist.name + ' - Songs, Albums, and More',
-  description: seoDescription
-});
-</script>

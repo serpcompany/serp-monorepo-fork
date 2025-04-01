@@ -1,20 +1,50 @@
+<script setup lang="ts">
+  const sections = ['Overview', 'Songs'];
+  const route = useRoute();
+  const { slug } = route.params;
+  const album = await useAlbum(encodeURIComponent(slug));
+
+  const config = useRuntimeConfig();
+  const useAuth = config.public.useAuth;
+
+  // Get upvotes
+  const { upvotes } = (await useFetchWithCache<{ upvotes: string[] }>(
+    `/upvotes/${encodeURIComponent(album.slug)}?module=album`
+  )) || { upvotes: [] };
+
+  const genres = computed(() => {
+    return album?.genres ? album.genres.join(', ') : '';
+  });
+
+  const tags = computed(() => {
+    return album?.tags ? album.tags.join(', ') : '';
+  });
+
+  const seoDescription = computed(() => album?.seoDescription);
+
+  useSeoMeta({
+    title: album.name + ' - Album',
+    description: seoDescription
+  });
+</script>
+
 <template>
   <div>
-    <MultipageHeader
+    <MultipageHeaderMusic
       :name="album.name"
       :sections="sections"
       class="bg-background sticky top-0 z-10 transition-all duration-300"
-      :serply_link="getAlbumUrl(album.id)"
+      serply-link="https://serp.ly/@daftfm/amazon/music/unlimited"
     >
       <template #upvote>
         <UpvoteButton
           v-if="useAuth"
-          :id="album.slug"
+          :id="encodeURIComponent(album.slug)"
           module="album"
           :upvotes="upvotes"
         />
       </template>
-    </MultipageHeader>
+    </MultipageHeaderMusic>
 
     <!-- Main content with grid -->
     <div class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
@@ -38,7 +68,7 @@
                   <span class="w-6">{{ song.position }}</span>
                   <NuxtLink
                     v-if="song.has_lyrics"
-                    :to="`/songs/${song.slug}/`"
+                    :to="`/songs/${encodeURIComponent(song.slug)}/`"
                     >{{ song.name }}</NuxtLink
                   >
                   <span v-else>{{ song.name }}</span>
@@ -92,39 +122,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const sections = ['Overview', 'Songs'];
-const route = useRoute();
-const { slug } = route.params;
-const album = await useAlbum(slug);
-
-const config = useRuntimeConfig();
-const useAuth = config.public.useAuth;
-
-// Get upvotes
-const { upvotes } = (await useFetchWithCache<{ upvotes: string[] }>(
-  `/upvotes/${album.slug}?module=album`
-)) || { upvotes: [] };
-
-const genres = computed(() => {
-  return album?.genres ? album.genres.join(', ') : '';
-});
-
-const tags = computed(() => {
-  return album?.tags ? album.tags.join(', ') : '';
-});
-
-// Helper function to create a URL for the album
-function getAlbumUrl(id: string) {
-  return `https://musicbrainz.org/release-group/${album.id}`;
-}
-
-const seoTitle = computed(() => album?.seoTitle);
-const seoDescription = computed(() => album?.seoDescription);
-
-useSeoMeta({
-  title: album.name + ' - Album',
-  description: seoDescription
-});
-</script>

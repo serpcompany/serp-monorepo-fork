@@ -1,3 +1,33 @@
+<script setup lang="ts">
+  defineProps({
+    name: {
+      type: String,
+      required: true
+    },
+    oneLiner: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    image: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    sections: {
+      type: Array as () => string[],
+      required: true
+    },
+    serplyLink: {
+      type: String,
+      required: true
+    }
+  });
+
+  const header = ref(null);
+  const isScrolled = ref(false);
+</script>
+
 <template>
   <div>
     <header
@@ -15,7 +45,7 @@
         <div class="flex flex-col items-center justify-between sm:flex-row">
           <!-- image -->
           <div class="flex w-full items-start justify-between">
-            <nuxt-img
+            <NuxtImg
               v-if="image"
               :src="image"
               :alt="`${name} logo`"
@@ -26,7 +56,7 @@
             <!-- name -->
             <div class="flex-grow" :class="{ 'hidden sm:block': isScrolled }">
               <h1
-                class="text-primary text-xl font-bold transition-all duration-300 sm:text-3xl"
+                class="text-xl font-bold text-(--ui-primary) transition-all duration-300 sm:text-3xl"
                 :class="{
                   'text-xl sm:text-lg': isScrolled,
                   'mt-0': isScrolled
@@ -47,9 +77,9 @@
 
             <!-- visit website button -->
             <NuxtLink
-              :href="serply_link"
+              :href="serplyLink"
               target="_blank"
-              class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-gray-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-gray-200"
+              class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
             >
               Visit Website
               <svg
@@ -85,7 +115,7 @@
               v-for="section in sections"
               :key="section"
               :href="'#' + section.toLowerCase()"
-              class="sectionLinks text-muted-foreground hover:text-primary flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 sm:px-2 sm:text-base"
+              class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base"
             >
               {{ section }}
             </NuxtLink>
@@ -95,31 +125,3 @@
     </header>
   </div>
 </template>
-
-<script setup lang="ts">
-defineProps({
-  name: {
-    type: String,
-    required: true
-  },
-  oneLiner: {
-    type: String,
-    required: false
-  },
-  image: {
-    type: String,
-    required: false
-  },
-  sections: {
-    type: Array as () => string[],
-    required: true
-  },
-  serply_link: {
-    type: String,
-    required: true
-  }
-});
-
-const header = ref(null);
-const isScrolled = ref(false);
-</script>

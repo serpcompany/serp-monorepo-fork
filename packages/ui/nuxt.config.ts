@@ -1,14 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // devtools: { enabled: true },
-  extends: [
-    '@serp/types',
-    process.env.DEPLOY_FROM_CLOUDFLARE === 'true'
-      ? '@serp/utils-cloudflare-pages'
-      : '@serp/utils'
-  ],
+  extends: ['@serp/types'],
   modules: [
-    '@nuxt/ui',
+    '@nuxt/ui-pro',
     '@nuxtjs/html-validator',
     '@nuxt/image',
     '@nuxt/eslint',
@@ -19,5 +14,12 @@ export default defineNuxtConfig({
     public: {
       useAuth: process.env.USE_AUTH === 'true'
     }
+  },
+  uiPro: {
+    license: process.env.NUXT_UI_PRO_LICENSE
+  },
+  typescript: {
+    typeCheck: false,
+    shim: false
   }
 });

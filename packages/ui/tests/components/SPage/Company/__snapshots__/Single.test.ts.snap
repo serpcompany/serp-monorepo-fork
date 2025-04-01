@@ -1,0 +1,404 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SPageCompanySingle Snapshot > renders complete company data (with auth) correctly 1`] = `
+"<div>
+  <div class="bg-background sticky top-0 z-10 transition-all duration-300">
+    <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- header top -->
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <!-- image -->
+          <div class="flex w-full items-start justify-between"><img alt="Test Company logo" data-nuxt-img="" srcset="/_ipx/_/logo.png 1x, /_ipx/_/logo.png 2x" class="mr-2 object-contain transition-all duration-300 h-16" src="/_ipx/_/logo.png"><!-- name -->
+            <div class="flex-grow">
+              <h1 class="text-xl font-bold text-(--ui-primary) transition-all duration-300 sm:text-3xl">Test Company</h1><span class="text-xs">We test companies</span>
+            </div>
+          </div><!-- action buttons -->
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+            <!-- upvote button slot -->
+            <div class="flex w-full items-center sm:w-auto">
+              <ubutton class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800" disabled="false">
+                <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
+                  <path d="m18 15-6-6-6 6"></path>
+                </svg><span>Upvotes 1</span>
+              </ubutton>
+            </div><!-- visit website button --><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg></a>
+          </div>
+        </div><!-- header bottom (nav links) -->
+        <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
+          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#overview" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Overview</a><a href="#features" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Features</a><a href="#faq" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">FAQ</a><a href="#alternatives" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Alternatives</a><a href="#comments" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Comments</a></nav>
+        </div>
+      </div>
+    </header>
+  </div><!-- Main content with grid -->
+  <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <!-- Main Content (70%) -->
+      <div class="lg:col-span-2">
+        <!-- Overview Section -->
+        <div id="overview" class="scroll-mt-60">
+          <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-3 lg:gap-4 xl:gap-6">
+            <!-- Right Column: Overview and Details -->
+            <section class="w-full md:flex-1">
+              <p class="text-md mb-4 leading-relaxed">Company overview excerpt</p>
+            </section>
+          </div>
+        </div><!-- Article Section -->
+        <section class="prose dark:prose-invert mt-[-25px]">
+          <div id="article" class="mb-8">
+            <p>Company article content</p>
+          </div>
+        </section><!-- Features Section -->
+        <section class="mb-12 space-y-4">
+          <h2 id="features" class="mb-4 scroll-mt-60 text-3xl font-bold">Test Company Features </h2>
+          <article>
+            <h3 class="mb-2 text-lg font-bold">Feature A</h3>
+            <p>Description A</p>
+          </article>
+        </section><!-- FAQs Section -->
+        <section id="faqs" class="mb-12">
+          <h2 class="mb-4 scroll-mt-60 text-3xl font-bold">FAQ</h2>
+          <div class="w-full">
+            <div data-state="closed" data-orientation="vertical" class="border-b border-(--ui-border) last:border-b-0">
+              <h3 data-orientation="vertical" data-state="closed" class="flex"><button type="button" aria-controls="" aria-expanded="false" data-state="closed" id="reka-accordion-trigger-v-0-0-0" data-reka-collection-item="" data-orientation="vertical" class="group flex-1 flex items-center gap-1.5 font-medium text-sm py-3.5 focus-visible:outline-(--ui-primary) min-w-0">
+                  <!--v-if--><span class="text-start break-words">What is this?</span><span class="iconify i-lucide:chevron-down shrink-0 size-5 ms-auto group-data-[state=open]:rotate-180 transition-transform duration-200" aria-hidden="true"></span>
+                </button></h3>
+              <div role="region" aria-labelledby="reka-accordion-trigger-v-0-0-0" data-state="closed" data-orientation="vertical" style="--reka-accordion-content-width: var(--reka-collapsible-content-width); --reka-accordion-content-height: var(--reka-collapsible-content-height); --reka-collapsible-content-height: 0px; --reka-collapsible-content-width: 0px;" class="data-[state=open]:animate-[accordion-down_200ms_ease-out] data-[state=closed]:animate-[accordion-up_200ms_ease-out] overflow-hidden focus:outline-none" id="reka-collapsible-content-v-0-0-1" hidden="">
+                <!---->
+              </div>
+            </div>
+          </div>
+        </section><!-- Alternatives -->
+        <section class="mb-12 p-4">
+          <h2 id="alternatives" class="mb-4 scroll-mt-60 text-3xl font-bold">Test Company Alternatives </h2>
+          <ul class="list-disc pl-4">
+            <li>Alternative 1</li>
+            <li>Alternative 2</li>
+          </ul>
+        </section><!-- Comments Section -->
+        <section id="comments" class="mb-12">
+          <h2 class="mb-6 scroll-mt-60 text-3xl font-bold">Comments</h2>
+          <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
+            <div data-v-e7198dba="" class="innerWrapper">
+              <div data-v-e7198dba="" class="userName">
+                <div data-v-e7198dba="" class="addComment">
+                  <div data-v-e7198dba="" class="w-12 rounded-t-full">
+                    <!--v-if-->
+                  </div>
+                  <div data-v-e7198dba="" class="commentBox text-black dark:text-white"><textarea data-v-e7198dba="" name="addComment" class="addComment border-neutral-500 bg-white dark:border-neutral-400 dark:bg-neutral-800" placeholder="Add a comment" spellcheck="true" aria-label="Add comment"></textarea>
+                    <!--v-if-->
+                    <!--v-if-->
+                  </div>
+                </div>
+              </div>
+              <!-- <div v-else class="noCommentWrapper">
+        <NuxtLink
+          :to="\`/login?redirectTo=\${$route.fullPath}\`"
+          class="noCommentWrapper"
+        >
+          <span
+            class="noCommentText text-(--ui-primary) border-primary hover:bg-primary border hover:text-white"
+            >Sign in to comment.</span
+          >
+        </NuxtLink>
+      </div> -->
+              <transition-group-stub data-v-e7198dba="" name="fade" tag="div" appear="true" persisted="false" css="true">
+                <div data-v-d830712d="" data-v-e7198dba="" class="comment-wrapper">
+                  <div data-v-d830712d="" class="wrapper">
+                    <div data-v-d830712d="" class="w-12 rounded-t-full">
+                      <!---->
+                    </div>
+                    <div data-v-d830712d="" class="comment-wrapper">
+                      <div data-v-d830712d="" class="name-wrapper">
+                        <div data-v-d830712d="" class="name text-(--ui-primary)"></div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Invalid Date">just now</span>
+                        <!--v-if-->
+                        <div data-v-d830712d="" class="expand hover:text-(--ui-primary)"><span data-v-d830712d="" title="Hide Comment">−</span></div>
+                      </div>
+                      <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white">Great company!</div>
+                      <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
+                        <div data-v-d830712d="" class="user-name text-(--ui-primary)"></div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
+                        <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
+                      </div>
+                      <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
+                        <div data-v-d830712d="">Never mind</div>
+                      </div>
+                      <div data-v-d830712d="" class="reply">
+                        <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
+                        <!--v-if-->
+                        <!--v-if-->
+                      </div>
+                      <!--v-if-->
+                      <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
+                      <!--v-if-->
+                    </div>
+                  </div>
+                </div>
+              </transition-group-stub>
+              <!--v-if-->
+            </div>
+          </div>
+        </section>
+      </div><!-- Sidebar (30%) -->
+      <aside class="space-y-6 lg:col-span-1">
+        <!-- Left Column: Media Gallery -->
+        <section class="flex w-full flex-col gap-2 md:max-w-[444px]">
+          <div class="aspect-video">
+            <div class="relative flex h-full w-full cursor-pointer items-center justify-center"><img alt="Main Image" data-nuxt-img="" srcset="/_ipx/_/screenshot1.png 1x, /_ipx/_/screenshot1.png 2x" class="h-full w-full cursor-pointer object-cover" src="/_ipx/_/screenshot1.png"></div>
+          </div>
+          <div class="grid grid-cols-4 gap-2">
+            <div>
+              <div class="flex h-full w-full items-center justify-center"><img alt="Test Company screenshots" data-nuxt-img="" srcset="/_ipx/_/screenshot1.png 1x, /_ipx/_/screenshot1.png 2x" class="h-full w-full object-contain" src="/_ipx/_/screenshot1.png"></div>
+            </div>
+          </div>
+        </section><!-- Categories -->
+        <section class="gap-2">
+          <div class="flex flex-wrap gap-2"><a href="/products/best/cat-1/" class="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-800/50">Category 1</a></div>
+        </section>
+      </aside>
+    </div>
+  </section>
+</div>"
+`;
+
+exports[`SPageCompanySingle Snapshot > renders complete company data (without auth) correctly 1`] = `
+"<div>
+  <div class="bg-background sticky top-0 z-10 transition-all duration-300">
+    <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- header top -->
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <!-- image -->
+          <div class="flex w-full items-start justify-between"><img alt="Test Company logo" data-nuxt-img="" srcset="/_ipx/_/logo.png 1x, /_ipx/_/logo.png 2x" class="mr-2 object-contain transition-all duration-300 h-16" src="/_ipx/_/logo.png"><!-- name -->
+            <div class="flex-grow">
+              <h1 class="text-xl font-bold text-(--ui-primary) transition-all duration-300 sm:text-3xl">Test Company</h1><span class="text-xs">We test companies</span>
+            </div>
+          </div><!-- action buttons -->
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+            <!-- upvote button slot -->
+            <!-- visit website button --><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg></a>
+          </div>
+        </div><!-- header bottom (nav links) -->
+        <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
+          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#overview" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Overview</a><a href="#features" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Features</a><a href="#faq" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">FAQ</a><a href="#alternatives" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Alternatives</a><a href="#comments" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Comments</a></nav>
+        </div>
+      </div>
+    </header>
+  </div><!-- Main content with grid -->
+  <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <!-- Main Content (70%) -->
+      <div class="lg:col-span-2">
+        <!-- Overview Section -->
+        <div id="overview" class="scroll-mt-60">
+          <div class="flex flex-col justify-between gap-6 md:flex-row md:gap-3 lg:gap-4 xl:gap-6">
+            <!-- Right Column: Overview and Details -->
+            <section class="w-full md:flex-1">
+              <p class="text-md mb-4 leading-relaxed">Company overview excerpt</p>
+            </section>
+          </div>
+        </div><!-- Article Section -->
+        <section class="prose dark:prose-invert mt-[-25px]">
+          <div id="article" class="mb-8">
+            <p>Company article content</p>
+          </div>
+        </section><!-- Features Section -->
+        <section class="mb-12 space-y-4">
+          <h2 id="features" class="mb-4 scroll-mt-60 text-3xl font-bold">Test Company Features </h2>
+          <article>
+            <h3 class="mb-2 text-lg font-bold">Feature A</h3>
+            <p>Description A</p>
+          </article>
+        </section><!-- FAQs Section -->
+        <section id="faqs" class="mb-12">
+          <h2 class="mb-4 scroll-mt-60 text-3xl font-bold">FAQ</h2>
+          <div class="w-full">
+            <div data-state="closed" data-orientation="vertical" class="border-b border-(--ui-border) last:border-b-0">
+              <h3 data-orientation="vertical" data-state="closed" class="flex"><button type="button" aria-controls="" aria-expanded="false" data-state="closed" id="reka-accordion-trigger-v-0-0-0" data-reka-collection-item="" data-orientation="vertical" class="group flex-1 flex items-center gap-1.5 font-medium text-sm py-3.5 focus-visible:outline-(--ui-primary) min-w-0">
+                  <!--v-if--><span class="text-start break-words">What is this?</span><span class="iconify i-lucide:chevron-down shrink-0 size-5 ms-auto group-data-[state=open]:rotate-180 transition-transform duration-200" aria-hidden="true"></span>
+                </button></h3>
+              <div role="region" aria-labelledby="reka-accordion-trigger-v-0-0-0" data-state="closed" data-orientation="vertical" style="--reka-accordion-content-width: var(--reka-collapsible-content-width); --reka-accordion-content-height: var(--reka-collapsible-content-height); --reka-collapsible-content-height: 0px; --reka-collapsible-content-width: 0px;" class="data-[state=open]:animate-[accordion-down_200ms_ease-out] data-[state=closed]:animate-[accordion-up_200ms_ease-out] overflow-hidden focus:outline-none" id="reka-collapsible-content-v-0-0-1" hidden="">
+                <!---->
+              </div>
+            </div>
+          </div>
+        </section><!-- Alternatives -->
+        <section class="mb-12 p-4">
+          <h2 id="alternatives" class="mb-4 scroll-mt-60 text-3xl font-bold">Test Company Alternatives </h2>
+          <ul class="list-disc pl-4">
+            <li>Alternative 1</li>
+            <li>Alternative 2</li>
+          </ul>
+        </section><!-- Comments Section -->
+        <section id="comments" class="mb-12">
+          <h2 class="mb-6 scroll-mt-60 text-3xl font-bold">Comments</h2>
+          <!--v-if-->
+        </section>
+      </div><!-- Sidebar (30%) -->
+      <aside class="space-y-6 lg:col-span-1">
+        <!-- Left Column: Media Gallery -->
+        <section class="flex w-full flex-col gap-2 md:max-w-[444px]">
+          <div class="aspect-video">
+            <div class="relative flex h-full w-full cursor-pointer items-center justify-center"><img alt="Main Image" data-nuxt-img="" srcset="/_ipx/_/screenshot1.png 1x, /_ipx/_/screenshot1.png 2x" class="h-full w-full cursor-pointer object-cover" src="/_ipx/_/screenshot1.png"></div>
+          </div>
+          <div class="grid grid-cols-4 gap-2">
+            <div>
+              <div class="flex h-full w-full items-center justify-center"><img alt="Test Company screenshots" data-nuxt-img="" srcset="/_ipx/_/screenshot1.png 1x, /_ipx/_/screenshot1.png 2x" class="h-full w-full object-contain" src="/_ipx/_/screenshot1.png"></div>
+            </div>
+          </div>
+        </section><!-- Categories -->
+        <section class="gap-2">
+          <div class="flex flex-wrap gap-2"><a href="/products/best/cat-1/" class="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-800/50">Category 1</a></div>
+        </section>
+      </aside>
+    </div>
+  </section>
+</div>"
+`;
+
+exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) correctly 1`] = `
+"<div>
+  <div class="bg-background sticky top-0 z-10 transition-all duration-300">
+    <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- header top -->
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <!-- image -->
+          <div class="flex w-full items-start justify-between"><img alt="Minimal Company logo" data-nuxt-img="" srcset="/_ipx/_/minimal-logo.png 1x, /_ipx/_/minimal-logo.png 2x" class="mr-2 object-contain transition-all duration-300 h-16" src="/_ipx/_/minimal-logo.png"><!-- name -->
+            <div class="flex-grow">
+              <h1 class="text-xl font-bold text-(--ui-primary) transition-all duration-300 sm:text-3xl">Minimal Company</h1><span class="text-xs">Minimal details</span>
+            </div>
+          </div><!-- action buttons -->
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+            <!-- upvote button slot -->
+            <div class="flex w-full items-center sm:w-auto">
+              <ubutton class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800" disabled="false">
+                <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
+                  <path d="m18 15-6-6-6 6"></path>
+                </svg><span>Upvotes 0</span>
+              </ubutton>
+            </div><!-- visit website button --><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg></a>
+          </div>
+        </div><!-- header bottom (nav links) -->
+        <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
+          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#overview" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Overview</a><a href="#comments" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Comments</a></nav>
+        </div>
+      </div>
+    </header>
+  </div><!-- Main content with grid -->
+  <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <!-- Main Content (70%) -->
+      <div class="lg:col-span-2">
+        <!-- Overview Section -->
+        <!--v-if-->
+        <!-- Article Section -->
+        <!--v-if-->
+        <!-- Features Section -->
+        <!--v-if-->
+        <!-- FAQs Section -->
+        <!--v-if-->
+        <!-- Alternatives -->
+        <!--v-if-->
+        <!-- Comments Section -->
+        <section id="comments" class="mb-12">
+          <h2 class="mb-6 scroll-mt-60 text-3xl font-bold">Comments</h2>
+          <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
+            <div data-v-e7198dba="" class="innerWrapper">
+              <div data-v-e7198dba="" class="userName">
+                <div data-v-e7198dba="" class="addComment">
+                  <div data-v-e7198dba="" class="w-12 rounded-t-full">
+                    <!--v-if-->
+                  </div>
+                  <div data-v-e7198dba="" class="commentBox text-black dark:text-white"><textarea data-v-e7198dba="" name="addComment" class="addComment border-neutral-500 bg-white dark:border-neutral-400 dark:bg-neutral-800" placeholder="Add a comment" spellcheck="true" aria-label="Add comment"></textarea>
+                    <!--v-if-->
+                    <!--v-if-->
+                  </div>
+                </div>
+              </div>
+              <!-- <div v-else class="noCommentWrapper">
+        <NuxtLink
+          :to="\`/login?redirectTo=\${$route.fullPath}\`"
+          class="noCommentWrapper"
+        >
+          <span
+            class="noCommentText text-(--ui-primary) border-primary hover:bg-primary border hover:text-white"
+            >Sign in to comment.</span
+          >
+        </NuxtLink>
+      </div> -->
+              <transition-group-stub data-v-e7198dba="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
+              <!--v-if-->
+            </div>
+          </div>
+        </section>
+      </div><!-- Sidebar (30%) -->
+      <!--v-if-->
+    </div>
+  </section>
+</div>"
+`;
+
+exports[`SPageCompanySingle Snapshot > renders minimal company data (without auth) correctly 1`] = `
+"<div>
+  <div class="bg-background sticky top-0 z-10 transition-all duration-300">
+    <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- header top -->
+        <div class="flex flex-col items-center justify-between sm:flex-row">
+          <!-- image -->
+          <div class="flex w-full items-start justify-between"><img alt="Minimal Company logo" data-nuxt-img="" srcset="/_ipx/_/minimal-logo.png 1x, /_ipx/_/minimal-logo.png 2x" class="mr-2 object-contain transition-all duration-300 h-16" src="/_ipx/_/minimal-logo.png"><!-- name -->
+            <div class="flex-grow">
+              <h1 class="text-xl font-bold text-(--ui-primary) transition-all duration-300 sm:text-3xl">Minimal Company</h1><span class="text-xs">Minimal details</span>
+            </div>
+          </div><!-- action buttons -->
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+            <!-- upvote button slot -->
+            <!-- visit website button --><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg></a>
+          </div>
+        </div><!-- header bottom (nav links) -->
+        <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
+          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#overview" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Overview</a><a href="#comments" class="sectionLinks text-muted-foreground flex-shrink-0 px-1 py-2 text-sm transition-colors duration-200 hover:text-(--ui-primary) sm:px-2 sm:text-base">Comments</a></nav>
+        </div>
+      </div>
+    </header>
+  </div><!-- Main content with grid -->
+  <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <!-- Main Content (70%) -->
+      <div class="lg:col-span-2">
+        <!-- Overview Section -->
+        <!--v-if-->
+        <!-- Article Section -->
+        <!--v-if-->
+        <!-- Features Section -->
+        <!--v-if-->
+        <!-- FAQs Section -->
+        <!--v-if-->
+        <!-- Alternatives -->
+        <!--v-if-->
+        <!-- Comments Section -->
+        <section id="comments" class="mb-12">
+          <h2 class="mb-6 scroll-mt-60 text-3xl font-bold">Comments</h2>
+          <!--v-if-->
+        </section>
+      </div><!-- Sidebar (30%) -->
+      <!--v-if-->
+    </div>
+  </section>
+</div>"
+`;
