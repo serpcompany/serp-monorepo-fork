@@ -42,7 +42,7 @@ describe('CommentWrapper Snapshot', () => {
           ...baseProps,
           comment: {
             ...baseProps.comment,
-            updatedAt: '1973-04-29T21:34:09+00:00'
+            updatedAt: '1974-04-29T21:33:09+00:00'
           }
         }
       }
