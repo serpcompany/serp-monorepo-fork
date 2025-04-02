@@ -100,7 +100,7 @@
       <template #subtitle>
         <NuxtLink
           v-if="primaryArtist"
-          :to="`/artists/${primaryArtist.slug}`"
+          :to="`/artists/${primaryArtist.slug}/`"
           class="text-sm text-gray-500 hover:underline dark:text-gray-400"
         />
       </template>
