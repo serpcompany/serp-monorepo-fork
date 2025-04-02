@@ -5,7 +5,7 @@
 
   // Initialize page and limit from URL or default values
   const page = ref(Number(route.query.page) || 1);
-  const limit = ref(Number(route.query.limit) || 50);
+  const limit = ref(Number(route.query.limit) || 100);
 
   watch(
     [page, limit],
