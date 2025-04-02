@@ -1,7 +1,10 @@
-import { describe, expect, it } from 'vitest';
+import { afterAll, describe, expect, it } from 'vitest';
+// Import mocks first so they're available when components are imported
+import { cleanupDateMocks } from '../mockDateImports';
+import '../mockUseUserSession';
+// Then import components
 import CommentsContainer from '../../components/CommentsContainer.vue';
 import ComponentRender from '../componentRender';
-import '../mockUseUserSession';
 
 // Define various scenarios to snapshot test different prop combinations.
 const scenarios: [string, { props: Record<string, unknown> }][] = [
@@ -136,5 +139,9 @@ describe('CommentsContainer Snapshot', () => {
       CommentsContainer
     );
     expect(html).toMatchSnapshot();
+  });
+
+  afterAll(() => {
+    cleanupDateMocks();
   });
 });

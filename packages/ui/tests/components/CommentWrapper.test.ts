@@ -1,7 +1,10 @@
-import { describe, expect, it } from 'vitest';
+import { afterAll, describe, expect, it } from 'vitest';
+// Import mocks first so they're available when components are imported
+import { cleanupDateMocks } from '../mockDateImports';
+import '../mockUseUserSession';
+// Then import components
 import CommentWrapper from '../../components/CommentWrapper.vue';
 import ComponentRender from '../componentRender';
-import '../mockUseUserSession';
 
 describe('CommentWrapper Snapshot', () => {
   const baseProps = {
@@ -139,4 +142,8 @@ describe('CommentWrapper Snapshot', () => {
       expect(html).toMatchSnapshot();
     }
   );
+
+  afterAll(() => {
+    cleanupDateMocks();
+  });
 });
