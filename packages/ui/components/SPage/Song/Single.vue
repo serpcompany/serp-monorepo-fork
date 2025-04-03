@@ -116,9 +116,10 @@
 </script>
 
 <template>
-  <div>
+  <UPage>
+    <SchemaMusicRecording :song="song" />
     <MultipageHeaderMusic
-      :name="song.name"
+      :name="`${song.name} by ${artistData.name}`"
       :sections="sections"
       class="bg-background sticky top-0 z-10 transition-all duration-300"
       serply-link="https://serp.ly/@daftfm/amazon/music/unlimited"
@@ -274,5 +275,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </UPage>
 </template>
