@@ -1,19 +1,15 @@
 ---
-description: 
-globs: 
-alwaysApply: true
----
----
 description: "Project information and high-level technology references for the SERP Monorepo."
 globs:
   - "package.json"
   - "*.ts"
   - "*.vue"
+alwaysApply: true
 ---
 
-- **Project Name:** SERP Monorepo  
-  **Description:** A monorepo containing multiple SERP (Search Engine Results Page) related applications and shared packages  
-  **Repository:** serp-monorepo  
+- **Project Name:** SERP Monorepo
+  **Description:** A monorepo containing multiple SERP (Search Engine Results Page) related applications and shared packages
+  **Repository:** serp-monorepo
   **Type:** monorepo
 
 - **Technologies & References:**

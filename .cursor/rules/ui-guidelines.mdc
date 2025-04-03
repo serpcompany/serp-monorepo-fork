@@ -1,18 +1,14 @@
 ---
-description: 
-globs: 
-alwaysApply: true
----
----
 description: "Guidelines for component development, UI styling, and project-specific preferences."
 globs:
   - "*.vue"
+alwaysApply: true
 ---
 
 # README
 - UI Library: Nuxt UI Pro (https://ui.nuxt.com/getting-started)
 - Our custom Nuxt UI "wrapper components" in `packages/ui/*`
-- Tailwind Config Settings: Main tailwind css styles in `packages/ui/assets/css/main.css` 
+- Tailwind Config Settings: Main tailwind css styles in `packages/ui/assets/css/main.css`
 - Find `apps/*` & `package/*` level tailwind config settings in `app.config.ts` files in each respective `apps/*` & `package/`
 
 ## Guidelines
