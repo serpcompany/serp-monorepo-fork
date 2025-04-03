@@ -68,7 +68,7 @@ export function createConfig({
           {
             html: {
               void: 'never',
-              normal: 'always',
+              normal: 'never',
               component: 'always'
             },
             svg: 'always',
