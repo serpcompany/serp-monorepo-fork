@@ -16,7 +16,7 @@
       } else {
         delete query.page;
       }
-      if (newLimit !== 50) {
+      if (newLimit !== 100) {
         query.limit = newLimit;
       } else {
         delete query.limit;
