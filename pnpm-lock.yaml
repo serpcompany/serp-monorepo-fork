@@ -1418,6 +1418,9 @@ importers:
       nuxt:
         specifier: ^3.16.1
         version: 3.16.1(eslint@9.20.1)(typescript@5.7.3)(vite@6.2.3)
+      nuxt-schema-org:
+        specifier: 5.0.4
+        version: 5.0.4(vue@3.5.13)
       playwright-core:
         specifier: ^1.48.2
         version: 1.50.1
@@ -8378,6 +8381,14 @@ packages:
       unhead: 1.11.20
     dev: true
 
+  /@unhead/schema-org@2.0.3:
+    resolution: {integrity: sha512-eBUhdZruiYU2drm/T2bQiEmHkWBeadNqezvkpz4YwG4cO1vZKZRfrKRjINR4EBj6hIGHgvKpcWebHFA5dQHj2g==}
+    dependencies:
+      defu: 6.1.4
+      ohash: 2.0.11
+      ufo: 1.5.4
+    dev: true
+
   /@unhead/schema@1.11.20:
     resolution: {integrity: sha512-0zWykKAaJdm+/Y7yi/Yds20PrUK7XabLe9c3IRcjnwYmSWY6z0Cr19VIs3ozCj8P+GhR+/TI2mwtGlueCEYouA==}
     dependencies:
@@ -14149,6 +14160,21 @@ packages:
       - vue
     dev: true
 
+  /nuxt-schema-org@5.0.4(vue@3.5.13):
+    resolution: {integrity: sha512-NM4OIECR2pWJL/jJnaZq/L8OjG7mx8O1LaXRnVmBLFXDO6DtIrzEPM8y8hhLs9PUQSkPs83CpJxlnb1qs++Rlg==}
+    dependencies:
+      '@nuxt/kit': 3.16.1(magicast@0.3.5)
+      '@unhead/schema-org': 2.0.3
+      defu: 6.1.4
+      nuxt-site-config: 3.1.7(vue@3.5.13)
+      pathe: 2.0.3
+      pkg-types: 2.1.0
+      sirv: 3.0.1
+    transitivePeerDependencies:
+      - magicast
+      - vue
+    dev: true
+
   /nuxt-security@2.1.5:
     resolution: {integrity: sha512-2nrkEsj1tS7RqqFq+sdmYatsAtISHt/o91w8xfMPeUz95CYxZ+HPbodKf+oAGdOmmCJcgYs6e+5XNba45M6BIw==}
     engines: {node: '>=18.0.0'}
@@ -14213,6 +14239,19 @@ packages:
       - vue
     dev: true
 
+  /nuxt-site-config-kit@3.1.7(vue@3.5.13):
+    resolution: {integrity: sha512-BbGJ8qYyp5aLxcuoUVrqAVpKM2gx+QaaUspvV+G43TqNaxvxm3FlQ8CE+AwqVxeKK0s84m4kyYZ8rWm6iRS6bA==}
+    dependencies:
+      '@nuxt/kit': 3.16.1(magicast@0.3.5)
+      pkg-types: 2.1.0
+      site-config-stack: 3.1.7(vue@3.5.13)
+      std-env: 3.8.1
+      ufo: 1.5.4
+    transitivePeerDependencies:
+      - magicast
+      - vue
+    dev: true
+
   /nuxt-site-config@3.0.6(vite@6.2.3)(vue@3.5.13):
     resolution: {integrity: sha512-Mkyen81br21/nA2sxlLCOtJZ2L8sGL+YzxHlsVhLhEnC355CP2SwKVtYqJNJ4aYFbxeusqZXJFiD4KbveHhk0w==}
     dependencies:
@@ -14240,6 +14279,21 @@ packages:
       pkg-types: 2.1.0
       sirv: 3.0.1
       site-config-stack: 3.1.3(vue@3.5.13)
+      ufo: 1.5.4
+    transitivePeerDependencies:
+      - magicast
+      - vue
+    dev: true
+
+  /nuxt-site-config@3.1.7(vue@3.5.13):
+    resolution: {integrity: sha512-28YrXiqnk8qwHb4pjA25o46NgMspBOGR9VfUiM9Z9avCILfihyZ5QDPuln5zqFhnGTerC8AblvEtN2VrCipLug==}
+    dependencies:
+      '@nuxt/kit': 3.16.1(magicast@0.3.5)
+      nuxt-site-config-kit: 3.1.7(vue@3.5.13)
+      pathe: 2.0.3
+      pkg-types: 2.1.0
+      sirv: 3.0.1
+      site-config-stack: 3.1.7(vue@3.5.13)
       ufo: 1.5.4
     transitivePeerDependencies:
       - magicast
@@ -16485,6 +16539,15 @@ packages:
 
   /site-config-stack@3.1.3(vue@3.5.13):
     resolution: {integrity: sha512-ejxQOrdUFMPT0ijzq3fiNKcbxHZ50KHGHZzVqLMdl7+ota4dO+yynZaar6Z/ji3+cSHJaNDA/CVQ5UZ12wbYTQ==}
+    peerDependencies:
+      vue: ^3
+    dependencies:
+      ufo: 1.5.4
+      vue: 3.5.13(typescript@5.7.3)
+    dev: true
+
+  /site-config-stack@3.1.7(vue@3.5.13):
+    resolution: {integrity: sha512-dBHPLosIjtGtyCNTDtl6f9mPQ1ZwwdmkXrhthjlaaCGidyg4ejr4yw88lVBFS2+Muc22Is4TvaUUxTVkh3dQDQ==}
     peerDependencies:
       vue: ^3
     dependencies:
