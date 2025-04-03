@@ -1,7 +1,10 @@
-import { computed } from 'vue';
+/* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
 
 // Mock for Date.now() to always return a fixed timestamp
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { computed } from 'vue';
+
 const originalDate = global.Date;
 class MockDate extends originalDate {
   constructor(...args: any[]) {
