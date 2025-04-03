@@ -1,16 +1,12 @@
 ---
-description: 
-globs: 
-alwaysApply: true
----
----
 description: "Development workflow guidelines including scripts, secrets, and common commands."
 globs:
   - "package.json"
+alwaysApply: true
 ---
 
-- **Reference Location:** Check package.json scripts in each app for app-specific commands  
-- **Secrets Management:** Use Infisical for secrets management  
+- **Reference Location:** Check package.json scripts in each app for app-specific commands
+- **Secrets Management:** Use Infisical for secrets management
 - **Common Commands:**
   - **dev:** `infisical run -- nuxt dev`
   - **build:** `turbo run build`
