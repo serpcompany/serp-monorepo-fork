@@ -1,4 +1,6 @@
 import requests
+import os
+import json
 import xml.etree.ElementTree as ET
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
@@ -15,7 +17,7 @@ DOMAINS = [
 ]
 
 # Configuration: update with your service account JSON file path
-SERVICE_ACCOUNT_FILE = './gsc-service-account.json'
+SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__), 'gsc-service-account.json')
 SCOPES = ['https://www.googleapis.com/auth/webmasters']
 
 def get_sitemap_urls(domain):
@@ -59,8 +61,23 @@ def submit_sitemap(service, site_property, sitemap_url):
 
 def main():
     # Build credentials and initialize the Search Console API service
-    credentials = service_account.Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    try:
+        credentials = service_account.Credentials.from_service_account_file(
+            SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    except json.decoder.JSONDecodeError as e:
+        print(f"[ERROR] Error decoding service account file: {e}")
+        print("[INFO] Checking if this is a CI environment...")
+
+        # If in CI and the file is malformed, exit with error
+        if os.environ.get('CI') == 'true':
+            print("[ERROR] Running in CI environment with invalid service account file.")
+            raise
+
+        print("[INFO] Not in CI environment. Attempting to use existing service account file if available.")
+        if not os.path.exists(SERVICE_ACCOUNT_FILE) or os.path.getsize(SERVICE_ACCOUNT_FILE) < 10:
+            print(f"[ERROR] No valid service account file found at {SERVICE_ACCOUNT_FILE}")
+            return
+
     service = build('webmasters', 'v3', credentials=credentials)
 
     for domain in DOMAINS:
