@@ -1,8 +1,6 @@
 ---
 description: "Naming conventions for various file types and components."
-globs:
-  - "*.vue"
-  - "*.ts"
+globs: 
 alwaysApply: true
 ---
 
