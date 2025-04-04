@@ -1,6 +1,8 @@
 <script setup lang="ts">
   // @ts-expect-error: Auto-imported from another layer
   const { loggedIn, user, clear } = useUserSession();
+  const config = useRuntimeConfig();
+  const profileDropdownLinks = config.public.profileDropdownLinks || [];
   const items = ref([
     [
       {
@@ -8,6 +10,7 @@
         type: 'label'
       }
     ],
+    ...profileDropdownLinks,
     [
       {
         label: 'Logout',
