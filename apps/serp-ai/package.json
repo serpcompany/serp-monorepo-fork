@@ -38,6 +38,8 @@
     "@serp/types": "workspace:^",
     "@serp/ui": "workspace:^",
     "@serp/utils": "workspace:^",
+    "@slack/web-api": "^7.9.1",
+    "@unlok-co/nuxt-stripe": "4.0.2",
     "@tailwindcss/typography": "^0.5.15",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/vue": "^8.1.0",
