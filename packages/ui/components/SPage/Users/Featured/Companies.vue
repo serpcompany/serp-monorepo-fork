@@ -20,11 +20,6 @@
   if (!categories) {
     categories = [];
   }
-  categories.push({
-    id: 0,
-    name: 'All',
-    slug: 'all'
-  });
   const categoryOptions = ref(categories?.map((category) => category.name));
 
   const submitLoading = ref(false);
@@ -102,10 +97,14 @@
       );
       if (data.available) {
         // If placement is available, proceed with payment
+        const successRoute =
+          '/users/purchase?success=true&redirectTo=/users/featured';
+        const cancelRoute =
+          '/users/purchase?cancel=true&redirectTo=/users/featured';
         const response = await $fetch(
           `/api/stripe/create-checkout-session?type=company-featured-${form.placement}&id=${getCompanyId(
             form.company
-          )}&secondaryId=${getCategoryId(form.category)}`,
+          )}&secondaryId=${getCategoryId(form.category)}&successRoute=${encodeURIComponent(successRoute)}&cancelRoute=${encodeURIComponent(cancelRoute)}`,
           {
             method: 'GET'
           }
