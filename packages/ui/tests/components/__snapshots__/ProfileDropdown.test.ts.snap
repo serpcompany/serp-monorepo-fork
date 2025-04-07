@@ -1,9 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ProfileDropdown Snapshot > renders when logged in correctly 1`] = `
-"<span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-8 text-base"><img width="32" height="32" data-nuxt-img="" srcset="https://example.com/test.jpg 1x, https://example.com/test.jpg 2x" role="button" id="reka-dropdown-menu-trigger-v-0-0-0" type="button" aria-haspopup="menu" aria-expanded="false" disabled="false" data-state="closed" class="h-full w-full rounded-[inherit] object-cover" src="https://example.com/test.jpg"></span>
-<!--teleport start-->
-<!--teleport end-->"
+"<div class="relative">
+  <!-- Avatar trigger --><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-8 text-base cursor-pointer transition-opacity hover:opacity-80"><img width="32" height="32" data-nuxt-img="" srcset="https://example.com/test.jpg 1x, https://example.com/test.jpg 2x" role="button" class="h-full w-full rounded-[inherit] object-cover" src="https://example.com/test.jpg"></span><!-- Slideover menu -->
+  <!--v-if-->
+  <!--teleport start-->
+  <!--teleport end-->
+</div>"
 `;
 
-exports[`ProfileDropdown Snapshot > renders when not logged in correctly 1`] = `"<a href="/login" class="text-sm font-medium hover:underline">Login</a>"`;
+exports[`ProfileDropdown Snapshot > renders when not logged in correctly 1`] = `
+"<!-- Use a button component for login when not logged in -->
+<a href="/login" class="inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors py-1.5 gap-1.5 ring ring-inset ring-(--ui-primary)/50 text-(--ui-primary) hover:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-(--ui-primary) rounded-md px-4 text-sm font-medium">
+  <!--v-if--> Login
+  <!--v-if-->
+</a>"
+`;
