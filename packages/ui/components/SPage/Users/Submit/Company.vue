@@ -304,51 +304,47 @@
 </script>
 
 <template>
-  <UPage>
+  <UPage class="flex min-h-screen items-center justify-center">
     <UMain>
-      <UCard>
-        <form @submit.prevent="saveCompany">
-          <UFormField label="Company Name" required class="w-full">
+      <UCard class="mx-auto max-w-2xl rounded-lg p-8 shadow-lg">
+        <UHeading level="2" class="mb-6 text-center text-2xl font-semibold">
+          Submit Company
+        </UHeading>
+        <form class="space-y-6" @submit.prevent="saveCompany">
+          <UFormField label="Company Name" required class="mt-6">
             <UInput
               v-model="company.name"
               placeholder="SERP AI"
               class="w-full"
             />
           </UFormField>
-          <UFormField label="Domain" required class="mt-4 w-full">
+
+          <UFormField label="Domain" required>
             <UInput
               v-model="company.domain"
               placeholder="serp.ai"
               class="w-full"
             />
           </UFormField>
-          <UFormField label="Pricing" required class="mt-4 w-full">
+
+          <UFormField label="Description" required>
+            <UTextarea
+              v-model="company.description"
+              rows="5"
+              placeholder="A detailed overview of your company"
+              class="w-full"
+            />
+          </UFormField>
+
+          <UFormField label="Pricing Model" required>
             <UInputMenu
               v-model="company.pricing"
               :items="pricingOptions"
               class="w-full"
             />
           </UFormField>
-          <UFormField label="Category(s)" class="mt-4 w-full">
-            <UInputMenu
-              v-model="company.categories"
-              multiple
-              :items="categoryOptions"
-              class="w-full"
-            />
-          </UFormField>
-          <UFormField label="Tags" class="mt-4 w-full">
-            <UInput
-              v-model="company.tags"
-              placeholder="e.g. AI, SEO, Marketing"
-              class="w-full"
-            />
-          </UFormField>
-          <UFormField label="Company Logo" class="mt-8 w-full">
-            <input type="file" accept="image/*" @change="onImageSelected" >
-          </UFormField>
 
-          <UFormField label="One-Liner" required class="mt-8 w-full">
+          <UFormField label="One liner" required>
             <UInput
               v-model="company.oneLiner"
               placeholder="A short company tagline (max 75 characters)"
@@ -356,25 +352,46 @@
               maxlength="75"
             />
           </UFormField>
-          <div class="col-span-2">
-            <UFormField label="Description" required class="mt-4 w-full">
-              <UTextarea
-                v-model="company.description"
-                rows="5"
-                placeholder="A detailed overview of your company"
-                class="w-full"
-              />
-            </UFormField>
+
+          <UFormField label="Category(s)">
+            <UInputMenu
+              v-model="company.categories"
+              multiple
+              :items="categoryOptions"
+              class="w-full"
+            />
+          </UFormField>
+
+          <UFormField label="Tags">
+            <UInput
+              v-model="company.tags"
+              placeholder="e.g. AI, SEO, Marketing"
+              class="w-full"
+            />
+          </UFormField>
+
+          <UFormField label="Company Logo">
+            <div class="rounded border border-dashed border-gray-300 p-4">
+              <input
+                type="file"
+                accept="image/*"
+                class="w-full text-sm"
+                @change="onImageSelected"
+              >
+            </div>
+          </UFormField>
+
+          <div class="text-center">
+            <UButton
+              type="submit"
+              color="secondary"
+              size="xl"
+              :loading="loading"
+              :disabled="!isComplete"
+            >
+              Submit
+            </UButton>
           </div>
-          <UButton
-            color="secondary"
-            class="mt-4"
-            size="xl"
-            :loading="loading"
-            :disabled="!isComplete"
-            @click="saveCompany"
-            >Submit</UButton
-          >
         </form>
       </UCard>
     </UMain>

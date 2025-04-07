@@ -11,7 +11,7 @@
       },
       {
         label: 'Dashboard',
-        to: '/users/',
+        to: '/users/dashboard/',
         icon: 'i-lucide-user'
       }
     ],

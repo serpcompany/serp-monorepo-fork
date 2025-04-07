@@ -8,7 +8,8 @@
   const route = useRoute();
 
   const defaultExcludedRoutes = [
-    '/', // Root path
+    '/',
+    /^\/users\/.+/, // Matches any route under /users/
     /^\/[^/]+\/?$/ // Single-level routes like /about
   ] as const;
 

@@ -64,7 +64,7 @@ export default defineNuxtConfig({
           {
             label: 'Get Featured',
             icon: 'i-lucide-star',
-            to: '/users/featured/',
+            to: '/users/get-featured/',
             color: 'success'
           },
           {
