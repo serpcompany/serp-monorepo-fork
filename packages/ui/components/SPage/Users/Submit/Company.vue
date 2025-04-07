@@ -6,9 +6,6 @@
     navigateTo('/');
   }
 
-  const activeTab = ref('general');
-  const tabs = ref([{ label: 'General', value: 'general' }]);
-
   const company = ref({
     id: null,
     name: '',
@@ -307,217 +304,81 @@
 </script>
 
 <template>
-  <div class="p-4">
-    <div class="grid grid-cols-3 gap-4">
-      <!-- Left side column -->
-      <div class="col-span-1 space-y-4">
-        <!-- Waiting Line Card -->
-        <UCard>
-          <div v-if="!isPriority && existingForm">
-            <p class="text-sm text-neutral-500">
-              The current waiting time is > 30 days.
-            </p>
-            <p class="text-sm text-neutral-500">
-              Join the <b><i>priority queue</i></b> to get your company listed
-              within 24 hours.
-            </p>
-            <UButton
-              variant="outline"
-              class="mt-2"
-              @click="priorityQueueCheckout"
-              >Join the priority queue</UButton
-            >
-          </div>
-          <div v-else-if="isPriority">
-            <UBadge>Priority</UBadge>
-            <p class="text-sm text-neutral-500">
-              You are in the priority queue. Your company will be listed within
-              24 hours.
-            </p>
-          </div>
-        </UCard>
-
-        <!-- Completion Status Card -->
-        <UCard>
-          <div class="p-3">
-            <h3 class="text-lg font-medium">
-              {{ isComplete ? '✅ Complete' : '❌ Incomplete' }}
-            </h3>
-            <p class="mb-2 text-xs text-neutral-600">
-              Complete your company before launching it
-            </p>
-            <div class="grid grid-cols-2 gap-1">
-              <div
-                v-for="field in allFields"
-                :key="field.key"
-                class="flex items-center text-xs"
-              >
-                <span class="mr-1">{{
-                  company[field.key] && checkIfValidValue(company[field.key])
-                    ? '✅'
-                    : '❌'
-                }}</span>
-                <span>{{ field.label }}</span>
-              </div>
-            </div>
-          </div>
-        </UCard>
-
-        <!-- Company Card Preview -->
-        <UCard>
-          <div class="p-3">
-            <CompanyCard
-              :company="{
-                id: 0,
-                name: company.name,
-                slug: company.domain,
-                oneLiner: company.oneLiner,
-                categories: getCategories,
-                serplyLink: `https://${company.domain}?ref=serp.co&ref_type=adv`,
-                logo: company.logo
-              }"
+  <UPage>
+    <UMain>
+      <UCard>
+        <form @submit.prevent="saveCompany">
+          <UFormField label="Company Name" required class="w-full">
+            <UInput
+              v-model="company.name"
+              placeholder="SERP AI"
+              class="w-full"
             />
-          </div>
-        </UCard>
+          </UFormField>
+          <UFormField label="Domain" required class="mt-4 w-full">
+            <UInput
+              v-model="company.domain"
+              placeholder="serp.ai"
+              class="w-full"
+            />
+          </UFormField>
+          <UFormField label="Pricing" required class="mt-4 w-full">
+            <UInputMenu
+              v-model="company.pricing"
+              :items="pricingOptions"
+              class="w-full"
+            />
+          </UFormField>
+          <UFormField label="Category(s)" class="mt-4 w-full">
+            <UInputMenu
+              v-model="company.categories"
+              multiple
+              :items="categoryOptions"
+              class="w-full"
+            />
+          </UFormField>
+          <UFormField label="Tags" class="mt-4 w-full">
+            <UInput
+              v-model="company.tags"
+              placeholder="e.g. AI, SEO, Marketing"
+              class="w-full"
+            />
+          </UFormField>
+          <UFormField label="Company Logo" class="mt-8 w-full">
+            <input type="file" accept="image/*" @change="onImageSelected" >
+          </UFormField>
 
-        <!-- Action Buttons -->
-        <div class="flex space-x-2">
+          <UFormField label="One-Liner" required class="mt-8 w-full">
+            <UInput
+              v-model="company.oneLiner"
+              placeholder="A short company tagline (max 75 characters)"
+              class="w-full"
+              maxlength="75"
+            />
+          </UFormField>
+          <div class="col-span-2">
+            <UFormField label="Description" required class="mt-4 w-full">
+              <UTextarea
+                v-model="company.description"
+                rows="5"
+                placeholder="A detailed overview of your company"
+                class="w-full"
+              />
+            </UFormField>
+          </div>
           <UButton
-            type="primary"
+            color="secondary"
+            class="mt-4"
+            size="xl"
             :loading="loading"
             :disabled="!isComplete"
             @click="saveCompany"
-            >Save Company</UButton
+            >Submit</UButton
           >
-        </div>
-      </div>
-
-      <!-- Right side column (Tabbed Card) -->
-      <div class="col-span-2">
-        <UCard>
-          <UTabs
-            v-model="activeTab"
-            :items="tabs"
-            :content="false"
-            class="mb-3"
-          />
-          <TransitionGroup name="fade" tag="div">
-            <div v-if="activeTab === 'general'">
-              <form @submit.prevent="saveCompany">
-                <div class="grid grid-cols-2 gap-2">
-                  <UFormField
-                    label="Name"
-                    help="Enter your company name"
-                    required
-                    class="w-full"
-                  >
-                    <UInput
-                      v-model="company.name"
-                      placeholder="Enter your company name"
-                      class="w-full"
-                    />
-                  </UFormField>
-                  <UFormField
-                    label="Domain"
-                    help="Only put the domain, we assume all submitted companies are available at the HTTPS protocol"
-                    required
-                    class="w-full"
-                  >
-                    <UInput
-                      v-model="company.domain"
-                      placeholder="serp.co"
-                      class="w-full"
-                    />
-                  </UFormField>
-                  <UFormField
-                    label="Pricing"
-                    help="Select pricing type"
-                    required
-                    class="w-full"
-                  >
-                    <UInputMenu
-                      v-model="company.pricing"
-                      :items="pricingOptions"
-                      class="w-full"
-                    />
-                  </UFormField>
-                  <UFormField
-                    label="Category(s)"
-                    help="Select a category(s)"
-                    class="w-full"
-                  >
-                    <UInputMenu
-                      v-model="company.categories"
-                      multiple
-                      :items="categoryOptions"
-                      class="w-full"
-                    />
-                  </UFormField>
-                  <UFormField
-                    label="Tags"
-                    help="e.g. AI, SEO, Marketing"
-                    class="w-full"
-                  >
-                    <UInput
-                      v-model="company.tags"
-                      placeholder="e.g. AI, SEO, Marketing"
-                      class="w-full"
-                    />
-                  </UFormField>
-
-                  <div class="col-span-2">
-                    <UFormField
-                      label="Company Logo"
-                      help="Upload your company logo (image file)"
-                      class="w-full"
-                    >
-                      <input
-                        type="file"
-                        accept="image/*"
-                        @change="onImageSelected"
-                      >
-                    </UFormField>
-                  </div>
-
-                  <!-- Full-width fields -->
-                  <div class="col-span-2">
-                    <UFormField
-                      label="One-Liner"
-                      help="A short company tagline (one-liner)"
-                      required
-                      class="w-full"
-                    >
-                      <UInput
-                        v-model="company.oneLiner"
-                        placeholder="A short company tagline"
-                        class="w-full"
-                        maxlength="100"
-                      />
-                    </UFormField>
-                  </div>
-                  <div class="col-span-2">
-                    <UFormField
-                      label="Rich Description"
-                      help="Detailed overview of your company"
-                      required
-                      class="w-full"
-                    >
-                      <UTextarea
-                        v-model="company.description"
-                        rows="5"
-                        placeholder="Give a detailed overview of your company..."
-                        class="w-full"
-                      />
-                    </UFormField>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </TransitionGroup>
-        </UCard>
-      </div>
-    </div>
-  </div>
+        </form>
+      </UCard>
+    </UMain>
+  </UPage>
 </template>
 
 <style scoped>
