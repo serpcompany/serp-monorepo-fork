@@ -2,7 +2,9 @@
   // @ts-expect-error: Auto-imported from another layer
   const { loggedIn, user, clear } = useUserSession();
   const config = useRuntimeConfig();
-  const profileDropdownLinks = config.public.profileDropdownLinks || [];
+  const profileDropdownLinks = Array.isArray(config.public.profileDropdownLinks)
+    ? config.public.profileDropdownLinks
+    : [];
   const slideover = ref(false);
 
   interface MenuItem {
@@ -17,7 +19,7 @@
   const items = ref([
     [
       {
-        label: user?.value?.name,
+        label: user?.name,
         type: 'label'
       },
       {
@@ -55,13 +57,15 @@
 
 <template>
   <div v-if="loggedIn" class="relative">
-    <!-- Avatar trigger -->
-    <UAvatar
-      :src="user?.image"
-      role="button"
-      class="cursor-pointer transition-opacity hover:opacity-80"
-      @click="slideover = true"
-    />
+    <!-- Avatar trigger (without username) -->
+    <div>
+      <UAvatar
+        :src="user?.image"
+        role="button"
+        class="cursor-pointer transition-opacity hover:opacity-80"
+        @click="slideover = true"
+      />
+    </div>
 
     <!-- Slideover menu -->
     <USlideover
@@ -78,7 +82,7 @@
         <div class="flex w-full items-center gap-3 p-4">
           <UAvatar :src="user?.image" size="lg" />
           <div>
-            <div class="text-base font-semibold">{{ user?.value?.name }}</div>
+            <div class="text-base font-semibold">{{ user?.name }}</div>
           </div>
         </div>
       </template>
@@ -95,7 +99,7 @@
               <!-- Label items -->
               <div
                 v-if="item.type === 'label'"
-                class="px-4 py-2 text-sm font-semibold text-(--ui-text-highlighted)"
+                class="px-4 text-sm font-semibold text-(--ui-text-highlighted)"
               >
                 {{ item.label }}
               </div>

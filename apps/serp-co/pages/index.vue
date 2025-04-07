@@ -33,8 +33,8 @@
   <div>
     <!-- hero -->
     <SHero
-      headline="Grow Your Business With Expert Advice "
-      subheadline="Discover top-rated companies and tools for your business."
+      headline="Grow Confidently With The Best Resources"
+      subheadline="Discover top-rated companies for all your online business needs."
       :show-search-bar="false"
       :show-buttons="false"
     />

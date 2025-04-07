@@ -111,7 +111,8 @@ exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
           <!--v-if-->
         </button>
         <div class="relative">
-          <!-- Avatar trigger --><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-8 text-base cursor-pointer transition-opacity hover:opacity-80"><span class="font-medium leading-none text-(--ui-text-muted) truncate">&nbsp;</span></span><!-- Slideover menu -->
+          <!-- Avatar trigger (without username) -->
+          <div><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-8 text-base cursor-pointer transition-opacity hover:opacity-80"><span class="font-medium leading-none text-(--ui-text-muted) truncate">&nbsp;</span></span></div><!-- Slideover menu -->
           <!--v-if-->
           <!--teleport start-->
           <!--teleport end-->
@@ -156,7 +157,8 @@ exports[`SHeader Snapshot > renders with empty navigation items correctly 1`] = 
           <!--v-if-->
         </button>
         <div class="relative">
-          <!-- Avatar trigger --><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-8 text-base cursor-pointer transition-opacity hover:opacity-80"><span class="font-medium leading-none text-(--ui-text-muted) truncate">&nbsp;</span></span><!-- Slideover menu -->
+          <!-- Avatar trigger (without username) -->
+          <div><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-8 text-base cursor-pointer transition-opacity hover:opacity-80"><span class="font-medium leading-none text-(--ui-text-muted) truncate">&nbsp;</span></span></div><!-- Slideover menu -->
           <!--v-if-->
           <!--teleport start-->
           <!--teleport end-->
