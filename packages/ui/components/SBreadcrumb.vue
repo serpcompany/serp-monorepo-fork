@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { useRoute } from 'vue-router';
-
   const props = defineProps<{
     excludedRoutes?: (string | RegExp)[];
   }>();
@@ -24,6 +22,7 @@
   });
 
   const breadcrumbItems = computed(() => {
+    // @ts-expect-error: Auto-imported from another layer
     return useBreadcrumbItems({
       schemaOrg: true,
       overrides: [

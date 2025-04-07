@@ -71,12 +71,12 @@ export default defineNuxtConfig({
           {
             label: 'Submissions',
             icon: 'i-lucide-file-text',
-            to: '/users/submissions/'
+            to: '/users/manage/submissions/'
           },
           {
             label: 'Billing',
             icon: 'i-lucide-credit-card',
-            to: '/users/billing/'
+            to: '/users/manage/billing/'
           }
         ]
       ],
