@@ -1,8 +1,8 @@
 // server/api/reserve-spot.ts
 import { db } from '@serp/utils/server/api/db';
 import {
-    companyCache,
-    companyFeaturedSubscription
+  companyCache,
+  companyFeaturedSubscription
 } from '@serp/utils/server/api/db/schema';
 import { and, eq, sql } from 'drizzle-orm';
 import { companyCategoryCache } from '../db/schema';
