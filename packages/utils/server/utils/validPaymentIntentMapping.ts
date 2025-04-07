@@ -15,11 +15,14 @@ const slack = new WebClient(slackToken);
 
 async function sendSlackNotification(message, slackChannel = slackChannel_) {
   try {
-    // await slack.chat.postMessage({
-    //     channel: slackChannel,
-    //     text: message,
-    // });
-    console.log('Slack notification sent', { message, slackChannel });
+    if (process.env.NODE_ENV === 'production') {
+      await slack.chat.postMessage({
+        channel: slackChannel,
+        text: message
+      });
+    } else {
+      console.log('Slack notification sent', { message, slackChannel });
+    }
   } catch (error) {
     console.error('Failed to send Slack notification', {
       error: error.message
@@ -57,7 +60,7 @@ async function processCompanyFeatured(type: string, data?: unknown) {
     .insert(payment)
     .values({
       customer: data.metadata.customerId,
-      type: 'company-priority-queue',
+      type: data.metadata.type,
       data: JSON.stringify(data)
     })
     .returning({
@@ -87,7 +90,13 @@ async function processCompanyFeatured(type: string, data?: unknown) {
       .update(companyFeaturedSubscription)
       .set({
         lastPaymentFk: paymentId,
-        isActive: true
+        isActive: data.status === 'active',
+        reservationExpiresAt: null,
+        cancelAtPeriodEnd: data.cancel_at_period_end,
+        currentPeriodEnd: new Date(data.current_period_end * 1000),
+        currentPeriodStart: new Date(data.current_period_start * 1000),
+        endedAt: data.ended_at ? new Date(data.ended_at * 1000) : null,
+        cancelAt: data.cancel_at ? new Date(data.cancel_at * 1000) : null
       })
       .where(
         and(
@@ -98,6 +107,12 @@ async function processCompanyFeatured(type: string, data?: unknown) {
         )
       )
       .execute();
+
+    // Ping slack
+    const placement = type.split('-')[2];
+    await sendSlackNotification(
+      `💸 Featured listing updated for category '${category.name}' (spot ${placement}) made by ${data.metadata.email} for domain ${company.domain}`
+    );
   } else {
     // Insert new subscription
     await db
@@ -107,16 +122,22 @@ async function processCompanyFeatured(type: string, data?: unknown) {
         categoryFk: data.metadata.secondaryId != '0' ? category.id : null,
         lastPaymentFk: paymentId,
         placement: type.split('-')[2],
-        isActive: true,
-        email: data.metadata.email
+        isActive: data.status === 'active',
+        email: data.metadata.email,
+        cancelAtPeriodEnd: data.cancel_at_period_end,
+        currentPeriodEnd: new Date(data.current_period_end * 1000),
+        currentPeriodStart: new Date(data.current_period_start * 1000),
+        endedAt: data.ended_at ? new Date(data.ended_at * 1000) : null,
+        cancelAt: data.cancel_at ? new Date(data.cancel_at * 1000) : null
       })
       .execute();
-  }
 
-  return {
-    company,
-    category
-  };
+    // Ping slack
+    const placement = type.split('-')[2];
+    await sendSlackNotification(
+      `💸 New featured listing for category '${category.name}' (spot ${placement}) made by ${data.metadata.email} for domain ${company.domain}`
+    );
+  }
 }
 
 export async function processSuccessfulPayment(
@@ -127,10 +148,10 @@ export async function processSuccessfulPayment(
 ) {
   if (type === 'company-priority-queue') {
     if (getIsValidOnly) {
-      return true;
+      return process.env.COMPANY_PRIORITY_QUEUE_PRICE ? true : false;
     } else if (getInfo) {
       return {
-        amount: 99,
+        amount: process.env.COMPANY_PRIORITY_QUEUE_PRICE,
         currency: 'usd',
         recurring: false,
         description: 'Priority queue listing'
@@ -171,99 +192,74 @@ export async function processSuccessfulPayment(
     );
   } else if (type === 'company-featured-1') {
     if (getIsValidOnly) {
-      return true;
-    } else if (getInfo) {
+      return process.env.COMPANY_FEATURED_1_PRICE_ID ? true : false;
+    } else if (getInfo && process.env.COMPANY_FEATURED_1_PRICE_ID) {
       return {
-        amount: 500,
+        amount: process.env.COMPANY_FEATURED_1_PRICE,
         currency: 'usd',
         recurring: true,
-        paymentId: 'price_1R96du2NSSG073Y63ztzrmOP',
+        paymentId: process.env.COMPANY_FEATURED_1_PRICE_ID,
         description: 'Featured listing (spot 1)'
       };
     }
 
-    const { company, category } = await processCompanyFeatured(type, data);
-
-    // Ping slack
-    await sendSlackNotification(
-      `💸 New featured listing for category '${category.name}' (spot 1) made by ${data.metadata.email} for domain ${company.domain}`
-    );
+    await processCompanyFeatured(type, data);
   } else if (type === 'company-featured-2') {
     if (getIsValidOnly) {
-      return true;
-    } else if (getInfo) {
+      return process.env.COMPANY_FEATURED_2_PRICE_ID ? true : false;
+    } else if (getInfo && process.env.COMPANY_FEATURED_2_PRICE_ID) {
       return {
-        amount: 400,
+        amount: process.env.COMPANY_FEATURED_2_PRICE,
         currency: 'usd',
         recurring: true,
-        paymentId: 'price_1R96du2NSSG073Y63ztzrmOP',
-        description: 'Featured listing  (spot 2)'
+        paymentId: process.env.COMPANY_FEATURED_2_PRICE_ID,
+        description: 'Featured listing (spot 2)'
       };
     }
 
-    const { company, category } = await processCompanyFeatured(type, data);
-
-    // Ping slack
-    await sendSlackNotification(
-      `💸 New featured listing for category '${category.name}' (spot 2) made by ${data.metadata.email} for domain ${company.domain}`
-    );
+    await processCompanyFeatured(type, data);
   } else if (type === 'company-featured-3') {
     if (getIsValidOnly) {
-      return true;
-    } else if (getInfo) {
+      return process.env.COMPANY_FEATURED_3_PRICE_ID ? true : false;
+    } else if (getInfo && process.env.COMPANY_FEATURED_3_PRICE_ID) {
       return {
-        amount: 300,
+        amount: process.env.COMPANY_FEATURED_3_PRICE,
         currency: 'usd',
         recurring: true,
-        paymentId: 'price_1R96du2NSSG073Y63ztzrmOP',
+        paymentId: process.env.COMPANY_FEATURED_3_PRICE_ID,
         description: 'Featured listing (spot 3)'
       };
     }
 
-    const { company, category } = await processCompanyFeatured(type, data);
-
-    // Ping slack
-    await sendSlackNotification(
-      `💸 New featured listing for category '${category.name}' (spot 3) made by ${data.metadata.email} for domain ${company.domain}`
-    );
+    await processCompanyFeatured(type, data);
   } else if (type === 'company-featured-4') {
     if (getIsValidOnly) {
-      return true;
-    } else if (getInfo) {
+      return process.env.COMPANY_FEATURED_4_PRICE_ID ? true : false;
+    } else if (getInfo && process.env.COMPANY_FEATURED_4_PRICE_ID) {
       return {
-        amount: 200,
+        amount: process.env.COMPANY_FEATURED_4_PRICE,
         currency: 'usd',
         recurring: true,
-        paymentId: 'price_1R96du2NSSG073Y63ztzrmOP',
+        paymentId: process.env.COMPANY_FEATURED_4_PRICE_ID,
         description: 'Featured listing (spot 4)'
       };
     }
 
-    const { company, category } = await processCompanyFeatured(type, data);
-
-    // Ping slack
-    await sendSlackNotification(
-      `💸 New featured listing for category '${category.name}' (spot 4) made by ${data.metadata.email} for domain ${company.domain}`
-    );
+    await processCompanyFeatured(type, data);
   } else if (type === 'company-featured-5') {
     if (getIsValidOnly) {
-      return true;
-    } else if (getInfo) {
+      return process.env.COMPANY_FEATURED_5_PRICE_ID ? true : false;
+    } else if (getInfo && process.env.COMPANY_FEATURED_5_PRICE_ID) {
       return {
-        amount: 100,
+        amount: process.env.COMPANY_FEATURED_5_PRICE,
         currency: 'usd',
         recurring: true,
-        paymentId: 'price_1R96du2NSSG073Y63ztzrmOP',
+        paymentId: process.env.COMPANY_FEATURED_5_PRICE_ID,
         description: 'Featured listing (spot 5)'
       };
     }
 
-    const { company, category } = await processCompanyFeatured(type, data);
-
-    // Ping slack
-    await sendSlackNotification(
-      `💸 New featured listing for category '${category.name}' (spot 5) made by ${data.metadata.email} for domain ${company.domain}`
-    );
+    await processCompanyFeatured(type, data);
   } else {
     if (getIsValidOnly) {
       return false;

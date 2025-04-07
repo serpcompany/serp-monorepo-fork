@@ -1,7 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import ComponentRender from '../../../../componentRender';
-import PurchaseIndex from '../../../../../components/SPage/Users/Purchase/Index.vue';
-import { mockNuxtImport } from '@nuxt/test-utils/runtime';
+import Purchase from '../../../../components/SPage/Users/Purchase.vue';
+import ComponentRender from '../../../componentRender';
 
 // Global route mock so we can simulate different query parameters
 let routeMock = { query: {} };
@@ -11,7 +10,7 @@ globalThis.useRoute = () => routeMock;
 const routerMock = { push: vi.fn() };
 globalThis.useRouter = () => routerMock;
 
-describe('SPage/Users/Purchase/Index Snapshot', () => {
+describe('SPage/Users/Purchase Snapshot', () => {
   const scenarios: [string, { query: Record<string, unknown> }][] = [
     [
       'renders success state correctly',
@@ -32,9 +31,9 @@ describe('SPage/Users/Purchase/Index Snapshot', () => {
     // Update our global route mock for the current scenario
     routeMock = { query };
     const html = await ComponentRender(
-      `SPage/Users/Purchase/Index ${desc}`,
+      `SPage/Users/Purchase ${desc}`,
       {},
-      PurchaseIndex
+      Purchase
     );
     expect(html).toMatchSnapshot();
   });

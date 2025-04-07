@@ -1,3 +1,3 @@
 <template>
-  <SPageUsersPurchaseIndex />
+  <SPageUsersPurchase />
 </template>

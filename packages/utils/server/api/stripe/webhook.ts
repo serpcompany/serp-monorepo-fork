@@ -30,9 +30,13 @@ export default defineEventHandler(async (event) => {
   }
 
   switch (rawBody.type) {
-    case 'customer.subscription.updated': {
+    case 'customer.subscription.created':
+    case 'customer.subscription.updated':
+    case 'customer.subscription.deleted':
+    case 'customer.subscription.resumed':
+    case 'customer.subscription.paused': {
       const subscription = rawBody.data.object;
-      subscription.mode = 'customer.subscription.updated';
+      subscription.mode = rawBody.type;
       processSuccessfulPayment(
         subscription.metadata.type,
         false,
@@ -44,11 +48,11 @@ export default defineEventHandler(async (event) => {
     case 'payment_intent.succeeded': {
       const paymentIntent = rawBody.data.object;
       if (paymentIntent.invoice) {
-        // subscriptions are handled in the customer.subscription.updated event
+        // subscriptions are handled in the customer.subscription.* events
         event.node.res.statusCode = 200;
         return 'Webhook received';
       }
-      paymentIntent.mode = 'payment_intent.succeeded';
+      paymentIntent.mode = rawBody.type;
       processSuccessfulPayment(
         paymentIntent.metadata.type,
         false,
