@@ -66,6 +66,7 @@
                 :alt="`${name} logo`"
                 class="mr-2 h-16 object-contain"
               />
+              <!-- Use flex-grow to allow this column to expand -->
               <div class="flex-grow">
                 <h1 class="text-xl font-bold text-(--ui-primary) sm:text-3xl">
                   {{ name }}
@@ -75,14 +76,15 @@
             </div>
 
             <!-- Action buttons -->
+            <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
             <div
-              class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"
+              class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"
             >
               <slot name="upvote"></slot>
               <NuxtLink
                 :href="serplyLink"
                 target="_blank"
-                class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+                class="flex h-[42px] w-auto items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
               >
                 Visit Website
                 <svg
@@ -160,7 +162,7 @@
           <NuxtLink
             :href="serplyLink"
             target="_blank"
-            class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+            class="flex h-[42px] w-full items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
           >
             Visit Website
             <svg
