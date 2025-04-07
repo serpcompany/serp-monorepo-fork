@@ -305,8 +305,8 @@
 
 <template>
   <UPage class="flex min-h-screen items-center justify-center">
-    <UMain>
-      <UCard class="mx-auto max-w-2xl rounded-lg p-8 shadow-lg">
+    <UMain class="py-20">
+      <UCard class="mx-auto max-w-2xl p-8">
         <UHeading level="2" class="mb-6 text-center text-2xl font-semibold">
           Submit Company
         </UHeading>
@@ -377,7 +377,7 @@
                 accept="image/*"
                 class="w-full text-sm"
                 @change="onImageSelected"
-              >
+              />
             </div>
           </UFormField>
 

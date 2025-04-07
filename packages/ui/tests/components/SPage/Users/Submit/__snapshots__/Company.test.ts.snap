@@ -4,8 +4,8 @@ exports[`SPage/Users/Submit/Company Snapshot > renders Existing Submission (with
 "<div data-v-8dd619f3="" class="flex-col lg:grid lg:grid-cols-10 lg:gap-10 flex min-h-screen items-center justify-center">
   <!--v-if-->
   <div class="lg:col-span-10">
-    <main data-v-8dd619f3="" class="min-h-[calc(100vh-var(--ui-header-height))]">
-      <div data-v-8dd619f3="" class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mx-auto max-w-2xl rounded-lg p-8 shadow-lg">
+    <main data-v-8dd619f3="" class="min-h-[calc(100vh-var(--ui-header-height))] py-20">
+      <div data-v-8dd619f3="" class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mx-auto max-w-2xl p-8">
         <!--v-if-->
         <div class="p-4 sm:p-6">
           <uheading data-v-8dd619f3="" level="2" class="mb-6 text-center text-2xl font-semibold"> Submit Company </uheading>
@@ -149,8 +149,8 @@ exports[`SPage/Users/Submit/Company Snapshot > renders New Submission (no id) co
 "<div data-v-8dd619f3="" class="flex-col lg:grid lg:grid-cols-10 lg:gap-10 flex min-h-screen items-center justify-center">
   <!--v-if-->
   <div class="lg:col-span-10">
-    <main data-v-8dd619f3="" class="min-h-[calc(100vh-var(--ui-header-height))]">
-      <div data-v-8dd619f3="" class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mx-auto max-w-2xl rounded-lg p-8 shadow-lg">
+    <main data-v-8dd619f3="" class="min-h-[calc(100vh-var(--ui-header-height))] py-20">
+      <div data-v-8dd619f3="" class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mx-auto max-w-2xl p-8">
         <!--v-if-->
         <div class="p-4 sm:p-6">
           <uheading data-v-8dd619f3="" level="2" class="mb-6 text-center text-2xl font-semibold"> Submit Company </uheading>

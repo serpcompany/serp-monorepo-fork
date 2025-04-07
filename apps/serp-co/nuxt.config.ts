@@ -58,10 +58,6 @@ export default defineNuxtConfig({
       profileDropdownLinks: [
         [
           {
-            label: 'Actions',
-            type: 'label'
-          },
-          {
             label: 'Get Featured',
             icon: 'i-lucide-star',
             to: '/users/get-featured/',
@@ -71,22 +67,16 @@ export default defineNuxtConfig({
             label: 'Submit',
             icon: 'i-lucide-plus',
             to: '/users/submit/company/'
-          }
-        ],
-        [
-          {
-            label: 'Manage',
-            type: 'label'
           },
           {
             label: 'Submissions',
             icon: 'i-lucide-file-text',
-            to: '/users/submissions/'
+            to: '/users/manage/submissions/'
           },
           {
             label: 'Billing',
             icon: 'i-lucide-credit-card',
-            to: '/users/billing/'
+            to: '/users/manage/billing/'
           }
         ]
       ],
