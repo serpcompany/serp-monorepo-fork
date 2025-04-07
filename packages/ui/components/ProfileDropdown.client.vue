@@ -39,9 +39,9 @@
     ]
   ]);
 
-  function handleItemClick(item: MenuItem): void {
+  function handleItemClick(item: MenuItem, event: Event): void {
     if (item.onSelect) {
-      item.onSelect(new Event('click'));
+      item.onSelect(event);
       return;
     }
     if (item.to) {
