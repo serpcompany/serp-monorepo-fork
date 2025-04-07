@@ -46,7 +46,13 @@ export const companyFeaturedSubscription = stripeSchema.table(
     categoryFk: integer('category_fk'),
     companyFk: integer('company_fk'),
     isActive: boolean('is_active').notNull().default(false),
-    email: varchar('email', { length: 255 }).notNull()
+    email: varchar('email', { length: 255 }).notNull(),
+    cancelAtPeriodEnd: boolean('cancel_at_period_end').notNull(),
+    currentPeriodEnd: timestamp('current_period_end'),
+    currentPeriodStart: timestamp('current_period_start'),
+    reservationExpiresAt: timestamp('reservation_expires_at'),
+    endedAt: timestamp('ended_at'),
+    cancelAt: timestamp('cancel_at')
   }
 );
 

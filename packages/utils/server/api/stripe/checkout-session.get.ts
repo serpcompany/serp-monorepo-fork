@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
   } catch (error) {
     throw createError({
       statusCode: 500,
-      statusMessage: 'Failed to get checkout session'
+      statusMessage: `Failed to get checkout session: ${error.message}`
     });
   }
 });

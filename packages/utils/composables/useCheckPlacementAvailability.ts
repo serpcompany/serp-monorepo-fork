@@ -5,10 +5,10 @@ export const useCheckPlacementAvailability = async (
 ) => {
   if (!categorySlug || categorySlug === 'all') {
     return useFetchWithCache(
-      `/company/check-if-valid-feature-placement?placement=${placement}&domain=${domain}`
+      `/company/reserve-featured-spot?placement=${placement}&domain=${domain}`
     );
   }
   return useFetchWithCache(
-    `/company/check-if-valid-feature-placement?placement=${placement}&domain=${domain}&categorySlug=${categorySlug}`
+    `/company/reserve-featured-spot?placement=${placement}&domain=${domain}&categorySlug=${categorySlug}`
   );
 };

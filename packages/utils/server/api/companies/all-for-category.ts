@@ -4,7 +4,7 @@ import {
   companyCategoryCache,
   companyFeaturedSubscription
 } from '@serp/utils/server/api/db/schema';
-import { and, eq, isNull, sql } from 'drizzle-orm';
+import { and, eq, isNull, or, sql } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
   const { categorySlug } = getQuery(event);
@@ -34,7 +34,8 @@ export default defineEventHandler(async (event) => {
   const usedPlacementsAndDomains = await db
     .select({
       placement: companyFeaturedSubscription.placement,
-      domain: companyCache.domain
+      domain: companyCache.domain,
+      reservationExpiresAt: companyFeaturedSubscription.reservationExpiresAt
     })
     .from(companyFeaturedSubscription)
     .leftJoin(
@@ -47,7 +48,10 @@ export default defineEventHandler(async (event) => {
     )
     .where(
       and(
-        eq(companyFeaturedSubscription.isActive, true),
+        or(
+          eq(companyFeaturedSubscription.isActive, true),
+          sql`(${companyFeaturedSubscription.reservationExpiresAt} IS NOT NULL AND ${companyFeaturedSubscription.reservationExpiresAt} > NOW())`
+        ),
         categorySlug
           ? eq(companyCategoryCache.slug, categorySlug)
           : isNull(companyCategoryCache.slug)

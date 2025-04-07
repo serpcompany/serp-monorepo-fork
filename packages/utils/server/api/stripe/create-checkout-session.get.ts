@@ -30,8 +30,8 @@ export default defineEventHandler(async (event) => {
     type,
     id,
     secondaryId,
-    successRoute = '/purchase?success=true',
-    cancelRoute = '/purchase?cancel=true'
+    successRoute = '/users/purchase?success=true',
+    cancelRoute = '/users/purchase?cancel=true'
   } = getQuery(event);
   const { amount, currency, description, recurring, paymentId } =
     await processSuccessfulPayment(type as string, false, true);
