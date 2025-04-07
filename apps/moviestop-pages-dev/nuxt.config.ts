@@ -22,12 +22,6 @@ export default defineNuxtConfig({
   ui: {
     colorMode: true
   },
-  sitemap: {
-    enabled: false
-  },
-  robots: {
-    enabled: false
-  },
   uiPro: {
     license: process.env.NUXT_UI_PRO_LICENSE
   },
