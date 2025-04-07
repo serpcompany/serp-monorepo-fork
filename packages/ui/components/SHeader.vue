@@ -25,12 +25,17 @@
             <UNavigationMenu
               aria-label="Main navigation"
               orientation="horizontal"
-              highlight
+              color="primary"
+              highlight="true"
               :items="headerNavItems"
               :ui="{
+                link: 'text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300',
+                item: 'text-primary-500 dark:text-primary-300',
+                linkLabel: 'text-primary-500 dark:text-primary-200',
                 content: 'absolute top-0',
                 list: 'flex',
                 childList: 'grid grid-cols-1',
+                triggerIcon: 'text-primary',
                 viewportWrapper:
                   'absolute top-full translate-x-[var(--radix-navigation-menu-viewport-position-x)]',
                 viewport:
