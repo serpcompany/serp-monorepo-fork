@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
-"<header>
+"<header class="bg-background">
   <div>
     <div class="flex h-16 items-center justify-between">
       <!-- Logo on left -->
@@ -34,7 +34,7 @@ exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
               </ul>
             </div>
             <!--v-if-->
-            <div class="left-0 flex w-full justify-center absolute top-full translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
+            <div class="left-0 flex w-full justify-center absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
               <!--v-if-->
               <!---->
             </div>
@@ -60,7 +60,7 @@ exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
 `;
 
 exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
-"<header>
+"<header class="bg-background">
   <div>
     <div class="flex h-16 items-center justify-between">
       <!-- Logo on left -->
@@ -93,7 +93,7 @@ exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
               </ul>
             </div>
             <!--v-if-->
-            <div class="left-0 flex w-full justify-center absolute top-full translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
+            <div class="left-0 flex w-full justify-center absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
               <!--v-if-->
               <!---->
             </div>
@@ -121,7 +121,7 @@ exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
 `;
 
 exports[`SHeader Snapshot > renders with empty navigation items correctly 1`] = `
-"<header>
+"<header class="bg-background">
   <div>
     <div class="flex h-16 items-center justify-between">
       <!-- Logo on left -->
@@ -135,7 +135,7 @@ exports[`SHeader Snapshot > renders with empty navigation items correctly 1`] = 
           <!---->
           <!---->
           <nav aria-label="Main" data-orientation="horizontal" dir="ltr" data-reka-navigation-menu="" data-collapsed="false" class="relative flex gap-1.5 [&amp;>div]:min-w-0 items-center justify-between">
-            <div class="left-0 flex w-full justify-center absolute top-full translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
+            <div class="left-0 flex w-full justify-center absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
               <!--v-if-->
               <!---->
             </div>

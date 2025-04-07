@@ -26,6 +26,20 @@
 
   const header = ref(null);
   const isScrolled = ref(false);
+
+  // Add proper Nuxt-friendly scroll detection
+  onMounted(() => {
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 0;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+  });
 </script>
 
 <template>
@@ -36,8 +50,9 @@
       :class="{
         'py-2': isScrolled,
         'py-2 sm:py-2': !isScrolled,
-        'fixed top-0 left-0 z-50 w-full': isScrolled
+        'sticky top-16 left-0 w-full': isScrolled
       }"
+      style="z-index: 10"
     >
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <!-- header top -->

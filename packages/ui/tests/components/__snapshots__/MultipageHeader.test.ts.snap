@@ -2,7 +2,7 @@
 
 exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+  <header class="bg-[var(--ui-bg)] py-2 sm:py-2" style="z-index: 10;">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- header top -->
       <div class="flex flex-col items-center justify-between sm:flex-row">
@@ -33,7 +33,7 @@ exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
 
 exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+  <header class="bg-[var(--ui-bg)] py-2 sm:py-2" style="z-index: 10;">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- header top -->
       <div class="flex flex-col items-center justify-between sm:flex-row">
@@ -64,7 +64,7 @@ exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = 
 
 exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+  <header class="bg-[var(--ui-bg)] py-2 sm:py-2" style="z-index: 10;">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- header top -->
       <div class="flex flex-col items-center justify-between sm:flex-row">
@@ -93,7 +93,7 @@ exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`
 
 exports[`MultipageHeader Snapshot > renders with upvote slot correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="bg-[var(--ui-bg)] py-2 sm:py-2">
+  <header class="bg-[var(--ui-bg)] py-2 sm:py-2" style="z-index: 10;">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
       <!-- header top -->
       <div class="flex flex-col items-center justify-between sm:flex-row">
