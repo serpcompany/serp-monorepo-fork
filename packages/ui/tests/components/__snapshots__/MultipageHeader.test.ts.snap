@@ -14,14 +14,14 @@ exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
               <h1 class="text-xl font-bold text-(--ui-primary) sm:text-3xl">Music Header</h1><span class="text-xs"></span>
             </div>
           </div><!-- Action buttons -->
-          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg></a></div>
         </div><!-- Navigation for non-scrolled state -->
         <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
-          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#home" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Home</a><a href="#about" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">About</a><a href="#contact" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Contact</a></nav>
+          <nav aria-label="page sections" class="flex space-x-4 whitespace-nowrap"><a href="#home" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Home</a><a href="#about" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">About</a><a href="#contact" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Contact</a></nav>
         </div>
       </div>
     </div>
@@ -43,14 +43,14 @@ exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = 
               <h1 class="text-xl font-bold text-(--ui-primary) sm:text-3xl">Music Header</h1><span class="text-xs"></span>
             </div>
           </div><!-- Action buttons -->
-          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg></a></div>
         </div><!-- Navigation for non-scrolled state -->
         <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
-          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"></nav>
+          <nav aria-label="page sections" class="flex space-x-4 whitespace-nowrap"></nav>
         </div>
       </div>
     </div>
@@ -71,14 +71,14 @@ exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`
               <h1 class="text-xl font-bold text-(--ui-primary) sm:text-3xl">Music Header</h1><span class="text-xs">One liner test</span>
             </div>
           </div><!-- Action buttons -->
-          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg></a></div>
         </div><!-- Navigation for non-scrolled state -->
         <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
-          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#home" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Home</a><a href="#about" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">About</a><a href="#contact" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Contact</a></nav>
+          <nav aria-label="page sections" class="flex space-x-4 whitespace-nowrap"><a href="#home" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Home</a><a href="#about" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">About</a><a href="#contact" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Contact</a></nav>
         </div>
       </div>
     </div>
@@ -100,14 +100,14 @@ exports[`MultipageHeader Snapshot > renders with upvote slot correctly 1`] = `
               <h1 class="text-xl font-bold text-(--ui-primary) sm:text-3xl">Music Header</h1><span class="text-xs"></span>
             </div>
           </div><!-- Action buttons -->
-          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">&lt;button&gt;Upvote&lt;/button&gt;<a rel="noopener noreferrer" target="_blank" class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="flex w-full flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">&lt;button&gt;Upvote&lt;/button&gt;<a rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg></a></div>
         </div><!-- Navigation for non-scrolled state -->
         <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
-          <nav aria-label="page sections" class="flex space-x-4 border-t border-b whitespace-nowrap"><a href="#home" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Home</a><a href="#about" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">About</a><a href="#contact" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Contact</a></nav>
+          <nav aria-label="page sections" class="flex space-x-4 whitespace-nowrap"><a href="#home" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Home</a><a href="#about" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">About</a><a href="#contact" class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base">Contact</a></nav>
         </div>
       </div>
     </div>

@@ -88,10 +88,7 @@
 <template>
   <div class="flex w-full items-center sm:w-auto">
     <UButton
-      class="flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800"
-      :class="{
-        'text-blue-500 dark:text-blue-400': localUpvotes.includes(user?.email)
-      }"
+      class="bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-100 dark:disabled:text-white"
       :disabled="loading"
       @click="upvote"
     >
@@ -99,20 +96,7 @@
         v-if="loading"
         class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent"
       ></span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-chevron-up"
-      >
-        <path d="m18 15-6-6-6 6" />
-      </svg>
+      <span v-else class="text-xl">👍</span>
       <span>Upvotes {{ localUpvotes.length }}</span>
     </UButton>
   </div>

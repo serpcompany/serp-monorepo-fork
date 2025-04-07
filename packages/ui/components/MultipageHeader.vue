@@ -82,7 +82,7 @@
               <NuxtLink
                 :href="serplyLink"
                 target="_blank"
-                class="flex w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+                class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
               >
                 Visit Website
                 <svg
@@ -109,7 +109,7 @@
           <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
             <nav
               aria-label="page sections"
-              class="flex space-x-4 border-t border-b whitespace-nowrap"
+              class="flex space-x-4 whitespace-nowrap"
             >
               <NuxtLink
                 v-for="section in sections"
@@ -160,7 +160,7 @@
           <NuxtLink
             :href="serplyLink"
             target="_blank"
-            class="flex items-center justify-center gap-1 rounded-full bg-black px-3 py-1 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+            class="flex h-[42px] w-full items-center justify-center gap-2 rounded-full bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"
           >
             Visit Website
             <svg
