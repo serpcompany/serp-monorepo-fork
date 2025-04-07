@@ -217,8 +217,7 @@
 
             <div class="space-y-5 py-4">
               <p class="mb-4 text-gray-500 dark:text-gray-400">
-                Feature your company on the homepage and in search results for
-                increased visibility.
+                Premium placement on pages that drive leads for your brand.
               </p>
 
               <UFormField
@@ -235,31 +234,23 @@
                 />
               </UFormField>
 
-              <UFormField
-                label="Company"
-                help="Select a company to feature"
-                class="w-full"
-              >
+              <UFormField label="Company" class="w-full">
                 <UInputMenu
                   v-model="form.company"
                   :items="companyOptions"
                   :disabled="disabled"
                   class="w-full"
-                  placeholder="Select a company"
+                  placeholder="Select company"
                 />
               </UFormField>
 
-              <UFormField
-                label="Placement"
-                help="Select where you want your company featured"
-                class="w-full"
-              >
+              <UFormField label="Position" class="w-full">
                 <UInputMenu
                   v-model="form.placement"
                   :items="availablePlacements"
                   :disabled="disabled"
                   class="w-full"
-                  placeholder="Select a placement"
+                  placeholder="Position you want your company featured in"
                 />
               </UFormField>
             </div>

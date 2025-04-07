@@ -8,6 +8,11 @@
       {
         label: user?.value?.name,
         type: 'label'
+      },
+      {
+        label: 'Dashboard',
+        to: '/users/dashboard/',
+        icon: 'i-lucide-user'
       }
     ],
     ...profileDropdownLinks,

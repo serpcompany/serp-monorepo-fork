@@ -13,11 +13,8 @@ exports[`SPageArtistSingle Snapshot > renders complete artist with upvotes and a
           </div>
         </div>
         <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto">
-          <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm text-(--ui-bg) bg-(--ui-primary) disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium transition-colors hover:bg-neutral-100 disabled:opacity-75 sm:w-auto dark:border-neutral-600 dark:hover:bg-neutral-800">
-              <!--v-if-->
-              <!--v-if--><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up">
-                <path d="m18 15-6-6-6 6"></path>
-              </svg><span>Upvotes 1</span>
+          <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
+              <!--v-if--><span class="text-xl">👍</span><span>Upvotes 1</span>
               <!--v-if-->
             </button></div><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
             <!--v-if-->
