@@ -55,7 +55,6 @@ export default defineEventHandler(async (event) => {
 
     return results.length ? results : [];
   } catch (error) {
-    console.error('Error fetching company submissions:', error);
     return {
       status: error.statusCode || 500,
       message: error.message
