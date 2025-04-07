@@ -68,7 +68,7 @@
       :name="data.name"
       :one-liner="data.oneLiner"
       :sections="sections"
-      class="bg-background sticky top-0 z-10 transition-all duration-300"
+      class="bg-background sticky top-0 transition-all duration-300"
       :image="data.logo"
       :serply-link="data.serplyLink"
     >

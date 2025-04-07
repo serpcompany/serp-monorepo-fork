@@ -12,6 +12,16 @@ export default defineNuxtConfig({
     '@bg-dev/nuxt-s3'
   ],
   css: ['~/assets/css/main.css'],
+  stripe: {
+    server: {
+      key: process.env.STRIPE_SECRET_KEY,
+      options: {}
+    },
+    client: {
+      key: process.env.STRIPE_API_KEY,
+      options: {}
+    }
+  },
   s3: {
     driver: 's3',
     bucket: process.env.CLOUDFLARE_R2_BUCKET,
@@ -45,6 +55,31 @@ export default defineNuxtConfig({
       apiUrl: process.env.NUXT_PUBLIC_API_URL,
       useAuth: true,
       environment: process.env.NODE_ENV,
+      profileDropdownLinks: [
+        [
+          {
+            label: 'Get Featured',
+            icon: 'i-lucide-star',
+            to: '/users/get-featured/',
+            color: 'success'
+          },
+          {
+            label: 'Submit',
+            icon: 'i-lucide-plus',
+            to: '/users/submit/company/'
+          },
+          {
+            label: 'Submissions',
+            icon: 'i-lucide-file-text',
+            to: '/users/manage/submissions/'
+          },
+          {
+            label: 'Billing',
+            icon: 'i-lucide-credit-card',
+            to: '/users/manage/billing/'
+          }
+        ]
+      ],
       socialLinks: [
         {
           name: 'Twitter',
