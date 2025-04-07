@@ -39,8 +39,16 @@
 
     sectionTitles.push('Overview');
 
+    if (data?.categories && data?.categories.length) {
+      sectionTitles.push('Categories');
+    }
+
     if (data?.features) {
       sectionTitles.push('Features');
+    }
+
+    if (data?.content) {
+      sectionTitles.push('Article');
     }
 
     if (data?.screenshots && data?.screenshots.length) {
@@ -56,7 +64,7 @@
     }
 
     // Add Comments section to navigation
-    sectionTitles.push('Comments');
+    sectionTitles.push('Discussion');
 
     return sectionTitles;
   });
@@ -96,7 +104,7 @@
       <UCard
         v-if="data.excerpt"
         id="overview"
-        class="mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -115,10 +123,20 @@
 
       <!-- Categories Section -->
       <UCard
+        id="categories"
         v-if="data.categories && data.categories.length"
-        class="mb-8 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
+        <template #header>
+          <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              Categories
+            </h2>
+            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+          </div>
+        </template>
+        <UDivider class="my-0" />
         <SPill base-slug="products/best" :items="data.categories" />
       </UCard>
 
@@ -145,13 +163,22 @@
 
       <!-- Article Section -->
       <UCard
+        id="article"
         v-if="data.content"
-        class="mb-8 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
+        <template #header>
+          <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              Article
+            </h2>
+            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+          </div>
+        </template>
+        <UDivider class="my-0" />
         <!-- eslint-disable-next-line vue/no-v-html-->
         <div
-          id="article"
           class="prose dark:prose-invert max-w-none"
           v-html="data.content"
         ></div>
@@ -309,16 +336,16 @@
         </div>
       </UCard>
 
-      <!-- Comments Section -->
+      <!-- Discussion Section -->
       <UCard
-        id="comments"
-        class="mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800"
+        id="discussion"
+        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-0' } }"
       >
         <template #header>
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
-              Comments
+              Discussion
             </h2>
           </div>
         </template>

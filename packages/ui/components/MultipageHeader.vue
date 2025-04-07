@@ -68,10 +68,14 @@
               />
               <!-- Use flex-grow to allow this column to expand -->
               <div class="flex-grow">
-                <h1 class="text-xl font-bold text-(--ui-primary) sm:text-3xl">
+                <h1
+                  class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100"
+                >
                   {{ name }}
                 </h1>
-                <span class="text-xs">{{ oneLiner }}</span>
+                <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span>
               </div>
             </div>
 
@@ -117,7 +121,7 @@
                 v-for="section in sections"
                 :key="section"
                 :href="'#' + section.toLowerCase()"
-                class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark) sm:px-2 sm:text-base"
+                class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:text-gray-700 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:text-gray-300"
               >
                 {{ section }}
               </NuxtLink>
@@ -137,7 +141,7 @@
                 :alt="`${name} logo`"
                 class="mr-2 h-8 object-contain"
               />
-              <h1 class="text-base font-bold text-(--ui-primary)">
+              <h1 class="text-base font-bold text-gray-900 dark:text-gray-100">
                 {{ name }}
               </h1>
             </div>
@@ -151,7 +155,7 @@
                 v-for="section in sections"
                 :key="section"
                 :href="'#' + section.toLowerCase()"
-                class="sectionLinks flex-shrink-0 px-2 py-2 text-sm font-medium text-(--ui-primary) transition-colors duration-200 hover:text-(--ui-primary-dark)"
+                class="sectionLinks flex-shrink-0 px-2 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-300"
               >
                 {{ section }}
               </NuxtLink>
