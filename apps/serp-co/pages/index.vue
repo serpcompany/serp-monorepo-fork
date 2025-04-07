@@ -66,8 +66,7 @@
       headline="The Most Popular Tools Online"
       orientation="vertical"
       :links="heroLinks"
-    >
-    </UPageHero>
+    />
 
     <!-- Partner logos marquee -->
     <div>
