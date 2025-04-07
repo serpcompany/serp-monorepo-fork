@@ -123,8 +123,8 @@
 
       <!-- Categories Section -->
       <UCard
-        id="categories"
         v-if="data.categories && data.categories.length"
+        id="categories"
         class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
@@ -163,8 +163,8 @@
 
       <!-- Article Section -->
       <UCard
-        id="article"
         v-if="data.content"
+        id="article"
         class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
