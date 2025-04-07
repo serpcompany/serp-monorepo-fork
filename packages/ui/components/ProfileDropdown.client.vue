@@ -17,18 +17,14 @@
   }
 
   const items = ref([
+    ...profileDropdownLinks,
     [
-      {
-        label: user?.name,
-        type: 'label'
-      },
       {
         label: 'Dashboard',
         to: '/users/dashboard/',
-        icon: 'i-lucide-user'
+        icon: 'i-lucide-settings'
       }
     ],
-    ...profileDropdownLinks,
     [
       {
         label: 'Logout',
@@ -48,7 +44,6 @@
       item.onSelect(new Event('click'));
       return;
     }
-
     if (item.to) {
       slideover.value = false;
     }
@@ -57,7 +52,7 @@
 
 <template>
   <div v-if="loggedIn" class="relative">
-    <!-- Avatar trigger (without username) -->
+    <!-- Avatar trigger -->
     <div>
       <UAvatar
         :src="user?.image"
@@ -72,24 +67,27 @@
       v-model:open="slideover"
       side="right"
       :ui="{
-        content: 'w-80 max-w-[85vw] divide-y divide-(--ui-border)',
+        // Narrower, with a subtle shadow and clean background
+        content:
+          'w-80 max-w-[85vw] divide-y divide-gray-200 bg-white shadow-lg',
+        overlay: 'bg-black bg-opacity-30',
         wrapper: 'h-full',
         body: 'p-0'
       }"
     >
       <!-- User profile header -->
       <template #header>
-        <div class="flex w-full items-center gap-3 p-4">
-          <UAvatar :src="user?.image" size="lg" />
-          <div>
-            <div class="text-base font-semibold">{{ user?.name }}</div>
+        <div class="flex items-center gap-3 bg-white">
+          <UAvatar :src="user?.image" size="md" />
+          <div class="text-sm leading-tight font-semibold text-gray-900">
+            {{ user?.name }}
           </div>
         </div>
       </template>
 
       <!-- Menu items -->
       <template #body>
-        <div class="divide-y divide-(--ui-border)">
+        <div class="divide-y divide-gray-200 text-sm">
           <div
             v-for="(group, groupIndex) in items"
             :key="groupIndex"
@@ -97,10 +95,7 @@
           >
             <div v-for="(item, itemIndex) in group" :key="itemIndex">
               <!-- Label items -->
-              <div
-                v-if="item.type === 'label'"
-                class="px-4 text-sm font-semibold text-(--ui-text-highlighted)"
-              >
+              <div v-if="item.type === 'label'">
                 {{ item.label }}
               </div>
 
@@ -108,15 +103,17 @@
               <NuxtLink
                 v-else
                 :to="item.to || '#'"
+                class="flex items-center gap-2 px-3 py-2 transition-colors hover:bg-gray-100"
                 @click="handleItemClick(item)"
-                class="flex items-center gap-2 px-4 py-2 transition-colors hover:bg-(--ui-bg-elevated)"
               >
                 <UIcon
                   v-if="item.icon"
                   :name="item.icon"
                   class="flex-shrink-0"
                 />
-                <span class="flex-grow">{{ item.label }}</span>
+                <span class="flex-grow leading-tight text-gray-800">{{
+                  item.label
+                }}</span>
                 <div v-if="item.kbds" class="flex gap-1">
                   <UKbd
                     v-for="(kbd, kbdIndex) in item.kbds"
@@ -133,7 +130,7 @@
     </USlideover>
   </div>
 
-  <!-- Use a button component for login when not logged in -->
+  <!-- Login button for logged-out users -->
   <UButton
     v-else
     variant="outline"
