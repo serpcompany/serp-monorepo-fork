@@ -7,6 +7,10 @@
   const categories = await useCompanyCategories();
   const slug = route.params.slug as string;
 
+  let data = await useCompanies(page.value, limit.value, slug);
+  if (!data) {
+    router.push('/404');
+  }
   const faqItems = computed(() => {
     if (!data?.category?.faqs || !data?.category?.faqs.length) {
       return [];
