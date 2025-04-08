@@ -22,11 +22,6 @@
     }));
   });
 
-  let data = await useCompanies(page.value, limit.value, slug);
-  if (!data) {
-    router.push('/404');
-  }
-
   watch([page, limit], async ([newPage, newLimit]) => {
     const query = { ...route.query };
     if (newPage !== 1) {
