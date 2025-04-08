@@ -11,6 +11,20 @@
   if (!data) {
     router.push('/404');
   }
+  const faqItems = computed(() => {
+    if (!data?.category?.faqs || !data?.category?.faqs.length) {
+      return [];
+    }
+    return data?.category?.faqs.map((faq) => ({
+      label: faq.question,
+      content: faq.answer
+    }));
+  });
+
+  let data = await useCompanies(page.value, limit.value, slug);
+  if (!data) {
+    router.push('/404');
+  }
 
   watch([page, limit], async ([newPage, newLimit]) => {
     const query = { ...route.query };
@@ -29,20 +43,20 @@
   });
 
   useSeoMeta({
-    title: () => `The Best ${data.categoryName} Providers`
+    title: () => `The Best ${data?.category?.name} Providers`
   });
 </script>
 
 <template>
-  <div class="py-10">
+  <UPage>
     <!-- hero -->
     <SHero
-      :headline="`The Best ${data.categoryName}`"
+      :headline="`The Best ${data?.category?.name}`"
       :show-search-bar="false"
       :show-buttons="false"
     />
 
-    <main>
+    <UMain>
       <!-- rows: companies -->
       <div class="space-y-4">
         <CompanyCard
@@ -69,10 +83,29 @@
         base-slug="products/best"
       />
 
-      <!-- company category article -->
-      <section v-if="data.categoryArticle" class="mt-20">
-        <CompanyArticleSection :article="data.categoryArticle" />
+      <!-- article -->
+      <section v-if="data?.category?.buyersGuide" class="mt-20">
+        <CompanyArticleSection :article="data?.category?.buyersGuide" />
       </section>
-    </main>
-  </div>
+
+      <!-- faqs -->
+      <UPageSection
+        v-if="data?.category?.faqs"
+        title="FAQs"
+        class="mx-auto max-w-5xl"
+      >
+        <UPageAccordion
+          :items="faqItems"
+          :ui="{ body: { class: 'prose dark:prose-invert' } }"
+        >
+          <template #body="{ item }">
+            <div
+              class="prose dark:prose-invert max-w-full"
+              v-html="item.content"
+            ></div>
+          </template>
+        </UPageAccordion>
+      </UPageSection>
+    </UMain>
+  </UPage>
 </template>

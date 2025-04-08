@@ -94,7 +94,9 @@ export const companyCategoryCache = cacheSchema.table(
       .defaultNow(),
     id: serial('id').primaryKey(),
     name: varchar('name', { length: 255 }).notNull(),
-    slug: varchar('slug', { length: 255 }).notNull()
+    slug: varchar('slug', { length: 255 }).notNull(),
+    buyersGuide: text('buyers_guide'),
+    faqs: jsonb('faqs')
   }
 );
 
