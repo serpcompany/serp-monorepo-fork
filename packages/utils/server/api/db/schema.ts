@@ -1,5 +1,6 @@
 import {
   boolean,
+  customType,
   doublePrecision,
   integer,
   jsonb,
@@ -11,9 +12,16 @@ import {
   varchar
 } from 'drizzle-orm/pg-core';
 
+export const ltree = customType<{ data: string }>({
+  dataType() {
+    return 'ltree';
+  }
+});
+
 export const cacheSchema = pgSchema('cache');
 export const formSchema = pgSchema('form');
 export const stripeSchema = pgSchema('stripe');
+export const userSchema = pgSchema('user');
 
 // Stripe
 export const customer = stripeSchema.table('customer', {
@@ -55,6 +63,58 @@ export const companyFeaturedSubscription = stripeSchema.table(
     cancelAt: timestamp('cancel_at')
   }
 );
+
+// User
+export const postComment = userSchema.table('post_comment', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  post: integer('post').notNull(),
+  content: varchar('content', { length: 255 }),
+  parentId: integer('parent_id'),
+  path: varchar('path', { length: 255 })
+});
+
+export const companyComment = userSchema.table('company_comment', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  company: integer('company').notNull(),
+  content: varchar('content', { length: 255 }),
+  parentId: integer('parent_id'),
+  path: ltree('path')
+});
+
+export const companyReview = userSchema.table('company_review', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  company: integer('company').notNull(),
+  content: varchar('content', { length: 255 }),
+  title: varchar('title', { length: 255 }),
+  rating: integer('rating').notNull(),
+  dateOfExperience: timestamp('date_of_experience', { withTimezone: true })
+});
+
+export const user = userSchema.table('user', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  email: varchar('email', { length: 255 }).unique().notNull(),
+  name: varchar('name', { length: 255 }),
+  image: varchar('image', { length: 255 })
+});
 
 // Company
 export const companyCache = cacheSchema.table('company_cache', {

@@ -19,6 +19,10 @@
     data?.id
   )) as { upvotes: string[]; comments: Comment[] };
 
+  // @ts-expect-error: Auto-imported from another layer
+  const reviews = await useCompanyReviews(data?.id);
+  reviews.companyId = data?.id;
+
   const faqItems = computed(() => {
     if (!data?.faqs) return [];
 
@@ -74,6 +78,7 @@
 
 <template>
   <UPage v-if="data">
+    <CompanyReviews :reviews="reviews" />
     <MultipageHeader
       :name="data.name"
       :one-liner="data.oneLiner"

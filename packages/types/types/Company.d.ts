@@ -1,4 +1,4 @@
-import type { Category, Faq, Comment } from '@serp/types/types';
+import type { Category, Comment, Faq } from '@serp/types/types';
 
 export type Feature = {
   id: number;
@@ -50,4 +50,24 @@ export type Companies = {
   pagination: Pagination;
   categoryArticle?: string;
   categoryName?: string;
+};
+
+export type CompanyReview = {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  title: string;
+  rating: number;
+  content: string;
+  dateOfExperience: string;
+  user: {
+    id: number;
+    name: string;
+    image?: string;
+  };
+};
+
+export type CompanyReviews = {
+  reviews: CompanyReview[];
+  pagination: Pagination;
 };
