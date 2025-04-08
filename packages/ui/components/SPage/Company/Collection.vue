@@ -4,8 +4,11 @@
 
   const page = ref(Number(route.query.page) || 1);
   const limit = ref(Number(route.query.limit) || 50);
+
+  // @ts-expect-error: Auto-imported from another layer
   const categories = await useCompanyCategories();
 
+  // @ts-expect-error: Auto-imported from another layer
   let data = await useCompanies(page.value, limit.value);
   if (!data) {
     router.push('/404');
@@ -23,6 +26,8 @@
     } else {
       delete query.limit;
     }
+
+    // @ts-expect-error: Auto-imported from another layer
     data = await useCompanies(page.value, limit.value);
     router.push({ query });
   });

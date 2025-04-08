@@ -42,7 +42,7 @@
             aria-label="Main navigation"
             orientation="horizontal"
             color="primary"
-            highlight="true"
+            highlight
             :items="headerNavItems"
             :ui="navUi"
             :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
