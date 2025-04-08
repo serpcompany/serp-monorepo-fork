@@ -12,7 +12,7 @@ exports[`ProfileDropdown Snapshot > renders when logged in correctly 1`] = `
 
 exports[`ProfileDropdown Snapshot > renders when not logged in correctly 1`] = `
 "<!-- Login button for logged-out users -->
-<a href="/login" class="inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors py-1.5 gap-1.5 ring ring-inset ring-(--ui-primary)/50 text-(--ui-primary) hover:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-(--ui-primary) rounded-md px-4 text-sm font-medium">
+<a href="/login" class="inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors py-1.5 gap-1.5 ring ring-inset ring-(--ui-primary)/50 text-(--ui-primary) hover:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus-visible:ring-2 focus-visible:ring-(--ui-primary) dark:text-primary-100 rounded-md px-4 text-sm font-medium">
   <!--v-if--> Login
   <!--v-if-->
 </a>"

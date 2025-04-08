@@ -12,7 +12,7 @@
   const navUi = {
     link: 'text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300',
     item: 'text-primary-500 dark:text-primary-300',
-    linkLabel: 'text-primary-500 dark:text-primary-200',
+    linkLabel: 'text-primary-500 dark:text-primary-100',
     content: 'absolute top-0',
     list: 'flex',
     childList: 'grid grid-cols-1',

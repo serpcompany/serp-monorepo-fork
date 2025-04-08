@@ -40,7 +40,7 @@
   });
 
   const breadcrumbUI = {
-    link: 'text-xs text-primary-500 dark:text-neutral-300 min-w-0 group relative flex items-center gap-1.5 focus-visible:outline-(--ui-primary)',
+    link: 'text-[10px] text-primary-500 dark:text-neutral-300 min-w-0 group relative flex items-center gap-1.5 focus-visible:outline-(--ui-primary)',
     separatorIcon: 'shrink-0 size-4 text-neutral-500 dark:text-neutral-400'
   };
 </script>
@@ -48,10 +48,12 @@
 <template>
   <UBreadcrumb
     v-if="!isExcluded"
-    class="mx-auto my-8 max-w-7xl px-4 md:px-6 lg:px-8"
+    class="mb-10 w-full px-4 py-2 md:px-6 lg:px-8"
     :items="breadcrumbItems"
     :ui="breadcrumbUI"
   >
-    <template #separator> / </template>
+    <template #separator>
+      <span class="text-xs">/</span>
+    </template>
   </UBreadcrumb>
 </template>
