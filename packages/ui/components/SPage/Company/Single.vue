@@ -14,12 +14,6 @@
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
 
-  // When not using caching at the API level, grab the upvotes and comments directly from the data object
-  // const upvotes = data.upvotes || [];
-  // const comments = data.comments || [];
-
-  // Possibly move to onMounted, but may negatively impact SEO (components currently have onMounted, investigate impact on SEO)
-
   // @ts-expect-error: Auto-imported from another layer
   const { upvotes, comments } = (await useCompanyUpvotesAndComments(
     data?.id
@@ -72,7 +66,7 @@
   useSeoMeta({
     title: computed(() =>
       data?.name
-        ? `${data.name} - Reviews, Pricing, Features`
+        ? `${data.name} - Reviews, Pricing, Features, Alternatives & Deals`
         : 'Company Information'
     )
   });

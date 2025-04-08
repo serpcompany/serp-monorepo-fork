@@ -121,7 +121,7 @@
                 v-for="section in sections"
                 :key="section"
                 :href="'#' + section.toLowerCase()"
-                class="sectionLinks flex-shrink-0 px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:text-gray-700 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:text-gray-300"
+                class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300"
               >
                 {{ section }}
               </NuxtLink>
@@ -155,7 +155,7 @@
                 v-for="section in sections"
                 :key="section"
                 :href="'#' + section.toLowerCase()"
-                class="sectionLinks flex-shrink-0 px-2 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-300"
+                class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300"
               >
                 {{ section }}
               </NuxtLink>
