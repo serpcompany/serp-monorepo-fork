@@ -5,6 +5,7 @@
   const page = ref(Number(route.query.page) || 1);
   const limit = ref(Number(route.query.limit) || 50);
   const categories = await useCompanyCategories();
+
   const slug = route.params.slug as string;
 
   let data = await useCompanies(page.value, limit.value, slug);
