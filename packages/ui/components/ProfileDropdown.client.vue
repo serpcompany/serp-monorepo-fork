@@ -137,7 +137,7 @@
     size="md"
     as="NuxtLink"
     to="/login"
-    class="rounded-md px-4 text-sm font-medium"
+    class="dark:text-primary-100 rounded-md px-4 text-sm font-medium"
   >
     Login
   </UButton>
