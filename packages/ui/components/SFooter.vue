@@ -3,100 +3,107 @@
 
   const config = useRuntimeConfig();
   const companyName = config.public.siteName;
-  const socialLinks = config.public.socialLinks;
-  const brandLinks = config.public.brandLinks;
-  const copyrightText = config.public.copyrightText;
-  const address = config.public.address;
-  const footerColumns = config.public.footerColumns as FooterColumn[];
-  const legalLinks = config.public.legalLinks;
+  const socialLinks = config.public.socialLinks as Array<{
+    name: string;
+    href: string;
+    icon: string;
+  }>;
+  const legalLinks = config.public.legalLinks as Array<{
+    text: string;
+    slug: string;
+  }>;
+
+  // Transform footerColumns to the format expected by UFooterColumns
+  const footerColumnsData = computed(() => {
+    const columns = config.public.footerColumns as FooterColumn[];
+    return columns.map((column) => ({
+      label: column.title,
+      children: column.items.map((item) => ({
+        label: item.text,
+        to: item.slug
+      }))
+    }));
+  });
 </script>
 
 <template>
-  <footer class="mt-20 py-10">
-    <div>
-      <!-- footer row 1 -->
-      <nav
-        aria-label="Footer Main Navigation"
-        class="mb-4 grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-5"
-      >
-        <!-- Main footer columns -->
-        <div v-for="column in footerColumns" :key="column.id">
-          <span class="text-md font-extrabold uppercase">
-            {{ column.title }}
-          </span>
-          <!-- Footer column links -->
-          <ul class="space-y-2 pt-4" :aria-label="`${column.title} menu`">
-            <li v-for="item in column.items" :key="item.slug">
-              <NuxtLink :to="item.slug" class="text-s">
-                {{ item.text }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <!-- footer row 2 -->
-      <div class="pt-8">
-        <!-- Logo -->
-        <div class="mb-8 flex items-center justify-between">
-          <div class="flex items-center space-x-2">
-            <span class="text-2xl font-bold">{{ companyName }}</span>
-          </div>
-        </div>
-
-        <div class="mb-8 items-center justify-between sm:flex md:flex-row">
-          <div
-            class="hide-scrollbar flex flex-col items-center justify-between sm:overflow-x-auto md:flex-row"
+  <UFooter
+    class="footer-wrapper bg-primary-800 dark:bg-primary-950 mt-20 w-full"
+    :ui="{
+      top: 'py-0 lg:py-0',
+      center: 'py-0 lg:py-0',
+      bottom: 'py-0 lg:py-0'
+    }"
+  >
+    <!-- Top section with columns - full width with background -->
+    <template #top>
+      <div class="w-full py-30">
+        <div class="mx-auto max-w-[1248px] px-4">
+          <UFooterColumns
+            :columns="footerColumnsData"
+            class="footer-columns-large"
+            :ui="{
+              link: 'text-primary-100  hover:text-primary-200 dark:text-primary-100 dark:hover:text-primary-200',
+              label:
+                'text-primary-100 hover:text-primary-200 text-xl dark:text-primary-100 dark:hover:text-primary-200'
+            }"
           >
-            <!-- Social Links -->
-            <nav aria-label="Social Media Links" class="mb-4 flex md:mb-0">
-              <NuxtLink
-                v-for="social in socialLinks"
-                :key="social.name"
-                :to="social.href"
-                :aria-label="social.name"
-                class="mr-6"
-                target="_blank"
-              >
-                <UIcon
-                  :name="social.icon"
-                  class="size-5 text-black dark:text-white"
-                  aria-hidden="true"
+            <!-- Left section with newsletter -->
+            <template #left>
+              <div class="flex flex-col items-start space-x-2">
+                <span
+                  class="text-primary-100 dark:text-primary-100 pb-4 text-4xl font-bold"
+                  >{{ companyName }}</span
+                >
+                <p class="text-primary-100 dark:text-primary-100 font-bold">
+                  Subscribe to our newsletter.
+                </p>
+                <p class="text-primary-100 dark:text-primary-100">
+                  Join a trillion readers and stay ahead of the curve.
+                </p>
+                <UButton
+                  type="submit"
+                  size="xl"
+                  variant="outline"
+                  label="Subscribe"
+                  class="text-primary-100 ring-primary-100 my-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-lg font-semibold ring transition-colors ring-inset hover:bg-(--ui-primary)/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:bg-transparent disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:bg-transparent aria-disabled:opacity-75 dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
                 />
-                <span class="sr-only">Visit our {{ social.name }} page</span>
-              </NuxtLink>
-            </nav>
-          </div>
-
-          <div
-            class="flex flex-col justify-between sm:items-center md:flex-row"
-          >
-            <!-- Brand links -->
-            <nav
-              aria-label="Brand Navigation"
-              class="flex flex-col flex-wrap justify-center gap-4 text-sm sm:flex-row md:justify-end"
-            >
-              <NuxtLink
-                v-for="link in brandLinks"
-                :key="link.href"
-                :to="link.href"
-                target="_blank"
-              >
-                {{ link.name }}
-              </NuxtLink>
-            </nav>
-          </div>
+              </div>
+            </template>
+          </UFooterColumns>
         </div>
+      </div>
+    </template>
 
-        <!-- footer row 3 -->
-        <!-- Legal links -->
-        <nav
+    <!-- Bottom section with full-width colored ribbon -->
+    <template #bottom>
+      <div
+        class="mx-auto flex max-w-[1248px] flex-col items-start justify-between px-4 pb-8 md:flex-row md:items-center"
+      >
+        <!-- <div class="flex flex-row items-center md:mb-0"> -->
+        <!-- Social Links -->
+        <div aria-label="Social Media Links" class="mb-8 flex md:mb-0">
+          <NuxtLink
+            v-for="social in socialLinks"
+            :key="social.name"
+            :to="social.href"
+            :aria-label="social.name"
+            class="mr-6"
+            target="_blank"
+          >
+            <UIcon
+              :name="social.icon"
+              class="text-primary-100 dark:text-primary-100 size-5"
+              aria-hidden="true"
+            />
+            <span class="sr-only">Visit our {{ social.name }} page</span>
+          </NuxtLink>
+        </div>
+        <!-- </div> -->
+        <div
           aria-label="Legal Navigation"
-          class="flex flex-col justify-between text-sm sm:items-center md:flex-row"
+          class="flex flex-col text-sm sm:items-center md:flex-row"
         >
-          <div class="mb-2 font-semibold md:mb-0">
-            {{ copyrightText }}
-          </div>
           <div
             class="flex flex-col flex-wrap justify-center gap-4 sm:flex-row md:justify-end"
           >
@@ -104,27 +111,13 @@
               v-for="link in legalLinks"
               :key="link.text"
               :to="link.slug"
-              >{{ link.text }}</NuxtLink
+              class="text-primary-100 dark:text-primary-100"
             >
+              {{ link.text }}
+            </NuxtLink>
           </div>
-        </nav>
-
-        <!-- Address -->
-        <address class="mt-4 text-sm font-normal">
-          {{ address }}
-        </address>
+        </div>
       </div>
-    </div>
-  </footer>
+    </template>
+  </UFooter>
 </template>
-
-<style>
-  .hide-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
-  }
-</style>
