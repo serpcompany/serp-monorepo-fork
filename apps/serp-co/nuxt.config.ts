@@ -281,7 +281,8 @@ export default defineNuxtConfig({
     },
     sitemaps: {
       modules: {
-        includeAppSources: true
+        includeAppSources: true,
+        exclude: ['/users/**']
       },
       company: {
         sources: ['/api/__sitemap__/company']
