@@ -80,67 +80,10 @@ export default defineNuxtConfig({
           }
         ]
       ],
-      socialLinks: [
-        {
-          name: 'Twitter',
-          href: 'https://serp.ly/@serp/twitter',
-          icon: 'i-lucide-twitter'
-        },
-        {
-          name: 'Facebook',
-          href: 'https://serp.ly/@serp/facebook',
-          icon: 'i-lucide-facebook'
-        },
-        {
-          name: 'LinkedIn',
-          href: 'https://serp.ly/@serp/linkedin',
-          icon: 'i-lucide-linkedin'
-        },
-        {
-          name: 'YouTube',
-          href: 'https://serp.ly/@serp/youtube',
-          icon: 'i-lucide-youtube'
-        },
-        {
-          name: 'Github',
-          href: 'https://serp.ly/@serpai/github',
-          icon: 'i-lucide-github'
-        },
-        {
-          name: 'Instagram',
-          href: 'https://serp.ly/@serp/instagram',
-          icon: 'i-lucide-instagram'
-        },
-        {
-          name: 'SoundCloud',
-          href: 'https://serp.ly/@serp/',
-          icon: 'i-lucide-external-link'
-        }
-      ],
-      brandLinks: [
-        {
-          name: 'About',
-          href: 'https://github.com/serpcompany'
-        },
-        {
-          name: 'Add Your Product',
-          href: 'https://serp.ly/@serp/submit'
-        }
-      ],
       headerNavItems: [
         {
           label: 'Companies',
           children: [{ label: 'Companies', to: '/products/' }]
-        },
-        {
-          label: 'Tools',
-          children: [
-            { label: 'Tools', to: '/tools/' },
-            { label: 'Combine CSVs', to: '/tools/combine-csv-files/' },
-            { label: 'JSON to CSV', to: '/tools/convert-json-to-csv/' },
-            { label: 'Character Counter', to: '/tools/count-characters/' },
-            { label: 'Paragraph Counter', to: '/tools/paragraph-counter/' }
-          ]
         },
         {
           label: 'Glossary',
@@ -153,16 +96,101 @@ export default defineNuxtConfig({
       ],
       footerColumns: [
         {
-          title: 'Links',
+          title: 'Product',
           id: 1,
           slug: '',
           items: [
             { text: 'Companies', slug: '/products/' },
-            { text: 'Tools', slug: '/tools/' },
             { text: 'Posts', slug: '/posts/' },
             { text: 'Glossary', slug: '/glossary/' }
           ]
+        },
+        {
+          title: 'Posts',
+          id: 2,
+          slug: '',
+          items: [
+            { text: 'Blog', slug: '/blog/' },
+            { text: 'Glossary', slug: '/posts/' }
+          ]
+        },
+        {
+          title: 'Brand',
+          id: 3,
+          slug: '',
+          items: [
+            {
+              name: 'About',
+              href: 'https://github.com/serp-ai'
+            },
+            {
+              name: 'Contact',
+              href: '#'
+            },
+            {
+              name: 'Team',
+              href: '#'
+            }
+          ]
+        },
+        {
+          title: 'Something',
+          id: 4,
+          slug: '',
+          items: [
+            {
+              name: 'About',
+              href: 'https://github.com/serp-ai'
+            },
+            {
+              name: 'Contact',
+              href: '#'
+            }
+          ]
         }
+      ],
+      socialLinks: [
+        {
+          name: 'Twitter',
+          href: 'https://serp.ly/@serpai/twitter',
+          icon: 'i-lucide-twitter'
+        },
+        {
+          name: 'Facebook',
+          href: 'https://serp.ly/@serpai/facebook',
+          icon: 'i-lucide-facebook'
+        },
+        {
+          name: 'LinkedIn',
+          href: 'https://serp.ly/@serpai/linkedin',
+          icon: 'i-lucide-linkedin'
+        },
+        {
+          name: 'YouTube',
+          href: 'https://serp.ly/@serpai/youtube',
+          icon: 'i-lucide-youtube'
+        },
+        {
+          name: 'Github',
+          href: 'https://serp.ly/@serpai/github',
+          icon: 'i-lucide-github'
+        },
+        {
+          name: 'Instagram',
+          href: 'https://serp.ly/@serpai/instagram',
+          icon: 'i-lucide-instagram'
+        },
+        {
+          name: 'SoundCloud',
+          href: 'https://serp.ly/@serpai/',
+          icon: 'i-lucide-external-link'
+        }
+      ],
+      brandLinks: [
+        { text: 'Privacy', slug: '/legal/privacy-policy/' },
+        { text: 'Terms', slug: '/legal/terms-conditions/' },
+        { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
+        { text: 'DMCA', slug: '/legal/dmca/' }
       ],
       legalLinks: [
         { text: 'Privacy', slug: '/legal/privacy-policy/' },
@@ -253,7 +281,8 @@ export default defineNuxtConfig({
     },
     sitemaps: {
       modules: {
-        includeAppSources: true
+        includeAppSources: true,
+        exclude: ['/users/**']
       },
       company: {
         sources: ['/api/__sitemap__/company']
