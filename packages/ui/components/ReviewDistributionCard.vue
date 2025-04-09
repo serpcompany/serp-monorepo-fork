@@ -2,12 +2,27 @@
   import { computed } from 'vue';
 
   const props = defineProps({
-    ratings: {
-      type: Array,
-      required: true,
-      default: () => []
-    },
     totalReviews: {
+      type: Number,
+      required: true
+    },
+    totalOneStarReviews: {
+      type: Number,
+      required: true
+    },
+    totalTwoStarReviews: {
+      type: Number,
+      required: true
+    },
+    totalThreeStarReviews: {
+      type: Number,
+      required: true
+    },
+    totalFourStarReviews: {
+      type: Number,
+      required: true
+    },
+    totalFiveStarReviews: {
       type: Number,
       required: true
     },
@@ -32,14 +47,13 @@
     }
   });
 
-  // Calculate the percentage of each rating
-  const ratingCounts = computed(() => {
-    const counts = {};
-    for (let i = 1; i <= 5; i++) {
-      counts[i] = props.ratings.filter((r) => r === i).length;
-    }
-    return counts;
-  });
+  const ratingCounts = computed(() => ({
+    1: props.totalOneStarReviews,
+    2: props.totalTwoStarReviews,
+    3: props.totalThreeStarReviews,
+    4: props.totalFourStarReviews,
+    5: props.totalFiveStarReviews
+  }));
 </script>
 
 <template>

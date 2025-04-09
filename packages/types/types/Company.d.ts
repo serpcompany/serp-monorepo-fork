@@ -28,6 +28,14 @@ export type Company = {
   comments?: Comment[];
   featured?: boolean;
   featuredOrder?: number;
+  videoId?: string;
+  numReviews?: number;
+  numOneStarReviews?: number;
+  numTwoStarReviews?: number;
+  numThreeStarReviews?: number;
+  numFourStarReviews?: number;
+  numFiveStarReviews?: number;
+  averageRating?: number;
 };
 
 export type CompanyIndex = {

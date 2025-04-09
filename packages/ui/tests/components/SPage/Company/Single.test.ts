@@ -55,7 +55,14 @@ describe('SPageCompanySingle Snapshot', () => {
           ],
           alternatives: ['Alternative 1', 'Alternative 2'],
           screenshots: ['/screenshot1.png'],
-          categories: [{ id: 10, slug: 'cat-1', name: 'Category 1' }]
+          categories: [{ id: 10, slug: 'cat-1', name: 'Category 1' }],
+          numReviews: 10,
+          numOneStarReviews: 1,
+          numTwoStarReviews: 2,
+          numThreeStarReviews: 3,
+          numFourStarReviews: 2,
+          numFiveStarReviews: 2,
+          averageRating: 4.2
         },
         upvotesAndComments: {
           upvotes: ['user@example.com'],

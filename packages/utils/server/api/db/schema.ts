@@ -143,7 +143,8 @@ export const companyCache = cacheSchema.table('company_cache', {
   downvotes: integer('downvotes'),
   comments: jsonb('comments'),
   featured: boolean('featured'),
-  featuredOrder: integer('featured_order')
+  featuredOrder: integer('featured_order'),
+  videoId: varchar('video_id', { length: 255 })
 });
 
 export const companyCategoryCache = cacheSchema.table(
@@ -157,6 +158,23 @@ export const companyCategoryCache = cacheSchema.table(
     slug: varchar('slug', { length: 255 }).notNull(),
     buyersGuide: text('buyers_guide'),
     faqs: jsonb('faqs')
+  }
+);
+
+export const companyReviewAggregate = cacheSchema.table(
+  'company_review_aggregate',
+  {
+    companyId: integer('company_id').primaryKey(),
+    numReviews: integer('num_reviews').notNull().default(0),
+    numOneStarReviews: integer('num_one_star_reviews').notNull().default(0),
+    numTwoStarReviews: integer('num_two_star_reviews').notNull().default(0),
+    numThreeStarReviews: integer('num_three_star_reviews').notNull().default(0),
+    numFourStarReviews: integer('num_four_star_reviews').notNull().default(0),
+    numFiveStarReviews: integer('num_five_star_reviews').notNull().default(0),
+    averageRating: doublePrecision('average_rating').notNull().default(0),
+    lastUpdated: timestamp('last_updated', { withTimezone: true })
+      .notNull()
+      .defaultNow()
   }
 );
 

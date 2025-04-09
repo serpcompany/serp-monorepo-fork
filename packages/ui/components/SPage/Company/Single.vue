@@ -34,22 +34,6 @@
     reviews.companyId = data?.id;
   }
 
-  // Calculate review statistics for the distribution card
-  const reviewRatings = computed(() => {
-    if (!reviews?.reviews) return [];
-    return reviews.reviews.map((review) => review.rating);
-  });
-
-  const averageRating = computed(() => {
-    if (!reviewRatings.value.length) return 0;
-    const sum = reviewRatings.value.reduce((acc, rating) => acc + rating, 0);
-    return sum / reviewRatings.value.length;
-  });
-
-  const totalReviews = computed(() => {
-    return reviews?.reviews?.length || 0;
-  });
-
   const faqItems = computed(() => {
     if (!data?.faqs) return [];
 
@@ -89,7 +73,7 @@
     }
 
     // Always include Reviews section when reviews are available
-    if (totalReviews.value > 0 || reviews?.reviews?.length > 0) {
+    if (data?.numReviews > 0 || reviews?.reviews?.length > 0) {
       sectionTitles.push('Reviews');
     }
 
@@ -382,9 +366,13 @@
         <UDivider class="my-0" />
         <div class="py-4 sm:p-6">
           <ReviewDistributionCard
-            :ratings="reviewRatings"
-            :total-reviews="totalReviews"
-            :average-rating="averageRating"
+            :total-reviews="data.numReviews ? data.numReviews : 0"
+            :total-one-star-reviews="data.numOneStarReviews ? data.numOneStarReviews : 0"
+            :total-two-star-reviews="data.numTwoStarReviews ? data.numTwoStarReviews : 0"
+            :total-three-star-reviews="data.numThreeStarReviews ? data.numThreeStarReviews : 0"
+            :total-four-star-reviews="data.numFourStarReviews ? data.numFourStarReviews : 0"
+            :total-five-star-reviews="data.numFiveStarReviews  ? data.numFiveStarReviews : 0"
+            :average-rating="data.averageRating ? data.averageRating : 0"
             :show-border="false"
             card-title=""
             class="pb-12"
