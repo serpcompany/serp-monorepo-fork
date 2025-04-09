@@ -41,19 +41,31 @@
           <UFooterColumns
             :columns="footerColumnsData"
             class="footer-columns-large"
+            :ui="{
+              link: 'text-primary-100  hover:text-primary-200 dark:text-primary-400 dark:hover:text-primary-200',
+              label:
+                'text-primary-100 hover:text-primary-200 text-xl dark:text-primary-400 dark:hover:text-primary-200'
+            }"
           >
             <!-- Left section with newsletter -->
             <template #left>
               <div class="flex flex-col items-start space-x-2">
-                <span class="pb-4 text-4xl font-bold">{{ companyName }}</span>
-                <p class="font-bold">Subscribe to our newsletter.</p>
-                <p>Join a trillion readers and stay ahead of the curve.</p>
+                <span
+                  class="text-primary-100 dark:text-primary-800 pb-4 text-4xl font-bold"
+                  >{{ companyName }}</span
+                >
+                <p class="text-primary-100 dark:text-primary-800 font-bold">
+                  Subscribe to our newsletter.
+                </p>
+                <p class="text-primary-100 dark:text-primary-800">
+                  Join a trillion readers and stay ahead of the curve.
+                </p>
                 <UButton
                   type="submit"
                   size="xl"
                   variant="outline"
                   label="Subscribe"
-                  class="text-primary-100 dark:text-primary-100 my-4 rounded-md px-4 py-2 text-lg font-semibold"
+                  class="text-primary-100 ring-primary-100 my-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-lg font-semibold ring transition-colors ring-inset hover:bg-(--ui-primary)/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:bg-transparent disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:bg-transparent aria-disabled:opacity-75 dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
                 />
               </div>
             </template>
