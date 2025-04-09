@@ -29,12 +29,7 @@
       {
         label: 'Logout',
         icon: 'i-lucide-log-out',
-        kbds: ['shift', 'meta', 'q'],
-        onSelect(event: Event) {
-          event.preventDefault();
-          clear();
-          slideover.value = false;
-        }
+        to: '/logout/'
       }
     ]
   ]);

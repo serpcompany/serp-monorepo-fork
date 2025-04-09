@@ -28,32 +28,45 @@
 
 <template>
   <UFooter
-    class="footer-wrapper mt-20 w-full"
+    class="footer-wrapper bg-primary-800 dark:bg-primary-950 mt-20 w-full"
     :ui="{
       top: 'py-0 lg:py-0',
+      center: 'py-0 lg:py-0',
       bottom: 'py-0 lg:py-0'
     }"
   >
     <!-- Top section with columns - full width with background -->
     <template #top>
-      <div class="bg-primary-800 dark:bg-primary-950 w-full py-30">
+      <div class="w-full py-30">
         <div class="mx-auto max-w-[1248px] px-4">
           <UFooterColumns
             :columns="footerColumnsData"
             class="footer-columns-large"
+            :ui="{
+              link: 'text-primary-100  hover:text-primary-200 dark:text-primary-100 dark:hover:text-primary-200',
+              label:
+                'text-primary-100 hover:text-primary-200 text-xl dark:text-primary-100 dark:hover:text-primary-200'
+            }"
           >
             <!-- Left section with newsletter -->
             <template #left>
               <div class="flex flex-col items-start space-x-2">
-                <span class="pb-4 text-4xl font-bold">{{ companyName }}</span>
-                <p class="font-bold">Subscribe to our newsletter.</p>
-                <p>Join a trillion readers and stay ahead of the curve.</p>
+                <span
+                  class="text-primary-100 dark:text-primary-100 pb-4 text-4xl font-bold"
+                  >{{ companyName }}</span
+                >
+                <p class="text-primary-100 dark:text-primary-100 font-bold">
+                  Subscribe to our newsletter.
+                </p>
+                <p class="text-primary-100 dark:text-primary-100">
+                  Join a trillion readers and stay ahead of the curve.
+                </p>
                 <UButton
                   type="submit"
                   size="xl"
                   variant="outline"
                   label="Subscribe"
-                  class="text-primary-100 dark:text-primary-100 my-4 rounded-md px-4 py-2 text-lg font-semibold"
+                  class="text-primary-100 ring-primary-100 my-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-lg font-semibold ring transition-colors ring-inset hover:bg-(--ui-primary)/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:bg-transparent disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:bg-transparent aria-disabled:opacity-75 dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
                 />
               </div>
             </template>
@@ -65,28 +78,28 @@
     <!-- Bottom section with full-width colored ribbon -->
     <template #bottom>
       <div
-        class="mx-auto flex max-w-[1248px] items-center justify-between py-8 md:flex-row"
+        class="mx-auto flex max-w-[1248px] flex-col items-start justify-between px-4 pb-8 md:flex-row md:items-center"
       >
-        <div class="flex flex-row items-center md:mb-0">
-          <!-- Social Links -->
-          <nav aria-label="Social Media Links" class="flex">
-            <NuxtLink
-              v-for="social in socialLinks"
-              :key="social.name"
-              :to="social.href"
-              :aria-label="social.name"
-              class="mr-6"
-              target="_blank"
-            >
-              <UIcon
-                :name="social.icon"
-                class="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-200 size-5"
-                aria-hidden="true"
-              />
-              <span class="sr-only">Visit our {{ social.name }} page</span>
-            </NuxtLink>
-          </nav>
+        <!-- <div class="flex flex-row items-center md:mb-0"> -->
+        <!-- Social Links -->
+        <div aria-label="Social Media Links" class="mb-8 flex md:mb-0">
+          <NuxtLink
+            v-for="social in socialLinks"
+            :key="social.name"
+            :to="social.href"
+            :aria-label="social.name"
+            class="mr-6"
+            target="_blank"
+          >
+            <UIcon
+              :name="social.icon"
+              class="text-primary-100 dark:text-primary-100 size-5"
+              aria-hidden="true"
+            />
+            <span class="sr-only">Visit our {{ social.name }} page</span>
+          </NuxtLink>
         </div>
+        <!-- </div> -->
         <div
           aria-label="Legal Navigation"
           class="flex flex-col text-sm sm:items-center md:flex-row"
@@ -98,7 +111,7 @@
               v-for="link in legalLinks"
               :key="link.text"
               :to="link.slug"
-              class="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-200"
+              class="text-primary-100 dark:text-primary-100"
             >
               {{ link.text }}
             </NuxtLink>
