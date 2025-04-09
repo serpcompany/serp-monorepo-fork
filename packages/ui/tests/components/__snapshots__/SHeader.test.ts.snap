@@ -1,8 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
-"<header class="bg-background py-4">
-  <!-- Desktop Navigation -->
+"<header class="bg-background mx-auto max-w-full px-10 py-4">
   <div class="flex h-10 items-center justify-between px-4">
     <!-- Left side -->
     <div class="flex items-center">
@@ -60,8 +59,7 @@ exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
 `;
 
 exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
-"<header class="bg-background py-4">
-  <!-- Desktop Navigation -->
+"<header class="bg-background mx-auto max-w-full px-10 py-4">
   <div class="flex h-10 items-center justify-between px-4">
     <!-- Left side -->
     <div class="flex items-center">
@@ -125,8 +123,7 @@ exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
 `;
 
 exports[`SHeader Snapshot > renders with empty navigation items correctly 1`] = `
-"<header class="bg-background py-4">
-  <!-- Desktop Navigation -->
+"<header class="bg-background mx-auto max-w-full px-10 py-4">
   <div class="flex h-10 items-center justify-between px-4">
     <!-- Left side -->
     <div class="flex items-center">
