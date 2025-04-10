@@ -4,6 +4,21 @@ import SPageCompanySingle from '../../../../components/SPage/Company/Single.vue'
 import ComponentRender from '../../../componentRender';
 import '../../../mockUseUserSession';
 
+// Extend globalThis to include useCompany and other custom properties
+declare global {
+  interface GlobalThis {
+    useCompany: () => Promise<Record<string, unknown>>;
+    useCompanyUpvotesAndComments: () => Promise<{
+      upvotes: string[];
+      comments: unknown[];
+    }>;
+    useCompanyReviews: () => Promise<{
+      reviews: { id: number; rating: number; title: string; content: string }[];
+      userReview: null;
+    }>;
+  }
+}
+
 mockNuxtImport('useSeoMeta', () => () => {});
 
 let config_: Record<string, unknown> = {
@@ -40,7 +55,14 @@ describe('SPageCompanySingle Snapshot', () => {
           ],
           alternatives: ['Alternative 1', 'Alternative 2'],
           screenshots: ['/screenshot1.png'],
-          categories: [{ id: 10, slug: 'cat-1', name: 'Category 1' }]
+          categories: [{ id: 10, slug: 'cat-1', name: 'Category 1' }],
+          numReviews: 10,
+          numOneStarReviews: 1,
+          numTwoStarReviews: 2,
+          numThreeStarReviews: 3,
+          numFourStarReviews: 2,
+          numFiveStarReviews: 2,
+          averageRating: 4.2
         },
         upvotesAndComments: {
           upvotes: ['user@example.com'],
@@ -132,6 +154,21 @@ describe('SPageCompanySingle Snapshot', () => {
       globalThis.useCompany = () => Promise.resolve(companyData);
       globalThis.useCompanyUpvotesAndComments = () =>
         Promise.resolve(upvotesAndComments);
+
+      // Add mock for useCompanyReviews
+      globalThis.useCompanyReviews = () =>
+        Promise.resolve({
+          reviews: [
+            { id: 1, rating: 4, title: 'Good service', content: 'I liked it' },
+            {
+              id: 2,
+              rating: 5,
+              title: 'Excellent',
+              content: 'The best service'
+            }
+          ],
+          userReview: null
+        });
 
       const html = await ComponentRender(
         `SPageCompanySingle ${desc}`,

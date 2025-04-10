@@ -1,18 +1,17 @@
 import { db } from '@serp/utils/server/api/db';
+import { user } from '@serp/utils/server/api/db/schema';
 import { getTableAndPKForModule } from '@serp/utils/server/utils/getTableAndPKForModule';
-import { sql } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
   try {
     const session = await requireUserSession(event);
-
     const email = session.user?.email;
     if (!email) return { status: 401, message: 'Unauthorized' };
 
+    // Assuming `id` refers to the company id the comment belongs to.
     const { id } = getRouterParams(event);
-    if (!id) {
-      return { status: 400, message: 'ID is required' };
-    }
+    if (!id) return { status: 400, message: 'ID is required' };
 
     const { commentId, comment, timestamp, parentIds, module } =
       await readBody(event);
@@ -24,97 +23,39 @@ export default defineEventHandler(async (event) => {
       };
     }
 
-    const { table, field } = getTableAndPKForModule(module);
+    const userResult = await db
+      .select()
+      .from(user)
+      .where(eq(user.email, email))
+      .limit(1);
+    if (!userResult || userResult.length === 0) {
+      return { status: 404, message: 'User not found' };
+    }
+    const userId = userResult[0].id;
 
-    // If no parentIds, update a top-level comment
-    if (!parentIds || parentIds.length === 0) {
-      const updateQuery = sql`
-                UPDATE ${table}
-                SET comments = (
-                    SELECT jsonb_agg(
-                        CASE
-                            WHEN elem->>'id' = ${commentId} AND elem->>'email' = ${email} THEN
-                                jsonb_set(
-                                    jsonb_set(elem, '{content}', ${sql.raw(`'${JSON.stringify(comment)}'::jsonb`)}, false),
-                                    '{updatedAt}', ${sql.raw(`'${JSON.stringify(timestamp)}'::jsonb`)}, false
-                                )
-                            ELSE elem
-                        END
-                    )
-                    FROM jsonb_array_elements(comments) AS t(elem)
-                )
-                WHERE ${field} = ${id}
-                AND EXISTS (
-                    SELECT 1
-                    FROM jsonb_array_elements(comments) AS t(elem)
-                    WHERE elem->>'id' = ${commentId} AND elem->>'email' = ${email}
-                )
-            `;
+    const { commentsTable, commentsField } = getTableAndPKForModule(module);
 
-      const result = await db.execute(updateQuery);
+    const updatedComment = await db
+      .update(commentsTable)
+      .set({
+        content: comment,
+        updatedAt: new Date()
+      })
+      .where(
+        and(
+          eq(commentsTable.id, commentId),
+          eq(commentsTable.user, userId),
+          eq(commentsTable[commentsField], id)
+        )
+      )
+      .returning();
 
-      if (result.rowCount === 0) {
-        return {
-          status: 404,
-          message:
-            'Comment not found or you are not authorized to update this comment'
-        };
-      }
-
-      return { status: 200, message: 'success', id: commentId };
+    if (!updatedComment || updatedComment.length === 0) {
+      return { status: 500, message: 'Failed to update comment' };
     }
 
-    // For nested comments
-    // Build a string representation of path components
-    const pathComponents = [];
-    for (let i = 0; i < parentIds.length; i++) {
-      const parentId = parentIds[i];
-      pathComponents.push(
-        `(SELECT (ordinality - 1)::text FROM jsonb_array_elements(comments${i === 0 ? '' : ` #> ARRAY[${pathComponents.join(', ')}, 'replies']::text[]`}) WITH ORDINALITY AS t(elem, ordinality) WHERE elem->>'id' = '${parentId}' LIMIT 1)`
-      );
-      pathComponents.push(`'replies'`);
-    }
-
-    // Add index for the comment itself
-    const commentIndexPart = `(SELECT (ordinality - 1)::text FROM jsonb_array_elements(comments #> ARRAY[${pathComponents.join(', ')}]::text[]) WITH ORDINALITY AS t(elem, ordinality) WHERE elem->>'id' = '${commentId}' AND elem->>'email' = '${email}' LIMIT 1)`;
-
-    // Final path that includes the comment index
-    const fullPath = `ARRAY[${pathComponents.join(', ')}, ${commentIndexPart}]::text[]`;
-
-    // Update the nested comment
-    const updateNestedQuery = sql`
-            UPDATE ${table}
-            SET comments = jsonb_set(
-                comments,
-                ${sql.raw(fullPath)},
-                jsonb_set(
-                    jsonb_set(comments #> ${sql.raw(fullPath)}, '{content}', ${sql.raw(`'${JSON.stringify(comment)}'::jsonb`)}, false),
-                    '{updatedAt}', ${sql.raw(`'${JSON.stringify(timestamp)}'::jsonb`)}, false
-                ),
-                false
-            )
-            WHERE ${field} = ${id}
-            AND EXISTS (
-                SELECT 1
-                FROM jsonb_array_elements(comments #> ARRAY[${sql.raw(pathComponents.join(', '))}]::text[]) AS t(elem)
-                WHERE elem->>'id' = ${commentId} AND elem->>'email' = ${email}
-            )
-        `;
-
-    const result = await db.execute(updateNestedQuery);
-
-    if (result.rowCount === 0) {
-      return {
-        status: 404,
-        message:
-          'Comment not found or you are not authorized to update this comment'
-      };
-    }
-
-    return { status: 200, message: 'success', id: commentId };
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
+    return { status: 200, message: 'success', id: updatedComment[0].id };
+  } catch (error: unknown) {
     return { status: 500, message: error.message };
   }
 });

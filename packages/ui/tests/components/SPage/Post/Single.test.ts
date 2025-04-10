@@ -95,6 +95,17 @@ describe('SPagePostSingle Snapshot', () => {
       config_ = config;
       mockNuxtImport('useRuntimeConfig', () => () => config_);
       globalThis.usePost = async (slug: string) => postData;
+      globalThis.usePostComments = async (id: number) => {
+        return {
+          comments: [
+            {
+              id: 1,
+              content: 'Test comment',
+              replies: []
+            }
+          ]
+        };
+      };
 
       const html = await ComponentRender(
         `SPagePostSingle ${desc}`,

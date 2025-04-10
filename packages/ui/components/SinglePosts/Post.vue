@@ -3,6 +3,7 @@
 
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
+  const forCloudflare = config.public.forCloudflare;
 
   const props = defineProps<{
     data: Post;
@@ -13,6 +14,12 @@
     props.data.author !== undefined &&
     props.data.author !== null &&
     props.data.author !== 'None';
+
+  let comments = props.data.comments || [];
+  if (!forCloudflare) {
+    const commentsData = await usePostComments(props.data.id);
+    comments = commentsData.comments;
+  }
 </script>
 
 <template>
@@ -40,9 +47,9 @@
     <div v-if="useAuth" class="mt-10">
       <h2 class="mb-4 text-2xl font-bold">Comments</h2>
       <CommentsContainer
-        :id="data.slug"
+        :id="forCloudflare ? data.slug : data.id"
         module="posts"
-        :comments="data.comments || []"
+        :comments="comments || []"
         class="comments-github-style"
       />
     </div>
