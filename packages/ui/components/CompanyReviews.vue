@@ -1,22 +1,9 @@
 <script setup lang="ts">
-  import { computed } from 'vue';
   import type { CompanyReviews } from '@/serp/types/types';
 
   const props = defineProps<{
     reviews: CompanyReviews;
   }>();
-
-  // Filter out the user's review from the reviews array to prevent duplication
-  const filteredReviews = computed(() => {
-    if (!props.reviews?.reviews || !props.reviews?.userReview?.id) {
-      return props.reviews?.reviews || [];
-    }
-
-    // Filter out the user's review from the reviews array
-    return props.reviews.reviews.filter(
-      (review) => review.id !== props.reviews.userReview.id
-    );
-  });
 </script>
 
 <template>
@@ -38,7 +25,7 @@
           />
 
           <CompanyReviewCard
-            v-for="review in filteredReviews"
+            v-for="review in reviews.reviews"
             :key="review.id"
             :review="review"
           />

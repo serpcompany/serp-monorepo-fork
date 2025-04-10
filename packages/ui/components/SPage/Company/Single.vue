@@ -398,6 +398,7 @@
       <CompanyReviewModal
         v-model:open="showReviewModal"
         :company-id="data.id"
+        :result="reviews"
         @close="showReviewModal = false"
         @review-submitted="handleReviewSubmitted"
       />

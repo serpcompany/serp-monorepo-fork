@@ -1,9 +1,10 @@
 <script setup lang="ts">
-  import { ref, computed, watchEffect } from 'vue';
+  import type { CompanyReviews } from '@/serp/types/types';
 
   const props = defineProps<{
     companyId: string;
     open: boolean;
+    result: CompanyReviews;
   }>();
 
   const emit = defineEmits(['close', 'review-submitted', 'update:open']);
@@ -11,37 +12,27 @@
   const { loggedIn, user } = useUserSession();
   const toast = useToast();
 
-  // Create reactive refs for the review data
-  const reviews = ref([]);
-  const userReview = ref(null);
-
-  // Use watchEffect to reactively fetch reviews when companyId changes
-  watchEffect(async () => {
-    if (props.companyId) {
-      // @ts-expect-error: Auto-imported from another layer
-      const result = await useCompanyReviews(props.companyId);
-      reviews.value = result.reviews;
-      userReview.value = result.userReview;
-
-      // Prepopulate the form if the user already has a review
-      if (userReview.value) {
-        const review = userReview.value.company_review || userReview.value;
-        reviewForm.value = {
-          title: review?.title || '',
-          content: review?.content || '',
-          rating: review?.rating || null,
-          dateOfExperience: review?.dateOfExperience || ''
-        };
-      }
-    }
-  });
-
   // Review form state
   const reviewForm = ref({
     title: '',
     content: '',
     rating: null as number | null,
     dateOfExperience: ''
+  });
+  const userReview = computed(() => props.result.userReview);
+
+  watchEffect(() => {
+    if (userReview.value) {
+      const review = userReview.value.company_review || userReview.value;
+      reviewForm.value = {
+        title: review?.title || '',
+        content: review?.content || '',
+        rating: review?.rating || null,
+        dateOfExperience: review?.dateOfExperience
+          ? new Date(review.dateOfExperience).toISOString().split('T')[0]
+          : ''
+      };
+    }
   });
 
   const isReviewComplete = computed(

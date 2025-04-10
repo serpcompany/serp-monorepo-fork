@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { computed } from 'vue';
-
   const props = defineProps({
     review: {
       type: Object,
@@ -8,22 +6,30 @@
     }
   });
 
-  // Format the experience date
   const formattedExperienceDate = computed(() => {
-    if (!props.review.dateOfExperience) return 'Unknown';
+    if (
+      !props.review.dateOfExperience &&
+      !props.review.company_review?.dateOfExperience
+    )
+      return 'Unknown';
 
-    return new Date(props.review.dateOfExperience).toLocaleDateString('en-US', {
+    return new Date(
+      props.review.dateOfExperience ||
+        props.review.company_review?.dateOfExperience
+    ).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
       day: 'numeric'
     });
   });
 
-  // Format the review creation date
   const formattedReviewDate = computed(() => {
-    if (!props.review.createdAt) return 'Unknown';
+    if (!props.review.createdAt && !props.review.company_review?.createdAt)
+      return 'Unknown';
 
-    return new Date(props.review.createdAt).toLocaleDateString('en-US', {
+    return new Date(
+      props.review.createdAt || props.review.company_review?.createdAt
+    ).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
       day: 'numeric'
@@ -56,7 +62,12 @@
               <div v-for="i in 5" :key="i" class="relative h-5 w-5">
                 <span
                   class="iconify i-heroicons:star-solid absolute inset-0 h-5 w-5 text-yellow-400 transition-opacity duration-200 dark:text-yellow-500"
-                  :style="{ opacity: i <= review.rating ? 1 : 0.3 }"
+                  :style="{
+                    opacity:
+                      i <= (review.rating || review.company_review?.rating)
+                        ? 1
+                        : 0.3
+                  }"
                 ></span>
               </div>
             </div>
