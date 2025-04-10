@@ -136,6 +136,9 @@ cd apps/serp-wiki && pnpx nuxthub deploy
 
 
 # Server
+```sql
+CREATE SCHEMA "user"
+```
 
 ```sql
 CREATE TABLE
@@ -154,7 +157,11 @@ ADD
   CONSTRAINT user_pkey PRIMARY KEY (id)
 ```
 
-## Server comments (postgres) (company example)
+```sql
+CREATE UNIQUE INDEX "user_index_unique_email" on "user"."user" ("email" ASC)
+```
+
+## Server comments (postgres) (company)
 ```sql
 CREATE EXTENSION IF NOT EXISTS ltree;
 ```
@@ -212,7 +219,65 @@ EXECUTE PROCEDURE update_company_comments_path();
 CREATE INDEX idx_company_comments_path ON "user"."company_comment" USING GIST (path);
 ```
 
-## Reviews (postgres) (company example)
+## Server comments (postgres) (post)
+```sql
+CREATE EXTENSION IF NOT EXISTS ltree;
+```
+
+```sql
+CREATE TABLE
+  "user".post_comment (
+    id serial NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT now(),
+    updated_at timestamp without time zone NULL,
+    post integer NOT NULL,
+    content text NOT NULL,
+    parent_id integer NULL,
+    path ltree NULL,
+    "user" integer NOT NULL
+  );
+
+ALTER TABLE
+  "user".post_comment
+ADD
+  CONSTRAINT post_comment_pkey PRIMARY KEY (id)
+```
+
+```sql
+CREATE OR REPLACE FUNCTION update_post_comments_path() 
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.parent_id IS NULL THEN
+        -- Top-level comment: simply set the path using a prefix
+        UPDATE "user"."post_comment" 
+        SET path = ('c' || NEW.id::text)::ltree
+        WHERE id = NEW.id;
+    ELSE
+        -- Nested comment: get the parent's path and append the new label
+        UPDATE "user"."post_comment" 
+        SET path = (
+            (SELECT path FROM "user"."post_comment" WHERE id = NEW.parent_id)
+            || (('c' || NEW.id::text)::ltree)
+        )
+        WHERE id = NEW.id;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+```
+
+```sql
+CREATE TRIGGER trg_update_post_comments_path
+AFTER INSERT ON "user"."post_comment"
+FOR EACH ROW
+EXECUTE PROCEDURE update_post_comments_path();
+```
+
+```sql
+CREATE INDEX idx_post_comments_path ON "user"."post_comment" USING GIST (path);
+```
+
+## Reviews (postgres) (company)
 ```sql
 CREATE TABLE
   "user".company_review (

@@ -17,12 +17,12 @@ export function getTableAndPKForModule(module: string) {
     table = companyCache;
     field = companyCache.id;
     commentsTable = companyComment;
-    commentsField = companyComment.company;
+    commentsField = 'company';
   } else if (module === 'posts' || module === 'post') {
     table = postCache;
     field = postCache.slug;
     commentsTable = postComment;
-    commentsField = postComment.post;
+    commentsField = 'post';
   } else if (module === 'artists' || module === 'artist') {
     table = mbArtistMetadataCache;
     field = mbArtistMetadataCache.id;
@@ -41,5 +41,5 @@ export function getTableAndPKForModule(module: string) {
   } else {
     throw new Error('Invalid module');
   }
-  return { table, field, commentsTable };
+  return { table, field, commentsTable, commentsField };
 }

@@ -36,9 +36,9 @@ WITH RECURSIVE top_level AS (
     u.image AS image,
     u.email AS email,
     nlevel(c.path) AS depth
-  FROM "user".company_comment c
+  FROM ${commentsTable} c
   LEFT JOIN "user"."user" u ON c."user" = u.id
-  WHERE c.company = ${id} AND c.parent_id IS NULL
+  WHERE c.${sql.raw(commentsField)} = ${id} AND c.parent_id IS NULL
   ORDER BY c.created_at
   LIMIT ${pageSizeInt} OFFSET ${offset}
 ),
@@ -57,20 +57,22 @@ full_tree AS (
     u.image AS image,
     u.email AS email,
     nlevel(c.path) AS depth
-  FROM "user".company_comment c
+  FROM ${commentsTable} c
   LEFT JOIN "user"."user" u ON c."user" = u.id
   INNER JOIN full_tree ft ON c.parent_id = ft.id
 ),
 top_level_count AS (
   SELECT COUNT(*) AS total
-  FROM "user".company_comment c
-  WHERE c.company = ${id} AND c.parent_id IS NULL
+  FROM ${commentsTable} c
+  WHERE c.${sql.raw(commentsField)} = ${id} AND c.parent_id IS NULL
 )
 SELECT 
   (SELECT total FROM top_level_count) AS total_count,
   json_agg(full_tree.*) AS comments
 FROM full_tree;
 `;
+
+    console.log('Executing recursive query:', recursiveQuery.getSQL());
 
     const result = await db.execute(recursiveQuery);
     const totalCount = result[0]?.total_count || 0;

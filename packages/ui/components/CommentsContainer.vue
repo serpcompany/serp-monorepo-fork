@@ -144,8 +144,8 @@
             name: user.value.name,
             image: user.value.image,
             content: commentObj.comment,
-            createdAt: commentObj.timestamp,
-            updatedAt: commentObj.timestamp,
+            created_at: commentObj.timestamp,
+            updated_at: commentObj.timestamp,
             replies: []
           });
           newComment.value = '';

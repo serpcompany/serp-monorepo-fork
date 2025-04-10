@@ -54,6 +54,7 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_URL,
       apiUrl: process.env.NUXT_PUBLIC_API_URL,
       useAuth: true,
+      forCloudflare: false,
       environment: process.env.NODE_ENV,
       profileDropdownLinks: [
         [

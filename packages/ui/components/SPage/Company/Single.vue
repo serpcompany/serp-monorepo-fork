@@ -367,11 +367,21 @@
         <div class="py-4 sm:p-6">
           <ReviewDistributionCard
             :total-reviews="data.numReviews ? data.numReviews : 0"
-            :total-one-star-reviews="data.numOneStarReviews ? data.numOneStarReviews : 0"
-            :total-two-star-reviews="data.numTwoStarReviews ? data.numTwoStarReviews : 0"
-            :total-three-star-reviews="data.numThreeStarReviews ? data.numThreeStarReviews : 0"
-            :total-four-star-reviews="data.numFourStarReviews ? data.numFourStarReviews : 0"
-            :total-five-star-reviews="data.numFiveStarReviews  ? data.numFiveStarReviews : 0"
+            :total-one-star-reviews="
+              data.numOneStarReviews ? data.numOneStarReviews : 0
+            "
+            :total-two-star-reviews="
+              data.numTwoStarReviews ? data.numTwoStarReviews : 0
+            "
+            :total-three-star-reviews="
+              data.numThreeStarReviews ? data.numThreeStarReviews : 0
+            "
+            :total-four-star-reviews="
+              data.numFourStarReviews ? data.numFourStarReviews : 0
+            "
+            :total-five-star-reviews="
+              data.numFiveStarReviews ? data.numFiveStarReviews : 0
+            "
             :average-rating="data.averageRating ? data.averageRating : 0"
             :show-border="false"
             card-title=""

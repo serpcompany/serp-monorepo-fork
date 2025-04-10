@@ -97,6 +97,19 @@ describe('SinglePostsGlossaryPost Snapshot', () => {
     async (desc: string, { config, props }) => {
       runtimeConfig = config;
       mockNuxtImport('useRuntimeConfig', () => () => runtimeConfig);
+      globalThis.usePostComments = async (id: number) => {
+        return {
+          comments: props.comments
+            ? [
+                {
+                  id: 1,
+                  content: 'Test comment',
+                  replies: []
+                }
+              ]
+            : []
+        };
+      };
 
       const html = await ComponentRender(
         `GlossaryPost ${desc}`,

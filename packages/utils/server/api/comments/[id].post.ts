@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
     const { commentsTable, commentsField } = getTableAndPKForModule(module_);
 
     const newComment = {
-      company: id,
+      [commentsField]: id,
       user: userId,
       content: comment,
       parentId:

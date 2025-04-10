@@ -45,7 +45,7 @@ export default defineEventHandler(async (event) => {
         and(
           eq(commentsTable.id, commentId),
           eq(commentsTable.user, userId),
-          eq(commentsTable.company, id)
+          eq(commentsTable[commentsField], id)
         )
       )
       .returning();

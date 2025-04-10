@@ -32,6 +32,7 @@ export default defineNuxtConfig({
       apiUrl: process.env.NUXT_PUBLIC_API_URL,
       useAuth: true,
       environment: process.env.NODE_ENV,
+      forCloudflare: false,
       socialLinks: [
         {
           name: 'Twitter',
