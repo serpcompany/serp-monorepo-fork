@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "generatedAt": "2025-04-11T12:49:24.493Z",
+    "tasksAnalyzed": 10,
+    "thresholdScore": 5,
+    "projectName": "Your Project Name",
+    "usedResearch": false
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Set up testing environment",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down the process of setting up a Vitest testing environment for Nuxt middleware, including directory structure, configuration files, and TypeScript type setup",
+      "reasoning": "This is a foundational setup task with clearly defined steps. The complexity is moderate as it involves configuration but follows standard patterns. The task is already well-structured but could benefit from grouping into installation, directory setup, and configuration subtasks."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Create Nuxt composable mocks",
+      "complexityScore": 5,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Detail the specific steps to create reusable mock functions for Nuxt composables, particularly defineNuxtRouteMiddleware and navigateTo, that can be used across multiple test files",
+      "reasoning": "Creating mocks requires understanding of both Vitest mocking patterns and Nuxt's internal APIs. The complexity comes from ensuring the mocks behave correctly in tests and are reusable. The task could be split into creating basic mocks, enhancing them for testability, and documentation."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Implement forceTrailingSlash root path test",
+      "complexityScore": 3,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Break down the implementation of a test for the root path case in the forceTrailingSlash middleware, including test setup, execution, and assertion phases",
+      "reasoning": "This is a focused test implementation task with a single test case. While straightforward, it requires proper setup of mocks and understanding of the middleware behavior. The complexity is low but requires careful attention to test structure and assertions."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Implement forceTrailingSlash existing slash tests",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Detail the implementation of multiple test cases for paths that already have trailing slashes or are asset paths in the forceTrailingSlash middleware",
+      "reasoning": "This task involves multiple related test cases that need to be organized into a cohesive test suite. The complexity comes from ensuring proper test isolation and handling different path patterns. It builds on the previous task but expands the test coverage."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Implement forceTrailingSlash redirect tests",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Create detailed test cases for the redirect functionality in forceTrailingSlash middleware, handling paths with query parameters and hash fragments",
+      "reasoning": "This task is more complex as it tests the actual redirect behavior, requiring more sophisticated assertions and mock verification. It needs to handle various URL components (path, query, hash) and verify the correct redirect status code."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Create mock for redirects.json",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Detail the steps to create and configure a mock for the redirects.json file, ensuring it can be properly imported and used by the redirects middleware tests",
+      "reasoning": "This task involves creating a mock for a configuration file rather than a function, which requires understanding how the middleware imports and uses this file. It's moderately complex due to the need to ensure the mock is correctly recognized by the module system."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Implement redirects exact match tests",
+      "complexityScore": 4,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Create test cases for the redirects middleware that verify exact path matching behavior, including both with and without trailing slashes",
+      "reasoning": "This task tests the core functionality of the redirects middleware. The complexity is moderate as it requires proper setup of the mock redirects.json and verification of the redirect behavior. It builds on previous tasks but focuses on a specific aspect of the middleware."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Implement redirects non-match test",
+      "complexityScore": 2,
+      "recommendedSubtasks": 3,
+      "expansionPrompt": "Detail the implementation of a test case for the redirects middleware when the path doesn't match any configured redirect",
+      "reasoning": "This is a relatively simple negative test case that verifies the middleware doesn't perform redirects for unmatched paths. The complexity is low as it's a single test case with straightforward assertions, but proper setup is still required."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Implement redirects with query params and hash tests",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Create detailed test cases for the redirects middleware that verify proper handling of paths with query parameters and hash fragments, ensuring these components are preserved in the redirect",
+      "reasoning": "This task tests more complex URL handling in the redirects middleware. The complexity comes from verifying that query parameters and hash fragments are correctly preserved during redirects, requiring more sophisticated assertions and test scenarios."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Measure and optimize test coverage",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Detail the process of measuring test coverage for the middleware tests, identifying gaps, and implementing additional tests to reach the coverage target",
+      "reasoning": "This is a more complex task as it requires analyzing existing test coverage, identifying uncovered code paths, and implementing targeted tests to address gaps. It depends on all previous tasks and requires a holistic understanding of both middleware components and their test suites."
+    }
+  ]
+}

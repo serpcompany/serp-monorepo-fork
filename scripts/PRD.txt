@@ -1,0 +1,92 @@
+<context>
+# PRD: Unit Tests for serp-co Middleware
+
+## 1. Objective
+
+Write comprehensive unit tests for the existing Nuxt middleware located in `apps/serp-co/middleware/` (`forceTrailingSlash.global.ts` and `redirects.global.ts`). This is a prerequisite for refactoring the middleware into a shared package, ensuring no functionality is broken during the refactor.
+
+## 2. Background
+
+The `serp-co` application, like others in the monorepo, contains middleware for common tasks:
+- `forceTrailingSlash.global.ts`: Ensures non-root, non-asset paths end with a trailing slash via 301 redirect.
+- `redirects.global.ts`: Handles 301 redirects based on mappings defined in `apps/serp-co/redirects.json`.
+
+These middleware files are duplicated across apps. To prepare for consolidation, unit tests are needed to capture the expected behavior.
+
+## 3. Goals
+
+- Create unit tests for `forceTrailingSlash.global.ts`.
+- Create unit tests for `redirects.global.ts`.
+- Ensure tests cover various scenarios, including edge cases and interactions with query parameters/hashes.
+- Use Vitest as the testing framework (confirmed by `vitest.config.ts`).
+- Mock necessary Nuxt composables (`defineNuxtRouteMiddleware`, `navigateTo`, `to` route object).
+- Mock the `redirects.json` import for `redirects.global.ts` tests.
+
+## 4. Non-Goals
+
+- Refactoring the middleware itself.
+- Writing integration tests.
+- Testing middleware in other applications within the monorepo.
+</context>
+<PRD>
+# 5. Test Plan Details
+
+### 5.1. Testing Environment Setup
+
+- Confirm Vitest and related dependencies in `apps/serp-co/package.json`.
+- Set up mocks for Nuxt composables (`vi.mock`).
+- Test files will reside in `apps/serp-co/tests/middleware/`.
+
+### 5.2. `forceTrailingSlash.global.ts` Tests (`apps/serp-co/tests/middleware/forceTrailingSlash.spec.ts`)
+
+- **Scenario:** Root path (`/`)
+  - **Input:** `to = { path: '/' }`
+  - **Expected:** No call to `navigateTo`.
+- **Scenario:** Path already has trailing slash (`/about/`)
+  - **Input:** `to = { path: '/about/' }`
+  - **Expected:** No call to `navigateTo`.
+- **Scenario:** Asset path (`.xml`)
+  - **Input:** `to = { path: '/sitemap.xml' }`
+  - **Expected:** No call to `navigateTo`.
+- **Scenario:** Asset path (`.txt`)
+  - **Input:** `to = { path: '/robots.txt' }`
+  - **Expected:** No call to `navigateTo`.
+- **Scenario:** Path needs trailing slash (`/about`)
+  - **Input:** `to = { path: '/about', query: {}, hash: '' }`
+  - **Expected:** `navigateTo` called with `{ path: '/about/', query: {}, hash: '' }` and `{ redirectCode: 301 }`.
+- **Scenario:** Path with query params needs trailing slash (`/products?id=1`)
+  - **Input:** `to = { path: '/products', query: { id: '1' }, hash: '' }`
+  - **Expected:** `navigateTo` called with `{ path: '/products/', query: { id: '1' }, hash: '' }` and `{ redirectCode: 301 }`.
+- **Scenario:** Path with hash needs trailing slash (`/contact#form`)
+  - **Input:** `to = { path: '/contact', query: {}, hash: '#form' }`
+  - **Expected:** `navigateTo` called with `{ path: '/contact/', query: {}, hash: '#form' }` and `{ redirectCode: 301 }`.
+
+### 5.3. `redirects.global.ts` Tests (`apps/serp-co/tests/middleware/redirects.spec.ts`)
+
+- **Mocking:** Use `vi.mock('@/redirects.json', () => ({ default: { '/old-path': '/new-path/', '/another': '/destination' } }))`
+- **Scenario:** Path matches a redirect key (`/old-path`)
+  - **Input:** `to = { path: '/old-path', query: {}, hash: '' }`
+  - **Expected:** `navigateTo` called with `{ path: '/new-path/', query: {}, hash: '' }` and `{ redirectCode: 301 }`.
+- **Scenario:** Path matches a redirect key with trailing slash (`/old-path/`)
+  - **Input:** `to = { path: '/old-path/', query: {}, hash: '' }`
+  - **Expected:** `navigateTo` called with `{ path: '/new-path/', query: {}, hash: '' }` and `{ redirectCode: 301 }`.
+- **Scenario:** Path does not match any redirect key (`/non-existent`)
+  - **Input:** `to = { path: '/non-existent', query: {}, hash: '' }`
+  - **Expected:** No call to `navigateTo`.
+- **Scenario:** Path matches redirect key with query params (`/old-path?key=val`)
+  - **Input:** `to = { path: '/old-path', query: { key: 'val' }, hash: '' }`
+  - **Expected:** `navigateTo` called with `{ path: '/new-path/', query: { key: 'val' }, hash: '' }` and `{ redirectCode: 301 }`.
+- **Scenario:** Path matches redirect key with hash (`/old-path#section`)
+  - **Input:** `to = { path: '/old-path', query: {}, hash: '#section' }`
+  - **Expected:** `navigateTo` called with `{ path: '/new-path/', query: {}, hash: '#section' }` and `{ redirectCode: 301 }`.
+
+# 6. Success Metrics
+
+- All defined test cases pass.
+- Test coverage for both middleware files is high (e.g., >90% lines/branches).
+
+# 7. Future Considerations
+
+- Once tests pass, proceed with refactoring the middleware into a shared package.
+- Consider adding integration tests later to cover the middleware in a full Nuxt application context.
+</PRD>
