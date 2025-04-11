@@ -2,7 +2,8 @@ import { useDataCache } from '#nuxt-multi-cache/composables';
 import { db } from '@serp/utils/server/api/db';
 import {
   companyCache,
-  companyReviewAggregate
+  companyReviewAggregate,
+  companyVerification
 } from '@serp/utils/server/api/db/schema';
 import { eq } from 'drizzle-orm';
 
@@ -14,6 +15,40 @@ export default defineEventHandler(async (event) => {
     const cacheKey = `company-${slug}`;
     const { value, addToCache } = await useDataCache(cacheKey, event);
     if (value) {
+      // refresh companyReviewAggregate info and verification info
+      const refreshQuery = db
+        .select({
+          numReviews: companyReviewAggregate.numReviews,
+          numOneStarReviews: companyReviewAggregate.numOneStarReviews,
+          numTwoStarReviews: companyReviewAggregate.numTwoStarReviews,
+          numThreeStarReviews: companyReviewAggregate.numThreeStarReviews,
+          numFourStarReviews: companyReviewAggregate.numFourStarReviews,
+          numFiveStarReviews: companyReviewAggregate.numFiveStarReviews,
+          averageRating: companyReviewAggregate.averageRating,
+          verified: companyVerification.id
+        })
+        .from(companyCache)
+        .leftJoin(
+          companyReviewAggregate,
+          eq(companyReviewAggregate.companyId, companyCache.id)
+        )
+        .leftJoin(
+          companyVerification,
+          eq(companyVerification.company, companyCache.id)
+        )
+        .where(eq(companyCache.id, value.id));
+      const refreshResults = await refreshQuery.execute();
+      if (refreshResults.length) {
+        const refreshData = refreshResults[0];
+        value.numReviews = refreshData.numReviews;
+        value.numOneStarReviews = refreshData.numOneStarReviews;
+        value.numTwoStarReviews = refreshData.numTwoStarReviews;
+        value.numThreeStarReviews = refreshData.numThreeStarReviews;
+        value.numFourStarReviews = refreshData.numFourStarReviews;
+        value.numFiveStarReviews = refreshData.numFiveStarReviews;
+        value.averageRating = refreshData.averageRating;
+        value.verified = refreshData.verified;
+      }
       return value;
     }
 
@@ -41,12 +76,17 @@ export default defineEventHandler(async (event) => {
         numThreeStarReviews: companyReviewAggregate.numThreeStarReviews,
         numFourStarReviews: companyReviewAggregate.numFourStarReviews,
         numFiveStarReviews: companyReviewAggregate.numFiveStarReviews,
-        averageRating: companyReviewAggregate.averageRating
+        averageRating: companyReviewAggregate.averageRating,
+        verified: companyVerification.id
       })
       .from(companyCache)
       .leftJoin(
         companyReviewAggregate,
         eq(companyReviewAggregate.companyId, companyCache.id)
+      )
+      .leftJoin(
+        companyVerification,
+        eq(companyVerification.company, companyCache.id)
       )
       .where(eq(companyCache.slug, slug as string));
 

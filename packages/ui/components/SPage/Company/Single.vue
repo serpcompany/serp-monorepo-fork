@@ -103,6 +103,10 @@
       :serply-link="data.serplyLink"
     >
       <template #upvote>
+        <CompanyVerificationButton
+          :id="data.id"
+          :is-verified-prop="data.verified"
+        />
         <UpvoteButton
           v-if="useAuth"
           :id="data.id"

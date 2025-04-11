@@ -18,6 +18,12 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
               <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+                <div class="flex w-full items-center sm:w-auto">
+                  <div class="flex items-center"><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if-->Claim This Company
+                      <!--v-if-->
+                    </button></div>
+                </div>
                 <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
                     <!--v-if--><span class="text-xl">👍</span><span>Upvotes 1</span>
                     <!--v-if-->
@@ -454,11 +460,19 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
                 </div>
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
-              <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-auto items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+                <div class="flex w-full items-center sm:w-auto">
+                  <div class="flex items-center"><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if-->Claim This Company
+                      <!--v-if-->
+                    </button></div>
+                </div>
+                <!--v-if--><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-auto items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>
                     <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg></a></div>
+                  </svg></a>
+              </div>
             </div><!-- Navigation for non-scrolled state -->
             <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
               <nav aria-label="page sections" class="flex space-x-4 whitespace-nowrap"><a href="#overview" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Overview</a><a href="#categories" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Categories</a><a href="#features" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Features</a><a href="#article" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Article</a><a href="#media" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Media</a><a href="#faq" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">FAQ</a><a href="#alternatives" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Alternatives</a><a href="#reviews" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Reviews</a><a href="#discussion" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Discussion</a></nav>
@@ -842,6 +856,12 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
               <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+                <div class="flex w-full items-center sm:w-auto">
+                  <div class="flex items-center"><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if-->Claim This Company
+                      <!--v-if-->
+                    </button></div>
+                </div>
                 <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
                     <!--v-if--><span class="text-xl">👍</span><span>Upvotes 0</span>
                     <!--v-if-->
@@ -1101,11 +1121,19 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
                 </div>
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
-              <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0"><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-auto items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+                <div class="flex w-full items-center sm:w-auto">
+                  <div class="flex items-center"><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if-->Claim This Company
+                      <!--v-if-->
+                    </button></div>
+                </div>
+                <!--v-if--><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-auto items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>
                     <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg></a></div>
+                  </svg></a>
+              </div>
             </div><!-- Navigation for non-scrolled state -->
             <div class="-mx-4 mt-4 overflow-x-auto px-4 sm:px-0">
               <nav aria-label="page sections" class="flex space-x-4 whitespace-nowrap"><a href="#overview" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Overview</a><a href="#reviews" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Reviews</a><a href="#discussion" class="sectionLinks flex-shrink-0 rounded-sm px-1 py-2 text-sm font-medium text-gray-900 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-600 sm:px-2 sm:text-base dark:text-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-300">Discussion</a></nav>

@@ -363,4 +363,28 @@ AFTER INSERT OR UPDATE OR DELETE ON "user".company_review
 FOR EACH ROW EXECUTE FUNCTION update_company_review_aggregate();
 ```
 
+## Company Verification (postgres)
+```sql
+CREATE TABLE
+  "user".company_verification (
+    id serial NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT now(),
+    company integer NOT NULL,
+    "user" integer NOT NULL
+  );
+
+ALTER TABLE
+  "user".company_verification
+ADD
+  CONSTRAINT company_verification_pkey PRIMARY KEY (id)
+```
+
+```sql
+CREATE UNIQUE INDEX "company_verification_index_2" on "user"."company_verification" ("company" ASC, "user" ASC)
+```
+
+```sql
+CREATE UNIQUE INDEX "company_verification_index_3" on "user"."company_verification" ("company" ASC)
+```
+
 # Cloudflare

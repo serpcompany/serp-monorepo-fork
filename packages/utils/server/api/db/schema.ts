@@ -105,6 +105,15 @@ export const companyReview = userSchema.table('company_review', {
   dateOfExperience: timestamp('date_of_experience', { withTimezone: true })
 });
 
+export const companyVerification = userSchema.table('company_verification', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  company: integer('company').notNull().unique(),
+  user: integer('user').notNull()
+});
+
 export const user = userSchema.table('user', {
   id: serial('id').primaryKey(),
   createdAt: timestamp('created_at', { withTimezone: true })
