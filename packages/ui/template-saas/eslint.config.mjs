@@ -1,6 +1,23 @@
 // @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs'
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import withNuxt from './.nuxt/eslint.config.mjs';
+import { createConfig } from '../../../packages/configs/eslint/eslint.config.mjs';
 
-export default withNuxt({
-  // Your custom configs here
-})
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Create base config first
+const baseConfig = createConfig({
+  quiet: false,
+  additionalRules: {},
+  additionalIgnores: [],
+  baseDirectory: __dirname
+});
+
+// Apply our overrides to ensure they take precedence
+baseConfig[1].rules = {
+  ...baseConfig[1].rules
+  // 'no-unused-vars': 'error',
+};
+
+export default withNuxt(baseConfig);

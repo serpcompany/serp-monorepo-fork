@@ -1,27 +1,29 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('pricing', () => queryCollection('pricing').first())
+  const { data: page } = await useAsyncData('pricing', () =>
+    queryCollection('pricing').first()
+  );
 
-useSeoMeta({
-  title: page.value?.title,
-  ogTitle: page.value?.title,
-  description: page.value?.description,
-  ogDescription: page.value?.description
-})
+  useSeoMeta({
+    title: page.value?.title,
+    ogTitle: page.value?.title,
+    description: page.value?.description,
+    ogDescription: page.value?.description
+  });
 
-defineOgImageComponent('Saas')
+  defineOgImageComponent('Saas');
 
-const isYearly = ref('0')
+  const isYearly = ref('0');
 
-const items = ref([
-  {
-    label: 'Monthly',
-    value: '0'
-  },
-  {
-    label: 'Yearly',
-    value: '1'
-  }
-])
+  const items = ref([
+    {
+      label: 'Monthly',
+      value: '0'
+    },
+    {
+      label: 'Yearly',
+      value: '1'
+    }
+  ]);
 </script>
 
 <template>
@@ -56,19 +58,16 @@ const items = ref([
           v-for="icon in page.logos.icons"
           :key="icon"
           :name="icon"
-          class="w-12 h-12 flex-shrink-0 text-(--ui-text-muted)"
+          class="h-12 w-12 flex-shrink-0 text-(--ui-text-muted)"
         />
       </UPageLogos>
     </UPageSection>
 
-    <UPageSection
-      :title="page.faq.title"
-      :description="page.faq.description"
-    >
+    <UPageSection :title="page.faq.title" :description="page.faq.description">
       <UPageAccordion
         :items="page.faq.items"
         multiple
-        class="max-w-4xl mx-auto"
+        class="mx-auto max-w-4xl"
       />
     </UPageSection>
   </div>

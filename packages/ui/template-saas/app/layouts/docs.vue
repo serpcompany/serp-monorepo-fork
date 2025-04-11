@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content'
+  import type { ContentNavigationItem } from '@nuxt/content';
 
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
+  const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
 </script>
 
 <template>
@@ -20,21 +20,18 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
                   class="w-full"
                 >
                   <template #trailing>
-                    <div class="flex items-center gap-0.5 ms-auto">
+                    <div class="ms-auto flex items-center gap-0.5">
                       <UKbd value="meta" />
                       <UKbd value="k" />
                     </div>
                   </template>
                 </UContentSearchButton>
               </template>
-              <UContentNavigation
-                :navigation="navigation"
-                highlight
-              />
+              <UContentNavigation :navigation="navigation" highlight />
             </UPageAside>
           </template>
 
-          <slot />
+          <slot ></slot>
         </UPage>
       </UContainer>
     </UMain>

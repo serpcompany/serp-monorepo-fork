@@ -3,7 +3,7 @@
 
   const props = defineProps({
     page: {
-      type: Object as PropType<any>,
+      type: Object as PropType<unknown>,
       required: true
     }
   });
@@ -19,7 +19,7 @@
       <template #top>
         <div
           class="absolute left-1/2 size-60 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[300px] sm:size-80 dark:bg-(--ui-primary)"
-        />
+        ></div>
         <LazyStarsBg />
       </template>
 
@@ -88,7 +88,7 @@
     >
       <div
         class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
-      />
+      ></div>
       <LazyStarsBg />
     </UPageCTA>
   </div>

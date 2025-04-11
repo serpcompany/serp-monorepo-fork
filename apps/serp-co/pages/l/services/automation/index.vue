@@ -1,20 +1,12 @@
 <script setup lang="ts">
-  const { data: page } = await useAsyncData('index', () =>
-    queryCollection('content').first()
-  );
-  if (!page.value) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: 'Page not found',
-      fatal: true
-    });
-  }
+  import { automation } from './automation.js';
+  const page = automation;
 
   useSeoMeta({
-    title: page.value.title,
-    ogTitle: page.value.title,
-    description: page.value.description,
-    ogDescription: page.value.description
+    title: page.title,
+    ogTitle: page.title,
+    description: page.description,
+    ogDescription: page.description
   });
 </script>
 

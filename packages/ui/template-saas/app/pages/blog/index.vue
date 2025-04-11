@@ -1,25 +1,26 @@
 <script setup lang="ts">
-const route = useRoute()
+  const route = useRoute();
 
-const { data: page } = await useAsyncData('blog', () => queryCollection('blog').first())
-const { data: posts } = await useAsyncData(route.path, () => queryCollection('posts').all())
+  const { data: page } = await useAsyncData('blog', () =>
+    queryCollection('blog').first()
+  );
+  const { data: posts } = await useAsyncData(route.path, () =>
+    queryCollection('posts').all()
+  );
 
-useSeoMeta({
-  title: page.value?.title,
-  ogTitle: page.value?.title,
-  description: page.value?.description,
-  ogDescription: page.value?.description
-})
+  useSeoMeta({
+    title: page.value?.title,
+    ogTitle: page.value?.title,
+    description: page.value?.description,
+    ogDescription: page.value?.description
+  });
 
-defineOgImageComponent('Saas')
+  defineOgImageComponent('Saas');
 </script>
 
 <template>
   <UContainer>
-    <UPageHeader
-      v-bind="page"
-      class="py-[50px]"
-    />
+    <UPageHeader v-bind="page" class="py-[50px]" />
 
     <UPageBody>
       <UBlogPosts>
@@ -30,7 +31,13 @@ defineOgImageComponent('Saas')
           :title="post.title"
           :description="post.description"
           :image="post.image"
-          :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
+          :date="
+            new Date(post.date).toLocaleDateString('en', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })
+          "
           :authors="post.authors"
           :badge="post.badge"
           :orientation="index === 0 ? 'horizontal' : 'vertical'"

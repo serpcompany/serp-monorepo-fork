@@ -1,8 +1,8 @@
 <template>
-  <UPageCard
-    variant="subtle"
-  >
-    <div class="relative overflow-hidden rounded-(--ui-radius) border border-dashed border-(--ui-border-accented) opacity-75 px-4 flex items-center justify-center aspect-video">
+  <UPageCard variant="subtle">
+    <div
+      class="relative flex aspect-video items-center justify-center overflow-hidden rounded-(--ui-radius) border border-dashed border-(--ui-border-accented) px-4 opacity-75"
+    >
       <svg
         class="absolute inset-0 h-full w-full stroke-(--ui-border-inverted)/10"
         fill="none"
@@ -27,7 +27,7 @@
         />
       </svg>
 
-      <slot />
+      <slot></slot>
     </div>
   </UPageCard>
 </template>
