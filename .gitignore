@@ -52,3 +52,4 @@ dist/
 
 gsc-service-account.json
 .secrets
+.agents/
