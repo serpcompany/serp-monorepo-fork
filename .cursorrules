@@ -4,14 +4,11 @@
     "description": "A monorepo containing multiple SERP related applications and shared packages."
   },
   "references": [
+    "@file .cursor/rules/general-rules.mdc",
     "@file .cursor/rules/project-info.mdc",
-    "@file .cursor/rules/project-structure.mdc",
-    "@file .cursor/rules/code-style.mdc",
-    "@file .cursor/rules/deployments.mdc",
-    "@file .cursor/rules/ui-guidelines.mdc",
-    "@file .cursor/rules/naming-conventions.mdc",
-    "@file .cursor/rules/configs-nuxt-config.mdc",
-    "@file .cursor/rules/writing-tests.mdc"
-  ],
-  "ai_instructions": "When generating code, first apply these global guidelines, then load and merge the additional rules from the referenced files."
+    "@file .cursor/rules/security-rules.mdc",
+    "@file .cursor/rules/software-tests-rules.mdc",
+    "@file .cursor/rules/ui-rules.mdc",
+    "@file .cursor/rules/vue-nuxt-rules.mdc"
+  ]
 }
