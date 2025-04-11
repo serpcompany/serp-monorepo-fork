@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // devtools: { enabled: true },
-  extends: ['@serp/types'],
+  extends: [
+    '@serp/types',
+    '@nuxt-ui-pro-template-saas',
+    '@nuxt-ui-pro-template-landing'
+  ],
   modules: [
     '@nuxt/ui-pro',
     '@nuxtjs/html-validator',

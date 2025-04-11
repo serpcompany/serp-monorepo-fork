@@ -1,10 +1,18 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  extends: ['@serp/ui', '@serp/utils', '@serp/tools', '@serp/types'],
+  extends: [
+    '@serp/ui',
+    '@serp/utils',
+    '@serp/tools',
+    '@serp/types',
+    '@nuxt-ui-pro-template-saas',
+    '@nuxt-ui-pro-template-landing'
+  ],
   modules: [
     '@nuxt/ui-pro',
     '@nuxtjs/seo',
+    '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-multi-cache',
     'nuxt-security',

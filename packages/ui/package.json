@@ -14,9 +14,14 @@
     "test:update": "vitest --run --coverage --update",
     "test:watch": "vitest --coverage"
   },
+  "dependencies": {
+    "@nuxt/content": "^3.4.0"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@iconify-json/lucide": "^1.2.14",
+    "@nuxt-ui-pro-template-landing": "workspace:^",
+    "@nuxt-ui-pro-template-saas": "workspace:^",
     "@nuxt/eslint": "^0.6.1",
     "@nuxt/icon": "^1.7.5",
     "@nuxt/image": "^1.8.1",
