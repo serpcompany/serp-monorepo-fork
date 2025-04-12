@@ -27,7 +27,7 @@
           <UNavigationMenu
             aria-label="Main navigation"
             orientation="horizontal"
-            contentOrientation="horizontal"
+            content-orientation="vertical"
             color="secondary"
             highlight
             variant="pill"
@@ -88,5 +88,6 @@
         </div>
       </div>
     </div>
+    <SBreadcrumb />
   </header>
 </template>
