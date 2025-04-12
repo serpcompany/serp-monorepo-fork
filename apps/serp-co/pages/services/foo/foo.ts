@@ -13,8 +13,7 @@ export const data = {
         icon: 'i-lucide-arrow-right',
         trailing: false,
         to: '#',
-        target: '_blank',
-        size: 'xl'
+        target: '_blank'
       }
     ]
   },

@@ -11,7 +11,7 @@ export const data = {
         label: 'Get Started',
         icon: 'i-lucide-square-play',
         trailing: true,
-        variant: 'subtle',
+        variant: 'solid',
         to: '#',
         size: 'xl'
       }
@@ -149,156 +149,85 @@ export const data = {
       }
     ]
   },
-  // pricing: {
-  //   title: 'Choose your [AI automation]{.text-(--ui-secondary)} plan',
-  //   description:
-  //     "Unlock AI-powered business automation with our flexible plans. Whether you're a small business or enterprise, we have the perfect AI solution to maximize your operational efficiency.",
-  //   plans: [
-  //     {
-  //       title: 'Business Essentials',
-  //       description:
-  //         'Perfect for small to medium businesses starting with AI automation.',
-  //       price: '$499',
-  //       features: [
-  //         'Custom AI agent development for one business function',
-  //         'Integration with existing business systems',
-  //         'Basic analytics and reporting dashboard',
-  //         'Regular updates and maintenance',
-  //         'Email and chat support',
-  //         'Up to 10,000 automated operations per month'
-  //       ],
-  //       button: {
-  //         label: 'Get Started',
-  //         color: 'neutral',
-  //         variant: 'outline',
-  //         to: '#'
-  //       }
-  //     },
-  //     {
-  //       title: 'Enterprise Suite',
-  //       description: 'For larger organizations with complex automation needs.',
-  //       price: '$1,499',
-  //       features: [
-  //         'Custom AI agent development for multiple business functions',
-  //         'Seamless integration across all enterprise systems',
-  //         'Advanced analytics and business intelligence',
-  //         'Priority updates and proactive optimization',
-  //         '24/7 dedicated support with account manager',
-  //         'Unlimited automated operations'
-  //       ],
-  //       button: {
-  //         label: 'Get Started',
-  //         variant: 'subtle',
-  //         to: '#'
-  //       }
-  //     }
-  //   ]
-  // },
-  useCases: [
-    {
-      title: 'Business [Use Cases]{.text-(--ui-secondary)}',
-      description:
-        'AI agents can be designed for various high-impact applications across organizations, delivering measurable improvements in efficiency, accuracy, and operational capabilities.',
-      images: {
-        mobile: '/images/ai-agents-mobile.svg',
-        desktop: '/images/ai-agents-desktop.svg'
-      },
-      features: [
-        {
-          title: 'Automate Customer Support',
-          description:
-            'NLP-powered AI agents handle inquiries 24/7, resolve issues instantly, and deliver personalized support.',
-          class: 'border-l border-(--ui-primary) pl-4'
-        },
-        {
-          title: 'Enhance Lead Generation',
-          description:
-            'AI agents identify and qualify potential leads by analyzing behavior patterns, engagement data, and market signals.',
-          class: 'border-l border-(--ui-border) pt-4 pl-4'
-        },
-        {
-          title: 'Support Decision-Making Processes',
-          description:
-            'AI agents analyze data, generate insights, and offer recommendations based on predefined criteria or objectives',
-          class: 'border-l border-(--ui-border) pt-4 pl-4'
-        },
-        {
-          title: 'Enhance Data Analysis',
-          description:
-            'AI agents process large datasets with precision and speed, uncovering valuable insights and patterns that drive informed decision-making.',
-          class: 'border-l border-(--ui-border) pt-4 pl-4'
-        },
-        {
-          title: 'Optimize Marketing Campaigns',
-          description:
-            'Using sophisticated ML algorithms, AI agents analyze customer data, segment audiences, personalize marketing messages, and fine-tune campaign strategies in real time.',
-          class: 'border-l border-(--ui-border) pt-4 pl-4'
-        },
-        {
-          title: 'Manage Financial Transactions',
-          description:
-            'AI agents manage financial transactions securely and efficiently, automating invoicing, payments, fraud detection, and risk assessment processes. ',
-          class: 'border-l border-(--ui-border) pt-4 pl-4'
-        }
-      ],
-      cta: {
-        title: 'Contact Experts',
+  useCases: {
+    title: 'Business Use Cases',
+    description:
+      'AI agents can be designed for various high-impact applications across organizations, delivering measurable improvements in efficiency, accuracy, and operational capabilities.',
+    items: [
+      {
+        title: 'Automate Customer Support',
         description:
-          'Ready to implement AI agents for specific business needs? Expert teams are available to help with implementation.',
-        links: [
-          {
-            label: 'Get Started',
-            to: '#contact',
-            icon: 'i-lucide-arrow-right',
-            variant: 'primary',
-            size: 'lg'
-          }
-        ]
+          'NLP-powered AI agents handle inquiries 24/7, resolve issues instantly, and deliver personalized support.',
+        icon: 'i-lucide-headset',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Enhance Lead Generation',
+        description:
+          'AI agents identify and qualify potential leads by analyzing behavior patterns, engagement data, and market signals.',
+        icon: 'i-lucide-user-plus',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Support Decision-Making Processes',
+        description:
+          'AI agents analyze data, generate insights, and offer recommendations based on predefined criteria or objectives',
+        icon: 'i-lucide-git-branch',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Enhance Data Analysis',
+        description:
+          'AI agents process large datasets with precision and speed, uncovering valuable insights and patterns that drive informed decision-making.',
+        icon: 'i-lucide-bar-chart-2',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Optimize Marketing Campaigns',
+        description:
+          'Using sophisticated ML algorithms, AI agents analyze customer data, segment audiences, personalize marketing messages, and fine-tune campaign strategies in real time.',
+        icon: 'i-lucide-trending-up',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Manage Financial Transactions',
+        description:
+          'AI agents manage financial transactions securely and efficiently, automating invoicing, payments, fraud detection, and risk assessment processes.',
+        icon: 'i-lucide-dollar-sign',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
       }
-    }
-  ],
-  // testimonials: {
-  //   title: 'Over a decade of success in growth & automation.',
-  //   description: '',
-  //   items: [
-  //     {
-  //       quote:
-  //         'Implementing AI agents revolutionized our customer service operations, reducing response times and increasing satisfaction.',
-  //       user: {
-  //         name: 'Alex Johnson',
-  //         description: 'Head of Customer Experience at RetailCorp',
-  //         target: '_blank',
-  //         avatar: {
-  //           src: 'https://i.pravatar.cc/120?img=15'
-  //         }
-  //       }
-  //     },
-  //     {
-  //       quote:
-  //         'Our operational efficiency improved dramatically after integrating AI agents into our workflow.',
-  //       user: {
-  //         name: 'Maria Gonzalez',
-  //         description: 'Operations Manager at FinTech Solutions',
-  //         target: '_blank',
-  //         avatar: {
-  //           src: 'https://i.pravatar.cc/120?img=16'
-  //         }
-  //       }
-  //     },
-  //     {
-  //       quote:
-  //         'The adaptability of the AI agents allowed us to scale our services without compromising on quality.',
-  //       user: {
-  //         name: 'Liam Smith',
-  //         description: 'CTO at HealthPlus',
-  //         target: '_blank',
-  //         avatar: {
-  //           src: 'https://i.pravatar.cc/120?img=17'
-  //         }
-  //       }
-  //     }
-  //   ]
-  // },
+    ]
+  },
   cta: {
     title: 'Automate Your Business with [AI Agents]{.text-(--ui-secondary)}',
     description:
@@ -313,45 +242,33 @@ export const data = {
     ]
   },
   features_: {
-    title: 'Features That Set Us Apart',
+    title: 'Our AI Agent Features',
     description:
-      'Our platform combines enterprise-grade reliability with developer-friendly features, providing everything you need to build and scale your applications.',
+      'Powerful features designed to enhance your business operations',
     items: [
       {
-        title: 'Developer Experience',
+        title: 'Continuous Learning',
         description:
-          'Comprehensive documentation, powerful CLI tools, and intuitive APIs that make development a joy.',
-        icon: 'i-lucide-cog'
+          'AI agents that continuously learn and improve from interactions and feedback',
+        icon: 'i-lucide-brain'
       },
       {
-        title: 'Enterprise Ready',
+        title: 'Scalable Architecture',
         description:
-          'SOC 2 Type II certified, GDPR compliant, with 24/7 enterprise support and dedicated success managers.',
-        icon: 'i-lucide-check'
+          'Seamlessly scale your AI agents as your business grows without performance degradation',
+        icon: 'i-lucide-layers'
       },
       {
-        title: 'Advanced Security',
+        title: 'Multi-Channel Support',
         description:
-          'Multi-factor authentication, role-based access control, and audit logs keep your data protected.',
-        icon: 'i-lucide-lock'
+          'Engage with customers across multiple channels with consistent quality and response times',
+        icon: 'i-lucide-message-square'
       },
       {
-        title: 'Global Performance',
+        title: 'Advanced Analytics',
         description:
-          'Edge computing network spans 200+ locations ensuring lightning-fast response times worldwide.',
-        icon: 'i-lucide-rocket'
-      },
-      {
-        title: 'Flexible Pricing',
-        description:
-          'Pay only for what you use with transparent pricing and no long-term commitments required.',
-        icon: 'i-lucide-circle-dollar-sign'
-      },
-      {
-        title: 'Infinite Scalability',
-        description:
-          'Built on cloud-native architecture that automatically scales to meet any demand.',
-        icon: 'i-lucide-chart-bar'
+          'Gain insights from comprehensive analytics on agent performance and customer interactions',
+        icon: 'i-lucide-activity'
       }
     ]
   }

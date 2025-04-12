@@ -173,24 +173,14 @@
       </UPricingPlans>
     </UPageSection> -->
 
-    <!-- use cases -->
+    <!-- useCases business use cases -->
     <UPageSection
       id="useCases"
-      v-bind="page.useCases[0]"
-      :ui="{
-        title: 'text-left @container relative flex',
-        description: 'text-left'
-      }"
+      v-bind="page.useCases"
       class="relative overflow-hidden"
     >
-      <div
-        class="absolute top-10 -left-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
-      ></div>
-      <div
-        class="absolute -right-10 -bottom-10 z-10 size-[300px] rounded-full"
-      ></div>
       <template #title>
-        <MDC :value="page.useCases[0].title" class="*:leading-9" />
+        <MDC :value="page.useCases.title" class="*:leading-9" />
         <div class="hidden @min-[1020px]:block">
           <UColorModeImage
             light="/images/light/line-2.svg"
@@ -200,18 +190,17 @@
         </div>
       </template>
 
-      <template #features>
-        <div
-          v-for="(feature, index) in page.useCases[0].features"
+      <UPageGrid>
+        <UPageCard
+          v-for="(item, index) in page.useCases.items"
           :key="index"
-          :class="feature.class"
-        >
-          <h3 class="mb-2 text-lg font-semibold">{{ feature.title }}</h3>
-          <p class="text-sm text-(--ui-text-muted)">
-            {{ feature.description }}
-          </p>
-        </div>
-      </template>
+          v-bind="item"
+          spotlight
+          spotlight-color="secondary"
+          class="rounded-xl border border-(--ui-secondary)/50 hover:border-(--ui-secondary)"
+          variant="soft"
+        />
+      </UPageGrid>
     </UPageSection>
 
     <!-- testimonials -->
@@ -277,19 +266,5 @@
 
       <LazyStarsBg />
     </UPageCTA>
-
-    <UPageSection
-      :title="page.features_.title"
-      :description="page.features_.description"
-    >
-      <UPageGrid>
-        <UPageCard
-          v-for="(item, index) in page.features_.items"
-          :key="index"
-          v-bind="item"
-          spotlight
-        />
-      </UPageGrid>
-    </UPageSection>
   </div>
 </template>
