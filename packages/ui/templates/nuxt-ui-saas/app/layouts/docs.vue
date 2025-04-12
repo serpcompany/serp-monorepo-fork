@@ -31,7 +31,7 @@
             </UPageAside>
           </template>
 
-          <slot ></slot>
+          <slot></slot>
         </UPage>
       </UContainer>
     </UMain>
