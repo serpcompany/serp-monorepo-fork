@@ -1,265 +1,359 @@
 export const data = {
-  title: 'AI Agents',
-  description: '',
-  navigation: false,
+  title: 'AI Agents - Built with Nuxt UI Pro',
+  description:
+    'Transform your business operations with intelligent AI agents designed to automate tasks, enhance efficiency, and drive growth.',
   hero: {
-    title: 'AI Agents to Automate Your Business',
+    title: 'Automate Your Business with [AI Agents]{.text-(--ui-secondary)}',
     description:
-      'Turn time-consuming processes into instant results. With agentic automation, your workflows run smarter, faster, and error-free—no manual intervention required.',
+      'AI agents deliver precise, efficient task automation, matching human-level performance. They operate continuously, reducing errors and increasing productivity, allowing businesses to scale fast without additional human resource costs.',
     links: [
       {
-        label: 'Get started',
-        icon: 'i-lucide-arrow-right',
+        label: 'Get Started',
+        icon: 'i-lucide-square-play',
         trailing: true,
-        to: 'https://ui.nuxt.com/getting-started/installation/pro/nuxt',
-        target: '_blank',
+        variant: 'solid',
+        to: '#',
         size: 'xl'
       }
-      // {
-      //   label: 'Use this template',
-      //   icon: 'i-simple-icons-github',
-      //   size: 'xl',
-      //   color: 'neutral',
-      //   variant: 'subtle',
-      //   to: 'https://github.com/nuxt-ui-pro/saas',
-      //   target: '_blank'
-      // }
     ]
   },
   sections: [
     {
-      title: 'Enterprise-Grade Solutions',
+      title: '[Tailored]{.text-(--ui-secondary)} AI Solutions',
       description:
-        'Transform your business with our comprehensive suite of tools. Built for scale, security, and seamless integration, our platform empowers teams to achieve more while maintaining complete control.',
-      id: 'features',
-      orientation: 'horizontal',
+        "We build agents tailored to your specific business needs, whether it's customer support, data analysis, lead generation or process automation.",
+      images: {
+        mobile: 'https://i.postimg.cc/P53rTn3V/1.png',
+        desktop: 'https://i.postimg.cc/P53rTn3V/1.png'
+      },
       features: [
         {
-          name: 'Developer-First',
+          title: 'Custom Design',
           description:
-            'Built by developers for developers, with extensive API documentation and flexible integration options.',
-          icon: 'i-lucide-cog'
+            'AI agents tailored to your operational goals, ensuring they effectively support your business processes.',
+          class: 'border-l border-(--ui-secondary) pl-4'
         },
         {
-          name: '99.9% Uptime',
+          title: 'Seamless Integration',
           description:
-            'Enterprise-grade infrastructure with guaranteed reliability and automatic failover protection.',
-          icon: 'i-lucide-check'
+            'Effortless integration into your existing systems, maintaining workflow continuity and minimizing disruptions.',
+          class: 'border-l border-(--ui-border) pt-4 pl-4'
         },
         {
-          name: 'Bank-Level Security',
+          title: 'Continuous Support',
           description:
-            'SOC 2 Type II certified with end-to-end encryption and advanced threat detection.',
-          icon: 'i-lucide-lock'
-        }
-      ]
-    },
-    {
-      title: 'Optimized for Growth',
-      description:
-        'Scale your business confidently with our enterprise-ready platform. From startups to Fortune 500 companies, we provide the tools and support you need to succeed.',
-      orientation: 'horizontal',
-      reverse: true,
-      features: [
-        {
-          name: 'Lightning Fast',
-          description:
-            'Global CDN with sub-100ms latency and automatic performance optimization.',
-          icon: 'i-lucide-rocket'
-        },
-        {
-          name: 'Predictable Pricing',
-          description:
-            'Transparent, usage-based pricing with no hidden fees and volume discounts.',
-          icon: 'i-lucide-circle-dollar-sign'
-        },
-        {
-          name: 'Infinite Scale',
-          description:
-            'Auto-scaling architecture handles millions of requests without breaking a sweat.',
-          icon: 'i-lucide-chart-bar'
+            'Ongoing, unlimited support and regular updates to keep your AI agents optimized and aligned with an ever-changing world.',
+          class: 'border-l border-(--ui-border) pt-4 pl-4'
         }
       ]
     }
   ],
-  features: {
-    title: 'Features That Set Us Apart',
+  aiAgentDevelopment: {
+    title: 'AI Agent [Development]{.text-(--ui-secondary)}',
     description:
-      'Our platform combines enterprise-grade reliability with developer-friendly features, providing everything you need to build and scale your applications.',
-    items: [
+      'Transform your business operations with custom AI agents that automate tasks, process data, and deliver continuous value.',
+    features: [
       {
-        title: 'Developer Experience',
+        title: 'AI Agent Consulting',
         description:
-          'Comprehensive documentation, powerful CLI tools, and intuitive APIs that make development a joy.',
-        icon: 'i-lucide-cog'
+          'Clarity and confidence in your AI implementation path. Your business challenges translated into specific AI solutions that deliver measurable ROI from day one.',
+        icon: 'i-lucide-lightbulb',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed'
+        }
       },
       {
-        title: 'Enterprise Ready',
+        title: 'Custom AI Agent Design',
         description:
-          'SOC 2 Type II certified, GDPR compliant, with 24/7 enterprise support and dedicated success managers.',
-        icon: 'i-lucide-check'
+          'AI agents perfectly aligned with your operational goals and tailored to your specific needs and use case.',
+        icon: 'i-lucide-settings',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed'
+        }
       },
       {
-        title: 'Advanced Security',
+        title: 'Task Automation',
         description:
-          'Multi-factor authentication, role-based access control, and audit logs keep your data protected.',
-        icon: 'i-lucide-lock'
+          'Remove repetitive tasks & toil, allowing your team to focus on strategic initiatives and innovation.',
+        icon: 'i-lucide-repeat',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed'
+        }
       },
       {
-        title: 'Global Performance',
+        title: 'Real-Time Data Processing',
         description:
-          'Edge computing network spans 200+ locations ensuring lightning-fast response times worldwide.',
-        icon: 'i-lucide-rocket'
+          'Faster, better decisions with AI-powered real-time data analysis transformed into actionable insights to keep your business agile in fast-paced environments.',
+        icon: 'i-lucide-activity',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed'
+        }
       },
       {
-        title: 'Flexible Pricing',
+        title: 'Intelligent Customer Interaction',
         description:
-          'Pay only for what you use with transparent pricing and no long-term commitments required.',
-        icon: 'i-lucide-circle-dollar-sign'
+          'Elevated customer experiences with responsive, personalized AI interactions. Reduced response times and stronger relationships through consistent, high-quality engagement.',
+        icon: 'i-lucide-users',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed'
+        }
       },
       {
-        title: 'Infinite Scalability',
+        title: 'Ongoing Support',
         description:
-          'Built on cloud-native architecture that automatically scales to meet any demand.',
-        icon: 'i-lucide-chart-bar'
+          'Hosting, debugging, optimizing, inferencing... Let us handle all of that boring, but super important, technical stuff so you can focus on what matters most: your business.',
+        icon: 'i-lucide-shield',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed'
+        }
       }
     ]
   },
-  testimonials: {
-    headline: 'Customer Success Stories',
-    title: 'Trusted by Industry Leaders',
+  seamlessImplementation: {
+    title: '[Seamless]{.text-(--ui-secondary)} Implementation',
     description:
-      'Join thousands of companies worldwide who have transformed their digital presence with our platform.',
+      'Seamless implementation ensures minimal disruption and maximum efficiency.',
     items: [
       {
-        quote:
-          "The developer experience is unmatched. We migrated our entire infrastructure in weeks instead of months, and our team's productivity has increased dramatically. The TypeScript support and component library saved us months of development time.",
-        user: {
-          name: 'Sarah Chen',
-          description: 'CTO at TechScale Solutions',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=1'
-          }
+        title: 'Consultation',
+        description:
+          'We assess your business needs and identify areas where AI agents can deliver the most value for your operations.',
+        image: {
+          light: '/images/light/connect.svg',
+          dark: '/images/dark/connect.svg'
         }
       },
       {
-        quote:
-          'After implementing the edge computing features, our global application response times dropped by 70%. Our European and Asian markets saw immediate improvements in user engagement and conversion rates.',
-        user: {
-          name: 'Marcus Rodriguez',
-          description: 'VP of Engineering at DataFlow',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=7'
-          }
+        title: 'Custom Development',
+        description:
+          'AI agents tailored to your specific requirements, ensuring seamless integration with your operations.',
+        image: {
+          light: '/images/light/optimize.svg',
+          dark: '/images/dark/optimize.svg'
         }
       },
       {
-        quote:
-          "The platform's security features gave us peace of mind during our SOC 2 certification. The built-in compliance tools and audit logs made the process seamless.",
-        user: {
-          name: 'David Kumar',
-          description: 'Security Director at SecureStack',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=3'
-          }
+        title: 'Ongoing Support',
+        description:
+          'Ongoing support, updates, and optimization to ensure continuous performance improvement.',
+        image: {
+          light: '/images/light/track.svg',
+          dark: '/images/dark/track.svg'
+        }
+      }
+    ]
+  },
+  businessUseCases: {
+    title: 'Business Use Cases',
+    description:
+      'AI agents can be designed for various high-impact applications across organizations, delivering measurable improvements in efficiency, accuracy, and operational capabilities.',
+    items: [
+      {
+        title: 'Automate Customer Support',
+        description:
+          'NLP-powered AI agents handle inquiries 24/7, resolve issues instantly, and deliver personalized support.',
+        icon: 'i-lucide-headset',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
         }
       },
       {
-        quote:
-          'During our Black Friday sale, we handled 15x our normal traffic without a hitch. The auto-scaling features worked flawlessly, and our monitoring dashboard gave us real-time insights throughout the event.',
-        user: {
-          name: 'Emily Zhang',
-          description: 'Lead Architect at ScaleForce',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=5'
-          }
+        title: 'Enhance Lead Generation',
+        description:
+          'AI agents identify and qualify potential leads by analyzing behavior patterns, engagement data, and market signals.',
+        icon: 'i-lucide-user-plus',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
         }
       },
       {
-        quote:
-          'The support team goes above and beyond. They helped us optimize our CI/CD pipeline and suggested performance improvements that reduced our build times by 45%.',
-        user: {
-          name: 'James Wilson',
-          description: 'DevOps Lead at CloudPro',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=8'
-          }
+        title: 'Support Decision-Making Processes',
+        description:
+          'AI agents analyze data, generate insights, and offer recommendations based on predefined criteria or objectives',
+        icon: 'i-lucide-git-branch',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
         }
       },
       {
-        quote:
-          'Switching to this platform reduced our infrastructure costs by 40% while improving performance. The cost savings alone paid for the investment within the first quarter.',
-        user: {
-          name: 'Lisa Patel',
-          description: 'CEO at AutoScale',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=9'
-          }
+        title: 'Enhance Data Analysis',
+        description:
+          'AI agents process large datasets with precision and speed, uncovering valuable insights and patterns that drive informed decision-making.',
+        icon: 'i-lucide-bar-chart-2',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
         }
       },
       {
-        quote:
-          'The accessibility features and responsive components helped us achieve WCAG 2.1 compliance with minimal custom development. Our site now scores 100 on Lighthouse accessibility metrics.',
-        user: {
-          name: 'Michael Torres',
-          description: 'Frontend Lead at AccessFirst',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=11'
-          }
+        title: 'Optimize Marketing Campaigns',
+        description:
+          'Using sophisticated ML algorithms, AI agents analyze customer data, segment audiences, personalize marketing messages, and fine-tune campaign strategies in real time.',
+        icon: 'i-lucide-trending-up',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
         }
       },
       {
-        quote:
-          'We serve millions of API requests daily, and the real-time analytics and monitoring tools have been invaluable for optimizing our performance and identifying bottlenecks.',
-        user: {
-          name: 'Rachel Kim',
-          description: 'Performance Engineer at APIHub',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=10'
-          }
-        }
-      },
-      {
-        quote:
-          'The component library and design system tools helped us maintain consistency across our 20+ micro-frontends. Our development velocity has never been better.',
-        user: {
-          name: 'Thomas Weber',
-          description: 'UI Architecture Lead at DesignScale',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=12'
-          }
-        }
-      },
-      {
-        quote:
-          'Integration with our existing tools was seamless. The webhooks and API documentation made it easy to automate our workflows and enhance our development pipeline.',
-        user: {
-          name: 'Sophia Martinez',
-          description: 'Integration Specialist at TechFlow',
-          avatar: {
-            src: 'https://i.pravatar.cc/120?img=14'
-          }
+        title: 'Manage Financial Transactions',
+        description:
+          'AI agents manage financial transactions securely and efficiently, automating invoicing, payments, fraud detection, and risk assessment processes.',
+        icon: 'i-lucide-dollar-sign',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
         }
       }
     ]
   },
   cta: {
-    title: 'Start with Nuxt UI Pro today!',
+    title: 'Automate Your Business with [AI Agents]{.text-(--ui-secondary)}',
     description:
-      'Nuxt UI Pro is free in development, but you need a license to use it in production.',
+      'Click "Get Started" to schedule a demo and start scaling your business operations & revenue.',
     links: [
       {
-        label: 'Buy now',
-        to: 'https://ui.nuxt.com/pro/purchase',
-        target: '_blank',
-        icon: 'i-lucide-shopping-cart'
+        label: 'Get Started',
+        to: '#',
+        icon: 'i-lucide-arrow-right',
+        target: '_blank'
+      }
+    ]
+  },
+
+  solutions: {
+    title: 'Solutions',
+    description:
+      'Connect your AI agents with popular platforms and services to enhance their capabilities and streamline your operations.',
+    items: [
+      {
+        title: 'Accelo',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-adobe',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
       },
       {
-        label: 'License',
-        to: 'https://ui.nuxt.com/getting-started/license',
-        trailingIcon: 'i-lucide-circle-help',
-        target: '_blank',
-        variant: 'subtle'
+        title: 'ActiveCampaign',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-activecampaign',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Adalo',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-adguard',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Adobe',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-adobe',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Affinity',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-affinity',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Agile CRM',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-aiohttp',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'AHA!',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-airbnb',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Ahrefs',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-ahrefs',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Aircall',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-airplayaudio',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
       }
     ]
   }
