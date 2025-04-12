@@ -2,7 +2,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import withNuxt from './.nuxt/eslint.config.mjs';
-import { createConfig } from '../../../packages/configs/eslint/eslint.config.mjs';
+import { createConfig } from '../../../../packages/configs/eslint/eslint.config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
