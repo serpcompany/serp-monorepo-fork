@@ -1,5 +1,6 @@
 import {
   boolean,
+  customType,
   doublePrecision,
   integer,
   jsonb,
@@ -11,9 +12,16 @@ import {
   varchar
 } from 'drizzle-orm/pg-core';
 
+export const ltree = customType<{ data: string }>({
+  dataType() {
+    return 'ltree';
+  }
+});
+
 export const cacheSchema = pgSchema('cache');
 export const formSchema = pgSchema('form');
 export const stripeSchema = pgSchema('stripe');
+export const userSchema = pgSchema('user');
 
 // Stripe
 export const customer = stripeSchema.table('customer', {
@@ -56,6 +64,58 @@ export const companyFeaturedSubscription = stripeSchema.table(
   }
 );
 
+// User
+export const postComment = userSchema.table('post_comment', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  post: integer('post').notNull(),
+  content: varchar('content', { length: 255 }),
+  parentId: integer('parent_id'),
+  path: varchar('path', { length: 255 })
+});
+
+export const companyComment = userSchema.table('company_comment', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  company: integer('company').notNull(),
+  content: varchar('content', { length: 255 }),
+  parentId: integer('parent_id'),
+  path: ltree('path')
+});
+
+export const companyReview = userSchema.table('company_review', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  company: integer('company').notNull(),
+  content: varchar('content', { length: 255 }),
+  title: varchar('title', { length: 255 }),
+  rating: integer('rating').notNull(),
+  dateOfExperience: timestamp('date_of_experience', { withTimezone: true })
+});
+
+export const user = userSchema.table('user', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  email: varchar('email', { length: 255 }).unique().notNull(),
+  name: varchar('name', { length: 255 }),
+  image: varchar('image', { length: 255 })
+});
+
 // Company
 export const companyCache = cacheSchema.table('company_cache', {
   updatedAt: timestamp('updated_at', { withTimezone: true })
@@ -83,7 +143,8 @@ export const companyCache = cacheSchema.table('company_cache', {
   downvotes: integer('downvotes'),
   comments: jsonb('comments'),
   featured: boolean('featured'),
-  featuredOrder: integer('featured_order')
+  featuredOrder: integer('featured_order'),
+  videoId: varchar('video_id', { length: 255 })
 });
 
 export const companyCategoryCache = cacheSchema.table(
@@ -94,7 +155,26 @@ export const companyCategoryCache = cacheSchema.table(
       .defaultNow(),
     id: serial('id').primaryKey(),
     name: varchar('name', { length: 255 }).notNull(),
-    slug: varchar('slug', { length: 255 }).notNull()
+    slug: varchar('slug', { length: 255 }).notNull(),
+    buyersGuide: text('buyers_guide'),
+    faqs: jsonb('faqs')
+  }
+);
+
+export const companyReviewAggregate = cacheSchema.table(
+  'company_review_aggregate',
+  {
+    companyId: integer('company_id').primaryKey(),
+    numReviews: integer('num_reviews').notNull().default(0),
+    numOneStarReviews: integer('num_one_star_reviews').notNull().default(0),
+    numTwoStarReviews: integer('num_two_star_reviews').notNull().default(0),
+    numThreeStarReviews: integer('num_three_star_reviews').notNull().default(0),
+    numFourStarReviews: integer('num_four_star_reviews').notNull().default(0),
+    numFiveStarReviews: integer('num_five_star_reviews').notNull().default(0),
+    averageRating: doublePrecision('average_rating').notNull().default(0),
+    lastUpdated: timestamp('last_updated', { withTimezone: true })
+      .notNull()
+      .defaultNow()
   }
 );
 

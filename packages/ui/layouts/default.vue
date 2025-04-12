@@ -1,8 +1,11 @@
 <template>
-  <UContainer>
+  <UPage>
+    <!-- Main Content -->
     <SHeader />
     <SBreadcrumb />
-    <slot></slot>
+    <UContainer>
+      <slot></slot>
+    </UContainer>
     <LazySFooter />
-  </UContainer>
+  </UPage>
 </template>

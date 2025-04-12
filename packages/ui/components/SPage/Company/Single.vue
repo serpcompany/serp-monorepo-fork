@@ -19,6 +19,21 @@
     data?.id
   )) as { upvotes: string[]; comments: Comment[] };
 
+  // @ts-expect-error: Auto-imported from another layer
+  const reviews = await useCompanyReviews(data?.id);
+  reviews.companyId = data?.id;
+
+  // State for review modal
+  const showReviewModal = ref(false);
+
+  // Handle review submission - refresh reviews data
+  async function handleReviewSubmitted() {
+    // @ts-expect-error: Auto-imported from another layer
+    const updatedReviews = await useCompanyReviews(data?.id);
+    Object.assign(reviews, updatedReviews);
+    reviews.companyId = data?.id;
+  }
+
   const faqItems = computed(() => {
     if (!data?.faqs) return [];
 
@@ -55,6 +70,11 @@
 
     if (data?.alternatives) {
       sectionTitles.push('Alternatives');
+    }
+
+    // Always include Reviews section when reviews are available
+    if (data?.numReviews > 0 || reviews?.reviews?.length > 0) {
+      sectionTitles.push('Reviews');
     }
 
     // Add Comments section to navigation
@@ -330,6 +350,59 @@
         </div>
       </UCard>
 
+      <UCard
+        id="reviews"
+        class="mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800"
+        :ui="{ body: { padding: 'p-0' } }"
+      >
+        <template #header>
+          <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              {{ data.name }} Reviews
+            </h2>
+            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+          </div>
+        </template>
+        <UDivider class="my-0" />
+        <div class="py-4 sm:p-6">
+          <ReviewDistributionCard
+            :total-reviews="data.numReviews ? data.numReviews : 0"
+            :total-one-star-reviews="
+              data.numOneStarReviews ? data.numOneStarReviews : 0
+            "
+            :total-two-star-reviews="
+              data.numTwoStarReviews ? data.numTwoStarReviews : 0
+            "
+            :total-three-star-reviews="
+              data.numThreeStarReviews ? data.numThreeStarReviews : 0
+            "
+            :total-four-star-reviews="
+              data.numFourStarReviews ? data.numFourStarReviews : 0
+            "
+            :total-five-star-reviews="
+              data.numFiveStarReviews ? data.numFiveStarReviews : 0
+            "
+            :average-rating="data.averageRating ? data.averageRating : 0"
+            :show-border="false"
+            card-title=""
+            class="pb-12"
+            :show-review-button="useAuth"
+            @open-review-form="showReviewModal = true"
+          />
+
+          <!-- Display Reviews List -->
+          <CompanyReviews :reviews="reviews" class="mt-8" />
+        </div>
+      </UCard>
+
+      <CompanyReviewModal
+        v-model:open="showReviewModal"
+        :company-id="data.id"
+        :result="reviews"
+        @close="showReviewModal = false"
+        @review-submitted="handleReviewSubmitted"
+      />
+
       <!-- Discussion Section -->
       <UCard
         id="discussion"
@@ -357,82 +430,3 @@
     </section>
   </UPage>
 </template>
-
-<style>
-  .comments-github-style {
-    margin-top: 0;
-  }
-
-  .comments-github-style .innerWrapper {
-    padding: 16px;
-  }
-
-  .comments-github-style .comment-wrapper {
-    border-top: 1px solid var(--color-border, #d0d7de);
-    padding-top: 16px;
-    margin-top: 16px;
-  }
-
-  .comments-github-style .comment-wrapper:first-child {
-    border-top: none;
-    padding-top: 0;
-    margin-top: 0;
-  }
-
-  .comments-github-style .wrapper {
-    display: flex;
-    gap: 16px;
-  }
-
-  .comments-github-style .addComment {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-
-  .comments-github-style .commentBox {
-    flex: 1;
-    border: 1px solid var(--color-border, #d0d7de);
-    border-radius: 6px;
-    padding: 8px;
-  }
-
-  .comments-github-style .commentBox textarea {
-    width: 100%;
-    min-height: 100px;
-    padding: 8px;
-    border-radius: 3px;
-  }
-
-  .comments-github-style .commentBox button {
-    margin-top: 8px;
-    padding: 5px 16px;
-    border-radius: 6px;
-    color: white;
-  }
-
-  .comments-github-style .name-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-  }
-
-  .comments-github-style .time {
-    color: #768390;
-    font-size: 0.85em;
-  }
-
-  .comments-github-style .comment {
-    background-color: #f6f8fa;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    padding: 16px;
-    margin-bottom: 8px;
-  }
-
-  .dark .comments-github-style .comment {
-    background-color: #0d1117;
-    border-color: #30363d;
-  }
-</style>

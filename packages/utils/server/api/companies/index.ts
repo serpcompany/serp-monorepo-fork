@@ -1,7 +1,10 @@
 import { useDataCache } from '#nuxt-multi-cache/composables';
 import { db } from '@serp/utils/server/api/db';
-import { companyCache } from '@serp/utils/server/api/db/schema';
-import { asc, desc, sql } from 'drizzle-orm';
+import {
+  companyCache,
+  companyCategoryCache
+} from '@serp/utils/server/api/db/schema';
+import { asc, desc, eq, sql } from 'drizzle-orm';
 
 import type { CompanyIndex, Pagination } from '@serp/types/types';
 
@@ -83,9 +86,21 @@ export default defineEventHandler(async (event) => {
     );
   }
 
-  const [results, [{ count: total }]] = await Promise.all([
+  const categoryQuery = db
+    .select({
+      id: companyCategoryCache.id,
+      name: companyCategoryCache.name,
+      slug: companyCategoryCache.slug,
+      buyersGuide: companyCategoryCache.buyersGuide,
+      faqs: companyCategoryCache.faqs
+    })
+    .from(companyCategoryCache)
+    .where(eq(companyCategoryCache.slug, categorySlug));
+
+  const [results, [{ count: total }], categoryResults] = await Promise.all([
     baseQuery.execute(),
-    totalQuery.execute()
+    totalQuery.execute(),
+    categoryQuery.execute()
   ]);
 
   if (!results.length) {
@@ -105,22 +120,12 @@ export default defineEventHandler(async (event) => {
     totalItems: Number(total)
   };
 
-  const getCategoryName = () => {
-    if (companies && companies.length && companies[0].categories) {
-      for (const category of companies[0].categories) {
-        if (category.slug === categorySlug) {
-          return category.name;
-        }
-      }
-      return undefined;
-    }
-  };
-  const categoryName = getCategoryName();
+  const category = categoryResults.length ? categoryResults[0] : null;
 
   const response = {
     companies,
     pagination,
-    categoryName
+    category
   };
   addToCache(response, [], 60 * 60 * 10); // 10 hours
   return response;

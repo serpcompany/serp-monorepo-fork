@@ -1,11 +1,10 @@
 ---
-description: 
+description:
 globs: **/*.test.ts
 alwaysApply: false
 ---
 
 ## Test Frameworks
-
 - Vitest (https://vitest.dev/)
 - Nuxt Test Utils (https://nuxt.com/docs/getting-started/testing)
 - Vue Test Utils (https://test-utils.vuejs.org/)

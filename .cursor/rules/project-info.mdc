@@ -1,12 +1,31 @@
 ---
 description: "Project information and high-level technology references for the SERP Monorepo."
-globs: 
+globs:
 alwaysApply: true
 ---
-# Project info
 
-## Technologies
-- Framework: Nuxt 3 (TypeScript)
-- Package Manager: pnpm
-- Monorepo Tool: Turborepo
-- Typescript Types: `packages/types/types/*`
+# Project Structure
+- Shared UI: `packages/ui`
+- Shared Logic: `packages/utils`
+- Shared Types: `packages/types`
+- Websites: `apps/*`
+
+
+# Tech stack
+- Nuxt 3
+- typescript
+- tailwindcss
+- pnpm
+- turborepo
+- vitest, nuxt test utils, vue test utils, testing library
+- postgres, drizzle
+
+
+# Deployment Info
+We have two types of deployments:
+1. Our Server (code from `packages/utils/`)
+2. Cloudflare Pages via NuxtHub (code from `packages/utils-cloudflare-pages`)
+
+Only apps that extend `@serp/utils-cloudflare-pages` in their nuxt.config.ts are deployed to Cloudflare Pages.
+
+Check nuxt.config.ts to see if it extends `@serp/utils-cloudflare-pages`.

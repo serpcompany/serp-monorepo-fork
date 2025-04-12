@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   const config = useRuntimeConfig();
   const headerNavItems = config.public.headerNavItems;
   const useAuth = config.public.useAuth;
@@ -25,8 +25,7 @@
 </script>
 
 <template>
-  <header class="bg-background py-4">
-    <!-- Desktop Navigation -->
+  <header class="bg-background mx-auto max-w-full px-10 py-4">
     <div class="flex h-10 items-center justify-between px-4">
       <!-- Left side -->
       <div class="flex items-center">
@@ -42,7 +41,7 @@
             aria-label="Main navigation"
             orientation="horizontal"
             color="primary"
-            highlight="true"
+            highlight
             :items="headerNavItems"
             :ui="navUi"
             :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
