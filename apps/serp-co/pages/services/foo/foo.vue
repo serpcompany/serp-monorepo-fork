@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { data } from './data.ts';
+  import { data } from './foo';
   const page = data;
 
   useSeoMeta({

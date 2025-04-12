@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { data } from './data.ts';
+  import { data } from './data';
   const page = data;
 
   useSeoMeta({
@@ -12,19 +12,18 @@
 
 <template>
   <div v-if="page" class="relative">
-    <div class="hidden lg:block">
+    <!-- <div class="hidden lg:block">
       <UColorModeImage
         light="/images/light/line-1.svg"
         dark="/images/dark/line-1.svg"
         class="pointer-events-none absolute top-0 left-0 h-[650px] object-cover pb-10"
       />
-    </div>
+    </div> -->
 
     <UPageHero
       :title="page.hero.title"
       :description="page.hero.description"
       :links="page.hero.links"
-      :ui="{ container: 'md:pt-18 lg:pt-20' }"
     >
       <template #title>
         <MDC
@@ -34,13 +33,14 @@
       </template>
     </UPageHero>
 
+    <!-- tailored ai solutions -->
     <UPageSection
       v-for="(section, index) in page.sections"
       :key="index"
       v-bind="section"
       orientation="horizontal"
       :ui="{
-        container: 'lg:px-0 2xl:px-20 mx-0 max-w-none md:mr-10',
+        container: 'lg:px-0 2xl:px-20 mx-0 max-w-none md:mr-10 pb-20',
         features: 'gap-0'
       }"
       reverse
@@ -51,16 +51,18 @@
       <img
         :src="section.images.desktop"
         :alt="section.title"
-        class="left-0 hidden w-full max-w-2xl lg:block 2xl:hidden"
+        class="left-0 hidden w-full max-w-2xl object-contain lg:block 2xl:hidden"
       />
       <img
         :src="section.images.mobile"
         :alt="section.title"
-        class="block lg:hidden 2xl:block 2xl:w-full 2xl:max-w-2xl"
+        class="block w-full object-contain lg:hidden 2xl:block 2xl:w-full 2xl:max-w-2xl"
       />
     </UPageSection>
 
     <USeparator :ui="{ border: 'border-(--ui-primary)/30' }" />
+
+    <!-- ai agent development -->
     <UPageSection
       id="features"
       v-bind="page.features"
@@ -71,7 +73,7 @@
       class="relative overflow-hidden"
     >
       <div
-        class="absolute top-10 -left-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
+        class="absolute top-10 -left-10 z-10 size-[300px] rounded-full"
       ></div>
       <div
         class="absolute -right-10 -bottom-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
@@ -87,8 +89,10 @@
         </div>
       </template>
     </UPageSection>
+
     <USeparator :ui="{ border: 'border-(--ui-primary)/30' }" />
 
+    <!-- seamless integration -->
     <UPageSection
       id="steps"
       v-bind="page.steps"
@@ -132,7 +136,8 @@
       </template>
     </UPageSection>
 
-    <UPageSection
+    <!-- pricing section -->
+    <!-- <UPageSection
       id="pricing"
       class="mb-32 overflow-hidden"
       v-bind="page.pricing"
@@ -166,9 +171,51 @@
           :button="plan.button"
         />
       </UPricingPlans>
+    </UPageSection> -->
+
+    <!-- use cases -->
+    <UPageSection
+      id="useCases"
+      v-bind="page.useCases[0]"
+      :ui="{
+        title: 'text-left @container relative flex',
+        description: 'text-left'
+      }"
+      class="relative overflow-hidden"
+    >
+      <div
+        class="absolute top-10 -left-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
+      ></div>
+      <div
+        class="absolute -right-10 -bottom-10 z-10 size-[300px] rounded-full"
+      ></div>
+      <template #title>
+        <MDC :value="page.useCases[0].title" class="*:leading-9" />
+        <div class="hidden @min-[1020px]:block">
+          <UColorModeImage
+            light="/images/light/line-2.svg"
+            dark="/images/dark/line-2.svg"
+            class="absolute top-0 right-0 size-full translate-x-[70%] scale-95 transform"
+          />
+        </div>
+      </template>
+
+      <template #features>
+        <div
+          v-for="(feature, index) in page.useCases[0].features"
+          :key="index"
+          :class="feature.class"
+        >
+          <h3 class="mb-2 text-lg font-semibold">{{ feature.title }}</h3>
+          <p class="text-sm text-(--ui-text-muted)">
+            {{ feature.description }}
+          </p>
+        </div>
+      </template>
     </UPageSection>
 
-    <UPageSection id="testimonials" v-bind="page.testimonials">
+    <!-- testimonials -->
+    <!-- <UPageSection id="testimonials" v-bind="page.testimonials">
       <template #headline>
         <UColorModeImage
           light="/images/light/line-5.svg"
@@ -177,7 +224,7 @@
         />
       </template>
       <template #title>
-        <MDC :value="page.testimonials.title" />
+        <MDC :value="page.testimonials.title" class="text-4xl" />
       </template>
 
       <UContainer>
@@ -198,7 +245,7 @@
           </UPageCard>
         </UPageColumns>
       </UContainer>
-    </UPageSection>
+    </UPageSection> -->
 
     <USeparator />
 
@@ -230,5 +277,19 @@
 
       <LazyStarsBg />
     </UPageCTA>
+
+    <UPageSection
+      :title="page.features_.title"
+      :description="page.features_.description"
+    >
+      <UPageGrid>
+        <UPageCard
+          v-for="(item, index) in page.features_.items"
+          :key="index"
+          v-bind="item"
+          spotlight
+        />
+      </UPageGrid>
+    </UPageSection>
   </div>
 </template>
