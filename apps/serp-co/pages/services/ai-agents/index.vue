@@ -8,6 +8,10 @@
     description: page.description,
     ogDescription: page.description
   });
+
+  definePageMeta({
+    layout: 'lander'
+  });
 </script>
 
 <template>
@@ -39,10 +43,6 @@
       :key="index"
       v-bind="section"
       orientation="horizontal"
-      :ui="{
-        container: 'lg:px-0 2xl:px-20 mx-0 max-w-none md:mr-10 pb-20',
-        features: 'gap-0'
-      }"
       reverse
     >
       <template #title>
@@ -192,7 +192,7 @@
       <LazyStarsBg />
     </UPageCTA>
 
-    <UPageSection
+    <!-- <UPageSection
       id="solutions"
       v-bind="page.solutions"
       class="relative overflow-hidden"
@@ -228,6 +228,6 @@
           />
         </NuxtLink>
       </UPageGrid>
-    </UPageSection>
+    </UPageSection> -->
   </div>
 </template>
