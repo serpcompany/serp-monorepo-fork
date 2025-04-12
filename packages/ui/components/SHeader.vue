@@ -25,8 +25,10 @@
 </script>
 
 <template>
-  <header class="bg-background mx-auto max-w-full px-10 py-4">
-    <div class="flex h-10 items-center justify-between px-4">
+  <header
+    class="bg-background sticky top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) bg-(--ui-bg)/75 px-10 py-4"
+  >
+    <div class="flex h-10 items-center justify-between px-4 pb-2">
       <!-- Left side -->
       <div class="flex items-center">
         <!-- Logo -->
