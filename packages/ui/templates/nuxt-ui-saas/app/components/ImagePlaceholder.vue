@@ -27,7 +27,7 @@
         />
       </svg>
 
-      <slot ></slot>
+      <slot></slot>
     </div>
   </UPageCard>
 </template>

@@ -10,7 +10,7 @@
     />
 
     <UPageCard variant="subtle" class="w-full max-w-sm">
-      <slot ></slot>
+      <slot></slot>
     </UPageCard>
   </div>
 </template>
