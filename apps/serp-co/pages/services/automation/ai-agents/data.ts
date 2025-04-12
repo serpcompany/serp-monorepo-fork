@@ -48,7 +48,7 @@ export const data = {
       ]
     }
   ],
-  features: {
+  aiAgentDevelopment: {
     title: 'AI Agent [Development]{.text-(--ui-secondary)}',
     description:
       'Transform your business operations with custom AI agents that automate tasks, process data, and deliver continuous value.',
@@ -115,7 +115,7 @@ export const data = {
       }
     ]
   },
-  steps: {
+  seamlessImplementation: {
     title: '[Seamless]{.text-(--ui-secondary)} Implementation',
     description:
       'Seamless implementation ensures minimal disruption and maximum efficiency.',
@@ -149,7 +149,7 @@ export const data = {
       }
     ]
   },
-  useCases: {
+  businessUseCases: {
     title: 'Business Use Cases',
     description:
       'AI agents can be designed for various high-impact applications across organizations, delivering measurable improvements in efficiency, accuracy, and operational capabilities.',
@@ -241,34 +241,119 @@ export const data = {
       }
     ]
   },
-  features_: {
-    title: 'Our AI Agent Features',
+
+  solutions: {
+    title: 'Solutions',
     description:
-      'Powerful features designed to enhance your business operations',
+      'Connect your AI agents with popular platforms and services to enhance their capabilities and streamline your operations.',
     items: [
       {
-        title: 'Continuous Learning',
+        title: 'Accelo',
         description:
-          'AI agents that continuously learn and improve from interactions and feedback',
-        icon: 'i-lucide-brain'
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-adobe',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
       },
       {
-        title: 'Scalable Architecture',
+        title: 'ActiveCampaign',
         description:
-          'Seamlessly scale your AI agents as your business grows without performance degradation',
-        icon: 'i-lucide-layers'
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-activecampaign',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
       },
       {
-        title: 'Multi-Channel Support',
+        title: 'Adalo',
         description:
-          'Engage with customers across multiple channels with consistent quality and response times',
-        icon: 'i-lucide-message-square'
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-adguard',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
       },
       {
-        title: 'Advanced Analytics',
+        title: 'Adobe',
         description:
-          'Gain insights from comprehensive analytics on agent performance and customer interactions',
-        icon: 'i-lucide-activity'
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-adobe',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Affinity',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-affinity',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Agile CRM',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-aiohttp',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'AHA!',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-airbnb',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Ahrefs',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-ahrefs',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
+      },
+      {
+        title: 'Aircall',
+        description:
+          'Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.',
+        icon: 'i-simple-icons-airplayaudio',
+        ui: {
+          leading:
+            'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed',
+          container: 'rounded-xl border border-(--ui-secondary)/30',
+          base: 'hover:border-(--ui-secondary)'
+        }
       }
     ]
   }

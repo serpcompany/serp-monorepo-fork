@@ -60,12 +60,39 @@
       />
     </UPageSection>
 
-    <USeparator :ui="{ border: 'border-(--ui-primary)/30' }" />
+    <UPageSection
+      id="useCases"
+      v-bind="page.businessUseCases"
+      class="relative overflow-hidden"
+    >
+      <template #title>
+        <MDC :value="page.businessUseCases.title" class="*:leading-9" />
+        <div class="hidden @min-[1020px]:block">
+          <UColorModeImage
+            light="/images/light/line-2.svg"
+            dark="/images/dark/line-2.svg"
+            class="absolute top-0 right-0 size-full translate-x-[70%] scale-95 transform"
+          />
+        </div>
+      </template>
+
+      <UPageGrid>
+        <UPageCard
+          v-for="(item, index) in page.businessUseCases.items"
+          :key="index"
+          v-bind="item"
+          spotlight
+          spotlight-color="secondary"
+          class="rounded-xl border border-(--ui-secondary)/50 hover:border-(--ui-secondary)"
+          variant="soft"
+        />
+      </UPageGrid>
+    </UPageSection>
 
     <!-- ai agent development -->
     <UPageSection
-      id="features"
-      v-bind="page.features"
+      id="aiAgentDevelopment"
+      v-bind="page.aiAgentDevelopment"
       :ui="{
         title: 'text-left @container relative flex',
         description: 'text-left'
@@ -79,7 +106,7 @@
         class="absolute -right-10 -bottom-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
       ></div>
       <template #title>
-        <MDC :value="page.features.title" class="*:leading-9" />
+        <MDC :value="page.aiAgentDevelopment.title" class="*:leading-9" />
         <div class="hidden @min-[1020px]:block">
           <UColorModeImage
             light="/images/light/line-2.svg"
@@ -90,12 +117,10 @@
       </template>
     </UPageSection>
 
-    <USeparator :ui="{ border: 'border-(--ui-primary)/30' }" />
-
-    <!-- seamless integration -->
+    <!-- seamlessImplementation -->
     <UPageSection
       id="steps"
-      v-bind="page.steps"
+      v-bind="page.seamlessImplementation"
       class="relative overflow-hidden"
     >
       <template #headline>
@@ -106,12 +131,12 @@
         />
       </template>
       <template #title>
-        <MDC :value="page.steps.title" />
+        <MDC :value="page.seamlessImplementation.title" />
       </template>
 
       <template #features>
         <UPageCard
-          v-for="(step, index) in page.steps.items"
+          v-for="(step, index) in page.seamlessImplementation.items"
           :key="index"
           class="group"
           :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
@@ -135,106 +160,6 @@
         </UPageCard>
       </template>
     </UPageSection>
-
-    <!-- pricing section -->
-    <!-- <UPageSection
-      id="pricing"
-      class="mb-32 overflow-hidden"
-      v-bind="page.pricing"
-      :ui="{ title: 'text-left @container relative', description: 'text-left' }"
-    >
-      <template #title>
-        <MDC :value="page.pricing.title" />
-
-        <div class="hidden @min-[1120px]:block">
-          <UColorModeImage
-            light="/images/light/line-4.svg"
-            dark="/images/dark/line-4.svg"
-            class="absolute top-0 right-0 size-full translate-x-[60%] transform"
-          />
-        </div>
-      </template>
-
-      <UPricingPlans scale>
-        <UPricingPlan
-          v-for="(plan, index) in page.pricing.plans"
-          :key="index"
-          :title="plan.title"
-          :description="plan.description"
-          :price="plan.price"
-          :billing-period="plan.billing_period"
-          :billing-cycle="plan.billing_cycle"
-          :highlight="plan.highlight"
-          :scale="plan.highlight"
-          variant="soft"
-          :features="plan.features"
-          :button="plan.button"
-        />
-      </UPricingPlans>
-    </UPageSection> -->
-
-    <!-- useCases business use cases -->
-    <UPageSection
-      id="useCases"
-      v-bind="page.useCases"
-      class="relative overflow-hidden"
-    >
-      <template #title>
-        <MDC :value="page.useCases.title" class="*:leading-9" />
-        <div class="hidden @min-[1020px]:block">
-          <UColorModeImage
-            light="/images/light/line-2.svg"
-            dark="/images/dark/line-2.svg"
-            class="absolute top-0 right-0 size-full translate-x-[70%] scale-95 transform"
-          />
-        </div>
-      </template>
-
-      <UPageGrid>
-        <UPageCard
-          v-for="(item, index) in page.useCases.items"
-          :key="index"
-          v-bind="item"
-          spotlight
-          spotlight-color="secondary"
-          class="rounded-xl border border-(--ui-secondary)/50 hover:border-(--ui-secondary)"
-          variant="soft"
-        />
-      </UPageGrid>
-    </UPageSection>
-
-    <!-- testimonials -->
-    <!-- <UPageSection id="testimonials" v-bind="page.testimonials">
-      <template #headline>
-        <UColorModeImage
-          light="/images/light/line-5.svg"
-          dark="/images/dark/line-5.svg"
-          class="absolute -top-10 right-1/2 h-24 sm:top-0"
-        />
-      </template>
-      <template #title>
-        <MDC :value="page.testimonials.title" class="text-4xl" />
-      </template>
-
-      <UContainer>
-        <UPageColumns class="xl:columns-3">
-          <UPageCard
-            v-for="(testimonial, index) in page.testimonials.items"
-            :key="index"
-            variant="subtle"
-            :description="testimonial.quote"
-            :ui="{
-              description:
-                'before:content-[open-quote] after:content-[close-quote]'
-            }"
-          >
-            <template #footer>
-              <UUser v-bind="testimonial.user" size="xl" />
-            </template>
-          </UPageCard>
-        </UPageColumns>
-      </UContainer>
-    </UPageSection> -->
 
     <USeparator />
 
@@ -266,5 +191,43 @@
 
       <LazyStarsBg />
     </UPageCTA>
+
+    <UPageSection
+      id="solutions"
+      v-bind="page.solutions"
+      class="relative overflow-hidden"
+    >
+      <template #title>
+        <MDC :value="page.solutions.title" class="*:leading-9" />
+        <div class="hidden @min-[1020px]:block">
+          <UColorModeImage
+            light="/images/light/line-2.svg"
+            dark="/images/dark/line-2.svg"
+            class="absolute top-0 right-0 size-full translate-x-[70%] scale-95 transform"
+          />
+        </div>
+      </template>
+
+      <UPageGrid
+        :ui="{
+          grid: 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2'
+        }"
+      >
+        <NuxtLink
+          v-for="(item, index) in page.solutions.items"
+          :key="index"
+          to="#"
+          class="block h-full"
+        >
+          <UPageCard
+            v-bind="item"
+            spotlight
+            spotlight-color="secondary"
+            class="h-full cursor-pointer rounded-xl border border-(--ui-secondary)/50 hover:border-(--ui-secondary)"
+            variant="soft"
+          />
+        </NuxtLink>
+      </UPageGrid>
+    </UPageSection>
   </div>
 </template>
