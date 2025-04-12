@@ -1,10 +1,10 @@
 // @ts-check
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import withNuxt from './.nuxt/eslint.config.mjs';
-import { createConfig } from '../../../../packages/configs/eslint/eslint.config.mjs';
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { createConfig } from '../../../../packages/configs/eslint/eslint.config.mjs'
+import withNuxt from './.nuxt/eslint.config.mjs'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // Create base config first
 const baseConfig = createConfig({
@@ -12,12 +12,13 @@ const baseConfig = createConfig({
   additionalRules: {},
   additionalIgnores: [],
   baseDirectory: __dirname
-});
+})
 
-// Apply our overrides to ensure they take precedence
+// Apply our overrides
 baseConfig[1].rules = {
-  ...baseConfig[1].rules
-  // 'no-unused-vars': 'error',
-};
+  ...baseConfig[1].rules,
+  'no-unused-vars': 'off',
+  'vue/no-setup-props-destructure': 'off'
+}
 
-export default withNuxt(baseConfig);
+export default withNuxt(baseConfig)

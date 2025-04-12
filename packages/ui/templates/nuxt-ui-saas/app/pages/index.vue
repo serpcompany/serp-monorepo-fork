@@ -1,15 +1,15 @@
 <script setup lang="ts">
-  const { data: page } = await useAsyncData('index', () =>
-    queryCollection('index').first()
-  );
+const { data: page } = await useAsyncData('index', () =>
+  queryCollection('index').first()
+)
 
-  useSeoMeta({
-    titleTemplate: '',
-    title: page.value?.title,
-    ogTitle: page.value?.title,
-    description: page.value?.description,
-    ogDescription: page.value?.description
-  });
+useSeoMeta({
+  titleTemplate: '',
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description
+})
 </script>
 
 <template>
@@ -74,7 +74,10 @@
           }"
         >
           <template #footer>
-            <UUser v-bind="testimonial.user" size="lg" />
+            <UUser
+              v-bind="testimonial.user"
+              size="lg"
+            />
           </template>
         </UPageCard>
       </UPageColumns>
@@ -82,7 +85,11 @@
 
     <USeparator />
 
-    <UPageCTA v-bind="page.cta" variant="naked" class="overflow-hidden">
+    <UPageCTA
+      v-bind="page.cta"
+      variant="naked"
+      class="overflow-hidden"
+    >
       <div
         class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
       ></div>
