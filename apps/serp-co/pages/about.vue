@@ -39,7 +39,7 @@
         :links="[
           {
             label: 'Get Started',
-            to: 'https://serp.co/get-started',
+            to: 'https://serp.ly/discovery',
             target: '_blank',
             icon: 'i-lucide-play',
             color: 'success'
