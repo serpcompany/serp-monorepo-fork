@@ -29,7 +29,6 @@
     "@iconify-json/lucide": "^1.2.14",
     "@iconify-json/simple-icons": "^1.2.30",
     "@infisical/cli": "^0.31.8",
-    "@nuxt-ui-pro-template-saas": "workspace:^",
     "@nuxt/content": "^3.4.0",
     "@nuxt/eslint": "^0.6.1",
     "@nuxt/icon": "^1.7.5",
