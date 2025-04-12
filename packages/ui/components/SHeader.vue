@@ -11,7 +11,7 @@
 
 <template>
   <header
-    class="bg-background top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) bg-(--ui-bg)/75 px-10 py-4"
+    class="bg-background top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) px-10 py-4"
   >
     <div class="flex h-10 items-center justify-between px-4 pb-2">
       <!-- Left side -->
@@ -27,10 +27,11 @@
           <UNavigationMenu
             aria-label="Main navigation"
             orientation="horizontal"
-            color="primary"
+            contentOrientation="horizontal"
+            color="secondary"
             highlight
+            variant="pill"
             :items="headerNavItems"
-            :ui="navUi"
             :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
           />
         </div>
@@ -80,10 +81,6 @@
           highlight
           :items="headerNavItems"
           class="w-full"
-          :ui="{
-            ...navUi,
-            list: 'flex flex-col' // for vertical layout
-          }"
           :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
         />
         <div v-if="useAuth" class="mt-4 border-t border-neutral-200 pt-4">
