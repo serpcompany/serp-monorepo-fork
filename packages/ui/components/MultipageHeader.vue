@@ -27,7 +27,7 @@
   const header = ref(null);
   const isScrolled = ref(false);
 
-  // Add proper Nuxt-friendly scroll detection
+  // helps the multipage header to stick properly
   onMounted(() => {
     const handleScroll = () => {
       isScrolled.value = window.scrollY > 0;

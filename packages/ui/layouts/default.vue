@@ -1,6 +1,5 @@
 <template>
   <UPage>
-    <!-- Main Content -->
     <SHeader />
     <SBreadcrumb />
     <UContainer>

@@ -7,26 +7,11 @@
   const toggleMobileMenu = () => {
     mobileMenuOpen.value = !mobileMenuOpen.value;
   };
-
-  // Shared UI object for UNavigationMenu
-  const navUi = {
-    link: 'text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300',
-    item: 'text-primary-500 dark:text-primary-300',
-    linkLabel: 'text-primary-500 dark:text-primary-100',
-    content: 'absolute top-0',
-    list: 'flex',
-    childList: 'grid grid-cols-1',
-    triggerIcon: 'text-primary',
-    viewportWrapper:
-      'absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]',
-    viewport:
-      'relative overflow-visible bg-(--ui-bg) shadow-lg rounded-[calc(var(--ui-radius)*1.5)] ring ring-(--ui-border) h-(--reka-navigation-menu-viewport-height) min-w-[180px] transition-[height] duration-200 origin-[top_left] data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in]'
-  };
 </script>
 
 <template>
   <header
-    class="bg-background sticky top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) bg-(--ui-bg)/75 px-10 py-4"
+    class="bg-background top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) bg-(--ui-bg)/75 px-10 py-4"
   >
     <div class="flex h-10 items-center justify-between px-4 pb-2">
       <!-- Left side -->
