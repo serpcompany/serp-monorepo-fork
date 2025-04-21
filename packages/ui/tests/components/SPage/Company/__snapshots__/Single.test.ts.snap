@@ -5,7 +5,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -13,7 +13,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
               <!-- Logo and title section -->
               <div class="flex w-full items-start justify-between"><img alt="Test Company logo" data-nuxt-img="" srcset="/_ipx/_/logo.png 1x, /_ipx/_/logo.png 2x" class="mr-2 h-16 object-contain" src="/_ipx/_/logo.png"><!-- Use flex-grow to allow this column to expand -->
                 <div class="flex-grow">
-                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Test Company</h1><span class="text-xs text-gray-700 dark:text-gray-300">We test companies</span>
+                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Test Company</h1>
+                  <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
                 </div>
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
@@ -448,7 +451,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -456,7 +459,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
               <!-- Logo and title section -->
               <div class="flex w-full items-start justify-between"><img alt="Test Company logo" data-nuxt-img="" srcset="/_ipx/_/logo.png 1x, /_ipx/_/logo.png 2x" class="mr-2 h-16 object-contain" src="/_ipx/_/logo.png"><!-- Use flex-grow to allow this column to expand -->
                 <div class="flex-grow">
-                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Test Company</h1><span class="text-xs text-gray-700 dark:text-gray-300">We test companies</span>
+                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Test Company</h1>
+                  <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
                 </div>
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
@@ -843,7 +849,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -851,7 +857,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
               <!-- Logo and title section -->
               <div class="flex w-full items-start justify-between"><img alt="Minimal Company logo" data-nuxt-img="" srcset="/_ipx/_/minimal-logo.png 1x, /_ipx/_/minimal-logo.png 2x" class="mr-2 h-16 object-contain" src="/_ipx/_/minimal-logo.png"><!-- Use flex-grow to allow this column to expand -->
                 <div class="flex-grow">
-                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Minimal Company</h1><span class="text-xs text-gray-700 dark:text-gray-300">Minimal details</span>
+                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Minimal Company</h1>
+                  <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
                 </div>
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
@@ -1109,7 +1118,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -1117,7 +1126,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
               <!-- Logo and title section -->
               <div class="flex w-full items-start justify-between"><img alt="Minimal Company logo" data-nuxt-img="" srcset="/_ipx/_/minimal-logo.png 1x, /_ipx/_/minimal-logo.png 2x" class="mr-2 h-16 object-contain" src="/_ipx/_/minimal-logo.png"><!-- Use flex-grow to allow this column to expand -->
                 <div class="flex-grow">
-                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Minimal Company</h1><span class="text-xs text-gray-700 dark:text-gray-300">Minimal details</span>
+                  <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Minimal Company</h1>
+                  <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
                 </div>
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->

@@ -49,6 +49,8 @@ export function createConfig({
         '.wrangler/',
         '.data/',
         '.git/',
+        'nuxt-ui-landing/',
+        'nuxt-ui-saas/',
         ...additionalIgnores
       ]
     },

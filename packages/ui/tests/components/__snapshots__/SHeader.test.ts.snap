@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
-"<header class="bg-background mx-auto max-w-full px-10 py-4">
-  <div class="flex h-10 items-center justify-between px-4">
+"<header class="bg-background top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) px-10 py-4">
+  <div class="flex h-10 items-center justify-between px-4 pb-2">
     <!-- Left side -->
     <div class="flex items-center">
       <!-- Logo -->
@@ -16,15 +16,15 @@ exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
         <!---->
         <nav aria-label="Main" data-orientation="horizontal" dir="ltr" data-reka-navigation-menu="" data-collapsed="false" class="relative flex gap-1.5 [&amp;>div]:min-w-0 items-center justify-between">
           <div style="position: relative;">
-            <ul class="isolate min-w-0 items-center flex" data-orientation="horizontal">
-              <li data-menu-item="" class="min-w-0 py-2 text-primary-500 dark:text-primary-300"><a href="/" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-primary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300" data-reka-collection-item="">
+            <ul class="isolate min-w-0 flex items-center" data-orientation="horizontal">
+              <li data-menu-item="" class="min-w-0 py-2"><a href="/" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-secondary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 text-(--ui-text-muted) after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:text-(--ui-text-highlighted) hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50" data-reka-collection-item="">
                   <!--v-if-->
                   <!--v-if-->
                   <!--v-if-->
                 </a>
                 <!--v-if-->
               </li>
-              <li data-menu-item="" class="min-w-0 py-2 text-primary-500 dark:text-primary-300"><a href="/about" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-primary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300" data-reka-collection-item="">
+              <li data-menu-item="" class="min-w-0 py-2"><a href="/about" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-secondary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 text-(--ui-text-muted) after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:text-(--ui-text-highlighted) hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50" data-reka-collection-item="">
                   <!--v-if-->
                   <!--v-if-->
                   <!--v-if-->
@@ -34,7 +34,7 @@ exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
             </ul>
           </div>
           <!--v-if-->
-          <div class="left-0 flex w-full justify-center absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
+          <div class="absolute top-full left-0 flex w-full">
             <!--v-if-->
             <!---->
           </div>
@@ -55,12 +55,13 @@ exports[`SHeader Snapshot > renders with auth disabled correctly 1`] = `
     </div>
   </div><!-- Mobile menu -->
   <!--v-if-->
+  <!--v-if-->
 </header>"
 `;
 
 exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
-"<header class="bg-background mx-auto max-w-full px-10 py-4">
-  <div class="flex h-10 items-center justify-between px-4">
+"<header class="bg-background top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) px-10 py-4">
+  <div class="flex h-10 items-center justify-between px-4 pb-2">
     <!-- Left side -->
     <div class="flex items-center">
       <!-- Logo -->
@@ -74,15 +75,15 @@ exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
         <!---->
         <nav aria-label="Main" data-orientation="horizontal" dir="ltr" data-reka-navigation-menu="" data-collapsed="false" class="relative flex gap-1.5 [&amp;>div]:min-w-0 items-center justify-between">
           <div style="position: relative;">
-            <ul class="isolate min-w-0 items-center flex" data-orientation="horizontal">
-              <li data-menu-item="" class="min-w-0 py-2 text-primary-500 dark:text-primary-300"><a href="/" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-primary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300" data-reka-collection-item="">
+            <ul class="isolate min-w-0 flex items-center" data-orientation="horizontal">
+              <li data-menu-item="" class="min-w-0 py-2"><a href="/" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-secondary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 text-(--ui-text-muted) after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:text-(--ui-text-highlighted) hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50" data-reka-collection-item="">
                   <!--v-if-->
                   <!--v-if-->
                   <!--v-if-->
                 </a>
                 <!--v-if-->
               </li>
-              <li data-menu-item="" class="min-w-0 py-2 text-primary-500 dark:text-primary-300"><a href="/about" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-primary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300" data-reka-collection-item="">
+              <li data-menu-item="" class="min-w-0 py-2"><a href="/about" class="group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-[calc(var(--ui-radius)*1.5)] focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-(--ui-secondary) px-2.5 py-1.5 before:inset-x-px before:inset-y-0 text-(--ui-text-muted) after:absolute after:-bottom-2 after:inset-x-2.5 after:block after:h-px after:rounded-full after:transition-colors hover:text-(--ui-text-highlighted) hover:before:bg-(--ui-bg-elevated)/50 transition-colors before:transition-colors data-[state=open]:text-(--ui-text-highlighted) data-[state=open]:before:bg-(--ui-bg-elevated)/50" data-reka-collection-item="">
                   <!--v-if-->
                   <!--v-if-->
                   <!--v-if-->
@@ -92,7 +93,7 @@ exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
             </ul>
           </div>
           <!--v-if-->
-          <div class="left-0 flex w-full justify-center absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
+          <div class="absolute top-full left-0 flex w-full">
             <!--v-if-->
             <!---->
           </div>
@@ -119,12 +120,13 @@ exports[`SHeader Snapshot > renders with auth enabled correctly 1`] = `
     </div>
   </div><!-- Mobile menu -->
   <!--v-if-->
+  <!--v-if-->
 </header>"
 `;
 
 exports[`SHeader Snapshot > renders with empty navigation items correctly 1`] = `
-"<header class="bg-background mx-auto max-w-full px-10 py-4">
-  <div class="flex h-10 items-center justify-between px-4">
+"<header class="bg-background top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) px-10 py-4">
+  <div class="flex h-10 items-center justify-between px-4 pb-2">
     <!-- Left side -->
     <div class="flex items-center">
       <!-- Logo -->
@@ -137,7 +139,7 @@ exports[`SHeader Snapshot > renders with empty navigation items correctly 1`] = 
         <!---->
         <!---->
         <nav aria-label="Main" data-orientation="horizontal" dir="ltr" data-reka-navigation-menu="" data-collapsed="false" class="relative flex gap-1.5 [&amp;>div]:min-w-0 items-center justify-between">
-          <div class="left-0 flex w-full justify-center absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]">
+          <div class="absolute top-full left-0 flex w-full">
             <!--v-if-->
             <!---->
           </div>
@@ -163,6 +165,7 @@ exports[`SHeader Snapshot > renders with empty navigation items correctly 1`] = 
       </div>
     </div>
   </div><!-- Mobile menu -->
+  <!--v-if-->
   <!--v-if-->
 </header>"
 `;
