@@ -28,8 +28,9 @@
             aria-label="Main navigation"
             orientation="horizontal"
             content-orientation="vertical"
-            color="secondary"
+            color="primary"
             highlight
+            text-size="base"
             variant="pill"
             :items="headerNavItems"
             :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
