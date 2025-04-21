@@ -8,14 +8,14 @@
 
   const heroLinks = ref([
     {
-      label: 'Explore Products',
+      label: 'Explore',
       to: '/products/',
       icon: 'i-lucide-search',
       class: 'rounded-lg'
     },
     {
-      label: 'Learn more',
-      to: '/about/',
+      label: 'Solutions',
+      to: '/solutions/',
       color: 'neutral' as const,
       variant: 'subtle' as const,
       trailingIcon: 'i-lucide-arrow-right',

@@ -11,9 +11,9 @@
 
 <template>
   <header
-    class="bg-background top-0 z-50 mx-auto h-(--ui-header-height) max-w-full border-b border-(--ui-border) px-10 py-4"
+    class="bg-background top-0 z-50 mx-auto h-18 max-w-full border-b border-(--ui-border) px-12"
   >
-    <div class="flex h-10 items-center justify-between px-4 pb-2">
+    <div class="flex h-full items-center justify-between px-4">
       <!-- Left side -->
       <div class="flex items-center">
         <!-- Logo -->
@@ -28,8 +28,9 @@
             aria-label="Main navigation"
             orientation="horizontal"
             content-orientation="vertical"
-            color="secondary"
+            color="primary"
             highlight
+            text-size="base"
             variant="pill"
             :items="headerNavItems"
             :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"

@@ -1,20 +1,19 @@
 <script setup lang="ts">
-  const { data: page } = await useAsyncData('index', () =>
-    queryCollection('index').first()
-  );
+  import { data } from './data.ts';
+  const page = data;
 
   useSeoMeta({
-    titleTemplate: '',
-    title: page.value?.title,
-    ogTitle: page.value?.title,
-    description: page.value?.description,
-    ogDescription: page.value?.description
+    title: page.title,
+    ogTitle: page.title,
+    description: page.description,
+    ogDescription: page.description
   });
 </script>
 
 <template>
   <div v-if="page">
     <UPageHero
+      :ui="{ container: 'lg:py-20' }"
       :title="page.hero.title"
       :description="page.hero.description"
       :links="page.hero.links"
@@ -23,11 +22,14 @@
         <div
           class="absolute left-1/2 size-60 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[300px] sm:size-80 dark:bg-(--ui-primary)"
         ></div>
-
         <LazyStarsBg />
       </template>
 
-      <PromotionalVideo />
+      <!-- <PromotionalVideo /> -->
+      <NuxtImg
+        class="rounded-2xl"
+        src="https://framerusercontent.com/images/HLrlxEO3faF1ECcn4wRkcdoowSs.png"
+      />
     </UPageHero>
 
     <UPageSection
