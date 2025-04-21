@@ -2,7 +2,7 @@
 
 exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>
@@ -12,7 +12,10 @@ exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
             <!--v-if-->
             <!-- Use flex-grow to allow this column to expand -->
             <div class="flex-grow">
-              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1><span class="text-xs text-gray-700 dark:text-gray-300"></span>
+              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1>
+              <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
             </div>
           </div><!-- Action buttons -->
           <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
@@ -33,7 +36,7 @@ exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
 
 exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>
@@ -43,7 +46,10 @@ exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = 
             <!--v-if-->
             <!-- Use flex-grow to allow this column to expand -->
             <div class="flex-grow">
-              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1><span class="text-xs text-gray-700 dark:text-gray-300"></span>
+              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1>
+              <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
             </div>
           </div><!-- Action buttons -->
           <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
@@ -64,7 +70,7 @@ exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = 
 
 exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>
@@ -72,7 +78,10 @@ exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`
           <!-- Logo and title section -->
           <div class="flex w-full items-start justify-between"><img alt="Music Header logo" data-nuxt-img="" srcset="https://example.com/logo.png 1x, https://example.com/logo.png 2x" class="mr-2 h-16 object-contain" src="https://example.com/logo.png"><!-- Use flex-grow to allow this column to expand -->
             <div class="flex-grow">
-              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1><span class="text-xs text-gray-700 dark:text-gray-300">One liner test</span>
+              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1>
+              <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
             </div>
           </div><!-- Action buttons -->
           <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
@@ -93,7 +102,7 @@ exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`
 
 exports[`MultipageHeader Snapshot > renders with upvote slot correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>
@@ -103,7 +112,10 @@ exports[`MultipageHeader Snapshot > renders with upvote slot correctly 1`] = `
             <!--v-if-->
             <!-- Use flex-grow to allow this column to expand -->
             <div class="flex-grow">
-              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1><span class="text-xs text-gray-700 dark:text-gray-300"></span>
+              <h1 class="text-xl font-bold text-gray-900 sm:text-3xl dark:text-gray-100">Music Header</h1>
+              <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                  oneLiner
+                }}</span> -->
             </div>
           </div><!-- Action buttons -->
           <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->

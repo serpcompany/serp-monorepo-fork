@@ -21,22 +21,48 @@
     });
   });
 
+  const getLastPathSegment = () => {
+    // Extract the last segment from the path
+    const segments = route.path.split('/').filter(Boolean);
+    return segments.length > 0 ? segments[segments.length - 1] : '';
+  };
+
+  const getDisplayName = (segment: string) => {
+    // Convert kebab-case or snake_case to readable text, keeping it lowercase
+    return segment.replace(/-/g, ' ').replace(/_/g, ' ').toLowerCase();
+  };
+
   const breadcrumbItems = computed(() => {
     // @ts-expect-error: Auto-imported from another layer
-    return useBreadcrumbItems({
-      schemaOrg: true,
-      overrides: [
-        undefined,
-        undefined,
-        {
-          label: Array.isArray(route.params.slug)
-            ? route.params.slug.join('')
-            : route.params.slug || '',
-          to: String(route.fullPath),
-          type: undefined
-        }
-      ]
+    const items = useBreadcrumbItems({
+      schemaOrg: true
     }).value as BreadcrumbItem[];
+
+    // Check if the last segment is already included
+    const lastSegment = getLastPathSegment();
+    const lastSegmentUrl = route.path;
+
+    // If the last item doesn't match the last path segment, add it
+    if (
+      lastSegment &&
+      items.length > 0 &&
+      !route.path.endsWith(items[items.length - 1]?.to?.toString() || '')
+    ) {
+      items.push({
+        label: (
+          (route.meta.title as string) || getDisplayName(lastSegment)
+        ).toLowerCase(),
+        to: lastSegmentUrl,
+        type: undefined
+      });
+    }
+
+    // Make sure all labels are lowercase
+    return items.map((item) => ({
+      ...item,
+      label:
+        typeof item.label === 'string' ? item.label.toLowerCase() : item.label
+    }));
   });
 
   const breadcrumbUI = {
@@ -48,7 +74,7 @@
 <template>
   <UBreadcrumb
     v-if="!isExcluded"
-    class="mb-10 w-full px-4 py-2 md:px-6 lg:px-8"
+    class="lg:px6 z-5 mb-10 max-w-full px-4 py-4 md:px-6"
     :items="breadcrumbItems"
     :ui="breadcrumbUI"
   >

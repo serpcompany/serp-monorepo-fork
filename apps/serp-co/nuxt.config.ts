@@ -71,11 +71,6 @@ export default defineNuxtConfig({
             to: '/users/submit/company/'
           },
           {
-            label: 'Submissions',
-            icon: 'i-lucide-file-text',
-            to: '/users/manage/submissions/'
-          },
-          {
             label: 'Billing',
             icon: 'i-lucide-credit-card',
             to: '/users/manage/billing/'
@@ -86,6 +81,16 @@ export default defineNuxtConfig({
         {
           label: 'Companies',
           children: [{ label: 'Companies', to: '/products/' }]
+        },
+        {
+          label: 'Tools',
+          children: [
+            { label: 'Tools', to: '/tools/' },
+            { label: 'Combine CSVs', to: '/tools/combine-csv-files/' },
+            { label: 'JSON to CSV', to: '/tools/convert-json-to-csv/' },
+            { label: 'Character Counter', to: '/tools/count-characters/' },
+            { label: 'Paragraph Counter', to: '/tools/paragraph-counter/' }
+          ]
         },
         {
           label: 'Glossary',
@@ -103,6 +108,7 @@ export default defineNuxtConfig({
           slug: '',
           items: [
             { text: 'Companies', slug: '/products/' },
+            { text: 'Tools', slug: '/tools/' },
             { text: 'Posts', slug: '/posts/' },
             { text: 'Glossary', slug: '/glossary/' }
           ]
@@ -113,7 +119,7 @@ export default defineNuxtConfig({
           slug: '',
           items: [
             { text: 'Blog', slug: '/blog/' },
-            { text: 'Glossary', slug: '/posts/' }
+            { text: 'Glossary', slug: '/glossary/' }
           ]
         },
         {
@@ -123,7 +129,7 @@ export default defineNuxtConfig({
           items: [
             {
               name: 'About',
-              href: 'https://github.com/serp-ai'
+              href: '/about/'
             },
             {
               name: 'Contact',
@@ -142,7 +148,7 @@ export default defineNuxtConfig({
           items: [
             {
               name: 'About',
-              href: 'https://github.com/serp-ai'
+              href: '#'
             },
             {
               name: 'Contact',
@@ -154,46 +160,41 @@ export default defineNuxtConfig({
       socialLinks: [
         {
           name: 'Twitter',
-          href: 'https://serp.ly/@serpai/twitter',
+          href: 'https://serp.ly/@serp/twitter',
           icon: 'i-lucide-twitter'
         },
         {
           name: 'Facebook',
-          href: 'https://serp.ly/@serpai/facebook',
+          href: 'https://serp.ly/@serp/facebook',
           icon: 'i-lucide-facebook'
         },
         {
           name: 'LinkedIn',
-          href: 'https://serp.ly/@serpai/linkedin',
+          href: 'https://serp.ly/@serp/linkedin',
           icon: 'i-lucide-linkedin'
         },
         {
           name: 'YouTube',
-          href: 'https://serp.ly/@serpai/youtube',
+          href: 'https://serp.ly/@serp/youtube',
           icon: 'i-lucide-youtube'
         },
         {
           name: 'Github',
-          href: 'https://serp.ly/@serpai/github',
+          href: 'https://serp.ly/@serp/github',
           icon: 'i-lucide-github'
         },
         {
           name: 'Instagram',
-          href: 'https://serp.ly/@serpai/instagram',
+          href: 'https://serp.ly/@serp/instagram',
           icon: 'i-lucide-instagram'
-        },
-        {
-          name: 'SoundCloud',
-          href: 'https://serp.ly/@serpai/',
-          icon: 'i-lucide-external-link'
         }
       ],
-      brandLinks: [
-        { text: 'Privacy', slug: '/legal/privacy-policy/' },
-        { text: 'Terms', slug: '/legal/terms-conditions/' },
-        { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
-        { text: 'DMCA', slug: '/legal/dmca/' }
-      ],
+      // brandLinks: [
+      //   { text: 'Privacy', slug: '/legal/privacy-policy/' },
+      //   { text: 'Terms', slug: '/legal/terms-conditions/' },
+      //   { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
+      //   { text: 'DMCA', slug: '/legal/dmca/' }
+      // ],
       legalLinks: [
         { text: 'Privacy', slug: '/legal/privacy-policy/' },
         { text: 'Terms', slug: '/legal/terms-conditions/' },
