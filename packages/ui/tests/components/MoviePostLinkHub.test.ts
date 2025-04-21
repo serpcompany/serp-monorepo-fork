@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, no-unused-vars  */
+
 import { describe, expect, it } from 'vitest';
-import ComponentRender from '../componentRender';
 import MoviePostLinkHub from '../../components/MoviePostLinkHub.vue';
+import ComponentRender from '../componentRender';
 
 describe('MoviePostLinkHub Snapshot', () => {
   const scenarios: [

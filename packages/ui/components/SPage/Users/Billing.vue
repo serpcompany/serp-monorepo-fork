@@ -18,6 +18,7 @@
         window.open(response, '_blank');
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error creating billing portal session:', error);
     } finally {
       isLoading.value = false;
