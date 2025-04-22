@@ -26,5 +26,9 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: false,
     shim: false
-  }
+  },
+  htmlValidator: {
+    ignore: [/\.(xml|rss|json|sql)$/, /^\/__nuxt_content\/.*$/],
+  },
 });
+

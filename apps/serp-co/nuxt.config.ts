@@ -5,8 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui-pro',
     '@nuxtjs/seo',
-    '@nuxt/content',
     '@nuxtjs/sitemap',
+    '@nuxt/content',
     'nuxt-multi-cache',
     'nuxt-security',
     'nuxt-link-checker',
