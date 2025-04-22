@@ -5,10 +5,6 @@
 @plugin "@tailwindcss/typography";
 
 @theme static {
-  --ui-radius: var(--radius-none);
-
-  /* Define primary and secondary colors to ensure consistency */
-  /* Shark */
   --ui-color-primary: #1f2328;
   --ui-color-primary-50: #f2f4f5;
   --ui-color-primary-100: #e6e9eb;
@@ -22,7 +18,6 @@
   --ui-color-primary-900: #060a12;
   --ui-color-primary-950: #03060d;
 
-  /* Secondary color (blue in this case) */
   --ui-color-secondary: #1551bb;
   --ui-color-secondary-50: #f2f9fc;
   --ui-color-secondary-100: #e1f0f7;
