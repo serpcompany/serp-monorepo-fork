@@ -1,6 +1,8 @@
 <script setup lang="ts">
-  const { data } = await useAsyncData('solutions', () =>
-    queryCollection('content').first()
+  const route = useRoute();
+
+  const { data } = await useAsyncData(route.path, () =>
+    queryCollection('content').path(route.path).first()
   );
   if (!data.value) {
     throw createError({

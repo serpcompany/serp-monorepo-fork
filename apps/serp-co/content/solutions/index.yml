@@ -1,104 +1,104 @@
-title: Nuxt UI Pro - Landing template
-description: Boost your coding productivity with AI-driven insights that tell you when and how to code most efficiently.
+title: Digital Growth Pro - Marketing Solutions
+description: Boost your online success with data-driven marketing strategies that tell you when and how to reach your audience most effectively.
 hero:
-  title: Build your landing with [Nuxt UI Pro]{.text-(--ui-primary)}
-  description: Boost your coding productivity with AI-driven insights that tell you when and how to code most efficiently.
+  title: Build your digital presence with [Digital Growth Pro]{.text-(--ui-primary)}
+  description: Boost your online success with data-driven marketing strategies that tell you when and how to reach your audience most effectively.
   links:
     - label: Getting Started
       icon: i-lucide-arrow-right
       trailing: true
       variant: subtle
-      to: https://ui.nuxt.com/getting-started/installation/pro/nuxt
+      to: https://digitalgrowthpro.com/getting-started
       target: _blank
       size: xl
-    - label: Clone on GitHub
+    - label: View Case Studies
       icon: i-simple-icons-github
       size: xl
       color: neutral
       variant: ghost
-      to: https://github.com/nuxt-ui-pro/landing
+      to: https://digitalgrowthpro.com/case-studies
       target: _blank
 sections:
-  - title: '[Revolutionize]{.text-(--ui-primary)} your coding experience'
-    description: Transform your development workflow with AI-powered insights and personalized productivity optimization.
+  - title: '[Revolutionize]{.text-(--ui-primary)} your digital marketing strategy'
+    description: Transform your business growth with AI-powered insights and personalized marketing automation.
     images:
       mobile: '/images/macbook-mobile.svg'
       desktop: '/images/macbook.svg'
     features:
-      - title: Optimize your focus time
-        description: Let AI identify your peak coding hours and adapt to your natural rhythm. Focus on what matters most - writing great code, while our system optimizes your productivity patterns.
+      - title: Optimize your audience engagement
+        description: Let AI identify your peak conversion periods and adapt to your audience's behavior. Focus on what matters most - growing your business, while our system optimizes your marketing performance.
         class: border-l border-(--ui-primary) pl-4
-      - title: Track your best coding hours
-        description: Track when you code best with smart analytics. Get actionable insights to tackle challenging tasks during your peak performance hours.
+      - title: Track your best marketing channels
+        description: Monitor which marketing efforts yield the best results with smart analytics. Get actionable insights to allocate resources during peak performance periods.
         class: border-l border-(--ui-border) pt-4 pl-4
-      - title: Improve workflow efficiency
-        description: Automate your workflow optimization from code snippets to focus management. Ship better code faster with a streamlined development process.
+      - title: Improve campaign efficiency
+        description: Automate your marketing workflow from content creation to performance tracking. Reach more customers faster with a streamlined growth process.
         class: border-l border-(--ui-border) pt-4 pl-4
 features:
-  title: Take control of your [productivity]{.text-(--ui-primary)}
-  description: Make every coding session count with smart analytics and workflow optimization.
+  title: Take control of your [growth]{.text-(--ui-primary)}
+  description: Make every marketing campaign count with smart analytics and workflow automation.
   features:
-    - title: AI-Powered Focus Tracking
-      description: Discover your optimal coding hours with real-time AI analysis of your productivity patterns.
+    - title: AI-Powered Audience Analysis
+      description: Discover your optimal marketing channels with real-time AI analysis of your audience engagement patterns.
       icon: i-lucide-wand-sparkles
       ui:
         leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
-    - title: Distraction Alerts
-      description: Get notified when your focus drifts and bring your attention back.
+    - title: Conversion Optimization
+      description: Get notified when your campaigns need adjustment to maximize ROI.
       icon: i-lucide-bell-ring
       ui:
         leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
-    - title: Smart Code Snippets
-      description: Save and reuse frequently used code blocks for efficiency.
+    - title: Smart Content Templates
+      description: Save and reuse high-performing content formats for consistent results.
       icon: i-lucide-code-xml
       ui:
         leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
-    - title: Deep Work Mode
-      description: Block distractions and set structured coding sessions with built-in Pomodoro timers.
+    - title: Competitor Analysis
+      description: Track market trends and set targeted marketing campaigns based on competitive intelligence.
       icon: i-lucide-moon
       ui:
         leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
-    - title: Collaborative Insights
-      description: Sync your workflow with teammates and see when they are most productive.
+    - title: Multi-Channel Integration
+      description: Sync your marketing efforts across platforms and see which channels drive the most engagement.
       icon: i-lucide-mouse-pointer-2
       ui:
         leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
-    - title: Performance Analytics
-      description: Track your coding metrics and get insights to boost your speed and code quality.
+    - title: Growth Analytics
+      description: Track your marketing metrics and get insights to boost your reach and conversion quality.
       icon: i-lucide-chart-line
       ui:
         leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
 steps:
-  title: Start coding smarter in [3 steps]{.text-(--ui-primary)}
-  description: Transform your development workflow with our AI-powered assistant.
+  title: Start growing smarter in [3 steps]{.text-(--ui-primary)}
+  description: Transform your digital presence with our AI-powered marketing solutions.
   items:
-    - title: Connect Your IDE
-      description: Seamlessly integrate with VS Code, JetBrains, or your preferred editor. Get started in under 2 minutes with zero configuration needed.
+    - title: Connect Your Platforms
+      description: Seamlessly integrate with your website, social media, or preferred marketing tools. Get started in under 2 minutes with zero configuration needed.
       image:
         light: '/images/light/connect.svg'
         dark: '/images/dark/connect.svg'
-    - title: Track & Analyze
-      description: Our AI silently monitors your coding patterns to identify your peak productivity hours and potential workflow bottlenecks.
+    - title: Analyze & Optimize
+      description: Our AI silently monitors your marketing performance to identify your peak conversion periods and potential campaign bottlenecks.
       image:
         light: '/images/light/optimize.svg'
         dark: '/images/dark/optimize.svg'
-    - title: Optimize & Code Smarter
-      description: Receive personalized recommendations to enhance your coding efficiency. Watch your productivity soar with data-driven insights.
+    - title: Automate & Grow Smarter
+      description: Receive personalized recommendations to enhance your marketing efficiency. Watch your business grow with data-driven insights.
       image:
         light: '/images/light/track.svg'
         dark: '/images/dark/track.svg'
 pricing:
-  title: Choose your [productivity]{.text-(--ui-primary)} path
-  description: Unlock AI-powered coding efficiency with our flexible plans. Whether you're a solo developer or part of a team, we have the perfect toolset to maximize your development workflow.
+  title: Choose your [growth]{.text-(--ui-primary)} path
+  description: Unlock AI-powered marketing efficiency with our flexible plans. Whether you're a small business or a growing enterprise, we have the perfect toolset to maximize your digital presence.
   plans:
-    - title: Pro Developer
-      description: Perfect for individual developers focused on maximizing productivity.
+    - title: Business Growth
+      description: Perfect for small to medium businesses focused on maximizing online presence.
       price: $199
       features:
-        - AI productivity tracking to optimize your peak coding hours
-        - Smart distraction alerts to maintain deep focus
-        - Personal code snippet library for faster development
-        - Deep Work Mode with Pomodoro timer integration
+        - AI audience tracking to optimize your peak conversion periods
+        - Smart campaign alerts to maintain marketing focus
+        - Custom content template library for faster engagement
+        - Competitor Analysis with market positioning
         - Performance analytics dashboard
         - Priority email support
       button:
@@ -106,55 +106,55 @@ pricing:
         color: neutral
         variant: outline
         to: '#'
-    - title: Team Developer
-      description: For bootstrappers and indie hackers.
-      price: $199
+    - title: Enterprise Solutions
+      description: For established businesses looking to scale their digital footprint.
+      price: $499
       features:
-        - Everything in Pro Developer
-        - Team productivity analytics and insights
-        - Collaborative code snippet sharing
-        - Cross-team performance tracking
-        - Synchronized deep work sessions
-        - Priority team support with dedicated manager
+        - Everything in Business Growth
+        - Multi-department marketing analytics
+        - Cross-platform automation integration
+        - Industry benchmark tracking
+        - Custom-tailored growth strategy
+        - Priority dedicated account manager
       button:
         label: Buy now
         variant: subtle
         to: '#'
 testimonials:
-  title: Join thousands of productive [developers]{.text-(--ui-primary)}
-  description: See how developers are transforming their coding workflow and achieving more with our AI-powered platform.
+  title: Join thousands of successful [businesses]{.text-(--ui-primary)}
+  description: See how companies are transforming their digital presence and achieving more with our AI-powered marketing platform.
   items:
-    - quote: Since using this tool, my productivity has doubled. The AI insights helped me find my perfect coding rhythm and now I ship features twice as fast.
+    - quote: Since using Digital Growth Pro, our lead generation has doubled. The AI insights helped us find our perfect marketing channels and now we acquire customers twice as fast.
       user:
-        name: 'Sarah Doe'
-        description: 'Full Stack Developer'
+        name: 'Sarah Johnson'
+        description: 'Marketing Director'
         target: _blank
         avatar:
           src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/SarahM19'
-    - quote: Game-changer for our team. The focus tracking and smart alerts helped us reduce meeting interruptions by 40% and increased our sprint velocity.
+    - quote: Game-changer for our company. The audience tracking and smart alerts helped us reduce ad spend by 40% while increasing our conversion rate.
       user:
-        name: 'Sébastien Doe'
-        description: 'Lead Software Engineer'
+        name: 'Michael Reynolds'
+        description: 'CEO, TechSolutions Inc.'
         target: _blank
         avatar:
           src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/atinux'
-    - quote: Finally, a productivity tool that understands developers. The AI features helped me identify my peak coding hours and now I accomplish more in less time.
+    - quote: Finally, a marketing solution that understands small businesses. The AI features helped us identify our best-performing content and now we engage more customers in less time.
       user:
-        name: 'Benjamin Doe'
-        description: 'Senior Frontend Developer'
+        name: 'Jessica Martinez'
+        description: 'Small Business Owner'
         target: _blank
         avatar:
           src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac'
 cta:
-  title: Build your landing page with [Nuxt UI Pro]{.text-(--ui-primary)}
-  description: Nuxt UI Pro is free in development, but you need a license to use it in production.
+  title: Transform your online presence with [Digital Growth Pro]{.text-(--ui-primary)}
+  description: Digital Growth Pro offers flexible solutions to fit your business needs and budget.
   links:
-    - label: Buy now
-      to: 'https://ui.nuxt.com/pro/purchase'
+    - label: Get Started
+      to: 'https://digitalgrowthpro.com/pricing'
       target: _blank
       icon: i-lucide-shopping-cart
-    - label: License
-      to: 'https://ui.nuxt.com/getting-started/license'
+    - label: Schedule Demo
+      to: 'https://digitalgrowthpro.com/demo'
       trailingIcon: i-lucide-circle-help
       target: _blank
       variant: subtle
