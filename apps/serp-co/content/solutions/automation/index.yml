@@ -18,6 +18,7 @@ hero:
       variant: 'ghost'
       to: 'https://github.com/nuxt-ui-pro/landing'
       target: '_blank'
+
 sections:
   - title: '[Revolutionize]{.text-(--ui-primary)} your coding experience'
     description: 'Transform your development workflow with AI-powered insights and personalized productivity optimization.'
@@ -34,6 +35,7 @@ sections:
       - title: 'Improve workflow efficiency'
         description: 'Automate your workflow optimization from code snippets to focus management. Ship better code faster with a streamlined development process.'
         class: 'border-l border-(--ui-border) pt-4 pl-4'
+
 features:
   title: 'Take control of your [productivity]{.text-(--ui-primary)}'
   description: 'Make every coding session count with smart analytics and workflow optimization.'
@@ -68,6 +70,7 @@ features:
       icon: 'i-lucide-chart-line'
       ui:
         leading: 'bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed'
+
 steps:
   title: 'Start coding smarter in [3 steps]{.text-(--ui-primary)}'
   description: 'Transform your development workflow with our AI-powered assistant.'
@@ -87,6 +90,7 @@ steps:
       image:
         light: '/images/light/track.svg'
         dark: '/images/dark/track.svg'
+
 pricing:
   title: 'Choose your [productivity]{.text-(--ui-primary)} path'
   description: "Unlock AI-powered coding efficiency with our flexible plans. Whether you're a solo developer or part of a team, we have the perfect toolset to maximize your development workflow."
@@ -120,6 +124,7 @@ pricing:
         label: 'Buy now'
         variant: 'subtle'
         to: '#'
+
 testimonials:
   title: 'Join thousands of productive [developers]{.text-(--ui-primary)}'
   description: 'See how developers are transforming their coding workflow and achieving more with our AI-powered platform.'
@@ -145,6 +150,7 @@ testimonials:
         target: '_blank'
         avatar:
           src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac'
+
 cta:
   title: 'Build your landing page with [Nuxt UI Pro]{.text-(--ui-primary)}'
   description: 'Nuxt UI Pro is free in development, but you need a license to use it in production.'

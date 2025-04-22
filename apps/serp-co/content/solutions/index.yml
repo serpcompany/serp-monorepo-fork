@@ -1,0 +1,160 @@
+title: Digital Growth Pro - Marketing Solutions
+description: Boost your online success with data-driven marketing strategies that tell you when and how to reach your audience most effectively.
+hero:
+  title: Build your digital presence with [Digital Growth Pro]{.text-(--ui-primary)}
+  description: Boost your online success with data-driven marketing strategies that tell you when and how to reach your audience most effectively.
+  links:
+    - label: Getting Started
+      icon: i-lucide-arrow-right
+      trailing: true
+      variant: subtle
+      to: https://digitalgrowthpro.com/getting-started
+      target: _blank
+      size: xl
+    - label: View Case Studies
+      icon: i-simple-icons-github
+      size: xl
+      color: neutral
+      variant: ghost
+      to: https://digitalgrowthpro.com/case-studies
+      target: _blank
+sections:
+  - title: '[Revolutionize]{.text-(--ui-primary)} your digital marketing strategy'
+    description: Transform your business growth with AI-powered insights and personalized marketing automation.
+    images:
+      mobile: '/images/macbook-mobile.svg'
+      desktop: '/images/macbook.svg'
+    features:
+      - title: Optimize your audience engagement
+        description: Let AI identify your peak conversion periods and adapt to your audience's behavior. Focus on what matters most - growing your business, while our system optimizes your marketing performance.
+        class: border-l border-(--ui-primary) pl-4
+      - title: Track your best marketing channels
+        description: Monitor which marketing efforts yield the best results with smart analytics. Get actionable insights to allocate resources during peak performance periods.
+        class: border-l border-(--ui-border) pt-4 pl-4
+      - title: Improve campaign efficiency
+        description: Automate your marketing workflow from content creation to performance tracking. Reach more customers faster with a streamlined growth process.
+        class: border-l border-(--ui-border) pt-4 pl-4
+features:
+  title: Take control of your [growth]{.text-(--ui-primary)}
+  description: Make every marketing campaign count with smart analytics and workflow automation.
+  features:
+    - title: AI-Powered Audience Analysis
+      description: Discover your optimal marketing channels with real-time AI analysis of your audience engagement patterns.
+      icon: i-lucide-wand-sparkles
+      ui:
+        leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
+    - title: Conversion Optimization
+      description: Get notified when your campaigns need adjustment to maximize ROI.
+      icon: i-lucide-bell-ring
+      ui:
+        leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
+    - title: Smart Content Templates
+      description: Save and reuse high-performing content formats for consistent results.
+      icon: i-lucide-code-xml
+      ui:
+        leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
+    - title: Competitor Analysis
+      description: Track market trends and set targeted marketing campaigns based on competitive intelligence.
+      icon: i-lucide-moon
+      ui:
+        leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
+    - title: Multi-Channel Integration
+      description: Sync your marketing efforts across platforms and see which channels drive the most engagement.
+      icon: i-lucide-mouse-pointer-2
+      ui:
+        leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
+    - title: Growth Analytics
+      description: Track your marketing metrics and get insights to boost your reach and conversion quality.
+      icon: i-lucide-chart-line
+      ui:
+        leading: bg-(--ui-bg-accented)/50 p-2 rounded-md border border-(--ui-border-muted) border-dashed
+steps:
+  title: Start growing smarter in [3 steps]{.text-(--ui-primary)}
+  description: Transform your digital presence with our AI-powered marketing solutions.
+  items:
+    - title: Connect Your Platforms
+      description: Seamlessly integrate with your website, social media, or preferred marketing tools. Get started in under 2 minutes with zero configuration needed.
+      image:
+        light: '/images/light/connect.svg'
+        dark: '/images/dark/connect.svg'
+    - title: Analyze & Optimize
+      description: Our AI silently monitors your marketing performance to identify your peak conversion periods and potential campaign bottlenecks.
+      image:
+        light: '/images/light/optimize.svg'
+        dark: '/images/dark/optimize.svg'
+    - title: Automate & Grow Smarter
+      description: Receive personalized recommendations to enhance your marketing efficiency. Watch your business grow with data-driven insights.
+      image:
+        light: '/images/light/track.svg'
+        dark: '/images/dark/track.svg'
+pricing:
+  title: Choose your [growth]{.text-(--ui-primary)} path
+  description: Unlock AI-powered marketing efficiency with our flexible plans. Whether you're a small business or a growing enterprise, we have the perfect toolset to maximize your digital presence.
+  plans:
+    - title: Business Growth
+      description: Perfect for small to medium businesses focused on maximizing online presence.
+      price: $199
+      features:
+        - AI audience tracking to optimize your peak conversion periods
+        - Smart campaign alerts to maintain marketing focus
+        - Custom content template library for faster engagement
+        - Competitor Analysis with market positioning
+        - Performance analytics dashboard
+        - Priority email support
+      button:
+        label: Buy now
+        color: neutral
+        variant: outline
+        to: '#'
+    - title: Enterprise Solutions
+      description: For established businesses looking to scale their digital footprint.
+      price: $499
+      features:
+        - Everything in Business Growth
+        - Multi-department marketing analytics
+        - Cross-platform automation integration
+        - Industry benchmark tracking
+        - Custom-tailored growth strategy
+        - Priority dedicated account manager
+      button:
+        label: Buy now
+        variant: subtle
+        to: '#'
+testimonials:
+  title: Join thousands of successful [businesses]{.text-(--ui-primary)}
+  description: See how companies are transforming their digital presence and achieving more with our AI-powered marketing platform.
+  items:
+    - quote: Since using Digital Growth Pro, our lead generation has doubled. The AI insights helped us find our perfect marketing channels and now we acquire customers twice as fast.
+      user:
+        name: 'Sarah Johnson'
+        description: 'Marketing Director'
+        target: _blank
+        avatar:
+          src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/SarahM19'
+    - quote: Game-changer for our company. The audience tracking and smart alerts helped us reduce ad spend by 40% while increasing our conversion rate.
+      user:
+        name: 'Michael Reynolds'
+        description: 'CEO, TechSolutions Inc.'
+        target: _blank
+        avatar:
+          src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/atinux'
+    - quote: Finally, a marketing solution that understands small businesses. The AI features helped us identify our best-performing content and now we engage more customers in less time.
+      user:
+        name: 'Jessica Martinez'
+        description: 'Small Business Owner'
+        target: _blank
+        avatar:
+          src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac'
+cta:
+  title: Transform your online presence with [Digital Growth Pro]{.text-(--ui-primary)}
+  description: Digital Growth Pro offers flexible solutions to fit your business needs and budget.
+  links:
+    - label: Get Started
+      to: 'https://digitalgrowthpro.com/pricing'
+      target: _blank
+      icon: i-lucide-shopping-cart
+    - label: Schedule Demo
+      to: 'https://digitalgrowthpro.com/demo'
+      trailingIcon: i-lucide-circle-help
+      target: _blank
+      variant: subtle
