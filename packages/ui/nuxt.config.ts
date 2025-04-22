@@ -30,5 +30,10 @@ export default defineNuxtConfig({
   htmlValidator: {
     ignore: [/\.(xml|rss|json|sql)$/, /^\/__nuxt_content\/.*$/],
   },
+  nitro: {
+    prerender: {
+      ignore: ['/__nuxt_content/content/sql_dump'],
+    }
+  }
 });
 
