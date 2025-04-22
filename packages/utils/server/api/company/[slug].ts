@@ -3,7 +3,8 @@ import { db } from '@serp/utils/server/api/db';
 import {
   companyCache,
   companyReviewAggregate,
-  companyVerification
+  companyVerification,
+  user
 } from '@serp/utils/server/api/db/schema';
 import { eq } from 'drizzle-orm';
 
@@ -25,7 +26,8 @@ export default defineEventHandler(async (event) => {
           numFourStarReviews: companyReviewAggregate.numFourStarReviews,
           numFiveStarReviews: companyReviewAggregate.numFiveStarReviews,
           averageRating: companyReviewAggregate.averageRating,
-          verified: companyVerification.id
+          verified: companyVerification.id,
+          verifiedEmail: user.email
         })
         .from(companyCache)
         .leftJoin(
@@ -36,6 +38,7 @@ export default defineEventHandler(async (event) => {
           companyVerification,
           eq(companyVerification.company, companyCache.id)
         )
+        .leftJoin(user, eq(user.id, companyVerification.user))
         .where(eq(companyCache.id, value.id));
       const refreshResults = await refreshQuery.execute();
       if (refreshResults.length) {
@@ -52,7 +55,7 @@ export default defineEventHandler(async (event) => {
       return value;
     }
 
-    const query = db
+    let query = db
       .select({
         id: companyCache.id,
         name: companyCache.name,
@@ -77,7 +80,8 @@ export default defineEventHandler(async (event) => {
         numFourStarReviews: companyReviewAggregate.numFourStarReviews,
         numFiveStarReviews: companyReviewAggregate.numFiveStarReviews,
         averageRating: companyReviewAggregate.averageRating,
-        verified: companyVerification.id
+        verified: companyVerification.id,
+        verifiedEmail: user.email,
       })
       .from(companyCache)
       .leftJoin(
@@ -88,15 +92,26 @@ export default defineEventHandler(async (event) => {
         companyVerification,
         eq(companyVerification.company, companyCache.id)
       )
-      .where(eq(companyCache.slug, slug as string));
+      .leftJoin(user, eq(user.id, companyVerification.user));
 
-    const results = await query.execute();
+    let results = await query
+      .where(eq(companyCache.slug, slug as string))
+      .limit(1)
+      .execute();
 
     if (!results.length) {
-      throw createError({
-        statusCode: 404,
-        message: 'Company not found'
-      });
+      results = await query
+        .where(
+          eq(companyCache.id, slug as string)
+        )
+        .limit(1)
+        .execute();
+      if (!results.length) {
+        throw createError({
+          statusCode: 404,
+          message: 'Company not found'
+        });
+      }
     }
 
     const company = results[0] as Company;

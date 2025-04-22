@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import type { Company, Comment } from '@serp/types/types';
 
+  const { user } = useUserSession()
   const route = useRoute();
   const router = useRouter();
   const { slug } = route.params;
@@ -10,6 +11,10 @@
   if (!data) {
     router.push('/404');
   }
+
+  const isVerified = computed(() => {
+    return data?.verifiedEmail === user.value?.email;
+  });
 
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
@@ -103,7 +108,12 @@
       :serply-link="data.serplyLink"
     >
       <template #upvote>
+        <UButton
+          v-if="useAuth"
+          :to="`/users/manage/company/${data.id}`"
+        >Submit Edit</UButton>
         <CompanyVerificationButton
+          v-if="useAuth"
           :id="data.id"
           :is-verified-prop="data.verified"
         />
@@ -395,7 +405,7 @@
           />
 
           <!-- Display Reviews List -->
-          <CompanyReviews :reviews="reviews" class="mt-8" />
+          <CompanyReviews :isVerified="isVerified" :reviews="reviews" class="mt-8" />
         </div>
       </UCard>
 

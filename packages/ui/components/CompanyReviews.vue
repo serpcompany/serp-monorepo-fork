@@ -3,6 +3,7 @@
 
   const props = defineProps<{
     reviews: CompanyReviews;
+    isVerified: boolean;
   }>();
 </script>
 
@@ -22,12 +23,14 @@
           <CompanyReviewCard
             v-if="reviews?.userReview"
             :review="reviews.userReview"
+            :isVerified="isVerified"
           />
 
           <CompanyReviewCard
             v-for="review in reviews.reviews"
             :key="review.id"
             :review="review"
+            :isVerified="isVerified"
           />
         </div>
 

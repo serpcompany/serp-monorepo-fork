@@ -289,6 +289,10 @@ CREATE TABLE
     title character varying(255) NOT NULL,
     rating smallint NOT NULL,
     date_of_experience timestamp without time zone NULL,
+    is_flagged boolean NOT NULL DEFAULT false,
+    flagged_reason text NULL,
+    flagged_at timestamp without time zone NULL,
+    flagged_by integer NULL,
     "user" integer NOT NULL
   );
 
@@ -340,14 +344,14 @@ BEGIN
   FROM (
     SELECT
       COUNT(*) as total_reviews,
-      AVG(rating)::FLOAT as avg_rating,
+      COALESCE(AVG(rating)::FLOAT, 0) as avg_rating,
       COUNT(*) FILTER (WHERE rating = 1) AS one_star,
       COUNT(*) FILTER (WHERE rating = 2) AS two_star,
       COUNT(*) FILTER (WHERE rating = 3) AS three_star,
       COUNT(*) FILTER (WHERE rating = 4) AS four_star,
       COUNT(*) FILTER (WHERE rating = 5) AS five_star
     FROM "user".company_review
-    WHERE company = NEW.company
+    WHERE company = NEW.company AND is_flagged = false
   ) AS agg
   WHERE cache.company_review_aggregate.company_id = NEW.company;
 
@@ -385,6 +389,28 @@ CREATE UNIQUE INDEX "company_verification_index_2" on "user"."company_verificati
 
 ```sql
 CREATE UNIQUE INDEX "company_verification_index_3" on "user"."company_verification" ("company" ASC)
+```
+
+## Company Edit (postgres)
+```sql
+CREATE TABLE
+  "user".company_edit (
+    id serial NOT NULL,
+    created_at timestamp without time zone NOT NULL DEFAULT now(),
+    company integer NOT NULL,
+    "user" integer NOT NULL,
+    proposed_changes character varying(255) NOT NULL,
+    status character varying(255) NOT NULL,
+    reviewed_at timestamp without time zone NULL,
+    reviewed_by integer NULL,
+    review_notes text NULL,
+    updated_main_db boolean NOT NULL DEFAULT false
+  );
+
+ALTER TABLE
+  "user".company_edit
+ADD
+  CONSTRAINT company_edit_pkey PRIMARY KEY (id)
 ```
 
 # Cloudflare

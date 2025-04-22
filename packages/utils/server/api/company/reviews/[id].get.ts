@@ -30,7 +30,11 @@ export default defineEventHandler(async (event) => {
           id: user.id,
           name: user.name,
           image: user.image
-        }
+        },
+        isFlagged: companyReview.isFlagged,
+        flaggedAt: companyReview.flaggedAt,
+        flaggedReason: companyReview.flaggedReason,
+        flaggedBy: companyReview.flaggedBy
       })
       .from(companyReview)
       .leftJoin(user, eq(companyReview.user, user.id))

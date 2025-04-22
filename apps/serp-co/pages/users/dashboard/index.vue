@@ -63,6 +63,16 @@
 
         <UCard
           class="cursor-pointer p-4 transition-shadow hover:shadow-xl"
+          @click="navigateTo('/users/manage/companies')"
+        >
+          <UHeading level="4" class="mb-2">Verified Companies</UHeading>
+          <p class="text-sm text-gray-600">
+            Review/edit your verified companies.
+          </p>
+        </UCard>
+
+        <UCard
+          class="cursor-pointer p-4 transition-shadow hover:shadow-xl"
           @click="navigateTo('/users/submit/company/')"
         >
           <UHeading level="4" class="mb-2">Submit Company</UHeading>
