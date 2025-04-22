@@ -1,29 +1,29 @@
 <script setup lang="ts">
-  const { data: page } = await useAsyncData('pricing', () =>
-    queryCollection('pricing').first()
-  );
+const { data: page } = await useAsyncData('pricing', () =>
+  queryCollection('pricing').first()
+)
 
-  useSeoMeta({
-    title: page.value?.title,
-    ogTitle: page.value?.title,
-    description: page.value?.description,
-    ogDescription: page.value?.description
-  });
+useSeoMeta({
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description
+})
 
-  defineOgImageComponent('Saas');
+defineOgImageComponent('Saas')
 
-  const isYearly = ref('0');
+const isYearly = ref('0')
 
-  const items = ref([
-    {
-      label: 'Monthly',
-      value: '0'
-    },
-    {
-      label: 'Yearly',
-      value: '1'
-    }
-  ]);
+const items = ref([
+  {
+    label: 'Monthly',
+    value: '0'
+  },
+  {
+    label: 'Yearly',
+    value: '1'
+  }
+])
 </script>
 
 <template>
@@ -63,7 +63,10 @@
       </UPageLogos>
     </UPageSection>
 
-    <UPageSection :title="page.faq.title" :description="page.faq.description">
+    <UPageSection
+      :title="page.faq.title"
+      :description="page.faq.description"
+    >
       <UPageAccordion
         :items="page.faq.items"
         multiple

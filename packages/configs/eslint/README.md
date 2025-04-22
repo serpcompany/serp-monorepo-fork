@@ -39,35 +39,26 @@ You can add "global/default" eslint settings to this packages `eslint.config.mjs
 
 > Note: If running a command at top level (ie through turbo) make sure you run turbo with no cache to test it using the ``--force` clag on the command, like `pnpm lint --force`
 
-## eslint ignore rules you might need to use inline
+## ESLint Rules (INLINE)
 
-**You can use these solo, or comma separated like:**
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-
-// @ts-expect-error: Auto-imported from another layer
-
-### eslint inline rules for .js / .ts files
-
-```
+```ts
 // eslint-disable-next-line no-unused-vars
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+
+// @ts-expect-error: Auto-imported from another layer
 ```
 
-### disable rules for an entire file - `.js` / `.ts`
+```vue
+<!-- eslint-disable-next-line vue/no-v-html -->
+
+<!-- eslint-disable-next-line no-console -->
+```
+
+### Eslint Rules (FILE)
 
 ```ts
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
-```
-
-## eslint rules for .vue files
-
-```
-<!-- eslint-disable-next-line vue/no-v-html -->
-
-
-<!-- eslint-disable-next-line no-console -->
 ```
