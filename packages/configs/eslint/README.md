@@ -60,5 +60,5 @@ You can add "global/default" eslint settings to this packages `eslint.config.mjs
 ### Eslint Rules (FILE)
 
 ```ts
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars, no-console */
 ```
