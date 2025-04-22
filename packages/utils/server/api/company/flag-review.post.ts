@@ -1,5 +1,9 @@
 import { db } from '@serp/utils/server/api/db';
-import { companyReview, companyVerification, user } from '@serp/utils/server/api/db/schema';
+import {
+  companyReview,
+  companyVerification,
+  user
+} from '@serp/utils/server/api/db/schema';
 import { and, eq, sql } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
@@ -10,7 +14,10 @@ export default defineEventHandler(async (event) => {
 
     const { id } = getQuery(event);
     if (!id) {
-      return { status: 400, message: 'Review ID is required in the query params' };
+      return {
+        status: 400,
+        message: 'Review ID is required in the query params'
+      };
     }
 
     const body = await readBody(event);
@@ -30,12 +37,17 @@ export default defineEventHandler(async (event) => {
     const existingReview = await db
       .select({ id: companyReview.id })
       .from(companyReview)
-      .leftJoin(companyVerification, eq(companyReview.company, companyVerification.company))
-      .where(and(eq(companyReview.id, id), eq(companyVerification.user, userId)))
+      .leftJoin(
+        companyVerification,
+        eq(companyReview.company, companyVerification.company)
+      )
+      .where(
+        and(eq(companyReview.id, id), eq(companyVerification.user, userId))
+      )
       .limit(1);
 
     if (existingReview.length === 0) {
-        return { status: 404, message: 'Review not found' };
+      return { status: 404, message: 'Review not found' };
     }
 
     await db

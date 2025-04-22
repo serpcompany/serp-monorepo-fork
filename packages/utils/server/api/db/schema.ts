@@ -91,6 +91,19 @@ export const companyComment = userSchema.table('company_comment', {
   path: ltree('path')
 });
 
+export const mcpServerComment = userSchema.table('mcp_server_comment', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  server: integer('server').notNull(),
+  content: varchar('content', { length: 255 }),
+  parentId: integer('parent_id'),
+  path: ltree('path')
+});
+
 export const companyReview = userSchema.table('company_review', {
   id: serial('id').primaryKey(),
   createdAt: timestamp('created_at', { withTimezone: true })
@@ -108,7 +121,7 @@ export const companyReview = userSchema.table('company_review', {
   flaggedAt: timestamp('flagged_at', { withTimezone: true }),
   flaggedBy: integer('flagged_by'),
   reviewedBy: integer('reviewed_by'),
-  reviewedAt: timestamp('reviewed_at', { withTimezone: true }),
+  reviewedAt: timestamp('reviewed_at', { withTimezone: true })
 });
 
 export const companyVerification = userSchema.table('company_verification', {
@@ -165,7 +178,8 @@ export const mcpServerCache = cacheSchema.table('mcp_server_cache', {
   topics: jsonb('topics'),
   languages: jsonb('languages'),
   repoCreatedAt: timestamp('repo_created_at', { withTimezone: true }),
-  repoUpdatedAt: timestamp('repo_updated_at', { withTimezone: true })
+  repoUpdatedAt: timestamp('repo_updated_at', { withTimezone: true }),
+  upvotes: text('upvotes').array()
 });
 
 // Company

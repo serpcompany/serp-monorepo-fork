@@ -23,14 +23,14 @@
           <CompanyReviewCard
             v-if="reviews?.userReview"
             :review="reviews.userReview"
-            :isVerified="isVerified"
+            :is-verified="isVerified"
           />
 
           <CompanyReviewCard
             v-for="review in reviews.reviews"
             :key="review.id"
             :review="review"
-            :isVerified="isVerified"
+            :is-verified="isVerified"
           />
         </div>
 

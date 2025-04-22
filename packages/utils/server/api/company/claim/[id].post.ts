@@ -1,8 +1,8 @@
 import { db } from '@serp/utils/server/api/db';
 import {
-    companyCache,
-    companyVerification,
-    user
+  companyCache,
+  companyVerification,
+  user
 } from '@serp/utils/server/api/db/schema';
 import { eq } from 'drizzle-orm';
 

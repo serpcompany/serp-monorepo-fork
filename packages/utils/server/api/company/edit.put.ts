@@ -1,10 +1,10 @@
 import { db } from '@serp/utils/server/api/db';
 import {
-    companyCache,
-    companyCategoryCache,
-    companyEdit,
-    companyVerification,
-    user
+  companyCache,
+  companyCategoryCache,
+  companyEdit,
+  companyVerification,
+  user
 } from '@serp/utils/server/api/db/schema';
 import { and, eq, getTableColumns, inArray, sql } from 'drizzle-orm';
 
@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
 
     const [editRow] = await db
       .select({
-        company: companyEdit.company,
+        company: companyEdit.company
       })
       .from(companyEdit)
       .where(eq(companyEdit.id, editId))
@@ -56,13 +56,16 @@ export default defineEventHandler(async (event) => {
       .where(
         and(
           eq(companyVerification.company, companyId),
-          eq(companyVerification.user, userId),
+          eq(companyVerification.user, userId)
         )
       )
       .limit(1)
       .execute();
     if (!verif) {
-      return { status: 403, message: 'You are not verified to review edits for this company' };
+      return {
+        status: 403,
+        message: 'You are not verified to review edits for this company'
+      };
     }
 
     // Pull in the body and only allow status + reviewNotes
@@ -75,7 +78,10 @@ export default defineEventHandler(async (event) => {
       updateData.reviewNotes = body.reviewNotes;
     }
     if (Object.keys(updateData).length === 0) {
-      return { status: 400, message: 'Nothing to update; allowed fields: status, reviewNotes' };
+      return {
+        status: 400,
+        message: 'Nothing to update; allowed fields: status, reviewNotes'
+      };
     }
 
     updateData.reviewedBy = userId;
@@ -88,98 +94,105 @@ export default defineEventHandler(async (event) => {
       .execute();
 
     if (updateData.status === 'approved') {
-        // If approved, update the company cache with the new data (main table will be updated in the next cron job)
-        const updateData = await db
-            .select({ proposedChanges: companyEdit.proposedChanges })
-            .from(companyEdit)
-            .where(eq(companyEdit.id, editId))
-            .limit(1)
-            .execute();
-        if (!updateData.length) {
-            return { status: 404, message: 'Edit not found' };
+      // If approved, update the company cache with the new data (main table will be updated in the next cron job)
+      const updateData = await db
+        .select({ proposedChanges: companyEdit.proposedChanges })
+        .from(companyEdit)
+        .where(eq(companyEdit.id, editId))
+        .limit(1)
+        .execute();
+      if (!updateData.length) {
+        return { status: 404, message: 'Edit not found' };
+      }
+      const raw = updateData[0].proposedChanges;
+      const proposedChanges = typeof raw === 'string' ? JSON.parse(raw) : raw;
+
+      const columnNames: string[] = Object.values(
+        getTableColumns(companyCache)
+      ).map((col) => col.name);
+      console.log('columnNames', columnNames);
+      const companyEditData = {};
+      for (const col of columnNames) {
+        console.log('col', col);
+        console.log('proposedChanges[col]', proposedChanges[col]);
+        if (
+          proposedChanges[col] !== undefined &&
+          col !== 'id' &&
+          col !== 'createdAt' &&
+          col !== 'updatedAt' &&
+          col !== 'categories'
+        ) {
+          companyEditData[col] = proposedChanges[col];
         }
-        const raw = updateData[0].proposedChanges;
-        const proposedChanges = 
-        typeof raw === 'string' 
-            ? JSON.parse(raw)
-            : raw;
-    
-      const columnNames: string[] = Object.values(getTableColumns(companyCache)).map((col) => col.name);
-        console.log('columnNames', columnNames)
-        const companyEditData = {}
-        for (const col of columnNames) {
-            console.log('col', col)
-            console.log('proposedChanges[col]', proposedChanges[col])
-          if (proposedChanges[col] !== undefined && col !== 'id' && col !== 'createdAt' && col !== 'updatedAt' && col !== 'categories') {
-            companyEditData[col] = proposedChanges[col]
-          }
+      }
+
+      if (Object.keys(companyEditData).length === 0) {
+        return { status: 400, message: 'No valid fields to update' };
+      }
+
+      // Ensure categories is an array of ids and that all exist in companyCategoryCache
+      if (body.categories) {
+        if (typeof body.categories === 'string') {
+          body.categories = body.categories
+            .split(',')
+            .map((cat: string) => cat.trim());
         }
-
-        if (Object.keys(companyEditData).length === 0) {
-          return { status: 400, message: 'No valid fields to update' }
-        }
-
-        // Ensure categories is an array of ids and that all exist in companyCategoryCache
-        if (body.categories) {
-          if (typeof body.categories === 'string') {
-            body.categories = body.categories.split(',').map((cat: string) => cat.trim());
-          }
-          if (!Array.isArray(body.categories)) {
-            return {
-              status: 400,
-              message: 'Categories must be an array'
-            };
-          }
-
-          const categories = await db
-            .select()
-            .from(companyCategoryCache)
-            .where(inArray(companyCategoryCache.id, body.categories))
-            .limit(body.categories.length)
-            .execute();
-
-          if (categories.length !== body.categories.length) {
-            return {
-              status: 400,
-              message: 'Invalid categories'
-            };
-          }
-
-          companyEditData['categories'] = JSON.stringify(categories);
+        if (!Array.isArray(body.categories)) {
+          return {
+            status: 400,
+            message: 'Categories must be an array'
+          };
         }
 
-        // Ensure company exists
-        const existingCompany = await db
-            .select({
-                id: companyCache.id,
-            })
-            .from(companyCache)
-            .where(eq(companyCache.id, companyId))
-            .limit(1)
-            .execute();
+        const categories = await db
+          .select()
+          .from(companyCategoryCache)
+          .where(inArray(companyCategoryCache.id, body.categories))
+          .limit(body.categories.length)
+          .execute();
 
-        if (!existingCompany.length) {
-            return {
-                status: 400,
-                message: 'Company with given id doesn\'t exists'
-            };
+        if (categories.length !== body.categories.length) {
+          return {
+            status: 400,
+            message: 'Invalid categories'
+          };
         }
 
-        if (Object.keys(companyEditData).length !== 0) {
-            // // Update the company cache with the new data
-            // await db
-            //     .update(companyCache)
-            //     .set(companyEditData)
-            //     .where(eq(companyCache.id, companyId))
-            //     .execute();
-        }
+        companyEditData['categories'] = JSON.stringify(categories);
+      }
+
+      // Ensure company exists
+      const existingCompany = await db
+        .select({
+          id: companyCache.id
+        })
+        .from(companyCache)
+        .where(eq(companyCache.id, companyId))
+        .limit(1)
+        .execute();
+
+      if (!existingCompany.length) {
+        return {
+          status: 400,
+          message: "Company with given id doesn't exists"
+        };
+      }
+
+      if (Object.keys(companyEditData).length !== 0) {
+        // // Update the company cache with the new data
+        // await db
+        //     .update(companyCache)
+        //     .set(companyEditData)
+        //     .where(eq(companyCache.id, companyId))
+        //     .execute();
+      }
     }
 
     return { message: 'success' };
   } catch (err) {
     return {
       status: err.statusCode || 500,
-      message: err.message || 'Internal server error',
+      message: err.message || 'Internal server error'
     };
   }
 });

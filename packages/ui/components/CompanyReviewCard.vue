@@ -10,6 +10,10 @@
     }
   });
 
+  const review = toRef(props, 'review');
+
+  const localReview = reactive({ ...review.value });
+
   const toast = useToast();
 
   const formattedExperienceDate = computed(() => {
@@ -42,83 +46,105 @@
     });
   });
 
-  const isModalOpen = ref(false)
-const notes = ref('')
+  const isModalOpen = ref(false);
+  const notes = ref('');
 
-// detect flagged state
-const isFlagged = computed(() => {
-  return props.review.isFlagged || props.review.company_review?.isFlagged
-})
+  // detect flagged state
+  const isFlagged = computed(() => {
+    if (Object.prototype.hasOwnProperty.call(localReview, 'isFlagged')) {
+      return localReview.isFlagged;
+    }
 
-// open modal for flagging
-function onFlagClick() {
-  notes.value = '' // clear old notes
-  isModalOpen.value = true
-}
+    if (
+      localReview.company_review &&
+      Object.prototype.hasOwnProperty.call(
+        localReview.company_review,
+        'isFlagged'
+      )
+    ) {
+      return localReview.company_review.isFlagged;
+    }
 
-// cancel/close modal
-function onCancel() {
-  isModalOpen.value = false
-}
+    return undefined;
+  });
 
-// send flag request
-async function onAccept() {
-  try {
-    await $fetch(`/api/company/flag-review?id=${props.review.id || props.review.company_review.id}`, {
-      method: 'POST',
-      body: { notes: notes.value }
-    })
-    // reflect UI
-    props.review.isFlagged = true
-    props.review.flaggedReason = notes.value
-    toast.add({
-      id: 'flag-review',
-      title: 'Review flagged',
-      description: 'The review has been flagged successfully.',
-    })
-  } catch (err) {
-    console.error('flag error', err)
-    toast.add({
-      id: 'flag-review-error',
-      title: 'Error flagging review',
-      description: 'There was an error flagging the review. Please try again.',
-    })
-  } finally {
-    isModalOpen.value = false
+  // open modal for flagging
+  function onFlagClick() {
+    notes.value = ''; // clear old notes
+    isModalOpen.value = true;
   }
-}
 
-// send unflag/accept request
-async function onUnflag() {
-  try {
-    await $fetch(`/api/company/flag-review?id=${props.review.id || props.review.company_review.id}`, {
-      method: 'DELETE'
-    })
-    props.review.isFlagged = false
-    props.review.flaggedReason = undefined
-    toast.add({
-      id: 'accept-review',
-      title: 'Review accepted',
-      description: 'The review has been marked as accepted.',
-    })
-  } catch (err) {
-    console.error('accept error', err)
-    toast.add({
-      id: 'accept-review-error',
-      title: 'Error accepting review',
-      description: 'There was an error marking the review as accepted. Please try again.',
-    })
+  // cancel/close modal
+  function onCancel() {
+    isModalOpen.value = false;
   }
-}
+
+  // send flag request
+  async function onAccept() {
+    try {
+      await $fetch(
+        `/api/company/flag-review?id=${props.review.id || props.review.company_review.id}`,
+        {
+          method: 'POST',
+          body: { notes: notes.value }
+        }
+      );
+      // reflect UI
+      localReview.isFlagged = true;
+      localReview.flaggedReason = notes.value;
+      toast.add({
+        id: 'flag-review',
+        title: 'Review flagged',
+        description: 'The review has been flagged successfully.'
+      });
+    } catch (err) {
+      console.error('flag error', err);
+      toast.add({
+        id: 'flag-review-error',
+        title: 'Error flagging review',
+        description: 'There was an error flagging the review. Please try again.'
+      });
+    } finally {
+      isModalOpen.value = false;
+    }
+  }
+
+  // send unflag/accept request
+  async function onUnflag() {
+    try {
+      await $fetch(
+        `/api/company/flag-review?id=${props.review.id || props.review.company_review.id}`,
+        {
+          method: 'DELETE'
+        }
+      );
+      localReview.isFlagged = false;
+      localReview.flaggedReason = undefined;
+      toast.add({
+        id: 'accept-review',
+        title: 'Review accepted',
+        description: 'The review has been marked as accepted.'
+      });
+    } catch (err) {
+      console.error('accept error', err);
+      toast.add({
+        id: 'accept-review-error',
+        title: 'Error accepting review',
+        description:
+          'There was an error marking the review as accepted. Please try again.'
+      });
+    }
+  }
 </script>
 
 <template>
-  <UCard 
+  <UCard
     class="h-full"
     :class="{
-      'opacity-50': isFlagged == undefined || isFlagged,
+      'opacity-50': isFlagged == undefined || isFlagged
     }"
-    variant="outline">
+    variant="outline"
+  >
     <template #header>
       <div class="flex items-center space-x-4">
         <LazyNuxtImg
@@ -133,9 +159,17 @@ async function onUnflag() {
           size="lg"
         />
         <div>
-          <h2 class="text-lg font-semibold">{{ review.title }}</h2>
+          <h2 class="text-lg font-semibold">
+            {{ review.title || review.company_review?.title }}
+          </h2>
           <p class="text-primary-800 text-md font-semibold">
-            {{ review.user ? review.user.name : 'Anonymous' }}
+            {{
+              review.user
+                ? review.user.name
+                : review.company_review?.user
+                  ? review.company_review.user.name
+                  : 'Anonymous'
+            }}
           </p>
           <div class="mt-3 flex items-center">
             <div class="flex text-amber-500">
@@ -158,9 +192,9 @@ async function onUnflag() {
           class="ml-auto flex items-center space-x-2 text-sm text-gray-500"
         >
           <UButton
+            v-if="isFlagged == undefined"
             class="text-gray-500 hover:text-gray-700"
             @click="onUnflag()"
-            v-if="isFlagged == undefined"
           >
             Mark as Reviewed
           </UButton>
@@ -177,14 +211,15 @@ async function onUnflag() {
           class="ml-auto flex items-center space-x-2 text-sm text-gray-500"
         >
           <p class="text-xs text-neutral-400">
-            Flagged: {{ review.flaggedReason || 'No reason provided' }}
+            Flagged: {{ localReview.flaggedReason || 'No reason provided' }}
           </p>
         </div>
-        <div v-else-if="isFlagged == undefined" class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
-          <p class="text-xs text-neutral-400">
-            Not Reviewed
-          </p>
-        </div>  
+        <div
+          v-else-if="isFlagged == undefined"
+          class="ml-auto flex items-center space-x-2 text-sm text-gray-500"
+        >
+          <p class="text-xs text-neutral-400">Not Reviewed</p>
+        </div>
       </div>
     </template>
 

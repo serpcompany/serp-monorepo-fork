@@ -1,8 +1,5 @@
 import { db } from '@serp/utils/server/api/db';
-import {
-  companyEdit,
-  user
-} from '@serp/utils/server/api/db/schema';
+import { companyEdit, user } from '@serp/utils/server/api/db/schema';
 import { eq } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
@@ -48,7 +45,7 @@ export default defineEventHandler(async (event) => {
     }
 
     return { edits };
-  } catch (error: any) {
+  } catch (error: unknown) {
     return {
       status: error.statusCode || 500,
       message: error.message || 'Oops, something went wrong'

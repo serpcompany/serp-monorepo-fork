@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import type { Company, Comment } from '@serp/types/types';
 
-  const { user } = useUserSession()
+  const { user } = useUserSession();
   const route = useRoute();
   const router = useRouter();
   const { slug } = route.params;
@@ -108,10 +108,7 @@
       :serply-link="data.serplyLink"
     >
       <template #upvote>
-        <UButton
-          v-if="useAuth"
-          :to="`/users/manage/company/${data.id}`"
-        >Submit Edit</UButton>
+        <CompanyEditButton v-if="useAuth" :id="data.id" />
         <CompanyVerificationButton
           v-if="useAuth"
           :id="data.id"
@@ -405,7 +402,11 @@
           />
 
           <!-- Display Reviews List -->
-          <CompanyReviews :isVerified="isVerified" :reviews="reviews" class="mt-8" />
+          <CompanyReviews
+            :is-verified="isVerified"
+            :reviews="reviews"
+            class="mt-8"
+          />
         </div>
       </UCard>
 

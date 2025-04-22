@@ -33,15 +33,12 @@ export default defineEventHandler(async (event) => {
         verifiedAt: companyVerification.createdAt
       })
       .from(companyVerification)
-      .innerJoin(
-        companyCache,
-        eq(companyVerification.company, companyCache.id)
-      )
+      .innerJoin(companyCache, eq(companyVerification.company, companyCache.id))
       .where(eq(companyVerification.user, userId))
       .execute();
 
     return { companies: verifiedCompanies };
-  } catch (err: any) {
+  } catch (err: unknown) {
     return {
       status: err.statusCode || 500,
       message: err.message || 'Something went wrong'

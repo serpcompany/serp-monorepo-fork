@@ -51,11 +51,12 @@ export default defineEventHandler(async (event) => {
         value.numFiveStarReviews = refreshData.numFiveStarReviews;
         value.averageRating = refreshData.averageRating;
         value.verified = refreshData.verified;
+        value.verifiedEmail = refreshData.verifiedEmail;
       }
       return value;
     }
 
-    let query = db
+    const query = db
       .select({
         id: companyCache.id,
         name: companyCache.name,
@@ -81,7 +82,7 @@ export default defineEventHandler(async (event) => {
         numFiveStarReviews: companyReviewAggregate.numFiveStarReviews,
         averageRating: companyReviewAggregate.averageRating,
         verified: companyVerification.id,
-        verifiedEmail: user.email,
+        verifiedEmail: user.email
       })
       .from(companyCache)
       .leftJoin(
@@ -101,9 +102,7 @@ export default defineEventHandler(async (event) => {
 
     if (!results.length) {
       results = await query
-        .where(
-          eq(companyCache.id, slug as string)
-        )
+        .where(eq(companyCache.id, slug as string))
         .limit(1)
         .execute();
       if (!results.length) {
