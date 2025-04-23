@@ -2,7 +2,7 @@ import { db } from '@serp/utils/server/api/db';
 import { user } from '@serp/utils/server/api/db/schema';
 import { eq } from 'drizzle-orm';
 
-async function d1Query(sql, params = []) {
+export async function d1Query(sql, params = []) {
   const response = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${process.env.CLOUDFLARE_ACCOUNT_ID}/d1/database/${process.env.CLOUDFLARE_AUTH_DATABASE_ID}/query`,
     {
