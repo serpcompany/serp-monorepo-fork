@@ -28,12 +28,13 @@
             aria-label="Main navigation"
             orientation="horizontal"
             content-orientation="vertical"
-            color="primary"
             highlight
             text-size="base"
             variant="pill"
             :items="headerNavItems"
-            :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
+            :ui="{
+              link: 'group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-md focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 text-primary'
+            }"
           />
         </div>
       </div>
@@ -89,6 +90,8 @@
         </div>
       </div>
     </div>
-    <SBreadcrumb />
   </header>
+  <div class="px-12">
+    <SBreadcrumb />
+  </div>
 </template>
