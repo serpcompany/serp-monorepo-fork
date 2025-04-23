@@ -99,6 +99,10 @@ export default defineNuxtConfig({
         {
           label: 'Posts',
           children: [{ label: 'Posts', to: '/posts/' }]
+        },
+        {
+          label: 'MCP',
+          children: [{ label: 'Servers', to: '/mcp/servers/' }]
         }
       ],
       footerColumns: [
@@ -110,7 +114,8 @@ export default defineNuxtConfig({
             { text: 'Companies', slug: '/products/' },
             { text: 'Tools', slug: '/tools/' },
             { text: 'Posts', slug: '/posts/' },
-            { text: 'Glossary', slug: '/glossary/' }
+            { text: 'Glossary', slug: '/glossary/' },
+            { text: 'MCP Servers', slug: '/mcp/servers/' }
           ]
         },
         {

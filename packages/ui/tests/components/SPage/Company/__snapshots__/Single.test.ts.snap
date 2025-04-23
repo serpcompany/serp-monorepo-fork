@@ -22,6 +22,16 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
               <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
                 <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
+                    <!--v-if--> Submit Edit
+                    <!--v-if-->
+                  </button></div>
+                <div class="flex w-full items-center sm:w-auto">
+                  <div class="flex items-center"><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if-->Claim This Company
+                      <!--v-if-->
+                    </button></div>
+                </div>
+                <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
                     <!--v-if--><span class="text-xl">👍</span><span>Upvotes 1</span>
                     <!--v-if-->
                   </button></div><a href="https://serply.com" rel="noopener noreferrer" target="_blank" class="flex h-[42px] w-auto items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"> Visit Website <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -299,7 +309,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
                     <!-- Reviews List -->
                     <div class="mx-auto max-w-xl space-y-4">
                       <!--v-if-->
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -315,6 +325,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -328,8 +342,11 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -345,6 +362,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -358,7 +379,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
                     </div>
                   </div>
                 </usection>
@@ -736,7 +760,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
                     <!-- Reviews List -->
                     <div class="mx-auto max-w-xl space-y-4">
                       <!--v-if-->
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -752,6 +776,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -765,8 +793,11 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -782,6 +813,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -795,7 +830,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
                     </div>
                   </div>
                 </usection>
@@ -851,6 +889,16 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
               </div><!-- Action buttons -->
               <!-- Change w-full to w-auto or remove width entirely so it only takes up the space it needs -->
               <div class="flex flex-none flex-col items-center justify-end gap-3 pt-4 sm:flex-row sm:pt-0">
+                <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
+                    <!--v-if--> Submit Edit
+                    <!--v-if-->
+                  </button></div>
+                <div class="flex w-full items-center sm:w-auto">
+                  <div class="flex items-center"><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if-->Claim This Company
+                      <!--v-if-->
+                    </button></div>
+                </div>
                 <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
                     <!--v-if--><span class="text-xl">👍</span><span>Upvotes 0</span>
                     <!--v-if-->
@@ -983,7 +1031,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
                     <!-- Reviews List -->
                     <div class="mx-auto max-w-xl space-y-4">
                       <!--v-if-->
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -999,6 +1047,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -1012,8 +1064,11 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -1029,6 +1084,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -1042,7 +1101,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
                     </div>
                   </div>
                 </usection>
@@ -1239,7 +1301,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
                     <!-- Reviews List -->
                     <div class="mx-auto max-w-xl space-y-4">
                       <!--v-if-->
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -1255,6 +1317,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -1268,8 +1334,11 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
-                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full">
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
+                      <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) h-full opacity-50">
                         <div class="p-4 sm:px-6">
                           <div class="flex items-center space-x-4"><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-9 text-lg"><span class="font-medium leading-none text-(--ui-text-muted) truncate">A</span></span>
                             <div>
@@ -1285,6 +1354,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
                                 </div>
                               </div>
                             </div>
+                            <!--v-if-->
+                            <div class="ml-auto flex items-center space-x-2 text-sm text-gray-500">
+                              <p class="text-xs text-neutral-400">Not Reviewed</p>
+                            </div>
                           </div>
                         </div>
                         <div class="p-4 sm:p-6">
@@ -1298,7 +1371,10 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
                             <p class="text-xs text-neutral-400"> Reviewed: Unknown</p>
                           </div>
                         </div>
-                      </div>
+                      </div><!-- Flag modal -->
+                      <!--v-if-->
+                      <!--teleport start-->
+                      <!--teleport end-->
                     </div>
                   </div>
                 </usection>

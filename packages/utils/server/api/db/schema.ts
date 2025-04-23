@@ -91,6 +91,19 @@ export const companyComment = userSchema.table('company_comment', {
   path: ltree('path')
 });
 
+export const mcpServerComment = userSchema.table('mcp_server_comment', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }),
+  user: integer('user').notNull(),
+  server: integer('server').notNull(),
+  content: varchar('content', { length: 255 }),
+  parentId: integer('parent_id'),
+  path: ltree('path')
+});
+
 export const companyReview = userSchema.table('company_review', {
   id: serial('id').primaryKey(),
   createdAt: timestamp('created_at', { withTimezone: true })
@@ -102,7 +115,37 @@ export const companyReview = userSchema.table('company_review', {
   content: varchar('content', { length: 255 }),
   title: varchar('title', { length: 255 }),
   rating: integer('rating').notNull(),
-  dateOfExperience: timestamp('date_of_experience', { withTimezone: true })
+  dateOfExperience: timestamp('date_of_experience', { withTimezone: true }),
+  isFlagged: boolean('is_flagged'),
+  flaggedReason: text('flagged_reason'),
+  flaggedAt: timestamp('flagged_at', { withTimezone: true }),
+  flaggedBy: integer('flagged_by'),
+  reviewedBy: integer('reviewed_by'),
+  reviewedAt: timestamp('reviewed_at', { withTimezone: true })
+});
+
+export const companyVerification = userSchema.table('company_verification', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  company: integer('company').notNull().unique(),
+  user: integer('user').notNull()
+});
+
+export const companyEdit = userSchema.table('company_edit', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  company: integer('company').notNull(),
+  user: integer('user').notNull(),
+  proposedChanges: varchar('proposed_changes', { length: 255 }).notNull(),
+  status: varchar('status', { length: 255 }).notNull(),
+  reviewedAt: timestamp('reviewed_at', { withTimezone: true }),
+  reviewedBy: integer('reviewed_by'),
+  reviewNotes: text('review_notes'),
+  updatedMainDb: boolean('updated_main_db').notNull().default(false)
 });
 
 export const user = userSchema.table('user', {
@@ -114,6 +157,29 @@ export const user = userSchema.table('user', {
   email: varchar('email', { length: 255 }).unique().notNull(),
   name: varchar('name', { length: 255 }),
   image: varchar('image', { length: 255 })
+});
+
+// MCP
+export const mcpServerCache = cacheSchema.table('mcp_server_cache', {
+  lastUpdated: timestamp('last_updated', { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  id: serial('id').primaryKey(),
+  slug: varchar('slug', { length: 512 }).notNull(),
+  url: varchar('url', { length: 512 }).notNull(),
+  description: text('description'),
+  tags: jsonb('tags'),
+  contributors: jsonb('contributors'),
+  readme: text('readme').notNull(),
+  owner: varchar('owner', { length: 512 }).notNull(),
+  repo: varchar('repo', { length: 512 }).notNull(),
+  stars: integer('stars'),
+  forks: integer('forks'),
+  topics: jsonb('topics'),
+  languages: jsonb('languages'),
+  repoCreatedAt: timestamp('repo_created_at', { withTimezone: true }),
+  repoUpdatedAt: timestamp('repo_updated_at', { withTimezone: true }),
+  upvotes: text('upvotes').array()
 });
 
 // Company

@@ -4,6 +4,8 @@ import {
   mbArtistMetadataCache,
   mbMetadataCache,
   mbReleaseGroupCache,
+  mcpServerCache,
+  mcpServerComment,
   postCache,
   postComment
 } from '@serp/utils/server/api/db/schema';
@@ -38,6 +40,11 @@ export function getTableAndPKForModule(module: string) {
     field = mbMetadataCache.id;
     commentsTable = null;
     commentsField = null;
+  } else if (module === 'mcp-server' || module === 'mcp-servers') {
+    table = mcpServerCache;
+    field = mcpServerCache.id;
+    commentsTable = mcpServerComment;
+    commentsField = 'server';
   } else {
     throw new Error('Invalid module');
   }

@@ -36,6 +36,7 @@ export type Company = {
   numFourStarReviews?: number;
   numFiveStarReviews?: number;
   averageRating?: number;
+  verified?: number; // id of verification table row (null = not verified)
 };
 
 export type CompanyIndex = {
