@@ -83,8 +83,8 @@
       headline="MCP Servers"
       :subheadline="
         categorySlug
-          ? `Discover Open Source ${data.category.name} MCP Servers.`
-          : 'Discover Open Source MCP Servers.'
+          ? `Discover ${data.category.name} MCP Servers.`
+          : 'The largest collection of MCP Servers.'
       "
       :show-search-bar="false"
       :show-buttons="false"
