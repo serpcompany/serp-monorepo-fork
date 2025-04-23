@@ -1,3 +1,4 @@
-apps/serp-co/pages/services/foo/*
-apps/serp-co/pages/services/growth/index.vue
-apps/serp-co/pages/services/automation/index.vue
+apps/serp-co/pages/solutions/foo/*
+apps/serp-co/pages/solutions/growth/*
+apps/serp-co/pages/solutions/automation/*
+apps/serp-co/pages/solutions/ai-agents/*

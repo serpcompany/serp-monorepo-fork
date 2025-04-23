@@ -1,249 +1,187 @@
-<script setup lang="ts">
-  const route = useRoute();
-
-  const { data } = await useAsyncData(route.path, () =>
-    queryCollection('content').path(route.path).first()
-  );
-  if (!data.value) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: 'Page not found',
-      fatal: true
-    });
-  }
-  const page = data.value.body;
-
-  useSeoMeta({
-    title: page.title,
-    ogTitle: page.title,
-    description: page.description,
-    ogDescription: page.description
-  });
-
-  definePageMeta({
-    layout: 'lander'
-  });
+<script setup>
+  const testimonials = [
+    {
+      quote:
+        'Devin is one of the foremost experts in SEO. I am always looking forward to the info he provides and his strategies are consistently helping us get results',
+      user: {
+        name: 'Adriaan Van Swieten',
+        businessName: '100 Danish',
+        positionAtCompany: 'Director',
+        avatar:
+          'https://raw.githubusercontent.com/serpcompany/social-proof/refs/heads/main/linkedin/avatars/adriaan-van-swieten.png'
+      }
+    },
+    {
+      quote:
+        'Devin is a fantastic person to work with. His technical understanding of SEO is what sets him apart from the rest. Along with that, he is extremely professional in his job and he delivers a fantastic service that has the results to match it.',
+      user: {
+        name: 'Alasdair Walker',
+        businessName: 'How to Drink Wine',
+        positionAtCompany: 'Director',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/alasdair-walker.png'
+      }
+    },
+    {
+      quote:
+        'Devin is changing the game of SEO and digital marketing. He is always on the forefront of search engine changes, and a pleasure to work with. If your business needs help getting more customers and online traffic, I highly recommend his company.',
+      user: {
+        name: 'Amine Bekkouch',
+        businessName: 'CAPREIT',
+        positionAtCompany: 'Operations Manager',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/amine-bekkouch.png'
+      }
+    },
+    {
+      quote:
+        "Devin is a killer SEO! It is essential that you work with someone like him, who stays ahead of the industry's every changing landscape. Work with him and you will make money. Highly recommend",
+      user: {
+        name: 'Ashley Usoh',
+        businessName: 'Alkem Health & Fitness',
+        positionAtCompany: 'Senior Marketing Manager',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/ashley-usoh.png'
+      }
+    },
+    {
+      quote:
+        'Devin is on of the few SEO experts I would recommend. He has a gift for generating leads and sales online through ranking websites in the search engines. If you are looking for someone to explode your leads and sales online, Devin is your man!',
+      user: {
+        name: 'Aston Scott',
+        businessName: 'Source One International',
+        positionAtCompany: 'Partner And CMO',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/aston-scott.png'
+      }
+    },
+    {
+      quote:
+        "Devin at SEO Firepower is more than just an 'SEO Specialist' - he's an artist. He takes SEO, an often formulaic and scientific feeling marketing tactic and brings a fresh holistic perspective to the game. Always inventive, and on the cutting edge of the search marketing industry, Devin's skills are a notch above the rest.",
+      user: {
+        name: 'Avram Gonzales',
+        businessName: 'Digital Harvest',
+        positionAtCompany: 'Founder',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/avram-gonzales.png'
+      }
+    },
+    {
+      quote:
+        'Devin has used his unique SEO skills to get me to the top of the Google rankings and he generated tons of business for me. I can not thank him enough. He is an expert in getting me leads on the net and delivers awesome results!',
+      user: {
+        name: 'Bill Raup',
+        businessName: 'Bill Raup Search Engine Marketing, LLC',
+        positionAtCompany: 'President',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/bill-raup.png'
+      }
+    },
+    {
+      quote:
+        'Devin is a true SEO industry leader and expert at driving traffic. Having collaborated with him on various ranking campaigns, we saw numerous Page 1 and #1 rankings for very competitive keywords in many different industries. I highly recommend him, and his firm SEO Firepower, to anyone looking to increase their online visibility.',
+      user: {
+        name: 'Brendan Monahan',
+        businessName: 'Raleigh SEO Company',
+        positionAtCompany: 'CEO',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/brendan-monahan.png'
+      }
+    },
+    {
+      quote:
+        'Devin is among the very best in the SEO industry. He is highly regarded not only by his clients for whom gets amazing results, but also his peers. His knowledge and insight is invaluable.',
+      user: {
+        name: "Brian O'Connell",
+        businessName: 'Restaurant Ordering Systems',
+        positionAtCompany: 'Owner',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/brian-oconnell.png'
+      }
+    },
+    {
+      quote:
+        'Devin and his team over-delivered. They are consummate professionals. It is hard to argue with the results. All of our business KPIs are up, and the traffic is through the roof!',
+      user: {
+        name: 'Caliph Herald',
+        businessName: 'Herald Square Marketing',
+        positionAtCompany: 'Principal Owner',
+        avatar:
+          'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/caliph-herald.png'
+      }
+    }
+  ];
 </script>
 
 <template>
-  <div v-if="page" class="relative">
-    <div class="hidden lg:block">
-      <UColorModeImage
-        light="/images/light/line-1.svg"
-        dark="/images/dark/line-1.svg"
-        class="pointer-events-none absolute top-0 left-0 h-[650px] object-cover pb-10"
-      />
-    </div>
-
+  <UMain>
     <UPageHero
-      :title="page.hero.title"
-      :description="page.hero.description"
-      :links="page.hero.links"
-      :ui="{ container: 'md:pt-18 lg:pt-20' }"
-    >
-      <template #title>
-        <MDC
-          :value="page.hero.title"
-          class="mx-auto max-w-3xl *:leading-11 sm:*:leading-19"
-        />
-      </template>
-    </UPageHero>
+      title="SERP Solutions"
+      description="Growth & automation solutions that help brands success online."
+      orientation="vertical"
+    />
 
-    <UPageSection
-      v-for="(section, index) in page.sections"
-      :key="index"
-      v-bind="section"
-      orientation="horizontal"
-      :ui="{
-        container: 'lg:px-0 2xl:px-20 mx-0 max-w-none md:mr-10',
-        features: 'gap-0'
-      }"
-      reverse
-    >
-      <template #title>
-        <MDC :value="section.title" class="sm:*:leading-11" />
-      </template>
-      <img
-        :src="section.images.desktop"
-        :alt="section.title"
-        class="left-0 hidden w-full max-w-2xl lg:block 2xl:hidden"
-      />
-      <img
-        :src="section.images.mobile"
-        :alt="section.title"
-        class="block lg:hidden 2xl:block 2xl:w-full 2xl:max-w-2xl"
-      />
-    </UPageSection>
+    <UPageColumns>
 
-    <USeparator :ui="{ border: 'border-(--ui-primary)/30' }" />
-    <UPageSection
-      id="features"
-      v-bind="page.features"
-      :ui="{
-        title: 'text-left @container relative flex',
-        description: 'text-left'
-      }"
-      class="relative overflow-hidden"
-    >
-      <div
-        class="absolute top-10 -left-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
-      ></div>
-      <div
-        class="absolute -right-10 -bottom-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
-      ></div>
-      <template #title>
-        <MDC :value="page.features.title" class="*:leading-9" />
-        <div class="hidden @min-[1020px]:block">
-          <UColorModeImage
-            light="/images/light/line-2.svg"
-            dark="/images/dark/line-2.svg"
-            class="absolute top-0 right-0 size-full translate-x-[70%] scale-95 transform"
-          />
-        </div>
-      </template>
-    </UPageSection>
-    <USeparator :ui="{ border: 'border-(--ui-primary)/30' }" />
+      <UPageCard
+        v-for="(testimonial, index) in testimonials"
+        :key="index"
+        variant="subtle"
+      >
+        <template #default>
+          <div class="flex flex-col">
+            <!-- Testimonial header with avatar and user info -->
+            <div class="mb-4">
+              <!-- On mobile: Stack everything -->
+              <div class="flex flex-col lg:hidden">
+                <img
+                  :src="testimonial.user.avatar"
+                  :alt="testimonial.user.name"
+                  class="mb-2 h-12 w-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="font-medium">{{ testimonial.user.name }}</p>
+                  <p
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    {{ testimonial.user.businessName }}
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    {{ testimonial.user.positionAtCompany }}
+                  </p>
+                </div>
+              </div>
 
-    <UPageSection
-      id="steps"
-      v-bind="page.steps"
-      class="relative overflow-hidden"
-    >
-      <template #headline>
-        <UColorModeImage
-          light="/images/light/line-3.svg"
-          dark="/images/dark/line-3.svg"
-          class="absolute -top-10 right-1/2 h-24 sm:top-0"
-        />
-      </template>
-      <template #title>
-        <MDC :value="page.steps.title" />
-      </template>
+              <!-- On large screens: Avatar | Name with business and position stacked under name -->
+              <div class="hidden lg:flex">
+                <img
+                  :src="testimonial.user.avatar"
+                  :alt="testimonial.user.name"
+                  class="mr-4 h-12 w-12 rounded-full object-cover"
+                />
+                <div>
+                  <p class="font-medium">{{ testimonial.user.name }}</p>
+                  <p
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    {{ testimonial.user.businessName }}
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    {{ testimonial.user.positionAtCompany }}
+                  </p>
+                </div>
+              </div>
+            </div>
 
-      <template #features>
-        <UPageCard
-          v-for="(step, index) in page.steps.items"
-          :key="index"
-          class="group"
-          :ui="{ container: 'p-4 sm:p-4', title: 'flex items-center gap-1' }"
-        >
-          <UColorModeImage
-            v-if="step.image"
-            :light="step.image?.light"
-            :dark="step.image?.dark"
-            :alt="step.title"
-            class="size-full"
-          />
-
-          <div class="flex flex-col gap-2">
-            <span class="text-lg font-semibold">
-              {{ step.title }}
-            </span>
-            <span class="text-sm text-(--ui-text-muted)">
-              {{ step.description }}
-            </span>
+            <!-- Testimonial text -->
+            <p
+              class="mt-2 text-sm before:content-[open-quote] after:content-[close-quote]"
+            >
+              {{ testimonial.quote }}
+            </p>
           </div>
-        </UPageCard>
-      </template>
-    </UPageSection>
-
-    <UPageSection
-      id="pricing"
-      class="mb-32 overflow-hidden"
-      v-bind="page.pricing"
-      :ui="{ title: 'text-left @container relative', description: 'text-left' }"
-    >
-      <template #title>
-        <MDC :value="page.pricing.title" />
-
-        <div class="hidden @min-[1120px]:block">
-          <UColorModeImage
-            light="/images/light/line-4.svg"
-            dark="/images/dark/line-4.svg"
-            class="absolute top-0 right-0 size-full translate-x-[60%] transform"
-          />
-        </div>
-      </template>
-
-      <UPricingPlans scale>
-        <UPricingPlan
-          v-for="(plan, index) in page.pricing.plans"
-          :key="index"
-          :title="plan.title"
-          :description="plan.description"
-          :price="plan.price"
-          :billing-period="plan.billing_period"
-          :billing-cycle="plan.billing_cycle"
-          :highlight="plan.highlight"
-          :scale="plan.highlight"
-          variant="soft"
-          :features="plan.features"
-          :button="plan.button"
-        />
-      </UPricingPlans>
-    </UPageSection>
-
-    <UPageSection id="testimonials" v-bind="page.testimonials">
-      <template #headline>
-        <UColorModeImage
-          light="/images/light/line-5.svg"
-          dark="/images/dark/line-5.svg"
-          class="absolute -top-10 right-1/2 h-24 sm:top-0"
-        />
-      </template>
-      <template #title>
-        <MDC :value="page.testimonials.title" />
-      </template>
-
-      <UContainer>
-        <UPageColumns class="xl:columns-3">
-          <UPageCard
-            v-for="(testimonial, index) in page.testimonials.items"
-            :key="index"
-            variant="subtle"
-            :description="testimonial.quote"
-            :ui="{
-              description:
-                'before:content-[open-quote] after:content-[close-quote]'
-            }"
-          >
-            <template #footer>
-              <UUser v-bind="testimonial.user" size="xl" />
-            </template>
-          </UPageCard>
-        </UPageColumns>
-      </UContainer>
-    </UPageSection>
-
-    <USeparator />
-
-    <UPageCTA
-      v-bind="page.cta"
-      variant="naked"
-      class="@container overflow-hidden"
-    >
-      <template #title>
-        <MDC :value="page.cta.title" />
-
-        <div class="@max-[1280px]:hidden">
-          <UColorModeImage
-            light="/images/light/line-6.svg"
-            dark="/images/dark/line-6.svg"
-            class="absolute -top-10 left-10 h-full sm:top-0"
-          />
-          <UColorModeImage
-            light="/images/light/line-7.svg"
-            dark="/images/dark/line-7.svg"
-            class="absolute right-0 bottom-0 h-full"
-          />
-        </div>
-      </template>
-
-      <div
-        class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
-      ></div>
-
-      <LazyStarsBg />
-    </UPageCTA>
-  </div>
+        </template>
+      </UPageCard>
+    </UPageColumns>
+  </UMain>
 </template>
