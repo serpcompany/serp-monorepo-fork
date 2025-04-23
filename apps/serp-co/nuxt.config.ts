@@ -83,6 +83,14 @@ export default defineNuxtConfig({
           children: [{ label: 'Companies', to: '/products/' }]
         },
         {
+          label: 'MCP ',
+          children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
+        },
+        {
+          label: 'Solutions ',
+          children: [{ label: 'Solutions', to: '/solutions/' }]
+        },
+        {
           label: 'Tools',
           children: [
             { label: 'Tools', to: '/tools/' },
@@ -99,10 +107,6 @@ export default defineNuxtConfig({
         {
           label: 'Posts',
           children: [{ label: 'Posts', to: '/posts/' }]
-        },
-        {
-          label: 'MCP',
-          children: [{ label: 'Servers', to: '/mcp/servers/' }]
         }
       ],
       footerColumns: [
@@ -141,19 +145,19 @@ export default defineNuxtConfig({
               href: '#'
             },
             {
-              name: 'Team',
-              href: '#'
+              name: 'Solutions',
+              href: '/solutions/'
             }
           ]
         },
         {
-          title: 'Something',
+          title: 'Solutions',
           id: 4,
           slug: '',
           items: [
             {
-              name: 'About',
-              href: '#'
+              name: 'Solutions',
+              href: '/solutions/'
             },
             {
               name: 'Contact',
