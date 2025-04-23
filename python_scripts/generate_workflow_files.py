@@ -46,7 +46,7 @@ on:
 
 jobs:
   build_staging_{workflow_app}:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -87,7 +87,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [self-hosted]
         node: [18]
 
     steps:
@@ -120,7 +120,7 @@ jobs:
 
             #     strategy:
             #       matrix:
-            #         os: [ubuntu-latest]
+            #         os: [self-hosted]
             #         node: [18]
 
             #     steps:
@@ -178,7 +178,7 @@ on:
 
 jobs:
   build_production_{workflow_app}:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v2

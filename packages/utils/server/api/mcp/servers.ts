@@ -1,7 +1,10 @@
 import { useDataCache } from '#nuxt-multi-cache/composables';
 import type { MCPServerIndex, MCPServers, Pagination } from '@serp/types/types';
 import { db } from '@serp/utils/server/api/db';
-import { mcpServerCache } from '@serp/utils/server/api/db/schema';
+import {
+  mcpServerCache,
+  mcpServerCategoryCache
+} from '@serp/utils/server/api/db/schema';
 import { and, desc, eq, sql } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
@@ -10,16 +13,18 @@ export default defineEventHandler(async (event) => {
     limit = 100,
     tag,
     topic,
-    owner
+    owner,
+    categorySlug
   } = getQuery(event) as {
     page?: string;
     limit?: string;
     tag?: string;
     topic?: string;
     owner?: string;
+    categorySlug?: string;
   };
 
-  const cacheKey = `mcp-servers-${tag ?? 'alltags'}-${topic ?? 'alltopics'}-${owner ?? 'allowners'}-${page}-${limit}`;
+  const cacheKey = `mcp-servers-${tag}-${topic}-${owner}-${categorySlug}-${page}-${limit}`;
   const { value, addToCache } = await useDataCache(cacheKey, event);
   if (value) return value;
 
@@ -60,12 +65,25 @@ export default defineEventHandler(async (event) => {
   if (owner) {
     filters.push(eq(mcpServerCache.owner, owner));
   }
+  if (categorySlug) {
+    filters.push(
+      sql`
+        jsonb_path_exists(
+          ${mcpServerCache.categories},
+          '$[*] ? (@.slug == $slug)'::jsonpath,
+          jsonb_build_object('slug', ${categorySlug}::text)
+        )
+      `
+    );
+  }
 
   let baseQuery = db
     .select({
       id: mcpServerCache.id,
       slug: mcpServerCache.slug,
       url: mcpServerCache.url,
+      serplyLink: mcpServerCache.serplyLink,
+      categories: mcpServerCache.categories,
       description: mcpServerCache.description,
       tags: mcpServerCache.tags,
       contributors: mcpServerCache.contributors,
@@ -97,9 +115,21 @@ export default defineEventHandler(async (event) => {
     totalQuery = totalQuery.where(and(...filters));
   }
 
-  const [results, [{ count: total }]] = await Promise.all([
+  const categoryQuery = db
+    .select({
+      id: mcpServerCategoryCache.id,
+      name: mcpServerCategoryCache.name,
+      slug: mcpServerCategoryCache.slug,
+      buyersGuide: mcpServerCategoryCache.buyersGuide,
+      faqs: mcpServerCategoryCache.faqs
+    })
+    .from(mcpServerCategoryCache)
+    .where(eq(mcpServerCategoryCache.slug, categorySlug));
+
+  const [results, [{ count: total }], categoryResults] = await Promise.all([
     baseQuery.execute(),
-    totalQuery.execute()
+    totalQuery.execute(),
+    categoryQuery.execute()
   ]);
 
   if (!results.length) {
@@ -112,7 +142,10 @@ export default defineEventHandler(async (event) => {
     pageSize: limitNumber,
     totalItems: Number(total)
   };
-  const response: MCPServers = { servers, pagination };
+
+  const category = categoryResults.length ? categoryResults[0] : null;
+
+  const response: MCPServers = { servers, pagination, category };
 
   addToCache(response, [], 60 * 60 * 10);
   return response;

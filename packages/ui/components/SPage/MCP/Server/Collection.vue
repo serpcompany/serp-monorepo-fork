@@ -1,8 +1,13 @@
 <script setup lang="ts">
+  import { useMCPServer } from '../../../../../utils/composables/useMCPServer';
+
   const router = useRouter();
   const route = useRoute();
   const page = ref(Number(route.query.page) || 1);
   const limit = ref(Number(route.query.limit) || 50);
+  const categorySlug = route.params.slug as string;
+
+  console.log('categorySlug', categorySlug);
 
   const props = defineProps({
     topic: {
@@ -27,11 +32,14 @@
     limit.value,
     tag.value,
     topic.value,
-    owner.value
+    owner.value,
+    categorySlug
   );
   if (!data) {
     router.push('/404');
   }
+
+  const categories = await useMCPServerCategories();
 
   watch([page, limit], async ([newPage, newLimit]) => {
     const query: Record<string, string> = {
@@ -49,8 +57,23 @@
     router.push({ query });
   });
 
+  const faqItems = computed(() => {
+    if (!data?.category?.faqs || !data?.category?.faqs.length) {
+      return [];
+    }
+    return data?.category?.faqs.map((faq) => ({
+      label: faq.question,
+      content: faq.answer
+    }));
+  });
+
   useSeoMeta({
-    title: 'Browse Community MCP Servers'
+    title: () => {
+      if (categorySlug) {
+        return `${data.category.name} - MCP Servers`;
+      }
+      return 'MCP Servers';
+    }
   });
 </script>
 
@@ -58,7 +81,11 @@
   <div class="pb-10">
     <SHero
       headline="MCP Servers"
-      subheadline="Discover Open Source MCP Servers."
+      :subheadline="
+        categorySlug
+          ? `Discover Open Source ${data.category.name} MCP Servers.`
+          : 'Discover Open Source MCP Servers.'
+      "
       :show-search-bar="false"
       :show-buttons="false"
     />
@@ -80,6 +107,38 @@
         aria-label="pagination"
         class="mt-20 flex justify-center overflow-x-auto rounded-none"
       />
+
+      <SLinkHub
+        v-if="categories && categories.length"
+        :categories="categories"
+        headline="Categories"
+        class="mt-20"
+        base-slug="mcp/servers/category"
+      />
+
+      <!-- article -->
+      <section v-if="data?.category?.buyersGuide" class="mt-20">
+        <CompanyArticleSection :article="data?.category?.buyersGuide" />
+      </section>
+
+      <!-- faqs -->
+      <UPageSection
+        v-if="data?.category?.faqs"
+        title="FAQs"
+        class="mx-auto max-w-5xl"
+      >
+        <UPageAccordion
+          :items="faqItems"
+          :ui="{ body: { class: 'prose dark:prose-invert' } }"
+        >
+          <template #body="{ item }">
+            <div
+              class="prose dark:prose-invert max-w-full"
+              v-html="item.content"
+            ></div>
+          </template>
+        </UPageAccordion>
+      </UPageSection>
     </main>
   </div>
 </template>
