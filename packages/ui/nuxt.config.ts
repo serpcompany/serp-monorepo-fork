@@ -28,12 +28,11 @@ export default defineNuxtConfig({
     shim: false
   },
   htmlValidator: {
-    ignore: [/\.(xml|rss|json|sql)$/, /^\/__nuxt_content\/.*$/],
+    ignore: [/\.(xml|rss|json|sql)$/, /^\/__nuxt_content\/.*$/]
   },
   nitro: {
     prerender: {
-      ignore: ['/__nuxt_content/content/sql_dump'],
+      ignore: ['/__nuxt_content/content/sql_dump']
     }
   }
 });
-
