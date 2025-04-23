@@ -87,7 +87,7 @@ export default defineNuxtConfig({
           children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
         },
         {
-          label: 'Solutions ',
+          label: 'Solutions',
           children: [{ label: 'Solutions', to: '/solutions/' }]
         },
         {
