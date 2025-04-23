@@ -231,8 +231,7 @@
       personName: 'Howard Soza',
       businessName: 'MIA SEO',
       positionAtCompany: 'Founder',
-      personAvatar:
-        'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/howard-soza.png'
+      personAvatar: ''
     },
     {
       testimonial:
@@ -672,8 +671,7 @@
       personName: 'Wyatt Mills',
       businessName: 'Niche Driven Leads',
       positionAtCompany: 'Business Development Manager',
-      personAvatar:
-        'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/wyatt-mills.png'
+      personAvatar: ''
     },
     {
       testimonial:
