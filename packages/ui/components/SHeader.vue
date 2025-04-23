@@ -33,7 +33,13 @@
             variant="pill"
             :items="headerNavItems"
             :ui="{
-              link: 'group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-md focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 text-primary'
+              link: 'group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-md focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 text-primary',
+              viewport:
+                'relative overflow-hidden bg-default shadow-lg rounded-md ring ring-default h-(--reka-navigation-menu-viewport-height) w-full transition-[width,height,left] duration-200 origin-[top_center] data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in] z-[100]',
+              childList:
+                'flex flex-col bg-white dark:bg-gray-800 justify-center',
+              childLink:
+                'px-4 py-2 hover:bg-gray-200  dark:hover:bg-gray-600 dark:hover:text-gray-300 rounded-md transition-colors duration-200'
             }"
           />
         </div>
