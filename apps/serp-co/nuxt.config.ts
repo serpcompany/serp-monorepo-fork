@@ -83,7 +83,7 @@ export default defineNuxtConfig({
           children: [{ label: 'Companies', to: '/products/' }]
         },
         {
-          label: 'MCP ',
+          label: 'MCP',
           children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
         },
         {
