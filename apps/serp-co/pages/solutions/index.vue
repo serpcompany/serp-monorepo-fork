@@ -765,13 +765,6 @@
       videoId: 'aoYoUjFq-js'
     },
     {
-      personName: 'Blake Baumgartner',
-      businessName: 'Chess Pathways',
-      businessWebsite: 'https://chesspathways.com/',
-      positionAtCompany: 'Founder',
-      videoId: 'Mg9iL_591Y0'
-    },
-    {
       personName: 'Ashley Mendoza',
       businessName: 'D20 Dental',
       businessWebsite: 'https://d2odental.com/',
@@ -798,13 +791,6 @@
       businessWebsite: 'https://www.everydaycalifornia.com/',
       positionAtCompany: 'Co-Founder',
       videoId: 'ocDVXUo3AqE'
-    },
-    {
-      personName: 'Christy Granieri',
-      businessName: 'Freeburg & Granieri, APC',
-      businessWebsite: 'https://www.fgfirm.law/',
-      positionAtCompany: 'Co-Founder',
-      videoId: 'Pv8S2t1Y_Qg'
     },
     {
       personName: 'Gary Wilson',
@@ -922,12 +908,11 @@
       orientation="vertical"
     />
 
-    <!-- Testimonial Videos Section -->
     <TestimonialVideoGrid :videos="testimonialVideoData" />
 
     <UPageSection>
       <UPageColumns>
-        <UPageCard
+        <LazyUPageCard
           v-for="(testimonial, index) in testimonials"
           :key="index"
           variant="subtle"
@@ -987,7 +972,7 @@
               </p>
             </div>
           </template>
-        </UPageCard>
+        </LazyUPageCard>
       </UPageColumns>
     </UPageSection>
   </UMain>
