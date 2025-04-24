@@ -1,6 +1,23 @@
 <script setup lang="ts">
   const config = useRuntimeConfig();
   const appConfig = useAppConfig();
+  const router = useRouter();
+
+  const submitYourX = ref([
+    { label: 'Company', to: '/users/submit/company/', color: 'primary' },
+    { label: 'Software', to: '/users/submit/software/', color: 'primary' },
+    { label: 'MCP Server', to: '/users/submit/mcp-server/', color: 'primary' },
+    { label: 'Product', to: '/users/submit/product/', color: 'primary' }
+  ]);
+
+  // Set a default selected item display text
+  const addYourText = ref('Add your');
+
+  // Function to handle selection changes and navigation
+  const handleSubmitOptionSelect = (item) => {
+    // Navigate programmatically to prevent conflicts
+    router.push(item.to);
+  };
 
   // Use headerNavItems from app config with fallback to runtime config
   const headerNavItems =
@@ -78,8 +95,45 @@
           </button>
         </div>
         <!-- Desktop color mode & profile -->
-        <div class="hidden items-center space-x-4 lg:flex">
-          <ColorModeButton />
+        <div class="hidden items-center space-x-8 lg:flex">
+          <UDropdownMenu
+            :items="submitYourX"
+            class="w-32"
+            :content="{ side: 'bottom', sideOffset: 8 }"
+            arrow
+            @select="handleSubmitOptionSelect"
+            :ui="{
+              base: 'inline-flex flex-col',
+              trigger: 'w-full',
+              item: 'text-primary px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200',
+              content:
+                'bg-white dark:bg-gray-800 rounded-md p-1 shadow-lg border border-neutral-200 dark:border-gray-700',
+              arrow: 'fill-white dark:fill-gray-800'
+            }"
+          >
+            <UButton
+              class="text-primary inline-flex w-32 items-center justify-between rounded-md border border-neutral-200 bg-white px-3 py-2 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            >
+              <span class="text-sm">{{ addYourText }}</span>
+              <svg
+                class="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </UButton>
+          </UDropdownMenu>
+          <UColorModeButton
+            class="rounded-full border border-neutral-200 p-2"
+          />
           <ProfileDropdown v-if="useAuth" />
         </div>
       </div>

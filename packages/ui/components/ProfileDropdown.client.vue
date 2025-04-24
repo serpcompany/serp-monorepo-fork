@@ -106,7 +106,7 @@
                   :name="item.icon"
                   class="flex-shrink-0"
                 />
-                <span class="flex-grow leading-tight text-gray-800">{{
+                <span class="flex-grow leading-tight text-gray-700">{{
                   item.label
                 }}</span>
                 <div v-if="item.kbds" class="flex gap-1">
