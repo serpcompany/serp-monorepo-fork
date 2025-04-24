@@ -24,19 +24,15 @@
         class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
       >
         <div class="relative aspect-video w-full overflow-hidden">
-          <ScriptYouTubePlayer
-            :video-id="video.videoId"
-            :player-vars="{
-              autoplay: 0,
-              playsinline: 1,
-              modestbranding: 1
-            }"
-            :width="640"
-            thumbnail-size="maxresdefault"
-            :height="360"
+          <iframe
+            :src="`https://www.youtube.com/embed/${video.videoId}?autoplay=0&playsinline=1&controls=0`"
+            width="640"
+            height="360"
             class="absolute h-full w-full object-cover"
-            :player-options="{ host: 'https://www.youtube.com' }"
-          />
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
 
         <div class="flex flex-1 flex-col p-4">
