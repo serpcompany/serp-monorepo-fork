@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, no-unused-vars  */
+
+import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it, vi } from 'vitest';
 import { ref } from 'vue';
-import ComponentRender from '../../../../componentRender';
 import SubmitCompany from '../../../../../components/SPage/Users/Submit/Company.vue';
-import { mockNuxtImport } from '@nuxt/test-utils/runtime';
+import ComponentRender from '../../../../componentRender';
 
 // Global mock for useRoute
 let routeMock = { query: {} };

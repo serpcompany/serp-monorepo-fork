@@ -12,7 +12,7 @@ exports[`SPageToolCombineCsvFiles Snapshot > renders the default snapshot correc
         <!--v-if-->
         <!--v-if-->
       </div>
-    </div><!-- button --><button type="button" class="rounded-none font-medium items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto flex">
+    </div><!-- button --><button type="button" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto flex">
       <!--v-if-->Submit
       <!--v-if-->
     </button>

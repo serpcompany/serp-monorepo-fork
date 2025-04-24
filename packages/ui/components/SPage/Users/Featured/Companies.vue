@@ -48,6 +48,7 @@
         disabled.value = true;
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error fetching companies:', error);
     }
   }
@@ -122,6 +123,7 @@
         });
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error submitting featured company:', error);
       toast.add({
         id: 'submission-error',

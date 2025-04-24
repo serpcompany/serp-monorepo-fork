@@ -1,4 +1,8 @@
-async function d1Query(sql, params = []) {
+import { db } from '@serp/utils/server/api/db';
+import { user } from '@serp/utils/server/api/db/schema';
+import { eq } from 'drizzle-orm';
+
+export async function d1Query(sql, params = []) {
   const response = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${process.env.CLOUDFLARE_ACCOUNT_ID}/d1/database/${process.env.CLOUDFLARE_AUTH_DATABASE_ID}/query`,
     {
@@ -103,6 +107,34 @@ export const handleOAuthSuccess = async (event, oauthUser: OAuthUserData) => {
       updatedAt,
       oauthUser.email
     ]);
+  }
+
+  const user_ = await db
+    .select()
+    .from(user)
+    .where(eq(user.email, oauthUser.email))
+    .execute();
+
+  if (!user_ || user_.length === 0) {
+    await db
+      .insert(user)
+      .values({
+        email: oauthUser.email,
+        name: oauthUser.name,
+        image: oauthUser.image,
+        created_at: new Date().toISOString()
+      })
+      .execute();
+  } else {
+    await db
+      .update(user)
+      .set({
+        name: oauthUser.name,
+        image: oauthUser.image,
+        updated_at: new Date().toISOString()
+      })
+      .where(eq(user.email, oauthUser.email))
+      .execute();
   }
 
   // Set user session and redirect to homepage

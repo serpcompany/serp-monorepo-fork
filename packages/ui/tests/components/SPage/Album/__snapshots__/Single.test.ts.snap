@@ -12,7 +12,7 @@ exports[`SPageAlbumSingle Snapshot > renders with auth disabled and minimal albu
             <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
           </div>
         </div>
-        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
             <!--v-if-->
           </a></div>
       </div>
@@ -75,7 +75,7 @@ exports[`SPageAlbumSingle Snapshot > renders with auth disabled and minimal albu
             <div class="font-medium">Listen On</div>
           </div>
           <div class="p-4 sm:p-6">
-            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
+            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
                 <!--v-if--> Amazon Music
                 <!--v-if-->
               </a></div>
@@ -100,7 +100,7 @@ exports[`SPageAlbumSingle Snapshot > renders with auth enabled and full album da
             <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
           </div>
         </div>
-        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
             <!--v-if-->
           </a></div>
       </div>
@@ -183,7 +183,7 @@ exports[`SPageAlbumSingle Snapshot > renders with auth enabled and full album da
             <div class="font-medium">Listen On</div>
           </div>
           <div class="p-4 sm:p-6">
-            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
+            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
                 <!--v-if--> Amazon Music
                 <!--v-if-->
               </a></div>
@@ -208,7 +208,7 @@ exports[`SPageAlbumSingle Snapshot > renders with auth enabled and no recordings
             <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
           </div>
         </div>
-        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
             <!--v-if-->
           </a></div>
       </div>
@@ -280,7 +280,7 @@ exports[`SPageAlbumSingle Snapshot > renders with auth enabled and no recordings
             <div class="font-medium">Listen On</div>
           </div>
           <div class="p-4 sm:p-6">
-            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
+            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
                 <!--v-if--> Amazon Music
                 <!--v-if-->
               </a></div>

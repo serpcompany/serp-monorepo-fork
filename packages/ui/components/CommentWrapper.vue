@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
   const { loggedIn, user } = useUserSession();
 
   const props = defineProps({
@@ -20,7 +20,7 @@
   });
 
   const localState = reactive({
-    updatedAt: null,
+    updated_at: null,
     replies: [],
     replyCount: 0
   });
@@ -30,7 +30,7 @@
     (newComment) => {
       localState.replies = [...newComment.replies];
       localState.replyCount = newComment.replyCount || 0;
-      localState.updatedAt = newComment.updatedAt;
+      localState.updated_at = newComment.updated_at;
     },
     { immediate: true }
   );
@@ -83,12 +83,16 @@
 
   const isDeleted = computed(() => filteredComment.value === '[deleted]');
   const isUpdated = computed(
-    () => localState.updatedAt !== props.comment.createdAt
+    () =>
+      localState.updated_at !== props.comment.created_at &&
+      localState.updated_at
   );
 
   const getTimeDiff = computed(() => {
     const now = Date.now();
-    const commentTime = parseInt(localState.updatedAt);
+    const commentTime = new Date(
+      (localState.updated_at || props.comment.created_at) + 'Z'
+    ).getTime();
     const diff = now - commentTime;
 
     const minutes = Math.floor(diff / 60000);
@@ -187,7 +191,7 @@
         });
         return;
       }
-      const updatedAt = Date.now();
+      const updated_at = Date.now();
       const { data: response, error } = await useFetch(
         `/api/comments/${props.id}`,
         {
@@ -199,7 +203,7 @@
             parentIds: props.parentIds,
             parentIndices: props.parentIndices,
             comment: updateMessage.value,
-            timestamp: updatedAt.toString(),
+            timestamp: updated_at.toString(),
             module: props.module
           })
         }
@@ -210,12 +214,12 @@
 
       if (response.value.message && response.value.message === 'success') {
         filteredComment.value = updateMessage.value;
-        localState.updatedAt = updatedAt;
+        localState.updated_at = updated_at;
         beforeUpdate.value = false;
 
         emit('update-comment', {
           id: props.comment.id,
-          updatedAt,
+          updated_at,
           content: updateMessage.value
         });
 
@@ -381,8 +385,8 @@
           name: user.value.name,
           image: user.value.image,
           content: replyMessage.value,
-          createdAt: replyObj.timestamp,
-          updatedAt: replyObj.timestamp,
+          created_at: replyObj.timestamp,
+          updated_at: replyObj.timestamp,
           replies: []
         };
 

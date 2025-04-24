@@ -1,4 +1,4 @@
-import type { Category, Faq, Comment } from '@serp/types/types';
+import type { Category, Comment, Faq } from '@serp/types/types';
 
 export type Feature = {
   id: number;
@@ -28,6 +28,15 @@ export type Company = {
   comments?: Comment[];
   featured?: boolean;
   featuredOrder?: number;
+  videoId?: string;
+  numReviews?: number;
+  numOneStarReviews?: number;
+  numTwoStarReviews?: number;
+  numThreeStarReviews?: number;
+  numFourStarReviews?: number;
+  numFiveStarReviews?: number;
+  averageRating?: number;
+  verified?: number; // id of verification table row (null = not verified)
 };
 
 export type CompanyIndex = {
@@ -50,4 +59,24 @@ export type Companies = {
   pagination: Pagination;
   categoryArticle?: string;
   categoryName?: string;
+};
+
+export type CompanyReview = {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  title: string;
+  rating: number;
+  content: string;
+  dateOfExperience: string;
+  user: {
+    id: number;
+    name: string;
+    image?: string;
+  };
+};
+
+export type CompanyReviews = {
+  reviews: CompanyReview[];
+  pagination: Pagination;
 };

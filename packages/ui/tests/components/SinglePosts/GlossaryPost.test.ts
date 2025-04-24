@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, no-unused-vars  */
+
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import GlossaryPost from '../../../components/SinglePosts/GlossaryPost.vue';
@@ -97,6 +99,19 @@ describe('SinglePostsGlossaryPost Snapshot', () => {
     async (desc: string, { config, props }) => {
       runtimeConfig = config;
       mockNuxtImport('useRuntimeConfig', () => () => runtimeConfig);
+      globalThis.usePostComments = async (id: number) => {
+        return {
+          comments: props.comments
+            ? [
+                {
+                  id: 1,
+                  content: 'Test comment',
+                  replies: []
+                }
+              ]
+            : []
+        };
+      };
 
       const html = await ComponentRender(
         `GlossaryPost ${desc}`,

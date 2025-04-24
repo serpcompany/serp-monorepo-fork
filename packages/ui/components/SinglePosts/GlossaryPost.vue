@@ -3,14 +3,21 @@
 
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
+  const forCloudflare = config.public.forCloudflare;
 
   const isLoaded = ref(false);
   const isPlaying = ref(false);
   const video = ref();
 
-  defineProps<{
+  const props = defineProps<{
     data: Post;
   }>();
+
+  let comments = props.data.comments || [];
+  if (!forCloudflare) {
+    const commentsData = await usePostComments(props.data.id);
+    comments = commentsData.comments;
+  }
 
   function stateChange(event: { data: number }) {
     isPlaying.value = event.data === 1;
@@ -73,9 +80,9 @@
         <div v-if="useAuth" class="mt-10">
           <h2 class="mb-6 text-3xl font-bold">Comments</h2>
           <CommentsContainer
-            :id="data.slug"
+            :id="forCloudflare ? data.slug : data.id"
             module="posts"
-            :comments="data.comments || []"
+            :comments="comments || []"
             class="comments-github-style"
           />
         </div>

@@ -49,6 +49,8 @@ export function createConfig({
         '.wrangler/',
         '.data/',
         '.git/',
+        'nuxt-ui-landing/',
+        'nuxt-ui-saas/',
         ...additionalIgnores
       ]
     },
@@ -67,7 +69,7 @@ export function createConfig({
           'warn',
           {
             html: {
-              void: 'never',
+              void: 'always',
               normal: 'never',
               component: 'always'
             },

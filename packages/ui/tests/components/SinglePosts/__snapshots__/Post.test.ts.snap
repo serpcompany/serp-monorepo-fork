@@ -73,38 +73,7 @@ exports[`SinglePostsPost Snapshot > renders with full post and auth enabled corr
             </div>
           </div>
         </div>
-        <transition-group-stub data-v-e7198dba="" name="fade" tag="div" appear="true" persisted="false" css="true">
-          <div data-v-d830712d="" data-v-e7198dba="" class="comment-wrapper">
-            <div data-v-d830712d="" class="wrapper">
-              <div data-v-d830712d="" class="w-12 rounded-t-full">
-                <!---->
-              </div>
-              <div data-v-d830712d="" class="comment-wrapper">
-                <div data-v-d830712d="" class="name-wrapper">
-                  <div data-v-d830712d="" class="name text-(--ui-primary)"></div><span data-v-d830712d="" class="dot">•</span><span data-v-d830712d="" class="time" title="Invalid Date">just now</span>
-                  <!--v-if-->
-                  <div data-v-d830712d="" class="expand hover:text-(--ui-primary)"><span data-v-d830712d="" title="Hide Comment">−</span></div>
-                </div>
-                <div data-v-d830712d="" class="comment bg-white text-black dark:bg-neutral-800 dark:text-white"></div>
-                <div data-v-d830712d="" class="comment-box text-black dark:text-white" style="display: none;">
-                  <div data-v-d830712d="" class="user-name text-(--ui-primary)"></div><textarea data-v-d830712d="" name="addUpdate" class="add-comment bg-white dark:bg-neutral-800" placeholder="Update message" spellcheck="false" aria-label="Add Comment"></textarea><button data-v-d830712d="" aria-label="Update" class="bg-primary hover:bg-primary-800"><span data-v-d830712d="">Update</span></button>
-                  <div data-v-d830712d="" class="remaining-letter bg-primary"><span data-v-d830712d="">1000</span></div>
-                </div>
-                <div data-v-d830712d="" class="reply hover:text-(--ui-primary)" style="display: none;">
-                  <div data-v-d830712d="">Never mind</div>
-                </div>
-                <div data-v-d830712d="" class="reply">
-                  <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
-                  <!--v-if-->
-                  <!--v-if-->
-                </div>
-                <!--v-if-->
-                <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
-                <!--v-if-->
-              </div>
-            </div>
-          </div>
-        </transition-group-stub>
+        <transition-group-stub data-v-e7198dba="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
         <!--v-if-->
       </div>
     </div>

@@ -2,28 +2,127 @@ export default defineAppConfig({
   myLayer: {
     name: '@serp/ui'
   },
-  ui: {
-    button: {
-      slots: {
-        base: 'rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors'
+  site: {
+    footerColumns: [
+      {
+        title: 'Software',
+        id: 1,
+        slug: '/products/',
+        items: [
+          { text: 'Categories', slug: '/products/best/' },
+          { text: 'Cloud GPUs', slug: '/products/best/cloud-gpu-providers/' }
+        ]
       },
-      defaultVariants: {
-        size: 'md',
-        color: 'primary'
+      {
+        title: 'MCP Severs',
+        id: 2,
+        slug: '/mcp/servers/',
+        items: [
+          {
+            text: 'Categories',
+            slug: '/mcp/servers/categories/'
+          }
+        ]
+      },
+      {
+        title: 'Resources',
+        id: 3,
+        slug: '',
+        items: [
+          { text: 'Blog', slug: '/blog/' },
+          { text: 'Glossary', slug: '/glossary/' },
+          { text: 'Tools', slug: '/tools/' }
+        ]
+      },
+      {
+        title: 'Brand',
+        id: 4,
+        slug: '',
+        items: [
+          {
+            text: 'About',
+            slug: '/about/'
+          },
+          {
+            text: 'Solutions',
+            slug: '/solutions/'
+          },
+          {
+            text: 'Contact',
+            slug: '#'
+          }
+        ]
       }
-    },
-    textarea: {
-      slots: {
-        base: 'w-full rounded-none border-0 placeholder:text-[var(--ui-text-dimmed)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors'
+    ],
+    socialLinks: [
+      {
+        name: 'Twitter',
+        href: 'https://serp.ly/@serp/twitter',
+        icon: 'i-lucide-twitter'
+      },
+      {
+        name: 'Facebook',
+        href: 'https://serp.ly/@serp/facebook',
+        icon: 'i-lucide-facebook'
+      },
+      {
+        name: 'LinkedIn',
+        href: 'https://serp.ly/@serp/linkedin',
+        icon: 'i-lucide-linkedin'
+      },
+      {
+        name: 'YouTube',
+        href: 'https://serp.ly/@serp/youtube',
+        icon: 'i-lucide-youtube'
+      },
+      {
+        name: 'Github',
+        href: 'https://serp.ly/@serp/github',
+        icon: 'i-lucide-github'
+      },
+      {
+        name: 'Instagram',
+        href: 'https://serp.ly/@serp/instagram',
+        icon: 'i-lucide-instagram'
       }
-    }
+    ],
+    legalLinks: [
+      { text: 'Privacy', slug: '/legal/privacy-policy/' },
+      { text: 'Terms', slug: '/legal/terms-conditions/' },
+      { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
+      { text: 'DMCA', slug: '/legal/dmca/' }
+    ],
+    headerNavItems: [
+      {
+        label: 'Companies',
+        children: [{ label: 'Companies', to: '/products/' }]
+      },
+      {
+        label: 'MCP',
+        children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
+      },
+      {
+        label: 'Solutions',
+        children: [{ label: 'Solutions', to: '/solutions/' }]
+      },
+      {
+        label: 'Tools',
+        children: [
+          { label: 'Tools', to: '/tools/' },
+          { label: 'Combine CSVs', to: '/tools/combine-csv-files/' },
+          { label: 'JSON to CSV', to: '/tools/convert-json-to-csv/' },
+          { label: 'Character Counter', to: '/tools/count-characters/' },
+          { label: 'Paragraph Counter', to: '/tools/paragraph-counter/' }
+        ]
+      },
+      {
+        label: 'Glossary',
+        children: [{ label: 'Glossary', to: '/glossary/' }]
+      },
+      {
+        label: 'Blog',
+        children: [{ label: 'Posts', to: '/posts/' }]
+      }
+    ]
   }
 });
-
-declare module '@nuxt/schema' {
-  interface AppConfigInput {
-    myLayer?: {
-      name?: string;
-    };
-  }
-}

@@ -27,10 +27,14 @@
   const header = ref(null);
   const isScrolled = ref(false);
 
-  // Add proper Nuxt-friendly scroll detection
+  // helps the multipage header to stick properly
   onMounted(() => {
     const handleScroll = () => {
       isScrolled.value = window.scrollY > 0;
+
+      if (header.value) {
+        header.value.style.zIndex = isScrolled.value ? '10' : '0';
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -73,9 +77,9 @@
                 >
                   {{ name }}
                 </h1>
-                <span class="text-xs text-gray-700 dark:text-gray-300">{{
+                <!-- <span class="text-xs text-gray-700 dark:text-gray-300">{{
                   oneLiner
-                }}</span>
+                }}</span> -->
               </div>
             </div>
 

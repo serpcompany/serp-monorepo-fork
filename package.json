@@ -1,16 +1,22 @@
 {
   "name": "@serp/root",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo run build",
     "eslint": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run eslint",
     "format": "prettier --write \"**/*.{ts,tsx,md,vue}\"",
     "lint": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run lint",
     "lint:windows": "turbo run lint",
+    "prepare": "husky install",
     "prettier": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run prettier",
     "test": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test",
-    "test:watch": "turbo run test:watch",
-    "test:update": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test:update"
+    "test:update": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test:update",
+    "test:watch": "turbo run test:watch"
+  },
+  "resolutions": {
+    "unimport": "4.1.1",
+    "vue-tsc": "2.2.0"
   },
   "devDependencies": {
     "husky": "^9.1.7",

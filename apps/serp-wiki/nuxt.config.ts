@@ -41,6 +41,7 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_URL,
       apiUrl: '/api',
       useAuth: true,
+      forCloudflare: true,
       environment: process.env.NODE_ENV,
       socialLinks: [
         {

@@ -1,33 +1,23 @@
-<script setup>
+<script setup lang="ts">
   const config = useRuntimeConfig();
-  const headerNavItems = config.public.headerNavItems;
+  const appConfig = useAppConfig();
+
+  // Use headerNavItems from app config with fallback to runtime config
+  const headerNavItems =
+    appConfig.site?.headerNavItems || config.public.headerNavItems;
   const useAuth = config.public.useAuth;
 
   const mobileMenuOpen = ref(false);
   const toggleMobileMenu = () => {
     mobileMenuOpen.value = !mobileMenuOpen.value;
   };
-
-  // Shared UI object for UNavigationMenu
-  const navUi = {
-    link: 'text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300',
-    item: 'text-primary-500 dark:text-primary-300',
-    linkLabel: 'text-primary-500 dark:text-primary-100',
-    content: 'absolute top-0',
-    list: 'flex',
-    childList: 'grid grid-cols-1',
-    triggerIcon: 'text-primary',
-    viewportWrapper:
-      'absolute top-full z-50 translate-x-[var(--radix-navigation-menu-viewport-position-x)]',
-    viewport:
-      'relative overflow-visible bg-(--ui-bg) shadow-lg rounded-[calc(var(--ui-radius)*1.5)] ring ring-(--ui-border) h-(--reka-navigation-menu-viewport-height) min-w-[180px] transition-[height] duration-200 origin-[top_left] data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in]'
-  };
 </script>
 
 <template>
-  <header class="bg-background py-4">
-    <!-- Desktop Navigation -->
-    <div class="flex h-10 items-center justify-between px-4">
+  <header
+    class="bg-background top-0 z-50 mx-auto h-18 max-w-full border-b border-(--ui-border) px-12"
+  >
+    <div class="flex h-full items-center justify-between px-4">
       <!-- Left side -->
       <div class="flex items-center">
         <!-- Logo -->
@@ -41,11 +31,20 @@
           <UNavigationMenu
             aria-label="Main navigation"
             orientation="horizontal"
-            color="primary"
-            highlight="true"
+            content-orientation="vertical"
+            highlight
+            text-size="base"
+            variant="pill"
             :items="headerNavItems"
-            :ui="navUi"
-            :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
+            :ui="{
+              link: 'group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-md focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 text-primary',
+              viewport:
+                'relative overflow-hidden bg-default shadow-lg rounded-md ring ring-default h-(--reka-navigation-menu-viewport-height) w-full transition-[width,height,left] duration-200 origin-[top_center] data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in] z-[100]',
+              childList:
+                'flex flex-col bg-white dark:bg-gray-800 justify-center',
+              childLink:
+                'px-4 py-2 hover:bg-gray-200  dark:hover:bg-gray-600 dark:hover:text-gray-300 rounded-md transition-colors duration-200'
+            }"
           />
         </div>
       </div>
@@ -94,10 +93,6 @@
           highlight
           :items="headerNavItems"
           class="w-full"
-          :ui="{
-            ...navUi,
-            list: 'flex flex-col' // for vertical layout
-          }"
           :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
         />
         <div v-if="useAuth" class="mt-4 border-t border-neutral-200 pt-4">
@@ -106,4 +101,7 @@
       </div>
     </div>
   </header>
+  <div class="px-12">
+    <SBreadcrumb />
+  </div>
 </template>

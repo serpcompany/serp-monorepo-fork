@@ -42,12 +42,14 @@
         }
       );
       if (error) {
+        // eslint-disable-next-line no-console
         console.error('Error creating PaymentIntent:', error);
         return;
       }
       hasPaymentIntent.value = true;
       clientSecret.value = cs;
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error('Fetch error:', e);
     }
   }
@@ -80,6 +82,7 @@
     });
 
     if (error) {
+      // eslint-disable-next-line no-console
       console.error('Payment failed:', error.message);
     }
   }

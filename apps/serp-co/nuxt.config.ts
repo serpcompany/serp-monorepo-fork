@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@nuxtjs/seo',
     '@nuxtjs/sitemap',
+    '@nuxt/content',
     'nuxt-multi-cache',
     'nuxt-security',
     'nuxt-link-checker',
@@ -54,6 +55,7 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_URL,
       apiUrl: process.env.NUXT_PUBLIC_API_URL,
       useAuth: true,
+      forCloudflare: false,
       environment: process.env.NODE_ENV,
       profileDropdownLinks: [
         [
@@ -69,107 +71,13 @@ export default defineNuxtConfig({
             to: '/users/submit/company/'
           },
           {
-            label: 'Submissions',
-            icon: 'i-lucide-file-text',
-            to: '/users/manage/submissions/'
-          },
-          {
             label: 'Billing',
             icon: 'i-lucide-credit-card',
             to: '/users/manage/billing/'
           }
         ]
       ],
-      socialLinks: [
-        {
-          name: 'Twitter',
-          href: 'https://serp.ly/@serp/twitter',
-          icon: 'i-lucide-twitter'
-        },
-        {
-          name: 'Facebook',
-          href: 'https://serp.ly/@serp/facebook',
-          icon: 'i-lucide-facebook'
-        },
-        {
-          name: 'LinkedIn',
-          href: 'https://serp.ly/@serp/linkedin',
-          icon: 'i-lucide-linkedin'
-        },
-        {
-          name: 'YouTube',
-          href: 'https://serp.ly/@serp/youtube',
-          icon: 'i-lucide-youtube'
-        },
-        {
-          name: 'Github',
-          href: 'https://serp.ly/@serpai/github',
-          icon: 'i-lucide-github'
-        },
-        {
-          name: 'Instagram',
-          href: 'https://serp.ly/@serp/instagram',
-          icon: 'i-lucide-instagram'
-        },
-        {
-          name: 'SoundCloud',
-          href: 'https://serp.ly/@serp/',
-          icon: 'i-lucide-external-link'
-        }
-      ],
-      brandLinks: [
-        {
-          name: 'About',
-          href: 'https://github.com/serpcompany'
-        },
-        {
-          name: 'Add Your Product',
-          href: 'https://serp.ly/@serp/submit'
-        }
-      ],
-      headerNavItems: [
-        {
-          label: 'Companies',
-          children: [{ label: 'Companies', to: '/products/' }]
-        },
-        {
-          label: 'Tools',
-          children: [
-            { label: 'Tools', to: '/tools/' },
-            { label: 'Combine CSVs', to: '/tools/combine-csv-files/' },
-            { label: 'JSON to CSV', to: '/tools/convert-json-to-csv/' },
-            { label: 'Character Counter', to: '/tools/count-characters/' },
-            { label: 'Paragraph Counter', to: '/tools/paragraph-counter/' }
-          ]
-        },
-        {
-          label: 'Glossary',
-          children: [{ label: 'Glossary', to: '/glossary/' }]
-        },
-        {
-          label: 'Posts',
-          children: [{ label: 'Posts', to: '/posts/' }]
-        }
-      ],
-      footerColumns: [
-        {
-          title: 'Links',
-          id: 1,
-          slug: '',
-          items: [
-            { text: 'Companies', slug: '/products/' },
-            { text: 'Tools', slug: '/tools/' },
-            { text: 'Posts', slug: '/posts/' },
-            { text: 'Glossary', slug: '/glossary/' }
-          ]
-        }
-      ],
-      legalLinks: [
-        { text: 'Privacy', slug: '/legal/privacy-policy/' },
-        { text: 'Terms', slug: '/legal/terms-conditions/' },
-        { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
-        { text: 'DMCA', slug: '/legal/dmca/' }
-      ],
+      // headerNavItems, footerColumns, socialLinks and legalLinks are now defined in app.config.ts
       copyrightText: '© SERP',
       address: ''
     }
@@ -253,7 +161,8 @@ export default defineNuxtConfig({
     },
     sitemaps: {
       modules: {
-        includeAppSources: true
+        includeAppSources: true,
+        exclude: ['/users/**']
       },
       company: {
         sources: ['/api/__sitemap__/company']
@@ -272,6 +181,12 @@ export default defineNuxtConfig({
       },
       blog: {
         sources: ['/api/__sitemap__/blog']
+      },
+      ['mcp-servers']: {
+        sources: ['/api/__sitemap__/mcp-servers']
+      },
+      ['mcp-servers-categories']: {
+        sources: ['/api/__sitemap__/mcp-servers-categories']
       }
     }
   }
