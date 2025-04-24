@@ -1,5 +1,4 @@
 <script setup>
-  // Keep the original testimonials array structure
   const testimonials = [
     {
       testimonial:
@@ -728,78 +727,262 @@
         'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/maxwell-hertan.png'
     }
   ];
+
+  const testimonialVideoData = [
+    {
+      personName: 'Anne Peterson',
+      businessName: 'Anne Peterson',
+      businessWebsite: 'https://fullmoonrisingfarm.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'LeAIQzMG6uc'
+    },
+    {
+      personName: 'Dr. Emanuela Corielli',
+      businessName: 'Bright Healthy Smiles',
+      businessWebsite: 'https://brighthealthysmiles.com/',
+      positionAtCompany: 'Owner',
+      videoId: 'rr-BoZzJ-3g'
+    },
+    {
+      personName: 'Dr. Jamie Osorio',
+      businessName: 'Buckner Family Dental',
+      businessWebsite: 'https://bucknerfamilydental.com/',
+      positionAtCompany: 'Owner',
+      videoId: '9gpg2qyfQUs'
+    },
+    {
+      personName: 'Jeremy Castro',
+      businessName: 'Castro Law Offices',
+      businessWebsite: 'https://castrolawoffices.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'ZFlLyNBravs'
+    },
+    {
+      personName: 'Blake Baumgartner',
+      businessName: 'Chess Pathways',
+      businessWebsite: 'https://chesspathways.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'aoYoUjFq-js'
+    },
+    {
+      personName: 'Blake Baumgartner',
+      businessName: 'Chess Pathways',
+      businessWebsite: 'https://chesspathways.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'Mg9iL_591Y0'
+    },
+    {
+      personName: 'Ashley Mendoza',
+      businessName: 'D20 Dental',
+      businessWebsite: 'https://d2odental.com/',
+      positionAtCompany: 'Office Manager',
+      videoId: 'T2egF07iegE'
+    },
+    {
+      personName: 'Dr. Joanna Hong',
+      businessName: 'Pristine Dental',
+      businessWebsite: 'https://www.pristinedentalnyc.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'PEHezJYg6GM'
+    },
+    {
+      personName: 'Dr. Edward Liu',
+      businessName: 'Edward Liu General & Implant Dentistry',
+      businessWebsite: 'https://www.dredwardliu.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'W7HroN7LOwA'
+    },
+    {
+      personName: 'Chris Lynch',
+      businessName: 'Everyday California',
+      businessWebsite: 'https://www.everydaycalifornia.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'ocDVXUo3AqE'
+    },
+    {
+      personName: 'Christy Granieri',
+      businessName: 'Freeburg & Granieri, APC',
+      businessWebsite: 'https://www.fgfirm.law/',
+      positionAtCompany: 'Co-Founder & Managing Partner',
+      videoId: 'Pv8S2t1Y_Qg'
+    },
+    {
+      personName: 'Gary Wilson',
+      businessName: 'Get Me Links',
+      businessWebsite: 'https://getmelinks.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'L1pVYSMTgxw'
+    },
+    {
+      personName: 'Dr. Andy Chang',
+      businessName: 'iCare Dental',
+      businessWebsite: 'https://www.icarefamilydentistry.com/',
+      positionAtCompany: 'Dentist',
+      videoId: 'PWIMSUGTBqY'
+    },
+    {
+      personName: 'Chase Hanson',
+      businessName: 'iCryo',
+      businessWebsite: 'https://icryo.com/',
+      positionAtCompany: 'Executive Vice President',
+      videoId: 'ybP56-5Trfg'
+    },
+    {
+      personName: 'Jenny Chen',
+      businessName: 'Jenny Chen Pediatric And Family Dentistry',
+      businessWebsite: 'https://www.smilesinpa.com/',
+      positionAtCompany: 'Founder',
+      videoId: 's27eEwQmx8I'
+    },
+    {
+      personName: 'Jenna Hebert',
+      businessName: 'Marsh Family Dental',
+      businessWebsite: 'https://marshfamilydental.com/',
+      positionAtCompany: 'Owner',
+      videoId: 'pRCFsXYHigA'
+    },
+    {
+      personName: 'Brad Campbell',
+      businessName: 'Riot Glass',
+      businessWebsite: 'https://www.riotglass.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'njsTGxp5S6A'
+    },
+    {
+      personName: 'Paul Conant',
+      businessName: 'Smile Esthetics',
+      businessWebsite: 'https://smileesthetics.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'Ia-ZxtZQxXg'
+    },
+    {
+      personName: 'Dr. Mariana Conant',
+      businessName: 'Smile Esthetics',
+      businessWebsite: 'https://smileesthetics.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'cb7aOYs1IOE'
+    },
+    {
+      personName: 'Beau Schmitt',
+      businessName: 'Sunday Scaries',
+      businessWebsite: 'https://sundayscaries.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'CNQ14FsM49k'
+    },
+    {
+      personName: 'Adam Weiler',
+      businessName: 'Sunken Stone',
+      businessWebsite: 'https://emplicit.co/',
+      positionAtCompany: 'Founder',
+      videoId: '7u20tv5G6D8'
+    },
+    {
+      personName: 'Dr. Riccardo Carrillo',
+      businessName: 'The Smile Home',
+      businessWebsite: 'https://www.thesmilehomefl.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'iOmQpwCJBSg'
+    },
+    {
+      personName: 'Lisa Baronoff',
+      businessName: 'Walkee Paws',
+      businessWebsite: 'https://walkeepaws.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'KaTGLZ84bqQ'
+    },
+    {
+      personName: 'Aden Hochstetler',
+      businessName: 'True Nature Roofing',
+      businessWebsite: 'http://www.truenatureroofing.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'xQhPYAUAYm8'
+    },
+    {
+      personName: 'Dr. Elena Shabani',
+      businessName: 'Shabani Dental',
+      businessWebsite: 'https://www.shabanidental.com/',
+      positionAtCompany: 'Owner',
+      videoId: 'i2bS_MxikMs'
+    },
+    {
+      personName: 'Tiffany McEwen',
+      businessName: 'Almeida & Bell Dental',
+      businessWebsite: 'https://www.almeidabelldental.com/',
+      positionAtCompany: 'Office Manager',
+      videoId: '1gt0U4PHs4Y'
+    }
+  ];
 </script>
 
 <template>
-  <UMain>
-    <UPageHero
-      title="SERP Solutions"
-      description="Growth & Automation solutions that help brands succeed online."
-      orientation="vertical"
-    />
+  <div>
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <!-- Hero Section -->
+      <div class="text-center">
+        <h1
+          class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl dark:text-white"
+        >
+          SERP Solutions
+        </h1>
+        <p
+          class="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl dark:text-gray-400"
+        >
+          Growth & Automation solutions that help brands succeed online.
+        </p>
+      </div>
 
-    <UPageColumns>
-      <UPageCard
-        v-for="(testimonial, index) in testimonials"
-        :key="index"
-        variant="subtle"
-      >
-        <template #default>
-          <div class="flex flex-col">
+      <!-- Video Testimonials Section -->
+      <div class="mt-16">
+        <TestimonialVideoGrid :videos="testimonialVideoData" />
+      </div>
+
+      <!-- Text Testimonials Section -->
+      <div class="mt-16">
+        <h2 class="mb-8 text-center text-2xl font-bold">
+          What Our Clients Say
+        </h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div
+            v-for="(testimonial, index) in testimonials"
+            :key="index"
+            class="flex flex-col rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
+          >
             <!-- Testimonial header with avatar and user info -->
-            <div class="mb-4">
-              <!-- On mobile: Stack everything -->
-              <div class="flex flex-col lg:hidden">
-                <UAvatar
-                  :name="testimonial.personName"
-                  :src="testimonial.personAvatar || undefined"
+            <div class="mb-4 flex items-center">
+              <div class="mr-3 h-12 w-12 overflow-hidden rounded-full">
+                <img
+                  v-if="testimonial.personAvatar"
+                  :src="testimonial.personAvatar"
                   :alt="testimonial.personName"
-                  class="mb-2 h-12 w-12"
+                  class="h-full w-full object-cover"
                 />
-                <div>
-                  <p class="font-medium">{{ testimonial.personName }}</p>
-                  <p
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    {{ testimonial.businessName }}
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ testimonial.positionAtCompany }}
-                  </p>
+                <div
+                  v-else
+                  class="flex h-full w-full items-center justify-center bg-blue-100 text-blue-500 dark:bg-blue-900"
+                >
+                  {{ testimonial.personName.charAt(0) }}
                 </div>
               </div>
-
-              <!-- On large screens: Avatar | Name with business and position stacked under name -->
-              <div class="hidden lg:flex">
-                <UAvatar
-                  :name="testimonial.personName"
-                  :src="testimonial.personAvatar || undefined"
-                  :alt="testimonial.personName"
-                  class="mr-4 h-12 w-12"
-                />
-                <div>
-                  <p class="font-medium">{{ testimonial.personName }}</p>
-                  <p
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    {{ testimonial.businessName }}
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ testimonial.positionAtCompany }}
-                  </p>
-                </div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">
+                  {{ testimonial.personName }}
+                </p>
+                <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {{ testimonial.businessName }}
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  {{ testimonial.positionAtCompany }}
+                </p>
               </div>
             </div>
 
             <!-- Testimonial text -->
-            <p
-              class="mt-2 text-sm before:content-[open-quote] after:content-[close-quote]"
-            >
-              {{ testimonial.testimonial }}
+            <p class="mt-2 flex-grow text-sm text-gray-600 dark:text-gray-300">
+              "{{ testimonial.testimonial }}"
             </p>
           </div>
-        </template>
-      </UPageCard>
-    </UPageColumns>
-  </UMain>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
