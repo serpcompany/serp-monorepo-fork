@@ -138,8 +138,12 @@ export default defineNuxtConfig({
         'default-src': ["'self'"],
         'script-src': ["'self'", 'https://www.youtube.com'],
         'script-src-attr': ["'self'", "'unsafe-inline'"],
-        'frame-src':     ["'self'", 'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
-        'child-src':     ["'self'", 'https://www.youtube.com'],
+        'frame-src': [
+          "'self'",
+          'https://www.youtube.com',
+          'https://www.youtube-nocookie.com'
+        ],
+        'child-src': ["'self'", 'https://www.youtube.com']
       }
     },
     rateLimiter: false

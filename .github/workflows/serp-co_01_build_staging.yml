@@ -13,9 +13,6 @@ jobs:
   build_staging_serp_co:
     runs-on: self-hosted
     steps:
-      - name: Add delay for staggering
-        run: sleep 20
-
       - name: Checkout code
         uses: actions/checkout@v2
 
