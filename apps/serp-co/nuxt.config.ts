@@ -134,7 +134,12 @@ export default defineNuxtConfig({
   security: {
     headers: {
       contentSecurityPolicy: {
-        'img-src': ["'self'", 'data:', 'https://*']
+        'img-src': ["'self'", 'data:', 'https://*'],
+        'default-src': ["'self'"],
+        'script-src': ["'self'", 'https://www.youtube.com'],
+        'script-src-attr': ["'self'", "'unsafe-inline'"],
+        'frame-src':     ["'self'", 'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
+        'child-src':     ["'self'", 'https://www.youtube.com'],
       }
     },
     rateLimiter: false
