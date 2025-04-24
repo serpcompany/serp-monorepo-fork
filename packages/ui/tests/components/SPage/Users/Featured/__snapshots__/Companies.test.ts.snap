@@ -93,7 +93,7 @@ exports[`SPage/Users/Featured/Companies Snapshot > renders when user is logged i
               </div>
             </div>
             <div class="p-4 sm:px-6">
-              <div class="flex justify-end"><button type="button" disabled="" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-base gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+              <div class="flex justify-end"><button type="button" disabled="" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-base gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
                   <!--v-if--> Submit
                   <!--v-if-->
                 </button></div>
@@ -183,7 +183,7 @@ exports[`SPage/Users/Featured/Companies Snapshot > renders when user is logged i
               </div>
             </div>
             <div class="p-4 sm:px-6">
-              <div class="flex justify-end"><button type="button" disabled="" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-base gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+              <div class="flex justify-end"><button type="button" disabled="" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-base gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
                   <!--v-if--> Submit
                   <!--v-if-->
                 </button></div>
@@ -209,7 +209,7 @@ exports[`SPage/Users/Featured/Companies Snapshot > renders when user is not logg
             <!--v-if-->
             <div class="p-4 sm:p-6">
               <h2 class="mb-4 text-xl font-semibold">Get Featured</h2>
-              <p class="mb-6 text-gray-500 dark:text-gray-400"> Login to feature your company on our platform for increased visibility. </p><a href="/login" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+              <p class="mb-6 text-gray-500 dark:text-gray-400"> Login to feature your company on our platform for increased visibility. </p><a href="/login" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
                 <!--v-if--> Login to Continue
                 <!--v-if-->
               </a>

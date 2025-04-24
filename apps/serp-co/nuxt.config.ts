@@ -77,139 +77,7 @@ export default defineNuxtConfig({
           }
         ]
       ],
-      headerNavItems: [
-        {
-          label: 'Companies',
-          children: [{ label: 'Companies', to: '/products/' }]
-        },
-        {
-          label: 'MCP',
-          children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
-        },
-        {
-          label: 'Solutions',
-          children: [{ label: 'Solutions', to: '/solutions/' }]
-        },
-        {
-          label: 'Tools',
-          children: [
-            { label: 'Tools', to: '/tools/' },
-            { label: 'Combine CSVs', to: '/tools/combine-csv-files/' },
-            { label: 'JSON to CSV', to: '/tools/convert-json-to-csv/' },
-            { label: 'Character Counter', to: '/tools/count-characters/' },
-            { label: 'Paragraph Counter', to: '/tools/paragraph-counter/' }
-          ]
-        },
-        {
-          label: 'Glossary',
-          children: [{ label: 'Glossary', to: '/glossary/' }]
-        },
-        {
-          label: 'Posts',
-          children: [{ label: 'Posts', to: '/posts/' }]
-        }
-      ],
-      footerColumns: [
-        {
-          title: 'Product',
-          id: 1,
-          slug: '',
-          items: [
-            { text: 'Companies', slug: '/products/' },
-            { text: 'Tools', slug: '/tools/' },
-            { text: 'Posts', slug: '/posts/' },
-            { text: 'Glossary', slug: '/glossary/' },
-            { text: 'MCP Servers', slug: '/mcp/servers/' }
-          ]
-        },
-        {
-          title: 'Posts',
-          id: 2,
-          slug: '',
-          items: [
-            { text: 'Blog', slug: '/blog/' },
-            { text: 'Glossary', slug: '/glossary/' }
-          ]
-        },
-        {
-          title: 'Brand',
-          id: 3,
-          slug: '',
-          items: [
-            {
-              name: 'About',
-              href: '/about/'
-            },
-            {
-              name: 'Contact',
-              href: '#'
-            },
-            {
-              name: 'Solutions',
-              href: '/solutions/'
-            }
-          ]
-        },
-        {
-          title: 'Solutions',
-          id: 4,
-          slug: '',
-          items: [
-            {
-              name: 'Solutions',
-              href: '/solutions/'
-            },
-            {
-              name: 'Contact',
-              href: '#'
-            }
-          ]
-        }
-      ],
-      socialLinks: [
-        {
-          name: 'Twitter',
-          href: 'https://serp.ly/@serp/twitter',
-          icon: 'i-lucide-twitter'
-        },
-        {
-          name: 'Facebook',
-          href: 'https://serp.ly/@serp/facebook',
-          icon: 'i-lucide-facebook'
-        },
-        {
-          name: 'LinkedIn',
-          href: 'https://serp.ly/@serp/linkedin',
-          icon: 'i-lucide-linkedin'
-        },
-        {
-          name: 'YouTube',
-          href: 'https://serp.ly/@serp/youtube',
-          icon: 'i-lucide-youtube'
-        },
-        {
-          name: 'Github',
-          href: 'https://serp.ly/@serp/github',
-          icon: 'i-lucide-github'
-        },
-        {
-          name: 'Instagram',
-          href: 'https://serp.ly/@serp/instagram',
-          icon: 'i-lucide-instagram'
-        }
-      ],
-      // brandLinks: [
-      //   { text: 'Privacy', slug: '/legal/privacy-policy/' },
-      //   { text: 'Terms', slug: '/legal/terms-conditions/' },
-      //   { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
-      //   { text: 'DMCA', slug: '/legal/dmca/' }
-      // ],
-      legalLinks: [
-        { text: 'Privacy', slug: '/legal/privacy-policy/' },
-        { text: 'Terms', slug: '/legal/terms-conditions/' },
-        { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
-        { text: 'DMCA', slug: '/legal/dmca/' }
-      ],
+      // headerNavItems, footerColumns, socialLinks and legalLinks are now defined in app.config.ts
       copyrightText: '© SERP',
       address: ''
     }
@@ -266,7 +134,16 @@ export default defineNuxtConfig({
   security: {
     headers: {
       contentSecurityPolicy: {
-        'img-src': ["'self'", 'data:', 'https://*']
+        'img-src': ["'self'", 'data:', 'https://*'],
+        'default-src': ["'self'"],
+        'script-src': ["'self'", 'https://www.youtube.com'],
+        'script-src-attr': ["'self'", "'unsafe-inline'"],
+        'frame-src': [
+          "'self'",
+          'https://www.youtube.com',
+          'https://www.youtube-nocookie.com'
+        ],
+        'child-src': ["'self'", 'https://www.youtube.com']
       }
     },
     rateLimiter: false

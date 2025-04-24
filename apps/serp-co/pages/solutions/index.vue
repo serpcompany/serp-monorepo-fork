@@ -1,5 +1,4 @@
 <script setup>
-  // Keep the original testimonials array structure
   const testimonials = [
     {
       testimonial:
@@ -728,6 +727,177 @@
         'https://raw.githubusercontent.com/devinschumacher/social-proof/refs/heads/main/avatars/maxwell-hertan.png'
     }
   ];
+
+  const testimonialVideoData = [
+    {
+      personName: 'Anne Peterson',
+      businessName: 'Anne Peterson',
+      businessWebsite: 'https://fullmoonrisingfarm.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'LeAIQzMG6uc'
+    },
+    {
+      personName: 'Dr. Emanuela Corielli',
+      businessName: 'Bright Healthy Smiles',
+      businessWebsite: 'https://brighthealthysmiles.com/',
+      positionAtCompany: 'Owner',
+      videoId: 'rr-BoZzJ-3g'
+    },
+    {
+      personName: 'Dr. Jamie Osorio',
+      businessName: 'Buckner Family Dental',
+      businessWebsite: 'https://bucknerfamilydental.com/',
+      positionAtCompany: 'Owner',
+      videoId: '9gpg2qyfQUs'
+    },
+    {
+      personName: 'Jeremy Castro',
+      businessName: 'Castro Law Offices',
+      businessWebsite: 'https://castrolawoffices.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'ZFlLyNBravs'
+    },
+    {
+      personName: 'Blake Baumgartner',
+      businessName: 'Chess Pathways',
+      businessWebsite: 'https://chesspathways.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'aoYoUjFq-js'
+    },
+    {
+      personName: 'Ashley Mendoza',
+      businessName: 'D20 Dental',
+      businessWebsite: 'https://d2odental.com/',
+      positionAtCompany: 'Office Manager',
+      videoId: 'T2egF07iegE'
+    },
+    {
+      personName: 'Dr. Joanna Hong',
+      businessName: 'Pristine Dental',
+      businessWebsite: 'https://www.pristinedentalnyc.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'PEHezJYg6GM'
+    },
+    {
+      personName: 'Dr. Edward Liu',
+      businessName: 'Edward Liu General & Implant Dentistry',
+      businessWebsite: 'https://www.dredwardliu.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'W7HroN7LOwA'
+    },
+    {
+      personName: 'Chris Lynch',
+      businessName: 'Everyday California',
+      businessWebsite: 'https://www.everydaycalifornia.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'ocDVXUo3AqE'
+    },
+    {
+      personName: 'Gary Wilson',
+      businessName: 'Get Me Links',
+      businessWebsite: 'https://getmelinks.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'L1pVYSMTgxw'
+    },
+    {
+      personName: 'Dr. Andy Chang',
+      businessName: 'iCare Dental',
+      businessWebsite: 'https://www.icarefamilydentistry.com/',
+      positionAtCompany: 'Dentist',
+      videoId: 'PWIMSUGTBqY'
+    },
+    {
+      personName: 'Chase Hanson',
+      businessName: 'iCryo',
+      businessWebsite: 'https://icryo.com/',
+      positionAtCompany: 'Executive Vice President',
+      videoId: 'ybP56-5Trfg'
+    },
+    {
+      personName: 'Jenny Chen',
+      businessName: 'Jenny Chen Pediatric And Family Dentistry',
+      businessWebsite: 'https://www.smilesinpa.com/',
+      positionAtCompany: 'Founder',
+      videoId: 's27eEwQmx8I'
+    },
+    {
+      personName: 'Jenna Hebert',
+      businessName: 'Marsh Family Dental',
+      businessWebsite: 'https://marshfamilydental.com/',
+      positionAtCompany: 'Owner',
+      videoId: 'pRCFsXYHigA'
+    },
+    {
+      personName: 'Brad Campbell',
+      businessName: 'Riot Glass',
+      businessWebsite: 'https://www.riotglass.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'njsTGxp5S6A'
+    },
+    {
+      personName: 'Paul Conant',
+      businessName: 'Smile Esthetics',
+      businessWebsite: 'https://smileesthetics.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'Ia-ZxtZQxXg'
+    },
+    {
+      personName: 'Dr. Mariana Conant',
+      businessName: 'Smile Esthetics',
+      businessWebsite: 'https://smileesthetics.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'cb7aOYs1IOE'
+    },
+    {
+      personName: 'Beau Schmitt',
+      businessName: 'Sunday Scaries',
+      businessWebsite: 'https://sundayscaries.com/',
+      positionAtCompany: 'Co-Founder',
+      videoId: 'CNQ14FsM49k'
+    },
+    {
+      personName: 'Adam Weiler',
+      businessName: 'Sunken Stone',
+      businessWebsite: 'https://emplicit.co/',
+      positionAtCompany: 'Founder',
+      videoId: '7u20tv5G6D8'
+    },
+    {
+      personName: 'Dr. Riccardo Carrillo',
+      businessName: 'The Smile Home',
+      businessWebsite: 'https://www.thesmilehomefl.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'iOmQpwCJBSg'
+    },
+    {
+      personName: 'Lisa Baronoff',
+      businessName: 'Walkee Paws',
+      businessWebsite: 'https://walkeepaws.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'KaTGLZ84bqQ'
+    },
+    {
+      personName: 'Aden Hochstetler',
+      businessName: 'True Nature Roofing',
+      businessWebsite: 'http://www.truenatureroofing.com/',
+      positionAtCompany: 'Founder',
+      videoId: 'xQhPYAUAYm8'
+    },
+    {
+      personName: 'Dr. Elena Shabani',
+      businessName: 'Shabani Dental',
+      businessWebsite: 'https://www.shabanidental.com/',
+      positionAtCompany: 'Owner',
+      videoId: 'i2bS_MxikMs'
+    },
+    {
+      personName: 'Tiffany McEwen',
+      businessName: 'Almeida & Bell Dental',
+      businessWebsite: 'https://www.almeidabelldental.com/',
+      positionAtCompany: 'Office Manager',
+      videoId: '1gt0U4PHs4Y'
+    }
+  ];
 </script>
 
 <template>
@@ -738,68 +908,72 @@
       orientation="vertical"
     />
 
-    <UPageColumns>
-      <UPageCard
-        v-for="(testimonial, index) in testimonials"
-        :key="index"
-        variant="subtle"
-      >
-        <template #default>
-          <div class="flex flex-col">
-            <!-- Testimonial header with avatar and user info -->
-            <div class="mb-4">
-              <!-- On mobile: Stack everything -->
-              <div class="flex flex-col lg:hidden">
-                <UAvatar
-                  :name="testimonial.personName"
-                  :src="testimonial.personAvatar || undefined"
-                  :alt="testimonial.personName"
-                  class="mb-2 h-12 w-12"
-                />
-                <div>
-                  <p class="font-medium">{{ testimonial.personName }}</p>
-                  <p
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    {{ testimonial.businessName }}
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ testimonial.positionAtCompany }}
-                  </p>
+    <TestimonialVideoGrid :videos="testimonialVideoData" />
+
+    <UPageSection>
+      <UPageColumns>
+        <LazyUPageCard
+          v-for="(testimonial, index) in testimonials"
+          :key="index"
+          variant="subtle"
+        >
+          <template #default>
+            <div class="flex flex-col">
+              <!-- Testimonial header with avatar and user info -->
+              <div class="mb-4">
+                <!-- On mobile: Stack everything -->
+                <div class="flex flex-col lg:hidden">
+                  <UAvatar
+                    :name="testimonial.personName"
+                    :src="testimonial.personAvatar || undefined"
+                    :alt="testimonial.personName"
+                    class="mb-2 h-12 w-12"
+                  />
+                  <div>
+                    <p class="font-medium">{{ testimonial.personName }}</p>
+                    <p
+                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      {{ testimonial.businessName }}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      {{ testimonial.positionAtCompany }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- On large screens: Avatar | Name with business and position stacked under name -->
+                <div class="hidden lg:flex">
+                  <UAvatar
+                    :name="testimonial.personName"
+                    :src="testimonial.personAvatar || undefined"
+                    :alt="testimonial.personName"
+                    class="mr-4 h-12 w-12"
+                  />
+                  <div>
+                    <p class="font-medium">{{ testimonial.personName }}</p>
+                    <p
+                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      {{ testimonial.businessName }}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      {{ testimonial.positionAtCompany }}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <!-- On large screens: Avatar | Name with business and position stacked under name -->
-              <div class="hidden lg:flex">
-                <UAvatar
-                  :name="testimonial.personName"
-                  :src="testimonial.personAvatar || undefined"
-                  :alt="testimonial.personName"
-                  class="mr-4 h-12 w-12"
-                />
-                <div>
-                  <p class="font-medium">{{ testimonial.personName }}</p>
-                  <p
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    {{ testimonial.businessName }}
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ testimonial.positionAtCompany }}
-                  </p>
-                </div>
-              </div>
+              <!-- Testimonial text -->
+              <p
+                class="mt-2 text-sm before:content-[open-quote] after:content-[close-quote]"
+              >
+                {{ testimonial.testimonial }}
+              </p>
             </div>
-
-            <!-- Testimonial text -->
-            <p
-              class="mt-2 text-sm before:content-[open-quote] after:content-[close-quote]"
-            >
-              {{ testimonial.testimonial }}
-            </p>
-          </div>
-        </template>
-      </UPageCard>
-    </UPageColumns>
+          </template>
+        </LazyUPageCard>
+      </UPageColumns>
+    </UPageSection>
   </UMain>
 </template>

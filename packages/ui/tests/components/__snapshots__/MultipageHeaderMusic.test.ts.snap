@@ -11,7 +11,7 @@ exports[`MultipageHeaderMusic Snapshot > renders default rendering correctly 1`]
           <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
         </div>
       </div>
-      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><button type="button" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><button type="button" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
           <!--v-if-->
         </button></div>
     </div>
@@ -40,7 +40,7 @@ exports[`MultipageHeaderMusic Snapshot > renders with empty sections correctly 1
           <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
         </div>
       </div>
-      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><button type="button" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><button type="button" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
           <!--v-if-->
         </button></div>
     </div>
@@ -59,7 +59,7 @@ exports[`MultipageHeaderMusic Snapshot > renders with oneLiner and image correct
           <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
         </div>
       </div>
-      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><button type="button" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><button type="button" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
           <!--v-if-->
         </button></div>
     </div>
@@ -88,7 +88,7 @@ exports[`MultipageHeaderMusic Snapshot > renders with upvote slot correctly 1`] 
           <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
         </div>
       </div>
-      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto">&lt;button&gt;Upvote&lt;/button&gt;<button type="button" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+      <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto">&lt;button&gt;Upvote&lt;/button&gt;<button type="button" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
           <!--v-if-->
         </button></div>
     </div>

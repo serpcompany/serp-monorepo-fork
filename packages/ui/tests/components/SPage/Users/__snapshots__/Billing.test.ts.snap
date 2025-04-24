@@ -13,7 +13,7 @@ exports[`SPage/Users/Billing Snapshot > renders when user is logged in correctly
         </div>
         <div class="p-4 sm:p-6">
           <div class="px-4 text-center">
-            <p class="mb-6 text-gray-500 dark:text-gray-400"> Manage your subscription, view purchase history, or update payment methods. </p><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto"><span class="iconify i-lucide:credit-card shrink-0 size-5" aria-hidden="true"></span><span class="truncate">Manage Billing</span>
+            <p class="mb-6 text-gray-500 dark:text-gray-400"> Manage your subscription, view purchase history, or update payment methods. </p><button type="button" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto"><span class="iconify i-lucide:credit-card shrink-0 size-5" aria-hidden="true"></span><span class="truncate">Manage Billing</span>
               <!--v-if-->
             </button>
           </div>
@@ -39,7 +39,7 @@ exports[`SPage/Users/Billing Snapshot > renders when user is not logged in corre
         </div>
         <div class="p-4 sm:p-6">
           <div class="px-4 text-center">
-            <p class="mb-6 text-gray-500 dark:text-gray-400"> Manage your subscription, view purchase history, or update payment methods. </p><button type="button" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto"><span class="iconify i-lucide:credit-card shrink-0 size-5" aria-hidden="true"></span><span class="truncate">Manage Billing</span>
+            <p class="mb-6 text-gray-500 dark:text-gray-400"> Manage your subscription, view purchase history, or update payment methods. </p><button type="button" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto"><span class="iconify i-lucide:credit-card shrink-0 size-5" aria-hidden="true"></span><span class="truncate">Manage Billing</span>
               <!--v-if-->
             </button>
           </div>
