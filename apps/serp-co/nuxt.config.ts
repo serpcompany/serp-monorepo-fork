@@ -313,6 +313,12 @@ export default defineNuxtConfig({
       },
       blog: {
         sources: ['/api/__sitemap__/blog']
+      },
+      ['mcp-servers']: {
+        sources: ['/api/__sitemap__/mcp-servers']
+      },
+      ['mcp-servers-categories']: {
+        sources: ['/api/__sitemap__/mcp-servers-categories']
       }
     }
   }
