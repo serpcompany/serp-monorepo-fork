@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="py-8">
+  <UPageSection class="py-8">
     <h2 class="mb-6 text-center text-2xl font-bold">Client Testimonials</h2>
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <div
@@ -20,14 +20,13 @@ defineProps<{
         class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
       >
         <div class="relative aspect-video w-full overflow-hidden">
-          <!-- Replace with your YouTube player component -->
-          <iframe
-            :src="`https://www.youtube.com/embed/${video.videoId}`"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+          <ScriptYouTubePlayer
+            :video-id="video.videoId"
+            :player-vars="{ autoplay: 0, playsinline: 1 }"
+            :width="640"
+            :height="360"
             class="absolute h-full w-full object-cover"
-          ></iframe>
+          />
         </div>
 
         <div class="flex flex-1 flex-col p-4">
@@ -50,5 +49,5 @@ defineProps<{
         </div>
       </div>
     </div>
-  </div>
+  </UPageSection>
 </template>

@@ -803,7 +803,7 @@
       personName: 'Christy Granieri',
       businessName: 'Freeburg & Granieri, APC',
       businessWebsite: 'https://www.fgfirm.law/',
-      positionAtCompany: 'Co-Founder & Managing Partner',
+      positionAtCompany: 'Co-Founder',
       videoId: 'Pv8S2t1Y_Qg'
     },
     {
@@ -925,68 +925,70 @@
     <!-- Testimonial Videos Section -->
     <TestimonialVideoGrid :videos="testimonialVideoData" />
 
-    <UPageColumns>
-      <UPageCard
-        v-for="(testimonial, index) in testimonials"
-        :key="index"
-        variant="subtle"
-      >
-        <template #default>
-          <div class="flex flex-col">
-            <!-- Testimonial header with avatar and user info -->
-            <div class="mb-4">
-              <!-- On mobile: Stack everything -->
-              <div class="flex flex-col lg:hidden">
-                <UAvatar
-                  :name="testimonial.personName"
-                  :src="testimonial.personAvatar || undefined"
-                  :alt="testimonial.personName"
-                  class="mb-2 h-12 w-12"
-                />
-                <div>
-                  <p class="font-medium">{{ testimonial.personName }}</p>
-                  <p
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    {{ testimonial.businessName }}
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ testimonial.positionAtCompany }}
-                  </p>
+    <UPageSection>
+      <UPageColumns>
+        <UPageCard
+          v-for="(testimonial, index) in testimonials"
+          :key="index"
+          variant="subtle"
+        >
+          <template #default>
+            <div class="flex flex-col">
+              <!-- Testimonial header with avatar and user info -->
+              <div class="mb-4">
+                <!-- On mobile: Stack everything -->
+                <div class="flex flex-col lg:hidden">
+                  <UAvatar
+                    :name="testimonial.personName"
+                    :src="testimonial.personAvatar || undefined"
+                    :alt="testimonial.personName"
+                    class="mb-2 h-12 w-12"
+                  />
+                  <div>
+                    <p class="font-medium">{{ testimonial.personName }}</p>
+                    <p
+                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      {{ testimonial.businessName }}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      {{ testimonial.positionAtCompany }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- On large screens: Avatar | Name with business and position stacked under name -->
+                <div class="hidden lg:flex">
+                  <UAvatar
+                    :name="testimonial.personName"
+                    :src="testimonial.personAvatar || undefined"
+                    :alt="testimonial.personName"
+                    class="mr-4 h-12 w-12"
+                  />
+                  <div>
+                    <p class="font-medium">{{ testimonial.personName }}</p>
+                    <p
+                      class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      {{ testimonial.businessName }}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      {{ testimonial.positionAtCompany }}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <!-- On large screens: Avatar | Name with business and position stacked under name -->
-              <div class="hidden lg:flex">
-                <UAvatar
-                  :name="testimonial.personName"
-                  :src="testimonial.personAvatar || undefined"
-                  :alt="testimonial.personName"
-                  class="mr-4 h-12 w-12"
-                />
-                <div>
-                  <p class="font-medium">{{ testimonial.personName }}</p>
-                  <p
-                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    {{ testimonial.businessName }}
-                  </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ testimonial.positionAtCompany }}
-                  </p>
-                </div>
-              </div>
+              <!-- Testimonial text -->
+              <p
+                class="mt-2 text-sm before:content-[open-quote] after:content-[close-quote]"
+              >
+                {{ testimonial.testimonial }}
+              </p>
             </div>
-
-            <!-- Testimonial text -->
-            <p
-              class="mt-2 text-sm before:content-[open-quote] after:content-[close-quote]"
-            >
-              {{ testimonial.testimonial }}
-            </p>
-          </div>
-        </template>
-      </UPageCard>
-    </UPageColumns>
+          </template>
+        </UPageCard>
+      </UPageColumns>
+    </UPageSection>
   </UMain>
 </template>
