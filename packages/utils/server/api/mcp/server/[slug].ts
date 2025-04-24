@@ -29,6 +29,8 @@ export default defineEventHandler(async (event) => {
         forks: mcpServerCache.forks,
         topics: mcpServerCache.topics,
         languages: mcpServerCache.languages,
+        categories: mcpServerCache.categories,
+        serplyLink: mcpServerCache.serplyLink,
         repoCreatedAt: mcpServerCache.repoCreatedAt,
         repoUpdatedAt: mcpServerCache.repoUpdatedAt
       })

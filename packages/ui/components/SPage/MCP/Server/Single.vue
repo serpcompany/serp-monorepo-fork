@@ -21,17 +21,42 @@
     comments: Comment[];
   };
 
-  const showReadme = ref(false);
+  const showReadme = ref(true);
 
   const sections = computed(() => {
     const s = ['Overview'];
     if (data.contributors?.length) s.push('Contributors');
-    if (data.tags?.length) s.push('Tags');
+    if (data.categories?.length) s.push('Categories');
     if (data.topics?.length) s.push('Topics');
-    if (data.languages?.length) s.push('Languages');
+    if (data.tags?.length) s.push('Tags');
+    if (data.languages) s.push('Languages');
     if (data.readme) s.push('Readme');
     s.push('Discussion');
     return s;
+  });
+
+  const languageCounts = computed<Record<string, number>>(
+    () => data.languages || {}
+  );
+  const totalLines = computed(() =>
+    Object.values(languageCounts.value).reduce((sum, n) => sum + n, 0)
+  );
+  const languagesChartData = computed(() => {
+    // grab [name, count] entries and sort ascending by count
+    const entries = Object.entries(languageCounts.value).sort(
+      ([, a], [, b]) => a - b
+    );
+
+    return entries.map(([name, count], i) => {
+      const pct = (count / totalLines.value) * 100;
+      const hue = (i / entries.length) * 360;
+      return {
+        name,
+        count,
+        percent: pct,
+        color: `hsl(${hue}, 70%, 50%)`
+      };
+    });
   });
 
   useSeoMeta({
@@ -45,6 +70,7 @@
       :name="`${data.owner}/${data.repo}`"
       :one-liner="data.description"
       :sections="sections"
+      :serply-link="data.serplyLink || data.url"
       class="bg-background sticky top-0 z-50"
     >
       <template #upvote>
@@ -72,11 +98,6 @@
         <UDivider class="my-0" />
         <div class="mt-4 space-y-4">
           <p class="text-gray-700 dark:text-gray-300">{{ data.description }}</p>
-          <div class="flex flex-wrap gap-2">
-            <NuxtLink :href="data.url" target="_blank" class="underline">
-              View on GitHub
-            </NuxtLink>
-          </div>
         </div>
       </UCard>
 
@@ -98,6 +119,22 @@
         </ul>
       </UCard>
 
+      <!-- Categories -->
+      <UCard
+        v-if="data.categories?.length"
+        id="categories"
+        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        :ui="{ body: { padding: 'p-4 sm:p-6' } }"
+      >
+        <template #header>
+          <h2 class="text-xl font-semibold">Categories</h2>
+        </template>
+        <UDivider class="my-0" />
+        <div class="mt-4 flex flex-wrap gap-2">
+          <SPill base-slug="mcp/servers/category" :items="data.categories" />
+        </div>
+      </UCard>
+
       <!-- Tags -->
       <UCard
         v-if="data.tags?.length"
@@ -110,12 +147,13 @@
         </template>
         <UDivider class="my-0" />
         <div class="mt-4 flex flex-wrap gap-2">
-          <SPill
-            base-slug="mcp/servers/tag"
-            :items="
-              data.tags.map((t) => ({ name: t, slug: encodeURIComponent(t) }))
-            "
-          />
+          <span
+            v-for="tag in data.tags"
+            :key="tag"
+            class="inline-flex rounded-full bg-[var(--ui-color-secondary-50)] px-3 py-1 text-xs font-medium text-[var(--ui-color-secondary-700)] dark:bg-[var(--ui-color-secondary-900)]/30 dark:text-[var(--ui-color-secondary-200)]"
+          >
+            {{ tag }}
+          </span>
         </div>
       </UCard>
 
@@ -131,18 +169,19 @@
         </template>
         <UDivider class="my-0" />
         <div class="mt-4 flex flex-wrap gap-2">
-          <SPill
-            base-slug="mcp/servers/topic"
-            :items="
-              data.topics.map((t) => ({ name: t, slug: encodeURIComponent(t) }))
-            "
-          />
+          <span
+            v-for="topic in data.topics"
+            :key="topic"
+            class="inline-flex rounded-full bg-[var(--ui-color-primary-50)] px-3 py-1 text-xs font-medium text-[var(--ui-color-primary-700)] dark:bg-[var(--ui-color-primary-900)]/30 dark:text-[var(--ui-color-primary-200)]"
+          >
+            {{ topic }}
+          </span>
         </div>
       </UCard>
 
       <!-- Languages -->
       <UCard
-        v-if="data.languages?.length"
+        v-if="data.languages"
         id="languages"
         class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
@@ -150,9 +189,40 @@
         <template #header>
           <h2 class="text-xl font-semibold">Languages</h2>
         </template>
+
         <UDivider class="my-0" />
-        <div class="mt-4 flex flex-wrap gap-2">
-          <SPill :items="data.languages.map((l) => ({ label: l }))" />
+
+        <div class="mt-4 space-y-6">
+          <!-- BAR CHART -->
+          <div>
+            <div
+              class="flex h-4 w-full overflow-hidden rounded bg-gray-200 dark:bg-gray-700"
+            >
+              <div
+                v-for="lang in languagesChartData"
+                :key="lang.name"
+                class="h-full"
+                :style="{
+                  width: `${lang.percent}%`,
+                  backgroundColor: lang.color
+                }"
+                :title="`${lang.name}: ${lang.percent.toFixed(1)}%`"
+              ></div>
+            </div>
+            <div class="mt-2 flex flex-wrap gap-4 text-sm">
+              <div
+                v-for="lang in languagesChartData"
+                :key="lang.name"
+                class="flex items-center space-x-1"
+              >
+                <span
+                  class="block h-3 w-3 rounded"
+                  :style="{ backgroundColor: lang.color }"
+                ></span>
+                <span>{{ lang.name }} ({{ lang.percent.toFixed(1) }}%)</span>
+              </div>
+            </div>
+          </div>
         </div>
       </UCard>
 

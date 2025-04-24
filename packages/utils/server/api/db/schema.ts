@@ -179,8 +179,24 @@ export const mcpServerCache = cacheSchema.table('mcp_server_cache', {
   languages: jsonb('languages'),
   repoCreatedAt: timestamp('repo_created_at', { withTimezone: true }),
   repoUpdatedAt: timestamp('repo_updated_at', { withTimezone: true }),
-  upvotes: text('upvotes').array()
+  upvotes: text('upvotes').array(),
+  categories: jsonb('categories'),
+  serplyLink: text('serply_link')
 });
+
+export const mcpServerCategoryCache = cacheSchema.table(
+  'mcp_server_category_cache',
+  {
+    updatedAt: timestamp('updated_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    id: serial('id').primaryKey(),
+    name: varchar('name', { length: 255 }).notNull(),
+    slug: varchar('slug', { length: 255 }).notNull(),
+    buyersGuide: text('buyers_guide'),
+    faqs: jsonb('faqs')
+  }
+);
 
 // Company
 export const companyCache = cacheSchema.table('company_cache', {

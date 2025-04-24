@@ -14,6 +14,8 @@ export type MCPServer = {
   languages: string[];
   repoCreatedAt: string;
   repoUpdatedAt: string;
+  categories: Category[];
+  serplyLink: string;
 };
 
 export type MCPServerIndex = {
@@ -31,11 +33,12 @@ export type MCPServerIndex = {
   languages: string[];
   repoCreatedAt: string;
   repoUpdatedAt: string;
+  categories: Category[];
+  serplyLink: string;
 };
 
 export type MCPServers = {
   servers: MCPServerIndex[];
   pagination: Pagination;
-  categoryArticle?: string;
-  categoryName?: string;
+  category: Category;
 };

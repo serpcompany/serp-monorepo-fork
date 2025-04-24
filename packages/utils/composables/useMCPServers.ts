@@ -5,9 +5,10 @@ export const useMCPServers = async (
   limit = 50,
   tag = '',
   topic = '',
-  owner = ''
+  owner = '',
+  categorySlug = ''
 ) => {
   return useFetchWithCache<MCPServers>(
-    `/mcp/servers?page=${page}&limit=${limit}&tag=${tag}&topic=${topic}&owner=${owner}`
+    `/mcp/servers?page=${page}&limit=${limit}&tag=${tag}&topic=${topic}&owner=${owner}&categorySlug=${categorySlug}`
   );
 };
