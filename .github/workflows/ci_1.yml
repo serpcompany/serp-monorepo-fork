@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [lambda-Scalar01]
+        os: [self-hosted]
         node: [18]
 
     steps:
