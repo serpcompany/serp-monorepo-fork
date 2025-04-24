@@ -5,7 +5,7 @@
   const appConfig = useAppConfig();
 
   const companyName = config.public.siteName;
-  // Use socialLinks from app config instead of runtime config
+
   const socialLinks =
     appConfig.site?.socialLinks ||
     (config.public.socialLinks as Array<{
@@ -13,19 +13,18 @@
       href: string;
       icon: string;
     }>);
-  // Use legalLinks from app config instead of runtime config
+
   const legalLinks =
     appConfig.site?.legalLinks ||
     (config.public.legalLinks as Array<{
       text: string;
       slug: string;
     }>);
-  // Use footerColumns from app config instead of runtime config
+
   const footerColumns =
     appConfig.site?.footerColumns ||
     (config.public.footerColumns as FooterColumn[]);
 
-  // Transform footerColumns to the format expected by UFooterColumns
   const footerColumnsData = computed(() => {
     const columns = footerColumns;
     return columns.map((column) => ({
@@ -56,8 +55,7 @@
             class="footer-columns-large"
             :ui="{
               link: 'text-primary-100  hover:text-primary-200 dark:text-primary-100 dark:hover:text-primary-200',
-              label:
-                'text-primary-100 hover:text-primary-200 text-xl dark:text-primary-100 dark:hover:text-primary-200'
+              label: 'text-primary-100 text-xl dark:text-primary-100'
             }"
           >
             <!-- Left section with newsletter -->
@@ -73,13 +71,7 @@
                 <p class="text-primary-100 dark:text-primary-100">
                   Join a trillion readers and stay ahead of the curve.
                 </p>
-                <UButton
-                  type="submit"
-                  size="xl"
-                  variant="outline"
-                  label="Subscribe"
-                  class="text-primary-100 ring-primary-100 my-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-lg font-semibold ring transition-colors ring-inset hover:bg-(--ui-primary)/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:bg-transparent disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:bg-transparent aria-disabled:opacity-75 dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
-                />
+                <NewsletterSignup />
               </div>
             </template>
           </UFooterColumns>

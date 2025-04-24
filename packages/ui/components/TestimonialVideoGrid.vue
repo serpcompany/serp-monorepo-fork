@@ -26,7 +26,11 @@
         <div class="relative aspect-video w-full overflow-hidden">
           <ScriptYouTubePlayer
             :video-id="video.videoId"
-            :player-vars="{ autoplay: 0, playsinline: 1 }"
+            :player-vars="{
+              autoplay: 0,
+              playsinline: 1,
+              modestbranding: 1
+            }"
             :width="640"
             thumbnail-size="maxresdefault"
             :height="360"
