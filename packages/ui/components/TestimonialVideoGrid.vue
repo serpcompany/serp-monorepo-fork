@@ -24,8 +24,7 @@
         class="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
       >
         <div class="relative aspect-video w-full overflow-hidden">
-          <LazyScriptYouTubePlayer
-            trigger="hover"
+          <ScriptYouTubePlayer
             :video-id="video.videoId"
             :player-vars="{ autoplay: 0, playsinline: 1 }"
             :width="640"
