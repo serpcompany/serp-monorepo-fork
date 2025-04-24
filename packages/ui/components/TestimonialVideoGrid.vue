@@ -25,9 +25,11 @@ defineProps<{
       >
         <div class="relative aspect-video w-full overflow-hidden">
           <LazyScriptYouTubePlayer
+            trigger="hover"
             :video-id="video.videoId"
             :player-vars="{ autoplay: 0, playsinline: 1 }"
             :width="640"
+            thumbnail-size="maxresdefault"
             :height="360"
             class="absolute h-full w-full object-cover"
             :player-options="{ host: 'https://www.youtube.com' }"
