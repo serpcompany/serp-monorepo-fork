@@ -45,8 +45,7 @@
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 class="text-blue-600 hover:underline dark:text-blue-400"
-              >
-              </LazyNuxtLink>
+              />
             </div>
           </div>
         </div>
