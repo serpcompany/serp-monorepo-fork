@@ -4,5 +4,6 @@
   "trailingComma": "none",
   "vueIndentScriptAndStyle": true,
   "plugins": ["prettier-plugin-packagejson", "prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["cn", "clsx", "twMerge"]
+  "tailwindFunctions": ["cn", "clsx", "twMerge"],
+  "htmlWhitespaceSensitivity": "css"
 }
