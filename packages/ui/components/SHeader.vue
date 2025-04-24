@@ -1,6 +1,10 @@
 <script setup lang="ts">
   const config = useRuntimeConfig();
-  const headerNavItems = config.public.headerNavItems;
+  const appConfig = useAppConfig();
+
+  // Use headerNavItems from app config with fallback to runtime config
+  const headerNavItems =
+    appConfig.site?.headerNavItems || config.public.headerNavItems;
   const useAuth = config.public.useAuth;
 
   const mobileMenuOpen = ref(false);

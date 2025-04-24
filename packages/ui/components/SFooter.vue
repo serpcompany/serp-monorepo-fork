@@ -2,25 +2,37 @@
   import type { FooterColumn } from '@serp/types/types';
 
   const config = useRuntimeConfig();
+  const appConfig = useAppConfig();
+
   const companyName = config.public.siteName;
-  const socialLinks = config.public.socialLinks as Array<{
-    name: string;
-    href: string;
-    icon: string;
-  }>;
-  const legalLinks = config.public.legalLinks as Array<{
-    text: string;
-    slug: string;
-  }>;
+  // Use socialLinks from app config instead of runtime config
+  const socialLinks =
+    appConfig.site?.socialLinks ||
+    (config.public.socialLinks as Array<{
+      name: string;
+      href: string;
+      icon: string;
+    }>);
+  // Use legalLinks from app config instead of runtime config
+  const legalLinks =
+    appConfig.site?.legalLinks ||
+    (config.public.legalLinks as Array<{
+      text: string;
+      slug: string;
+    }>);
+  // Use footerColumns from app config instead of runtime config
+  const footerColumns =
+    appConfig.site?.footerColumns ||
+    (config.public.footerColumns as FooterColumn[]);
 
   // Transform footerColumns to the format expected by UFooterColumns
   const footerColumnsData = computed(() => {
-    const columns = config.public.footerColumns as FooterColumn[];
+    const columns = footerColumns;
     return columns.map((column) => ({
       label: column.title,
       children: column.items.map((item) => ({
-        label: item.text,
-        to: item.slug
+        label: item.text || item.name,
+        to: item.slug || item.href
       }))
     }));
   });
