@@ -16,7 +16,7 @@ exports[`SPageArtistSingle Snapshot > renders complete artist with upvotes and a
           <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
               <!--v-if--><span class="text-xl">👍</span><span>Upvotes 1</span>
               <!--v-if-->
-            </button></div><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+            </button></div><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
             <!--v-if-->
           </a>
         </div>
@@ -123,7 +123,7 @@ exports[`SPageArtistSingle Snapshot > renders complete artist with upvotes and a
             <div class="font-medium">Listen On</div>
           </div>
           <div class="p-4 sm:p-6">
-            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
+            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
                 <!--v-if--> Amazon Music
                 <!--v-if-->
               </a></div>
@@ -148,7 +148,7 @@ exports[`SPageArtistSingle Snapshot > renders minimal artist without upvotes and
             <div class="truncate text-sm text-gray-500 dark:text-gray-400"></div>
           </div>
         </div>
-        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
+        <div class="flex w-full flex-shrink-0 items-center justify-end gap-3 sm:w-auto"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" target="_blank" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-xs gap-1.5 w-full sm:w-auto"><span class="iconify i-heroicons:arrow-top-right-on-square shrink-0 size-4" aria-hidden="true"></span><span class="truncate">Listen Free</span>
             <!--v-if-->
           </a></div>
       </div>
@@ -222,7 +222,7 @@ exports[`SPageArtistSingle Snapshot > renders minimal artist without upvotes and
             <div class="font-medium">Listen On</div>
           </div>
           <div class="p-4 sm:p-6">
-            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-none font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
+            <div class="p-1"><a href="https://serp.ly/@daftfm/amazon/music/unlimited" rel="noopener noreferrer" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 w-full justify-center text-(--ui-primary) focus-visible:bg-(--ui-primary)/15 disabled:bg-(--ui-primary)/10 aria-disabled:bg-(--ui-primary)/10 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30">
                 <!--v-if--> Amazon Music
                 <!--v-if-->
               </a></div>
