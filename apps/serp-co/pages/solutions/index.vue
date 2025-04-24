@@ -915,74 +915,78 @@
 </script>
 
 <template>
-  <div>
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <!-- Hero Section -->
-      <div class="text-center">
-        <h1
-          class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl dark:text-white"
-        >
-          SERP Solutions
-        </h1>
-        <p
-          class="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl dark:text-gray-400"
-        >
-          Growth & Automation solutions that help brands succeed online.
-        </p>
-      </div>
+  <UMain>
+    <UPageHero
+      title="SERP Solutions"
+      description="Growth & Automation solutions that help brands succeed online."
+      orientation="vertical"
+    />
 
-      <!-- Video Testimonials Section -->
-      <div class="mt-16">
-        <TestimonialVideoGrid :videos="testimonialVideoData" />
-      </div>
+    <!-- Testimonial Videos Section -->
+    <TestimonialVideoGrid :videos="testimonialVideoData" />
 
-      <!-- Text Testimonials Section -->
-      <div class="mt-16">
-        <h2 class="mb-8 text-center text-2xl font-bold">
-          What Our Clients Say
-        </h2>
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div
-            v-for="(testimonial, index) in testimonials"
-            :key="index"
-            class="flex flex-col rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
-          >
+    <UPageColumns>
+      <UPageCard
+        v-for="(testimonial, index) in testimonials"
+        :key="index"
+        variant="subtle"
+      >
+        <template #default>
+          <div class="flex flex-col">
             <!-- Testimonial header with avatar and user info -->
-            <div class="mb-4 flex items-center">
-              <div class="mr-3 h-12 w-12 overflow-hidden rounded-full">
-                <img
-                  v-if="testimonial.personAvatar"
-                  :src="testimonial.personAvatar"
+            <div class="mb-4">
+              <!-- On mobile: Stack everything -->
+              <div class="flex flex-col lg:hidden">
+                <UAvatar
+                  :name="testimonial.personName"
+                  :src="testimonial.personAvatar || undefined"
                   :alt="testimonial.personName"
-                  class="h-full w-full object-cover"
+                  class="mb-2 h-12 w-12"
                 />
-                <div
-                  v-else
-                  class="flex h-full w-full items-center justify-center bg-blue-100 text-blue-500 dark:bg-blue-900"
-                >
-                  {{ testimonial.personName.charAt(0) }}
+                <div>
+                  <p class="font-medium">{{ testimonial.personName }}</p>
+                  <p
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    {{ testimonial.businessName }}
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    {{ testimonial.positionAtCompany }}
+                  </p>
                 </div>
               </div>
-              <div>
-                <p class="font-medium text-gray-900 dark:text-white">
-                  {{ testimonial.personName }}
-                </p>
-                <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  {{ testimonial.businessName }}
-                </p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">
-                  {{ testimonial.positionAtCompany }}
-                </p>
+
+              <!-- On large screens: Avatar | Name with business and position stacked under name -->
+              <div class="hidden lg:flex">
+                <UAvatar
+                  :name="testimonial.personName"
+                  :src="testimonial.personAvatar || undefined"
+                  :alt="testimonial.personName"
+                  class="mr-4 h-12 w-12"
+                />
+                <div>
+                  <p class="font-medium">{{ testimonial.personName }}</p>
+                  <p
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    {{ testimonial.businessName }}
+                  </p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                    {{ testimonial.positionAtCompany }}
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Testimonial text -->
-            <p class="mt-2 flex-grow text-sm text-gray-600 dark:text-gray-300">
-              "{{ testimonial.testimonial }}"
+            <p
+              class="mt-2 text-sm before:content-[open-quote] after:content-[close-quote]"
+            >
+              {{ testimonial.testimonial }}
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </template>
+      </UPageCard>
+    </UPageColumns>
+  </UMain>
 </template>
