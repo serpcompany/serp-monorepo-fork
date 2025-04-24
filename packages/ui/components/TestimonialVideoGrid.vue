@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  defineProps<{
-    videos: {
-      personName: string;
-      businessName: string;
-      businessWebsite: string;
-      positionAtCompany: string;
-      videoId: string;
-    }[];
-  }>();
+defineProps<{
+  videos: {
+    personName: string;
+    businessName: string;
+    businessWebsite: string;
+    positionAtCompany: string;
+    videoId: string;
+  }[];
+}>();
 </script>
 
 <template>
@@ -30,6 +30,7 @@
             :width="640"
             :height="360"
             class="absolute h-full w-full object-cover"
+            :player-options="{ host: 'https://www.youtube.com' }"
           />
         </div>
 
