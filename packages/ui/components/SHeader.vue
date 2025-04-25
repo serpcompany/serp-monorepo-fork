@@ -3,20 +3,40 @@
   const appConfig = useAppConfig();
   const router = useRouter();
 
-  const submitYourX = ref([
-    { label: 'Company', to: '/users/submit/company/', color: 'primary' },
-    { label: 'Software', to: '/users/submit/software/', color: 'primary' },
-    { label: 'MCP Server', to: '/users/submit/mcp-server/', color: 'primary' },
-    { label: 'Product', to: '/users/submit/product/', color: 'primary' }
-  ]);
+  const submitOptions_ =
+    appConfig.site?.submitOptions ||
+    (config.public.submitOptions as Array<{
+      label: string;
+      to: string;
+    }>);
+
+  const submitOptions = submitOptions_.map((item) => ({
+    label: item.label,
+    onSelect(e: Event) {
+      e.preventDefault();
+      handleSubmitOptionSelect(item);
+    }
+  }));
+
+  const { loggedIn, user, clear } = useUserSession();
 
   // Set a default selected item display text
   const addYourText = ref('Add your');
 
-  // Function to handle selection changes and navigation
+  const toast = useToast();
+
   const handleSubmitOptionSelect = (item) => {
-    // Navigate programmatically to prevent conflicts
-    router.push(item.to);
+    if (!loggedIn.value) {
+      toast.add({
+        id: 'login-err',
+        title: 'Login Error',
+        color: 'error',
+        description: 'You must login to make a submission.',
+        icon: 'exclamation-circle'
+      });
+    } else {
+      router.push(item.to);
+    }
   };
 
   // Use headerNavItems from app config with fallback to runtime config
@@ -94,14 +114,15 @@
             </svg>
           </button>
         </div>
-        <!-- Desktop color mode & profile -->
+
         <div class="hidden items-center space-x-8 lg:flex">
+          <!-- ADD YOUR ... DROPDOWN -->
           <UDropdownMenu
-            :items="submitYourX"
+            v-if="submitOptions.length > 0"
+            :items="submitOptions"
             class="w-32"
             :content="{ side: 'bottom', sideOffset: 8 }"
             arrow
-            @select="handleSubmitOptionSelect"
             :ui="{
               base: 'inline-flex flex-col',
               trigger: 'w-full',
@@ -110,6 +131,7 @@
                 'bg-white dark:bg-gray-800 rounded-md p-1 shadow-lg border border-neutral-200 dark:border-gray-700',
               arrow: 'fill-white dark:fill-gray-800'
             }"
+            @select="handleSubmitOptionSelect"
           >
             <UButton
               class="text-primary inline-flex w-32 items-center justify-between rounded-md border border-neutral-200 bg-white px-3 py-2 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"

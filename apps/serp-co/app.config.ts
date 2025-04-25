@@ -123,6 +123,12 @@ export default defineAppConfig({
         label: 'Blog',
         children: [{ label: 'Posts', to: '/posts/' }]
       }
+    ],
+    submitOptions: [
+      { label: 'Company', to: '/users/submit/company/' },
+      { label: 'Software', to: '/users/submit/software/' },
+      { label: 'Product', to: '/users/submit/product/' },
+      { label: 'MCP Server', to: '/users/submit/mcp-server/' }
     ]
   }
 });
