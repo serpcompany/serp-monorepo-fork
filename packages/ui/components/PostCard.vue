@@ -60,11 +60,13 @@
       </p>
 
       <div v-if="post.author" class="mb-4">
-        <span v-if="post.createdAt" class="mr-1 text-sm">{{
+        <span v-if="post.createdAt" class="mr-1 text-sm font-medium">{{
           formattedDate
         }}</span>
         <span>–</span>
-        <span class="ml-1 text-sm">{{ post.author.toUpperCase() }}</span>
+        <span class="ml-1 text-sm font-medium">{{
+          post.author.toUpperCase()
+        }}</span>
       </div>
       <SPill
         v-if="post.categories && post.categories.length"

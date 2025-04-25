@@ -16,11 +16,7 @@
     "lint": "prettier . --write --log-level warn && eslint . --fix",
     "prettier": "prettier . --write --log-level warn",
     "preview": "nuxt preview",
-    "server": "node .output/server/index.mjs",
-    "pretest": "vitest --coverage --run",
-    "test": "vitest --coverage --run",
-    "test:update": "vitest --run --coverage --update",
-    "test:watch": "vitest --coverage"
+    "server": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "@bg-dev/nuxt-s3": "2.0.2",
