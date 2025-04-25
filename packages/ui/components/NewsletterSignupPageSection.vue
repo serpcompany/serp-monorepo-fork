@@ -7,9 +7,9 @@
     <div class="flex justify-center">
       <!-- For white background -->
       <NewsletterSignup
-        buttonBackground="white"
-        buttonTextColor="neutral-800"
-        buttonBorderColor="neutral-400"
+        button-background="white"
+        button-text-color="neutral-800"
+        button-border-color="neutral-400"
       />
     </div>
   </UPageSection>
