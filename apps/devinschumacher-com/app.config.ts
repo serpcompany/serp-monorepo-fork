@@ -14,7 +14,7 @@ export default defineAppConfig({
         ]
       },
       {
-        title: 'MCP Severs',
+        title: 'MCP Servers',
         id: 2,
         slug: '/mcp/servers/',
         items: [
