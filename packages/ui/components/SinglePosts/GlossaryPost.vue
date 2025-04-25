@@ -3,7 +3,6 @@
 
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
-  const forCloudflare = config.public.forCloudflare;
 
   const isLoaded = ref(false);
   const isPlaying = ref(false);
@@ -13,11 +12,11 @@
     data: Post;
   }>();
 
-  let comments = props.data.comments || [];
-  if (!forCloudflare) {
-    const commentsData = await usePostComments(props.data.id);
-    comments = commentsData.comments;
-  }
+  const data = toRef(props, 'data');
+
+  let comments = data.value.comments || [];
+  const commentsData = await usePostComments(data.value.id);
+  comments = commentsData.comments;
 
   function stateChange(event: { data: number }) {
     isPlaying.value = event.data === 1;
@@ -80,7 +79,7 @@
         <div v-if="useAuth" class="mt-10">
           <h2 class="mb-6 text-3xl font-bold">Comments</h2>
           <CommentsContainer
-            :id="forCloudflare ? data.slug : data.id"
+            :id="data.id"
             module="posts"
             :comments="comments || []"
             class="comments-github-style"

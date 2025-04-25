@@ -32,7 +32,7 @@
         return;
       }
       newsletterLoading.value = true;
-      const { data: res } = await useFetch('/api/mcp/newsletter/subscribe', {
+      const { data: res } = await useFetch('/api/newsletter/subscribe', {
         method: 'POST',
         body: {
           email: newsletterEmail.value

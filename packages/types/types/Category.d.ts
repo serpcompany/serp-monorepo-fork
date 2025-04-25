@@ -5,4 +5,5 @@ export type Category = {
   buyersGuide?: string;
   faqs?: string;
   description?: string;
+  icon?: string;
 };

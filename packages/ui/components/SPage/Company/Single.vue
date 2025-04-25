@@ -112,6 +112,7 @@
         <CompanyVerificationButton
           v-if="useAuth"
           :id="data.id"
+          :domain="data.slug"
           :is-verified-prop="data.verified"
         />
         <UpvoteButton
