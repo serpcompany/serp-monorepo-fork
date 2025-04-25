@@ -76,7 +76,7 @@
             :ui="{
               link: 'group relative w-full flex items-center gap-1.5 font-medium text-sm before:absolute before:z-[-1] before:rounded-md focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 text-primary',
               viewport:
-                'relative overflow-hidden bg-default shadow-lg rounded-md ring ring-default h-(--reka-navigation-menu-viewport-height) w-full transition-[width,height,left] duration-200 origin-[top_center] data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in] z-[100]',
+                'relative overflow-hidden bg-default rounded-md ring ring-default h-(--reka-navigation-menu-viewport-height) w-full transition-[width,height,left] duration-200 origin-[top_center] data-[state=open]:animate-[scale-in_100ms_ease-out] data-[state=closed]:animate-[scale-out_100ms_ease-in] z-[100]',
               childList:
                 'flex flex-col bg-white dark:bg-gray-800 justify-center',
               childLink:
@@ -115,7 +115,7 @@
           </button>
         </div>
 
-        <div class="hidden items-center space-x-8 lg:flex">
+        <div class="hidden items-center space-x-4 lg:flex">
           <!-- ADD YOUR ... DROPDOWN -->
           <UDropdownMenu
             v-if="submitOptions.length > 0"
@@ -128,13 +128,13 @@
               trigger: 'w-full',
               item: 'text-primary px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200',
               content:
-                'bg-white dark:bg-gray-800 rounded-md p-1 shadow-lg border border-neutral-200 dark:border-gray-700',
+                'dark:bg-gray-800 rounded-md p-1 shadow-lg border border-neutral-300 dark:border-gray-700',
               arrow: 'fill-white dark:fill-gray-800'
             }"
             @select="handleSubmitOptionSelect"
           >
             <UButton
-              class="text-primary inline-flex w-32 items-center justify-between rounded-md border border-neutral-200 bg-white px-3 py-2 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              class="text-primary inline-flex w-40 items-center justify-between rounded-md border border-neutral-300 bg-white px-3 py-2 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <span class="text-sm">{{ addYourText }}</span>
               <svg
@@ -154,7 +154,8 @@
             </UButton>
           </UDropdownMenu>
           <UColorModeButton
-            class="rounded-full border border-neutral-200 p-2"
+            v-if="loggedIn"
+            class="rounded-full border border-neutral-300 p-2"
           />
           <ProfileDropdown v-if="useAuth" />
         </div>
@@ -171,7 +172,7 @@
           class="w-full"
           :content="{ align: 'center', side: 'bottom', sideOffset: 8 }"
         />
-        <div v-if="useAuth" class="mt-4 border-t border-neutral-200 pt-4">
+        <div v-if="useAuth" class="mt-4 border-t border-neutral-300 pt-4">
           <ProfileDropdown />
         </div>
       </div>
