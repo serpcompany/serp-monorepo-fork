@@ -24,33 +24,61 @@
     }
     return props.post.title;
   });
+
+  const formattedDate = computed(() => {
+    if (!props.post.createdAt) return '';
+
+    const date = new Date(props.post.createdAt);
+    const month = date
+      .toLocaleString('en-US', { month: 'short' })
+      .toUpperCase();
+    const day = date.getDate().toString().padStart(2, '0');
+    const year = date.getFullYear();
+
+    return `${month} ${day} ${year}`;
+  });
 </script>
 
 <template>
-  <article :class="articleClass">
-    <NuxtLink :to="`/${baseSlug}${post.slug}/`">
-      <LazyNuxtImg
-        v-if="post.featuredImage"
-        :src="post.featuredImage"
-        :alt="displayTitle"
-        class="mb-6 h-64 w-full object-cover"
+  <article :class="[articleClass, 'grid grid-cols-1 gap-6 lg:grid-cols-10']">
+    <div class="lg:col-span-6">
+      <NuxtLink :to="`/${baseSlug}${post.slug}/`">
+        <LazyNuxtImg
+          v-if="post.featuredImage"
+          :src="post.featuredImage"
+          :alt="displayTitle"
+          class="mb-6 h-64 w-full object-cover"
+        />
+        <!-- Title -->
+        <h2 class="mb-4 text-4xl font-extrabold hover:underline">
+          {{ displayTitle }}
+        </h2>
+      </NuxtLink>
+
+      <p class="mb-4 text-xl">
+        <span>{{
+          post.excerpt ||
+          'Anim esse nulla exercitation eu aliquip dolore est nostrud in quis. Voluptate eiusmod nisi aute duis ad enim fugiat. Amet eu exercitation elit commodo minim ullamco amet. Tempor consectetur voluptate anim quis minim adipisicing sit fugiat veniam.'
+        }}</span>
+      </p>
+
+      <div v-if="post.author" class="mb-4">
+        <span v-if="post.createdAt" class="mr-1 text-sm">{{
+          formattedDate
+        }}</span>
+        <span>–</span>
+        <span class="ml-1 text-sm">{{ post.author.toUpperCase() }}</span>
+      </div>
+      <SPill
+        v-if="post.categories && post.categories.length"
+        :base-slug="`${baseSlug}category`"
+        :items="post.categories"
+        class="mt-4"
       />
-      <!-- Title -->
-      <h2 class="mb-2 text-xl font-medium hover:underline">
-        {{ displayTitle }}
-      </h2>
-    </NuxtLink>
+    </div>
 
-    <p v-if="post.author" class="mb-2 italic">
-      <span>By {{ post.author }}</span
-      ><span v-if="post.createdAt"> | {{ post.createdAt }}</span>
-    </p>
-    <p v-if="post.excerpt" class="mb-8">{{ post.excerpt }}</p>
-
-    <SPill
-      v-if="post.categories && post.categories.length"
-      :base-slug="`${baseSlug}category`"
-      :items="post.categories"
-    />
+    <div class="lg:col-span-3 lg:col-start-8">
+      <!-- Right column (30%) -->
+    </div>
   </article>
 </template>

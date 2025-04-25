@@ -50,9 +50,10 @@
 </script>
 
 <template>
-  <div>
-    <SectionHeroOne :title="props.moduleTitle || 'Posts'" />
-
+  <UContainer>
+    <UPageSection>
+      <SectionHeroOne :title="props.moduleTitle || 'Posts'" />
+    </UPageSection>
     <div class="pb-20">
       <!-- rows:  posts -->
       <div
@@ -86,5 +87,5 @@
       />
     </div>
     <NewsletterSignupPageSection />
-  </div>
+  </UContainer>
 </template>
