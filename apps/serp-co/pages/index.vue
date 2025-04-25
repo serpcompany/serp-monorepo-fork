@@ -174,8 +174,9 @@
         :categories="categories"
         headline="Categories"
         base-slug="products/best"
-        class="mt-20"
+        class="my-20"
       />
+      <NewsletterSignupPageSection />
     </UMain>
   </UPage>
 </template>
