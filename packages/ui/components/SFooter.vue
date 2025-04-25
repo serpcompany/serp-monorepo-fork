@@ -66,7 +66,7 @@
                   >{{ companyName }}</span
                 >
                 <p class="text-primary-100 dark:text-primary-100 font-bold">
-                  Subscribe to our newsletter.
+                  Subscribe to the newsletter.
                 </p>
                 <p class="text-primary-100 dark:text-primary-100">
                   Join a trillion readers and stay ahead of the curve.

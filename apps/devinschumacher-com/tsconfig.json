@@ -1,0 +1,3 @@
+{
+  "extends": ["@serp/configs/tsconfig", "./.nuxt/tsconfig.json"]
+}

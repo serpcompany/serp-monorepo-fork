@@ -77,7 +77,7 @@
   <UModal v-model:open="showNewsletterModal" :title="'Newsletter'">
     <template #header>
       <h2 class="text-lg font-semibold text-gray-900 dark:text-neutral-300">
-        Subscribe to our Newsletter
+        Subscribe to the newsletter
       </h2>
     </template>
     <template #body>
