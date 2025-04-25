@@ -121,7 +121,10 @@ export default defineAppConfig({
       },
       {
         label: 'Blog',
-        children: [{ label: 'Posts', to: '/posts/' }]
+        children: [
+          { label: 'Blog', to: '/blog/' },
+          { label: 'Posts', to: '/posts/' }
+        ]
       }
     ],
     submitOptions: [
