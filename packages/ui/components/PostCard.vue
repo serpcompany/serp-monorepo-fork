@@ -56,10 +56,7 @@
       </NuxtLink>
 
       <p class="mb-4 text-xl">
-        <span>{{
-          post.excerpt ||
-          'Anim esse nulla exercitation eu aliquip dolore est nostrud in quis. Voluptate eiusmod nisi aute duis ad enim fugiat. Amet eu exercitation elit commodo minim ullamco amet. Tempor consectetur voluptate anim quis minim adipisicing sit fugiat veniam.'
-        }}</span>
+        <span>{{ post.excerpt }}</span>
       </p>
 
       <div v-if="post.author" class="mb-4">
