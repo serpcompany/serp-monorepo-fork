@@ -43,7 +43,7 @@ export default defineNuxtConfig({
       paths: {
         '@/*': ['src/*']
       },
-      types: ['vitest/globals', '']
+      types: ['vitest/globals']
     }
   },
   runtimeConfig: {
