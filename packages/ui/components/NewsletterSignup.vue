@@ -1,4 +1,20 @@
 <script setup lang="ts">
+  defineProps({
+    // Color options for the signup button
+    buttonBackground: {
+      type: String,
+      default: 'transparent'
+    },
+    buttonTextColor: {
+      type: String,
+      default: 'neutral-300'
+    },
+    buttonBorderColor: {
+      type: String,
+      default: 'neutral-700'
+    }
+  });
+
   const newsletterLoading = ref(false);
   const newsletterEmail = ref('');
   const toast = useToast();
@@ -53,22 +69,20 @@
 <template>
   <UButton
     size="xl"
-    variant="outline"
     label="Subscribe"
-    class="text-primary-100 ring-primary-100 my-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-lg font-semibold ring transition-colors ring-inset hover:bg-(--ui-primary)/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:bg-transparent disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:bg-transparent aria-disabled:opacity-75 dark:disabled:bg-transparent dark:aria-disabled:bg-transparent"
+    color="primary"
+    :class="`my-4 inline-flex items-center gap-2 rounded-md border border-${buttonBorderColor} bg-${buttonBackground} px-8 py-3 text-lg font-semibold text-${buttonTextColor} hover:bg-opacity-90 transition-colors hover:bg-${buttonBackground === 'white' ? 'gray-100' : 'neutral-800'} focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75`"
     @click="showNewsletterModal = true"
   />
   <UModal v-model:open="showNewsletterModal" :title="'Newsletter'">
     <template #header>
-      <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+      <h2 class="text-lg font-semibold text-gray-900 dark:text-neutral-300">
         Subscribe to our Newsletter
       </h2>
     </template>
     <template #body>
       <form class="mx-auto max-w-5xl" @submit.prevent="subscribeToNewsletter">
-        <div
-          class="flex flex-col items-center justify-between gap-4 sm:flex-row"
-        >
+        <div class="flex flex-col items-center justify-center gap-4">
           <div class="flex w-full max-w-sm">
             <UInput
               v-model="newsletterEmail"

@@ -71,9 +71,9 @@
         v-if="categories && categories.length"
         :categories="categories"
         headline="Categories"
-        class="mt-20"
         base-slug="products/best"
       />
+      <NewsletterSignupPageSection />
     </main>
   </div>
 </template>

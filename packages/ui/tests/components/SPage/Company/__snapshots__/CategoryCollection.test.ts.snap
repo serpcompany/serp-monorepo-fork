@@ -126,7 +126,7 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders with complete data co
             <!--v-if-->
           </button></div>
       </nav>
-      <section class="mt-20">
+      <section class="my-30 mt-20">
         <div class="mx-auto">
           <div class="pt-12">
             <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -187,7 +187,7 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders with empty companies 
             <!--v-if-->
           </button></div>
       </nav>
-      <section class="mt-20">
+      <section class="my-30 mt-20">
         <div class="mx-auto">
           <div class="pt-12">
             <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -469,7 +469,7 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders without category arti
             <!--v-if-->
           </button></div>
       </nav>
-      <section class="mt-20">
+      <section class="my-30 mt-20">
         <div class="mx-auto">
           <div class="pt-12">
             <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>

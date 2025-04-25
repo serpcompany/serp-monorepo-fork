@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <section v-if="baseSlug">
+  <section v-if="baseSlug" class="my-30">
     <div class="mx-auto">
       <div class="pt-12">
         <div>

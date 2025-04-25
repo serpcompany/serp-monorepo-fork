@@ -22,11 +22,31 @@ exports[`SinglePostsPost Snapshot > renders with full post and auth disabled cor
     </div>
     <div class="border-(--ui-border) w-full border-solid border-t"></div>
   </div><!-- eslint-disable-next-line vue/no-v-html-->
-  <article class="prose dark:prose-invert">
+  <article class="prose dark:prose-invert mb-20">
     <p>Content of the post</p>
   </article><!-- link hub for other posts -->
   <!--v-if-->
-  <!-- Comments Section -->
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-400 bg-white px-8 py-3 text-lg font-semibold text-neutral-800 transition-colors hover:bg-gray-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section><!-- Comments Section -->
   <!--v-if-->
 </main>"
 `;
@@ -53,11 +73,31 @@ exports[`SinglePostsPost Snapshot > renders with full post and auth enabled corr
     </div>
     <div class="border-(--ui-border) w-full border-solid border-t"></div>
   </div><!-- eslint-disable-next-line vue/no-v-html-->
-  <article class="prose dark:prose-invert">
+  <article class="prose dark:prose-invert mb-20">
     <p>Content of the post</p>
   </article><!-- link hub for other posts -->
   <!--v-if-->
-  <!-- Comments Section -->
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-400 bg-white px-8 py-3 text-lg font-semibold text-neutral-800 transition-colors hover:bg-gray-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section><!-- Comments Section -->
   <div class="mt-10">
     <h2 class="mb-4 text-2xl font-bold">Comments</h2>
     <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
@@ -103,11 +143,31 @@ exports[`SinglePostsPost Snapshot > renders with non-empty relatedPosts correctl
     </div>
     <div class="border-(--ui-border) w-full border-solid border-t"></div>
   </div><!-- eslint-disable-next-line vue/no-v-html-->
-  <article class="prose dark:prose-invert">
+  <article class="prose dark:prose-invert mb-20">
     <p>Some content here</p>
   </article><!-- link hub for other posts -->
   <!--v-if-->
-  <!-- Comments Section -->
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-400 bg-white px-8 py-3 text-lg font-semibold text-neutral-800 transition-colors hover:bg-gray-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section><!-- Comments Section -->
   <div class="mt-10">
     <h2 class="mb-4 text-2xl font-bold">Comments</h2>
     <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
@@ -153,11 +213,31 @@ exports[`SinglePostsPost Snapshot > renders without video and minimal fields cor
     </div>
     <div class="border-(--ui-border) w-full border-solid border-t"></div>
   </div><!-- eslint-disable-next-line vue/no-v-html-->
-  <article class="prose dark:prose-invert">
+  <article class="prose dark:prose-invert mb-20">
     <p>Content without video</p>
   </article><!-- link hub for other posts -->
   <!--v-if-->
-  <!-- Comments Section -->
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-400 bg-white px-8 py-3 text-lg font-semibold text-neutral-800 transition-colors hover:bg-gray-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section><!-- Comments Section -->
   <div class="mt-10">
     <h2 class="mb-4 text-2xl font-bold">Comments</h2>
     <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
