@@ -9,13 +9,6 @@
   const requestId = route.query.requestId as string;
   const code = route.query.code as string;
 
-  if (!requestId || !code) {
-    throw createError({
-      statusCode: 400,
-      statusMessage: 'Invalid verification link.'
-    });
-  }
-
   const {
     data: res,
     pending,
