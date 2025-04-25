@@ -1,0 +1,53 @@
+version: '3.9'
+
+networks:
+  web_network:
+    external: true
+  central-auth-network:
+    external: true
+services:
+  devinschumacher-com-app-staging:
+    build:
+      context: ../..
+      args:
+        - NUXT_UI_PRO_LICENSE=${NUXT_UI_PRO_LICENSE}
+      dockerfile: ./apps/devinschumacher-com/Dockerfile
+    container_name: devinschumacher-com-app-staging
+    restart: unless-stopped
+    networks:
+      - web_network
+      - devinschumacher-com-network
+      - central-auth-network
+    environment:
+      - HOST=0.0.0.0
+      - NODE_ENV=production
+      - ROBOTS_ENV=staging
+      - NUXT_SITE_ENV=staging
+      - NUXT_PUBLIC_SITE_URL=https://staging.devinschumacher.com
+      - DATABASE_URL=${DATABASE_URL}
+      - AUTH_DATABASE_URL=${AUTH_DATABASE_URL}
+      - NUXT_PUBLIC_API_URL=${NUXT_PUBLIC_API_URL}
+      - NUXT_PUBLIC_DOMAIN=${NUXT_PUBLIC_DOMAIN}
+      - NUXT_PUBLIC_SITE_NAME=${NUXT_PUBLIC_SITE_NAME}
+      - NUXT_PUBLIC_URL=${NUXT_PUBLIC_URL}
+      - AUTH_ORIGIN=${NUXT_PUBLIC_URL}/api/auth
+      - AUTH_SECRET=${AUTH_SECRET}
+      - USE_AUTH=${USE_AUTH}
+      - NUXT_OAUTH_GITHUB_CLIENT_ID=${NUXT_OAUTH_GITHUB_CLIENT_ID}
+      - NUXT_OAUTH_GITHUB_CLIENT_SECRET=${NUXT_OAUTH_GITHUB_CLIENT_SECRET}
+      - NUXT_OAUTH_GOOGLE_CLIENT_ID=${NUXT_OAUTH_GOOGLE_CLIENT_ID}
+      - NUXT_OAUTH_GOOGLE_CLIENT_SECRET=${NUXT_OAUTH_GOOGLE_CLIENT_SECRET}
+      - NUXT_SESSION_PASSWORD=${NUXT_SESSION_PASSWORD}
+      - CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}
+      - CLOUDFLARE_AUTH_DATABASE_ID=${CLOUDFLARE_AUTH_DATABASE_ID}
+      - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
+      - NUXT_UI_PRO_LICENSE=${NUXT_UI_PRO_LICENSE}
+      - REDIS_URL=redis://devinschumacher-com-redis-staging:6379
+    depends_on:
+      - devinschumacher-com-redis-staging
+  devinschumacher-com-redis-staging:
+    image: redis:7.2.5
+    container_name: devinschumacher-com-redis-staging
+    restart: unless-stopped
+    networks:
+      - devinschumacher-com-network

@@ -61,11 +61,13 @@ const loading = ref(false)
 function onSubmit() {
   loading.value = true
 
-  toast.add({
-    title: 'Subscribed!',
-    description: 'You\'ve been subscribed to our newsletter.'
-  })
-}
+
+    toast.add({
+      title: 'Subscribed!',
+      description: "Success! You're subscribed!"
+    });
+  }
+
 </script>
 
 <template>
@@ -81,7 +83,7 @@ function onSubmit() {
             <form @submit.prevent="onSubmit">
               <UFormField
                 name="email"
-                label="Subscribe to our newsletter"
+                label="Subscribe to the newsletter"
                 size="lg"
               >
                 <UInput

@@ -1,103 +1,5 @@
 # README
 
-## URL Patterns
-
-EXPLAINER:
-
-for each site...
-
-everytime you add a new module you would create a new page under:
-
-- `pages/<module-name>/index.vue`
-- `pages/<module-name>/best/[slug]/index.vue`
-- `pages/<module-name>/category/[slug/index.vue`
-
-that would simply hit that site's api endpoint to get the right data from the DB and the UI would render from the shared `packages/ui` package for the layout...and the SINGLE page for everything would just always go under /posts/ ---- exactly like we have setup for the `glossary` and `blog` on serp.co
-
-ALL singles for everything could now go under /posts/[slug]/
-
-- glossary == /posts/[slug]/
-- software == /posts/[slug]/
-
-### EXAMPLES:
-
-```yaml
-- companies: serp.co/posts/SERP/
-  pages/posts/<single>/
-
-  pages/software/index.vue
-  pages/software/best/index.vue
-
-- service-providers: serp.co/posts/SERP/reviews
-  pages/posts/<single>/reviews
-  pages/providers/best/
-
-- local businesses: serp.co/posts/dr-johns-dentistry-la-canada/
-- ski resorts: serp.co/posts/big-sky-montana/
-- games: serp.co/posts/counterstrike/
-- movies: serp.co/posts/avengers-endgame/
-- books: serp.co/posts/the-hobbit/
-- shop: serp.co/posts/sony-playstation-4/
-```
-
-## Config
-
-Define your SFooter.vue links using this object
-
-```ts
-// nuxt.config.ts
-footerColumns: [
-        {
-          title: 'Links',
-          id: 1,
-          slug: '',
-          items: [
-            { text: 'Companies', slug: '/reviews/' },
-            { text: 'Tools', slug: '/tools/' },
-            { text: 'Blog', slug: '/blog/' },
-            { text: 'Glossary', slug: '/glossary/' },
-            { text: 'Archive', slug: '/archive/' }
-          ]
-        },
-        {
-          title: '',
-          id: 2,
-          slug: '',
-          items: [{ text: '', slug: '#' }]
-        },
-        {
-          title: '',
-          id: 3,
-          slug: '#',
-          items: [{ text: '', slug: '#' }]
-        },
-        {
-          title: '',
-          id: 4,
-          slug: '#',
-          items: [
-            { text: '', slug: '#' },
-            { text: '', slug: '#' }
-          ]
-        },
-        {
-          title: '',
-          id: 5,
-          slug: '#',
-          items: [{ text: '', slug: '#' }]
-        }
-      ],
-      legalLinks: [
-        { text: 'Privacy', slug: '/legal/privacy-policy/' },
-        { text: 'Terms', slug: '/legal/terms-conditions/' },
-        { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
-        { text: 'DMCA', slug: '/legal/dmca/' }
-      ],
-      copyrightText: '© SERP',
-      address: '123 Rank St. Page One City, 90210 USA'
-    }
-```
-
 ## Turbo
 
 By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel.
@@ -131,11 +33,8 @@ pnpm dev
 cd apps/serp-wiki && pnpx nuxthub deploy
 ```
 
-
-
-
-
 # Server
+
 ```sql
 CREATE SCHEMA "user"
 ```
@@ -162,6 +61,7 @@ CREATE UNIQUE INDEX "user_index_unique_email" on "user"."user" ("email" ASC)
 ```
 
 ## Server comments (postgres) (company)
+
 ```sql
 CREATE EXTENSION IF NOT EXISTS ltree;
 ```
@@ -186,17 +86,17 @@ ADD
 ```
 
 ```sql
-CREATE OR REPLACE FUNCTION update_company_comments_path() 
+CREATE OR REPLACE FUNCTION update_company_comments_path()
 RETURNS TRIGGER AS $$
 BEGIN
     IF NEW.parent_id IS NULL THEN
         -- Top-level comment: simply set the path using a prefix
-        UPDATE "user"."company_comment" 
+        UPDATE "user"."company_comment"
         SET path = ('c' || NEW.id::text)::ltree
         WHERE id = NEW.id;
     ELSE
         -- Nested comment: get the parent's path and append the new label
-        UPDATE "user"."company_comment" 
+        UPDATE "user"."company_comment"
         SET path = (
             (SELECT path FROM "user"."company_comment" WHERE id = NEW.parent_id)
             || (('c' || NEW.id::text)::ltree)
@@ -220,6 +120,7 @@ CREATE INDEX idx_company_comments_path ON "user"."company_comment" USING GIST (p
 ```
 
 ## Server comments (postgres) (post)
+
 ```sql
 CREATE EXTENSION IF NOT EXISTS ltree;
 ```
@@ -244,17 +145,17 @@ ADD
 ```
 
 ```sql
-CREATE OR REPLACE FUNCTION update_post_comments_path() 
+CREATE OR REPLACE FUNCTION update_post_comments_path()
 RETURNS TRIGGER AS $$
 BEGIN
     IF NEW.parent_id IS NULL THEN
         -- Top-level comment: simply set the path using a prefix
-        UPDATE "user"."post_comment" 
+        UPDATE "user"."post_comment"
         SET path = ('c' || NEW.id::text)::ltree
         WHERE id = NEW.id;
     ELSE
         -- Nested comment: get the parent's path and append the new label
-        UPDATE "user"."post_comment" 
+        UPDATE "user"."post_comment"
         SET path = (
             (SELECT path FROM "user"."post_comment" WHERE id = NEW.parent_id)
             || (('c' || NEW.id::text)::ltree)
@@ -278,6 +179,7 @@ CREATE INDEX idx_post_comments_path ON "user"."post_comment" USING GIST (path);
 ```
 
 ## Reviews (postgres) (company)
+
 ```sql
 CREATE TABLE
   "user".company_review (
@@ -301,7 +203,7 @@ ALTER TABLE
 ADD
   CONSTRAINT company_review_pkey PRIMARY KEY (id)
 ```
-  
+
 ```sql
 CREATE UNIQUE INDEX "company_review_index_3" on "user"."company_review" ("company" ASC, "user" ASC)
 ```
@@ -368,6 +270,7 @@ FOR EACH ROW EXECUTE FUNCTION update_company_review_aggregate();
 ```
 
 ## Company Verification (postgres)
+
 ```sql
 CREATE TABLE
   "user".company_verification (
@@ -392,6 +295,7 @@ CREATE UNIQUE INDEX "company_verification_index_3" on "user"."company_verificati
 ```
 
 ## Company Edit (postgres)
+
 ```sql
 CREATE TABLE
   "user".company_edit (

@@ -1,0 +1,3 @@
+<template>
+  <SPagePostGlossaryCollection />
+</template>
