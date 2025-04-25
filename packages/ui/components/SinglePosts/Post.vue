@@ -36,12 +36,17 @@
       <SLogo />
     </USeparator>
     <!-- eslint-disable-next-line vue/no-v-html-->
-    <article class="prose dark:prose-invert" v-html="data.content"></article>
+    <article
+      class="prose dark:prose-invert mb-20"
+      v-html="data.content"
+    ></article>
 
     <!-- link hub for other posts -->
     <UPageSection v-if="module === 'movies'" title="More Posts">
       <LazyMoviePostLinkHub />
     </UPageSection>
+
+    <NewsletterSignupPageSection />
 
     <!-- Comments Section -->
     <div v-if="useAuth" class="mt-10">

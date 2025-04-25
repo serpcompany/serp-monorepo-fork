@@ -2,8 +2,6 @@
   const newsletterLoading = ref(false);
   const newsletterEmail = ref('');
   const toast = useToast();
-  const showNewsletterModal = ref(false);
-
   async function subscribeToNewsletter() {
     try {
       if (!newsletterEmail.value) {
@@ -51,37 +49,31 @@
 </script>
 
 <template>
-  <UButton
-    size="xl"
-    variant="outline"
-    label="Subscribe"
-    color="primary"
-    class="my-4 inline-flex items-center gap-2 rounded-md px-8 py-3 text-lg font-semibold text-neutral-300 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75"
-    @click="showNewsletterModal = true"
-  />
-  <UModal v-model:open="showNewsletterModal" :title="'Newsletter'">
-    <template #header>
-      <h2 class="text-lg font-semibold text-gray-900 dark:text-neutral-300">
-        Subscribe to our Newsletter
-      </h2>
-    </template>
-    <template #body>
-      <form class="mx-auto max-w-5xl" @submit.prevent="subscribeToNewsletter">
-        <div class="flex flex-col items-center justify-center gap-4">
-          <div class="flex w-full max-w-sm">
-            <UInput
-              v-model="newsletterEmail"
-              type="email"
-              placeholder="Enter your email"
-              :loading="newsletterLoading"
-              class="w-full"
-            />
-            <UButton type="submit" :loading="newsletterLoading" class="ml-2">
-              Submit
-            </UButton>
+  <UMain>
+    <UPageHero
+      title="Newsletter"
+      description="Stay updated with the latest news and updates from our team."
+    >
+      <UContainer>
+        <form class="mx-auto max-w-5xl" @submit.prevent="subscribeToNewsletter">
+          <div
+            class="flex flex-col items-center justify-between gap-4 sm:flex-row"
+          >
+            <div class="flex w-full max-w-sm">
+              <UInput
+                v-model="newsletterEmail"
+                type="email"
+                placeholder="Enter your email"
+                :loading="newsletterLoading"
+                class="w-full"
+              />
+              <UButton type="submit" :loading="newsletterLoading" class="ml-2">
+                Submit
+              </UButton>
+            </div>
           </div>
-        </div>
-      </form>
-    </template>
-  </UModal>
+        </form>
+      </UContainer>
+    </UPageHero>
+  </UMain>
 </template>

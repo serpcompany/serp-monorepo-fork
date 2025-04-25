@@ -40,7 +40,7 @@ exports[`SPagePostCategoryCollection Snapshot > renders with no posts (with auth
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="mt-20">
+    <section class="my-30 mt-20">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -95,7 +95,7 @@ exports[`SPagePostCategoryCollection Snapshot > renders with no posts (without a
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="mt-20">
+    <section class="my-30 mt-20">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -172,7 +172,7 @@ exports[`SPagePostCategoryCollection Snapshot > renders with posts and categorie
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="mt-20">
+    <section class="my-30 mt-20">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -249,7 +249,7 @@ exports[`SPagePostCategoryCollection Snapshot > renders with posts and categorie
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="mt-20">
+    <section class="my-30 mt-20">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>

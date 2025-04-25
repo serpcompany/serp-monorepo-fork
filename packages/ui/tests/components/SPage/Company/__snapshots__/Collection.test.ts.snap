@@ -121,7 +121,7 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
           <!--v-if-->
         </button></div>
     </nav><!-- link hub -->
-    <section class="mt-20">
+    <section class="my-30">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -129,6 +129,26 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
         <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div class="border-t"><a href="/products/best/tech/" class="mt-3 flex font-medium">Tech</a></div>
           <div class="border-t"><a href="/products/best/finance/" class="mt-3 flex font-medium">Finance</a></div>
+        </div>
+      </div>
+    </section>
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center"><button type="button" class="ring ring-inset ring-(--ui-primary)/50 hover:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent my-4 inline-flex items-center gap-2 rounded-md px-8 py-3 text-lg font-semibold text-neutral-300 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section>
@@ -257,7 +277,7 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
           <!--v-if-->
         </button></div>
     </nav><!-- link hub -->
-    <section class="mt-20">
+    <section class="my-30">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -265,6 +285,26 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
         <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div class="border-t"><a href="/products/best/tech/" class="mt-3 flex font-medium">Tech</a></div>
           <div class="border-t"><a href="/products/best/finance/" class="mt-3 flex font-medium">Finance</a></div>
+        </div>
+      </div>
+    </section>
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center"><button type="button" class="ring ring-inset ring-(--ui-primary)/50 hover:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent my-4 inline-flex items-center gap-2 rounded-md px-8 py-3 text-lg font-semibold text-neutral-300 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section>
@@ -394,6 +434,26 @@ exports[`SPageCompanyCollection Snapshot > renders correctly without categories 
         </button></div>
     </nav><!-- link hub -->
     <!--v-if-->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center"><button type="button" class="ring ring-inset ring-(--ui-primary)/50 hover:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent my-4 inline-flex items-center gap-2 rounded-md px-8 py-3 text-lg font-semibold text-neutral-300 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section>
   </main>
 </div>"
 `;
@@ -520,6 +580,26 @@ exports[`SPageCompanyCollection Snapshot > renders correctly without categories 
         </button></div>
     </nav><!-- link hub -->
     <!--v-if-->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to our newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center"><button type="button" class="ring ring-inset ring-(--ui-primary)/50 hover:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent my-4 inline-flex items-center gap-2 rounded-md px-8 py-3 text-lg font-semibold text-neutral-300 transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section>
   </main>
 </div>"
 `;
