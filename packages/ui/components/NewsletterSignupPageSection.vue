@@ -5,7 +5,12 @@
     class="text-center"
   >
     <div class="flex justify-center">
-      <NewsletterSignup />
+      <!-- For white background -->
+      <NewsletterSignup
+        buttonBackground="white"
+        buttonTextColor="neutral-800"
+        buttonBorderColor="neutral-400"
+      />
     </div>
   </UPageSection>
 </template>

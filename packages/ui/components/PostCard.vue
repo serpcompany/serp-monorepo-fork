@@ -40,8 +40,8 @@
 </script>
 
 <template>
-  <article :class="[articleClass, 'grid grid-cols-1 gap-6 lg:grid-cols-10']">
-    <div class="lg:col-span-6">
+  <article :class="[articleClass, 'grid grid-cols-1 gap-6 lg:grid-cols-12']">
+    <div class="lg:col-span-8">
       <NuxtLink :to="`/${baseSlug}${post.slug}/`">
         <LazyNuxtImg
           v-if="post.featuredImage"
