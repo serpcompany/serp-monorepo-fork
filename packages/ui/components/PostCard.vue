@@ -28,7 +28,7 @@
 
 <template>
   <article :class="articleClass">
-    <NuxtLink :to="`/${baseSlug}${post.slug}/`">
+    <NuxtLink :to="`/${baseSlug}${encodeURIComponent(post.slug)}/`">
       <LazyNuxtImg
         v-if="post.featuredImage"
         :src="post.featuredImage"

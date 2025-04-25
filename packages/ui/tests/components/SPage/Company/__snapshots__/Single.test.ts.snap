@@ -25,11 +25,14 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
                     <!--v-if--> Submit Edit
                     <!--v-if-->
                   </button></div>
-                <div class="flex w-full items-center sm:w-auto">
-                  <div class="flex items-center"><button type="button" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
-                      <!--v-if-->Claim This Company
+                <div class="flex items-center">
+                  <div><button type="button" aria-haspopup="dialog" aria-expanded="false" data-state="closed" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if--> Claim This Company
                       <!--v-if-->
-                    </button></div>
+                    </button>
+                    <!--teleport start-->
+                    <!--teleport end-->
+                  </div>
                 </div>
                 <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
                     <!--v-if--><span class="text-xl">👍</span><span>Upvotes 1</span>
@@ -131,10 +134,10 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
           <div class="p-4 sm:p-6">
             <div class="w-full">
               <div data-state="closed" data-orientation="vertical" class="border-b border-(--ui-border) last:border-b-0 [object Object]">
-                <h3 data-orientation="vertical" data-state="closed" class="flex"><button type="button" aria-controls="" aria-expanded="false" data-state="closed" id="reka-accordion-trigger-v-0-0-0" data-reka-collection-item="" data-orientation="vertical" class="group flex-1 flex items-center gap-1.5 font-medium text-sm py-3.5 focus-visible:outline-(--ui-primary) min-w-0">
+                <h3 data-orientation="vertical" data-state="closed" class="flex"><button type="button" aria-controls="" aria-expanded="false" data-state="closed" id="reka-accordion-trigger-v-0-0-1" data-reka-collection-item="" data-orientation="vertical" class="group flex-1 flex items-center gap-1.5 font-medium text-sm py-3.5 focus-visible:outline-(--ui-primary) min-w-0">
                     <!--v-if--><span class="text-start break-words">What is this?</span><span class="iconify i-lucide:chevron-down shrink-0 size-5 ms-auto group-data-[state=open]:rotate-180 transition-transform duration-200" aria-hidden="true"></span>
                   </button></h3>
-                <div role="region" aria-labelledby="reka-accordion-trigger-v-0-0-0" data-state="closed" data-orientation="vertical" style="--reka-accordion-content-width: var(--reka-collapsible-content-width); --reka-accordion-content-height: var(--reka-collapsible-content-height); --reka-collapsible-content-height: 0px; --reka-collapsible-content-width: 0px;" class="data-[state=open]:animate-[accordion-down_200ms_ease-out] data-[state=closed]:animate-[accordion-up_200ms_ease-out] overflow-hidden focus:outline-none" id="reka-collapsible-content-v-0-0-1" hidden="">
+                <div role="region" aria-labelledby="reka-accordion-trigger-v-0-0-1" data-state="closed" data-orientation="vertical" style="--reka-accordion-content-width: var(--reka-collapsible-content-width); --reka-accordion-content-height: var(--reka-collapsible-content-height); --reka-collapsible-content-height: 0px; --reka-collapsible-content-width: 0px;" class="data-[state=open]:animate-[accordion-down_200ms_ease-out] data-[state=closed]:animate-[accordion-up_200ms_ease-out] overflow-hidden focus:outline-none" id="reka-collapsible-content-v-0-0-2" hidden="">
                   <!---->
                 </div>
               </div>
@@ -893,11 +896,14 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
                     <!--v-if--> Submit Edit
                     <!--v-if-->
                   </button></div>
-                <div class="flex w-full items-center sm:w-auto">
-                  <div class="flex items-center"><button type="button" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
-                      <!--v-if-->Claim This Company
+                <div class="flex items-center">
+                  <div><button type="button" aria-haspopup="dialog" aria-expanded="false" data-state="closed" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary)">
+                      <!--v-if--> Claim This Company
                       <!--v-if-->
-                    </button></div>
+                    </button>
+                    <!--teleport start-->
+                    <!--teleport end-->
+                  </div>
                 </div>
                 <div class="flex w-full items-center sm:w-auto"><button type="button" class="focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed aria-disabled:opacity-75 text-sm aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white">
                     <!--v-if--><span class="text-xl">👍</span><span>Upvotes 0</span>

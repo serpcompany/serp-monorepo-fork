@@ -133,6 +133,22 @@ export const companyVerification = userSchema.table('company_verification', {
   user: integer('user').notNull()
 });
 
+export const companyVerificationRequests = userSchema.table(
+  'company_verification_request',
+  {
+    id: serial('id').primaryKey(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    company: integer('company').notNull(),
+    user: integer('user').notNull(),
+    email: varchar('email', { length: 255 }).notNull(),
+    code: varchar('code', { length: 32 }).notNull(),
+    expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+    verification: integer('verification')
+  }
+);
+
 export const companyEdit = userSchema.table('company_edit', {
   id: serial('id').primaryKey(),
   createdAt: timestamp('created_at', { withTimezone: true })

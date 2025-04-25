@@ -36,7 +36,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --filter @moviestop --filter @serp/configs --filter @serp/types --filter @serp/ui --filter @serp/utils-cloudflare-pages
+        run: pnpm install --filter @moviestop --filter @serp/configs --filter @serp/types --filter @serp/ui --filter @serp/utils
         env:
           FOR_CLOUDFLARE: true
 

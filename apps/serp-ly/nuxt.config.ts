@@ -1,12 +1,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  extends: ['@serp/ui', '@serp/utils-cloudflare-pages', '@serp/types'],
+  extends: ['@serp/ui', '@serp/utils', '@serp/types'],
   modules: [
     '@nuxtjs/seo',
     '@nuxtjs/sitemap',
     'nuxt-security',
-    'nuxt-link-checker'
+    'nuxt-link-checker',
+    'nuxt-multi-cache'
   ],
   ui: {
     colorMode: true

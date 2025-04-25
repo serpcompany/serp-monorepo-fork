@@ -3,21 +3,22 @@
 
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
-  const forCloudflare = config.public.forCloudflare;
 
   const props = defineProps<{
     data: Post;
     module: string;
   }>();
 
-  const isValidAuthor =
-    props.data.author !== undefined &&
-    props.data.author !== null &&
-    props.data.author !== 'None';
+  const data = toRef(props, 'data');
 
-  let comments = props.data.comments || [];
-  if (!forCloudflare) {
-    const commentsData = await usePostComments(props.data.id);
+  const isValidAuthor =
+    data.value.author !== undefined &&
+    data.value.author !== null &&
+    data.value.author !== 'None';
+
+  let comments = data.value.comments || [];
+  if (useAuth) {
+    const commentsData = await usePostComments(data.value.id);
     comments = commentsData.comments;
   }
 </script>
@@ -47,7 +48,7 @@
     <div v-if="useAuth" class="mt-10">
       <h2 class="mb-4 text-2xl font-bold">Comments</h2>
       <CommentsContainer
-        :id="forCloudflare ? data.slug : data.id"
+        :id="data.id"
         module="posts"
         :comments="comments || []"
         class="comments-github-style"

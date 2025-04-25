@@ -1,58 +1,65 @@
 <script setup lang="ts">
-  const { loggedIn, user } = useUserSession();
   const props = defineProps<{
     id: number | string;
+    domain: string;
     isVerifiedProp: number | boolean;
   }>();
 
   const { isVerifiedProp } = toRefs(props);
-
   const isVerified = ref(isVerifiedProp.value);
+  watch(isVerifiedProp, (v) => (isVerified.value = v));
 
-  watch(isVerifiedProp, (newVal) => {
-    isVerified.value = newVal;
-  });
-
+  const { loggedIn, user } = useUserSession();
   const toast = useToast();
-  const loading = ref(false);
 
-  // Function to verify the company
-  async function verifyCompany() {
-    loading.value = true;
+  const modalOpen = ref(false);
+  const accountLoading = ref(false);
+  const emailLoading = ref(false);
+  const customEmail = ref('');
+
+  async function claimWithAccount() {
+    if (!loggedIn.value) {
+      toast.add({
+        id: 'company-verification-login',
+        title: 'Login required',
+        description: 'You need to login to claim this company.',
+        icon: 'exclamation-circle'
+      });
+      return;
+    }
+    if (!user.value?.email) {
+      toast.add({
+        id: 'claim-company-error',
+        title: 'Error',
+        description: 'No email found on your account.',
+        icon: 'i-heroicons-exclamation-circle'
+      });
+      return;
+    }
+
+    accountLoading.value = true;
     try {
-      if (loggedIn.value) {
-        if (!user?.value?.email) {
-          throw new Error('User not authenticated');
-        }
-        const response = await $fetch(`/api/company/claim/${props.id}`, {
-          method: 'POST'
+      const res = await $fetch(`/api/company/claim/${props.id}`, {
+        method: 'POST'
+      });
+      if (res.message === 'success') {
+        toast.add({
+          id: 'claim-company-success',
+          title: 'Success',
+          description: 'Company claimed successfully.',
+          icon: 'check-circle'
         });
-        console.log('Claim company response:', response);
-        if (response.message === 'success') {
-          toast.add({
-            id: 'claim-company-success',
-            title: 'Success',
-            description: 'Company claimed successfully.',
-            icon: 'check-circle'
-          });
-          isVerified.value = response.id;
-        } else {
-          toast.add({
-            id: 'claim-company-error',
-            title: 'Error',
-            description: `Failed to claim the company. - ${response.message}`,
-            icon: 'i-heroicons-exclamation-circle'
-          });
-        }
+        isVerified.value = res.id;
+        modalOpen.value = false;
       } else {
         toast.add({
-          id: 'company-verification-login',
-          title: 'Login required',
-          description: 'You need to login to claim this company.',
-          icon: 'exclamation-circle'
+          id: 'claim-company-error',
+          title: 'Error',
+          description: `Failed to claim the company. - ${res.message}`,
+          icon: 'i-heroicons-exclamation-circle'
         });
       }
-    } catch (error) {
+    } catch (err: unknown) {
       toast.add({
         id: 'claim-company-error',
         title: 'Error',
@@ -60,24 +67,110 @@
         icon: 'i-heroicons-exclamation-circle'
       });
     } finally {
-      loading.value = false;
+      accountLoading.value = false;
+    }
+  }
+
+  async function sendVerificationEmail() {
+    if (!customEmail.value) {
+      toast.add({
+        id: 'company-verification-email-error',
+        title: 'Error',
+        description: 'Please enter an email address.',
+        icon: 'i-heroicons-exclamation-circle'
+      });
+      return;
+    }
+
+    emailLoading.value = true;
+    try {
+      const res = await $fetch('/api/company/verify/email/initiate', {
+        method: 'POST',
+        body: { id: Number(props.id), email: customEmail.value }
+      });
+      if (res.ok) {
+        toast.add({
+          id: 'company-verification-email-sent',
+          title: 'Success',
+          description: 'Verification email sent!',
+          icon: 'check-circle'
+        });
+        modalOpen.value = false;
+      } else {
+        toast.add({
+          id: 'company-verification-email-error',
+          title: 'Error',
+          description: `Failed to send email. - ${res.error}`,
+          icon: 'i-heroicons-exclamation-circle'
+        });
+      }
+    } catch (err: unknown) {
+      console.error(err);
+      toast.add({
+        id: 'company-verification-email-error',
+        title: 'Error',
+        description: 'An error occurred while sending verification email.',
+        icon: 'i-heroicons-exclamation-circle'
+      });
+    } finally {
+      emailLoading.value = false;
     }
   }
 </script>
 
 <template>
-  <div class="flex w-full items-center sm:w-auto">
-    <div v-if="isVerified" class="flex items-center">
-      <UIcon
-        name="i-heroicons-check-circle"
-        class="h-5 w-5 flex-shrink-0 text-green-500"
-      />
-      <span class="ml-2"> Verified </span>
+  <div class="flex items-center">
+    <div v-if="isVerified" class="flex items-center text-green-500">
+      <UIcon name="i-heroicons-check-circle" class="h-5 w-5" />
+      <span class="ml-2">Verified</span>
     </div>
-    <div v-else class="flex items-center">
-      <UButton :loading="loading" @click="verifyCompany"
-        >Claim This Company</UButton
+    <div v-else>
+      <UModal
+        v-model:open="modalOpen"
+        title="Verify This Company"
+        description="Choose a verification method below."
       >
+        <UButton color="primary" @click="modalOpen = true">
+          Claim This Company
+        </UButton>
+
+        <template #body>
+          <div class="space-y-6">
+            <div>
+              <p class="mb-2 font-medium">
+                Use your account email: (must be @{{ domain }})
+              </p>
+              <UButton
+                :loading="accountLoading"
+                color="success"
+                @click="claimWithAccount"
+              >
+                Use {{ user?.email }}
+              </UButton>
+            </div>
+
+            <hr />
+
+            <div>
+              <p class="mb-2 font-medium">
+                Or enter a different email: (must be @{{ domain }})
+              </p>
+              <UInput
+                v-model="customEmail"
+                placeholder="name@yourcompany.com"
+                class="mb-2"
+              />
+              <UButton
+                :loading="emailLoading"
+                color="secondary"
+                @click="sendVerificationEmail"
+              >
+                Send Verification Email
+              </UButton>
+            </div>
+          </div>
+        </template>
+      </UModal>
     </div>
   </div>
 </template>
