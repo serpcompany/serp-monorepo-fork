@@ -53,6 +53,7 @@
         :src="user?.image"
         role="button"
         class="cursor-pointer transition-opacity hover:opacity-80"
+        size="xl"
         @click="slideover = true"
       />
     </div>
@@ -106,7 +107,7 @@
                   :name="item.icon"
                   class="flex-shrink-0"
                 />
-                <span class="flex-grow leading-tight text-gray-800">{{
+                <span class="flex-grow leading-tight text-gray-700">{{
                   item.label
                 }}</span>
                 <div v-if="item.kbds" class="flex gap-1">
@@ -128,11 +129,11 @@
   <!-- Login button for logged-out users -->
   <UButton
     v-else
-    variant="outline"
+    variant="ghost"
     size="md"
     as="NuxtLink"
     to="/login"
-    class="dark:text-primary-100 rounded-md px-4 text-sm font-medium"
+    class="dark:text-primary-100 text-md rounded-md border border-neutral-300 px-6 font-medium"
   >
     Login
   </UButton>

@@ -68,5 +68,6 @@
         </div>
       </section>
     </div>
+    <NewsletterSignupPageSection />
   </div>
 </template>
