@@ -42,7 +42,7 @@
 <template>
   <article :class="[articleClass, 'grid grid-cols-1 gap-6 lg:grid-cols-12']">
     <div class="lg:col-span-8">
-      <NuxtLink :to="`/${baseSlug}${post.slug}/`">
+      <NuxtLink :to="`/${baseSlug}${encodeURIComponent(post.slug)}/`">
         <LazyNuxtImg
           v-if="post.featuredImage"
           :src="post.featuredImage"

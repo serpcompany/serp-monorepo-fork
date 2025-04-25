@@ -35,7 +35,9 @@ export default defineEventHandler(async (event) => {
     .offset(limit * (Number(page) - 1))
     .execute();
 
-  const response = posts.map((post_) => `/posts/${post_.slug}/`);
+  const response = posts.map(
+    (post_) => `/posts/${encodeURIComponent(post_.slug)}/`
+  );
 
   addToCache(response, [], 60 * 60 * 10); // cache for 10 hours
   return response;
