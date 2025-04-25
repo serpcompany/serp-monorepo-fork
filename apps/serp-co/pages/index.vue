@@ -149,13 +149,6 @@
         />
       </div>
 
-      <!-- Testimonial Videos Section -->
-      <div class="mt-24">
-        <UContainer>
-          <TestimonialVideoGrid :videos="testimonialVideoData" />
-        </UContainer>
-      </div>
-
       <!-- pagination -->
       <div class="mt-20 flex justify-center">
         <UPagination
@@ -174,7 +167,6 @@
         :categories="categories"
         headline="Categories"
         base-slug="products/best"
-        class="my-20"
       />
       <NewsletterSignupPageSection />
     </UMain>
