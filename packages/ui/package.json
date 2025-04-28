@@ -40,6 +40,7 @@
     "@vitest/coverage-v8": "^2.1.5",
     "@vue/test-utils": "^2.4.6",
     "eslint": "^9.20.1",
+    "happy-dom": "^15.11.6",
     "jsdom": "^25.0.1",
     "nuxt": "^3.16.1",
     "nuxt-schema-org": "5.0.4",
