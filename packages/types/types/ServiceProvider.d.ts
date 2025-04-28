@@ -8,7 +8,7 @@ export interface ServiceProvider {
   slug?: string;
   logoUrl?: string;
   exerpt?: string;
-  article?: string;
+  content?: string;
   basicInfo?: Record<string, unknown>;
   contracts?: Record<string, unknown>;
   pricing?: Record<string, unknown>;
@@ -37,7 +37,7 @@ export interface ServiceProviderIndex {
 }
 
 export interface ServiceProviders {
-  serviceProviders: ServiceProvider[];
+  serviceProviders: ServiceProviderIndex[];
   pagination: Pagination;
   category?: Category;
 }

@@ -1,31 +1,27 @@
 import { useDataCache } from '#nuxt-multi-cache/composables';
 import { db } from '@serp/utils/server/api/db';
 import {
-  companyCache,
-  companyCategoryCache
+  serviceProviderCache,
+  serviceProviderCategoryCache
 } from '@serp/utils/server/api/db/schema';
-import { asc, desc, eq, sql } from 'drizzle-orm';
+import { and, eq, sql } from 'drizzle-orm';
 
-import type { CompanyIndex, Pagination } from '@serp/types/types';
+import type { Pagination, serviceProviderIndex } from '@serp/types/types';
 
 export default defineEventHandler(async (event) => {
-  const { page = 1, limit = 100, categorySlug } = getQuery(event);
-  const cacheKey = `companies-${categorySlug}-${page}-${limit}`;
+  const { page = 1, limit = 100, categorySlug, topicSlug } = getQuery(event);
+  const cacheKey = `service-providers-${categorySlug}-${page}-${limit}-${topicSlug}`;
   const { value, addToCache } = await useDataCache(cacheKey, event);
-  if (value) {
-    return value;
-  }
+  if (value) return value;
 
   const pageNumber = Number(page);
   const limitNumber = Math.min(Number(limit), 100);
-
   if (isNaN(pageNumber) || pageNumber < 1 || !Number.isInteger(pageNumber)) {
     throw createError({
       statusCode: 400,
       message: 'Page must be a positive integer.'
     });
   }
-
   if (isNaN(limitNumber) || limitNumber < 1 || !Number.isInteger(limitNumber)) {
     throw createError({
       statusCode: 400,
@@ -35,98 +31,87 @@ export default defineEventHandler(async (event) => {
 
   const offset = (pageNumber - 1) * limitNumber;
 
+  const whereConditions = [];
+  if (topicSlug) {
+    whereConditions.push(sql`
+      jsonb_path_exists(
+        ${serviceProviderCache.topics},
+        '$[*] ? (@.slug == $slug)'::jsonpath,
+        jsonb_build_object('slug', ${topicSlug}::text)
+      )
+    `);
+  }
+  if (categorySlug) {
+    whereConditions.push(sql`
+      jsonb_path_exists(
+        ${serviceProviderCache.categories},
+        '$[*] ? (@.slug == $slug)'::jsonpath,
+        jsonb_build_object('slug', ${categorySlug}::text)
+      )
+    `);
+  }
+
   let baseQuery = db
     .select({
-      id: companyCache.id,
-      name: companyCache.name,
-      slug: companyCache.slug,
-      oneLiner: companyCache.oneLiner,
-      excerpt: companyCache.excerpt,
-      logo: companyCache.logo,
-      serplyLink: companyCache.serplyLink,
-      categories: companyCache.categories,
-      screenshots: companyCache.screenshots,
-      rating: companyCache.rating,
-      upvotes: companyCache.upvotes,
-      downvotes: companyCache.downvotes,
-      featured: companyCache.featured,
-      featuredOrder: companyCache.featuredOrder
+      id: serviceProviderCache.id,
+      name: serviceProviderCache.name,
+      slug: serviceProviderCache.slug,
+      logoUrl: serviceProviderCache.logoUrl,
+      excerpt: serviceProviderCache.excerpt,
+      basicInfo: serviceProviderCache.basicInfo,
+      industries: serviceProviderCache.industries,
+      ratings: serviceProviderCache.ratings,
+      serplyLink: serviceProviderCache.serplyLink,
+      categories: serviceProviderCache.categories,
+      topics: serviceProviderCache.topics
     })
-    .from(companyCache);
+    .from(serviceProviderCache);
 
-  if (categorySlug) {
-    baseQuery = baseQuery.where(
-      sql`
-        jsonb_path_exists(
-          ${companyCache.categories},
-          '$[*] ? (@.slug == $slug)'::jsonpath,
-          jsonb_build_object('slug', ${categorySlug}::text)
-        )
-      `
-    );
+  if (whereConditions.length) {
+    baseQuery = baseQuery.where(and(...whereConditions));
   }
-  baseQuery = baseQuery
-    .orderBy(desc(companyCache.featured), asc(companyCache.featuredOrder))
-    .limit(limitNumber)
-    .offset(offset);
+
+  baseQuery = baseQuery.limit(limitNumber).offset(offset);
 
   let totalQuery = db
     .select({ count: sql<number>`count(*)` })
-    .from(companyCache);
+    .from(serviceProviderCache);
 
-  if (categorySlug) {
-    totalQuery = totalQuery.where(
-      sql`
-        jsonb_path_exists(
-          ${companyCache.categories},
-          '$[*] ? (@.slug == $slug)'::jsonpath,
-          jsonb_build_object('slug', ${categorySlug}::text)
-        )
-      `
-    );
+  if (whereConditions.length) {
+    totalQuery = totalQuery.where(and(...whereConditions));
   }
 
-  const categoryQuery = db
-    .select({
-      id: companyCategoryCache.id,
-      name: companyCategoryCache.name,
-      slug: companyCategoryCache.slug,
-      buyersGuide: companyCategoryCache.buyersGuide,
-      faqs: companyCategoryCache.faqs
-    })
-    .from(companyCategoryCache)
-    .where(eq(companyCategoryCache.slug, categorySlug));
+  const categoryPromise = categorySlug
+    ? db
+        .select({
+          id: serviceProviderCategoryCache.id,
+          name: serviceProviderCategoryCache.name,
+          slug: serviceProviderCategoryCache.slug
+        })
+        .from(serviceProviderCategoryCache)
+        .where(eq(serviceProviderCategoryCache.slug, categorySlug))
+        .execute()
+    : Promise.resolve([] as Array<{ id: number; name: string; slug: string }>);
 
   const [results, [{ count: total }], categoryResults] = await Promise.all([
     baseQuery.execute(),
     totalQuery.execute(),
-    categoryQuery.execute()
+    categoryPromise
   ]);
 
   if (!results.length) {
-    throw createError({
-      statusCode: 404,
-      message: 'Not found'
-    });
+    throw createError({ statusCode: 404, message: 'Not found' });
   }
 
-  const companies = results.map((company) => {
-    return company as CompanyIndex;
-  });
-
+  const serviceProviders = results as serviceProviderIndex[];
   const pagination: Pagination = {
     currentPage: pageNumber,
     pageSize: limitNumber,
     totalItems: Number(total)
   };
+  const category = categoryResults[0] ?? null;
 
-  const category = categoryResults.length ? categoryResults[0] : null;
-
-  const response = {
-    companies,
-    pagination,
-    category
-  };
+  const response = { serviceProviders, pagination, category };
   addToCache(response, [], 60 * 60 * 10); // 10 hours
   return response;
 });
