@@ -14,5 +14,7 @@ export * from './Post';
 export * from './Recording';
 export * from './ReleaseGroup';
 export * from './SeoMeta';
+export * from './ServiceProvider';
+export * from './Topic';
 export * from './User';
 export * from './WeightClass';
