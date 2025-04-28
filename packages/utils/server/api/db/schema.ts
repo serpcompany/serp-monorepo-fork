@@ -23,6 +23,45 @@ export const formSchema = pgSchema('form');
 export const stripeSchema = pgSchema('stripe');
 export const userSchema = pgSchema('user');
 
+export const topic = cacheSchema.table('topic', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  slug: varchar('slug', { length: 255 }).notNull()
+});
+
+export const serviceProvider = cacheSchema.table('service_provider', {
+  id: serial('id').primaryKey(),
+  createdAt: timestamp('created_at', { mode: 'string' }).defaultNow().notNull(),
+  name: varchar('name', { length: 255 }).notNull(),
+  slug: varchar('slug', { length: 255 }).notNull(),
+  logoUrl: varchar('logo_url', { length: 255 }),
+  basicInfo: jsonb('basic_info'),
+  contracts: jsonb('contracts'),
+  pricing: jsonb('pricing'),
+  services: jsonb('services'),
+  industries: jsonb('industries'),
+  businessesServed: jsonb('businesses_served'),
+  supportSetup: jsonb('support_setup'),
+  ratings: jsonb('ratings'),
+  serplyLink: varchar('url', { length: 255 }),
+  categories: jsonb('categories'),
+  topics: jsonb('topics')
+});
+
+export const serviceProviderCategoryCache = cacheSchema.table(
+  'service_provider_category_cache',
+  {
+    updatedAt: timestamp('updated_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    id: serial('id').primaryKey(),
+    name: varchar('name', { length: 255 }).notNull(),
+    slug: varchar('slug', { length: 255 }).notNull(),
+    buyersGuide: text('buyers_guide'),
+    faqs: jsonb('faqs')
+  }
+);
+
 // Stripe
 export const customer = stripeSchema.table('customer', {
   id: varchar('id', { length: 255 }).primaryKey(),
