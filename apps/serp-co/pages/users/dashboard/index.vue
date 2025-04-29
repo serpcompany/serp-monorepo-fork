@@ -53,21 +53,11 @@
 
         <UCard
           class="cursor-pointer p-4 transition-shadow hover:shadow-xl"
-          @click="navigateTo('/users/manage/submissions')"
-        >
-          <UHeading level="4" class="mb-2">Submissions</UHeading>
-          <p class="text-sm text-gray-600">
-            Review your company submissions and statuses.
-          </p>
-        </UCard>
-
-        <UCard
-          class="cursor-pointer p-4 transition-shadow hover:shadow-xl"
           @click="navigateTo('/users/manage/companies')"
         >
-          <UHeading level="4" class="mb-2">Verified Companies</UHeading>
+          <UHeading level="4" class="mb-2">Companies</UHeading>
           <p class="text-sm text-gray-600">
-            Review/edit your verified companies.
+            Review/edit your verified/submitted companies.
           </p>
         </UCard>
 
