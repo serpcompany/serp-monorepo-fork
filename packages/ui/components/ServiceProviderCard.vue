@@ -128,7 +128,7 @@
                   : 'mt-2 line-clamp-2'
               ]"
             >
-              {{ serviceProvider.oneLiner }}
+              {{ serviceProvider.excerpt }}
             </p>
 
             <!-- show excerpt only for featured cards -->

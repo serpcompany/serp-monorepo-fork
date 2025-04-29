@@ -5,7 +5,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -53,7 +53,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
     </div><!-- Main content - single column layout -->
     <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
       <!-- Overview Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="overview">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="overview">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Overview </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -74,7 +74,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
         </div>
         <!--v-if-->
       </div><!-- Categories Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="categories">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="categories">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Categories </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -86,7 +86,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
         </div>
         <!--v-if-->
       </div><!-- Media Carousel Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="media">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="media">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Media </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -109,7 +109,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
         </div>
         <!--v-if-->
       </div><!-- Article Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="article">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="article">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Article </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -400,7 +400,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <!--teleport start-->
       <!--teleport end-->
       <!-- Discussion Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>
@@ -472,7 +472,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -502,7 +502,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
     </div><!-- Main content - single column layout -->
     <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
       <!-- Overview Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="overview">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="overview">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Overview </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -523,7 +523,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
         </div>
         <!--v-if-->
       </div><!-- Categories Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="categories">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="categories">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Categories </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -535,7 +535,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
         </div>
         <!--v-if-->
       </div><!-- Media Carousel Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="media">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="media">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Media </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -558,7 +558,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
         </div>
         <!--v-if-->
       </div><!-- Article Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="article">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="article">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Article </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
@@ -851,7 +851,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <!--teleport start-->
       <!--teleport end-->
       <!-- Discussion Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>
@@ -876,7 +876,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -1125,7 +1125,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
       <!--teleport start-->
       <!--teleport end-->
       <!-- Discussion Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>
@@ -1166,7 +1166,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
   <!--v-if-->
   <div class="lg:col-span-10">
     <div class="bg-background sticky top-0 z-50 transition-all duration-300">
-      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+      <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <!-- When not scrolled: show the regular layout -->
           <div>
@@ -1395,7 +1395,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
       <!--teleport start-->
       <!--teleport end-->
       <!-- Discussion Section -->
-      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
+      <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>

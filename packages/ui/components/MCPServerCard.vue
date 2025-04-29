@@ -44,11 +44,17 @@
         <!-- tags -->
         <div v-if="server.tags?.length" class="mt-3 flex flex-wrap gap-2">
           <span
-            v-for="tag in server.tags"
+            v-for="tag in server.tags.slice(0, 10)"
             :key="tag"
             class="inline-flex rounded-full bg-[var(--ui-color-secondary-50)] px-3 py-1 text-xs font-medium text-[var(--ui-color-secondary-700)] dark:bg-[var(--ui-color-secondary-900)]/30 dark:text-[var(--ui-color-secondary-200)]"
           >
             {{ tag }}
+          </span>
+          <span
+            v-if="server.tags.length > 10"
+            class="inline-flex rounded-full bg-[var(--ui-color-secondary-50)] px-3 py-1 text-xs font-medium text-[var(--ui-color-secondary-700)] dark:bg-[var(--ui-color-secondary-900)]/30 dark:text-[var(--ui-color-secondary-200)]"
+          >
+            +{{ server.tags.length - 10 }} more
           </span>
         </div>
 
@@ -70,9 +76,9 @@
       </div>
 
       <!-- stats & actions -->
-      <div class="ml-4 flex min-w-[140px] flex-col space-y-2">
+      <div class="ml-4 flex min-w-[140px] flex-shrink-0 flex-col space-y-2">
         <!-- star & fork counts -->
-        <div class="flex items-center gap-4">
+        <div class="flex flex-wrap items-center gap-2">
           <UTooltip
             :text="server.stars > 0 ? server.stars + ' stars' : 'No stars'"
             :delay-duration="0"
@@ -108,16 +114,16 @@
               <span class="text-sm font-medium">{{ server.forks }}</span>
             </div>
           </UTooltip>
+          <UButton
+            :to="server.serplyLink || server.url"
+            target="_blank"
+            variant="none"
+            color="primary"
+            size="sm"
+            icon="i-lucide-square-arrow-out-up-right"
+            aria-label="View repository"
+          />
         </div>
-
-        <!-- view buttons -->
-        <NuxtLink
-          :href="server.serplyLink || server.url"
-          target="_blank"
-          class="flex h-10 w-full items-center justify-center gap-2 rounded-full bg-[var(--ui-bg-inverted)] px-4 py-2 text-sm font-medium text-[var(--ui-bg)] transition-colors hover:bg-neutral-800 dark:bg-[var(--ui-bg)] dark:text-[var(--ui-bg-inverted)] dark:hover:bg-[var(--ui-bg-elevated)]"
-        >
-          GitHub
-        </NuxtLink>
       </div>
     </div>
   </div>

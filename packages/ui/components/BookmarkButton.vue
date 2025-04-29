@@ -3,7 +3,7 @@
   const props = defineProps<{
     id: number | string;
     module: string;
-    bookmarks: string[];
+    bookmarks: string[] | [];
   }>();
 
   const localBookmark = ref<string[]>([]);

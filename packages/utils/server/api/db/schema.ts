@@ -338,7 +338,8 @@ export const mcpServerCache = cacheSchema.table('mcp_server_cache', {
   repoUpdatedAt: timestamp('repo_updated_at', { withTimezone: true }),
   upvotes: text('upvotes').array(),
   categories: jsonb('categories'),
-  serplyLink: text('serply_link')
+  serplyLink: text('serply_link'),
+  llmsText: text('llms_text')
 });
 
 export const mcpServerCategoryCache = cacheSchema.table(

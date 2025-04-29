@@ -140,10 +140,10 @@
     <!-- Main content - single column layout -->
     <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
       <!-- Overview Section -->
-      <UCard
+      <!-- <UCard
         v-if="data.excerpt"
         id="overview"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -158,53 +158,12 @@
         <div class="p-4 sm:p-6">
           <ServiceProviderOverview :service-provider="data" />
         </div>
-      </UCard>
+      </UCard> -->
 
-      <!-- Categories Section -->
-      <UCard
-        v-if="data.categories && data.categories.length"
-        id="categories"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
-        :ui="{ body: { padding: 'p-4 sm:p-6' } }"
-      >
-        <template #header>
-          <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
-              Categories
-            </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
-          </div>
-        </template>
-        <UDivider class="my-0" />
-        <SPill base-slug="products/best" :items="data.categories" />
-      </UCard>
-
-      <!-- Media Carousel Section -->
-      <UCard
-        v-if="data.screenshots && data.screenshots.length"
-        id="media"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
-        :ui="{ body: { padding: 'p-0' } }"
-      >
-        <template #header>
-          <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
-              Media
-            </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
-          </div>
-        </template>
-        <UDivider class="my-0" />
-        <div class="p-0">
-          <MediaGallery :service-provider="data" />
-        </div>
-      </UCard>
-
-      <!-- ServiceProviderMergedContent Details Section -->
       <!-- ServiceProviderMergedContent Details Section -->
       <UCard
         id="provider-details"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -502,11 +461,51 @@
         </div>
       </UCard>
 
+      <!-- Categories Section -->
+      <UCard
+        v-if="data.categories && data.categories.length"
+        id="categories"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
+        :ui="{ body: { padding: 'p-4 sm:p-6' } }"
+      >
+        <template #header>
+          <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              Categories
+            </h2>
+            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+          </div>
+        </template>
+        <UDivider class="my-0" />
+        <SPill base-slug="products/best" :items="data.categories" />
+      </UCard>
+
+      <!-- Media Carousel Section -->
+      <UCard
+        v-if="data.screenshots && data.screenshots.length"
+        id="media"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
+        :ui="{ body: { padding: 'p-0' } }"
+      >
+        <template #header>
+          <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              Media
+            </h2>
+            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+          </div>
+        </template>
+        <UDivider class="my-0" />
+        <div class="p-0">
+          <MediaGallery :service-provider="data" />
+        </div>
+      </UCard>
+
       <!-- Article Section -->
       <UCard
         v-if="data.content"
         id="article"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -738,7 +737,7 @@
       <!-- Discussion Section -->
       <UCard
         id="discussion"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-0' } }"
       >
         <template #header>
