@@ -156,7 +156,7 @@
         </template>
         <UDivider class="my-0" />
         <div class="p-4 sm:p-6">
-          <ServiceProviderOverview :serviceProvider="data" />
+          <ServiceProviderOverview :service-provider="data" />
         </div>
       </UCard>
 
@@ -196,7 +196,7 @@
         </template>
         <UDivider class="my-0" />
         <div class="p-0">
-          <MediaGallery :serviceProvider="data" />
+          <MediaGallery :service-provider="data" />
         </div>
       </UCard>
 
@@ -729,7 +729,7 @@
 
       <CompanyReviewModal
         v-model:open="showReviewModal"
-        :serviceProvider-id="data.id"
+        :service-provider-id="data.id"
         :result="reviews"
         @close="showReviewModal = false"
         @review-submitted="handleReviewSubmitted"

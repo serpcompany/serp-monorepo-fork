@@ -33,8 +33,7 @@ export default defineNuxtConfig({
       useAuth: true,
       environment: process.env.NODE_ENV,
       forCloudflare: false,
-      copyrightText: '© SERP',
-
+      copyrightText: '© SERP'
     }
   },
   app: {

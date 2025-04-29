@@ -78,8 +78,7 @@ export default defineNuxtConfig({
         ]
       ],
 
-      copyrightText: '© DS',
-
+      copyrightText: '© DS'
     }
   },
   app: {

@@ -87,7 +87,7 @@
 
 <template>
   <div class="flex w-full items-center sm:w-auto">
-    <UButton :disabled="loading" @click="bookmark" variant="outline">
+    <UButton :disabled="loading" variant="outline" @click="bookmark">
       <span
         v-if="loading"
         class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent"

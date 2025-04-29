@@ -54,7 +54,7 @@
         <ServiceProviderCard
           v-for="serviceProvider in data.serviceProviders"
           :key="serviceProvider.slug"
-          :serviceProvider="serviceProvider"
+          :service-provider="serviceProvider"
           :base-slug="'service-providers/'"
         />
       </div>
