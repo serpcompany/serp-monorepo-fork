@@ -272,6 +272,7 @@
                   <span v-else>{{ value }}</span>
                 </div>
               </div>
+            </div>
 
             <!-- Services -->
             <div v-if="Object.keys(providerDetails.services).length">

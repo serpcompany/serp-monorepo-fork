@@ -6,8 +6,8 @@ export interface ServiceProvider {
   createdAt?: string;
   name?: string;
   slug?: string;
-  logoUrl?: string; //TODO: refactor to `logo` to match other company module
-  excerpt?: string; //TODO: add exercept to DB + generate them
+  logoUrl?: string; // TODO: refactor to `logo` to match other company module
+  excerpt?: string; // TODO: add exercept to DB + generate them
   content?: string;
   basicInfo?: Record<string, unknown>;
   contracts?: Record<string, unknown>;
@@ -20,8 +20,8 @@ export interface ServiceProvider {
   serplyLink?: string;
   categories?: Category[];
   topics?: Topic[];
-  //TODO: refactor this + type Company to extend from a common base type
-  //TODO: add these fields into the DB ---------- 👇
+  // TODO: refactor this + type Company to extend from a common base type
+  // TODO: add these fields into the DB ---------- 👇
   faqs?: Faq[];
   featured?: boolean;
   featuredOrder?: number;
@@ -37,7 +37,7 @@ export interface ServiceProvider {
   screenshots?: string[];
   features?: Feature[];
   verified?: number; // id of verification table row (null = not verified)
-  //TODO: add these fields into the DB ---------- 👆
+  // TODO: add these fields into the DB ---------- 👆
 }
 
 export interface ServiceProviderIndex {

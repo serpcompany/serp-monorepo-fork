@@ -77,7 +77,7 @@ export default defineNuxtConfig({
           }
         ]
       ],
-      // headerNavItems, footerColumns, socialLinks and legalLinks are now defined in app.config.ts
+
       copyrightText: '© DS',
       address: ''
     }

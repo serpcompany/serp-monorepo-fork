@@ -105,14 +105,6 @@ export default defineAppConfig({
     ],
     headerNavItems: [
       {
-        label: 'Companies',
-        children: [{ label: 'Companies', to: '/products/' }]
-      },
-      {
-        label: 'MCP',
-        children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
-      },
-      {
         label: 'Solutions',
         children: [{ label: 'Solutions', to: '/solutions/' }]
       },
@@ -127,20 +119,28 @@ export default defineAppConfig({
         ]
       },
       {
-        label: 'Glossary',
-        children: [{ label: 'Glossary', to: '/glossary/' }]
-      },
-      {
-        label: 'Blog',
+        label: 'Content',
         children: [
+          { label: 'Glossary', to: '/glossary/' },
           { label: 'Blog', to: '/blog/' },
           { label: 'Posts', to: '/posts/' }
         ]
+      },
+      {
+        label: 'Reviews',
+        children: [
+          { label: 'Products', to: '/products/' },
+          { label: 'Service Providers', to: '/services/' }
+        ]
+      },
+      {
+        label: 'MCP',
+        children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
       }
     ],
     submitOptions: [
-      { label: 'Product', to: '/users/submit/product/' }
-      // { label: 'Service', to: '/users/submit/service/' },
+      { label: 'Product', to: '/users/submit/product/' },
+      { label: 'Service', to: '/users/submit/product/' }
       // { label: 'MCP Server', to: '/users/submit/mcp-server/' }
     ]
   }
