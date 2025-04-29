@@ -200,8 +200,8 @@
         </div>
       </UCard>
 
-      <!-- filepath: /Users/devin/repos/projects/serp-monorepo/packages/ui/components/SPage/ServiceProvider/Single.vue -->
-      <!-- Add this card anywhere you want in your template section -->
+      <!-- ServiceProviderMergedContent Details Section -->
+      <!-- ServiceProviderMergedContent Details Section -->
       <UCard
         id="provider-details"
         class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
@@ -216,8 +216,9 @@
           </div>
         </template>
         <UDivider class="my-0" />
+
         <div class="p-4 sm:p-6">
-          <div>
+          <div class="space-y-6">
             <!-- Basic Info -->
             <div v-if="Object.keys(providerDetails.basic).length">
               <h3 class="mb-3 text-lg font-medium">Basic Information</h3>
@@ -228,20 +229,27 @@
                   class="flex flex-col"
                 >
                   <span class="font-medium">{{ key }}:</span>
-                  <div
-                    v-if="typeof value === 'object' && value !== null"
-                    class="mt-1 ml-4"
-                  >
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
                     <div
                       v-for="(nestedValue, nestedKey) in value"
                       :key="nestedKey"
-                      class="flex"
+                      class="flex flex-wrap items-baseline"
                     >
-                      <span class="mr-2 font-medium">{{ nestedKey }}:</span>
-                      <span>{{ nestedValue }}</span>
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
                     </div>
                   </div>
-                  <span v-else>{{ value }}</span>
                 </div>
               </div>
             </div>
@@ -256,20 +264,27 @@
                   class="flex flex-col"
                 >
                   <span class="font-medium">{{ key }}:</span>
-                  <div
-                    v-if="typeof value === 'object' && value !== null"
-                    class="mt-1 ml-4"
-                  >
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
                     <div
                       v-for="(nestedValue, nestedKey) in value"
                       :key="nestedKey"
-                      class="flex"
+                      class="flex flex-wrap items-baseline"
                     >
-                      <span class="mr-2 font-medium">{{ nestedKey }}:</span>
-                      <span>{{ nestedValue }}</span>
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
                     </div>
                   </div>
-                  <span v-else>{{ value }}</span>
                 </div>
               </div>
             </div>
@@ -281,10 +296,30 @@
                 <div
                   v-for="(value, key) in providerDetails.services"
                   :key="key"
-                  class="flex"
+                  class="flex flex-col"
                 >
-                  <span class="mr-2 font-medium">{{ key }}:</span>
-                  <span>{{ value }}</span>
+                  <span class="font-medium">{{ key }}:</span>
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
+                    <div
+                      v-for="(nestedValue, nestedKey) in value"
+                      :key="nestedKey"
+                      class="flex flex-wrap items-baseline"
+                    >
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -296,10 +331,30 @@
                 <div
                   v-for="(value, key) in providerDetails.industries"
                   :key="key"
-                  class="flex"
+                  class="flex flex-col"
                 >
-                  <span class="mr-2 font-medium">{{ key }}:</span>
-                  <span>{{ value }}</span>
+                  <span class="font-medium">{{ key }}:</span>
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
+                    <div
+                      v-for="(nestedValue, nestedKey) in value"
+                      :key="nestedKey"
+                      class="flex flex-wrap items-baseline"
+                    >
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -311,10 +366,30 @@
                 <div
                   v-for="(value, key) in providerDetails.contracts"
                   :key="key"
-                  class="flex"
+                  class="flex flex-col"
                 >
-                  <span class="mr-2 font-medium">{{ key }}:</span>
-                  <span>{{ value }}</span>
+                  <span class="font-medium">{{ key }}:</span>
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
+                    <div
+                      v-for="(nestedValue, nestedKey) in value"
+                      :key="nestedKey"
+                      class="flex flex-wrap items-baseline"
+                    >
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -326,10 +401,30 @@
                 <div
                   v-for="(value, key) in providerDetails.businessesServed"
                   :key="key"
-                  class="flex"
+                  class="flex flex-col"
                 >
-                  <span class="mr-2 font-medium">{{ key }}:</span>
-                  <span>{{ value }}</span>
+                  <span class="font-medium">{{ key }}:</span>
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
+                    <div
+                      v-for="(nestedValue, nestedKey) in value"
+                      :key="nestedKey"
+                      class="flex flex-wrap items-baseline"
+                    >
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -341,10 +436,30 @@
                 <div
                   v-for="(value, key) in providerDetails.supportSetup"
                   :key="key"
-                  class="flex"
+                  class="flex flex-col"
                 >
-                  <span class="mr-2 font-medium">{{ key }}:</span>
-                  <span>{{ value }}</span>
+                  <span class="font-medium">{{ key }}:</span>
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
+                    <div
+                      v-for="(nestedValue, nestedKey) in value"
+                      :key="nestedKey"
+                      class="flex flex-wrap items-baseline"
+                    >
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -356,10 +471,30 @@
                 <div
                   v-for="(value, key) in providerDetails.ratings"
                   :key="key"
-                  class="flex"
+                  class="flex flex-col"
                 >
-                  <span class="mr-2 font-medium">{{ key }}:</span>
-                  <span>{{ value }}</span>
+                  <span class="font-medium">{{ key }}:</span>
+                  <span v-if="typeof value !== 'object' || value === null">{{
+                    value || 'Unknown'
+                  }}</span>
+                  <div v-else class="mt-1 ml-4 space-y-1">
+                    <div
+                      v-for="(nestedValue, nestedKey) in value"
+                      :key="nestedKey"
+                      class="flex flex-wrap items-baseline"
+                    >
+                      <span class="mr-2 font-bold">{{ nestedKey }}:</span>
+                      <span>{{
+                        nestedValue === null ||
+                        nestedValue === undefined ||
+                        nestedValue === ''
+                          ? 'Unknown'
+                          : typeof nestedValue === 'object'
+                            ? JSON.stringify(nestedValue)
+                            : nestedValue
+                      }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

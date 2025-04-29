@@ -14,11 +14,11 @@ export default defineAppConfig({
       },
       {
         title: 'Providers',
-        slug: '/services/',
+        slug: '/service-providers/',
         items: [
           {
             text: 'Services',
-            slug: '/services/'
+            slug: '/service-providers/'
           }
         ]
       },
@@ -45,7 +45,7 @@ export default defineAppConfig({
           },
           {
             text: 'Providers',
-            slug: '/services/best/'
+            slug: '/service-providers/best/'
           },
           {
             text: 'MCP Servers',
@@ -130,7 +130,7 @@ export default defineAppConfig({
         label: 'Reviews',
         children: [
           { label: 'Products', to: '/products/' },
-          { label: 'Service Providers', to: '/services/' }
+          { label: 'Service Providers', to: '/service-providers/' }
         ]
       },
       {

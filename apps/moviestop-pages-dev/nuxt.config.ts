@@ -50,7 +50,7 @@ export default defineNuxtConfig({
       forCloudflare: true,
       environment: process.env.NODE_ENV,
       copyrightText: '© The Movie Stop',
-      address: ''
+
     }
   },
   app: {

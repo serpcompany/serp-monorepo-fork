@@ -44,7 +44,7 @@ export default defineNuxtConfig({
       forCloudflare: false,
       environment: process.env.NODE_ENV,
       copyrightText: '© SERP',
-      address: ''
+
     }
   },
   app: {

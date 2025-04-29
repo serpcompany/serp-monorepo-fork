@@ -39,7 +39,7 @@ export default defineNuxtConfig({
       forCloudflare: false,
       environment: process.env.NODE_ENV,
       copyrightText: '© BOXING UNDEFEATED',
-      address: ''
+
     }
   },
   app: {

@@ -38,7 +38,7 @@ export default defineNuxtConfig({
       environment: process.env.NODE_ENV,
       forCloudflare: false,
       copyrightText: '© DAFT FM',
-      address: ''
+
     }
   },
   app: {

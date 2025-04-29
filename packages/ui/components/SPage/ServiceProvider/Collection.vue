@@ -55,7 +55,7 @@
           v-for="serviceProvider in data.serviceProviders"
           :key="serviceProvider.slug"
           :serviceProvider="serviceProvider"
-          :base-slug="'services/'"
+          :base-slug="'service-providers/'"
         />
       </div>
 
@@ -73,7 +73,7 @@
         v-if="categories && categories.length"
         :categories="categories"
         headline="Categories"
-        base-slug="services/best"
+        base-slug="service-providers/best"
       />
       <NewsletterSignupPageSection />
     </UMain>

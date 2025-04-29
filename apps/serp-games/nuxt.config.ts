@@ -107,7 +107,7 @@ export default defineNuxtConfig({
         { text: 'DMCA', slug: '/legal/dmca/' }
       ],
       copyrightText: '© SERP',
-      address: ''
+
     }
   },
   app: {

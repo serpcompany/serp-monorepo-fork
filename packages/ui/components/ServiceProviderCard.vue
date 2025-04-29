@@ -21,7 +21,7 @@
     },
     baseSlug: {
       type: String,
-      default: 'services/'
+      default: 'service-providers/'
     }
   });
 
