@@ -5,7 +5,6 @@ export type FooterColumnItem = {
 
 export type FooterColumn = {
   title: string;
-  id: number;
   slug: string;
   items: FooterColumnItem[];
 };

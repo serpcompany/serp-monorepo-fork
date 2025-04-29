@@ -6,7 +6,6 @@ export default defineAppConfig({
     footerColumns: [
       {
         title: 'Software',
-        id: 1,
         slug: '/products/',
         items: [
           { text: 'Categories', slug: '/products/best/' },
@@ -14,10 +13,23 @@ export default defineAppConfig({
         ]
       },
       {
-        title: 'MCP Severs',
-        id: 2,
+        title: 'Providers',
+        slug: '/services/',
+        items: [
+          {
+            text: 'Services',
+            slug: '/services/'
+          }
+        ]
+      },
+      {
+        title: 'MCP',
         slug: '/mcp/servers/',
         items: [
+          {
+            text: 'MCP Servers',
+            slug: '/mcp/servers/'
+          },
           {
             text: 'Categories',
             slug: '/mcp/servers/categories/'
@@ -25,32 +37,28 @@ export default defineAppConfig({
         ]
       },
       {
+        title: 'Categories',
+        items: [
+          {
+            text: 'Products',
+            slug: '/products/best/'
+          },
+          {
+            text: 'Providers',
+            slug: '/services/best/'
+          },
+          {
+            text: 'MCP Servers',
+            slug: '/mcp/servers/categories/'
+          }
+        ]
+      },
+      {
         title: 'Resources',
-        id: 3,
-        slug: '',
         items: [
           { text: 'Blog', slug: '/blog/' },
           { text: 'Glossary', slug: '/glossary/' },
           { text: 'Tools', slug: '/tools/' }
-        ]
-      },
-      {
-        title: 'Brand',
-        id: 4,
-        slug: '',
-        items: [
-          {
-            text: 'About',
-            slug: '/about/'
-          },
-          {
-            text: 'Solutions',
-            slug: '/solutions/'
-          },
-          {
-            text: 'Contact',
-            slug: '#'
-          }
         ]
       }
     ],
@@ -87,6 +95,9 @@ export default defineAppConfig({
       }
     ],
     legalLinks: [
+      { text: 'About', slug: '/about/' },
+      { text: 'Solutions', slug: '/solutions/' },
+      { text: 'Contact', slug: '#' },
       { text: 'Privacy', slug: '/legal/privacy-policy/' },
       { text: 'Terms', slug: '/legal/terms-conditions/' },
       { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
@@ -128,10 +139,9 @@ export default defineAppConfig({
       }
     ],
     submitOptions: [
-      { label: 'Company', to: '/users/submit/company/' },
-      { label: 'Software', to: '/users/submit/software/' },
-      { label: 'Product', to: '/users/submit/product/' },
-      { label: 'MCP Server', to: '/users/submit/mcp-server/' }
+      { label: 'Product', to: '/users/submit/product/' }
+      // { label: 'Service', to: '/users/submit/service/' },
+      // { label: 'MCP Server', to: '/users/submit/mcp-server/' }
     ]
   }
 });

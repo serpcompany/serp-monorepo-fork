@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import type { Company } from '@serp/types/types';
+  import type { ServiceProvider } from '@serp/types/types';
   import { computed, ref } from 'vue';
 
   const props = defineProps({
-    company: {
-      type: Object as PropType<Company>,
+    serviceProvider: {
+      type: Object as PropType<ServiceProvider>,
       required: true
     },
     showReadMore: {
@@ -21,18 +21,21 @@
     },
     baseSlug: {
       type: String,
-      default: 'products/'
+      default: 'services/'
     }
   });
 
   const isExpanded = ref(false);
 
-  // Compute the main image, either the company logo or the first screenshot
-  const companyMainImage = computed(() => {
-    if (props.company.logo) {
-      return props.company.logo;
-    } else if (props.company.screenshots && props.company.screenshots.length) {
-      return props.company.screenshots[0];
+  // Compute the main image, either the serviceProvider logo or the first screenshot
+  const serviceProviderMainImage = computed(() => {
+    if (props.serviceProvider.logo) {
+      return props.serviceProvider.logo;
+    } else if (
+      props.serviceProvider.screenshots &&
+      props.serviceProvider.screenshots.length
+    ) {
+      return props.serviceProvider.screenshots[0];
     } else {
       return null;
     }
@@ -43,67 +46,67 @@
   <div
     :class="[
       'mx-auto max-w-5xl rounded-lg',
-      company.featured
+      serviceProvider.featured
         ? 'relative overflow-hidden border border-neutral-200 bg-gradient-to-b from-blue-50/50 to-transparent px-6 py-10 dark:border-blue-500/40 dark:from-blue-900/30 dark:to-neutral-900/60 dark:shadow-[0_0_15px_rgba(30,64,175,0.15)]'
         : 'border border-[var(--ui-border)] px-5 py-4 dark:border-[var(--ui-border-accented)]'
     ]"
   >
     <!-- Featured accent border -->
     <div
-      v-if="company.featured"
+      v-if="serviceProvider.featured"
       class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-400 to-purple-400"
       aria-hidden="true"
     ></div>
 
     <!-- card content -->
     <div class="flex items-start">
-      <!-- company image -->
+      <!-- serviceProvider image -->
       <div
-        v-if="companyMainImage"
+        v-if="serviceProviderMainImage"
         class="mr-5 flex-shrink-0"
-        :class="{ 'mb-4 sm:mb-0': company.featured }"
+        :class="{ 'mb-4 sm:mb-0': serviceProvider.featured }"
       >
-        <NuxtLink :to="`/${baseSlug}${company.slug}/reviews/`">
+        <NuxtLink :to="`/${baseSlug}${serviceProvider.slug}/`">
           <div
             :class="[
               'overflow-hidden rounded-lg bg-[var(--ui-bg-muted)] dark:bg-[var(--ui-bg-elevated)]',
-              company.featured
+              serviceProvider.featured
                 ? 'h-36 w-36 ring-1 ring-blue-100 dark:ring-blue-500/50'
                 : 'h-28 w-28'
             ]"
           >
             <LazyNuxtImg
-              :src="companyMainImage"
-              :alt="company.name"
+              :src="serviceProviderMainImage"
+              :alt="serviceProvider.name"
               class="h-full w-full object-contain"
             />
           </div>
         </NuxtLink>
       </div>
 
-      <!-- company content -->
+      <!-- serviceProvider content -->
       <div class="flex-grow">
         <div class="flex flex-col justify-between sm:flex-row">
           <div class="sm:max-w-[calc(100%-180px)] sm:pr-8">
-            <!-- company name and badge -->
+            <!-- serviceProvider name and badge -->
             <div class="flex items-center">
               <NuxtLink
                 class="flex"
-                :to="`/${baseSlug}${company.slug}/reviews/`"
+                :to="`/${baseSlug}${serviceProvider.slug}/`"
               >
                 <h2
                   :class="[
                     'font-semibold',
-                    company.featured
+                    serviceProvider.featured
                       ? 'mb-1 text-2xl text-blue-700 dark:text-blue-300'
                       : 'text-xl text-[var(--ui-text)] dark:text-[var(--ui-text)]'
                   ]"
                 >
-                  {{ company.name }}
+                  {{ serviceProvider.name }}
                 </h2>
               </NuxtLink>
               <UBadge
-                v-if="company.featured"
+                v-if="serviceProvider.featured"
                 :avatar="{
                   src: 'https://github.com/serpcompany.png'
                 }"
@@ -116,45 +119,50 @@
               </UBadge>
             </div>
 
-            <!-- company oneliner -->
+            <!-- serviceProvider oneliner -->
             <p
               :class="[
                 'text-[var(--ui-text-muted)] dark:text-[var(--ui-text-toned)]',
-                company.featured
+                serviceProvider.featured
                   ? 'mt-3 text-base leading-relaxed dark:text-[var(--ui-text)]'
                   : 'mt-2 line-clamp-2'
               ]"
             >
-              {{ company.oneLiner }}
+              {{ serviceProvider.oneLiner }}
             </p>
 
             <!-- show excerpt only for featured cards -->
             <p
-              v-if="company.featured && company.excerpt"
+              v-if="serviceProvider.featured && serviceProvider.excerpt"
               class="mt-5 mb-1 line-clamp-3 text-[var(--ui-text-muted)] dark:text-[var(--ui-text-toned)]"
             >
-              {{ company.excerpt }}
+              {{ serviceProvider.excerpt }}
             </p>
 
             <!-- rating display -->
             <div
-              v-if="company.rating"
-              :class="{ 'mt-3': !company.featured, 'mt-6': company.featured }"
+              v-if="serviceProvider.rating"
+              :class="{
+                'mt-3': !serviceProvider.featured,
+                'mt-6': serviceProvider.featured
+              }"
             >
-              <span class="text-lg font-medium">{{ company.rating }}/5</span>
+              <span class="text-lg font-medium"
+                >{{ serviceProvider.rating }}/5</span
+              >
             </div>
           </div>
 
           <!-- right side buttons -->
           <div
             :class="[
-              'flex min-w-[140px] flex-col space-y-2',
-              company.featured ? 'mt-5 sm:mt-0 sm:ml-4' : 'mt-4 sm:mt-0'
+              'flex min-w-[130px] flex-col space-y-2',
+              serviceProvider.featured ? 'mt-5 sm:mt-0 sm:ml-4' : 'mt-4 sm:mt-0'
             ]"
           >
             <!-- view website button -->
             <NuxtLink
-              :href="company.serplyLink"
+              :href="serviceProvider.serplyLink"
               target="_blank"
               class="flex h-10 w-full items-center justify-center gap-2 rounded-md bg-[var(--ui-bg-inverted)] px-4 py-2 text-sm font-medium text-[var(--ui-bg)] transition-colors hover:bg-neutral-800 dark:bg-[var(--ui-bg)] dark:text-[var(--ui-bg-inverted)] dark:hover:bg-[var(--ui-bg-elevated)]"
             >
@@ -178,24 +186,35 @@
             </NuxtLink>
 
             <!-- upvote button -->
-            <UpvoteButton
-              :id="company.id"
-              module="company"
-              :upvotes="company.upvotes || []"
-            />
+            <div class="flex justify-between">
+              <UpvoteButton
+                :id="serviceProvider.id"
+                module="serviceProvider"
+                :upvotes="serviceProvider.upvotes || []"
+              />
+              <BookmarkButton
+                :id="serviceProvider.id"
+                module="serviceProvider"
+                :bookmarked="serviceProvider.bookmark || []"
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- feature tags only for featured companies -->
+    <!-- feature tags only for featured providers -->
     <div
-      v-if="company.featured && company.features && company.features.length"
+      v-if="
+        serviceProvider.featured &&
+        serviceProvider.features &&
+        serviceProvider.features.length
+      "
       class="mt-8"
     >
       <div class="flex flex-wrap gap-2">
         <span
-          v-for="feature in company.features.slice(0, 4)"
+          v-for="feature in serviceProvider.features.slice(0, 4)"
           :key="feature.id"
           class="inline-flex rounded-full bg-[var(--ui-color-secondary-50)] px-3 py-1 text-xs font-medium text-[var(--ui-color-secondary-700)] dark:bg-[var(--ui-color-secondary-900)]/30 dark:text-[var(--ui-color-secondary-200)]"
         >
@@ -206,13 +225,13 @@
 
     <!-- expanded content (if needed) -->
     <div v-if="isExpanded && showExpandedContent" class="mt-8 border-t pt-4">
-      <p>{{ company.excerpt }}</p>
+      <p>{{ serviceProvider.excerpt }}</p>
 
       <!-- features-->
       <section v-if="showFeatures" class="mt-4">
         <h3 class="pb-2 text-lg font-medium">Features</h3>
         <ul class="list-disc pl-5">
-          <li v-for="feature in company.features" :key="feature.id">
+          <li v-for="feature in serviceProvider.features" :key="feature.id">
             {{ feature.item }}: {{ feature.description }}
           </li>
         </ul>
