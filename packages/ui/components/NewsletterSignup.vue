@@ -71,7 +71,7 @@
     size="xl"
     label="Subscribe"
     color="primary"
-    :class="`my-4 inline-flex items-center gap-2 rounded-md border border-${buttonBorderColor} bg-${buttonBackground} px-8 py-3 text-lg font-semibold text-${buttonTextColor} hover:bg-opacity-90 transition-colors hover:bg-${buttonBackground === 'white' ? 'gray-100' : 'neutral-800'} focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75`"
+    :class="`my-4 inline-flex items-center gap-2 rounded-md border border-${buttonBorderColor} bg-${buttonBackground} hover:bg-opacity-90 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-${buttonBackground === 'white' ? 'gray-100' : 'neutral-800'} focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75`"
     @click="showNewsletterModal = true"
   />
   <UModal v-model:open="showNewsletterModal" :title="'Newsletter'">

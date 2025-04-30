@@ -3,6 +3,9 @@ export default defineAppConfig({
     name: '@serp/ui'
   },
   ui: {
+    colors: {
+      neutral: 'gray'
+    },
     button: {
       slots: {
         base: 'font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors'

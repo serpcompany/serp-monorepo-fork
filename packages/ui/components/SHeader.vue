@@ -153,11 +153,10 @@
               </svg>
             </UButton>
           </UDropdownMenu>
+          <ProfileDropdown v-if="useAuth" />
           <UColorModeButton
-            v-if="loggedIn"
             class="rounded-full border border-neutral-300 p-2"
           />
-          <ProfileDropdown v-if="useAuth" />
         </div>
       </div>
     </div>

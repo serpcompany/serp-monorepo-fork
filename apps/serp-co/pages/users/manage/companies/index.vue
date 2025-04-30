@@ -1,31 +1,31 @@
 <script setup lang="ts">
-const { loggedIn } = useUserSession();
-if (!loggedIn.value) {
-  navigateTo('/');
-}
+  const { loggedIn } = useUserSession();
+  if (!loggedIn.value) {
+    navigateTo('/');
+  }
 
-// fetch submissions
-const submissions = await useCompanySubmissions();
+  // fetch submissions
+  const submissions = await useCompanySubmissions();
 
-// fetch verified companies
-const {
-  data: verifiedData,
-  pending: verifiedPending,
-  error: verifiedError
-} = await useFetch<{
-  companies: Array<{
-    id: number;
-    name: string;
-    domain: string;
-    verifiedAt: string;
-  }>;
-}>('/api/companies/verified', {
-  method: 'GET'
-});
+  // fetch verified companies
+  const {
+    data: verifiedData,
+    pending: verifiedPending,
+    error: verifiedError
+  } = await useFetch<{
+    companies: Array<{
+      id: number;
+      name: string;
+      domain: string;
+      verifiedAt: string;
+    }>;
+  }>('/api/companies/verified', {
+    method: 'GET'
+  });
 
-useSeoMeta({
-  title: 'My Companies'
-});
+  useSeoMeta({
+    title: 'My Companies'
+  });
 </script>
 
 <template>
@@ -40,7 +40,7 @@ useSeoMeta({
       <div class="space-y-8">
         <!-- Submissions Section -->
         <div v-if="submissions" class="">
-          <h2 class="text-xl font-semibold mb-4">Your Submissions</h2>
+          <h2 class="mb-4 text-xl font-semibold">Your Submissions</h2>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             <div
               v-for="submission in submissions"
@@ -69,7 +69,7 @@ useSeoMeta({
                 <p v-if="submission.description" class="text-neutral-600">
                   {{ submission.description }}
                 </p>
-                <p class="text-neutral-500 mt-2">
+                <p class="mt-2 text-neutral-500">
                   Status:
                   {{
                     submission.approved
@@ -98,7 +98,7 @@ useSeoMeta({
 
         <!-- Verified Companies Section -->
         <div>
-          <h2 class="text-xl font-semibold mb-4">Verified Companies</h2>
+          <h2 class="mb-4 text-xl font-semibold">Verified Companies</h2>
 
           <div v-if="verifiedPending" class="py-8 text-center">
             Loading companies…
@@ -109,14 +109,19 @@ useSeoMeta({
           </div>
 
           <div v-else>
-            <div v-if="verifiedData?.companies.length" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div
+              v-if="verifiedData?.companies.length"
+              class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+            >
               <NuxtLink
                 v-for="company in verifiedData.companies"
                 :key="company.id"
                 :to="`/users/manage/company/${company.id}`"
                 class="rounded-lg bg-white p-4 shadow-md dark:bg-neutral-800"
               >
-                <h3 class="text-lg font-semibold">{{ company.name }} ({{ company.domain }})</h3>
+                <h3 class="text-lg font-semibold">
+                  {{ company.name }} ({{ company.domain }})
+                </h3>
                 <p class="mt-2 text-sm text-neutral-600">
                   Verified on {{ company.verifiedAt }}
                 </p>
@@ -134,16 +139,16 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
+  .fade-enter-to,
+  .fade-leave-from {
+    opacity: 1;
+  }
 </style>

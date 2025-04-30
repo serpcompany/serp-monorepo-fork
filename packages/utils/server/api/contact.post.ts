@@ -1,35 +1,34 @@
-
 import { defineEventHandler, readBody } from 'h3';
 import { sendEmail } from '../utils/mailGun';
 
-const hasText = (v: string) => v.trim() !== ''
-const isValidEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
+const hasText = (v: string) => v.trim() !== '';
+const isValidEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
 export default defineEventHandler(async (event) => {
-    const { name, email, subject, message } = (await readBody(event)) as {
-        name?: string;
-        email?: string;
-        subject?: string;
-        message?: string;
-    };
+  const { name, email, subject, message } = (await readBody(event)) as {
+    name?: string;
+    email?: string;
+    subject?: string;
+    message?: string;
+  };
 
-    if (!hasText(name)) {
-        return { error: 'name is required' };
-    }
-    if (!hasText(email)) {
-        return { error: 'email is required' };
-    }
-    if (!isValidEmail(email)) {
-        return { error: 'email is invalid' };
-    }
-    if (!hasText(subject)) {
-        return { error: 'subject is required' };
-    }
-    if (!hasText(message)) {
-        return { error: 'message is required' };
-    }
+  if (!hasText(name)) {
+    return { error: 'name is required' };
+  }
+  if (!hasText(email)) {
+    return { error: 'email is required' };
+  }
+  if (!isValidEmail(email)) {
+    return { error: 'email is invalid' };
+  }
+  if (!hasText(subject)) {
+    return { error: 'subject is required' };
+  }
+  if (!hasText(message)) {
+    return { error: 'message is required' };
+  }
 
-    const html = `
+  const html = `
     <!DOCTYPE html>
     <html>
     <head>
@@ -60,9 +59,9 @@ export default defineEventHandler(async (event) => {
         </table>
     </body>
     </html>
-    `
+    `;
 
-    const text = `
+  const text = `
     🆕 New Contact Request
 
     Name: ${name}
@@ -71,14 +70,14 @@ export default defineEventHandler(async (event) => {
 
     Message:
     ${message}
-    `.trim()
+    `.trim();
 
-    await sendEmail({
-        to: process.env.CONTACT_EMAIL || 'contact@serp.co',
-        subject: 'Contact Form Submission From `' + name + '`',  
-        text,
-        html,
-    });
-    
-    return { ok: true };
+  await sendEmail({
+    to: process.env.CONTACT_EMAIL || 'contact@serp.co',
+    subject: 'Contact Form Submission From `' + name + '`',
+    text,
+    html
+  });
+
+  return { ok: true };
 });
