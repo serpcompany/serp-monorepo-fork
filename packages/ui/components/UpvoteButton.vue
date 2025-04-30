@@ -87,17 +87,15 @@
 
 <template>
   <div class="flex w-full items-center sm:w-auto">
-    <UButton
-      class="bg-primary-50 disabled:bg-secondary-500 dark:disabled:bg-secondary-500 flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-4 py-2 font-medium text-neutral-700 transition-colors hover:bg-neutral-100 disabled:text-white disabled:opacity-90 sm:w-auto dark:border-neutral-600 dark:text-neutral-700 dark:hover:bg-neutral-100 dark:disabled:text-white"
-      :disabled="loading"
-      @click="upvote"
-    >
+    <UButton :disabled="loading" variant="outline" @click="upvote">
       <span
         v-if="loading"
         class="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent"
       ></span>
-      <span v-else class="text-xl">👍</span>
-      <span>Upvotes {{ localUpvotes.length }}</span>
+      <span v-else class="flex items-center text-xl">
+        <UIcon name="i-lucide-square-chevron-up" class="mr-2 size-5" />
+        <span class="text-lg">{{ localUpvotes.length }}</span>
+      </span>
     </UButton>
   </div>
 </template>

@@ -2,7 +2,7 @@
 
 exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>
@@ -36,7 +36,7 @@ exports[`MultipageHeader Snapshot > renders default rendering correctly 1`] = `
 
 exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>
@@ -70,7 +70,7 @@ exports[`MultipageHeader Snapshot > renders with empty sections correctly 1`] = 
 
 exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>
@@ -102,7 +102,7 @@ exports[`MultipageHeader Snapshot > renders with oneLiner and image correctly 1`
 
 exports[`MultipageHeader Snapshot > renders with upvote slot correctly 1`] = `
 "<div serply_link="https://example.com">
-  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 0;">
+  <header class="w-full bg-[var(--ui-bg)] transition-all duration-300 py-2 sm:py-4" style="z-index: 10;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- When not scrolled: show the regular layout -->
       <div>

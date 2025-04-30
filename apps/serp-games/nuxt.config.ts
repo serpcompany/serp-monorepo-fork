@@ -106,8 +106,7 @@ export default defineNuxtConfig({
         { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
         { text: 'DMCA', slug: '/legal/dmca/' }
       ],
-      copyrightText: '© SERP',
-      address: ''
+      copyrightText: '© SERP'
     }
   },
   app: {

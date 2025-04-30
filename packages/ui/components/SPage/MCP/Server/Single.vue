@@ -59,6 +59,8 @@
     });
   });
 
+  const llmsText = ref(data.llmsText);
+
   useSeoMeta({
     title: computed(() => `${data.owner}/${data.repo} · MCP Server Details`)
   });
@@ -87,7 +89,7 @@
       <!-- Overview -->
       <UCard
         id="overview"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -101,29 +103,54 @@
         </div>
       </UCard>
 
+      <!-- llm-text ara -->
+      <UCard>
+        <template #header>
+          <div class="flex items-center justify-between">
+            <UTooltip text="Tokens">
+              <UInput
+                label="asdf"
+                icon="i-lucide-coins"
+                size="md"
+                variant="outline"
+              />
+            </UTooltip>
+            <div class="justify-right flex items-center gap-2">
+              <UButton>Copy</UButton>
+              <UButton>Link</UButton>
+              <UButton>Raw</UButton>
+            </div>
+          </div>
+        </template>
+
+        <UTextarea v-model="llmsText" :rows="15" :ui="{ root: 'flex' }" />
+
+        <template #footer>
+          <Placeholder class="h-8" />
+        </template>
+      </UCard>
+
       <!-- Contributors -->
       <UCard
         v-if="data.contributors?.length"
         id="contributors"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
           <h2 class="text-xl font-semibold">Contributors</h2>
         </template>
         <UDivider class="my-0" />
-        <ul
-          class="mt-4 list-inside list-disc space-y-1 text-gray-700 dark:text-gray-300"
-        >
-          <li v-for="c in data.contributors" :key="c">{{ c }}</li>
-        </ul>
+        <div class="mt-4 text-gray-700 dark:text-gray-300">
+          {{ data.contributors.join(', ') }}
+        </div>
       </UCard>
 
       <!-- Categories -->
       <UCard
         v-if="data.categories?.length"
         id="categories"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -139,7 +166,7 @@
       <UCard
         v-if="data.tags?.length"
         id="tags"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -161,7 +188,7 @@
       <UCard
         v-if="data.topics?.length"
         id="topics"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -183,7 +210,7 @@
       <UCard
         v-if="data.languages"
         id="languages"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -230,7 +257,7 @@
       <UCard
         v-if="data.readme"
         id="readme"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>

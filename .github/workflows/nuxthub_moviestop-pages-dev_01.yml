@@ -6,6 +6,9 @@ on:
       - ci_1
     types:
       - completed
+    branches:
+      - main
+      - staging
 
 jobs:
   deploy:

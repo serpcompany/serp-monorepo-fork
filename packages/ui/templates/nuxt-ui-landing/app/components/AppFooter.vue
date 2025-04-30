@@ -1,65 +1,65 @@
 <script setup lang="ts">
-const columns = [
-  {
-    label: 'Resources',
-    children: [
-      {
-        label: 'Help center'
-      },
-      {
-        label: 'Docs'
-      },
-      {
-        label: 'Roadmap'
-      },
-      {
-        label: 'Changelog'
-      }
-    ]
-  },
-  {
-    label: 'Features',
-    children: [
-      {
-        label: 'Affiliates'
-      },
-      {
-        label: 'Portal'
-      },
-      {
-        label: 'Jobs'
-      },
-      {
-        label: 'Sponsors'
-      }
-    ]
-  },
-  {
-    label: 'Company',
-    children: [
-      {
-        label: 'About'
-      },
-      {
-        label: 'Pricing'
-      },
-      {
-        label: 'Careers'
-      },
-      {
-        label: 'Blog'
-      }
-    ]
-  }
-]
+  const columns = [
+    {
+      label: 'Resources',
+      children: [
+        {
+          label: 'Help center'
+        },
+        {
+          label: 'Docs'
+        },
+        {
+          label: 'Roadmap'
+        },
+        {
+          label: 'Changelog'
+        }
+      ]
+    },
+    {
+      label: 'Features',
+      children: [
+        {
+          label: 'Affiliates'
+        },
+        {
+          label: 'Portal'
+        },
+        {
+          label: 'Jobs'
+        },
+        {
+          label: 'Sponsors'
+        }
+      ]
+    },
+    {
+      label: 'Company',
+      children: [
+        {
+          label: 'About'
+        },
+        {
+          label: 'Pricing'
+        },
+        {
+          label: 'Careers'
+        },
+        {
+          label: 'Blog'
+        }
+      ]
+    }
+  ];
 
-const toast = useToast()
+  const toast = useToast();
 
-const email = ref('')
-const loading = ref(false)
+  const email = ref('');
+  const loading = ref(false);
 
-function onSubmit() {
-  loading.value = true
+  function onSubmit() {
+    loading.value = true;
     toast.add({
       title: 'Subscribed!',
       description: "Success! You're subscribed!"
@@ -68,10 +68,7 @@ function onSubmit() {
 </script>
 
 <template>
-  <USeparator
-    icon="i-simple-icons-nuxtdotjs"
-    class="h-px"
-  />
+  <USeparator icon="i-simple-icons-nuxtdotjs" class="h-px" />
 
   <UFooter :ui="{ top: 'border-b border-(--ui-border)' }">
     <template #top>
@@ -91,11 +88,7 @@ function onSubmit() {
                   placeholder="Enter your email"
                 >
                   <template #trailing>
-                    <UButton
-                      type="submit"
-                      size="xs"
-                      label="Subscribe"
-                    />
+                    <UButton type="submit" size="xs" label="Subscribe" />
                   </template>
                 </UInput>
               </UFormField>

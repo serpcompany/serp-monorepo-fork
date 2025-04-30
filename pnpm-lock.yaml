@@ -1644,7 +1644,7 @@ importers:
         version: 0.11.5(@types/youtube@0.1.0)(@unhead/vue@2.0.5)(nuxt@3.16.1)(typescript@5.7.3)(vue@3.5.13)
       '@nuxt/test-utils':
         specifier: ^3.14.4
-        version: 3.15.4(@testing-library/vue@8.1.0)(@vue/test-utils@2.4.6)(jsdom@25.0.1)(playwright-core@1.50.1)(typescript@5.7.3)(vitest@2.1.9)
+        version: 3.15.4(@testing-library/vue@8.1.0)(@vue/test-utils@2.4.6)(happy-dom@15.11.7)(jsdom@25.0.1)(playwright-core@1.50.1)(typescript@5.7.3)(vitest@2.1.9)
       '@nuxt/ui-pro':
         specifier: ^3.0.1
         version: 3.0.1(embla-carousel@8.5.2)(typescript@5.7.3)(vite@6.2.6)(vue@3.5.13)
@@ -1681,6 +1681,9 @@ importers:
       eslint:
         specifier: ^9.20.1
         version: 9.20.1
+      happy-dom:
+        specifier: ^15.11.6
+        version: 15.11.7
       jsdom:
         specifier: ^25.0.1
         version: 25.0.1
@@ -1704,7 +1707,7 @@ importers:
         version: 5.7.3
       vitest:
         specifier: ^2.1.5
-        version: 2.1.9(jsdom@25.0.1)
+        version: 2.1.9(happy-dom@15.11.7)(jsdom@25.0.1)
       vue:
         specifier: latest
         version: 3.5.13(typescript@5.7.3)

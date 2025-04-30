@@ -49,8 +49,7 @@ export default defineNuxtConfig({
       useAuth: false,
       forCloudflare: true,
       environment: process.env.NODE_ENV,
-      copyrightText: '© The Movie Stop',
-      address: ''
+      copyrightText: '© The Movie Stop'
     }
   },
   app: {

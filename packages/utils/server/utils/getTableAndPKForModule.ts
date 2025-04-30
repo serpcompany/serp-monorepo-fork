@@ -7,7 +7,9 @@ import {
   mcpServerCache,
   mcpServerComment,
   postCache,
-  postComment
+  postComment,
+  serviceProviderCache,
+  serviceProviderComment
 } from '@serp/utils/server/api/db/schema';
 
 export function getTableAndPKForModule(module: string) {
@@ -25,6 +27,11 @@ export function getTableAndPKForModule(module: string) {
     field = postCache.slug;
     commentsTable = postComment;
     commentsField = 'post';
+  } else if (module === 'service-providers' || module === 'service-provider') {
+    table = serviceProviderCache;
+    field = serviceProviderCache.id;
+    commentsTable = serviceProviderComment;
+    commentsField = 'service_provider';
   } else if (module === 'artists' || module === 'artist') {
     table = mbArtistMetadataCache;
     field = mbArtistMetadataCache.id;

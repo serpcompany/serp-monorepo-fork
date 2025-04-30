@@ -6,10 +6,7 @@
       xmlns="http://www.w3.org/2000/svg"
       class="pointer-events-none"
     >
-      <mask
-        id="path-1-inside-1_414_5526"
-        fill="white"
-      >
+      <mask id="path-1-inside-1_414_5526" fill="white">
         <path d="M0 0H1440V181H0V0Z" />
       </mask>
       <path
@@ -32,11 +29,7 @@
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="currentColor" />
-          <stop
-            offset="1"
-            stop-color="currentColor"
-            stop-opacity="0"
-          />
+          <stop offset="1" stop-color="currentColor" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_414_5526"
@@ -46,19 +39,9 @@
           y2="90.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop
-            stop-color="currentColor"
-            stop-opacity="0"
-          />
-          <stop
-            offset="0.395"
-            stop-color="currentColor"
-          />
-          <stop
-            offset="1"
-            stop-color="currentColor"
-            stop-opacity="0"
-          />
+          <stop stop-color="currentColor" stop-opacity="0" />
+          <stop offset="0.395" stop-color="currentColor" />
+          <stop offset="1" stop-color="currentColor" stop-opacity="0" />
         </linearGradient>
       </defs>
     </svg>
