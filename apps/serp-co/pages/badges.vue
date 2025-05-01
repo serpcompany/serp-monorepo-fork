@@ -19,6 +19,11 @@
       name: 'SERP Verified',
       url: 'https://embeds.serp.co/serp-verified-tiny.svg',
       path: 'serp-verified-tiny'
+    },
+    {
+      name: 'SERP Featured',
+      url: 'https://embeds.serp.co/serp-featured-small.svg',
+      path: 'serp-featured-small'
     }
   ];
 
