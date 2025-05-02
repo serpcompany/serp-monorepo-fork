@@ -106,12 +106,15 @@
     >
       <template v-for="(v, k) in value" :key="k">
         <dt
-          v-if="v && !blacklistKeys.includes(k)"
+          v-if="v !== null && v !== undefined && !blacklistKeys.includes(k)"
           class="pr-1 font-mono text-indigo-600 after:ml-0.5 after:content-[':']"
         >
           {{ renameKeysMapping[k] || k }}
         </dt>
-        <dd v-if="v && !blacklistKeys.includes(k)" class="min-w-0">
+        <dd
+          v-if="v !== null && v !== undefined && !blacklistKeys.includes(k)"
+          class="min-w-0"
+        >
           <JSONRenderer :value="v" :key_="k" />
         </dd>
       </template>
