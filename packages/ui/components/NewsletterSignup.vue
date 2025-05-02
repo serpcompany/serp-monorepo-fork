@@ -5,11 +5,31 @@
       type: String,
       default: 'transparent'
     },
+    buttonBackgroundDark: {
+      type: String,
+      default: 'transparent'
+    },
+    buttonBackgroundHover: {
+      type: String,
+      default: 'neutral-800'
+    },
+    buttonBackgroundHoverDark: {
+      type: String,
+      default: 'neutral-800'
+    },
     buttonTextColor: {
       type: String,
-      default: 'neutral-300'
+      default: 'white'
+    },
+    buttonTextColorDark: {
+      type: String,
+      default: 'white'
     },
     buttonBorderColor: {
+      type: String,
+      default: 'neutral-700'
+    },
+    buttonBorderColorDark: {
       type: String,
       default: 'neutral-700'
     }
@@ -71,7 +91,7 @@
     size="xl"
     label="Subscribe"
     color="primary"
-    :class="`my-4 inline-flex items-center gap-2 rounded-md border border-${buttonBorderColor} bg-${buttonBackground} hover:bg-opacity-90 px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-${buttonBackground === 'white' ? 'gray-100' : 'neutral-800'} focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75`"
+    :class="`my-4 inline-flex items-center gap-2 rounded-md border border-${buttonBorderColor} bg-${buttonBackground} hover:bg-opacity-90 px-8 py-3 text-lg font-semibold transition-colors hover:bg-${buttonBackgroundHover} focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-${buttonBackgroundDark} dark:text-${buttonTextColorDark} dark:border-${buttonBorderColorDark} dark:hover:bg-${buttonBackgroundHoverDark} text-${buttonTextColor}`"
     @click="showNewsletterModal = true"
   />
   <UModal v-model:open="showNewsletterModal" :title="'Newsletter'">

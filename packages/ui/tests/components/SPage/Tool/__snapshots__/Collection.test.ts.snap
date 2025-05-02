@@ -43,7 +43,7 @@ exports[`SPageToolCollection Snapshot > renders the default snapshot correctly 1
         <!--v-if-->
       </div>
       <div class="flex justify-center">
-        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-400 bg-white px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-gray-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
           <!--v-if--><span class="truncate">Subscribe</span>
           <!--v-if-->
         </button>
