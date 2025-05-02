@@ -2,6 +2,10 @@ name: ci_1
 
 on:
   pull_request:
+    paths-ignore:
+      - '**/README.md'
+      - '.coderules/**'
+      - 'misc/**'
   workflow_dispatch:
 
 jobs:
