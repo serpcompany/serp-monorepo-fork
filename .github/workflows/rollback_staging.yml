@@ -1,0 +1,51 @@
+name: rollback_staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: "App to roll back"
+        type: choice
+        options: [serp-co, daft-fm, serp-ai, serp-media]
+        default: serp-co
+      sha:
+        description: "Commit SHA (blank = HEAD~1)"
+        required: false
+
+jobs:
+  rollback:
+    runs-on: self-hosted
+    env:
+      TOKEN: ${{ secrets.DEVIN_GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: staging
+
+      - id: vars
+        run: |
+          if [ -z "${{ github.event.inputs.sha }}" ]; then
+            echo "SHA=$(git rev-parse HEAD~1)" >> $GITHUB_ENV
+          else
+            echo "SHA=${{ github.event.inputs.sha }}" >> $GITHUB_ENV
+          fi
+          echo "APP=${{ github.event.inputs.app }}" >> $GITHUB_ENV
+
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.FRANCIS_SERVER_SSH_PRIVATE_KEY }}
+          envs: SHA,APP,TOKEN,REPO
+          script: |
+            cd serp-monorepo-staging/apps/$APP
+            git fetch https://$TOKEN@github.com/$REPO.git
+            git checkout $SHA
+            docker compose -f docker-compose.yml down
+            infisical run \
+              --domain=https://secrets.serp.co \
+              --token=${{ secrets.INFISICAL_ACCESS_TOKEN_SERP }} \
+              --projectId=${{ secrets.INFISICAL_PROJECT_ID_SERP_CO }} \
+              -- \
+              docker compose -f docker-compose.yml up --build -d
