@@ -42,10 +42,10 @@ jobs:
             cd serp-monorepo-staging/apps/$APP
             git fetch https://$TOKEN@github.com/$REPO.git
             git checkout $SHA
-            docker compose -f docker-compose.yml down
+            docker compose -f docker-compose-staging.yml down
             infisical run \
               --domain=https://secrets.serp.co \
               --token=${{ secrets.INFISICAL_ACCESS_TOKEN_SERP }} \
               --projectId=${{ secrets.INFISICAL_PROJECT_ID_SERP_CO }} \
               -- \
-              docker compose -f docker-compose.yml up --build -d
+              docker compose -f docker-compose-staging.yml up --build -d
