@@ -399,7 +399,7 @@
             />
           </UFormField>
 
-          <UFormField label="Pricing Model" required>
+          <UFormField label="Pricing Options" required>
             <UInputMenu
               v-model="company.pricing"
               :items="pricingOptions"
@@ -407,7 +407,7 @@
             />
           </UFormField>
 
-          <UFormField label="One liner" required>
+          <UFormField label="Tagline" required>
             <UInput
               v-model="company.oneLiner"
               placeholder="A short company tagline (max 75 characters)"

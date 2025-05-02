@@ -55,7 +55,7 @@ exports[`SPage/Users/Submit/Company Snapshot > renders Existing Submission (with
             </div>
             <div data-v-8dd619f3="" class="text-sm">
               <div class="">
-                <div class="flex content-center items-center justify-between"><label for="v-0-0-3" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">Pricing Model</label>
+                <div class="flex content-center items-center justify-between"><label for="v-0-0-3" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">Pricing Options</label>
                   <!--v-if-->
                 </div>
                 <!--v-if-->
@@ -73,7 +73,7 @@ exports[`SPage/Users/Submit/Company Snapshot > renders Existing Submission (with
             </div>
             <div data-v-8dd619f3="" class="text-sm">
               <div class="">
-                <div class="flex content-center items-center justify-between"><label for="v-0-0-4" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">One liner</label>
+                <div class="flex content-center items-center justify-between"><label for="v-0-0-4" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">Tagline</label>
                   <!--v-if-->
                 </div>
                 <!--v-if-->
@@ -201,7 +201,7 @@ exports[`SPage/Users/Submit/Company Snapshot > renders New Submission (no id) co
             </div>
             <div data-v-8dd619f3="" class="text-sm">
               <div class="">
-                <div class="flex content-center items-center justify-between"><label for="v-0-0-3" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">Pricing Model</label>
+                <div class="flex content-center items-center justify-between"><label for="v-0-0-3" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">Pricing Options</label>
                   <!--v-if-->
                 </div>
                 <!--v-if-->
@@ -219,7 +219,7 @@ exports[`SPage/Users/Submit/Company Snapshot > renders New Submission (no id) co
             </div>
             <div data-v-8dd619f3="" class="text-sm">
               <div class="">
-                <div class="flex content-center items-center justify-between"><label for="v-0-0-4" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">One liner</label>
+                <div class="flex content-center items-center justify-between"><label for="v-0-0-4" class="block font-medium text-(--ui-text) after:content-['*'] after:ms-0.5 after:text-(--ui-error)">Tagline</label>
                   <!--v-if-->
                 </div>
                 <!--v-if-->

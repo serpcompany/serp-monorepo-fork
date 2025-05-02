@@ -108,8 +108,7 @@
                 icon="i-lucide-clipboard-copy"
                 size="xl"
                 @click="copyToClipboard(badge)"
-              >
-              </UButton>
+              />
             </div>
           </UCard>
         </div>
