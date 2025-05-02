@@ -22,6 +22,27 @@
     );
     return [...keySet];
   });
+
+  // remove these from showing on the frontend
+  const blacklistKeys = [
+    'id',
+    'createdAt',
+    'updatedAt',
+    'deletedAt',
+    'created_at',
+    'updated_at',
+    'deleted_at',
+    'slug',
+    'logoUrl',
+    'title'
+  ];
+
+  // rename these keys to show on the frontend
+  const renameKeysMapping = {
+    excerpt: 'Short Description'
+  };
+
+  // skip rendering blank key/value pairs and objcets
 </script>
 <template>
   <UCard>
@@ -85,11 +106,15 @@
     >
       <template v-for="(v, k) in value" :key="k">
         <dt
+          v-if="v !== null && v !== undefined && !blacklistKeys.includes(k)"
           class="pr-1 font-mono text-indigo-600 after:ml-0.5 after:content-[':']"
         >
-          {{ k }}
+          {{ renameKeysMapping[k] || k }}
         </dt>
-        <dd class="min-w-0">
+        <dd
+          v-if="v !== null && v !== undefined && !blacklistKeys.includes(k)"
+          class="min-w-0"
+        >
           <JSONRenderer :value="v" :key_="k" />
         </dd>
       </template>
