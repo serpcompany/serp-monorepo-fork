@@ -28,6 +28,7 @@
   const route = useRoute();
   const id = route.query.id;
   const existingForm = ref(false);
+  const isVerified = ref(false);
   if (id) {
     const submissionData = await useCompanySubmissions(id);
     if (submissionData) {
@@ -48,12 +49,11 @@
         : [];
       company.value.logo = submissionData.logo;
       uuid = submissionData.uuid;
+      isVerified.value = submissionData.backlinkVerified;
       isPriority.value = submissionData.isPriority;
       existingForm.value = true;
     }
   }
-
-  const stripeComponent = ref(null);
 
   const toast = useToast();
   const loading = ref(false);
@@ -301,6 +301,53 @@
       loading.value = false;
     }
   }
+
+  async function verifyCompanyBacklink(submissionId: string) {
+    try {
+      loading.value = true;
+      const { data: response, error } = await useFetch(
+        `/api/company/submit-verify-backlink?id=${submissionId}`,
+        {
+          method: 'POST',
+          headers: useRequestHeaders(['cookie'])
+        }
+      );
+      if (error.value) {
+        toast.add({
+          id: 'verify-backlink-error',
+          title: 'Error Verifying Backlink',
+          description: error.value,
+          icon: 'exclamation-circle'
+        });
+        return;
+      }
+      if (response.value && response.value.verified) {
+        isVerified.value = true;
+        toast.add({
+          id: 'verify-backlink-success',
+          title: 'Backlink Verified',
+          description: 'The backlink has been verified successfully.',
+          icon: 'check-circle'
+        });
+      } else {
+        toast.add({
+          id: 'verify-backlink-failure',
+          title: 'Backlink Verification Failed',
+          description: 'The backlink could not be verified.',
+          icon: 'exclamation-circle'
+        });
+      }
+    } catch (error) {
+      toast.add({
+        id: 'verify-backlink-error',
+        title: 'Error Verifying Backlink',
+        description: error.message,
+        icon: 'exclamation-circle'
+      });
+    } finally {
+      loading.value = false;
+    }
+  }
 </script>
 
 <template>
@@ -310,6 +357,22 @@
         <UHeading level="2" class="mb-6 text-center text-2xl font-semibold">
           Submit Company
         </UHeading>
+        <div v-if="existingForm" class="mb-6 text-center">
+          <p class="text-sm text-gray-500">
+            Your company is already submitted. You can edit the details below.
+          </p>
+          <UBadge v-if="isVerified" color="success"> Verified </UBadge>
+          <div v-else>
+            <UBadge color="error"> Not Verified </UBadge>
+            <UButton @click.prevent="verifyCompanyBacklink(id)">
+              Check Backlink</UButton
+            ><span
+              >(must have a <bold>do follow</bold> backlink to current site on
+              the submission domain homepage, if not working, ensure you have
+              `SERPVerificationBot/1.0` user-agent whitelisted)</span
+            >
+          </div>
+        </div>
         <form class="space-y-6" @submit.prevent="saveCompany">
           <UFormField label="Company Name" required class="mt-6">
             <UInput

@@ -6,29 +6,8 @@ import {
   companySubmitForm,
   payment
 } from '@serp/utils/server/api/db/schema';
-import { WebClient } from '@slack/web-api';
 import { and, eq, isNull } from 'drizzle-orm';
-
-const slackToken = process.env.SLACK_BOT_TOKEN;
-const slackChannel_ = process.env.SLACK_CHANNEL_ID;
-const slack = new WebClient(slackToken);
-
-async function sendSlackNotification(message, slackChannel = slackChannel_) {
-  try {
-    if (process.env.NODE_ENV === 'production') {
-      await slack.chat.postMessage({
-        channel: slackChannel,
-        text: message
-      });
-    } else {
-      console.log('Slack notification sent', { message, slackChannel });
-    }
-  } catch (error) {
-    console.error('Failed to send Slack notification', {
-      error: error.message
-    });
-  }
-}
+import { sendSlackNotification } from './slack';
 
 async function processCompanyFeatured(type: string, data?: unknown) {
   const companyResults = await db

@@ -9,6 +9,7 @@ exports[`SPage/Users/Submit/Company Snapshot > renders Existing Submission (with
         <!--v-if-->
         <div class="p-4 sm:p-6">
           <uheading data-v-8dd619f3="" level="2" class="mb-6 text-center text-2xl font-semibold"> Submit Company </uheading>
+          <!--v-if-->
           <form data-v-8dd619f3="" class="space-y-6">
             <div data-v-8dd619f3="" class="text-sm mt-6">
               <div class="">
@@ -154,6 +155,7 @@ exports[`SPage/Users/Submit/Company Snapshot > renders New Submission (no id) co
         <!--v-if-->
         <div class="p-4 sm:p-6">
           <uheading data-v-8dd619f3="" level="2" class="mb-6 text-center text-2xl font-semibold"> Submit Company </uheading>
+          <!--v-if-->
           <form data-v-8dd619f3="" class="space-y-6">
             <div data-v-8dd619f3="" class="text-sm mt-6">
               <div class="">
