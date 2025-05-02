@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import type { ServiceProvider, Comment } from '@serp/types/types';
+  import JSONRenderer from '../../JSONRenderer.vue';
 
   const { user } = useUserSession();
   const route = useRoute();
@@ -34,7 +35,7 @@
   });
 
   // @ts-expect-error: Auto-imported from another layer
-  const { upvotes, comments } = (await useServiceProviderUpvotesAndComments(
+  const { comments } = (await useServiceProviderUpvotesAndComments(
     data?.id
   )) as { upvotes: string[]; comments: Comment[] };
 
@@ -112,6 +113,7 @@
 </script>
 
 <template>
+  <JSONRenderer v-if="data" :value="data" />
   <UPage v-if="data">
     <MultipageHeader
       :name="data.name"
