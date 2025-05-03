@@ -96,7 +96,7 @@ export default defineAppConfig({
     ],
     legalLinks: [
       { text: 'About', slug: '/about/' },
-      { text: 'Solutions', slug: '/solutions/' },
+      { text: 'Solutions', slug: 'https://solutions.serp.co' },
       { text: 'Contact', slug: '#' },
       { text: 'Privacy', slug: '/legal/privacy-policy/' },
       { text: 'Terms', slug: '/legal/terms-conditions/' },
@@ -106,7 +106,7 @@ export default defineAppConfig({
     headerNavItems: [
       {
         label: 'Solutions',
-        children: [{ label: 'Solutions', to: '/solutions/' }]
+        children: [{ label: 'Solutions', to: 'https://solutions.serp.co' }]
       },
       {
         label: 'Tools',
