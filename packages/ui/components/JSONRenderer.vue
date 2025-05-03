@@ -84,11 +84,11 @@
 
   const getHeadingClass = (level: number) => {
     const classes = [
-      'text-2xl font-bold text-gray-900 mb-4', // h2
-      'text-xl font-semibold text-gray-800 mb-3', // h3
-      'text-lg font-medium text-gray-700 mb-2', // h4
-      'text-base font-medium text-gray-600 mb-2', // h5
-      'text-sm font-medium text-gray-500 mb-1' // h6
+      'text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4', // h2
+      'text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3', // h3
+      'text-lg font-medium text-gray-700 dark:text-gray-300 mb-2', // h4
+      'text-base font-medium text-gray-600 dark:text-gray-400 mb-2', // h5
+      'text-sm font-medium text-gray-500 dark:text-gray-400 mb-1' // h6
     ];
     return classes[Math.min(level, classes.length - 1)];
   };
@@ -186,7 +186,7 @@
           <template #header>
             <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
               <h2
-                class="text-xl font-semibold text-gray-900 dark:text-gray-100"
+                class="text-xl font-semibold text-gray-900 dark:text-gray-300"
               >
                 {{ formatKey(k) }}
               </h2>
@@ -210,7 +210,7 @@
             !blacklistKeys.includes(k) &&
             shouldDisplayInline(v, nestingLevel)
           "
-          class="flex items-baseline gap-2 mb-2"
+          class="mb-2 flex items-baseline gap-2"
         >
           <span class="font-medium text-gray-700 dark:text-gray-300">
             {{ formatKey(k) }}:
@@ -221,11 +221,9 @@
         <!-- Standard rendering for h2 level content and non-primitive values -->
         <div
           v-else-if="
-            v !== null &&
-            v !== undefined &&
-            !blacklistKeys.includes(k)
+            v !== null && v !== undefined && !blacklistKeys.includes(k)
           "
-          class="space-y-2 mb-4"
+          class="mb-4 space-y-2"
         >
           <component
             :is="getHeadingTag(nestingLevel)"
