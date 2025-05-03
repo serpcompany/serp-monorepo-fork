@@ -194,7 +194,7 @@ export default defineNuxtConfig({
       ['company-categories']: {
         sources: ['/api/__sitemap__/company-categories']
       },
-      serviceProviders: {
+      ['service-providers']: {
         sources: ['/api/__sitemap__/service-providers']
       },
       posts: {
