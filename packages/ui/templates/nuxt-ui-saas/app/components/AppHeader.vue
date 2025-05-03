@@ -1,21 +1,21 @@
 <script setup lang="ts">
-const route = useRoute()
+  const route = useRoute();
 
-const items = computed(() => [
-  {
-    label: 'Docs',
-    to: '/docs',
-    active: route.path.startsWith('/docs')
-  },
-  {
-    label: 'Pricing',
-    to: '/pricing'
-  },
-  {
-    label: 'Blog',
-    to: '/blog'
-  }
-])
+  const items = computed(() => [
+    {
+      label: 'Docs',
+      to: '/docs',
+      active: route.path.startsWith('/docs')
+    },
+    {
+      label: 'Pricing',
+      to: '/pricing'
+    },
+    {
+      label: 'Blog',
+      to: '/blog'
+    }
+  ]);
 </script>
 
 <template>
@@ -27,10 +27,7 @@ const items = computed(() => [
       <TemplateMenu />
     </template>
 
-    <UNavigationMenu
-      :items="items"
-      variant="link"
-    />
+    <UNavigationMenu :items="items" variant="link" />
 
     <template #right>
       <UColorModeButton />
@@ -61,11 +58,7 @@ const items = computed(() => [
     </template>
 
     <template #body>
-      <UNavigationMenu
-        :items="items"
-        orientation="vertical"
-        class="-mx-2.5"
-      />
+      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
 
       <USeparator class="my-6" />
 
@@ -77,12 +70,7 @@ const items = computed(() => [
         block
         class="mb-3"
       />
-      <UButton
-        label="Sign up"
-        color="neutral"
-        to="/signup"
-        block
-      />
+      <UButton label="Sign up" color="neutral" to="/signup" block />
     </template>
   </UHeader>
 </template>
