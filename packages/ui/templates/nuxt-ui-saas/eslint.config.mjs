@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const baseConfig = createConfig({
   quiet: false,
   additionalRules: {},
-  additionalIgnores: ['./**'], // This will ignore all files in this directory
+  additionalIgnores: [],
   baseDirectory: __dirname
 })
 
@@ -20,10 +20,5 @@ baseConfig[1].rules = {
   'no-unused-vars': 'off',
   'vue/no-setup-props-destructure': 'off'
 }
-
-// Add a specific ignore configuration at the beginning
-baseConfig.unshift({
-  ignores: ['./**'] // Explicitly ignore everything in this directory and subdirectories
-})
 
 export default withNuxt(baseConfig)

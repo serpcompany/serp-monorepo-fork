@@ -1,28 +1,25 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () =>
-  queryCollection('content').first()
-)
-if (!page.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page not found',
-    fatal: true
-  })
-}
+  const { data: page } = await useAsyncData('index', () =>
+    queryCollection('content').first()
+  );
+  if (!page.value) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Page not found',
+      fatal: true
+    });
+  }
 
-useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description
-})
+  useSeoMeta({
+    title: page.value.title,
+    ogTitle: page.value.title,
+    description: page.value.description,
+    ogDescription: page.value.description
+  });
 </script>
 
 <template>
-  <div
-    v-if="page"
-    class="relative"
-  >
+  <div v-if="page" class="relative">
     <div class="hidden lg:block">
       <UColorModeImage
         light="/images/light/line-1.svg"
@@ -57,10 +54,7 @@ useSeoMeta({
       reverse
     >
       <template #title>
-        <MDC
-          :value="section.title"
-          class="sm:*:leading-11"
-        />
+        <MDC :value="section.title" class="sm:*:leading-11" />
       </template>
       <img
         :src="section.images.desktop"
@@ -91,10 +85,7 @@ useSeoMeta({
         class="absolute -right-10 -bottom-10 z-10 size-[300px] rounded-full bg-(--ui-primary) opacity-30 blur-[200px]"
       ></div>
       <template #title>
-        <MDC
-          :value="page.features.title"
-          class="*:leading-9"
-        />
+        <MDC :value="page.features.title" class="*:leading-9" />
         <div class="hidden @min-[1020px]:block">
           <UColorModeImage
             light="/images/light/line-2.svg"
@@ -185,10 +176,7 @@ useSeoMeta({
       </UPricingPlans>
     </UPageSection>
 
-    <UPageSection
-      id="testimonials"
-      v-bind="page.testimonials"
-    >
+    <UPageSection id="testimonials" v-bind="page.testimonials">
       <template #headline>
         <UColorModeImage
           light="/images/light/line-5.svg"
@@ -213,10 +201,7 @@ useSeoMeta({
             }"
           >
             <template #footer>
-              <UUser
-                v-bind="testimonial.user"
-                size="xl"
-              />
+              <UUser v-bind="testimonial.user" size="xl" />
             </template>
           </UPageCard>
         </UPageColumns>
