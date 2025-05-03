@@ -51,6 +51,8 @@ export function createConfig({
         '.git/',
         'nuxt-ui-landing/',
         'nuxt-ui-saas/',
+        'packages/ui/templates/nuxt-ui-landing/**',
+        'packages/ui/templates/nuxt-ui-saas/**',
         ...additionalIgnores
       ]
     },
