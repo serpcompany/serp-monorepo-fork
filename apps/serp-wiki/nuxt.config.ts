@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  extends: ['@serp/ui', '@serp/types', '@serp/utils-cloudflare-pages'],
+  extends: ['@serp/ui', '@serp/types', '@serp/utils'],
   modules: [
     '@nuxt/ui-pro',
     '@nuxt/image',
@@ -11,11 +11,17 @@ export default defineNuxtConfig({
     'nuxt-security',
     '@nuxt/scripts',
     'nuxt-link-checker',
+    'nuxt-multi-cache',
     '@nuxthub/core'
   ],
   nitro: {
     experimental: {
       tasks: true
+    }
+  },
+  multiCache: {
+    data: {
+      enabled: false
     }
   },
   css: ['~/assets/css/main.css'],
@@ -106,8 +112,7 @@ export default defineNuxtConfig({
         { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
         { text: 'DMCA', slug: '/legal/dmca/' }
       ],
-      copyrightText: '© SERP',
-      address: ''
+      copyrightText: '© SERP'
     }
   },
   app: {
@@ -182,7 +187,6 @@ export default defineNuxtConfig({
     enabled: false
   },
   hub: {
-    database: true,
-    databaseMigrationsDirs: ['server/db/migrations', 'server/api/db/migrations']
+    database: false
   }
 });

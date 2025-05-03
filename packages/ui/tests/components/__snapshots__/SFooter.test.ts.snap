@@ -5,11 +5,11 @@ exports[`SFooter Snapshot > renders full config correctly 1`] = `
   <div class="py-0 lg:py-0">
     <div class="w-full py-30">
       <div class="mx-auto max-w-[1248px] px-4">
-        <nav class="xl:grid xl:grid-cols-3 xl:gap-8 footer-columns-large">
+        <nav class="xl:grid xl:grid-cols-3 xl:gap-8">
           <div class="mb-10 xl:mb-0">
             <div class="flex flex-col items-start space-x-2"><span class="text-primary-100 dark:text-primary-100 pb-4 text-4xl font-bold">My Company</span>
-              <p class="text-primary-100 dark:text-primary-100 font-bold"> Subscribe to our newsletter. </p>
-              <p class="text-primary-100 dark:text-primary-100"> Join a trillion readers and stay ahead of the curve. </p><button type="button" class="text-primary-100 ring-primary-100 my-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-lg font-semibold ring transition-colors ring-inset hover:bg-(--ui-primary)/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:bg-transparent disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:bg-transparent aria-disabled:opacity-75 dark:disabled:bg-transparent dark:aria-disabled:bg-transparent">
+              <p class="text-primary-100 dark:text-primary-100 font-bold"> Subscribe to the newsletter. </p>
+              <p class="text-primary-100 dark:text-primary-100"> Join ~trillions of informed readers. </p><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-700 bg-transparent px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-800 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-transparent dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-800 text-white">
                 <!--v-if--><span class="truncate">Subscribe</span>
                 <!--v-if-->
               </button>
@@ -67,11 +67,11 @@ exports[`SFooter Snapshot > renders minimal config with empty arrays correctly 1
   <div class="py-0 lg:py-0">
     <div class="w-full py-30">
       <div class="mx-auto max-w-[1248px] px-4">
-        <nav class="xl:grid xl:grid-cols-3 xl:gap-8 footer-columns-large">
+        <nav class="xl:grid xl:grid-cols-3 xl:gap-8">
           <div class="mb-10 xl:mb-0">
             <div class="flex flex-col items-start space-x-2"><span class="text-primary-100 dark:text-primary-100 pb-4 text-4xl font-bold">Minimal Inc.</span>
-              <p class="text-primary-100 dark:text-primary-100 font-bold"> Subscribe to our newsletter. </p>
-              <p class="text-primary-100 dark:text-primary-100"> Join a trillion readers and stay ahead of the curve. </p><button type="button" class="text-primary-100 ring-primary-100 my-4 inline-flex items-center gap-2 rounded-md px-4 py-2 text-lg font-semibold ring transition-colors ring-inset hover:bg-(--ui-primary)/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:bg-transparent disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:bg-transparent aria-disabled:opacity-75 dark:disabled:bg-transparent dark:aria-disabled:bg-transparent">
+              <p class="text-primary-100 dark:text-primary-100 font-bold"> Subscribe to the newsletter. </p>
+              <p class="text-primary-100 dark:text-primary-100"> Join ~trillions of informed readers. </p><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-700 bg-transparent px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-800 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-transparent dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-800 text-white">
                 <!--v-if--><span class="truncate">Subscribe</span>
                 <!--v-if-->
               </button>

@@ -23,11 +23,31 @@ exports[`SPagePostSingle Snapshot > renders with basic post data (with auth) cor
       </div>
       <div class="border-(--ui-border) w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
-    <article class="prose dark:prose-invert">
+    <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
-    <!-- Comments Section -->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center">
+          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section><!-- Comments Section -->
     <div class="mt-10">
       <h2 class="mb-4 text-2xl font-bold">Comments</h2>
       <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
@@ -106,11 +126,31 @@ exports[`SPagePostSingle Snapshot > renders with basic post data (without auth) 
       </div>
       <div class="border-(--ui-border) w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
-    <article class="prose dark:prose-invert">
+    <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
-    <!-- Comments Section -->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center">
+          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section><!-- Comments Section -->
     <!--v-if-->
   </main>
 </main>"
@@ -139,11 +179,31 @@ exports[`SPagePostSingle Snapshot > renders with blog module (with auth) correct
       </div>
       <div class="border-(--ui-border) w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
-    <article class="prose dark:prose-invert">
+    <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
-    <!-- Comments Section -->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center">
+          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section><!-- Comments Section -->
     <div class="mt-10">
       <h2 class="mb-4 text-2xl font-bold">Comments</h2>
       <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
@@ -220,11 +280,31 @@ exports[`SPagePostSingle Snapshot > renders with blog module (without auth) corr
       </div>
       <div class="border-(--ui-border) w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
-    <article class="prose dark:prose-invert">
+    <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
-    <!-- Comments Section -->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center">
+          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section><!-- Comments Section -->
     <!--v-if-->
   </main>
 </main>"
@@ -371,11 +451,31 @@ exports[`SPagePostSingle Snapshot > renders with movies module (with auth) corre
       </div>
       <div class="border-(--ui-border) w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
-    <article class="prose dark:prose-invert">
+    <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
-    <!-- Comments Section -->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center">
+          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section><!-- Comments Section -->
     <div class="mt-10">
       <h2 class="mb-4 text-2xl font-bold">Comments</h2>
       <div data-v-e7198dba="" class="comments comments-github-style" style="background: transparent;">
@@ -452,11 +552,31 @@ exports[`SPagePostSingle Snapshot > renders with movies module (without auth) co
       </div>
       <div class="border-(--ui-border) w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
-    <article class="prose dark:prose-invert">
+    <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
-    <!-- Comments Section -->
+    <section data-orientation="vertical" class="relative isolate text-center">
+      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="flex justify-center">
+          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+            <!--v-if--><span class="truncate">Subscribe</span>
+            <!--v-if-->
+          </button>
+          <!--v-if-->
+          <!--teleport start-->
+          <!--teleport end-->
+        </div>
+      </div>
+    </section><!-- Comments Section -->
     <!--v-if-->
   </main>
 </main>"

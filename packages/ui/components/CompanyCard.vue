@@ -156,7 +156,7 @@
             <NuxtLink
               :href="company.serplyLink"
               target="_blank"
-              class="flex h-10 w-full items-center justify-center gap-2 rounded-full bg-[var(--ui-bg-inverted)] px-4 py-2 text-sm font-medium text-[var(--ui-bg)] transition-colors hover:bg-neutral-800 dark:bg-[var(--ui-bg)] dark:text-[var(--ui-bg-inverted)] dark:hover:bg-[var(--ui-bg-elevated)]"
+              class="flex h-10 w-full items-center justify-center gap-2 rounded-md bg-[var(--ui-bg-inverted)] px-4 py-2 text-sm font-medium text-[var(--ui-bg)] transition-colors hover:bg-neutral-800 dark:bg-[var(--ui-bg)] dark:text-[var(--ui-bg-inverted)] dark:hover:bg-[var(--ui-bg-elevated)]"
             >
               Website
               <svg
@@ -182,7 +182,6 @@
               :id="company.id"
               module="company"
               :upvotes="company.upvotes || []"
-              class="upvote-btn text-sm"
             />
           </div>
         </div>

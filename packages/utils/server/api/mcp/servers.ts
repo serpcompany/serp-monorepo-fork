@@ -115,21 +115,24 @@ export default defineEventHandler(async (event) => {
     totalQuery = totalQuery.where(and(...filters));
   }
 
-  const categoryQuery = db
-    .select({
-      id: mcpServerCategoryCache.id,
-      name: mcpServerCategoryCache.name,
-      slug: mcpServerCategoryCache.slug,
-      buyersGuide: mcpServerCategoryCache.buyersGuide,
-      faqs: mcpServerCategoryCache.faqs
-    })
-    .from(mcpServerCategoryCache)
-    .where(eq(mcpServerCategoryCache.slug, categorySlug));
+  const categoryPromise = categorySlug
+    ? db
+        .select({
+          id: mcpServerCategoryCache.id,
+          name: mcpServerCategoryCache.name,
+          slug: mcpServerCategoryCache.slug,
+          buyersGuide: mcpServerCategoryCache.buyersGuide,
+          faqs: mcpServerCategoryCache.faqs
+        })
+        .from(mcpServerCategoryCache)
+        .where(eq(mcpServerCategoryCache.slug, categorySlug))
+        .execute()
+    : Promise.resolve([]);
 
   const [results, [{ count: total }], categoryResults] = await Promise.all([
     baseQuery.execute(),
     totalQuery.execute(),
-    categoryQuery.execute()
+    categoryPromise
   ]);
 
   if (!results.length) {

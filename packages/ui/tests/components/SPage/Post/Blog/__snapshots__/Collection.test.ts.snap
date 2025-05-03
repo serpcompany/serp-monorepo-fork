@@ -9,23 +9,33 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
   <div class="pb-20">
     <!-- rows: posts -->
     <div class="space-y-4">
-      <article class="py-16"><a href="/posts/post-one/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-one/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post One</h2>
+          </a>
+          <p class="mb-4 text-xl"><span></span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post One</h2>
-        </a>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
-      <article class="py-16"><a href="/posts/post-two/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-two/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post Two</h2>
+          </a>
+          <p class="mb-4 text-xl"><span>Test excerpt</span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post Two</h2>
-        </a>
-        <!--v-if-->
-        <p class="mb-8">Test excerpt</p>
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
     </div>
     <nav class="mt-20 flex justify-center overflow-x-auto rounded-none" aria-label="pagination">
@@ -49,7 +59,7 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="mt-20">
+    <section class="my-30 mt-20">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -61,6 +71,27 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
       </div>
     </section>
   </div>
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section>
 </div>"
 `;
 
@@ -73,23 +104,33 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
   <div class="pb-20">
     <!-- rows: posts -->
     <div class="space-y-4">
-      <article class="py-16"><a href="/posts/post-one/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-one/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post One</h2>
+          </a>
+          <p class="mb-4 text-xl"><span></span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post One</h2>
-        </a>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
-      <article class="py-16"><a href="/posts/post-two/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-two/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post Two</h2>
+          </a>
+          <p class="mb-4 text-xl"><span>Test excerpt</span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post Two</h2>
-        </a>
-        <!--v-if-->
-        <p class="mb-8">Test excerpt</p>
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
     </div>
     <nav class="mt-20 flex justify-center overflow-x-auto rounded-none" aria-label="pagination">
@@ -113,7 +154,7 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="mt-20">
+    <section class="my-30 mt-20">
       <div class="mx-auto">
         <div class="pt-12">
           <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
@@ -125,6 +166,27 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
       </div>
     </section>
   </div>
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section>
 </div>"
 `;
 
@@ -137,23 +199,33 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts but no categories
   <div class="pb-20">
     <!-- rows: posts -->
     <div class="space-y-4">
-      <article class="py-16"><a href="/posts/post-one/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-one/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post One</h2>
+          </a>
+          <p class="mb-4 text-xl"><span></span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post One</h2>
-        </a>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
-      <article class="py-16"><a href="/posts/post-two/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-two/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post Two</h2>
+          </a>
+          <p class="mb-4 text-xl"><span>Test excerpt</span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post Two</h2>
-        </a>
-        <!--v-if-->
-        <p class="mb-8">Test excerpt</p>
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
     </div>
     <nav class="mt-20 flex justify-center overflow-x-auto rounded-none" aria-label="pagination">
@@ -179,6 +251,27 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts but no categories
     </nav>
     <!--v-if-->
   </div>
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section>
 </div>"
 `;
 
@@ -191,23 +284,33 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts but no categories
   <div class="pb-20">
     <!-- rows: posts -->
     <div class="space-y-4">
-      <article class="py-16"><a href="/posts/post-one/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-one/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post One</h2>
+          </a>
+          <p class="mb-4 text-xl"><span></span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post One</h2>
-        </a>
-        <!--v-if-->
-        <!--v-if-->
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
-      <article class="py-16"><a href="/posts/post-two/">
+      <article class="py-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8"><a href="/posts/post-two/">
+            <!--v-if-->
+            <!-- Title -->
+            <h2 class="mb-4 text-4xl font-extrabold hover:underline">Post Two</h2>
+          </a>
+          <p class="mb-4 text-xl"><span>Test excerpt</span></p>
           <!--v-if-->
-          <!-- Title -->
-          <h2 class="mb-2 text-xl font-medium hover:underline">Post Two</h2>
-        </a>
-        <!--v-if-->
-        <p class="mb-8">Test excerpt</p>
-        <!--v-if-->
+          <!--v-if-->
+        </div>
+        <div class="lg:col-span-3 lg:col-start-8">
+          <!-- Right column (30%) -->
+        </div>
       </article>
     </div>
     <nav class="mt-20 flex justify-center overflow-x-auto rounded-none" aria-label="pagination">
@@ -233,5 +336,26 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts but no categories
     </nav>
     <!--v-if-->
   </div>
+  <section data-orientation="vertical" class="relative isolate text-center">
+    <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="">
+        <!--v-if-->
+        <!--v-if-->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
+        <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+        <!--v-if-->
+        <!--v-if-->
+      </div>
+      <div class="flex justify-center">
+        <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!--v-if--><span class="truncate">Subscribe</span>
+          <!--v-if-->
+        </button>
+        <!--v-if-->
+        <!--teleport start-->
+        <!--teleport end-->
+      </div>
+    </div>
+  </section>
 </div>"
 `;

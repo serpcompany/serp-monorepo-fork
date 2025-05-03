@@ -59,5 +59,6 @@
         base-slug="posts/category"
       />
     </div>
+    <NewsletterSignupPageSection />
   </div>
 </template>

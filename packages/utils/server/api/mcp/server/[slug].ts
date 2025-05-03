@@ -32,7 +32,8 @@ export default defineEventHandler(async (event) => {
         categories: mcpServerCache.categories,
         serplyLink: mcpServerCache.serplyLink,
         repoCreatedAt: mcpServerCache.repoCreatedAt,
-        repoUpdatedAt: mcpServerCache.repoUpdatedAt
+        repoUpdatedAt: mcpServerCache.repoUpdatedAt,
+        llmsText: mcpServerCache.llmsText
       })
       .from(mcpServerCache);
 

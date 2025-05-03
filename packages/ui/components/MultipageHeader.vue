@@ -27,23 +27,23 @@
   const header = ref(null);
   const isScrolled = ref(false);
 
-  // helps the multipage header to stick properly
-  onMounted(() => {
-    const handleScroll = () => {
-      isScrolled.value = window.scrollY > 0;
+  // // helps the multipage header to stick properly
+  // onMounted(() => {
+  //   const handleScroll = () => {
+  //     isScrolled.value = window.scrollY > 0;
 
-      if (header.value) {
-        header.value.style.zIndex = isScrolled.value ? '10' : '0';
-      }
-    };
+  //     if (header.value) {
+  //       header.value.style.zIndex = isScrolled.value ? '10' : '0';
+  //     }
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+  //   window.addEventListener('scroll', handleScroll);
+  //   handleScroll(); // Initial check
 
-    onBeforeUnmount(() => {
-      window.removeEventListener('scroll', handleScroll);
-    });
-  });
+  //   onBeforeUnmount(() => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   });
+  // });
 </script>
 
 <template>
@@ -90,6 +90,7 @@
             >
               <slot name="upvote"></slot>
               <NuxtLink
+                v-if="serplyLink"
                 :href="serplyLink"
                 target="_blank"
                 class="flex h-[42px] w-auto items-center justify-center gap-2 rounded-md bg-black px-4 py-2 font-medium text-white transition-colors hover:bg-neutral-800 sm:w-auto dark:bg-white dark:text-black dark:hover:bg-neutral-200"

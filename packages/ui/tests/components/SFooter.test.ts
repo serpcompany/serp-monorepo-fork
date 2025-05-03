@@ -11,7 +11,6 @@ let config_: Record<string, unknown> = {
     socialLinks: [],
     brandLinks: [],
     copyrightText: '',
-    address: '',
     footerColumns: [],
     legalLinks: []
   }
@@ -19,7 +18,7 @@ let config_: Record<string, unknown> = {
 
 describe('SFooter Snapshot', () => {
   // Define test scenarios with varying runtime configurations
-  const scenarios: [string, { config: Record<string, unkown> }][] = [
+  const scenarios: [string, { config: Record<string, unknown> }][] = [
     [
       'full config',
       {
@@ -78,7 +77,6 @@ describe('SFooter Snapshot', () => {
             socialLinks: [],
             brandLinks: [],
             copyrightText: '',
-            address: '',
             footerColumns: [],
             legalLinks: []
           }

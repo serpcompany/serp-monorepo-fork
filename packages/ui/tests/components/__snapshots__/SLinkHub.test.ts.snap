@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`SLinkHub > renders with multiple categories correctly 1`] = `
-"<section>
+"<section class="my-30">
   <div class="mx-auto">
     <div class="pt-12">
       <div><span class="inline-block py-4 text-3xl font-bold">Our Categories</span></div>
@@ -16,7 +16,7 @@ exports[`SLinkHub > renders with multiple categories correctly 1`] = `
 `;
 
 exports[`SLinkHub > renders with no categories correctly 1`] = `
-"<section>
+"<section class="my-30">
   <div class="mx-auto">
     <div class="pt-12">
       <div><span class="inline-block py-4 text-3xl font-bold"></span></div>
@@ -27,7 +27,7 @@ exports[`SLinkHub > renders with no categories correctly 1`] = `
 `;
 
 exports[`SLinkHub > renders with one category correctly 1`] = `
-"<section>
+"<section class="my-30">
   <div class="mx-auto">
     <div class="pt-12">
       <div><span class="inline-block py-4 text-3xl font-bold">Featured Links</span></div>

@@ -112,6 +112,7 @@
         <CompanyVerificationButton
           v-if="useAuth"
           :id="data.id"
+          :domain="data.slug"
           :is-verified-prop="data.verified"
         />
         <UpvoteButton
@@ -129,7 +130,7 @@
       <UCard
         v-if="data.excerpt"
         id="overview"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -150,7 +151,7 @@
       <UCard
         v-if="data.categories && data.categories.length"
         id="categories"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -169,7 +170,7 @@
       <UCard
         v-if="data.screenshots && data.screenshots.length"
         id="media"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-0' } }"
       >
         <template #header>
@@ -190,7 +191,7 @@
       <UCard
         v-if="data.content"
         id="article"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-4 sm:p-6' } }"
       >
         <template #header>
@@ -421,7 +422,7 @@
       <!-- Discussion Section -->
       <UCard
         id="discussion"
-        class="mb-8 scroll-mt-20 rounded-md border border-gray-200 dark:border-gray-800"
+        class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
         :ui="{ body: { padding: 'p-0' } }"
       >
         <template #header>

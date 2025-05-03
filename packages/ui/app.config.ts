@@ -3,6 +3,9 @@ export default defineAppConfig({
     name: '@serp/ui'
   },
   ui: {
+    colors: {
+      neutral: 'gray'
+    },
     button: {
       slots: {
         base: 'font-medium inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors'
@@ -19,38 +22,3 @@ export default defineAppConfig({
     }
   }
 });
-
-declare module '@nuxt/schema' {
-  interface AppConfigInput {
-    myLayer?: {
-      name?: string;
-    };
-    site?: {
-      socialLinks?: Array<{
-        name: string;
-        href: string;
-        icon: string;
-      }>;
-      legalLinks?: Array<{
-        text: string;
-        slug: string;
-      }>;
-      headerNavItems?: Array<{
-        label: string;
-        children: Array<{
-          label: string;
-          to: string;
-        }>;
-      }>;
-      footerColumns?: Array<{
-        title: string;
-        id: number;
-        slug: string;
-        items: Array<{
-          text: string;
-          slug: string;
-        }>;
-      }>;
-    };
-  }
-}

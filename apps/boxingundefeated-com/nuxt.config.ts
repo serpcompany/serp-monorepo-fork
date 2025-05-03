@@ -38,8 +38,7 @@ export default defineNuxtConfig({
       apiUrl: process.env.NUXT_PUBLIC_API_URL,
       forCloudflare: false,
       environment: process.env.NODE_ENV,
-      copyrightText: '© BOXING UNDEFEATED',
-      address: ''
+      copyrightText: '© BOXING UNDEFEATED'
     }
   },
   app: {

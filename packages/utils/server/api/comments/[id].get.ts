@@ -72,8 +72,6 @@ SELECT
 FROM full_tree;
 `;
 
-    console.log('Executing recursive query:', recursiveQuery.getSQL());
-
     const result = await db.execute(recursiveQuery);
     const totalCount = result[0]?.total_count || 0;
     const flatComments = result[0]?.comments || [];

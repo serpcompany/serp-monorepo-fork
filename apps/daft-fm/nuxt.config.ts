@@ -37,8 +37,7 @@ export default defineNuxtConfig({
       apiUrl: process.env.NUXT_PUBLIC_API_URL,
       environment: process.env.NODE_ENV,
       forCloudflare: false,
-      copyrightText: '© DAFT FM',
-      address: ''
+      copyrightText: '© DAFT FM'
     }
   },
   app: {

@@ -23,6 +23,108 @@ export const formSchema = pgSchema('form');
 export const stripeSchema = pgSchema('stripe');
 export const userSchema = pgSchema('user');
 
+export const topic = cacheSchema.table('topic', {
+  id: serial('id').primaryKey(),
+  name: varchar('name', { length: 255 }).notNull(),
+  slug: varchar('slug', { length: 255 }).notNull()
+});
+
+export const serviceProviderCache = cacheSchema.table(
+  'service_provider_cache',
+  {
+    id: serial('id').primaryKey(),
+    createdAt: timestamp('created_at', { mode: 'string' })
+      .defaultNow()
+      .notNull(),
+    name: varchar('name', { length: 255 }).notNull(),
+    slug: varchar('slug', { length: 255 }).notNull(),
+    logoUrl: varchar('logo_url', { length: 255 }),
+    basicInfo: jsonb('basic_info'),
+    contracts: jsonb('contracts'),
+    pricing: jsonb('pricing'),
+    services: jsonb('services'),
+    industries: jsonb('industries'),
+    businessesServed: jsonb('businesses_served'),
+    supportSetup: jsonb('support_setup'),
+    ratings: jsonb('ratings'),
+    serplyLink: varchar('serply_link', { length: 255 }),
+    categories: jsonb('categories'),
+    topics: jsonb('topics'),
+    upvotes: text('upvotes').array(),
+    excerpt: text('excerpt'),
+    content: text('content')
+  }
+);
+
+export const serviceProviderReviewAggregate = cacheSchema.table(
+  'service_provider_review_aggregate',
+  {
+    serviceProviderId: integer('service_provider_id').primaryKey(),
+    numReviews: integer('num_reviews').notNull().default(0),
+    numOneStarReviews: integer('num_one_star_reviews').notNull().default(0),
+    numTwoStarReviews: integer('num_two_star_reviews').notNull().default(0),
+    numThreeStarReviews: integer('num_three_star_reviews').notNull().default(0),
+    numFourStarReviews: integer('num_four_star_reviews').notNull().default(0),
+    numFiveStarReviews: integer('num_five_star_reviews').notNull().default(0),
+    averageRating: doublePrecision('average_rating').notNull().default(0),
+    lastUpdated: timestamp('last_updated', { withTimezone: true })
+      .notNull()
+      .defaultNow()
+  }
+);
+
+export const serviceProviderCategoryCache = cacheSchema.table(
+  'service_provider_category_cache',
+  {
+    updatedAt: timestamp('updated_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    id: serial('id').primaryKey(),
+    name: varchar('name', { length: 255 }).notNull(),
+    slug: varchar('slug', { length: 255 }).notNull()
+  }
+);
+
+export const serviceProviderTopicCache = cacheSchema.table(
+  'service_provider_topic_cache',
+  {
+    updatedAt: timestamp('updated_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    id: serial('id').primaryKey(),
+    name: varchar('name', { length: 255 }).notNull(),
+    slug: varchar('slug', { length: 255 }).notNull()
+  }
+);
+
+export const serviceProviderVerification = userSchema.table(
+  'service_provider_verification',
+  {
+    id: serial('id').primaryKey(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    serviceProvider: integer('service_provider').notNull().unique(),
+    user: integer('user').notNull()
+  }
+);
+
+export const serviceProviderVerificationRequest = userSchema.table(
+  'service_provider_verification_request',
+  {
+    id: serial('id').primaryKey(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    serviceProvider: integer('service_provider').notNull(),
+    user: integer('user').notNull(),
+    email: varchar('email', { length: 255 }).notNull(),
+    code: varchar('code', { length: 32 }).notNull(),
+    expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+    verification: integer('verification')
+  }
+);
+
 // Stripe
 export const customer = stripeSchema.table('customer', {
   id: varchar('id', { length: 255 }).primaryKey(),
@@ -104,6 +206,22 @@ export const mcpServerComment = userSchema.table('mcp_server_comment', {
   path: ltree('path')
 });
 
+export const serviceProviderComment = userSchema.table(
+  'service_provider_comment',
+  {
+    id: serial('id').primaryKey(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }),
+    user: integer('user').notNull(),
+    serviceProvider: integer('service_provider').notNull(),
+    content: varchar('content', { length: 255 }),
+    parentId: integer('parent_id'),
+    path: ltree('path')
+  }
+);
+
 export const companyReview = userSchema.table('company_review', {
   id: serial('id').primaryKey(),
   createdAt: timestamp('created_at', { withTimezone: true })
@@ -124,6 +242,29 @@ export const companyReview = userSchema.table('company_review', {
   reviewedAt: timestamp('reviewed_at', { withTimezone: true })
 });
 
+export const serviceProviderReview = userSchema.table(
+  'service_provider_review',
+  {
+    id: serial('id').primaryKey(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true }),
+    user: integer('user').notNull(),
+    serviceProvider: integer('service_provider').notNull(),
+    content: varchar('content', { length: 255 }),
+    title: varchar('title', { length: 255 }),
+    rating: integer('rating').notNull(),
+    dateOfExperience: timestamp('date_of_experience', { withTimezone: true }),
+    isFlagged: boolean('is_flagged'),
+    flaggedReason: text('flagged_reason'),
+    flaggedAt: timestamp('flagged_at', { withTimezone: true }),
+    flaggedBy: integer('flagged_by'),
+    reviewedBy: integer('reviewed_by'),
+    reviewedAt: timestamp('reviewed_at', { withTimezone: true })
+  }
+);
+
 export const companyVerification = userSchema.table('company_verification', {
   id: serial('id').primaryKey(),
   createdAt: timestamp('created_at', { withTimezone: true })
@@ -132,6 +273,22 @@ export const companyVerification = userSchema.table('company_verification', {
   company: integer('company').notNull().unique(),
   user: integer('user').notNull()
 });
+
+export const companyVerificationRequests = userSchema.table(
+  'company_verification_request',
+  {
+    id: serial('id').primaryKey(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    company: integer('company').notNull(),
+    user: integer('user').notNull(),
+    email: varchar('email', { length: 255 }).notNull(),
+    code: varchar('code', { length: 32 }).notNull(),
+    expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+    verification: integer('verification')
+  }
+);
 
 export const companyEdit = userSchema.table('company_edit', {
   id: serial('id').primaryKey(),
@@ -181,7 +338,8 @@ export const mcpServerCache = cacheSchema.table('mcp_server_cache', {
   repoUpdatedAt: timestamp('repo_updated_at', { withTimezone: true }),
   upvotes: text('upvotes').array(),
   categories: jsonb('categories'),
-  serplyLink: text('serply_link')
+  serplyLink: text('serply_link'),
+  llmsText: text('llms_text')
 });
 
 export const mcpServerCategoryCache = cacheSchema.table(

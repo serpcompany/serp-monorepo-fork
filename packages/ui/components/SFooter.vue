@@ -52,7 +52,6 @@
         <div class="mx-auto max-w-[1248px] px-4">
           <UFooterColumns
             :columns="footerColumnsData"
-            class="footer-columns-large"
             :ui="{
               link: 'text-primary-100  hover:text-primary-200 dark:text-primary-100 dark:hover:text-primary-200',
               label: 'text-primary-100 text-xl dark:text-primary-100'
@@ -66,10 +65,10 @@
                   >{{ companyName }}</span
                 >
                 <p class="text-primary-100 dark:text-primary-100 font-bold">
-                  Subscribe to our newsletter.
+                  Subscribe to the newsletter.
                 </p>
                 <p class="text-primary-100 dark:text-primary-100">
-                  Join a trillion readers and stay ahead of the curve.
+                  Join ~trillions of informed readers.
                 </p>
                 <NewsletterSignup />
               </div>
