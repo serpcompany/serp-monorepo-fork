@@ -5,7 +5,7 @@
   "scripts": {
     "build": "turbo run build",
     "eslint": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run eslint",
-    "format": "prettier --write \"**/*.{ts,tsx,md,vue}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,md,vue,json}\"",
     "lint": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run lint",
     "lint:windows": "turbo run lint",
     "prepare": "husky install",

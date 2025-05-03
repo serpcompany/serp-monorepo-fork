@@ -1,3 +1,3 @@
 <template>
-  <SPageGenericSingle />
+  <SPageGenericServiceProvider />
 </template>
