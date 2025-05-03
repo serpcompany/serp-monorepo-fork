@@ -32,11 +32,12 @@
     'deleted_at',
     'slug',
     'logoUrl',
-    'title'
+    'title',
+    'excerpt'
   ];
   // rename these keys to show on the frontend
   const renameKeysMapping = {
-    excerpt: 'Short Description'
+    basicInfo: 'Overview'
   };
 
   // Convert camelCase/PascalCase to human-readable format
@@ -102,6 +103,22 @@
       !blacklistKeys.includes(key)
     );
   };
+
+  // Add a helper to check if a value is a primitive
+  const isPrimitive = (val: unknown): boolean => {
+    return (
+      val === null ||
+      val === undefined ||
+      typeof val === 'string' ||
+      typeof val === 'number' ||
+      typeof val === 'boolean'
+    );
+  };
+
+  // Check if we should display key-value on the same line
+  const shouldDisplayInline = (value: unknown, level: number): boolean => {
+    return isPrimitive(value) && level >= 2; // Only inline for h3+ level content
+  };
 </script>
 <template>
   <div>
@@ -118,8 +135,8 @@
       <div v-if="itemsAreObjects" class="space-y-8">
         <div v-for="(item, index) in value" :key="index" class="space-y-4">
           <component
-            v-if="value.length > 1"
             :is="getHeadingTag(nestingLevel)"
+            v-if="value.length > 1"
             :class="getHeadingClass(nestingLevel)"
           >
             Item {{ index + 1 }}
@@ -185,12 +202,30 @@
           </div>
         </UCard>
 
-        <!-- Regular rendering for non-card sections -->
+        <!-- Display primitive values on the same line ONLY for h3+ levels -->
         <div
           v-else-if="
-            v !== null && v !== undefined && !blacklistKeys.includes(k)
+            v !== null &&
+            v !== undefined &&
+            !blacklistKeys.includes(k) &&
+            shouldDisplayInline(v, nestingLevel)
           "
-          class="space-y-2"
+          class="flex items-baseline gap-2 mb-2"
+        >
+          <span class="font-medium text-gray-700 dark:text-gray-300">
+            {{ formatKey(k) }}:
+          </span>
+          <JSONRenderer :value="v" :key_="k" />
+        </div>
+
+        <!-- Standard rendering for h2 level content and non-primitive values -->
+        <div
+          v-else-if="
+            v !== null &&
+            v !== undefined &&
+            !blacklistKeys.includes(k)
+          "
+          class="space-y-2 mb-4"
         >
           <component
             :is="getHeadingTag(nestingLevel)"

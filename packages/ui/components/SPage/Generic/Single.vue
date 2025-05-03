@@ -62,62 +62,34 @@
     }));
   });
 
-  // Dynamically generate sections based on available data
-  const sections = computed(() => {
-    const sectionTitles: string[] = [];
+  // State for sections
+  const sections = ref<string[]>([]);
 
-    // Add Overview if basic info exists
-    if (data?.basicInfo && Object.keys(data.basicInfo).length > 0) {
-      sectionTitles.push('Overview');
-    }
+  // Extract sections from rendered H2 elements
+  const extractSections = () => {
+    // Wait for next tick to ensure content is rendered
+    nextTick(() => {
+      const h2Elements = document.querySelectorAll('h2');
+      const sectionTitles = Array.from(h2Elements).map(
+        (h2) => h2.textContent || ''
+      );
+      sections.value = sectionTitles.filter((title) => title.trim() !== '');
+    });
+  };
 
-    // Add Services section if services exist
-    if (data?.services && Object.keys(data.services).length > 0) {
-      sectionTitles.push('Services');
-    }
-
-    // Add Industries section if industries exist
-    if (data?.industries && Object.keys(data.industries).length > 0) {
-      sectionTitles.push('Industries');
-    }
-
-    // Add Pricing section if pricing info exists
-    if (data?.pricing && Object.keys(data.pricing).length > 0) {
-      sectionTitles.push('Pricing');
-    }
-
-    // Add Contracts section if contracts info exists
-    if (data?.contracts && Object.keys(data.contracts).length > 0) {
-      sectionTitles.push('Contracts');
-    }
-
-    // Add Business Served section if business info exists
-    if (data?.businessesServed && Object.keys(data.businessesServed).length > 0) {
-      sectionTitles.push('Businesses Served');
-    }
-
-    // Add Support section if support setup exists
-    if (data?.supportSetup && Object.keys(data.supportSetup).length > 0) {
-      sectionTitles.push('Support');
-    }
-
-    // Add FAQ section if FAQs exist
-    if (faqItems.value && faqItems.value.length > 0) {
-      sectionTitles.push('FAQ');
-    }
-
-    // Add Reviews section if there are reviews
-    if (data?.numReviews > 0 || reviews?.reviews?.length > 0) {
-      sectionTitles.push('Reviews');
-    }
-
-    // Add Discussion section if comments are enabled
-    if (useAuth) {
-      sectionTitles.push('Discussion');
-    }
-
-    return sectionTitles;
+  // Extract sections after component is mounted
+  onMounted(() => {
+    extractSections();
   });
+
+  // Re-extract if data changes
+  watch(
+    () => data,
+    () => {
+      extractSections();
+    },
+    { deep: true }
+  );
 
   useSeoMeta({
     title: computed(() =>
