@@ -62,6 +62,63 @@
     }));
   });
 
+  // Dynamically generate sections based on available data
+  const sections = computed(() => {
+    const sectionTitles: string[] = [];
+
+    // Add Overview if basic info exists
+    if (data?.basicInfo && Object.keys(data.basicInfo).length > 0) {
+      sectionTitles.push('Overview');
+    }
+
+    // Add Services section if services exist
+    if (data?.services && Object.keys(data.services).length > 0) {
+      sectionTitles.push('Services');
+    }
+
+    // Add Industries section if industries exist
+    if (data?.industries && Object.keys(data.industries).length > 0) {
+      sectionTitles.push('Industries');
+    }
+
+    // Add Pricing section if pricing info exists
+    if (data?.pricing && Object.keys(data.pricing).length > 0) {
+      sectionTitles.push('Pricing');
+    }
+
+    // Add Contracts section if contracts info exists
+    if (data?.contracts && Object.keys(data.contracts).length > 0) {
+      sectionTitles.push('Contracts');
+    }
+
+    // Add Business Served section if business info exists
+    if (data?.businessesServed && Object.keys(data.businessesServed).length > 0) {
+      sectionTitles.push('Businesses Served');
+    }
+
+    // Add Support section if support setup exists
+    if (data?.supportSetup && Object.keys(data.supportSetup).length > 0) {
+      sectionTitles.push('Support');
+    }
+
+    // Add FAQ section if FAQs exist
+    if (faqItems.value && faqItems.value.length > 0) {
+      sectionTitles.push('FAQ');
+    }
+
+    // Add Reviews section if there are reviews
+    if (data?.numReviews > 0 || reviews?.reviews?.length > 0) {
+      sectionTitles.push('Reviews');
+    }
+
+    // Add Discussion section if comments are enabled
+    if (useAuth) {
+      sectionTitles.push('Discussion');
+    }
+
+    return sectionTitles;
+  });
+
   useSeoMeta({
     title: computed(() =>
       data?.name
@@ -75,6 +132,8 @@
   <UPage v-if="data">
     <MultipageHeader
       :name="data.name"
+      :one-liner="data.description"
+      :sections="sections"
       class="bg-background sticky top-0 z-50 transition-all duration-300"
       :image="data.logoUrl"
       :serply-link="data.serplyLink"
@@ -87,108 +146,12 @@
           :domain="data.slug"
           :is-verified-prop="data.verified"
         />
-        <!-- <UpvoteButton
-          v-if="useAuth"
-          :id="data.id"
-          module="serviceProvider"
-          :upvotes="upvotes"
-        /> -->
       </template>
     </MultipageHeader>
 
     <!-- Main content - single column layout -->
     <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
       <JSONRenderer v-if="data" :value="data" />
-      <!-- <secton>
-        <UCard
-          id="reviews"
-          class="mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800"
-          :ui="{ body: { padding: 'p-0' } }"
-        >
-          <template #header>
-            <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-              <h2
-                class="text-xl font-semibold text-gray-900 dark:text-gray-100"
-              >
-                {{ data.name }} Reviews
-              </h2>
-              <UIcon
-                name="i-heroicons-link"
-                class="ml-2 h-4 w-4 text-gray-400"
-              />
-            </div>
-          </template>
-          <UDivider class="my-0" />
-          <div class="py-4 sm:p-6">
-            <ReviewDistributionCard
-              :total-reviews="data.numReviews ? data.numReviews : 0"
-              :total-one-star-reviews="
-                data.numOneStarReviews ? data.numOneStarReviews : 0
-              "
-              :total-two-star-reviews="
-                data.numTwoStarReviews ? data.numTwoStarReviews : 0
-              "
-              :total-three-star-reviews="
-                data.numThreeStarReviews ? data.numThreeStarReviews : 0
-              "
-              :total-four-star-reviews="
-                data.numFourStarReviews ? data.numFourStarReviews : 0
-              "
-              :total-five-star-reviews="
-                data.numFiveStarReviews ? data.numFiveStarReviews : 0
-              "
-              :average-rating="data.averageRating ? data.averageRating : 0"
-              :show-border="false"
-              card-title=""
-              class="pb-12"
-              :show-review-button="useAuth"
-              @open-review-form="showReviewModal = true"
-            />
-
-            <CompanyReviews
-              :is-verified="isVerified"
-              :reviews="reviews"
-              class="mt-8"
-            />
-          </div>
-        </UCard>
-
-        <CompanyReviewModal
-          v-model:open="showReviewModal"
-          :service-provider-id="data.id"
-          :result="reviews"
-          @close="showReviewModal = false"
-          @review-submitted="handleReviewSubmitted"
-        />
-      </secton> -->
-
-      <!-- <section>
-        <UCard
-          id="discussion"
-          class="mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800"
-          :ui="{ body: { padding: 'p-0' } }"
-        >
-          <template #header>
-            <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-              <h2
-                class="text-xl font-semibold text-gray-900 dark:text-gray-100"
-              >
-                Discussion
-              </h2>
-            </div>
-          </template>
-          <UDivider class="my-0" />
-          <div class="p-4 sm:p-6">
-            <CommentsContainer
-              v-if="useAuth"
-              :id="data.id"
-              module="serviceProvider"
-              :comments="comments"
-              class="comments-github-style"
-            />
-          </div>
-        </UCard>
-      </section> -->
     </section>
   </UPage>
 </template>
