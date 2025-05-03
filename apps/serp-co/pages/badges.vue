@@ -41,9 +41,9 @@
 
   const copyToClipboard = (badge) => {
     // Generate UTM parameters using badge information
-    const utmSource = `badge-${badge.path}`;
-    const utmMedium = 'serp-embeds';
-    const utmCampaign = `badge-serp-${badge.path}`;
+    const utmSource = 'serp-embeds'; // The general source/platform
+    const utmMedium = `badge`; // The medium type
+    const utmCampaign = `badge-${badge.path}`; // Specific campaign identifier
 
     // Create URL with UTM parameters
     const badgeUrl = `https://serp.co/?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}`;
