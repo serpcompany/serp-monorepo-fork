@@ -44,7 +44,7 @@ export default defineAppConfig({
           },
           {
             text: 'Solutions',
-            slug: 'https://serp.cohttps://solutions.serp.co'
+            slug: 'https://solutions.serp.co'
           },
           {
             text: 'Contact',
