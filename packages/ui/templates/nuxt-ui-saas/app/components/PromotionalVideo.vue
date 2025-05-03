@@ -1,6 +1,9 @@
 <template>
   <div class="relative">
-    <UPageCard variant="subtle" class="rounded-2xl">
+    <UPageCard
+      variant="subtle"
+      class="rounded-2xl"
+    >
       <video
         class="rounded-xl"
         data-v-baf90ddd=""
