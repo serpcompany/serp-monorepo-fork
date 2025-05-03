@@ -1686,6 +1686,9 @@ importers:
       '@serp/configs':
         specifier: workspace:^
         version: link:../configs
+      '@types/youtube':
+        specifier: ^0.1.0
+        version: 0.1.0
       eslint:
         specifier: ^9.20.1
         version: 9.20.1

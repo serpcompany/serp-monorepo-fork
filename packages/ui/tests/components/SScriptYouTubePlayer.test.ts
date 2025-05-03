@@ -77,7 +77,8 @@ describe('SScriptYouTubePlayer', () => {
             cb({ YT: { Player: class {} } });
           }
         },
-        status: ref(youtubePlayerStatus)
+        status: ref(youtubePlayerStatus),
+        load: () => {} // Add the missing load function
       }));
 
       const html = await ComponentRender(
