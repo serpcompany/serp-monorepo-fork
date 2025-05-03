@@ -97,4 +97,9 @@ export function createConfig({
   return config;
 }
 
-export default { createConfig };
+// Create the default config
+const baseDirectory = path.dirname(fileURLToPath(import.meta.url));
+const defaultConfig = createConfig({ baseDirectory });
+
+// Export both the createConfig function and the default config array
+export default defaultConfig;
