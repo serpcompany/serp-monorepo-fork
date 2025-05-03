@@ -130,12 +130,38 @@ export default defineNuxtConfig({
     format: ['webp']
   },
   security: {
+    strict: true,
+    rateLimiter: false,
     headers: {
       contentSecurityPolicy: {
-        'img-src': ["'self'", 'data:', 'https://*']
-      }
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'img-src': ["'self'", 'data:', 'https:'],
+        'connect-src':
+          process.env.NODE_ENV === 'development'
+            ? ["'self'", 'https:', 'ws:']
+            : ["'self'", 'https:'],
+        'frame-src': [
+          'https://www.youtube-nocookie.com',
+          'https://www.youtube.com'
+        ]
+      },
+      permissionsPolicy: {
+        'picture-in-picture': [
+          'self',
+          '"https://www.youtube-nocookie.com"',
+          '"https://www.youtube.com"'
+        ],
+        fullscreen: [
+          'self',
+          '"https://www.youtube-nocookie.com"',
+          '"https://www.youtube.com"'
+        ]
+      },
+      crossOriginEmbedderPolicy: 'unsafe-none'
     },
-    rateLimiter: false
+    ssg: {
+      hashStyles: false
+    }
   },
   htmlValidator: {
     usePrettier: false,
