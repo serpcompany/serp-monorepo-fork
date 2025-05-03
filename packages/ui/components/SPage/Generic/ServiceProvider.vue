@@ -64,16 +64,21 @@
 
   // State for sections
   const sections = ref<string[]>([]);
-
   // Extract sections from rendered H2 elements
   const extractSections = () => {
     // Wait for next tick to ensure content is rendered
     nextTick(() => {
-      const h2Elements = document.querySelectorAll('h2');
-      const sectionTitles = Array.from(h2Elements).map(
-        (h2) => h2.textContent || ''
-      );
-      sections.value = sectionTitles.filter((title) => title.trim() !== '');
+      // Get reference to the component's root element
+      const containerElement = getCurrentInstance()?.proxy?.$el;
+
+      if (containerElement) {
+        // Only select h2 elements within this component
+        const h2Elements = containerElement.querySelectorAll('h2');
+        const sectionTitles = Array.from(h2Elements).map(
+          (h2) => h2.textContent || ''
+        );
+        sections.value = sectionTitles.filter((title) => title.trim() !== '');
+      }
     });
   };
 
