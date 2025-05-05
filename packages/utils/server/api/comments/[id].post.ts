@@ -13,12 +13,7 @@ export default defineEventHandler(async (event) => {
     const { module } = getQuery(event);
     if (!id) return { status: 400, message: 'ID is required' };
 
-    const {
-      comment,
-      timestamp,
-      parentIds,
-      module: bodyModule
-    } = await readBody(event);
+    const { comment, parentIds, module: bodyModule } = await readBody(event);
 
     const module_ = bodyModule || module;
     if (!module_) return { status: 400, message: 'Module is required' };

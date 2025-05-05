@@ -13,8 +13,7 @@ export default defineEventHandler(async (event) => {
     const { id } = getRouterParams(event);
     if (!id) return { status: 400, message: 'ID is required' };
 
-    const { commentId, comment, timestamp, parentIds, module } =
-      await readBody(event);
+    const { commentId, comment, timestamp, module } = await readBody(event);
     if (!commentId || !comment || !timestamp || !module) {
       return {
         status: 400,

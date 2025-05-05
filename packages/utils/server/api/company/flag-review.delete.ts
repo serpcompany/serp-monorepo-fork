@@ -62,7 +62,6 @@ export default defineEventHandler(async (event) => {
 
     return { message: 'success' };
   } catch (error: unknown) {
-    console.error('Error in flagging review:', error);
     return { status: 500, message: error.message };
   }
 });

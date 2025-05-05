@@ -125,7 +125,6 @@ FROM full_tree;
       upvotes: includeUpvotes ? upvotes : undefined
     };
   } catch (error) {
-    console.error('Error fetching comments:', error);
     return { status: 500, message: error.message };
   }
 });

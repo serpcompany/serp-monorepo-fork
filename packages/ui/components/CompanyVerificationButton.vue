@@ -59,7 +59,7 @@
           icon: 'i-heroicons-exclamation-circle'
         });
       }
-    } catch (err: unknown) {
+    } catch (error) {
       toast.add({
         id: 'claim-company-error',
         title: 'Error',
@@ -104,8 +104,7 @@
           icon: 'i-heroicons-exclamation-circle'
         });
       }
-    } catch (err: unknown) {
-      console.error(err);
+    } catch (error) {
       toast.add({
         id: 'company-verification-email-error',
         title: 'Error',

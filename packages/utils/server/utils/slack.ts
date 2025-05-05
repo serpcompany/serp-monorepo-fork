@@ -15,9 +15,11 @@ export async function sendSlackNotification(
         text: message
       });
     } else {
+      // eslint-disable-next-line no-console
       console.log('Slack notification sent', { message, slackChannel });
     }
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Failed to send Slack notification', {
       error: error.message
     });

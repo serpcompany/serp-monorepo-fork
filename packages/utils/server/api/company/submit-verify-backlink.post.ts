@@ -59,8 +59,7 @@ export default defineEventHandler(async (event) => {
       headers: { 'User-Agent': 'SERPVerificationBot/1.0' }
     });
     html = await res.text();
-  } catch (err) {
-    console.error('Error fetching homepage:', err);
+  } catch {
     return { ok: false, error: 'Could not fetch homepage' };
   }
 
