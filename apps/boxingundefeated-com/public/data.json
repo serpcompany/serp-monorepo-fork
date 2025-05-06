@@ -1,0 +1,3028 @@
+[
+  {
+    "name": "Jexarael Perez",
+    "slug": "jexarael-perez",
+    "birth_name": "",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/1246809",
+    "career": "2024-2024",
+    "debut": "2024-05-11",
+    "boxrec_id": 1246809,
+    "status": "",
+    "gender": "male",
+    "nationality": "Nicaragua",
+    "height_cm": "",
+    "residence": "Siuna, Nicaragua",
+    "nicknames": "",
+    "stance": "",
+    "birth_place": "",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Featherweight",
+    "fights": [
+      {
+        "date": "Aug 24",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": null
+        },
+        "boxer_a": {
+          "name": "Jexarael Perez"
+        },
+        "boxer_b": {
+          "name": "Nelson jose Padilla flores"
+        }
+      },
+      {
+        "date": "Jul 24",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": null
+        },
+        "boxer_a": {
+          "name": "Jexarael Perez"
+        },
+        "boxer_b": {
+          "name": "John Kenner rios"
+        }
+      },
+      {
+        "date": "May 24",
+        "result": "D",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": null
+        },
+        "boxer_a": {
+          "name": "Jexarael Perez"
+        },
+        "boxer_b": {
+          "name": "Jairo Alonzo"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Tatsunori Fukunaga",
+    "slug": "tatsunori-fukunaga",
+    "birth_name": "",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/286169",
+    "career": "2003-2016",
+    "debut": "2003-02-09",
+    "boxrec_id": 286169,
+    "status": "inactive",
+    "gender": "male",
+    "nationality": "Japan",
+    "height_cm": 178,
+    "residence": "Osaka, Osaka, Japan",
+    "nicknames": "",
+    "stance": "orthodox",
+    "birth_place": "Tokushima City, Tokushima, Japan",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Super Lightweight",
+    "fights": [
+      {
+        "date": "Aug 14",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Yodogawa Ward Center, Osaka"
+        },
+        "boxer_a": {
+          "name": "Wanphichit Siriphana"
+        },
+        "boxer_b": {
+          "name": "Tatsunori Fukunaga"
+        }
+      },
+      {
+        "date": "May 16",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mielparque Hall, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Ryusei Yoshida"
+        }
+      },
+      {
+        "date": "Dec 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mielparque Hall, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Takayuki Morimoto"
+        }
+      },
+      {
+        "date": "Sep 15",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Yodogawa Ward Center, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Tatsuya Yoneo"
+        }
+      },
+      {
+        "date": "May 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mielparque Hall, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Praman Srichaianha"
+        }
+      },
+      {
+        "date": "Dec 14",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Higashiyodogawa Gym, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Anucha Sor Soda"
+        }
+      },
+      {
+        "date": "May 14",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mielparque Hall, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Yuki Arakawa"
+        }
+      },
+      {
+        "date": "Dec 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Yodogawa Ward Center, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Yosuke Shimagawa"
+        }
+      },
+      {
+        "date": "Sep 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Yodogawa Ward Center, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Shogo Takenaka"
+        }
+      },
+      {
+        "date": "May 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mielparque Hall, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Takayuki Morimoto"
+        }
+      },
+      {
+        "date": "Sep 04",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Prefectural Gymnasium, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Hiroshi Ohashi"
+        }
+      },
+      {
+        "date": "May 04",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "IMP Hall, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Naoki Okamoto"
+        }
+      },
+      {
+        "date": "Aug 03",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Prefectural Gymnasium, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Masahiro Ogura"
+        }
+      },
+      {
+        "date": "Feb 03",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Azalea Taisho, Osaka"
+        },
+        "boxer_a": {
+          "name": "Tatsunori Fukunaga"
+        },
+        "boxer_b": {
+          "name": "Akihiro Sakai"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Jamie Ambler",
+    "slug": "jamie-ambler",
+    "birth_name": "",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/339418",
+    "career": "2005-2017",
+    "debut": "2005-11-12",
+    "boxrec_id": 339418,
+    "status": "inactive",
+    "gender": "male",
+    "nationality": "United Kingdom",
+    "height_cm": 189,
+    "residence": "Aberystwyth, Wales, United Kingdom",
+    "nicknames": "",
+    "stance": "orthodox",
+    "birth_place": "",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Cruiserweight",
+    "fights": [
+      {
+        "date": "Mar 16",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 6,
+        "venue": {
+          "location": "Resorts World Arena, Birmingham"
+        },
+        "boxer_a": {
+          "name": "Zach Parker"
+        },
+        "boxer_b": {
+          "name": "Jamie Ambler"
+        }
+      },
+      {
+        "date": "Oct 17",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Robin Park Centre, Wigan"
+        },
+        "boxer_a": {
+          "name": "Kyle Lomotey"
+        },
+        "boxer_b": {
+          "name": "Jamie Ambler"
+        }
+      },
+      {
+        "date": "Jun 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Civic Hall, Grays"
+        },
+        "boxer_a": {
+          "name": "Joe Jackson-Brown"
+        },
+        "boxer_b": {
+          "name": "Jamie Ambler"
+        }
+      },
+      {
+        "date": "Jul 10",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Bolton Arena, Bolton"
+        },
+        "boxer_a": {
+          "name": "Navid Iran"
+        },
+        "boxer_b": {
+          "name": "Jamie Ambler"
+        }
+      },
+      {
+        "date": "Nov 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "BT Convention Centre, Liverpool"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "James Farrell"
+        }
+      },
+      {
+        "date": "Jul 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "O2 Arena, Greenwich"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jake Ball"
+        }
+      },
+      {
+        "date": "Apr 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Leisure Centre, Ebbw Vale"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Nathan Thorley"
+        }
+      },
+      {
+        "date": "Apr 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "National Sports Centre, Crystal Palace"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Andre Sterling"
+        }
+      },
+      {
+        "date": "Mar 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "York Hall, Bethnal Green"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Miles Gordon-Darby"
+        }
+      },
+      {
+        "date": "Mar 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Dolman Exhibition Hall, Bristol City FC, Bristol"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Nathan Halton"
+        }
+      },
+      {
+        "date": "Dec 15",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Manchester Arena, Manchester"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Dale Coyne"
+        }
+      },
+      {
+        "date": "Nov 15",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Venue Cymru, Llandudno"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Tobias Webb"
+        }
+      },
+      {
+        "date": "Oct 15",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Devonshire Dome, Buxton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Charlie Schofield"
+        }
+      },
+      {
+        "date": "Jul 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Olympia, Liverpool"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Lee Hynes"
+        }
+      },
+      {
+        "date": "Jun 15",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Guild Hall, Preston"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Tomi Tatham"
+        }
+      },
+      {
+        "date": "May 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Doncaster Dome, Doncaster"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Andy White"
+        }
+      },
+      {
+        "date": "Nov 14",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Town Hall, Walsall"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Lennox Clarke"
+        }
+      },
+      {
+        "date": "Sep 14",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Civic Hall, Bedworth"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Joe Sherriff"
+        }
+      },
+      {
+        "date": "Jul 14",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Town Hall, Walsall"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Grant Cunningham"
+        }
+      },
+      {
+        "date": "Jun 14",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Oasis Leisure Centre, Swindon"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Tariq Quaddus"
+        }
+      },
+      {
+        "date": "Mar 14",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Newport Centre, Newport"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Danni Griffiths"
+        }
+      },
+      {
+        "date": "Mar 14",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Scottish Exhibition Centre, Glasgow"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "David Brophy"
+        }
+      },
+      {
+        "date": "Dec 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "ExCel Arena, Dockland"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Paul Smith"
+        }
+      },
+      {
+        "date": "Sep 13",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Concord Centre, Sheffield"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Wayne Reed"
+        }
+      },
+      {
+        "date": "Jun 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Olympia, Liverpool"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Rod Smith"
+        }
+      },
+      {
+        "date": "May 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Rhondda Fach Sports Centre, Tylorstown"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Liam Williams"
+        }
+      },
+      {
+        "date": "Sep 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Olympia, Liverpool"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Courtney Fry"
+        }
+      },
+      {
+        "date": "Jul 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Liquid nightclub, Luton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jahmaine Smyle"
+        }
+      },
+      {
+        "date": "Jul 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Echo Arena, Liverpool"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Rocky Fielding"
+        }
+      },
+      {
+        "date": "Jun 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Cardiff International Arena, Cardiff"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Tony Dodson"
+        }
+      },
+      {
+        "date": "Feb 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Bolton Whites Hotel (De Vere Whites), Bolton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Robin Reid"
+        }
+      },
+      {
+        "date": "Dec 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Cedar Court Hotel, Ainley Top, Huddersfield"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jason McCalmon"
+        }
+      },
+      {
+        "date": "Nov 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Newport Centre, Newport"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Patrick Mendy"
+        }
+      },
+      {
+        "date": "Oct 10",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Newport Centre, Newport"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Lee Churcher"
+        }
+      },
+      {
+        "date": "Sep 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Park Inn Hotel, Northampton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Liam Daly"
+        }
+      },
+      {
+        "date": "Jul 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Rainton Meadows Arena, Houghton-le-Spring"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Travis Dickinson"
+        }
+      },
+      {
+        "date": "Jun 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gilvenbank Hotel, Glenrothes"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Stevie McGuire"
+        }
+      },
+      {
+        "date": "May 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mountbatten Centre, Portsmouth"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Sam Couzens"
+        }
+      },
+      {
+        "date": "Apr 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Fleming Park Leisure Centre, Eastleigh"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Matthew Barney"
+        }
+      },
+      {
+        "date": "Jan 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Holiday Inn, Birmingham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Sam Horton"
+        }
+      },
+      {
+        "date": "Dec 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Oasis Leisure Centre, Swindon"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Kelvin Young"
+        }
+      },
+      {
+        "date": "Nov 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Newport Centre, Newport"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jeff Evans"
+        }
+      },
+      {
+        "date": "Nov 09",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Tattersall's Arena, Newmarket"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Matt Jack"
+        }
+      },
+      {
+        "date": "Oct 09",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Beach Ballroom, Aberdeen"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Quinton Hillocks"
+        }
+      },
+      {
+        "date": "Sep 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Grosvenor Hotel, Sheffield"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Carl Wild"
+        }
+      },
+      {
+        "date": "Sep 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "York Hall, Bethnal Green"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Billy Slate"
+        }
+      },
+      {
+        "date": "Jul 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Kensington Town Hall, Kensington"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Menay Edwards"
+        }
+      },
+      {
+        "date": "Jun 09",
+        "result": "D",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gilvenbank Hotel, Glenrothes"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Gordon Brennan"
+        }
+      },
+      {
+        "date": "Jun 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "York Hall, Bethnal Green"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jack Morris"
+        }
+      },
+      {
+        "date": "May 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Bolton Whites Hotel (De Vere Whites), Bolton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Mick Jenno"
+        }
+      },
+      {
+        "date": "Apr 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Civic Centre, Wolverhampton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Darren McDermott"
+        }
+      },
+      {
+        "date": "Apr 09",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Town Hall, Cheltenham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Joe Skeldon"
+        }
+      },
+      {
+        "date": "Apr 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Civic Hall, Wolverhampton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Sam Horton"
+        }
+      },
+      {
+        "date": "Mar 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Marriott Hotel, Bristol"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Danny Gwilym"
+        }
+      },
+      {
+        "date": "Feb 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Merthyr Leisure Centre, Merthyr Tydfil"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Paul Samuels"
+        }
+      },
+      {
+        "date": "Feb 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Tower Ballroom, Edgbaston, Birmingham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Llewellyn Davies"
+        }
+      },
+      {
+        "date": "Dec 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Dalziel Park Hotel & Conference Centre, Motherwell"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Yassine El Maachi"
+        }
+      },
+      {
+        "date": "Dec 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Goresbrook Leisure Centre, Dagenham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Mike Stanton"
+        }
+      },
+      {
+        "date": "Oct 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Aston Villa Leisure Centre, Birmingham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Tariq Quaddus"
+        }
+      },
+      {
+        "date": "Oct 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Leigh Sports Village, Leigh"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Carl Dilks"
+        }
+      },
+      {
+        "date": "Sep 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Municipal Hall, Colne"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Ally Morrison"
+        }
+      },
+      {
+        "date": "Aug 08",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Town Hall, Watford"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Ojay Abrahams"
+        }
+      },
+      {
+        "date": "Jun 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "York Hall, Bethnal Green"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Dwayne Lewis"
+        }
+      },
+      {
+        "date": "May 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Marriott Hotel, Bristol"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Danny Butler"
+        }
+      },
+      {
+        "date": "Apr 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Tower Ballroom, Edgbaston, Birmingham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Joe Rea"
+        }
+      },
+      {
+        "date": "Mar 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Afan Lido, Port Talbot"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "David Gentles"
+        }
+      },
+      {
+        "date": "Feb 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Kelvin Hall, Glasgow"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Stevie McGuire"
+        }
+      },
+      {
+        "date": "Feb 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Don Valley Stadium, Sheffield"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jez Wilson"
+        }
+      },
+      {
+        "date": "Feb 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Marriott Hotel, Bristol"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Robert Boardman"
+        }
+      },
+      {
+        "date": "Dec 07",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Bolton Whites Hotel (De Vere Whites), Bolton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Nigel Travis"
+        }
+      },
+      {
+        "date": "Dec 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Robin Park Centre, Wigan"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Alex Matvienko"
+        }
+      },
+      {
+        "date": "Nov 07",
+        "result": "D",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Bescot Stadium, Walsall"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Matty Hough"
+        }
+      },
+      {
+        "date": "Oct 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Nottingham Arena, Nottingham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Tony Bellew"
+        }
+      },
+      {
+        "date": "Sep 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Robin Park Centre, Wigan"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Martin Murray"
+        }
+      },
+      {
+        "date": "Apr 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Principality Stadium, Cardiff"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Kerry Hope"
+        }
+      },
+      {
+        "date": "Mar 07",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Radisson Hotel, Glasgow"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Ricky Strike"
+        }
+      },
+      {
+        "date": "Feb 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Rhydycar Leisure Centre, Merthyr Tydfil"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Shon Davies"
+        }
+      },
+      {
+        "date": "Dec 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Octagon Centre, Sheffield"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Stuart Brookes"
+        }
+      },
+      {
+        "date": "Nov 06",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "St.Andrew's Sporting Club, Glasgow"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Kenny Davidson"
+        }
+      },
+      {
+        "date": "Sep 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Guildhall, Southampton"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Paul Morby"
+        }
+      },
+      {
+        "date": "Sep 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Meadowside Leisure Centre, Burton-on-Trent"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jonjo Finnegan"
+        }
+      },
+      {
+        "date": "Apr 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Andersonstown Leisure Centre, Belfast"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Scott Jordan"
+        }
+      },
+      {
+        "date": "Apr 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Thistle Hotel, Heathrow"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Danny Goode"
+        }
+      },
+      {
+        "date": "Feb 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "The Pavilions, Plymouth"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jon Harrison"
+        }
+      },
+      {
+        "date": "Dec 05",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Holiday Inn, Birmingham"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Jason Welborn"
+        }
+      },
+      {
+        "date": "Nov 05",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Thistle Hotel, Bristol"
+        },
+        "boxer_a": {
+          "name": "Jamie Ambler"
+        },
+        "boxer_b": {
+          "name": "Liam Stinchcombe"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Aditya Aditya",
+    "slug": "aditya-aditya",
+    "birth_name": "",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/1270775",
+    "career": "2024-2024",
+    "debut": "2024-08-04",
+    "boxrec_id": 1270775,
+    "status": "",
+    "gender": "male",
+    "nationality": "India",
+    "height_cm": "",
+    "residence": "India",
+    "nicknames": "",
+    "stance": "",
+    "birth_place": "",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Super Featherweight",
+    "fights": [
+      {
+        "date": "Aug 24",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Chandan Singh Boxing Academy, New Delhi"
+        },
+        "boxer_a": {
+          "name": "Banty Singh"
+        },
+        "boxer_b": {
+          "name": "Aditya Aditya"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Luis Perez Matamoros",
+    "slug": "luis-perez-matamoros",
+    "birth_name": "Luis Alberto Pérez Matamoros",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/531838",
+    "career": "2010-2022",
+    "debut": "2010-03-18",
+    "boxrec_id": 531838,
+    "status": "inactive",
+    "gender": "male",
+    "nationality": "Mexico",
+    "height_cm": "",
+    "residence": "Distrito Federal, Mexico",
+    "nicknames": "",
+    "stance": "",
+    "birth_place": "",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Super Welterweight",
+    "fights": [
+      {
+        "date": "Jun 14",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 6,
+        "venue": {
+          "location": "Foro Polanco, Mexico City"
+        },
+        "boxer_a": {
+          "name": "Antonio Moran"
+        },
+        "boxer_b": {
+          "name": "Luis Perez Matamoros"
+        }
+      },
+      {
+        "date": "Nov 21",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 6,
+        "venue": {
+          "location": "Deportivo Juan Jaramillo Frias, Cuernavaca"
+        },
+        "boxer_a": {
+          "name": "Justin Gandoza"
+        },
+        "boxer_b": {
+          "name": "Luis Perez Matamoros"
+        }
+      },
+      {
+        "date": "Apr 21",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 6,
+        "venue": {
+          "location": "Deportivo Juan Jaramillo Frias, Cuernavaca"
+        },
+        "boxer_a": {
+          "name": "Justin Gandoza"
+        },
+        "boxer_b": {
+          "name": "Luis Perez Matamoros"
+        }
+      },
+      {
+        "date": "Nov 19",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Hacienda Nueva Vida, Ecatepec de Morelos"
+        },
+        "boxer_a": {
+          "name": "Luis Enrique Montelongo"
+        },
+        "boxer_b": {
+          "name": "Luis Perez Matamoros"
+        }
+      },
+      {
+        "date": "Aug 20",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Ecatepec de Morelos"
+        },
+        "boxer_a": {
+          "name": "Jamin Hernandez Mercado"
+        },
+        "boxer_b": {
+          "name": "Luis Perez Matamoros"
+        }
+      },
+      {
+        "date": "Jun 10",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Jose Cuervo Salon, Polanco"
+        },
+        "boxer_a": {
+          "name": "Isao Gonzalo Carranza"
+        },
+        "boxer_b": {
+          "name": "Luis Perez Matamoros"
+        }
+      },
+      {
+        "date": "May 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Jose Cuervo Salon, Polanco"
+        },
+        "boxer_a": {
+          "name": "Rodrigo Adrian Campos"
+        },
+        "boxer_b": {
+          "name": "Luis Perez Matamoros"
+        }
+      },
+      {
+        "date": "Jan 22",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Deportivo Juan Jaramillo Frias, Cuernavaca"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Alexander Casares"
+        }
+      },
+      {
+        "date": "Jul 19",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gym Vega, Ciudad Nezahualcoyotl"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Aaron Lazcano"
+        }
+      },
+      {
+        "date": "Oct 14",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Jose Cuervo Salon, Polanco"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Carlos Ruiz"
+        }
+      },
+      {
+        "date": "Jul 12",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Centro Libanes, Mexico City"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Gonzalo Rodriguez"
+        }
+      },
+      {
+        "date": "Jul 12",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Palenque de la Feria, Tepic"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Eduardo Gutierrez Vera"
+        }
+      },
+      {
+        "date": "Apr 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Jose Cuervo Salon, Polanco"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Eduardo Perea"
+        }
+      },
+      {
+        "date": "Mar 11",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Jose Cuervo Salon, Polanco"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Walter Lina Ordonez"
+        }
+      },
+      {
+        "date": "Apr 10",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Jose Cuervo Salon, Polanco"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Adrian Martinez Laguna"
+        }
+      },
+      {
+        "date": "Mar 10",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Jose Cuervo Salon, Polanco"
+        },
+        "boxer_a": {
+          "name": "Luis Perez Matamoros"
+        },
+        "boxer_b": {
+          "name": "Joel Montes de Oca Zurita"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Rizaldo Sangong",
+    "slug": "rizaldo-sangong",
+    "birth_name": "",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/660093",
+    "career": "2013-2013",
+    "debut": "2013-08-01",
+    "boxrec_id": 660093,
+    "status": "inactive",
+    "gender": "male",
+    "nationality": "Philippines",
+    "height_cm": "",
+    "residence": "Cebu, Philippines",
+    "nicknames": "",
+    "stance": "",
+    "birth_place": "",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Flyweight",
+    "fights": [
+      {
+        "date": "Aug 13",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Cebu City Waterfront Hotel & Casino, Barangay Lahug, Cebu City"
+        },
+        "boxer_a": {
+          "name": "Joy Joy Formentera"
+        },
+        "boxer_b": {
+          "name": "Rizaldo Sangong"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Ronald Tamani",
+    "birth_name": "",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/531541",
+    "career": "2010-2021",
+    "debut": "2010-03-13",
+    "boxrec_id": 531541,
+    "status": "inactive",
+    "gender": "male",
+    "nationality": "Zimbabwe",
+    "height_cm": "",
+    "residence": "Harare (Salisbury), Zimbabwe",
+    "nicknames": "",
+    "stance": "",
+    "birth_place": "Zimbabwe",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Super Bantamweight",
+    "fights": [
+      {
+        "date": "Dec 20",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 6,
+        "venue": {
+          "location": "Windhoek Country Club Resort, Windhoek"
+        },
+        "boxer_a": {
+          "name": "Fillipus Nghitumbwa"
+        },
+        "boxer_b": {
+          "name": "Ronald Tamani"
+        }
+      },
+      {
+        "date": "Nov 19",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 6,
+        "venue": {
+          "location": "Windhoek Country Club Resort, Windhoek"
+        },
+        "boxer_a": {
+          "name": "Fillipus Nghitumbwa"
+        },
+        "boxer_b": {
+          "name": "Ronald Tamani"
+        }
+      },
+      {
+        "date": "Jun 11",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Windhoek Country Club Resort, Windhoek"
+        },
+        "boxer_a": {
+          "name": "Immanuel Naidjala"
+        },
+        "boxer_b": {
+          "name": "Ronald Tamani"
+        }
+      },
+      {
+        "date": "Mar 11",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Windhoek Country Club Resort, Windhoek"
+        },
+        "boxer_a": {
+          "name": "Immanuel Naidjala"
+        },
+        "boxer_b": {
+          "name": "Ronald Tamani"
+        }
+      },
+      {
+        "date": "Jun 21",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Robbie  Mupawose hall, Harare (Salisbury)"
+        },
+        "boxer_a": {
+          "name": "Sinenkosi Mlotshwa"
+        },
+        "boxer_b": {
+          "name": "Ronald Tamani"
+        }
+      },
+      {
+        "date": "Apr 18",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "City Sports Centre, Harare (Salisbury)"
+        },
+        "boxer_a": {
+          "name": "Tinashe Mwadziwana"
+        },
+        "boxer_b": {
+          "name": "Ronald Tamani"
+        }
+      },
+      {
+        "date": "Sep 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Windhoek Country Club Resort, Windhoek"
+        },
+        "boxer_a": {
+          "name": "Ronald Tamani"
+        },
+        "boxer_b": {
+          "name": "Timoteus Shuulula"
+        }
+      },
+      {
+        "date": "Jun 12",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "SKW Hall, Windhoek"
+        },
+        "boxer_a": {
+          "name": "Ronald Tamani"
+        },
+        "boxer_b": {
+          "name": "Gottlieb Ndokosho"
+        }
+      },
+      {
+        "date": "Jul 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "SKW Hall, Olympia"
+        },
+        "boxer_a": {
+          "name": "Ronald Tamani"
+        },
+        "boxer_b": {
+          "name": "Tommy Nakashimba"
+        }
+      },
+      {
+        "date": "Dec 10",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Ochi City Safari Lodge, Harare (Salisbury)"
+        },
+        "boxer_a": {
+          "name": "Ronald Tamani"
+        },
+        "boxer_b": {
+          "name": "Trymore Musira"
+        }
+      },
+      {
+        "date": "Jul 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mbare Netball Complex, Harare (Salisbury)"
+        },
+        "boxer_a": {
+          "name": "Ronald Tamani"
+        },
+        "boxer_b": {
+          "name": "Tinashe Mutodza"
+        }
+      },
+      {
+        "date": "May 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Windhoek Country Club Resort, Windhoek"
+        },
+        "boxer_a": {
+          "name": "Ronald Tamani"
+        },
+        "boxer_b": {
+          "name": "Davis Iita"
+        }
+      },
+      {
+        "date": "Mar 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Masvingo Civic Centre, Masvingo"
+        },
+        "boxer_a": {
+          "name": "Ronald Tamani"
+        },
+        "boxer_b": {
+          "name": "Herbet Chiyaka"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Jorge Juarez",
+    "slug": "jorge-juarez",
+    "birth_name": "Jorge Alberto Cabrera Juárez",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/297078",
+    "career": "2005-2018",
+    "debut": "2005-02-07",
+    "boxrec_id": 297078,
+    "status": "inactive",
+    "gender": "male",
+    "nationality": "Mexico",
+    "height_cm": "",
+    "residence": "Tijuana, Baja California, Mexico",
+    "nicknames": "",
+    "stance": "",
+    "birth_place": "",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Super Welterweight",
+    "fights": [
+      {
+        "date": "Jun 06",
+        "result": "SD",
+        "result_round": null,
+        "scheduled_rounds": 4,
+        "venue": {
+          "location": "Auditorio Municipal, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Saul Alvarez"
+        },
+        "boxer_b": {
+          "name": "Jorge Juarez"
+        }
+      },
+      {
+        "date": "Mar 17",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 8,
+        "venue": {
+          "location": "Auditorio Municipal, Villa Las Rosas"
+        },
+        "boxer_a": {
+          "name": "Jaime Munguia"
+        },
+        "boxer_b": {
+          "name": "Jorge Juarez"
+        }
+      },
+      {
+        "date": "Apr 16",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio Oscar 'Tigre' García, Ensenada"
+        },
+        "boxer_a": {
+          "name": "Wes Capper"
+        },
+        "boxer_b": {
+          "name": "Jorge Juarez"
+        }
+      },
+      {
+        "date": "Oct 16",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio Oscar 'Tigre' García, Ensenada"
+        },
+        "boxer_a": {
+          "name": "Giovannie Gonzalez"
+        },
+        "boxer_b": {
+          "name": "Jorge Juarez"
+        }
+      },
+      {
+        "date": "Nov 08",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Salon Rojo, Toluca"
+        },
+        "boxer_a": {
+          "name": "Marco Reyes"
+        },
+        "boxer_b": {
+          "name": "Jorge Juarez"
+        }
+      },
+      {
+        "date": "Jan 18",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio de Mexicali, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Fahd Berkaoui"
+        }
+      },
+      {
+        "date": "Jul 17",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Rosarito"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Erik Vega Ortiz"
+        }
+      },
+      {
+        "date": "Dec 16",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio de Mexicali, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Angel Torres Gonzalez"
+        }
+      },
+      {
+        "date": "Jul 16",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Av. Chiapas y Clles 11 y 12, San Luis Rio Colorado"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Brandon Maddox"
+        }
+      },
+      {
+        "date": "May 15",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio de Mexicali, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Freddy Hernandez"
+        }
+      },
+      {
+        "date": "Mar 15",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio de Mexicali, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Freddy Hernandez"
+        }
+      },
+      {
+        "date": "Nov 11",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Salon Las Pulgas, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Jesus Emilio Bojorquez"
+        }
+      },
+      {
+        "date": "May 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio Oscar 'Tigre' García, Ensenada"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Juan Carlos Virgen"
+        }
+      },
+      {
+        "date": "Feb 10",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Auditorio Ernesto Rufo, Rosarito"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Rito Ruvalcaba"
+        }
+      },
+      {
+        "date": "Dec 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Nido Sports Center, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Julio Sanchez Leon"
+        }
+      },
+      {
+        "date": "Oct 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Parque Revolucion, Culiacan"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Saul Roman"
+        }
+      },
+      {
+        "date": "Sep 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Nido Sports Center, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Jesus Arras Perea"
+        }
+      },
+      {
+        "date": "Aug 09",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Auditorio Municipal, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Jovan Munoz"
+        }
+      },
+      {
+        "date": "Apr 09",
+        "result": "D",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Foro, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Ruben Porras"
+        }
+      },
+      {
+        "date": "Jan 09",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Auditorio Ernesto Rufo, Rosarito"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Augusto Gamez"
+        }
+      },
+      {
+        "date": "Oct 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Auditorio Municipal, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Alvaro Aguilar"
+        }
+      },
+      {
+        "date": "Aug 08",
+        "result": "D",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Avenida Revolucion, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Ruben Porras"
+        }
+      },
+      {
+        "date": "Jun 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Auditorio Municipal, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Jovan Munoz"
+        }
+      },
+      {
+        "date": "May 08",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Foro, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Jose Alejandro Alonso Rivera"
+        }
+      },
+      {
+        "date": "Feb 08",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Viva Mexico Events Center, San Luis Rio Colorado"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Norberto Gonzalez"
+        }
+      },
+      {
+        "date": "Sep 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Centro de Espectáculos Promocasa, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Joshua Marks"
+        }
+      },
+      {
+        "date": "Aug 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Polideportivo Centenario, Los Mochis"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Humberto Gutierrez Ochoa"
+        }
+      },
+      {
+        "date": "Mar 07",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Centro de Espectáculos Promocasa, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Manuel Garcia Silva"
+        }
+      },
+      {
+        "date": "Jan 07",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Palenque del Hipódromo de Agua Caliente, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Juvencio Borquez"
+        }
+      },
+      {
+        "date": "Nov 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio de Mexicali, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Ivan Alvarez"
+        }
+      },
+      {
+        "date": "Sep 06",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Foro, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Rafael Ortiz Moreno"
+        }
+      },
+      {
+        "date": "Sep 06",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Auditorio del Estado, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Francisco Garcia"
+        }
+      },
+      {
+        "date": "Apr 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Adan Casillas"
+        }
+      },
+      {
+        "date": "Mar 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Nido Sports Center, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Juan Carlos Salas Yanez"
+        }
+      },
+      {
+        "date": "Mar 06",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio de Mexicali, Mexicali"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Orlando Mendivil"
+        }
+      },
+      {
+        "date": "Jan 06",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Foro, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Heriberto Escobar"
+        }
+      },
+      {
+        "date": "Nov 05",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio Oscar 'Tigre' García, Ensenada"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Alfonso Guile Miranda"
+        }
+      },
+      {
+        "date": "Oct 05",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Auditorio Municipal, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Miguel Alejandro Jimenez"
+        }
+      },
+      {
+        "date": "Aug 05",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Palenque del Hipódromo de Agua Caliente, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Enrique Colin"
+        }
+      },
+      {
+        "date": "May 05",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "El Foro, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Orlando Escobar"
+        }
+      },
+      {
+        "date": "Feb 05",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Discoteca Baby Rock, Tijuana"
+        },
+        "boxer_a": {
+          "name": "Jorge Juarez"
+        },
+        "boxer_b": {
+          "name": "Ricardo Cano"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Ramon De la Cruz",
+    "slug": "ramon-de-la-cruz",
+    "birth_name": "",
+    "boxrec_image": "/build/images/main/v6-avatar.svg",
+    "boxrec_url": "https://boxrec.com/en/box-pro/650999",
+    "career": "2013-2023",
+    "debut": "2013-04-27",
+    "boxrec_id": 650999,
+    "status": "inactive",
+    "gender": "male",
+    "nationality": "Dominican Republic",
+    "height_cm": "",
+    "residence": "Dominican Republic",
+    "nicknames": "",
+    "stance": "",
+    "birth_place": "Dominican Republic",
+    "reach_cm": "",
+    "content": "",
+    "weight_class": "Super Lightweight",
+    "fights": [
+      {
+        "date": "Nov 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": 8,
+        "venue": {
+          "location": "Salón la Fiesta, Hotel Jaragua, Santo Domingo"
+        },
+        "boxer_a": {
+          "name": "Alberto Puello"
+        },
+        "boxer_b": {
+          "name": "Ramon De la Cruz"
+        }
+      },
+      {
+        "date": "Sep 23",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Coco Locos Restaurant Sports Bar, Sosua"
+        },
+        "boxer_a": {
+          "name": "Joan Rodriguez Cepeda"
+        },
+        "boxer_b": {
+          "name": "Ramon De la Cruz"
+        }
+      },
+      {
+        "date": "Aug 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Club Luperon, Santo Domingo"
+        },
+        "boxer_a": {
+          "name": "Aneurys Mesa Rodriguez"
+        },
+        "boxer_b": {
+          "name": "Ramon De la Cruz"
+        }
+      },
+      {
+        "date": "Jan 17",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Casa de los Clubes, Santo Domingo"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Dario Ortiz"
+        }
+      },
+      {
+        "date": "Apr 16",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Club el Millon, Santo Domingo"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Eliecer Perdomo"
+        }
+      },
+      {
+        "date": "Oct 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Gimnasio Wilfredo Rivera, La Victoria"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Fernando Gonzalez"
+        }
+      },
+      {
+        "date": "Sep 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Club Maquiteria, Santo Domingo"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Tomas Rodriguez"
+        }
+      },
+      {
+        "date": "Mar 15",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Coliseo de Pueblo Nuevo, Santiago de los Caballeros"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Valerio Rodriguez"
+        }
+      },
+      {
+        "date": "Nov 14",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Polideportivo, Villa Altagracia"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Eliecer Perdomo"
+        }
+      },
+      {
+        "date": "Sep 14",
+        "result": "D",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Polideportvo Eleoncio Mercedes, La Romana"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Miguel Queliz"
+        }
+      },
+      {
+        "date": "Mar 14",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "L.B. Scott Sports Auditorium, Philipsburg"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Justin Gogulski"
+        }
+      },
+      {
+        "date": "Sep 13",
+        "result": "W",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Bánica"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Yovanny Duran"
+        }
+      },
+      {
+        "date": "Apr 13",
+        "result": "L",
+        "result_round": null,
+        "scheduled_rounds": null,
+        "venue": {
+          "location": "Parque Publico de Bayahibe, La Romana"
+        },
+        "boxer_a": {
+          "name": "Ramon De la Cruz"
+        },
+        "boxer_b": {
+          "name": "Jose Ozuna"
+        }
+      }
+    ]
+  }
+]

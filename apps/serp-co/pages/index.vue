@@ -15,7 +15,7 @@
     },
     {
       label: 'Solutions',
-      to: '/solutions/',
+      to: 'https://solutions.serp.co',
       color: 'neutral' as const,
       variant: 'subtle' as const,
       trailingIcon: 'i-lucide-arrow-right',

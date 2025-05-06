@@ -45,7 +45,7 @@ export default defineAppConfig({
           },
           {
             text: 'Solutions',
-            slug: '/solutions/'
+            slug: 'https://solutions.serp.co'
           },
           {
             text: 'Contact',
@@ -103,7 +103,7 @@ export default defineAppConfig({
       },
       {
         label: 'Solutions',
-        children: [{ label: 'Solutions', to: '/solutions/' }]
+        children: [{ label: 'Solutions', to: 'https://solutions.serp.co' }]
       },
       {
         label: 'Tools',

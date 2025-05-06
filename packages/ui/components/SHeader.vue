@@ -8,7 +8,8 @@
     (config.public.submitOptions as Array<{
       label: string;
       to: string;
-    }>);
+    }>) ||
+    [];
 
   const submitOptions = submitOptions_.map((item) => ({
     label: item.label,
@@ -18,7 +19,7 @@
     }
   }));
 
-  const { loggedIn, user, clear } = useUserSession();
+  const { loggedIn } = useUserSession();
 
   // Set a default selected item display text
   const addYourText = ref('Add your');
