@@ -23,7 +23,7 @@
 
   const categories = await useCompanyCategories();
   const categoryOptions = ref(categories?.map((category) => category.name));
-  const pricingOptions = ref(['Free', 'Paid', 'Subscription']);
+  const pricingOptions = ref(['Free', 'Paid', 'Subscription', 'Free Trial']);
 
   const route = useRoute();
   const id = route.query.id;
@@ -37,7 +37,6 @@
       company.value.id = submissionData.id;
       company.value.name = submissionData.name;
       company.value.domain = submissionData.domain;
-      company.value.pricing = submissionData.pricing;
       company.value.tags = submissionData.tags;
       company.value.oneLiner = submissionData.oneLiner;
       company.value.description = submissionData.description;
@@ -47,6 +46,9 @@
           )
         : [];
       company.value.logo = submissionData.logo;
+      company.value.pricing = submissionData.pricing
+        ? submissionData.pricing.split(',')
+        : [];
       uuid = submissionData.uuid;
       isPriority.value = submissionData.isPriority;
       existingForm.value = true;
@@ -339,6 +341,7 @@
           <UFormField label="Pricing Model" required>
             <UInputMenu
               v-model="company.pricing"
+              multiple
               :items="pricingOptions"
               class="w-full"
             />

@@ -36,6 +36,27 @@ export default defineEventHandler(async (event) => {
       };
     }
 
+    if (data.pricing) {
+      if (typeof data.pricing === 'string') {
+        data.pricing = data.pricing
+          .split(',')
+          .map((item: string) => item.trim());
+      }
+      data.pricing = [...new Set(data.pricing)];
+      const validPricing = ['Free', 'Paid', 'Subscription', 'Free Trial'];
+      const invalidPricing = data.pricing.filter(
+        (item: string) => !validPricing.includes(item)
+      );
+      if (invalidPricing.length) {
+        return {
+          status: 400,
+          message: `Invalid pricing options: ${invalidPricing.join(', ')}`
+        };
+      }
+
+      data.pricing = data.pricing.join(',');
+    }
+
     // Ensure categories is an array of ids and that all exist in companyCategoryCache
     if (data.categories) {
       if (!Array.isArray(data.categories)) {
