@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
         })
         .execute();
     }
-  } catch (e) {
+  } catch {
     throw createError({
       statusCode: 500,
       statusMessage: 'Failed to retrieve or create customer'
@@ -54,8 +54,7 @@ export default defineEventHandler(async (event) => {
       customer: customer_.id
     });
     return session.url;
-  } catch (error) {
-    console.error('Error creating billing portal session:', error);
+  } catch {
     throw createError({
       statusCode: 500,
       statusMessage: 'Failed to create billing portal session'

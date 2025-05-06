@@ -16,8 +16,6 @@ export default defineEventHandler(async (event) => {
 
   const { placement, domain, categorySlug } = getQuery(event);
 
-  console.log('Query parameters:', { placement, domain, categorySlug });
-
   if (!placement || !domain) {
     return { error: 'Missing required parameters: placement, domain' };
   }
@@ -55,8 +53,6 @@ export default defineEventHandler(async (event) => {
   if (!companyRecords.length) {
     return { error: 'Domain not found or invalid category' };
   }
-
-  console.log('Company records:', companyRecords);
 
   // Use the first company record
   const companyId = companyRecords[0].id;

@@ -88,7 +88,6 @@ export default defineEventHandler(async (event) => {
 
     return { status: 200, message: 'success', id: inserted[0].id };
   } catch (error) {
-    console.error('Error in claim company:', error.message);
     return { status: 500, message: error.message };
   }
 });

@@ -138,7 +138,6 @@ export default defineEventHandler(async (event) => {
       message: 'success'
     };
   } catch (error) {
-    console.error('Error in edit company API:', error);
     return {
       status: error.statusCode || 500,
       message: error.message

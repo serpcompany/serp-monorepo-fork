@@ -5,6 +5,7 @@ import {
   companySubmitForm
 } from '@serp/utils/server/api/db/schema';
 import { eq, inArray } from 'drizzle-orm';
+import { sendSlackNotification } from '../../utils/slack';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -152,6 +153,21 @@ export default defineEventHandler(async (event) => {
           uuid: data.uuid
         })
         .execute();
+
+      // Send Slack notification
+      sendSlackNotification(
+        `New company submission:
+Name: ${data.name}
+Domain: ${data.domain}
+Categories: ${data.categories ? data.categories.join(', ') : 'None'}
+Pricing: ${data.pricing}
+Tags: ${tags ? tags.join(', ') : 'None'}
+One Liner: ${data.oneLiner}
+Description: ${data.description}
+Logo: ${data.logo}
+Submitted by: ${email}
+UUID: ${data.uuid}`
+      );
     }
 
     return {

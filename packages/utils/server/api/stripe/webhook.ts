@@ -23,8 +23,7 @@ export default defineEventHandler(async (event) => {
       signature,
       endpointSecret
     );
-  } catch (err) {
-    console.error(`Error verifying webhook signature: ${err}`);
+  } catch {
     event.node.res.statusCode = 400;
     return 'Webhook signature verification failed';
   }
@@ -62,7 +61,8 @@ export default defineEventHandler(async (event) => {
       break;
     }
     default: {
-      console.log(`Unhandled event type ${rawBody.type}`);
+      // eslint-disable-next-line no-console
+      console.log(`Unhandled Stripe webhook event type ${rawBody.type}`);
     }
   }
 

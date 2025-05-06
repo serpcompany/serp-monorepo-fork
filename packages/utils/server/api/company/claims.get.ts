@@ -38,7 +38,6 @@ export default defineEventHandler(async (event) => {
 
     return verificationResults.length > 0 ? verificationResults : [];
   } catch (error) {
-    console.error('Error in claim company:', error.message);
     return { status: 500, message: error.message };
   }
 });
