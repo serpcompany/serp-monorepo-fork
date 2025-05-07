@@ -1,7 +1,7 @@
 <script setup lang="ts">
   const { loggedIn } = useUserSession();
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 
   const { data, pending, error } = await useFetch<{

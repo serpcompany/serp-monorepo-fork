@@ -3,7 +3,7 @@
 
   const { loggedIn, user } = useUserSession();
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 
   interface LinkFormData {
