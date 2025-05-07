@@ -14,8 +14,8 @@
   <div class="svg-preview-wrapper w-full max-w-full overflow-hidden">
     <div class="svg-preview-component" style="width: 250px; margin: 0 auto">
       <img
-        :src="`${baseUrl}/api/svg/badge?category=${encodeURIComponent(customizations.categoryName || 'Select Category')}&domain=${encodeURIComponent(customizations.productDomain || 'Select Domain')}`"
-        :alt="`${customizations.categoryName || 'Category'} Badge`"
+        :src="`${baseUrl}/api/svg/badge?category=${encodeURIComponent(customizations.categorySlug || 'Select Category')}&domain=${encodeURIComponent(customizations.productDomain || 'Select Domain')}`"
+        :alt="`${customizations.categorySlug || 'Category'} Badge`"
         width="250"
         height="242"
       />

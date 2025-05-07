@@ -2,7 +2,7 @@
   import { ref } from 'vue';
 
   const config = useRuntimeConfig();
-  const baseUrl = config.public.baseURL || '';
+  const baseUrl = config.public.siteUrl || '';
 
   // Initial form data
   const formData = ref({
@@ -35,13 +35,13 @@
   // Generate embed code for the customized SVG
   function generateEmbedCode() {
     const category = encodeURIComponent(
-      finalCustomizations.value.categoryName || 'Select Category'
+      finalCustomizations.value.categorySlug || 'Select Category'
     );
     const domain = encodeURIComponent(
       finalCustomizations.value.productDomain || 'Select Domain'
     );
     return `<a href="https://serp.co/products/${domain}/">
-  <img src="${baseUrl}/api/svg/badge?category=${category}&domain=${domain}" alt="${finalCustomizations.value.categoryName} Badge" width="250" height="242">
+  <img src="${baseUrl}/api/svg/badge?category=${category}&domain=${domain}" alt="${finalCustomizations.value.categorySlug} Badge" width="250" height="242">
 </a>`;
   }
 
@@ -71,8 +71,8 @@
 
     <div class="flex flex-col gap-8 lg:flex-row">
       <!-- Form Section -->
-      <div class="rounded-lg bg-white p-6 shadow-md lg:w-1/3">
-        <CustomizerForm
+      <div class="rounded-lg p-6 shadow-md lg:w-1/3">
+        <EmbedsFormsShieldBadgeCustomizer
           :form-data="formData"
           @update="handleFormUpdate"
           @submit="generateSvg"
@@ -80,19 +80,19 @@
       </div>
 
       <!-- Preview Section -->
-      <div class="rounded-lg bg-white p-6 shadow-md lg:w-2/3">
+      <div class="rounded-lg p-6 shadow-md lg:w-2/3">
         <h2 class="text-secondary-dark mb-4 text-xl font-semibold">Preview</h2>
-        <SvgPreview :customizations="finalCustomizations" />
+        <EmbedsSvgPreview :customizations="finalCustomizations" />
 
         <!-- Optional: Add a code section to show the embed code -->
         <div v-if="showEmbedCode" class="mt-6">
           <h3 class="mb-2 text-lg font-medium">Embed Code</h3>
           <pre
-            class="overflow-x-auto rounded-md bg-gray-100 p-4"
+            class="overflow-x-auto rounded-md p-4"
           ><code>{{ generateEmbedCode() }}</code></pre>
           <button
+            class="mt-2 rounded-md px-4 py-2 text-sm text-white transition duration-300"
             @click="copyEmbedCode"
-            class="bg-secondary hover:bg-secondary-dark mt-2 rounded-md px-4 py-2 text-sm text-white transition duration-300"
           >
             Copy to Clipboard
           </button>
