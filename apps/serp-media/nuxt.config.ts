@@ -120,6 +120,11 @@ export default defineNuxtConfig({
   multiCache: {
     data: {
       enabled: true
+    },
+    api: {
+      enabled: true,
+      prefix: '/__nuxt_multi_cache',
+      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123',
     }
   }
 });
