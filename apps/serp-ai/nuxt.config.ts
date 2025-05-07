@@ -12,6 +12,16 @@ export default defineNuxtConfig({
   ui: {
     colorMode: true
   },
+  multiCache: {
+    data: {
+      enabled: true
+    },
+    api: {
+      enabled: true,
+      prefix: '/__nuxt_multi_cache',
+      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123',
+    }
+  },
   uiPro: {
     license: process.env.NUXT_UI_PRO_LICENSE
   },
@@ -106,11 +116,6 @@ export default defineNuxtConfig({
   },
   ogImage: {
     enabled: false
-  },
-  multiCache: {
-    data: {
-      enabled: true
-    }
   },
   sitemap: {
     defaults: {

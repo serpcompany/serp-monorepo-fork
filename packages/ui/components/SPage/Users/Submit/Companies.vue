@@ -1,7 +1,7 @@
 <script setup lang="ts">
   const { loggedIn, user } = useUserSession();
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 
   const data = await useCompanySubmissions();
