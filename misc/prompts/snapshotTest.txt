@@ -531,7 +531,7 @@ describe('SPill', () => {
 <script setup lang="ts">
   const { loggedIn } = useUserSession();
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 
   const router = useRouter();

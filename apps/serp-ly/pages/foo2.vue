@@ -3,7 +3,7 @@
   import { useShortlinks } from '@serp/utils-cloudflare-pages/composables/useShortlinks';
   const { loggedIn } = useUserSession();
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 
   const links = ref<Link[]>([]);
