@@ -110,11 +110,9 @@ export default defineEventHandler(async (event) => {
       const columnNames: string[] = Object.values(
         getTableColumns(companyCache)
       ).map((col) => col.name);
-      console.log('columnNames', columnNames);
+
       const companyEditData = {};
       for (const col of columnNames) {
-        console.log('col', col);
-        console.log('proposedChanges[col]', proposedChanges[col]);
         if (
           proposedChanges[col] !== undefined &&
           col !== 'id' &&

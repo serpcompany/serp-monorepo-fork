@@ -58,7 +58,7 @@ export default defineEventHandler(async (event) => {
         })
         .execute();
     }
-  } catch (e) {
+  } catch {
     throw createError({
       statusCode: 500,
       statusMessage: 'Failed to retrieve or create customer'
@@ -102,7 +102,7 @@ export default defineEventHandler(async (event) => {
           }
         }
       });
-    } catch (e) {
+    } catch {
       throw createError({
         statusCode: 500,
         statusMessage: 'Failed to create checkout session'
@@ -145,7 +145,7 @@ export default defineEventHandler(async (event) => {
           }
         }
       });
-    } catch (e) {
+    } catch {
       throw createError({
         statusCode: 500,
         statusMessage: 'Failed to create checkout session'

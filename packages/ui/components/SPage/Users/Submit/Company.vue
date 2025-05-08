@@ -1,12 +1,27 @@
 <script setup lang="ts">
-  import { v4 as uuidv4 } from 'uuid';
+  import * as z from 'zod'
+  import type { FormSubmitEvent } from '@nuxt/ui'
+  import { v4 as uuidv4 } from 'uuid'
 
   const { loggedIn, user } = useUserSession();
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 
-  const company = ref({
+  const schema = z.object({
+    name       : z.string().min(1, 'Name is required'),
+    domain     : z.string().regex(/^[\w.-]+\.[a-zA-Z]{2,}$/, 'Enter a valid domain (e.g. example.com)'),
+    pricing    : z.array(z.string()).min(1, 'Pick at least one pricing option'),
+    tags       : z.string().optional().nullable(),
+    oneLiner   : z.string().min(1, 'Tagline is required').max(75, '75 chars max'),
+    description: z.string().min(1, 'Description is required'),
+    categories : z.array(z.string()).default([]),
+    logo       : z.string().optional().nullable(),
+  })
+  type Schema = z.output<typeof schema>
+
+
+  const company = reactive({
     id: null,
     name: '',
     domain: '',
@@ -23,51 +38,44 @@
 
   const categories = await useCompanyCategories();
   const categoryOptions = ref(categories?.map((category) => category.name));
-  const pricingOptions = ref(['Free', 'Paid', 'Subscription']);
+  const pricingOptions = ref(['Free', 'Paid', 'Subscription', 'Free Trial']);
 
   const route = useRoute();
   const id = route.query.id;
   const existingForm = ref(false);
+  const isVerified = ref(false);
   if (id) {
     const submissionData = await useCompanySubmissions(id);
     if (submissionData) {
       if (submissionData.approved) {
         navigateTo(`/products/${submissionData.domain}/reviews/`);
       }
-      company.value.id = submissionData.id;
-      company.value.name = submissionData.name;
-      company.value.domain = submissionData.domain;
-      company.value.pricing = submissionData.pricing;
-      company.value.tags = submissionData.tags;
-      company.value.oneLiner = submissionData.oneLiner;
-      company.value.description = submissionData.description;
-      company.value.categories = submissionData.categories
+      company.id = submissionData.id;
+      company.name = submissionData.name;
+      company.domain = submissionData.domain;
+      company.tags = submissionData.tags && submissionData.tags.length > 0
+        ? submissionData.tags.join(',')
+        : '';
+      company.oneLiner = submissionData.oneLiner;
+      company.description = submissionData.description;
+      company.categories = submissionData.categories
         ? submissionData.categories.map(
             (category) => categories.find((c) => c.id === category)?.name
           )
         : [];
-      company.value.logo = submissionData.logo;
+      company.logo = submissionData.logo;
+      company.pricing = submissionData.pricing
+        ? submissionData.pricing.split(',')
+        : [];
       uuid = submissionData.uuid;
+      isVerified.value = submissionData.backlinkVerified;
       isPriority.value = submissionData.isPriority;
       existingForm.value = true;
     }
   }
 
-  const stripeComponent = ref(null);
-
   const toast = useToast();
   const loading = ref(false);
-
-  const allFields = [
-    { key: 'name', label: 'Name' },
-    { key: 'domain', label: 'Domain' },
-    { key: 'categories', label: 'Category(s)' },
-    { key: 'pricing', label: 'Pricing' },
-    { key: 'tags', label: 'Tags' },
-    { key: 'oneLiner', label: 'One-Liner' },
-    { key: 'description', label: 'RichDescription' },
-    { key: 'logo', label: 'Logo' }
-  ];
 
   const requiredFields = [
     { key: 'name', label: 'Name' },
@@ -86,12 +94,12 @@
   const isComplete = computed(() =>
     requiredFields.every(
       (field) =>
-        company.value[field.key] && checkIfValidValue(company.value[field.key])
+        company[field.key] && checkIfValidValue(company[field.key])
     )
   );
 
   const getCategories = computed(() => {
-    return company.value.categories.map((category: string) => {
+    return company.categories.map((category: string) => {
       // find matching category by name
       const category_ = categories.find((c) => c.name === category);
       return {
@@ -186,7 +194,7 @@
                 prefix: 'images',
                 meta: { purpose: 'company-logo' }
               });
-              company.value.logo = `${runtimeConfig.public.cloudflareR2PublicUrl}${uploaded.replace(
+              company.logo = `${runtimeConfig.public.cloudflareR2PublicUrl}${uploaded.replace(
                 '/api/s3/query',
                 ''
               )}`;
@@ -229,71 +237,92 @@
     };
   }
 
-  async function saveCompany() {
+  async function onSubmit (event: FormSubmitEvent<Schema>) {
     try {
-      loading.value = true;
-      if (!isComplete.value) {
-        throw new Error('Please fill in all required fields');
-      }
-      if (!user?.value?.email) {
-        throw new Error('Please login to save your company');
+      loading.value = true
+
+      if (!user.value?.email) {
+        throw new Error('Please login to save your company')
       }
 
       const payload = {
-        ...company.value,
-        categories: getCategoryIds.value,
-        uuid: uuid
-      };
-
-      const { data: response, error } = await useFetch('/api/company/submit', {
-        method: 'POST',
-        headers: useRequestHeaders(['cookie']),
-        body: JSON.stringify(payload)
-      });
-
-      if (error.value) {
-        throw new Error(`Failed to save company - ${error.value.message}`);
+        ...event.data,
+        categories : getCategoryIds.value,
+        uuid,
       }
 
-      if (response.value.message && response.value.message === 'success') {
+      const { data: response, error } = await useFetch('/api/company/submit', {
+        method : 'POST',
+        headers: useRequestHeaders(['cookie']),
+        body   : payload,
+      })
+
+      if (error.value) {
+        throw new Error(`Failed to save company - ${error.value.message}`)
+      }
+
+      if (response.value.message === 'success') {
         toast.add({
-          id: 'company-saved',
+          id : 'company-saved',
           title: 'Company saved',
           description: 'Your company has been saved successfully',
-          icon: 'check-circle'
-        });
+          icon: 'check-circle',
+        })
       } else {
-        throw new Error(`Failed to save company - ${response.value.message}`);
+        throw new Error(`Failed to save company - ${response.value.message}`)
       }
     } catch (error) {
       toast.add({
-        id: 'company-save-error',
+        id : 'company-save-error',
         title: 'Error saving company',
         description: error.message,
-        icon: 'exclamation-circle'
-      });
+        icon: 'exclamation-circle',
+      })
     } finally {
-      loading.value = false;
+      loading.value = false
     }
   }
 
-  async function priorityQueueCheckout() {
+
+  async function verifyCompanyBacklink(submissionId: string) {
     try {
       loading.value = true;
-      const response = await $fetch(
-        `/api/stripe/create-checkout-session?type=company-priority-queue&id=${uuid}`,
+      const { data: response, error } = await useFetch(
+        `/api/company/submit-verify-backlink?id=${submissionId}`,
         {
-          method: 'GET'
+          method: 'POST',
+          headers: useRequestHeaders(['cookie'])
         }
       );
-
-      if (response) {
-        window.location.href = response;
+      if (error.value) {
+        toast.add({
+          id: 'verify-backlink-error',
+          title: 'Error Verifying Backlink',
+          description: error.value,
+          icon: 'exclamation-circle'
+        });
+        return;
+      }
+      if (response.value && response.value.verified) {
+        isVerified.value = true;
+        toast.add({
+          id: 'verify-backlink-success',
+          title: 'Backlink Verified',
+          description: 'The backlink has been verified successfully.',
+          icon: 'check-circle'
+        });
+      } else {
+        toast.add({
+          id: 'verify-backlink-failure',
+          title: 'Backlink Verification Failed',
+          description: 'The backlink could not be verified.',
+          icon: 'exclamation-circle'
+        });
       }
     } catch (error) {
       toast.add({
-        id: 'checkout-error',
-        title: 'Checkout Error',
+        id: 'verify-backlink-error',
+        title: 'Error Verifying Backlink',
         description: error.message,
         icon: 'exclamation-circle'
       });
@@ -310,8 +339,29 @@
         <UHeading level="2" class="mb-6 text-center text-2xl font-semibold">
           Submit Company
         </UHeading>
-        <form class="space-y-6" @submit.prevent="saveCompany">
-          <UFormField label="Company Name" required class="mt-6">
+        <div v-if="existingForm" class="mb-6 text-center">
+          <p class="text-sm text-gray-500">
+            Your company is already submitted. You can edit the details below.
+          </p>
+          <UBadge v-if="isVerified" color="success"> Verified </UBadge>
+          <div v-else>
+            <UBadge color="error"> Not Verified </UBadge>
+            <UButton @click.prevent="verifyCompanyBacklink(id)">
+              Check Backlink</UButton
+            ><span
+              >(must have a <bold>do follow</bold> backlink to current site on
+              the submission domain homepage, if not working, ensure you have
+              `SERPVerificationBot/1.0` user-agent whitelisted)</span
+            >
+          </div>
+        </div>
+        <UForm
+          :schema="schema"
+          :state="company"
+          class="space-y-6"
+          @submit="onSubmit"
+        >
+          <UFormField label="Company Name" name="name" required class="mt-6">
             <UInput
               v-model="company.name"
               placeholder="SERP AI"
@@ -319,7 +369,7 @@
             />
           </UFormField>
 
-          <UFormField label="Domain" required>
+          <UFormField label="Domain" name="domain" required>
             <UInput
               v-model="company.domain"
               placeholder="serp.ai"
@@ -327,7 +377,7 @@
             />
           </UFormField>
 
-          <UFormField label="Description" required>
+          <UFormField label="Description" name="description" required>
             <UTextarea
               v-model="company.description"
               rows="5"
@@ -336,15 +386,16 @@
             />
           </UFormField>
 
-          <UFormField label="Pricing Model" required>
+          <UFormField label="Pricing Options" name="pricing" required>
             <UInputMenu
               v-model="company.pricing"
+              multiple
               :items="pricingOptions"
               class="w-full"
             />
           </UFormField>
 
-          <UFormField label="One liner" required>
+          <UFormField label="Tagline" name="oneLiner" required>
             <UInput
               v-model="company.oneLiner"
               placeholder="A short company tagline (max 75 characters)"
@@ -353,7 +404,7 @@
             />
           </UFormField>
 
-          <UFormField label="Category(s)">
+          <UFormField label="Category(s)" name="categories">
             <UInputMenu
               v-model="company.categories"
               multiple
@@ -362,7 +413,7 @@
             />
           </UFormField>
 
-          <UFormField label="Tags">
+          <UFormField label="Tags" name="tags">
             <UInput
               v-model="company.tags"
               placeholder="e.g. AI, SEO, Marketing"
@@ -370,7 +421,7 @@
             />
           </UFormField>
 
-          <UFormField label="Company Logo">
+          <UFormField label="Company Logo" name="logo">
             <div class="rounded border border-dashed border-gray-300 p-4">
               <input
                 type="file"
@@ -378,6 +429,12 @@
                 class="w-full text-sm"
                 @change="onImageSelected"
               />
+              <NuxtImg
+                v-if="company.logo"
+                :src="company.logo"
+                alt="Company Logo"
+                class="mt-4 h-32 w-32 rounded object-cover"
+                />
             </div>
           </UFormField>
 
@@ -387,12 +444,11 @@
               color="secondary"
               size="xl"
               :loading="loading"
-              :disabled="!isComplete"
             >
               Submit
             </UButton>
           </div>
-        </form>
+        </UForm>
       </UCard>
     </UMain>
   </UPage>

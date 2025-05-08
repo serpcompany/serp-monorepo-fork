@@ -13,6 +13,13 @@ export default defineNuxtConfig({
     '@bg-dev/nuxt-s3'
   ],
   css: ['~/assets/css/main.css'],
+  multiCache: {
+    api: {
+      enabled: true,
+      prefix: '/__nuxt_multi_cache',
+      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123',
+    }
+  },
   stripe: {
     server: {
       key: process.env.STRIPE_SECRET_KEY,

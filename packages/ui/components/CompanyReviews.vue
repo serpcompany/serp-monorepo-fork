@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import type { CompanyReviews } from '@/serp/types/types';
 
-  const props = defineProps<{
+  defineProps<{
     reviews: CompanyReviews;
     isVerified: boolean;
   }>();

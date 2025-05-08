@@ -5,6 +5,7 @@ import {
   companySubmitForm
 } from '@serp/utils/server/api/db/schema';
 import { eq, inArray } from 'drizzle-orm';
+import { sendSlackNotification } from '../../utils/slack';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -34,6 +35,27 @@ export default defineEventHandler(async (event) => {
         status: 400,
         message: `Missing required fields: ${missingFields.join(', ')}`
       };
+    }
+
+    if (data.pricing) {
+      if (typeof data.pricing === 'string') {
+        data.pricing = data.pricing
+          .split(',')
+          .map((item: string) => item.trim());
+      }
+      data.pricing = [...new Set(data.pricing)];
+      const validPricing = ['Free', 'Paid', 'Subscription', 'Free Trial'];
+      const invalidPricing = data.pricing.filter(
+        (item: string) => !validPricing.includes(item)
+      );
+      if (invalidPricing.length) {
+        return {
+          status: 400,
+          message: `Invalid pricing options: ${invalidPricing.join(', ')}`
+        };
+      }
+
+      data.pricing = data.pricing.join(',');
     }
 
     // Ensure categories is an array of ids and that all exist in companyCategoryCache
@@ -131,6 +153,21 @@ export default defineEventHandler(async (event) => {
           uuid: data.uuid
         })
         .execute();
+
+      // Send Slack notification
+      sendSlackNotification(
+        `New company submission:
+Name: ${data.name}
+Domain: ${data.domain}
+Categories: ${data.categories ? data.categories.join(', ') : 'None'}
+Pricing: ${data.pricing}
+Tags: ${tags ? tags.join(', ') : 'None'}
+One Liner: ${data.oneLiner}
+Description: ${data.description}
+Logo: ${data.logo}
+Submitted by: ${email}
+UUID: ${data.uuid}`
+      );
     }
 
     return {

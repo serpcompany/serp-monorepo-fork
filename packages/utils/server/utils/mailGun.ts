@@ -45,14 +45,9 @@ export async function sendEmail(options: SendEmailOptions) {
   if (text) payload.text = text;
   if (html) payload.html = html;
 
-  try {
-    const resp = await client.messages.create(
-      process.env.MAILGUN_DOMAIN as string,
-      payload
-    );
-    return resp;
-  } catch (err: unknown) {
-    console.error('sendEmail error:', err);
-    throw err;
-  }
+  const resp = await client.messages.create(
+    process.env.MAILGUN_DOMAIN as string,
+    payload
+  );
+  return resp;
 }

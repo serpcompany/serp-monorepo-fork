@@ -11,7 +11,9 @@
     "prepare": "husky install",
     "prettier": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run prettier",
     "test": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test",
+    "test:windows": "turbo run test",
     "test:update": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test:update",
+    "test:update:windows": "turbo run test:update",
     "test:watch": "turbo run test:watch"
   },
   "resolutions": {

@@ -56,7 +56,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="overview">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Overview </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Overview </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -77,7 +77,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="categories">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Categories </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Categories </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -89,7 +89,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="media">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Media </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Media </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -112,7 +112,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="article">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Article </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Article </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -126,7 +126,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="faqs">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> FAQ </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> FAQ </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -149,7 +149,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="features">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Features </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Features </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -172,7 +172,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="alternatives">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Alternatives </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Alternatives </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -219,7 +219,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="reviews">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -403,7 +403,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (with auth)
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -505,7 +505,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="overview">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Overview </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Overview </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -526,7 +526,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="categories">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Categories </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Categories </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -538,7 +538,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="media">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Media </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Media </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -561,7 +561,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="article">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Article </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Article </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -575,7 +575,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="faqs">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> FAQ </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> FAQ </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -598,7 +598,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="features">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Features </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Features </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -621,7 +621,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="alternatives">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Alternatives </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Alternatives </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -668,7 +668,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="reviews">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Test Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -854,7 +854,7 @@ exports[`SPageCompanySingle Snapshot > renders complete company data (without au
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -940,7 +940,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="reviews">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Minimal Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Minimal Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -1128,7 +1128,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (with auth) 
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -1212,7 +1212,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-60 rounded-md border border-gray-200 dark:border-gray-800" id="reviews">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Minimal Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400" aria-hidden="true"></span>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Minimal Company Reviews </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">
@@ -1398,7 +1398,7 @@ exports[`SPageCompanySingle Snapshot > renders minimal company data (without aut
       <div class="bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border) mb-8 scroll-mt-30 rounded-md border border-gray-200 dark:border-gray-800" id="discussion">
         <div class="p-4 sm:px-6">
           <div class="flex items-center px-4 pt-4 pb-2 sm:px-6 sm:pt-6">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100"> Discussion </h2><span class="iconify i-heroicons:link ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer" aria-hidden="true"></span>
           </div>
         </div>
         <div class="p-4 sm:p-6 [object Object]">

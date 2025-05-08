@@ -32,7 +32,9 @@ export default defineEventHandler(async (event) => {
           logo: companySubmitForm.logo,
           reviewedAt: companySubmitForm.reviewedAt,
           reviewedBy: companySubmitForm.reviewedBy,
-          reviewedNotes: companySubmitForm.reviewedNotes
+          reviewedNotes: companySubmitForm.reviewedNotes,
+          backlinkVerified: companySubmitForm.backlinkVerified,
+          backlinkVerifiedAt: companySubmitForm.backlinkVerifiedAt
         })
         .from(companySubmitForm)
         .where(eq(companySubmitForm.submittingEmail, email))
@@ -57,7 +59,9 @@ export default defineEventHandler(async (event) => {
           tags: companySubmitForm.tags,
           reviewedAt: companySubmitForm.reviewedAt,
           reviewedBy: companySubmitForm.reviewedBy,
-          reviewedNotes: companySubmitForm.reviewedNotes
+          reviewedNotes: companySubmitForm.reviewedNotes,
+          backlinkVerified: companySubmitForm.backlinkVerified,
+          backlinkVerifiedAt: companySubmitForm.backlinkVerifiedAt
         })
         .from(companySubmitForm)
         .where(

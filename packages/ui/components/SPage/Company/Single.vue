@@ -19,6 +19,8 @@
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
 
+  const toast = useToast();
+
   // @ts-expect-error: Auto-imported from another layer
   const { upvotes, comments } = (await useCompanyUpvotesAndComments(
     data?.id
@@ -88,6 +90,41 @@
     return sectionTitles;
   });
 
+  // Copy to clipboard function
+  async function copyToClipboard(sectionId: string) {
+    const jumpLink = `#${sectionId}`;
+    const link = `${window.location.href.split('#')[0]}${jumpLink}`;
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(link);
+      } else {
+        // Fallback for unsupported environments
+        const el = document.createElement('textarea');
+        el.value = link;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      }
+
+      toast.add({
+        id: 'copy-link',
+        title: 'Link copied to clipboard',
+        description: `Link to ${sectionId} section copied successfully`,
+        icon: 'check-circle'
+      });
+    } catch (error) {
+      console.error('Failed to copy text to clipboard:', error);
+      toast.add({
+        id: 'copy-link-error',
+        title: 'Failed to copy link',
+        description: `Could not copy link to ${sectionId} section`,
+        icon: 'error-circle'
+      });
+    }
+  }
+
   useSeoMeta({
     title: computed(() =>
       data?.name
@@ -138,7 +175,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Overview
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('overview')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -159,7 +200,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Categories
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('categories')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -178,7 +223,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Media
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('media')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -199,7 +248,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Article
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('article')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -222,7 +275,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               FAQ
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('faqs')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -261,7 +318,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               {{ data.name }} Features
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('features')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -311,7 +372,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               {{ data.name }} Alternatives
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('alternatives')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -372,7 +437,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               {{ data.name }} Reviews
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('reviews')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -430,6 +499,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Discussion
             </h2>
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('discussion')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />

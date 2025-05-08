@@ -98,7 +98,6 @@
         description: 'The review has been flagged successfully.'
       });
     } catch (err) {
-      console.error('flag error', err);
       toast.add({
         id: 'flag-review-error',
         title: 'Error flagging review',
@@ -126,7 +125,6 @@
         description: 'The review has been marked as accepted.'
       });
     } catch (err) {
-      console.error('accept error', err);
       toast.add({
         id: 'accept-review-error',
         title: 'Error accepting review',
