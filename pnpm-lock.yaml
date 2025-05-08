@@ -168,6 +168,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   apps/daft-fm:
     devDependencies:
@@ -315,6 +318,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   apps/devinschumacher-com:
     devDependencies:
@@ -633,6 +639,9 @@ importers:
       wrangler:
         specifier: ^3.112.0
         version: 3.112.0
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   apps/serp-ai:
     devDependencies:
@@ -783,6 +792,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   apps/serp-co:
     devDependencies:
@@ -1104,6 +1116,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   apps/serp-ly:
     devDependencies:
@@ -1242,6 +1257,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   apps/serp-media:
     devDependencies:
@@ -1389,6 +1407,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   apps/serp-wiki:
     devDependencies:
@@ -1533,6 +1554,9 @@ importers:
       wrangler:
         specifier: ^3.112.0
         version: 3.112.0
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   packages/configs: {}
 
@@ -1804,6 +1828,9 @@ importers:
       vue:
         specifier: latest
         version: 3.5.13(typescript@5.7.3)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
   packages/ui/templates/nuxt-ui-landing:
     dependencies:
@@ -1977,6 +2004,9 @@ importers:
       vue:
         specifier: latest
         version: 3.5.13(typescript@5.7.3)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
 
 packages:
 
