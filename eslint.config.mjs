@@ -49,8 +49,8 @@ export function createConfig({
         '.wrangler/',
         '.data/',
         '.git/',
-        'nuxt-ui-landing/',
-        'nuxt-ui-saas/',
+        'packages/ui/templates/nuxt-ui-landing/**',
+        'packages/ui/templates/nuxt-ui-saas/**',
         ...additionalIgnores
       ]
     },
@@ -97,4 +97,9 @@ export function createConfig({
   return config;
 }
 
-export default { createConfig };
+// Create the default config
+const baseDirectory = path.dirname(fileURLToPath(import.meta.url));
+const defaultConfig = createConfig({ baseDirectory });
+
+// Export both the createConfig function and the default config array
+export default defaultConfig;

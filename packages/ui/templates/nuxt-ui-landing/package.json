@@ -5,12 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "eslint": "eslint . --fix",
-    "format": "prettier -w .",
     "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
-    "lint": "prettier . --write --log-level warn && eslint . --fix",
-    "prettier": "prettier . --write --log-level warn",
     "preview": "nuxt preview",
     "typecheck": "nuxt typecheck"
   },
