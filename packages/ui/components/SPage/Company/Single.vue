@@ -91,21 +91,38 @@
   });
 
   // Copy to clipboard function
-  function copyToClipboard(sectionId: string) {
+  async function copyToClipboard(sectionId: string) {
     const jumpLink = `#${sectionId}`;
-    const el = document.createElement('textarea');
-    el.value = `${window.location.href.split('#')[0]}${jumpLink}`;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
+    const link = `${window.location.href.split('#')[0]}${jumpLink}`;
 
-    toast.add({
-      id: 'copy-link',
-      title: 'Link copied to clipboard',
-      description: `Link to ${sectionId} section copied successfully`,
-      icon: 'check-circle'
-    });
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(link);
+      } else {
+        // Fallback for unsupported environments
+        const el = document.createElement('textarea');
+        el.value = link;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      }
+
+      toast.add({
+        id: 'copy-link',
+        title: 'Link copied to clipboard',
+        description: `Link to ${sectionId} section copied successfully`,
+        icon: 'check-circle'
+      });
+    } catch (error) {
+      console.error('Failed to copy text to clipboard:', error);
+      toast.add({
+        id: 'copy-link-error',
+        title: 'Failed to copy link',
+        description: `Could not copy link to ${sectionId} section`,
+        icon: 'error-circle'
+      });
+    }
   }
 
   useSeoMeta({
