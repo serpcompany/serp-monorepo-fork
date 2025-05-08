@@ -23,10 +23,12 @@ export default defineNuxtConfig({
       prefix: '/__nuxt_multi_cache',
       authorization: (() => {
         if (!process.env.CACHE_PURGE_API_KEY) {
-          throw new Error('CACHE_PURGE_API_KEY environment variable is not set.');
+          throw new Error(
+            'CACHE_PURGE_API_KEY environment variable is not set.'
+          );
         }
         return process.env.CACHE_PURGE_API_KEY;
-      })(),
+      })()
     }
   },
   ui: {

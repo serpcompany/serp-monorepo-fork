@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import * as z from 'zod'
-  import type { FormSubmitEvent } from '@nuxt/ui'
-  import { v4 as uuidv4 } from 'uuid'
+  import * as z from 'zod';
+  import type { FormSubmitEvent } from '@nuxt/ui';
+  import { v4 as uuidv4 } from 'uuid';
 
   const { loggedIn, user } = useUserSession();
   if (!loggedIn.value) {
@@ -9,17 +9,21 @@
   }
 
   const schema = z.object({
-    name       : z.string().min(1, 'Name is required'),
-    domain     : z.string().regex(/^[\w.-]+\.[a-zA-Z]{2,}$/, 'Enter a valid domain (e.g. example.com)'),
-    pricing    : z.array(z.string()).min(1, 'Pick at least one pricing option'),
-    tags       : z.string().optional().nullable(),
-    oneLiner   : z.string().min(1, 'Tagline is required').max(75, '75 chars max'),
+    name: z.string().min(1, 'Name is required'),
+    domain: z
+      .string()
+      .regex(
+        /^[\w.-]+\.[a-zA-Z]{2,}$/,
+        'Enter a valid domain (e.g. example.com)'
+      ),
+    pricing: z.array(z.string()).min(1, 'Pick at least one pricing option'),
+    tags: z.string().optional().nullable(),
+    oneLiner: z.string().min(1, 'Tagline is required').max(75, '75 chars max'),
     description: z.string().min(1, 'Description is required'),
-    categories : z.array(z.string()).default([]),
-    logo       : z.string().optional().nullable(),
-  })
-  type Schema = z.output<typeof schema>
-
+    categories: z.array(z.string()).default([]),
+    logo: z.string().optional().nullable()
+  });
+  type Schema = z.output<typeof schema>;
 
   const company = reactive({
     id: null,
@@ -53,9 +57,10 @@
       company.id = submissionData.id;
       company.name = submissionData.name;
       company.domain = submissionData.domain;
-      company.tags = submissionData.tags && submissionData.tags.length > 0
-        ? submissionData.tags.join(',')
-        : '';
+      company.tags =
+        submissionData.tags && submissionData.tags.length > 0
+          ? submissionData.tags.join(',')
+          : '';
       company.oneLiner = submissionData.oneLiner;
       company.description = submissionData.description;
       company.categories = submissionData.categories
@@ -93,8 +98,7 @@
 
   const isComplete = computed(() =>
     requiredFields.every(
-      (field) =>
-        company[field.key] && checkIfValidValue(company[field.key])
+      (field) => company[field.key] && checkIfValidValue(company[field.key])
     )
   );
 
@@ -237,52 +241,51 @@
     };
   }
 
-  async function onSubmit (event: FormSubmitEvent<Schema>) {
+  async function onSubmit(event: FormSubmitEvent<Schema>) {
     try {
-      loading.value = true
+      loading.value = true;
 
       if (!user.value?.email) {
-        throw new Error('Please login to save your company')
+        throw new Error('Please login to save your company');
       }
 
       const payload = {
         ...event.data,
-        categories : getCategoryIds.value,
-        uuid,
-      }
+        categories: getCategoryIds.value,
+        uuid
+      };
 
       const { data: response, error } = await useFetch('/api/company/submit', {
-        method : 'POST',
+        method: 'POST',
         headers: useRequestHeaders(['cookie']),
-        body   : payload,
-      })
+        body: payload
+      });
 
       if (error.value) {
-        throw new Error(`Failed to save company - ${error.value.message}`)
+        throw new Error(`Failed to save company - ${error.value.message}`);
       }
 
       if (response.value.message === 'success') {
         toast.add({
-          id : 'company-saved',
+          id: 'company-saved',
           title: 'Company saved',
           description: 'Your company has been saved successfully',
-          icon: 'check-circle',
-        })
+          icon: 'check-circle'
+        });
       } else {
-        throw new Error(`Failed to save company - ${response.value.message}`)
+        throw new Error(`Failed to save company - ${response.value.message}`);
       }
     } catch (error) {
       toast.add({
-        id : 'company-save-error',
+        id: 'company-save-error',
         title: 'Error saving company',
         description: error.message,
-        icon: 'exclamation-circle',
-      })
+        icon: 'exclamation-circle'
+      });
     } finally {
-      loading.value = false
+      loading.value = false;
     }
   }
-
 
   async function verifyCompanyBacklink(submissionId: string) {
     try {
@@ -434,7 +437,7 @@
                 :src="company.logo"
                 alt="Company Logo"
                 class="mt-4 h-32 w-32 rounded object-cover"
-                />
+              />
             </div>
           </UFormField>
 

@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     api: {
       enabled: true,
       prefix: '/__nuxt_multi_cache',
-      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123',
+      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123'
     }
   },
   ui: {

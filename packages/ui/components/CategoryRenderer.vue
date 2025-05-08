@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  defineProps<{ value, baseSlug  }>();
+  defineProps<{ value; baseSlug }>();
 </script>
 
 <template>
-   <SPill :items="value" :base-slug="baseSlug" />
+  <SPill :items="value" :base-slug="baseSlug" />
 </template>
