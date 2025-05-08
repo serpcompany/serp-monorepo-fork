@@ -28,7 +28,11 @@ def purge_cache(domain: str):
         print(f"Status: {response.status_code}")
         try:
             print("Response body:", response.json())
+<<<<<<< HEAD
         except (requests.exceptions.JSONDecodeError, ValueError):
+=======
+        except requests.exceptions.JSONDecodeError:
+>>>>>>> d8cc2fa9 (change notebook to script)
             print("Response body (not JSON):", response.text)
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
