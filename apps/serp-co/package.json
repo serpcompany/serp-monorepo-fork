@@ -65,7 +65,6 @@
     "jsdom": "^25.0.1",
     "mailgun.js": "^12.0.1",
     "nuxt": "^3.16.1",
-    "zod": "^3.24.2",
     "nuxt-auth-utils": "^0.5.17",
     "nuxt-link-checker": "^4.0.4",
     "nuxt-multi-cache": "^3.4.0",
@@ -79,7 +78,8 @@
     "uuid": "^11.1.0",
     "vitest": "^2.1.5",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "zod": "^3.24.2"
   },
   "packageManager": "pnpm@8.11.0+sha512.9df87c16c98db27b4e051d787e67f2207ec47e809ccb07bf7b5ec4acdcd1613355839a38d0b900144923d6a7057700b74d2a0ccb1558beb241647a1206a9a7ab"
 }

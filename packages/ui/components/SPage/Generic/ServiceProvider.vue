@@ -128,7 +128,12 @@
 
     <!-- Main content - single column layout -->
     <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
-      <JSONRenderer v-if="data" :value="data" />
+      <JSONRenderer
+        v-if="data"
+        :value="data"
+        base-slug="service-providers"
+        category-base-slug="service-providers/best"
+      />
     </section>
   </UPage>
 </template>

@@ -1,3 +1,3 @@
 <template>
-  <SPageServiceProviderCategoryCollection />
+  <SPageServiceProviderCollection />
 </template>

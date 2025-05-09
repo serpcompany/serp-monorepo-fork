@@ -68,7 +68,11 @@
 
     sectionTitles.push('Overview');
 
-    if (data?.categories && data?.categories.length) {
+    if (
+      data?.categories &&
+      data?.categories.length &&
+      data?.categories[0] !== undefined
+    ) {
       sectionTitles.push('Categories');
     }
 
