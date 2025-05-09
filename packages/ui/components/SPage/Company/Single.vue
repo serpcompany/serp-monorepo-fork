@@ -2,18 +2,15 @@
   import type { Company, Comment } from '@serp/types/types';
 
   const { user } = useUserSession();
-  const route = useRoute();
-  const router = useRouter();
-  const { slug } = route.params;
 
-  // @ts-expect-error: Auto-imported from another layer
-  const data = (await useCompany(`${slug}`)) as Company;
-  if (!data) {
-    router.push('/404');
-  }
+  const props = defineProps<{
+    data: Company;
+  }>();
+
+  const { data } = toRefs(props);
 
   const isVerified = computed(() => {
-    return data?.verifiedEmail === user.value?.email;
+    return data.value?.verifiedEmail === user.value?.email;
   });
 
   const config = useRuntimeConfig();
@@ -23,12 +20,12 @@
 
   // @ts-expect-error: Auto-imported from another layer
   const { upvotes, comments } = (await useCompanyUpvotesAndComments(
-    data?.id
+    data.value?.id
   )) as { upvotes: string[]; comments: Comment[] };
 
   // @ts-expect-error: Auto-imported from another layer
-  const reviews = await useCompanyReviews(data?.id);
-  reviews.companyId = data?.id;
+  const reviews = await useCompanyReviews(data.value?.id);
+  reviews.companyId = data.value?.id;
 
   // State for review modal
   const showReviewModal = ref(false);
@@ -36,18 +33,20 @@
   // Handle review submission - refresh reviews data
   async function handleReviewSubmitted() {
     // @ts-expect-error: Auto-imported from another layer
-    const updatedReviews = await useCompanyReviews(data?.id);
+    const updatedReviews = await useCompanyReviews(data.value?.id);
     Object.assign(reviews, updatedReviews);
-    reviews.companyId = data?.id;
+    reviews.companyId = data.value?.id;
   }
 
   const faqItems = computed(() => {
-    if (!data?.faqs) return [];
+    if (!data.value?.faqs) return [];
 
-    return data?.faqs.map((faq: { question: string; answer: string }) => ({
-      label: faq.question,
-      content: faq.answer
-    }));
+    return data.value?.faqs.map(
+      (faq: { question: string; answer: string }) => ({
+        label: faq.question,
+        content: faq.answer
+      })
+    );
   });
 
   const sections = computed(() => {
@@ -55,19 +54,19 @@
 
     sectionTitles.push('Overview');
 
-    if (data?.categories && data?.categories.length) {
+    if (data.value?.categories && data.value?.categories.length) {
       sectionTitles.push('Categories');
     }
 
-    if (data?.features) {
+    if (data.value?.features) {
       sectionTitles.push('Features');
     }
 
-    if (data?.content) {
+    if (data.value?.content) {
       sectionTitles.push('Article');
     }
 
-    if (data?.screenshots && data?.screenshots.length) {
+    if (data.value?.screenshots && data.value?.screenshots.length) {
       sectionTitles.push('Media');
     }
 
@@ -75,12 +74,12 @@
       sectionTitles.push('FAQ');
     }
 
-    if (data?.alternatives) {
+    if (data.value?.alternatives) {
       sectionTitles.push('Alternatives');
     }
 
     // Always include Reviews section when reviews are available
-    if (data?.numReviews > 0 || reviews?.reviews?.length > 0) {
+    if (data.value?.numReviews > 0 || reviews?.reviews?.length > 0) {
       sectionTitles.push('Reviews');
     }
 
@@ -127,8 +126,8 @@
 
   useSeoMeta({
     title: computed(() =>
-      data?.name
-        ? `${data.name} - Reviews, Pricing, Features, Alternatives & Deals`
+      data.value?.name
+        ? `${data.value.name} - Reviews, Pricing, Features, Alternatives & Deals`
         : 'Company Information'
     )
   });

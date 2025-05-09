@@ -1,5 +1,5 @@
-import type { Company } from '@serp/types/types';
+import type { Company, ServiceProvider } from '@serp/types/types';
 
 export const useCompany = async (slug: string) => {
-  return useFetchWithCache<Company>(`/company/${slug}`);
+  return useFetchWithCache<Company | ServiceProvider>(`/company/${slug}`);
 };

@@ -36,7 +36,8 @@
     'logoUrl',
     'title',
     'excerpt',
-    'serplyLink'
+    'serplyLink',
+    'type'
   ];
   // rename these keys to show on the frontend
   const renameKeysMapping = {
