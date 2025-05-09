@@ -103,7 +103,7 @@
                 <UBadge color="success">Priority</UBadge>
               </div>
               <div v-if="submission.backlinkVerified">
-                <UBadge color="success">Verfied</UBadge>
+                <UBadge color="success">Verified</UBadge>
               </div>
               <div v-else>
                 <UBadge color="error"> Not Verified </UBadge>
