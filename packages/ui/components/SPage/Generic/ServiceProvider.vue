@@ -54,10 +54,12 @@
   const faqItems = computed(() => {
     if (!data.value?.faqs) return [];
 
-    return data.value?.faqs.map((faq: { question: string; answer: string }) => ({
-      label: faq.question,
-      content: faq.answer
-    }));
+    return data.value?.faqs.map(
+      (faq: { question: string; answer: string }) => ({
+        label: faq.question,
+        content: faq.answer
+      })
+    );
   });
 
   // State for sections

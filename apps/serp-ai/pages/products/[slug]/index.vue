@@ -1,6 +1,8 @@
 <script setup lang="ts">
   const router = useRouter();
-  const fullRoute = router.currentRoute.value.path + 'reviews/';
+  const joinPaths = (base: string, segment: string) =>
+    base.replace(/\/+$/, '') + '/' + segment.replace(/^\/+/, '');
+  const fullRoute = joinPaths(router.currentRoute.value.path, 'reviews/');
   router.replace({ path: fullRoute, replace: true });
 </script>
 
