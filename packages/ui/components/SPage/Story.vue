@@ -115,7 +115,7 @@
             style="position: absolute; z-index: 1"
           ></iframe
           ><a
-            href="https://serp.ly/@serpai/badge-links/artificial-intelligence-alliance"
+            href="https://badges.serp.ai/alliance.html"
             title=""
             target="_blank"
             style="
