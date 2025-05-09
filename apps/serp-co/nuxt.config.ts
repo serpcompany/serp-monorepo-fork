@@ -109,6 +109,13 @@ export default defineNuxtConfig({
       }
     }
   },
+  $development: {
+    security: {
+      headers: {
+        contentSecurityPolicy: false
+      }
+    }
+  },
   schemaOrg: {
     identity: 'Organization',
     host: 'https://serp.co'
@@ -143,14 +150,19 @@ export default defineNuxtConfig({
       contentSecurityPolicy: {
         'style-src': ["'self'", "'unsafe-inline'"],
         'img-src': ["'self'", 'data:', 'https:'],
+        'script-src': ["'self'", "'unsafe-inline'", 'https://static.cloudflareinsights.com'],
+        'script-src-elem': ["'self'", "'unsafe-inline'", 'https://static.cloudflareinsights.com'],
         'connect-src':
           process.env.NODE_ENV === 'development'
             ? ["'self'", 'https:', 'ws:']
             : ["'self'", 'https:'],
         'frame-src': [
           'https://www.youtube-nocookie.com',
-          'https://www.youtube.com'
-        ]
+          'https://www.youtube.com',
+          'https://serp.ly',
+          'https://badges.serp.ai'
+        ],
+        'default-src': ["'self'"]
       },
       permissionsPolicy: {
         'picture-in-picture': [
