@@ -223,8 +223,6 @@ export default defineEventHandler(async (event) => {
         )
         .leftJoin(user, eq(user.id, serviceProviderVerification.user));
 
-      console.log('SLUG', slug);
-
       results = await serviceProviderQuery
         .where(eq(serviceProviderCache.slug, slug as string))
         .limit(1)
