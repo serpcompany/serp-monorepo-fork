@@ -1,4 +1,0 @@
-User-agent: *
-Allow: *
-
-Sitemap: https://serp.ly/sitemap_index.xml
