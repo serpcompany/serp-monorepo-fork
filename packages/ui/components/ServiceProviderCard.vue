@@ -92,7 +92,7 @@
             <div class="flex items-center">
               <NuxtLink
                 class="flex"
-                :to="`/${baseSlug}${serviceProvider.slug}/`"
+                :to="`/products/${serviceProvider.slug}/reviews/`"
               >
                 <h2
                   :class="[

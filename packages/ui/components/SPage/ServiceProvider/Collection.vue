@@ -5,15 +5,16 @@
   const page = ref(Number(route.query.page) || 1);
   const limit = ref(Number(route.query.limit) || 50);
 
+  const slug = route.params.slug as string;
+
   // @ts-expect-error: Auto-imported from another layer
   const categories = await useServiceProviderCategories();
 
   // @ts-expect-error: Auto-imported from another layer
-  let data = await useServiceProviders(page.value, limit.value);
+  let data = await useServiceProviders(page.value, limit.value, slug);
   if (!data) {
     router.push('/404');
   }
-  console.log('data', data);
 
   watch([page, limit], async ([newPage, newLimit]) => {
     const query = { ...route.query };
@@ -34,7 +35,10 @@
   });
 
   useSeoMeta({
-    title: 'Discover the best service providers on the internet.'
+    title: () =>
+      data.category
+        ? `Discover the best ${data.category.name} service providers on the internet.`
+        : 'Discover the best service providers on the internet.'
   });
 </script>
 
@@ -42,7 +46,11 @@
   <div class="pb-10">
     <!-- hero -->
     <SHero
-      headline="Search top service providers"
+      :headline="
+        data.category
+          ? `Search top ${data.category.name} service providers`
+          : 'Search top service providers'
+      "
       subheadline="Discover top-rated service providers."
       :show-search-bar="false"
       :show-buttons="false"
@@ -75,6 +83,31 @@
         headline="Categories"
         base-slug="service-providers/best"
       />
+
+      <!-- article -->
+      <section v-if="data?.category?.buyersGuide" class="mt-20">
+        <CompanyArticleSection :article="data?.category?.buyersGuide" />
+      </section>
+
+      <!-- faqs -->
+      <UPageSection
+        v-if="data?.category?.faqs"
+        title="FAQs"
+        class="mx-auto max-w-5xl"
+      >
+        <UPageAccordion
+          :items="faqItems"
+          :ui="{ body: { class: 'prose dark:prose-invert' } }"
+        >
+          <template #body="{ item }">
+            <div
+              class="prose dark:prose-invert max-w-full"
+              v-html="item.content"
+            ></div>
+          </template>
+        </UPageAccordion>
+      </UPageSection>
+
       <NewsletterSignupPageSection />
     </UMain>
   </div>

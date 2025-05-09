@@ -8,7 +8,7 @@
 
   const slug = route.params.slug as string;
 
-  let data = await useCompanies(page.value, limit.value, slug);
+  let data = await useServiceProviders(page.value, limit.value, slug);
   if (!data) {
     router.push('/404');
   }
@@ -34,7 +34,7 @@
     } else {
       delete query.limit;
     }
-    data = await useCompanies(page.value, limit.value, slug);
+    data = await useServiceProviders(page.value, limit.value, slug);
     router.push({ query });
   });
 

@@ -12,6 +12,16 @@ export default defineNuxtConfig({
   ui: {
     colorMode: true
   },
+  multiCache: {
+    data: {
+      enabled: true
+    },
+    api: {
+      enabled: true,
+      prefix: '/__nuxt_multi_cache',
+      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123'
+    }
+  },
   uiPro: {
     license: process.env.NUXT_UI_PRO_LICENSE
   },
@@ -58,6 +68,13 @@ export default defineNuxtConfig({
       }
     }
   },
+  $development: {
+    security: {
+      headers: {
+        contentSecurityPolicy: false
+      }
+    }
+  },
   schemaOrg: {
     identity: 'Organization',
     host: 'https://serp.ai'
@@ -88,8 +105,19 @@ export default defineNuxtConfig({
   security: {
     headers: {
       contentSecurityPolicy: {
-        'img-src': ["'self'", 'data:', 'https://*']
-      }
+        'img-src': ["'self'", 'data:', 'https://*'],
+        'script-src': ["'self'", "'unsafe-inline'", 'https://static.cloudflareinsights.com'],
+        'script-src-elem': ["'self'", "'unsafe-inline'", 'https://static.cloudflareinsights.com'],
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'frame-src': [
+          'https://www.youtube-nocookie.com',
+          'https://www.youtube.com',
+          'https://serp.ly',
+          'https://badges.serp.ai'
+        ],
+        'default-src': ["'self'"]
+      },
+      crossOriginEmbedderPolicy: 'unsafe-none'
     },
     rateLimiter: false
   },
@@ -106,11 +134,6 @@ export default defineNuxtConfig({
   },
   ogImage: {
     enabled: false
-  },
-  multiCache: {
-    data: {
-      enabled: true
-    }
   },
   sitemap: {
     defaults: {

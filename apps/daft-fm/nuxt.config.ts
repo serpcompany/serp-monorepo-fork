@@ -14,6 +14,16 @@ export default defineNuxtConfig({
     'nuxt-link-checker'
   ],
   css: ['~/assets/css/main.css'],
+  multiCache: {
+    data: {
+      enabled: true
+    },
+    api: {
+      enabled: true,
+      prefix: '/__nuxt_multi_cache',
+      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123'
+    }
+  },
   ui: {
     colorMode: true
   },
@@ -116,10 +126,5 @@ export default defineNuxtConfig({
   },
   ogImage: {
     enabled: false
-  },
-  multiCache: {
-    data: {
-      enabled: true
-    }
   }
 });

@@ -12,6 +12,13 @@ export default defineNuxtConfig({
   ui: {
     colorMode: true
   },
+  multiCache: {
+    api: {
+      enabled: true,
+      prefix: '/__nuxt_multi_cache',
+      authorization: process.env.CACHE_PURGE_API_KEY || 'xv12378asdfSDA123'
+    }
+  },
   uiPro: {
     license: process.env.NUXT_UI_PRO_LICENSE
   },

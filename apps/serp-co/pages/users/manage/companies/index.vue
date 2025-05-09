@@ -1,7 +1,7 @@
 <script setup lang="ts">
   const { loggedIn } = useUserSession();
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 
   // fetch submissions
@@ -26,6 +26,58 @@
   useSeoMeta({
     title: 'My Companies'
   });
+
+  const toast = useToast();
+  const loading = ref(false);
+  async function verifyCompanyBacklink(submissionId: string) {
+    try {
+      loading.value = true;
+      const { data: response, error } = await useFetch(
+        `/api/company/submit-verify-backlink?id=${submissionId}`,
+        {
+          method: 'POST',
+          headers: useRequestHeaders(['cookie'])
+        }
+      );
+      if (error.value) {
+        toast.add({
+          id: 'verify-backlink-error',
+          title: 'Error Verifying Backlink',
+          description: error.value,
+          icon: 'exclamation-circle'
+        });
+        return;
+      }
+      if (response.value && response.value.verified) {
+        const submission = submissions.find((s) => s.id === submissionId);
+        if (submission) {
+          submission.backlinkVerified = true;
+        }
+        toast.add({
+          id: 'verify-backlink-success',
+          title: 'Backlink Verified',
+          description: 'The backlink has been verified successfully.',
+          icon: 'check-circle'
+        });
+      } else {
+        toast.add({
+          id: 'verify-backlink-failure',
+          title: 'Backlink Verification Failed',
+          description: 'The backlink could not be verified.',
+          icon: 'exclamation-circle'
+        });
+      }
+    } catch (error) {
+      toast.add({
+        id: 'verify-backlink-error',
+        title: 'Error Verifying Backlink',
+        description: error.message,
+        icon: 'exclamation-circle'
+      });
+    } finally {
+      loading.value = false;
+    }
+  }
 </script>
 
 <template>
@@ -48,7 +100,20 @@
               class="rounded-lg bg-white p-4 shadow-md dark:bg-neutral-800"
             >
               <div v-if="submission.isPriority">
-                <UBadge>Priority</UBadge>
+                <UBadge color="success">Priority</UBadge>
+              </div>
+              <div v-if="submission.backlinkVerified">
+                <UBadge color="success">Verified</UBadge>
+              </div>
+              <div v-else>
+                <UBadge color="error"> Not Verified </UBadge>
+                <UButton @click.prevent="verifyCompanyBacklink(submission.id)">
+                  Check Backlink</UButton
+                ><span
+                  >(must have a <bold>do follow</bold> backlink to current site
+                  on the submission domain homepage, if not working, ensure you
+                  have `SERPVerificationBot/1.0` user-agent whitelisted)</span
+                >
               </div>
               <NuxtLink
                 :to="

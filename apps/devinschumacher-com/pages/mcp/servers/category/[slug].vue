@@ -1,3 +1,0 @@
-<template>
-  <SPageMCPServerCollection />
-</template>

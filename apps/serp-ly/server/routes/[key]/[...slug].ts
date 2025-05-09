@@ -36,8 +36,6 @@ export default defineEventHandler(async (event) => {
       });
     }
   } catch (error: unknown) {
-    // eslint-disable-next-line no-console
-    console.error('Error retrieving destination URL:', error);
     throw createError({
       status: 500,
       statusText: 'Failed to retrieve destination URL'

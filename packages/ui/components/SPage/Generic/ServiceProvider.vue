@@ -3,17 +3,15 @@
 
   const { user } = useUserSession();
   const route = useRoute();
-  const router = useRouter();
-  const { slug } = route.params;
 
-  // @ts-expect-error: Auto-imported from another layer
-  const data = (await useServiceProvider(`${slug}`)) as ServiceProvider;
-  if (!data) {
-    router.push('/404');
-  }
+  const props = defineProps<{
+    data: ServiceProvider;
+  }>();
+
+  const { data } = toRefs(props);
 
   const isVerified = computed(() => {
-    return data?.verifiedEmail === user.value?.email;
+    return data.value?.verifiedEmail === user.value?.email;
   });
 
   const config = useRuntimeConfig();
@@ -22,25 +20,25 @@
   // Create a consolidated object with all provider details
   const providerDetails = computed(() => {
     return {
-      basic: data?.basicInfo || {},
-      contracts: data?.contracts || {},
-      pricing: data?.pricing || {},
-      services: data?.services || {},
-      industries: data?.industries || {},
-      businessesServed: data?.businessesServed || {},
-      supportSetup: data?.supportSetup || {},
-      ratings: data?.ratings || {}
+      basic: data.value?.basicInfo || {},
+      contracts: data.value?.contracts || {},
+      pricing: data.value?.pricing || {},
+      services: data.value?.services || {},
+      industries: data.value?.industries || {},
+      businessesServed: data.value?.businessesServed || {},
+      supportSetup: data.value?.supportSetup || {},
+      ratings: data.value?.ratings || {}
     };
   });
 
   // @ts-expect-error: Auto-imported from another layer
   const { comments } = (await useServiceProviderUpvotesAndComments(
-    data?.id
+    data.value?.id
   )) as { upvotes: string[]; comments: Comment[] };
 
   // @ts-expect-error: Auto-imported from another layer
-  const reviews = await useServiceProviderReviews(data?.id);
-  reviews.serviceProviderId = data?.id;
+  const reviews = await useServiceProviderReviews(data.value?.id);
+  reviews.serviceProviderId = data.value?.id;
 
   // State for review modal
   const showReviewModal = ref(false);
@@ -48,18 +46,20 @@
   // Handle review submission - refresh reviews data
   async function handleReviewSubmitted() {
     // @ts-expect-error: Auto-imported from another layer
-    const updatedReviews = await useServiceProviderReviews(data?.id);
+    const updatedReviews = await useServiceProviderReviews(data.value?.id);
     Object.assign(reviews, updatedReviews);
-    reviews.serviceProviderId = data?.id;
+    reviews.serviceProviderId = data.value?.id;
   }
 
   const faqItems = computed(() => {
-    if (!data?.faqs) return [];
+    if (!data.value?.faqs) return [];
 
-    return data?.faqs.map((faq: { question: string; answer: string }) => ({
-      label: faq.question,
-      content: faq.answer
-    }));
+    return data.value?.faqs.map(
+      (faq: { question: string; answer: string }) => ({
+        label: faq.question,
+        content: faq.answer
+      })
+    );
   });
 
   // State for sections
@@ -98,8 +98,8 @@
 
   useSeoMeta({
     title: computed(() =>
-      data?.name
-        ? `${data.name} - Reviews, Pricing, Features, Alternatives & Deals`
+      data.value?.name
+        ? `${data.value.name} - Reviews, Pricing, Features, Alternatives & Deals`
         : 'Service Providers'
     )
   });
@@ -128,7 +128,12 @@
 
     <!-- Main content - single column layout -->
     <section class="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
-      <JSONRenderer v-if="data" :value="data" />
+      <JSONRenderer
+        v-if="data"
+        :value="data"
+        base-slug="service-providers"
+        category-base-slug="service-providers/best"
+      />
     </section>
   </UPage>
 </template>

@@ -2,31 +2,30 @@
   import type { Company, Comment } from '@serp/types/types';
 
   const { user } = useUserSession();
-  const route = useRoute();
-  const router = useRouter();
-  const { slug } = route.params;
 
-  // @ts-expect-error: Auto-imported from another layer
-  const data = (await useCompany(`${slug}`)) as Company;
-  if (!data) {
-    router.push('/404');
-  }
+  const props = defineProps<{
+    data: Company;
+  }>();
+
+  const { data } = toRefs(props);
 
   const isVerified = computed(() => {
-    return data?.verifiedEmail === user.value?.email;
+    return data.value?.verifiedEmail === user.value?.email;
   });
 
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
 
+  const toast = useToast();
+
   // @ts-expect-error: Auto-imported from another layer
   const { upvotes, comments } = (await useCompanyUpvotesAndComments(
-    data?.id
+    data.value?.id
   )) as { upvotes: string[]; comments: Comment[] };
 
   // @ts-expect-error: Auto-imported from another layer
-  const reviews = await useCompanyReviews(data?.id);
-  reviews.companyId = data?.id;
+  const reviews = await useCompanyReviews(data.value?.id);
+  reviews.companyId = data.value?.id;
 
   // State for review modal
   const showReviewModal = ref(false);
@@ -34,18 +33,20 @@
   // Handle review submission - refresh reviews data
   async function handleReviewSubmitted() {
     // @ts-expect-error: Auto-imported from another layer
-    const updatedReviews = await useCompanyReviews(data?.id);
+    const updatedReviews = await useCompanyReviews(data.value?.id);
     Object.assign(reviews, updatedReviews);
-    reviews.companyId = data?.id;
+    reviews.companyId = data.value?.id;
   }
 
   const faqItems = computed(() => {
-    if (!data?.faqs) return [];
+    if (!data.value?.faqs) return [];
 
-    return data?.faqs.map((faq: { question: string; answer: string }) => ({
-      label: faq.question,
-      content: faq.answer
-    }));
+    return data.value?.faqs.map(
+      (faq: { question: string; answer: string }) => ({
+        label: faq.question,
+        content: faq.answer
+      })
+    );
   });
 
   const sections = computed(() => {
@@ -53,19 +54,19 @@
 
     sectionTitles.push('Overview');
 
-    if (data?.categories && data?.categories.length) {
+    if (data.value?.categories && data.value?.categories.length) {
       sectionTitles.push('Categories');
     }
 
-    if (data?.features) {
+    if (data.value?.features) {
       sectionTitles.push('Features');
     }
 
-    if (data?.content) {
+    if (data.value?.content) {
       sectionTitles.push('Article');
     }
 
-    if (data?.screenshots && data?.screenshots.length) {
+    if (data.value?.screenshots && data.value?.screenshots.length) {
       sectionTitles.push('Media');
     }
 
@@ -73,12 +74,12 @@
       sectionTitles.push('FAQ');
     }
 
-    if (data?.alternatives) {
+    if (data.value?.alternatives) {
       sectionTitles.push('Alternatives');
     }
 
     // Always include Reviews section when reviews are available
-    if (data?.numReviews > 0 || reviews?.reviews?.length > 0) {
+    if (data.value?.numReviews > 0 || reviews?.reviews?.length > 0) {
       sectionTitles.push('Reviews');
     }
 
@@ -88,10 +89,45 @@
     return sectionTitles;
   });
 
+  // Copy to clipboard function
+  async function copyToClipboard(sectionId: string) {
+    const jumpLink = `#${sectionId}`;
+    const link = `${window.location.href.split('#')[0]}${jumpLink}`;
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(link);
+      } else {
+        // Fallback for unsupported environments
+        const el = document.createElement('textarea');
+        el.value = link;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      }
+
+      toast.add({
+        id: 'copy-link',
+        title: 'Link copied to clipboard',
+        description: `Link to ${sectionId} section copied successfully`,
+        icon: 'check-circle'
+      });
+    } catch (error) {
+      console.error('Failed to copy text to clipboard:', error);
+      toast.add({
+        id: 'copy-link-error',
+        title: 'Failed to copy link',
+        description: `Could not copy link to ${sectionId} section`,
+        icon: 'error-circle'
+      });
+    }
+  }
+
   useSeoMeta({
     title: computed(() =>
-      data?.name
-        ? `${data.name} - Reviews, Pricing, Features, Alternatives & Deals`
+      data.value?.name
+        ? `${data.value.name} - Reviews, Pricing, Features, Alternatives & Deals`
         : 'Company Information'
     )
   });
@@ -138,7 +174,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Overview
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('overview')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -159,7 +199,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Categories
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('categories')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -178,7 +222,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Media
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('media')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -199,7 +247,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Article
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('article')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -222,7 +274,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               FAQ
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('faqs')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -261,7 +317,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               {{ data.name }} Features
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('features')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -311,7 +371,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               {{ data.name }} Alternatives
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('alternatives')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -372,7 +436,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               {{ data.name }} Reviews
             </h2>
-            <UIcon name="i-heroicons-link" class="ml-2 h-4 w-4 text-gray-400" />
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('reviews')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />
@@ -430,6 +498,11 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Discussion
             </h2>
+            <UIcon
+              name="i-heroicons-link"
+              class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+              @click="copyToClipboard('discussion')"
+            />
           </div>
         </template>
         <UDivider class="my-0" />

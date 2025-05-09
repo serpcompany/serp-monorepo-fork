@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
   try {
     const subscription = await stripe.subscriptions.retrieve(subscriptionId);
     return subscription;
-  } catch (error) {
+  } catch {
     throw createError({
       statusCode: 500,
       statusMessage: 'Failed to get subscription'

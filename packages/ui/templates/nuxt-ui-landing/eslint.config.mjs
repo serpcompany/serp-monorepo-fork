@@ -1,7 +1,7 @@
 // @ts-check
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createConfig } from '../../../../packages/configs/eslint/eslint.config.mjs';
+import { createConfig } from '../../../../eslint.config.mjs';
 import withNuxt from './.nuxt/eslint.config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

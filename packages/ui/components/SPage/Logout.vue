@@ -2,7 +2,7 @@
   const { loggedIn, clear } = useUserSession();
 
   if (!loggedIn.value) {
-    navigateTo('/');
+    navigateTo('/login');
   }
 </script>
 

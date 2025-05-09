@@ -2,6 +2,8 @@
   const props = defineProps<{
     value: unknown;
     key_?: string;
+    baseSlug?: string;
+    categoryBaseSlug?: string;
   }>();
   const typeofValue = typeof props.value;
   const itemsAreObjects = computed(
@@ -33,7 +35,9 @@
     'slug',
     'logoUrl',
     'title',
-    'excerpt'
+    'excerpt',
+    'serplyLink',
+    'type'
   ];
   // rename these keys to show on the frontend
   const renameKeysMapping = {
@@ -123,6 +127,11 @@
 <template>
   <div>
     <HTMLRenderer v-if="key_ === 'readme'" :value="value" />
+    <CategoryRenderer
+      v-if="key_ === 'categories'"
+      :value="value"
+      :base-slug="categoryBaseSlug"
+    />
     <!-- primitives & null/undefined -->
     <NullRenderer v-else-if="value === null" :value="value" />
     <UndefinedRenderer v-else-if="typeofValue === 'undefined'" :value="value" />
@@ -157,7 +166,12 @@
                   {{ formatKey(itemKey) }}
                 </component>
                 <div class="ml-4">
-                  <JSONRenderer :value="itemValue" :key_="itemKey" />
+                  <JSONRenderer
+                    :value="itemValue"
+                    :key_="itemKey"
+                    :base-slug="baseSlug"
+                    :category-base-slug="categoryBaseSlug"
+                  />
                 </div>
               </div>
             </template>
@@ -167,7 +181,11 @@
       <!-- everything else -> list items -->
       <ul v-else class="list-disc space-y-2 pl-5">
         <li v-for="(item, i) in value" :key="i">
-          <JSONRenderer :value="item" />
+          <JSONRenderer
+            :value="item"
+            :base-slug="baseSlug"
+            :category-base-slug="categoryBaseSlug"
+          />
         </li>
       </ul>
     </div>
@@ -198,7 +216,12 @@
           </template>
           <UDivider class="my-0" />
           <div class="p-4 sm:p-6">
-            <JSONRenderer :value="v" :key_="k" />
+            <JSONRenderer
+              :value="v"
+              :key_="k"
+              :base-slug="baseSlug"
+              :category-base-slug="categoryBaseSlug"
+            />
           </div>
         </UCard>
 
@@ -215,7 +238,12 @@
           <span class="font-medium text-gray-700 dark:text-gray-300">
             {{ formatKey(k) }}:
           </span>
-          <JSONRenderer :value="v" :key_="k" />
+          <JSONRenderer
+            :value="v"
+            :key_="k"
+            :base-slug="baseSlug"
+            :category-base-slug="categoryBaseSlug"
+          />
         </div>
 
         <!-- Standard rendering for h2 level content and non-primitive values -->
@@ -232,7 +260,12 @@
             {{ formatKey(k) }}
           </component>
           <div :class="nestingLevel > 0 ? 'ml-4' : ''">
-            <JSONRenderer :value="v" :key_="k" />
+            <JSONRenderer
+              :value="v"
+              :key_="k"
+              :base-slug="baseSlug"
+              :category-base-slug="categoryBaseSlug"
+            />
           </div>
         </div>
       </template>

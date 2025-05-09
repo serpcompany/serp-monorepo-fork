@@ -38,7 +38,7 @@ exports[`SPageSongSingle Snapshot > renders complete song with upvotes and auth 
       <div class="grid gap-6 lg:grid-cols-3">
         <div class="lg:col-span-2">
           <!-- Song content -->
-          <div id="lyrics">
+          <div id="lyrics" data-adsense-content="song-lyrics">
             <h2 class="mb-4 text-xl font-semibold">Test Song Lyrics</h2><!-- eslint-disable-next-line vue/no-v-html -->
             <div class="prose dark:prose-invert max-w-none whitespace-pre-line">
               <p>Test lyrics content.</p>
@@ -121,7 +121,7 @@ exports[`SPageSongSingle Snapshot > renders minimal song without upvotes and aut
       <div class="grid gap-6 lg:grid-cols-3">
         <div class="lg:col-span-2">
           <!-- Song content -->
-          <div id="lyrics">
+          <div id="lyrics" data-adsense-content="song-lyrics">
             <h2 class="mb-4 text-xl font-semibold">Minimal Song Lyrics</h2><!-- eslint-disable-next-line vue/no-v-html -->
             <div class="prose dark:prose-invert max-w-none whitespace-pre-line"></div>
           </div>
