@@ -5,6 +5,11 @@
     ArtistRelation
   } from '@serp/types/types';
 
+  // Add metadata to help AdSense crawler identify content
+  definePageMeta({
+    pageType: 'song'
+  });
+
   const sections = ['Lyrics'];
   const route = useRoute();
   const { slug } = route.params;
@@ -149,7 +154,7 @@
       <div class="grid gap-6 lg:grid-cols-3">
         <div class="lg:col-span-2">
           <!-- Song content -->
-          <div id="lyrics">
+          <div id="lyrics" data-adsense-content="song-lyrics">
             <h2 class="mb-4 text-xl font-semibold">{{ song.name }} Lyrics</h2>
             <!-- eslint-disable-next-line vue/no-v-html -->
             <div
@@ -207,7 +212,10 @@
           </UCard>
 
           <!-- Album Songs Section -->
-          <UCard v-if="song.releaseGroup && albumSongs.length > 0">
+          <UCard
+            v-if="song.releaseGroup && albumSongs.length > 0"
+            data-adsense-content="song-album-tracklist"
+          >
             <template #header>
               <div class="font-medium">
                 {{ song.releaseGroup.name }} Tracklist
