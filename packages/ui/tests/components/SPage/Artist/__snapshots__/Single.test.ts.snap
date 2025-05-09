@@ -42,7 +42,7 @@ exports[`SPageArtistSingle Snapshot > renders complete artist with upvotes and a
       <!-- Main Content Column (70%) -->
       <div class="space-y-8 lg:col-span-2">
         <!-- Albums Section - Refactored -->
-        <section id="albums" class="scroll-mt-24">
+        <section id="albums" class="scroll-mt-24" data-adsense-content="artist-albums">
           <h2 class="mb-4 text-2xl font-semibold">Test Artist Albums </h2>
           <div class="space-y-6">
             <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border)">
@@ -78,7 +78,7 @@ exports[`SPageArtistSingle Snapshot > renders complete artist with upvotes and a
         <!-- Artist Image -->
         <!-- Fallback placeholder -->
         <div class="flex aspect-square items-center justify-center rounded-md bg-gray-100 shadow-sm dark:bg-gray-800"><span class="iconify i-heroicons:user h-1/3 w-1/3 text-gray-400 dark:text-gray-600" aria-hidden="true"></span></div><!-- Overview Card (Added to Sidebar) -->
-        <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border)">
+        <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border)" data-adsense-content="artist-overview">
           <div class="p-4 sm:px-6">
             <div class="font-medium">Overview</div>
           </div>
@@ -173,7 +173,7 @@ exports[`SPageArtistSingle Snapshot > renders minimal artist without upvotes and
       <!-- Main Content Column (70%) -->
       <div class="space-y-8 lg:col-span-2">
         <!-- Albums Section - Refactored -->
-        <section id="albums" class="scroll-mt-24">
+        <section id="albums" class="scroll-mt-24" data-adsense-content="artist-albums">
           <h2 class="mb-4 text-2xl font-semibold">Minimal Artist Albums </h2>
           <div class="space-y-6">
             <p class="text-gray-500 dark:text-gray-400"> No albums found for this artist. </p>
@@ -187,7 +187,7 @@ exports[`SPageArtistSingle Snapshot > renders minimal artist without upvotes and
         <!-- Artist Image -->
         <!-- Fallback placeholder -->
         <div class="flex aspect-square items-center justify-center rounded-md bg-gray-100 shadow-sm dark:bg-gray-800"><span class="iconify i-heroicons:user h-1/3 w-1/3 text-gray-400 dark:text-gray-600" aria-hidden="true"></span></div><!-- Overview Card (Added to Sidebar) -->
-        <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border)">
+        <div class="rounded-[calc(var(--ui-radius)*2)] bg-(--ui-bg) ring ring-(--ui-border) divide-y divide-(--ui-border)" data-adsense-content="artist-overview">
           <div class="p-4 sm:px-6">
             <div class="font-medium">Overview</div>
           </div>

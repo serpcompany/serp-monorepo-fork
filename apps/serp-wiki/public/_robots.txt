@@ -1,4 +1,0 @@
-User-agent: *
-Allow: *
-
-Sitemap: https://serp.wiki/sitemap_index.xml

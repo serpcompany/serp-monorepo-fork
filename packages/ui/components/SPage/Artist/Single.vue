@@ -3,6 +3,11 @@
     UrlRelation // Import UrlRelation type
   } from '@serp/types/types';
 
+  // Add metadata to help AdSense crawler identify content
+  definePageMeta({
+    pageType: 'artist'
+  });
+
   const sections = ['Overview', 'Albums', 'Songs'];
   const route = useRoute();
   const { slug } = route.params;
@@ -104,7 +109,11 @@
         <!-- Main Content Column (70%) -->
         <div class="space-y-8 lg:col-span-2">
           <!-- Albums Section - Refactored -->
-          <section id="albums" class="scroll-mt-24">
+          <section
+            id="albums"
+            class="scroll-mt-24"
+            data-adsense-content="artist-albums"
+          >
             <h2 class="mb-4 text-2xl font-semibold">
               {{ artist.name }} Albums
             </h2>
@@ -206,7 +215,7 @@
           </div>
 
           <!-- Overview Card (Added to Sidebar) -->
-          <UCard v-if="artist.overview">
+          <UCard v-if="artist.overview" data-adsense-content="artist-overview">
             <template #header>
               <div class="font-medium">Overview</div>
             </template>

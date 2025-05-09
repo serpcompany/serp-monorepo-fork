@@ -4,6 +4,12 @@
     ArtistReleaseGroup // Import ArtistReleaseGroup for typing
   } from '@serp/types/types';
 
+  // Add a data attribute to help AdSense crawler identify content sections
+  definePageMeta({
+    // This helps Google's crawler understand the content type better
+    pageType: 'album'
+  });
+
   const sections = ['Overview', 'Songs'];
   const route = useRoute();
   const { slug } = route.params;
@@ -130,7 +136,11 @@
         <!-- Main Content Column (70%) -->
         <div class="space-y-8 lg:col-span-2">
           <!-- Songs / Tracklist Section -->
-          <section id="songs" class="scroll-mt-24">
+          <section
+            id="songs"
+            class="scroll-mt-24"
+            data-adsense-content="album-tracklist"
+          >
             <h2 class="mb-4 text-2xl font-semibold">Tracklist</h2>
             <UCard :ui="{ body: { padding: 'px-2 sm:px-4 py-3' } }">
               <ol
@@ -177,7 +187,11 @@
           </section>
 
           <!-- Overview Section -->
-          <section id="overview" class="scroll-mt-24">
+          <section
+            id="overview"
+            class="scroll-mt-24"
+            data-adsense-content="album-overview"
+          >
             <h2 class="mb-4 text-2xl font-semibold">Overview</h2>
             <div
               v-if="album.overview"
