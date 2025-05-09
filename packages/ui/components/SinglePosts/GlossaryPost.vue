@@ -4,10 +4,6 @@
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
 
-  const isLoaded = ref(false);
-  const isPlaying = ref(false);
-  const video = ref();
-
   const props = defineProps<{
     data: Post;
   }>();
@@ -18,9 +14,17 @@
   const commentsData = await usePostComments(data.value.id);
   comments = commentsData.comments;
 
-  function stateChange(event: { data: number }) {
-    isPlaying.value = event.data === 1;
-  }
+  // Add safe array of video refs
+  const videoRefs = ref<HTMLElement[]>([]);
+
+  // Function to register each video ref as it's mounted
+  const setVideoRef = (el: HTMLElement | null, index: number) => {
+    if (el) {
+      if (!videoRefs.value[index]) {
+        videoRefs.value[index] = el;
+      }
+    }
+  };
 </script>
 
 <template>
@@ -37,10 +41,9 @@
       <div class="col-span-1 pb-10">
         <SScriptYouTubePlayer
           v-if="data.videoId"
-          ref="video"
+          :ref="(el) => setVideoRef(el as HTMLElement, index)"
           :video-id="data.videoId"
-          @ready="isLoaded = true"
-          @state-change="stateChange"
+          thumbnail-size="maxresdefault"
         >
           <template #awaitingLoad>
             <div

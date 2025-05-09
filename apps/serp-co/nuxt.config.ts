@@ -100,11 +100,86 @@ export default defineNuxtConfig({
       ]
     }
   },
+  security: {
+    strict: true,
+    rateLimiter: false,
+    headers: {
+      contentSecurityPolicy: {
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'img-src': [
+          "'self'",
+          'data:',
+          'https:',
+          'https://*.doubleclick.net',
+          'https://*.google-analytics.com',
+          'https://*.googleapis.com',
+          'https://googleads.g.doubleclick.net'
+        ],
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",
+          'https://static.cloudflareinsights.com',
+          'https://*.doubleclick.net',
+          'https://*.googletagmanager.com',
+          'https://*.google-analytics.com',
+          'https://*.googleapis.com',
+          'https://googleads.g.doubleclick.net'
+        ],
+        'script-src-elem': [
+          "'self'",
+          "'unsafe-inline'",
+          'https://static.cloudflareinsights.com',
+          'https://www.youtube.com',
+          'https://www.youtube-nocookie.com',
+          'https://www.googletagmanager.com',
+          'https://googleads.g.doubleclick.net'
+        ],
+        'connect-src': [
+          "'self'",
+          'https:',
+          'ws:',
+          'https://*.doubleclick.net',
+          'https://*.google-analytics.com',
+          'https://*.googleapis.com',
+          'https://googleads.g.doubleclick.net'
+        ],
+        'frame-src': [
+          'https://www.youtube-nocookie.com',
+          'https://www.youtube.com',
+          'https://*.serp.ly',
+          'https://*.serp.ai',
+          'https://*.serp.co',
+          'https://googleads.g.doubleclick.net'
+        ],
+        'default-src': ["'self'"]
+      },
+      permissionsPolicy: {
+        'picture-in-picture': [
+          'self',
+          '"https://www.youtube-nocookie.com"',
+          '"https://www.youtube.com"'
+        ],
+        fullscreen: [
+          'self',
+          '"https://www.youtube-nocookie.com"',
+          '"https://www.youtube.com"'
+        ]
+      },
+      crossOriginEmbedderPolicy: 'unsafe-none'
+    },
+    ssg: {
+      hashStyles: false
+    }
+  },
   $production: {
     scripts: {
       registry: {
         googleTagManager: {
           id: 'GTM-WVF43L4'
+        },
+        googleAdsense: {
+          client: 'ca-pub-2343633734899216', // infisical-scan:ignore
+          autoAds: true
         }
       }
     }
@@ -143,45 +218,7 @@ export default defineNuxtConfig({
   image: {
     format: ['webp']
   },
-  security: {
-    strict: true,
-    rateLimiter: false,
-    headers: {
-      contentSecurityPolicy: {
-        'style-src': ["'self'", "'unsafe-inline'"],
-        'img-src': ["'self'", 'data:', 'https:'],
-        'script-src': ["'self'", "'unsafe-inline'", 'https://static.cloudflareinsights.com'],
-        'script-src-elem': ["'self'", "'unsafe-inline'", 'https://static.cloudflareinsights.com'],
-        'connect-src':
-          process.env.NODE_ENV === 'development'
-            ? ["'self'", 'https:', 'ws:']
-            : ["'self'", 'https:'],
-        'frame-src': [
-          'https://www.youtube-nocookie.com',
-          'https://www.youtube.com',
-          'https://serp.ly',
-          'https://badges.serp.ai'
-        ],
-        'default-src': ["'self'"]
-      },
-      permissionsPolicy: {
-        'picture-in-picture': [
-          'self',
-          '"https://www.youtube-nocookie.com"',
-          '"https://www.youtube.com"'
-        ],
-        fullscreen: [
-          'self',
-          '"https://www.youtube-nocookie.com"',
-          '"https://www.youtube.com"'
-        ]
-      },
-      crossOriginEmbedderPolicy: 'unsafe-none'
-    },
-    ssg: {
-      hashStyles: false
-    }
-  },
+
   htmlValidator: {
     usePrettier: false,
     failOnError: true,
