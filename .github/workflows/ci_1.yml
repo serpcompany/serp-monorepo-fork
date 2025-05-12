@@ -6,6 +6,7 @@ on:
       - '**/README.md'
       - '.coderules/**'
       - 'misc/**'
+      - 'docs/**'
   workflow_dispatch:
 
 jobs:
