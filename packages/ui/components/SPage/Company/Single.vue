@@ -124,6 +124,17 @@
     }
   }
 
+  function companyMainImage(company: Company) {
+    if (!company) return null;
+    if (company.logo) {
+      return company.logo;
+    } else if (company.screenshots && company.screenshots.length) {
+      return company.screenshots[0];
+    } else {
+      return null;
+    }
+  }
+
   useSeoMeta({
     title: computed(() =>
       data.value?.name
@@ -380,49 +391,35 @@
         </template>
         <UDivider class="my-0" />
         <div class="grid grid-cols-1 gap-4 p-4 sm:p-6 md:grid-cols-3">
-          <UCard
-            v-for="alternative in data.alternatives"
-            :key="alternative"
-            class="border border-gray-200 dark:border-gray-800"
-          >
-            <div class="mb-4 flex justify-center">
-              <div
-                class="flex h-16 w-16 items-center justify-center bg-gray-100 dark:bg-gray-800"
-              >
-                <UIcon name="i-heroicons-cube" class="h-8 w-8 text-gray-400" />
-              </div>
-            </div>
-            <h3 class="mb-2 text-center font-medium">
-              Alternatives Company Title
-            </h3>
-            <p
-              class="mb-4 text-center text-sm text-gray-600 dark:text-gray-400"
-            >
-              AI-based editing tool for effortless photo cleanup, creations, and
-              advanced photo refinement.
-            </p>
-            <p class="text-center text-sm text-gray-500">Starting from</p>
-            <p class="text-center text-lg font-bold">
-              $29.00
-              <span class="text-sm font-normal text-gray-500">per month</span>
-            </p>
-            <div class="mt-4 space-y-2">
-              <div class="flex items-start space-x-2">
-                <UIcon
-                  name="i-heroicons-check-circle"
-                  class="h-5 w-5 flex-shrink-0 text-green-500"
-                />
-                <span class="text-sm">Get two months free trial</span>
-              </div>
-              <div class="flex items-start space-x-2">
-                <UIcon
-                  name="i-heroicons-check-circle"
-                  class="h-5 w-5 flex-shrink-0 text-green-500"
-                />
-                <span class="text-sm">No free plan</span>
-              </div>
-            </div>
-          </UCard>
+          <div v-for="alternative in data.alternatives" :key="alternative">
+            <NuxtLink :to="`/products/${alternative.domain}/reviews/`">
+              <UCard class="border border-gray-200 dark:border-gray-800">
+                <div class="mb-4 flex justify-center">
+                  <div
+                    v-if="companyMainImage(alternative)"
+                    class="mr-5 flex-shrink-0"
+                  >
+                    <div class="h-28 w-28">
+                      <LazyNuxtImg
+                        :src="companyMainImage(alternative)"
+                        :alt="alternative.name"
+                        class="h-full w-full object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <h3 class="mb-2 text-center font-medium">
+                  {{ alternative.name }}
+                </h3>
+                <p
+                  v-if="alternative.excerpt"
+                  class="mb-4 text-center text-sm text-gray-600 dark:text-gray-400"
+                >
+                  {{ alternative.excerpt }}
+                </p>
+              </UCard>
+            </NuxtLink>
+          </div>
         </div>
       </UCard>
 
