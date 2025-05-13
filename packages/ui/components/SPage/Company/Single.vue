@@ -391,7 +391,7 @@
         </template>
         <UDivider class="my-0" />
         <div class="grid grid-cols-1 gap-4 p-4 sm:p-6 md:grid-cols-3">
-          <div v-for="alternative in data.alternatives" :key="alternative">
+          <div v-for="alternative in data.alternatives" :key="alternative.id">
             <NuxtLink :to="`/products/${alternative.domain}/reviews/`">
               <UCard class="border border-gray-200 dark:border-gray-800">
                 <div class="mb-4 flex justify-center">
