@@ -48,7 +48,7 @@ export default defineAppConfig({
           },
           {
             text: 'Contact',
-            slug: '#'
+            slug: '/contact/'
           }
         ]
       }
@@ -106,16 +106,25 @@ export default defineAppConfig({
         children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
       },
       {
-        label: 'Solutions',
-        children: [{ label: 'Solutions', to: 'https://solutions.serp.co' }]
-      },
-      {
-        label: 'Glossary',
-        children: [{ label: 'Glossary', to: '/glossary/' }]
+        label: 'Content',
+        children: [
+          { label: 'Posts', to: '/posts/' },
+          { label: 'Blog', to: '/blog/' },
+          { label: 'Glossary', to: '/glossary/' }
+        ]
       },
       {
         label: 'Blog',
         children: [{ label: 'Posts', to: '/posts/' }]
+      },
+      {
+        label: 'Brand',
+        children: [
+          { label: 'About', to: '/about/' },
+          { label: 'Contact', to: '/contact/' },
+          { label: 'Newsletter', to: '/newsletter/' },
+          { label: 'Solutions', to: '/solutions/' }
+        ]
       }
     ],
     submitOptions: [
