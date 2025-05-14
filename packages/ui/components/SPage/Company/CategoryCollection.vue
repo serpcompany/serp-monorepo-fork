@@ -71,14 +71,6 @@
         class="mt-20 flex justify-center overflow-x-auto rounded-none"
       />
 
-      <SLinkHub
-        v-if="categories && categories.length"
-        :categories="categories"
-        headline="Categories"
-        class="mt-20"
-        base-slug="products/best"
-      />
-
       <!-- article -->
       <section v-if="data?.category?.buyersGuide" class="mt-20">
         <CompanyArticleSection :article="data?.category?.buyersGuide" />
@@ -102,6 +94,14 @@
           </template>
         </UPageAccordion>
       </UPageSection>
+
+      <SLinkHub
+        v-if="categories && categories.length"
+        :categories="categories"
+        headline="Categories"
+        class="mt-20"
+        base-slug="products/best"
+      />
     </UMain>
   </UPage>
 </template>
