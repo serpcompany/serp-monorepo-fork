@@ -76,14 +76,6 @@
         class="mt-20 flex justify-center overflow-x-auto rounded-none"
       />
 
-      <!-- link hub -->
-      <SLinkHub
-        v-if="categories && categories.length"
-        :categories="categories"
-        headline="Categories"
-        base-slug="service-providers/best"
-      />
-
       <!-- article -->
       <section v-if="data?.category?.buyersGuide" class="mt-20">
         <CompanyArticleSection :article="data?.category?.buyersGuide" />
@@ -107,6 +99,14 @@
           </template>
         </UPageAccordion>
       </UPageSection>
+
+      <!-- link hub -->
+      <SLinkHub
+        v-if="categories && categories.length"
+        :categories="categories"
+        headline="Categories"
+        base-slug="service-providers/best"
+      />
 
       <NewsletterSignupPageSection />
     </UMain>

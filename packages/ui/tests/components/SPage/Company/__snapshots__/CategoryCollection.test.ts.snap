@@ -125,7 +125,10 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders with complete data co
             <!--v-if-->
             <!--v-if-->
           </button></div>
-      </nav>
+      </nav><!-- article -->
+      <!--v-if-->
+      <!-- faqs -->
+      <!--v-if-->
       <section class="my-30 mt-20">
         <div class="mx-auto">
           <div class="pt-12">
@@ -135,10 +138,7 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders with complete data co
             <div class="border-t"><a href="/products/best/cat-tech/" class="mt-3 flex font-medium">Tech</a></div>
           </div>
         </div>
-      </section><!-- article -->
-      <!--v-if-->
-      <!-- faqs -->
-      <!--v-if-->
+      </section>
     </main>
   </div>
   <!--v-if-->
@@ -186,7 +186,10 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders with empty companies 
             <!--v-if-->
             <!--v-if-->
           </button></div>
-      </nav>
+      </nav><!-- article -->
+      <!--v-if-->
+      <!-- faqs -->
+      <!--v-if-->
       <section class="my-30 mt-20">
         <div class="mx-auto">
           <div class="pt-12">
@@ -196,10 +199,7 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders with empty companies 
             <div class="border-t"><a href="/products/best/cat-tech/" class="mt-3 flex font-medium">Tech</a></div>
           </div>
         </div>
-      </section><!-- article -->
-      <!--v-if-->
-      <!-- faqs -->
-      <!--v-if-->
+      </section>
     </main>
   </div>
   <!--v-if-->
@@ -331,11 +331,10 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders with no categories co
             <!--v-if-->
             <!--v-if-->
           </button></div>
-      </nav>
-      <!--v-if-->
-      <!-- article -->
+      </nav><!-- article -->
       <!--v-if-->
       <!-- faqs -->
+      <!--v-if-->
       <!--v-if-->
     </main>
   </div>
@@ -468,7 +467,10 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders without category arti
             <!--v-if-->
             <!--v-if-->
           </button></div>
-      </nav>
+      </nav><!-- article -->
+      <!--v-if-->
+      <!-- faqs -->
+      <!--v-if-->
       <section class="my-30 mt-20">
         <div class="mx-auto">
           <div class="pt-12">
@@ -478,10 +480,7 @@ exports[`SPageCompanyCategoryCollection Snapshot > renders without category arti
             <div class="border-t"><a href="/products/best/cat-tech/" class="mt-3 flex font-medium">Tech</a></div>
           </div>
         </div>
-      </section><!-- article -->
-      <!--v-if-->
-      <!-- faqs -->
-      <!--v-if-->
+      </section>
     </main>
   </div>
   <!--v-if-->
