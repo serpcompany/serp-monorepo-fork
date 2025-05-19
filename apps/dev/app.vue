@@ -7,6 +7,7 @@
   });
 </script>
 
+
 <template>
   <UApp>
     <NuxtLayout>
