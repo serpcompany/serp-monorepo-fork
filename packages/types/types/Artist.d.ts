@@ -1,23 +1,25 @@
-import type { seoMeta } from '@/types/seoMeta';
 import type {
-  CoverArt,
   ArtistCredit,
-  ReleaseGroupRecording,
-  UrlRelation,
   ArtistRelation,
+  CoverArt,
   EventRelation,
   LabelRelation,
   PlaceRelation,
+  ReleaseGroupRecording,
   SeriesRelation,
+  UrlRelation,
   Wikidata
 } from '@/types/common';
+import type { seoMeta } from '@/types/seoMeta';
+import type { BaseEntity } from '@/types/types';
 
 export type ArtistBase = {
   name: string;
   slug: string;
 };
 
-export type Artist = ArtistBase &
+export type Artist = BaseEntity &
+  ArtistBase &
   seoMeta & {
     beginDate: string | null;
     endDate: string | null;

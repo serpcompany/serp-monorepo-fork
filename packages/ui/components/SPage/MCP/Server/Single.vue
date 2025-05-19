@@ -14,10 +14,7 @@
   const useAuth = computed(() => useRuntimeConfig().public.useAuth);
 
   // @ts-expect-error: auto‑imported
-  const { upvotes, comments } = (await useMCPServerUpvotesAndComments(
-    data.id
-  )) as {
-    upvotes: string[];
+  const { comments } = (await useMCPServerComments(data.id)) as {
     comments: Comment[];
   };
 
@@ -76,11 +73,13 @@
       class="bg-background sticky top-0 z-50"
     >
       <template #upvote>
-        <UpvoteButton
+        <VoteButton
           v-if="useAuth"
           :id="data.id"
-          module="mcp-server"
-          :upvotes="upvotes"
+          module="mcp_server"
+          :users-current-vote="data.usersCurrentVote"
+          :upvotes="data.numUpvotes"
+          :downvotes="data.numDownvotes"
         />
       </template>
     </MultipageHeader>

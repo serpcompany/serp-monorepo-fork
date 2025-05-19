@@ -6,6 +6,15 @@ import '../../../mockUseUserSession';
 
 mockNuxtImport('useSeoMeta', () => () => {});
 
+let companiesData_: unknown = {};
+let categoriesData_: unknown = [];
+
+mockNuxtImport('useCompanies', () => () => Promise.resolve(companiesData_));
+mockNuxtImport(
+  'useCompanyCategories',
+  () => () => Promise.resolve(categoriesData_)
+);
+
 describe('SPageCompanyCategoryCollection Snapshot', () => {
   const scenarios: [
     string,
@@ -79,8 +88,8 @@ describe('SPageCompanyCategoryCollection Snapshot', () => {
   it.each(scenarios)(
     'renders %s correctly',
     async (desc, { companiesData, categoriesData }) => {
-      globalThis.useCompanies = () => Promise.resolve(companiesData);
-      globalThis.useCompanyCategories = () => Promise.resolve(categoriesData);
+      companiesData_ = companiesData;
+      categoriesData_ = categoriesData;
 
       const html = await ComponentRender(
         `SPageCompanyCategoryCollection ${desc}`,

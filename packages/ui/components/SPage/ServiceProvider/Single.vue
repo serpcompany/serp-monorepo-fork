@@ -9,7 +9,7 @@
   const { data } = toRefs(props);
 
   const isVerified = computed(() => {
-    return data.value?.verifiedEmail === user.value?.email;
+    return data.value?.verification === user.value?.siteId;
   });
 
   const config = useRuntimeConfig();
@@ -30,9 +30,9 @@
   });
 
   // @ts-expect-error: Auto-imported from another layer
-  const { comments } = (await useServiceProviderUpvotesAndComments(
-    data.value?.id
-  )) as { upvotes: string[]; comments: Comment[] };
+  const { comments } = (await useServiceProviderComments(data.value?.id)) as {
+    comments: Comment[];
+  };
 
   // @ts-expect-error: Auto-imported from another layer
   const reviews = await useServiceProviderReviews(data.value?.id);
@@ -721,15 +721,11 @@
           />
 
           <!-- Display Reviews List -->
-          <CompanyReviews
-            :is-verified="isVerified"
-            :reviews="reviews"
-            class="mt-8"
-          />
+          <Reviews :is-verified="isVerified" :reviews="reviews" class="mt-8" />
         </div>
       </UCard>
 
-      <CompanyReviewModal
+      <ReviewModal
         v-model:open="showReviewModal"
         :service-provider-id="data.id"
         :result="reviews"

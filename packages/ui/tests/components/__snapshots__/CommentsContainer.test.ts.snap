@@ -56,8 +56,12 @@ exports[`CommentsContainer Snapshot > renders with a single comment correctly 1`
             </div>
             <div data-v-d830712d="" class="reply">
               <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
-              <!--v-if-->
-              <!--v-if-->
+              <!--v-if--><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="hover:text-(--ui-primary)"> Update </div><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="delete">
+                <div data-v-d830712d="" class="delete-text">Delete</div>
+                <!--v-if-->
+              </div>
             </div>
             <!--v-if-->
             <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
@@ -105,8 +109,12 @@ exports[`CommentsContainer Snapshot > renders with multiple comments and custom 
             </div>
             <div data-v-d830712d="" class="reply">
               <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
-              <!--v-if-->
-              <!--v-if-->
+              <!--v-if--><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="hover:text-(--ui-primary)"> Update </div><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="delete">
+                <div data-v-d830712d="" class="delete-text">Delete</div>
+                <!--v-if-->
+              </div>
             </div>
             <!--v-if-->
             <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
@@ -133,8 +141,12 @@ exports[`CommentsContainer Snapshot > renders with multiple comments and custom 
             </div>
             <div data-v-d830712d="" class="reply">
               <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
-              <!--v-if-->
-              <!--v-if-->
+              <!--v-if--><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="hover:text-(--ui-primary)"> Update </div><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="delete">
+                <div data-v-d830712d="" class="delete-text">Delete</div>
+                <!--v-if-->
+              </div>
             </div>
             <!--v-if-->
             <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
@@ -182,8 +194,12 @@ exports[`CommentsContainer Snapshot > renders with nested comment correctly 1`] 
             </div>
             <div data-v-d830712d="" class="reply">
               <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div><span data-v-d830712d="" class="dot">•</span>
-              <div data-v-d830712d="" class="hover:text-(--ui-primary)">Hide replies</div>
-              <!--v-if-->
+              <div data-v-d830712d="" class="hover:text-(--ui-primary)">Hide replies</div><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="hover:text-(--ui-primary)"> Update </div><span data-v-d830712d="" class="dot">•</span>
+              <div data-v-d830712d="" class="delete">
+                <div data-v-d830712d="" class="delete-text">Delete</div>
+                <!--v-if-->
+              </div>
             </div>
             <!--v-if-->
             <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true">
@@ -206,8 +222,12 @@ exports[`CommentsContainer Snapshot > renders with nested comment correctly 1`] 
                     </div>
                     <div data-v-d830712d="" class="reply">
                       <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div><span data-v-d830712d="" class="dot">•</span>
-                      <div data-v-d830712d="" class="hover:text-(--ui-primary)">Hide replies</div>
-                      <!--v-if-->
+                      <div data-v-d830712d="" class="hover:text-(--ui-primary)">Hide replies</div><span data-v-d830712d="" class="dot">•</span>
+                      <div data-v-d830712d="" class="hover:text-(--ui-primary)"> Update </div><span data-v-d830712d="" class="dot">•</span>
+                      <div data-v-d830712d="" class="delete">
+                        <div data-v-d830712d="" class="delete-text">Delete</div>
+                        <!--v-if-->
+                      </div>
                     </div>
                     <!--v-if-->
                     <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true">
@@ -230,8 +250,12 @@ exports[`CommentsContainer Snapshot > renders with nested comment correctly 1`] 
                             </div>
                             <div data-v-d830712d="" class="reply">
                               <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
-                              <!--v-if-->
-                              <!--v-if-->
+                              <!--v-if--><span data-v-d830712d="" class="dot">•</span>
+                              <div data-v-d830712d="" class="hover:text-(--ui-primary)"> Update </div><span data-v-d830712d="" class="dot">•</span>
+                              <div data-v-d830712d="" class="delete">
+                                <div data-v-d830712d="" class="delete-text">Delete</div>
+                                <!--v-if-->
+                              </div>
                             </div>
                             <!--v-if-->
                             <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>
@@ -258,8 +282,12 @@ exports[`CommentsContainer Snapshot > renders with nested comment correctly 1`] 
                             </div>
                             <div data-v-d830712d="" class="reply">
                               <div data-v-d830712d="" class="hover:text-(--ui-primary)">Reply</div>
-                              <!--v-if-->
-                              <!--v-if-->
+                              <!--v-if--><span data-v-d830712d="" class="dot">•</span>
+                              <div data-v-d830712d="" class="hover:text-(--ui-primary)"> Update </div><span data-v-d830712d="" class="dot">•</span>
+                              <div data-v-d830712d="" class="delete">
+                                <div data-v-d830712d="" class="delete-text">Delete</div>
+                                <!--v-if-->
+                              </div>
                             </div>
                             <!--v-if-->
                             <transition-group-stub data-v-d830712d="" name="fade" tag="div" appear="true" persisted="false" css="true"></transition-group-stub>

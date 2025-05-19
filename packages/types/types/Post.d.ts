@@ -1,6 +1,11 @@
-import type { Category, Comment, Pagination } from '@serp/types/types';
+import type {
+  BaseEntity,
+  Category,
+  Comment,
+  Pagination
+} from '@serp/types/types';
 
-export type Post = {
+export type Post = BaseEntity & {
   id: number;
   title: string;
   slug: string;
@@ -20,7 +25,7 @@ export type Post = {
   upvotes?: string[];
 };
 
-export type PostIndex = {
+export type PostIndex = BaseEntity & {
   id: number;
   title: string;
   slug: string;

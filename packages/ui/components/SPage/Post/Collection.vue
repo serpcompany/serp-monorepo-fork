@@ -6,7 +6,7 @@
     seoTitle?: string;
     useGrid?: boolean;
     noCategories?: boolean;
-    useCategories?: boolean;
+    useEntityCategories?: boolean;
   }>();
 
   const router = useRouter();
@@ -15,11 +15,11 @@
   const page = ref(Number(route.query.page) || 1);
   const limit = ref(Number(route.query.limit) || 50);
 
-  const computedUseCategories = computed(() => props.useCategories);
+  const computeduseEntityCategories = computed(() => props.useEntityCategories);
   const computedModule = computed(() => props.module);
   const computedSeoTitle = computed(() => props.seoTitle);
 
-  const categories = computedUseCategories.value
+  const categories = computeduseEntityCategories.value
     ? await usePostCategories()
     : null;
 

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, no-unused-vars  */
-
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import Post from '../../../components/SinglePosts/Post.vue';
@@ -7,12 +5,20 @@ import ComponentRender from '../../componentRender';
 import '../../mockUseUserSession';
 
 let runtimeConfig: Record<string, unknown> = { public: { useAuth: true } };
+let commentsData_: unknown = { comments: [] };
+
 mockNuxtImport('useHead', () => () => {});
+mockNuxtImport('useRuntimeConfig', () => () => runtimeConfig);
+mockNuxtImport('usePostComments', () => async () => commentsData_);
 
 describe('SinglePostsPost Snapshot', () => {
   const scenarios: [
     string,
-    { config: Record<string, unknown>; props: { data: unknown } }
+    {
+      config: Record<string, unknown>;
+      props: { data: unknown };
+      comments: unknown;
+    }
   ][] = [
     [
       'with full post and auth enabled',
@@ -34,6 +40,15 @@ describe('SinglePostsPost Snapshot', () => {
             ],
             upvotes: ['test@test.com']
           }
+        },
+        comments: {
+          comments: [
+            {
+              id: 1,
+              content: 'Test comment',
+              replies: []
+            }
+          ]
         }
       }
     ],
@@ -55,6 +70,15 @@ describe('SinglePostsPost Snapshot', () => {
             module: 'emojis',
             upvotes: []
           }
+        },
+        comments: {
+          comments: [
+            {
+              id: 1,
+              content: 'Test comment',
+              replies: []
+            }
+          ]
         }
       }
     ],
@@ -72,7 +96,8 @@ describe('SinglePostsPost Snapshot', () => {
             comments: [],
             upvotes: []
           }
-        }
+        },
+        comments: { comments: [] }
       }
     ],
     [
@@ -91,29 +116,17 @@ describe('SinglePostsPost Snapshot', () => {
             comments: [],
             upvotes: ['test@test.com']
           }
-        }
+        },
+        comments: { comments: [] }
       }
     ]
   ];
 
   it.each(scenarios)(
     'renders %s correctly',
-    async (desc: string, { config, props }) => {
+    async (desc: string, { config, props, comments }) => {
       runtimeConfig = config;
-      mockNuxtImport('useRuntimeConfig', () => () => runtimeConfig);
-      globalThis.usePostComments = async (id: number) => {
-        return {
-          comments: props.comments
-            ? [
-                {
-                  id: 1,
-                  content: 'Test comment',
-                  replies: []
-                }
-              ]
-            : []
-        };
-      };
+      commentsData_ = comments;
 
       const html = await ComponentRender(`Post ${desc}`, { props }, Post);
       expect(html).toMatchSnapshot();

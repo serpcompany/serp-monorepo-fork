@@ -26,7 +26,7 @@
 <template>
   <UMain>
     <section class="mb-8">
-      <SectionHeroOne :title="data.title" />
+      <SectionHeroOne :title="data.title || data.name" />
       <SPill base-slug="posts/category" :items="data.categories || []" />
     </section>
     <div class="items-end justify-between lg:flex">

@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
-
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import SPagePostCollection from '../../../../components/SPage/Post/Collection.vue';
@@ -15,6 +13,12 @@ let config_: Record<string, unknown> = {
     useAuth: false
   }
 };
+let postsData_: unknown = {};
+let categories_: unknown = [];
+
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport('usePosts', () => async () => postsData_);
+mockNuxtImport('usePostCategories', () => async () => categories_);
 
 describe('SPagePostCollection Snapshot', () => {
   const defaultPostsData = {
@@ -102,9 +106,8 @@ describe('SPagePostCollection Snapshot', () => {
     'renders %s correctly',
     async (desc, { config, postsData, categories }) => {
       config_ = config;
-      mockNuxtImport('useRuntimeConfig', () => () => config_);
-      globalThis.usePosts = async (page: number, limit: number) => postsData;
-      globalThis.usePostCategories = async () => categories;
+      postsData_ = postsData;
+      categories_ = categories;
 
       const html = await ComponentRender(
         `SPagePostCollection ${desc}`,

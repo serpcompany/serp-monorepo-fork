@@ -1,10 +1,24 @@
-import { afterAll, describe, expect, it } from 'vitest';
+import { mockNuxtImport } from '@nuxt/test-utils/runtime';
+import { afterAll, describe, expect, it, vi } from 'vitest';
+import { ref } from 'vue';
 // Import mocks first so they're available when components are imported
 import { cleanupDateMocks } from '../mockDateImports';
 import '../mockUseUserSession';
 // Then import components
 import CommentsContainer from '../../components/CommentsContainer.vue';
 import ComponentRender from '../componentRender';
+
+// Mock composables used in CommentsContainer.vue
+mockNuxtImport('useToast', () => () => ({
+  add: vi.fn()
+}));
+
+mockNuxtImport('useFetch', () => async () => ({
+  data: { value: { message: 'success', id: 1234 } },
+  error: { value: null }
+}));
+
+mockNuxtImport('useRequestHeaders', () => () => ({}));
 
 // Define various scenarios to snapshot test different prop combinations.
 const scenarios: [string, { props: Record<string, unknown> }][] = [

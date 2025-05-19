@@ -1,14 +1,13 @@
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { ref } from 'vue';
-import ComponentRender from '../../../componentRender';
 import Billing from '../../../../components/SPage/Users/Billing.vue';
+import ComponentRender from '../../../componentRender';
 
 // Declare a mutable session_ variable.
 let session_: { loggedIn: unknown; user: unknown; clear: unknown };
-// Set the global mock once.
-(globalThis as unknown).useUserSession = () => session_;
 
+mockNuxtImport('useUserSession', () => () => session_);
 mockNuxtImport('useSeoMeta', () => () => {});
 
 describe('SPage/Users/Billing Snapshot', () => {
@@ -45,7 +44,7 @@ describe('SPage/Users/Billing Snapshot', () => {
   it.each(scenarios)(
     'renders %s correctly',
     async (desc: string, { session }) => {
-      // Update the global session for this scenario.
+      // Update the session for this scenario.
       session_ = session;
 
       const html = await ComponentRender(

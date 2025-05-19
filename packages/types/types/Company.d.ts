@@ -1,4 +1,4 @@
-import type { Category, Comment, Faq } from '@serp/types/types';
+import type { BaseEntity, Category, Comment, Faq } from '@serp/types/types';
 
 export type Feature = {
   id: number;
@@ -6,7 +6,7 @@ export type Feature = {
   description: string;
 };
 
-export type Company = {
+export type Company = BaseEntity & {
   id: number;
   name: string;
   slug: string;
@@ -39,7 +39,7 @@ export type Company = {
   verified?: number; // id of verification table row (null = not verified)
 };
 
-export type CompanyIndex = {
+export type CompanyIndex = BaseEntity & {
   id: number;
   name: string;
   slug: string;
@@ -57,8 +57,7 @@ export type CompanyIndex = {
 export type Companies = {
   companies: Company[];
   pagination: Pagination;
-  categoryArticle?: string;
-  categoryName?: string;
+  category?: Category;
 };
 
 export type CompanyReview = {
@@ -76,7 +75,7 @@ export type CompanyReview = {
   };
 };
 
-export type CompanyReviews = {
+export type Reviews = {
   reviews: CompanyReview[];
   pagination: Pagination;
 };

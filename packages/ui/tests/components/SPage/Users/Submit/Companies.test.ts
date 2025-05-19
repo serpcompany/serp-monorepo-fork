@@ -6,18 +6,12 @@ import Companies from '../../../../../components/SPage/Users/Submit/Companies.vu
 
 // Set up global mocks for session and data fetching.
 let session_: { loggedIn: unknown; user: unknown; clear: unknown };
-let companySubmissions: unknown = null;
+let companySubmissions_: unknown = null;
 
-// Simulate the useUserSession hook.
-(globalThis as unknown).useUserSession = () => session_;
-// Simulate the useCompanySubmissions hook.
-(globalThis as unknown).useCompanySubmissions = async () => companySubmissions;
-// Ensure navigateTo is defined to prevent redirection during tests.
-if (typeof globalThis.navigateTo === 'undefined') {
-  globalThis.navigateTo = () => {};
-}
-
-// Minimal mock for useSeoMeta
+// Mock all Nuxt imports
+mockNuxtImport('useUserSession', () => () => session_);
+mockNuxtImport('useCompanySubmissions', () => async () => companySubmissions_);
+mockNuxtImport('navigateTo', () => () => {});
 mockNuxtImport('useSeoMeta', () => () => {});
 
 describe('SPage/Users/Submit/Companies Snapshot', () => {
@@ -78,7 +72,7 @@ describe('SPage/Users/Submit/Companies Snapshot', () => {
     async (desc: string, { session, companyData }) => {
       // Set the current session and mock submission data.
       session_ = session;
-      companySubmissions = companyData;
+      companySubmissions_ = companyData;
 
       const html = await ComponentRender(
         `SPage/Users/Submit/Companies ${desc}`,

@@ -10,7 +10,7 @@ const userSessionMock = {
   clear: vi.fn()
 } as unknown;
 
-(globalThis as unknown).useUserSession = () => userSessionMock;
+mockNuxtImport('useUserSession', () => () => userSessionMock);
 
 describe('SPageLogout Snapshot', () => {
   const scenarios: [string, { loggedIn: boolean }][] = [
@@ -21,10 +21,10 @@ describe('SPageLogout Snapshot', () => {
   it.each(scenarios)(
     'handles %s correctly',
     async (desc: string, { loggedIn }) => {
-      // Update the global mock state for this test scenario.
+      // Update the mock state for this test scenario.
       userSessionMock.loggedIn.value = loggedIn;
 
-      // Mock global navigateTo to capture redirection calls.
+      // Mock navigateTo to capture redirection calls.
       mockNuxtImport('navigateTo', () => vi.fn());
 
       // Render the Logout component.

@@ -15,36 +15,35 @@ exports[`SPagePostSingle Snapshot > renders with basic post data (with auth) cor
       <!--v-if-->
     </div>
     <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row my-4">
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
-      <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+      <div class="border-default w-full border-solid border-t"></div>
+      <div class="font-medium text-default flex mx-3 whitespace-nowrap">
         <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
             <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
           </svg></div>
       </div>
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
+      <div class="border-default w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
     <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
     <section data-orientation="vertical" class="relative isolate text-center">
-      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
         <div class="">
           <!--v-if-->
           <!--v-if-->
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
-          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-muted text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
           <!--v-if-->
           <!--v-if-->
         </div>
         <div class="flex justify-center">
-          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!-- For white background --><button type="button" class="disabled:bg-primary aria-disabled:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
             <!--v-if--><span class="truncate">Subscribe</span>
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!--teleport start-->
-          <!--teleport end-->
+          <!---->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -118,36 +117,35 @@ exports[`SPagePostSingle Snapshot > renders with basic post data (without auth) 
       <!--v-if-->
     </div>
     <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row my-4">
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
-      <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+      <div class="border-default w-full border-solid border-t"></div>
+      <div class="font-medium text-default flex mx-3 whitespace-nowrap">
         <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
             <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
           </svg></div>
       </div>
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
+      <div class="border-default w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
     <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
     <section data-orientation="vertical" class="relative isolate text-center">
-      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
         <div class="">
           <!--v-if-->
           <!--v-if-->
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
-          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-muted text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
           <!--v-if-->
           <!--v-if-->
         </div>
         <div class="flex justify-center">
-          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!-- For white background --><button type="button" class="disabled:bg-primary aria-disabled:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
             <!--v-if--><span class="truncate">Subscribe</span>
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!--teleport start-->
-          <!--teleport end-->
+          <!---->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -171,36 +169,35 @@ exports[`SPagePostSingle Snapshot > renders with blog module (with auth) correct
       <!--v-if-->
     </div>
     <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row my-4">
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
-      <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+      <div class="border-default w-full border-solid border-t"></div>
+      <div class="font-medium text-default flex mx-3 whitespace-nowrap">
         <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
             <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
           </svg></div>
       </div>
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
+      <div class="border-default w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
     <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
     <section data-orientation="vertical" class="relative isolate text-center">
-      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
         <div class="">
           <!--v-if-->
           <!--v-if-->
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
-          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-muted text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
           <!--v-if-->
           <!--v-if-->
         </div>
         <div class="flex justify-center">
-          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!-- For white background --><button type="button" class="disabled:bg-primary aria-disabled:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
             <!--v-if--><span class="truncate">Subscribe</span>
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!--teleport start-->
-          <!--teleport end-->
+          <!---->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -272,36 +269,35 @@ exports[`SPagePostSingle Snapshot > renders with blog module (without auth) corr
       <!--v-if-->
     </div>
     <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row my-4">
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
-      <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+      <div class="border-default w-full border-solid border-t"></div>
+      <div class="font-medium text-default flex mx-3 whitespace-nowrap">
         <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
             <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
           </svg></div>
       </div>
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
+      <div class="border-default w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
     <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
     <section data-orientation="vertical" class="relative isolate text-center">
-      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
         <div class="">
           <!--v-if-->
           <!--v-if-->
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
-          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-muted text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
           <!--v-if-->
           <!--v-if-->
         </div>
         <div class="flex justify-center">
-          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!-- For white background --><button type="button" class="disabled:bg-primary aria-disabled:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
             <!--v-if--><span class="truncate">Subscribe</span>
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!--teleport start-->
-          <!--teleport end-->
+          <!---->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -322,13 +318,13 @@ exports[`SPagePostSingle Snapshot > renders with glossary module (with auth) cor
         <!--v-if-->
       </div>
       <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row col-span-3 my-4">
-        <div class="border-(--ui-border) w-full border-solid border-t"></div>
-        <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+        <div class="border-default w-full border-solid border-t"></div>
+        <div class="font-medium text-default flex mx-3 whitespace-nowrap">
           <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
               <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
             </svg></div>
         </div>
-        <div class="border-(--ui-border) w-full border-solid border-t"></div>
+        <div class="border-default w-full border-solid border-t"></div>
       </div><!-- main section -->
       <div class="prose dark:prose-invert col-span-2">
         <!-- eslint-disable-next-line vue/no-v-html -->
@@ -405,13 +401,13 @@ exports[`SPagePostSingle Snapshot > renders with glossary module (without auth) 
         <!--v-if-->
       </div>
       <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row col-span-3 my-4">
-        <div class="border-(--ui-border) w-full border-solid border-t"></div>
-        <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+        <div class="border-default w-full border-solid border-t"></div>
+        <div class="font-medium text-default flex mx-3 whitespace-nowrap">
           <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
               <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
             </svg></div>
         </div>
-        <div class="border-(--ui-border) w-full border-solid border-t"></div>
+        <div class="border-default w-full border-solid border-t"></div>
       </div><!-- main section -->
       <div class="prose dark:prose-invert col-span-2">
         <!-- eslint-disable-next-line vue/no-v-html -->
@@ -443,36 +439,35 @@ exports[`SPagePostSingle Snapshot > renders with movies module (with auth) corre
       <!--v-if-->
     </div>
     <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row my-4">
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
-      <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+      <div class="border-default w-full border-solid border-t"></div>
+      <div class="font-medium text-default flex mx-3 whitespace-nowrap">
         <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
             <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
           </svg></div>
       </div>
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
+      <div class="border-default w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
     <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
     <section data-orientation="vertical" class="relative isolate text-center">
-      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
         <div class="">
           <!--v-if-->
           <!--v-if-->
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
-          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-muted text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
           <!--v-if-->
           <!--v-if-->
         </div>
         <div class="flex justify-center">
-          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!-- For white background --><button type="button" class="disabled:bg-primary aria-disabled:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
             <!--v-if--><span class="truncate">Subscribe</span>
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!--teleport start-->
-          <!--teleport end-->
+          <!---->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -544,36 +539,35 @@ exports[`SPagePostSingle Snapshot > renders with movies module (without auth) co
       <!--v-if-->
     </div>
     <div data-orientation="horizontal" role="separator" class="flex items-center align-center text-center w-full flex-row my-4">
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
-      <div class="font-medium text-(--ui-text) flex mx-3 whitespace-nowrap">
+      <div class="border-default w-full border-solid border-t"></div>
+      <div class="font-medium text-default flex mx-3 whitespace-nowrap">
         <div class="flex items-center space-x-2"><svg width="35pt" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-label="SERP Brand logo">
             <path class="fill-[var(--ui-primary)]" d=" M 127.62 540.68 C 255.64 429.97 383.70 319.31 511.76 208.65 C 639.74 319.23 767.70 429.86 895.69 540.45 C 895.70 631.71 895.73 722.97 895.64 814.23 C 719.72 662.17 543.76 510.14 367.81 358.10 C 398.86 414.80 429.83 471.54 460.92 528.22 C 349.85 623.79 238.69 719.27 127.67 814.91 C 127.66 723.50 127.67 632.09 127.62 540.68 Z"></path>
           </svg></div>
       </div>
-      <div class="border-(--ui-border) w-full border-solid border-t"></div>
+      <div class="border-default w-full border-solid border-t"></div>
     </div><!-- eslint-disable-next-line vue/no-v-html-->
     <article class="prose dark:prose-invert mb-20">
       <p>Test content</p>
     </article><!-- link hub for other posts -->
     <!--v-if-->
     <section data-orientation="vertical" class="relative isolate text-center">
-      <div class="max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
         <div class="">
           <!--v-if-->
           <!--v-if-->
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-(--ui-text-highlighted) text-center">Subscribe to the newsletter</h2>
-          <div class="text-base sm:text-lg text-(--ui-text-muted) text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center">Subscribe to the newsletter</h2>
+          <div class="text-base sm:text-lg text-muted text-center text-balance mt-6">Join a trillion other readers getting the best info on AI &amp; technology and stay ahead of the curve.</div>
           <!--v-if-->
           <!--v-if-->
         </div>
         <div class="flex justify-center">
-          <!-- For white background --><button type="button" class="disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
+          <!-- For white background --><button type="button" class="disabled:bg-primary aria-disabled:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary my-4 inline-flex items-center gap-2 rounded-md border border-neutral-800 bg-(--ui-background) px-8 py-3 text-lg font-semibold transition-colors hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-(--ui-primary) disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 dark:bg-(--ui-background) dark:text-white dark:border-white dark:hover:bg-neutral-700 text-neutral-800">
             <!--v-if--><span class="truncate">Subscribe</span>
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!--teleport start-->
-          <!--teleport end-->
+          <!---->
         </div>
       </div>
     </section><!-- Comments Section -->

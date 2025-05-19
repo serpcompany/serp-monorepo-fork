@@ -1,3 +1,4 @@
+import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ref } from 'vue';
 import ProfileDropdown from '../../components/ProfileDropdown.client.vue';
@@ -5,8 +6,9 @@ import ComponentRender from '../componentRender';
 
 // Declare a mutable session_ variable.
 let session_: { loggedIn: unknown; user: unknown; clear: unknown };
-// Set the global mock once.
-(globalThis as unknown).useUserSession = () => session_;
+
+// Mock the useUserSession composable
+mockNuxtImport('useUserSession', () => () => session_);
 
 describe('ProfileDropdown Snapshot', () => {
   // Reset session_ before each test.
@@ -45,7 +47,7 @@ describe('ProfileDropdown Snapshot', () => {
   ];
 
   it.each(scenarios)('renders %s correctly', async (desc, { session }) => {
-    // Update the global session for this scenario.
+    // Update the session for this scenario.
     session_ = session;
 
     // Render the component and generate the snapshot.

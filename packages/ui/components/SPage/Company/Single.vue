@@ -10,7 +10,7 @@
   const { data } = toRefs(props);
 
   const isVerified = computed(() => {
-    return data.value?.verifiedEmail === user.value?.email;
+    return data.value?.verification === user.value?.siteId;
   });
 
   const config = useRuntimeConfig();
@@ -18,12 +18,10 @@
 
   const toast = useToast();
 
-  // @ts-expect-error: Auto-imported from another layer
-  const { upvotes, comments } = (await useCompanyUpvotesAndComments(
-    data.value?.id
-  )) as { upvotes: string[]; comments: Comment[] };
+  const { comments } = (await useCompanyComments(data.value?.id)) as {
+    comments: Comment[];
+  };
 
-  // @ts-expect-error: Auto-imported from another layer
   const reviews = await useCompanyReviews(data.value?.id);
   reviews.companyId = data.value?.id;
 
@@ -32,7 +30,6 @@
 
   // Handle review submission - refresh reviews data
   async function handleReviewSubmitted() {
-    // @ts-expect-error: Auto-imported from another layer
     const updatedReviews = await useCompanyReviews(data.value?.id);
     Object.assign(reviews, updatedReviews);
     reviews.companyId = data.value?.id;
@@ -160,13 +157,15 @@
           v-if="useAuth"
           :id="data.id"
           :domain="data.slug"
-          :is-verified-prop="data.verified"
+          :is-verified-prop="data.verification"
         />
-        <UpvoteButton
+        <VoteButton
           v-if="useAuth"
           :id="data.id"
           module="company"
-          :upvotes="upvotes"
+          :users-current-vote="data.usersCurrentVote"
+          :upvotes="data.numUpvotes"
+          :downvotes="data.numDownvotes"
         />
       </template>
     </MultipageHeader>
@@ -468,15 +467,11 @@
           />
 
           <!-- Display Reviews List -->
-          <CompanyReviews
-            :is-verified="isVerified"
-            :reviews="reviews"
-            class="mt-8"
-          />
+          <Reviews :is-verified="isVerified" :reviews="reviews" class="mt-8" />
         </div>
       </UCard>
 
-      <CompanyReviewModal
+      <ReviewModal
         v-model:open="showReviewModal"
         :company-id="data.id"
         :result="reviews"

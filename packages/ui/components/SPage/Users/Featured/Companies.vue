@@ -25,7 +25,7 @@
   const submitLoading = ref(false);
   const disabled = ref(true);
   const companies = ref([]);
-  const companyOptions = ref(companies.value.map((company) => company.domain));
+  const companyOptions = ref(companies.value.map((company) => company.slug));
   const availablePlacements = ref([]);
   async function getCompaniesForCategory(category: string) {
     try {
@@ -34,10 +34,10 @@
       )?.slug;
 
       const companiesData = await useAllCompaniesForCategory(categorySlug);
-      if (companiesData && companiesData.companies?.length) {
-        companies.value = companiesData.companies;
-        companyOptions.value = companiesData.companies.map(
-          (company) => company.domain
+      if (companiesData && companiesData.entities?.length) {
+        companies.value = companiesData.entities;
+        companyOptions.value = companiesData.entities.map(
+          (company) => company.slug
         );
         availablePlacements.value = companiesData.availablePlacements;
         disabled.value = false;
@@ -54,7 +54,7 @@
   }
 
   function getCompanyId(company: string) {
-    const companyData = companies.value.find((c) => c.domain === company);
+    const companyData = companies.value.find((c) => c.slug === company);
     return companyData ? companyData.id : null;
   }
 
@@ -93,17 +93,17 @@
       // Check if placement is still open
       const data = await useCheckPlacementAvailability(
         form.placement,
-        form.company,
+        getCompanyId(form.company),
         form.category === 'all' ? null : getCategorySlug(form.category)
       );
-      if (data.available) {
+      if (data.reservationId) {
         // If placement is available, proceed with payment
         const successRoute =
-          '/users/purchase?success=true&redirectTo=/users/featured';
+          '/users/purchase?success=true&redirectTo=/users/get-featured';
         const cancelRoute =
-          '/users/purchase?cancel=true&redirectTo=/users/featured';
+          '/users/purchase?cancel=true&redirectTo=/users/get-featured';
         const response = await $fetch(
-          `/api/stripe/create-checkout-session?type=company-featured-${form.placement}&id=${getCompanyId(
+          `/api/stripe/create-checkout-session?type=featured-${form.placement}&id=${getCompanyId(
             form.company
           )}&secondaryId=${getCategoryId(form.category)}&successRoute=${encodeURIComponent(successRoute)}&cancelRoute=${encodeURIComponent(cancelRoute)}`,
           {
@@ -158,7 +158,7 @@
                 <template #header>
                   <div class="flex items-center justify-between">
                     <h3 class="text-lg font-semibold">
-                      {{ subscription.companyDomain }}
+                      {{ subscription.entityName }}
                     </h3>
                     <UBadge
                       v-if="subscription.isActive"
@@ -195,7 +195,7 @@
 
                 <template #footer>
                   <NuxtLink
-                    :to="`/products/${subscription.companyDomain}/reviews/`"
+                    :to="`/products/${subscription.entitySlug}/reviews/`"
                     class="text-primary-600 font-medium hover:underline"
                   >
                     View Company →

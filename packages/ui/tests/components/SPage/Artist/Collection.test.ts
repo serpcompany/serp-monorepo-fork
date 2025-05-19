@@ -24,6 +24,13 @@ mockNuxtImport('useFetch', () => async (url: string, options: unknown) => {
     }
   };
 });
+mockNuxtImport('useRouter', () => () => ({
+  push: () => {},
+  replace: () => {},
+  resolve: () => {
+    return { href: '' };
+  }
+}));
 
 describe('SPageArtistCollection Snapshot', () => {
   const scenarios: [string][] = [['with defaults']];

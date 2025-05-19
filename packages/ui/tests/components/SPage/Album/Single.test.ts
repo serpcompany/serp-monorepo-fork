@@ -2,8 +2,20 @@ import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import Single from '../../../../components/SPage/Album/Single.vue';
 import ComponentRender from '../../../componentRender';
+import '../../../mockUseUserSession';
 
-let useAuth_: boolean = true;
+let config_: Record<string, unknown> = {
+  app: { baseURL: '/' },
+  public: { useAuth: true }
+};
+let albumData_: unknown = {};
+let upvotesData_: unknown = { upvotes: [] };
+
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport('useSeoMeta', () => () => {});
+mockNuxtImport('useAlbum', () => () => Promise.resolve(albumData_));
+mockNuxtImport('useFetchWithCache', () => () => Promise.resolve(upvotesData_));
+
 const scenarios: [
   string,
   { album: Record<string, unknown>; upvotes: string[]; useAuth: boolean }
@@ -77,14 +89,12 @@ describe('SPageAlbumSingle Snapshot', () => {
   it.each(scenarios)(
     'renders %s correctly',
     async (desc, { album, upvotes, useAuth }) => {
-      globalThis.useAlbum = () => Promise.resolve(album);
-      globalThis.useFetchWithCache = () => Promise.resolve({ upvotes });
-      useAuth_ = useAuth;
-      mockNuxtImport('useRuntimeConfig', () => () => ({
+      albumData_ = album;
+      upvotesData_ = { upvotes };
+      config_ = {
         app: { baseURL: '/' },
-        public: { useAuth_ }
-      }));
-      mockNuxtImport('useSeoMeta', () => () => {});
+        public: { useAuth }
+      };
 
       const html = await ComponentRender(
         `SPageAlbumSingle ${desc}`,

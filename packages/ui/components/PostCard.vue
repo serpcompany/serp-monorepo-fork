@@ -17,12 +17,12 @@
 
   const displayTitle = computed(() => {
     if (props.post.module === 'Glossary') {
-      return props.post.keyword || props.post.title;
+      return props.post.keyword || props.post.title || props.post.name;
     }
     if (props.title) {
       return props.title;
     }
-    return props.post.title;
+    return props.post.title || props.post.name;
   });
 
   const formattedDate = computed(() => {

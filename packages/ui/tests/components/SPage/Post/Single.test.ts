@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
-
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import SPagePostSingle from '../../../../components/SPage/Post/Single.vue';
@@ -8,6 +6,17 @@ import '../../../mockUseUserSession';
 
 mockNuxtImport('useHead', () => () => {});
 mockNuxtImport('useSeoMeta', () => () => {});
+mockNuxtImport('usePostComments', () => () => ({
+  comments: [
+    {
+      id: 1,
+      content: 'Test comment',
+      replies: []
+    }
+  ]
+}));
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport('usePost', () => () => postData_);
 
 let config_: Record<string, unknown> = {
   app: { baseURL: '/' },
@@ -15,6 +24,7 @@ let config_: Record<string, unknown> = {
     useAuth: false
   }
 };
+let postData_: unknown = {};
 
 describe('SPagePostSingle Snapshot', () => {
   const defaultPostData = {
@@ -93,19 +103,7 @@ describe('SPagePostSingle Snapshot', () => {
     'renders %s correctly',
     async (desc, { config, postData }) => {
       config_ = config;
-      mockNuxtImport('useRuntimeConfig', () => () => config_);
-      globalThis.usePost = async (slug: string) => postData;
-      globalThis.usePostComments = async (id: number) => {
-        return {
-          comments: [
-            {
-              id: 1,
-              content: 'Test comment',
-              replies: []
-            }
-          ]
-        };
-      };
+      postData_ = postData;
 
       const html = await ComponentRender(
         `SPagePostSingle ${desc}`,

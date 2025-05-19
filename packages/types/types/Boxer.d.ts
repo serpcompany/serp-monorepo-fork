@@ -1,8 +1,4 @@
-import type {
-  WeightClass,
-  RawWeightClass,
-  Pagination
-} from '@serp/types/types';
+import type { BaseEntity, Pagination, WeightClass } from '@serp/types/types';
 
 export type Opponent = {
   name: string;
@@ -28,7 +24,7 @@ export type RawBout = {
   location: string;
 };
 
-export type Boxer = {
+export type Boxer = BaseEntity & {
   id: number;
   name: string;
   slug: string;
@@ -52,42 +48,11 @@ export type Boxer = {
   bouts: Bout[];
 };
 
-export type RawBoxer = {
-  id: number;
-  name: string;
-  slug: string;
-  birthName: string;
-  career: string;
-  debut: string;
-  status: string;
-  gender: string;
-  nationality: string;
-  residence: string;
-  nicknames: string[];
-  stance: string;
-  birthPlace: string;
-  heightCm: number;
-  reachCm: number;
-  division: RawWeightClass;
-  content: string;
-  numWins: number;
-  numDraws: number;
-  numLosses: number;
-  bouts: RawBout[];
-};
-
-export type BoxerIndex = {
+export type BoxerIndex = BaseEntity & {
   id: number;
   name: string;
   slug: string;
   division: WeightClass;
-};
-
-export type RawBoxerIndex = {
-  id: number;
-  name: string;
-  slug: string;
-  division: RawWeightClass;
 };
 
 export type Boxers = {

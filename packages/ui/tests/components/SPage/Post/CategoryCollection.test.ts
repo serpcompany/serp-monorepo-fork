@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
-
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import SPagePostCategoryCollection from '../../../../components/SPage/Post/CategoryCollection.vue';
@@ -15,6 +13,12 @@ let config_: Record<string, unknown> = {
     useAuth: false
   }
 };
+let postsData_: unknown = {};
+let categories_: unknown = [];
+
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport('usePosts', () => async () => postsData_);
+mockNuxtImport('usePostCategories', () => async () => categories_);
 
 describe('SPagePostCategoryCollection Snapshot', () => {
   const defaultPostsData = {
@@ -22,6 +26,7 @@ describe('SPagePostCategoryCollection Snapshot', () => {
       {
         id: 1,
         title: 'Post One',
+        name: 'Post One',
         slug: 'post-one',
         keyword: 'One',
         categories: [{ id: 1, slug: 'tech', name: 'Tech' }]
@@ -29,6 +34,7 @@ describe('SPagePostCategoryCollection Snapshot', () => {
       {
         id: 2,
         title: 'Post Two',
+        name: 'Post Two',
         slug: 'post-two',
         keyword: 'Two',
         oneLiner: 'Test one-liner',
@@ -86,9 +92,8 @@ describe('SPagePostCategoryCollection Snapshot', () => {
     'renders %s correctly',
     async (desc, { config, postsData, categories }) => {
       config_ = config;
-      mockNuxtImport('useRuntimeConfig', () => () => config_);
-      globalThis.usePosts = async (page: number, limit: number) => postsData;
-      globalThis.usePostCategories = async () => categories;
+      postsData_ = postsData;
+      categories_ = categories;
 
       const html = await ComponentRender(
         `SPagePostCategoryCollection ${desc}`,

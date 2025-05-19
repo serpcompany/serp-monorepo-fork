@@ -47,6 +47,9 @@ services:
       - MAILGUN_DOMAIN=${MAILGUN_DOMAIN}
       - MAILGUN_FROM=${MAILGUN_FROM}
       - NUXT_UI_PRO_LICENSE=${NUXT_UI_PRO_LICENSE}
+      - MAILGUN_API_KEY=${MAILGUN_API_KEY}
+      - MAILGUN_DOMAIN=${MAILGUN_DOMAIN}
+      - MAILGUN_FROM=${MAILGUN_FROM}
       - REDIS_URL=redis://serp-media-redis-staging:6379
     depends_on:
       - serp-media-redis-staging

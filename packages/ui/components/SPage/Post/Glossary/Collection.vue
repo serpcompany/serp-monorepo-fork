@@ -20,9 +20,11 @@
       );
     }
     return data.posts.filter((term: PostIndex) => {
-      return term.keyword
+      return term.keyword != null
         ? term.keyword.toLowerCase().startsWith(character.toLowerCase())
-        : term.title.toLowerCase().startsWith(character.toLowerCase());
+        : term.title != null
+          ? term.title.toLowerCase().startsWith(character.toLowerCase())
+          : term.name.toLowerCase().startsWith(character.toLowerCase());
     });
   };
 

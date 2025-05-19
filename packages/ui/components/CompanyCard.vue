@@ -178,10 +178,12 @@
             </NuxtLink>
 
             <!-- upvote button -->
-            <UpvoteButton
+            <VoteButton
               :id="company.id"
               module="company"
-              :upvotes="company.upvotes || []"
+              :users-current-vote="company.usersCurrentVote"
+              :upvotes="company.numUpvotes"
+              :downvotes="company.numDownvotes"
             />
           </div>
         </div>

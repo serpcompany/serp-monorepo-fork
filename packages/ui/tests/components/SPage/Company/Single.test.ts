@@ -4,21 +4,6 @@ import SPageCompanySingle from '../../../../components/SPage/Company/Single.vue'
 import ComponentRender from '../../../componentRender';
 import '../../../mockUseUserSession';
 
-// Extend globalThis to include useCompany and other custom properties
-declare global {
-  interface GlobalThis {
-    useCompany: () => Promise<Record<string, unknown>>;
-    useCompanyUpvotesAndComments: () => Promise<{
-      upvotes: string[];
-      comments: unknown[];
-    }>;
-    useCompanyReviews: () => Promise<{
-      reviews: { id: number; rating: number; title: string; content: string }[];
-      userReview: null;
-    }>;
-  }
-}
-
 mockNuxtImport('useSeoMeta', () => () => {});
 
 let config_: Record<string, unknown> = {
@@ -28,13 +13,36 @@ let config_: Record<string, unknown> = {
   }
 };
 
+let companyData_: unknown = {};
+let commentsData_: unknown = { comments: [] };
+const reviewsData_: unknown = {
+  reviews: [
+    { id: 1, rating: 4, title: 'Good service', content: 'I liked it' },
+    {
+      id: 2,
+      rating: 5,
+      title: 'Excellent',
+      content: 'The best service'
+    }
+  ],
+  userReview: null
+};
+
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport('useCompany', () => () => Promise.resolve(companyData_));
+mockNuxtImport(
+  'useCompanyComments',
+  () => () => Promise.resolve(commentsData_)
+);
+mockNuxtImport('useCompanyReviews', () => () => Promise.resolve(reviewsData_));
+
 describe('SPageCompanySingle Snapshot', () => {
   const scenarios: [
     string,
     {
       config: Record<string, unknown>;
       companyData: Record<string, unknown>;
-      upvotesAndComments: { upvotes: string[]; comments: unknown[] };
+      comments: { comments: unknown[] };
     }
   ][] = [
     [
@@ -64,8 +72,7 @@ describe('SPageCompanySingle Snapshot', () => {
           numFiveStarReviews: 2,
           averageRating: 4.2
         },
-        upvotesAndComments: {
-          upvotes: ['user@example.com'],
+        comments: {
           comments: [{ id: 100, content: 'Great company!', replies: [] }]
         }
       }
@@ -88,8 +95,7 @@ describe('SPageCompanySingle Snapshot', () => {
           screenshots: null,
           categories: null
         },
-        upvotesAndComments: {
-          upvotes: [],
+        comments: {
           comments: []
         }
       }
@@ -114,8 +120,7 @@ describe('SPageCompanySingle Snapshot', () => {
           screenshots: ['/screenshot1.png'],
           categories: [{ id: 10, slug: 'cat-1', name: 'Category 1' }]
         },
-        upvotesAndComments: {
-          upvotes: ['user@example.com'],
+        comments: {
           comments: [{ id: 100, content: 'Great company!', replies: [] }]
         }
       }
@@ -138,8 +143,7 @@ describe('SPageCompanySingle Snapshot', () => {
           screenshots: null,
           categories: null
         },
-        upvotesAndComments: {
-          upvotes: [],
+        comments: {
           comments: []
         }
       }
@@ -148,27 +152,10 @@ describe('SPageCompanySingle Snapshot', () => {
 
   it.each(scenarios)(
     'renders %s correctly',
-    async (desc, { config, companyData, upvotesAndComments }) => {
+    async (desc, { config, companyData, comments }) => {
       config_ = config;
-      mockNuxtImport('useRuntimeConfig', () => () => config_);
-      globalThis.useCompany = () => Promise.resolve(companyData);
-      globalThis.useCompanyUpvotesAndComments = () =>
-        Promise.resolve(upvotesAndComments);
-
-      // Add mock for useCompanyReviews
-      globalThis.useCompanyReviews = () =>
-        Promise.resolve({
-          reviews: [
-            { id: 1, rating: 4, title: 'Good service', content: 'I liked it' },
-            {
-              id: 2,
-              rating: 5,
-              title: 'Excellent',
-              content: 'The best service'
-            }
-          ],
-          userReview: null
-        });
+      companyData_ = companyData;
+      commentsData_ = comments;
 
       const html = await ComponentRender(
         `SPageCompanySingle ${desc}`,
