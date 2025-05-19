@@ -1,1 +1,10 @@
-../../../serp-media/pages/movies/index.vue
+<template>
+  <SPagePostCollectionKeywordAsTitle
+    module="movies"
+    module-title="Movies & TV Shows"
+    base-slug="movies/"
+    seo-title="Movies"
+    :use-grid="true"
+    :no-categories="true"
+  />
+</template>

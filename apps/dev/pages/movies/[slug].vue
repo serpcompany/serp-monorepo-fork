@@ -1,1 +1,3 @@
-../../../serp-media/pages/movies/[slug].vue
+<template>
+  <SPagePostSingle module="movies" />
+</template>

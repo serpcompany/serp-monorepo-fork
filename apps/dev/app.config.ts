@@ -144,6 +144,18 @@ export default defineAppConfig({
       {
         label: 'Boxing',
         children: [{ label: 'boxers', to: '/boxers/' }]
+      },
+      {
+        label: 'Artists',
+        children: [{ label: 'Artists', to: '/artists/' }]
+      },
+      {
+        label: 'Albums',
+        children: [{ label: 'Albums', to: '/albums/' }]
+      },
+      {
+        label: 'Songs',
+        children: [{ label: 'Songs', to: '/songs/' }]
       }
     ],
     submitOptions: [
