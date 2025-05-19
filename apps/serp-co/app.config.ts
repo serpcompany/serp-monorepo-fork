@@ -96,8 +96,8 @@ export default defineAppConfig({
     ],
     legalLinks: [
       { text: 'About', slug: '/about/' },
+      { text: 'Contact', slug: '/contact/' },
       { text: 'Solutions', slug: 'https://solutions.serp.co' },
-      { text: 'Contact', slug: '#' },
       { text: 'Privacy', slug: '/legal/privacy-policy/' },
       { text: 'Terms', slug: '/legal/terms-conditions/' },
       { text: 'Affiliate Disclosure', slug: '/legal/affiliate-disclosure/' },
@@ -136,6 +136,15 @@ export default defineAppConfig({
       {
         label: 'MCP',
         children: [{ label: 'MCP Servers', to: '/mcp/servers/' }]
+      },
+      {
+        label: 'Brand',
+        children: [
+          { label: 'About', to: '/about/' },
+          { label: 'Contact', to: '/contact/' },
+          { label: 'Newsletter', to: '/newsletter/' },
+          { label: 'Solutions', to: '/solutions/' }
+        ]
       }
     ],
     submitOptions: [
