@@ -1,0 +1,1 @@
+../../../serp-media/pages/movies/[slug].vue

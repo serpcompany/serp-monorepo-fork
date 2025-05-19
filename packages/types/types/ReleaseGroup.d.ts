@@ -1,15 +1,16 @@
-import type { seoMeta } from '@/types/seoMeta';
 import type {
-  ArtistRelation,
   ArtistCredit,
-  ReleaseGroupRecording,
+  ArtistRelation,
   CoverArt,
-  UrlRelation,
   EventRelation,
+  ReleaseGroupRecording,
   ReleaseGroupRelation,
   SeriesRelation,
+  UrlRelation,
   Wikidata
 } from '@/types/common';
+import type { seoMeta } from '@/types/seoMeta';
+import type { BaseEntity } from '@/types/types';
 
 export type ReleaseGroupBase = {
   name: string;
@@ -20,7 +21,8 @@ export type ReleaseGroupIndex = ReleaseGroupBase & {
   artists: ArtistCredit[];
 };
 
-export type ReleaseGroup = ReleaseGroupBase &
+export type ReleaseGroup = BaseEntity &
+  ReleaseGroupBase &
   seoMeta & {
     type: string | null;
     secondaryTypes: string[] | null;

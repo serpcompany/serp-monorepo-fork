@@ -12,13 +12,18 @@ export function getClient(): Sql | undefined {
   }
 
   const connectionString = process.env.DATABASE_URL;
-  
+
   if (!connectionString) {
     return undefined;
   }
-  
-  clientInstance = postgres(connectionString);
-  return clientInstance;
+
+  try {
+    clientInstance = postgres(connectionString);
+    return clientInstance;
+  } catch (error) {
+    console.error('Failed to create database client', error);
+    return undefined;
+  }
 }
 
 export function getDb(): ReturnType<typeof drizzle> | undefined {
@@ -27,11 +32,16 @@ export function getDb(): ReturnType<typeof drizzle> | undefined {
   }
 
   const client = getClient();
-  
+
   if (!client) {
     return undefined;
   }
-  
-  dbInstance = drizzle(client, { schema });
-  return dbInstance;
+
+  try {
+    dbInstance = drizzle(client, { schema });
+    return dbInstance;
+  } catch (error) {
+    console.error('Failed to create drizzle instance', error);
+    return undefined;
+  }
 }

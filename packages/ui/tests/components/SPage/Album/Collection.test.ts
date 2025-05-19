@@ -3,11 +3,25 @@ import { describe, expect, it } from 'vitest';
 import { ref } from 'vue';
 import SPageAlbumCollection from '../../../../components/SPage/Album/Collection.vue';
 import ComponentRender from '../../../componentRender';
+import '../../../mockUseUserSession';
 
 let fetchData_: unknown = {
   albums: [],
   pagination: { totalItems: 0 }
 };
+let routeData_: unknown = { query: {} };
+
+mockNuxtImport('useFetch', () => () => ({
+  data: ref(fetchData_)
+}));
+mockNuxtImport('useRoute', () => () => routeData_);
+mockNuxtImport('useRouter', () => () => ({
+  push: () => {},
+  replace: () => {},
+  resolve: () => {
+    return { href: '' };
+  }
+}));
 
 describe('SPageAlbumCollection Snapshot', () => {
   it.each([
@@ -48,17 +62,11 @@ describe('SPageAlbumCollection Snapshot', () => {
       desc: string,
       options: { fetchData: unknown; routeQuery?: Record<string, string> }
     ) => {
-      // Capture the fetchData value in a local variable for closure safety.
+      // Capture the data in local variables for closure safety
       fetchData_ = options.fetchData;
-
-      // Mock the useFetch call with the captured data.
-      mockNuxtImport('useFetch', () => () => ({
-        data: ref(fetchData_)
-      }));
-      // Provide a custom route query if needed; otherwise use a default.
-      //   mockNuxtImport('useRoute', () => () =>
-      //     options.routeQuery ? { query: options.routeQuery } : { query: {} }
-      //   )
+      routeData_ = options.routeQuery
+        ? { query: options.routeQuery }
+        : { query: {} };
 
       const html = await ComponentRender(
         `SPageAlbumCollection - ${desc}`,

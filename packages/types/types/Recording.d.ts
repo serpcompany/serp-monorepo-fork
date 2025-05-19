@@ -1,20 +1,21 @@
-import type { seoMeta } from '@/types/seoMeta';
 import type {
+  AreaRelation,
   ArtistCredit,
   ArtistRelation,
-  UrlRelation,
-  AreaRelation,
-  WorkRelation,
-  WorkUrlRelation,
-  RecordingRelation,
-  SeriesRelation,
+  CoverArt,
   EventRelation,
   LabelRelation,
   PlaceRelation,
+  RecordingRelation,
+  SeriesRelation,
+  UrlRelation,
   Wikidata,
-  CoverArt
+  WorkRelation,
+  WorkUrlRelation
 } from '@/types/common';
 import type { ReleaseGroupBase } from '@/types/releaseGroup';
+import type { seoMeta } from '@/types/seoMeta';
+import type { BaseEntity } from '@/types/types';
 
 export type RecordingBase = {
   name: string;
@@ -26,7 +27,8 @@ export type RecordingIndex = RecordingBase & {
   releaseGroup: ReleaseGroupBase | null;
 };
 
-export type Recording = RecordingBase &
+export type Recording = BaseEntity &
+  RecordingBase &
   seoMeta & {
     length: number | null;
     tags: string[];

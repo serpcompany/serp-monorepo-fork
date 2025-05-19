@@ -10,14 +10,14 @@
     data: companyData,
     pending: companyPending,
     error: companyError
-  } = await useFetch<Record<string, unknown>>(`/api/company/${companyId}`);
+  } = await useFetch<Record<string, unknown>>(`/api/entity/${companyId}`);
 
   const {
     data: editsData,
     pending: editsPending,
     error: editsError,
     refresh: refreshEdits
-  } = await useFetch<{ edits: unknown[] }>(`/api/company/edit?id=${companyId}`);
+  } = await useFetch<{ edits: unknown[] }>(`/api/entity/edit?id=${companyId}`);
 
   const dynamicFields = computed(() => {
     if (!companyData.value) return [];
@@ -25,6 +25,7 @@
       (k) =>
         ![
           'id',
+          'domain',
           'createdAt',
           'updatedAt',
           'numReviews',
@@ -40,7 +41,19 @@
           'serplyLink',
           'verifiedEmail',
           'screenshots',
-          'videoId'
+          'videoId',
+          'slug',
+          'module',
+          'numUpvotes',
+          'numDownvotes',
+          'hotScore',
+          'hotScoreHour',
+          'hotScoreDay',
+          'hotScoreWeek',
+          'hotScoreMonth',
+          'hotScoreYear',
+          'entityId',
+          'usersCurrentVote'
         ].includes(k)
     );
   });
@@ -50,8 +63,10 @@
     if (!companyData.value) return;
     dynamicFields.value.forEach((key) => {
       if (!(key in newEdit)) {
-        if (key === 'categories') {
+        if (key === 'categories' && companyData.value[key]) {
           newEdit[key] = companyData.value[key].map((c: unknown) => c.name);
+        } else if (key === 'topics' && companyData.value[key]) {
+          newEdit[key] = companyData.value[key].map((t: unknown) => t.name);
         } else {
           newEdit[key] = Array.isArray(companyData.value[key]) ? [] : '';
         }
@@ -61,11 +76,25 @@
 
   const categoriesList = await useCompanyCategories();
   const categoryOptions = categoriesList.map((c) => c.name);
-  const getCategoryIds = computed(() =>
-    (newEdit.categories as string[])
+  const getCategoryIds = computed(() => {
+    if (!newEdit.categories || !(newEdit.categories as string[]).length) {
+      return [];
+    }
+    return (newEdit.categories as string[])
       .map((name) => categoriesList.find((c) => c.name === name)?.id)
-      .filter((i) => typeof i === 'number')
-  );
+      .filter((i) => i !== undefined);
+  });
+
+  const topicsList = await useCompanyTopics();
+  const topicOptions = topicsList.map((t) => t.name);
+  const getTopicIds = computed(() => {
+    if (!newEdit.topics || !(newEdit.topics as string[]).length) {
+      return [];
+    }
+    return (newEdit.topics as string[])
+      .map((name) => topicsList.find((t) => t.name === name)?.id)
+      .filter((i) => i !== undefined);
+  });
 
   async function onNewLogoSelected(e: Event) {
     const file = (e.target as HTMLInputElement).files?.[0];
@@ -192,19 +221,10 @@
       const payload: Record<string, unknown> = {};
       for (const key of dynamicFields.value) {
         const val = newEdit[key];
-        if (key === 'categories' && val.length) {
-          // only add categories if changed
-          let isEqual = true;
-          if (companyData.value[key]) {
-            isEqual =
-              val.length === companyData.value[key].length &&
-              val.every((v: string) =>
-                companyData.value[key].map((c: unknown) => c.name).includes(v)
-              );
-          }
-          if (!isEqual) {
-            payload.categories = getCategoryIds.value;
-          }
+        if (key === 'categories' && Array.isArray(val) && val.length) {
+          payload.categories = getCategoryIds.value;
+        } else if (key === 'topics' && Array.isArray(val) && val.length) {
+          payload.topics = getTopicIds.value;
         } else if (key === 'logo' && val) {
           payload.logo = val;
         } else if (typeof val === 'string' && val.trim() !== '') {
@@ -215,7 +235,7 @@
         throw new Error('Change at least one field to submit.');
       }
       const { data: response, error } = await useFetch(
-        `/api/company/edit?id=${companyId}`,
+        `/api/entity/edit?id=${companyId}`,
         {
           method: 'POST',
           headers: useRequestHeaders(['cookie']),
@@ -270,7 +290,7 @@
       const body: unknown = { status: updateStatus[editId] };
       if (updateNotes[editId].trim()) body.reviewNotes = updateNotes[editId];
 
-      const { error } = await useFetch(`/api/company/edit?id=${editId}`, {
+      const { error } = await useFetch(`/api/entity/edit?id=${editId}`, {
         method: 'PUT',
         headers: useRequestHeaders(['cookie']),
         body: JSON.stringify(body)
@@ -350,7 +370,7 @@
               </tbody>
             </table>
 
-            <div v-if="user.email === companyData?.verifiedEmail">
+            <div v-if="user?.siteId === companyData?.verification">
               <div class="mt-4 grid grid-cols-2 gap-4">
                 <UFormField label="Status">
                   <UInputMenu
@@ -410,6 +430,14 @@
                   class="w-full"
                 />
               </template>
+              <template v-else-if="key === 'topics'">
+                <UInputMenu
+                  v-model="newEdit.topics"
+                  multiple
+                  :items="topicOptions"
+                  class="w-full"
+                />
+              </template>
               <template v-else-if="key === 'logo'">
                 <input
                   type="file"
@@ -434,6 +462,12 @@
                   class="mt-1 text-xs text-neutral-500"
                 >
                   Current: {{ companyData[key].map((c) => c.name).join(', ') }}
+                </p>
+                <p
+                  v-else-if="key === 'topics'"
+                  class="mt-1 text-xs text-neutral-500"
+                >
+                  Current: {{ companyData[key].map((t) => t.name).join(', ') }}
                 </p>
                 <p v-else class="mt-1 text-xs text-neutral-500">
                   Current: {{ formatValue(companyData[key]) }}

@@ -4,4 +4,5 @@ export type Topic = {
   slug: string;
   description?: string;
   icon?: string;
+  module?: string;
 };

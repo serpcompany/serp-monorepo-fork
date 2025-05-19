@@ -1,4 +1,6 @@
-export type MCPServer = {
+import type { BaseEntity, Category, Pagination } from './Pagination';
+
+export type MCPServer = BaseEntity & {
   id: number;
   slug: string;
   url: string;
@@ -18,7 +20,7 @@ export type MCPServer = {
   serplyLink: string;
 };
 
-export type MCPServerIndex = {
+export type MCPServerIndex = BaseEntity & {
   id: number;
   slug: string;
   url: string;

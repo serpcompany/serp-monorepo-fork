@@ -8,7 +8,7 @@ const userSessionMock = {
   loggedIn: ref(false)
 } as unknown;
 
-(globalThis as unknown).useUserSession = () => userSessionMock;
+mockNuxtImport('useUserSession', () => () => userSessionMock);
 
 // Global route query variable – we'll update this per test case
 let routeQuery: Record<string, unknown> = {};
@@ -40,7 +40,7 @@ describe('Login Snapshot', () => {
   ];
 
   it.each(scenarios)('%s', async (desc, { query, loggedIn }) => {
-    // Update global state for this scenario.
+    // Update state for this scenario.
     routeQuery = query;
     userSessionMock.loggedIn.value = loggedIn;
 

@@ -1,0 +1,37 @@
+{
+  "name": "@serp/auth",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "build": "nuxt build .playground",
+    "eslint": "eslint . --fix",
+    "generate": "nuxt generate .playground",
+    "postinstall": "nuxt prepare",
+    "lint": "prettier . --write --log-level warn && eslint . --fix",
+    "prettier": "prettier . --write --log-level warn",
+    "preview": "nuxt preview .playground",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@serp/db": "workspace:^",
+    "@serp/types": "workspace:^",
+    "nuxt-auth-utils": "^0.5.17"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.6.1",
+    "@nuxt/test-utils": "^3.11.0",
+    "@serp/configs": "workspace:^",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/vue": "^8.0.2",
+    "@vue/test-utils": "^2.4.4",
+    "eslint": "^9.14.0",
+    "happy-dom": "^13.3.8",
+    "nuxt": "^3.17.3",
+    "typescript": "^5.7.3",
+    "vitest": "^1.2.2",
+    "vue": "latest"
+  }
+}

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import { useMCPServer } from '../../../../../utils/composables/useMCPServer';
-
   const router = useRouter();
   const route = useRoute();
   const page = ref(Number(route.query.page) || 1);

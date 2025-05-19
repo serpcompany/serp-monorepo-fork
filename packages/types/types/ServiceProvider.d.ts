@@ -1,7 +1,7 @@
-import type { Category, Topic } from '@serp/types/types';
+import type { BaseEntity, Category, Topic } from '@serp/types/types';
 
 // TODO: Add types for the properties
-export interface ServiceProvider {
+export type ServiceProvider = BaseEntity & {
   id?: number;
   createdAt?: string;
   name?: string;
@@ -38,9 +38,9 @@ export interface ServiceProvider {
   features?: Feature[];
   verified?: number; // id of verification table row (null = not verified)
   // TODO: add these fields into the DB ---------- 👆
-}
+};
 
-export interface ServiceProviderIndex {
+export type ServiceProviderIndex = BaseEntity & {
   id: number;
   name: string;
   slug: string;
@@ -52,10 +52,10 @@ export interface ServiceProviderIndex {
   serplyLink: string;
   categories?: Category[];
   topics?: Topic[];
-}
+};
 
-export interface ServiceProviders {
+export type ServiceProviders = {
   serviceProviders: ServiceProviderIndex[];
   pagination: Pagination;
   category?: Category;
-}
+};

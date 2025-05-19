@@ -39,7 +39,7 @@
 
     accountLoading.value = true;
     try {
-      const res = await $fetch(`/api/company/claim/${props.id}`, {
+      const res = await $fetch(`/api/entity/claim/${props.id}`, {
         method: 'POST'
       });
       if (res.message === 'success') {
@@ -49,7 +49,7 @@
           description: 'Company claimed successfully.',
           icon: 'check-circle'
         });
-        isVerified.value = res.id;
+        isVerified.value = user.siteId;
         modalOpen.value = false;
       } else {
         toast.add({
@@ -84,7 +84,7 @@
 
     emailLoading.value = true;
     try {
-      const res = await $fetch('/api/company/verify/email/initiate', {
+      const res = await $fetch('/api/entity/verify/email/initiate', {
         method: 'POST',
         body: { id: Number(props.id), email: customEmail.value }
       });

@@ -13,6 +13,13 @@ let config_: Record<string, unknown> = {
   }
 };
 
+let artistData_: unknown = {};
+let upvotesData_: unknown = { upvotes: [] };
+
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport('useArtist', () => () => artistData_);
+mockNuxtImport('useFetchWithCache', () => () => upvotesData_);
+
 const scenarios: [
   string,
   { config: Record<string, unknown>; artist: unknown; upvotes: string[] }
@@ -80,11 +87,8 @@ describe('SPageArtistSingle Snapshot', () => {
     'renders %s correctly',
     async (desc: string, { config, artist, upvotes }) => {
       config_ = config;
-      mockNuxtImport('useRuntimeConfig', () => () => config_);
-      globalThis.useArtist = () => artist;
-      globalThis.useFetchWithCache = () => ({
-        upvotes
-      });
+      artistData_ = artist;
+      upvotesData_ = { upvotes };
 
       const html = await ComponentRender(
         `SPageArtistSingle - ${desc}`,

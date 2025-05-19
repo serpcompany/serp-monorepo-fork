@@ -100,7 +100,7 @@
       });
       return;
     }
-    if (!user?.value?.email) {
+    if (!user?.value?.siteId) {
       toast.add({
         id: 'comment-login',
         title: 'Login required',
@@ -140,7 +140,7 @@
           });
           comments.value.push({
             id: response.value.id,
-            email: user.value.email,
+            user_id: user.value.siteId,
             name: user.value.name,
             image: user.value.image,
             content: commentObj.comment,

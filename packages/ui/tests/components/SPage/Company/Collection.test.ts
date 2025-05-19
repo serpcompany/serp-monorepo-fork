@@ -12,6 +12,15 @@ let config_: Record<string, unknown> = {
     useAuth: false
   }
 };
+let categoriesData_: unknown = [];
+let companiesData_: unknown = { companies: [], pagination: { totalItems: 0 } };
+
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport(
+  'useCompanyCategories',
+  () => () => Promise.resolve(categoriesData_)
+);
+mockNuxtImport('useCompanies', () => () => Promise.resolve(companiesData_));
 
 describe('SPageCompanyCollection Snapshot', () => {
   const scenarios: [
@@ -86,9 +95,8 @@ describe('SPageCompanyCollection Snapshot', () => {
     '%s',
     async (desc: string, { config, categories, companies }) => {
       config_ = config;
-      mockNuxtImport('useRuntimeConfig', () => () => config_);
-      globalThis.useCompanyCategories = () => Promise.resolve(categories);
-      globalThis.useCompanies = () => Promise.resolve(companies);
+      categoriesData_ = categories;
+      companiesData_ = companies;
 
       const html = await ComponentRender(
         `SPageCompanyCollection ${desc}`,

@@ -5,6 +5,9 @@
     baseSlug?: string;
     categoryBaseSlug?: string;
   }>();
+
+  const toast = useToast();
+
   const typeofValue = typeof props.value;
   const itemsAreObjects = computed(
     () =>
@@ -37,7 +40,26 @@
     'title',
     'excerpt',
     'serplyLink',
-    'type'
+    'type',
+    'module',
+    'hotScore',
+    'hotScoreHour',
+    'hotScoreDay',
+    'hotScoreWeek',
+    'hotScoreMonth',
+    'hotScoreYear',
+    'usersCurrentVote',
+    'verification',
+    'numDownvotes',
+    'numUpvotes',
+    'numReviews',
+    'numOneStarReviews',
+    'numTwoStarReviews',
+    'numThreeStarReviews',
+    'numFourStarReviews',
+    'numFiveStarReviews',
+    'averageRating',
+    'entityId'
   ];
   // rename these keys to show on the frontend
   const renameKeysMapping = {
@@ -123,12 +145,55 @@
   const shouldDisplayInline = (value: unknown, level: number): boolean => {
     return isPrimitive(value) && level >= 2; // Only inline for h3+ level content
   };
+
+  // Copy to clipboard function
+  async function copyToClipboard(sectionId: string) {
+    const jumpLink = `#${sectionId}`;
+    const link = `${window.location.href.split('#')[0]}${jumpLink}`;
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(link);
+      } else {
+        // Fallback for unsupported environments
+        const el = document.createElement('textarea');
+        el.value = link;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      }
+
+      toast.add({
+        id: 'copy-link',
+        title: 'Link copied to clipboard',
+        description: `Link to ${sectionId} section copied successfully`,
+        icon: 'check-circle'
+      });
+    } catch (error) {
+      console.error('Failed to copy text to clipboard:', error);
+      toast.add({
+        id: 'copy-link-error',
+        title: 'Failed to copy link',
+        description: `Could not copy link to ${sectionId} section`,
+        icon: 'error-circle'
+      });
+    }
+  }
 </script>
 <template>
   <div>
-    <HTMLRenderer v-if="key_ === 'readme'" :value="value" />
+    <HTMLRenderer
+      v-if="key_ === 'readme' || key_ === 'content' || key_ === 'article'"
+      :value="value"
+    />
+    <TableRenderer
+      v-else-if="key_ === 'bouts'"
+      :value="value"
+      :base-slug="baseSlug"
+    />
     <CategoryRenderer
-      v-if="key_ === 'categories'"
+      v-else-if="key_ === 'categories'"
       :value="value"
       :base-slug="categoryBaseSlug"
     />
@@ -210,7 +275,8 @@
               </h2>
               <UIcon
                 name="i-heroicons-link"
-                class="ml-2 h-4 w-4 text-gray-400"
+                class="ml-2 h-4 w-4 text-gray-400 hover:cursor-pointer"
+                @click="copyToClipboard(k)"
               />
             </div>
           </template>

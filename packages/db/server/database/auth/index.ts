@@ -12,13 +12,18 @@ export function getAuthClient(): Sql | undefined {
   }
 
   const connectionString = process.env.AUTH_DATABASE_URL;
-  
+
   if (!connectionString) {
     return undefined;
   }
-  
-  authClientInstance = postgres(connectionString);
-  return authClientInstance;
+
+  try {
+    authClientInstance = postgres(connectionString);
+    return authClientInstance;
+  } catch (error) {
+    console.error('Failed to create auth database client', error);
+    return undefined;
+  }
 }
 
 export function getAuthDb(): ReturnType<typeof drizzle> | undefined {
@@ -27,11 +32,16 @@ export function getAuthDb(): ReturnType<typeof drizzle> | undefined {
   }
 
   const client = getAuthClient();
-  
+
   if (!client) {
     return undefined;
   }
-  
-  authDbInstance = drizzle(client, { schema });
-  return authDbInstance;
+
+  try {
+    authDbInstance = drizzle(client, { schema });
+    return authDbInstance;
+  } catch (error) {
+    console.error('Failed to create auth drizzle instance', error);
+    return undefined;
+  }
 }

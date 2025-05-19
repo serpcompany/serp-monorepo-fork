@@ -1,0 +1,12 @@
+import type { Artist } from '@serp/types/types';
+
+export const useArtists = async (page = 1, limit = 50) => {
+  const data = await useFetchWithCache<Entities>(
+    `/entities?page=${page}&limit=${limit}&module=music_artist`
+  );
+  const { entities, ...rest } = data;
+  return {
+    ...rest,
+    artists: entities as Artist[]
+  };
+};
