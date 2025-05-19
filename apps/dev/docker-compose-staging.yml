@@ -3,29 +3,27 @@ version: '3.9'
 networks:
   web_network:
     external: true
-  serp-co-network:
-    external: true
   central-auth-network:
     external: true
 services:
-  serp-co-app-staging:
+  dev-app-staging:
     build:
       context: ../..
       args:
         - NUXT_UI_PRO_LICENSE=${NUXT_UI_PRO_LICENSE}
-      dockerfile: ./apps/serp-co/Dockerfile
-    container_name: serp-co-app-staging
+      dockerfile: ./apps/dev/Dockerfile
+    container_name: dev-app-staging
     restart: unless-stopped
     networks:
       - web_network
-      - serp-co-network
       - central-auth-network
     environment:
+    # TODO: ADD STRIPE ENV VARS
       - HOST=0.0.0.0
       - NODE_ENV=production
       - ROBOTS_ENV=staging
       - NUXT_SITE_ENV=staging
-      - NUXT_PUBLIC_SITE_URL=https://staging.serp.co
+      - NUXT_PUBLIC_SITE_URL=https://dev.serp.co
       - DATABASE_URL=${DATABASE_URL}
       - AUTH_DATABASE_URL=${AUTH_DATABASE_URL}
       - NUXT_PUBLIC_API_URL=${NUXT_PUBLIC_API_URL}
@@ -47,12 +45,12 @@ services:
       - MAILGUN_API_KEY=${MAILGUN_API_KEY}
       - MAILGUN_DOMAIN=${MAILGUN_DOMAIN}
       - MAILGUN_FROM=${MAILGUN_FROM}
-      - REDIS_URL=redis://serp-co-redis-staging:6379
+      - REDIS_URL=redis://dev-redis-staging:6379
     depends_on:
-      - serp-co-redis-staging
-  serp-co-redis-staging:
+      - dev-redis-staging
+  dev-redis-staging:
     image: redis:7.2.5
-    container_name: serp-co-redis-staging
+    container_name: dev-redis-staging
     restart: unless-stopped
     networks:
-      - serp-co-network
+      - dev-network
