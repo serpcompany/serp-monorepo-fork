@@ -53,4 +53,4 @@ services:
     container_name: dev-redis-staging
     restart: unless-stopped
     networks:
-      - dev-network
+      - web_network
