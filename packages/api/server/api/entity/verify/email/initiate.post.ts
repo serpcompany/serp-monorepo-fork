@@ -1,8 +1,8 @@
 import { getDb } from '@serp/db/server/database';
 import {
-  entity,
-  verification,
-  verificationRequest
+    entity,
+    verification,
+    verificationRequest
 } from '@serp/db/server/database/schema';
 import { sendEmail } from '@serp/mail/server';
 import crypto from 'crypto';
@@ -12,7 +12,7 @@ import { defineEventHandler, readBody } from 'h3';
 export default defineEventHandler(async (event) => {
   try {
     const session = await requireUserSession(event);
-    const userId = session.user?.siteId;
+    const userId = session?.user?.siteId;
     if (!userId) return { status: 401, message: 'Unauthorized' };
 
     const { id, email } = (await readBody(event)) as {

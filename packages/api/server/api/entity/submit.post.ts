@@ -1,9 +1,9 @@
 import { getDb } from '@serp/db/server/database';
 import {
-  category,
-  entity,
-  submitForm,
-  topic
+    category,
+    entity,
+    submitForm,
+    topic
 } from '@serp/db/server/database/schema';
 import { sendSlackNotification } from '@serp/notifications/server';
 import { and, eq, inArray } from 'drizzle-orm';
@@ -11,7 +11,7 @@ import { and, eq, inArray } from 'drizzle-orm';
 export default defineEventHandler(async (event) => {
   try {
     const session = await requireUserSession(event);
-    const userId = session.user?.siteId;
+    const userId = session?.user?.siteId;
     if (!userId) return { status: 401, message: 'Unauthorized' };
 
     const { module = '' } = getQuery(event);

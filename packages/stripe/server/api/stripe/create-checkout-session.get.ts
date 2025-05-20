@@ -8,14 +8,14 @@ import { processSuccessfulPayment } from '../../utils/validPaymentIntentMapping'
 export default defineEventHandler(async (event) => {
   // Validate user session and email
   const session = await requireUserSession(event);
-  const email = session.user?.email;
+  const email = session?.user?.email;
   if (!email) {
     throw createError({
       statusCode: 401,
       statusMessage: 'Unauthorized'
     });
   }
-  const userId = session.user?.siteId;
+  const userId = session?.user?.siteId;
   if (!userId) {
     throw createError({
       statusCode: 401,

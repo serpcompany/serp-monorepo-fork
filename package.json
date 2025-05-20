@@ -18,7 +18,9 @@
   },
   "resolutions": {
     "unimport": "4.1.1",
-    "vue-tsc": "2.2.0"
+    "vue-tsc": "2.2.0",
+    "vue": "3.5.14",
+    "@vue/server-renderer": "3.5.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.0",

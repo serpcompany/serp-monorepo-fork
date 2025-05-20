@@ -5,8 +5,8 @@ import { eq } from 'drizzle-orm';
 export default defineEventHandler(async (event) => {
   try {
     const session = await requireUserSession(event);
-    const userId = session.user?.siteId;
-    const email = session.user?.email;
+    const userId = session?.user?.siteId;
+    const email = session?.user?.email;
     if (!userId) return { status: 401, message: 'Unauthorized' };
     if (!email) return { status: 401, message: 'Email is required' };
 

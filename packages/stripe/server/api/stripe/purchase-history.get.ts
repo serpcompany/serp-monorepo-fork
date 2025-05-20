@@ -5,7 +5,7 @@ import { eq } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
   const session = await requireUserSession(event);
-  const email = session.user?.email;
+  const email = session?.user?.email;
   if (!email) {
     return { status: 401, message: 'Unauthorized' };
   }
@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
         .insert(customer)
         .values({
           id: customer_.id,
-          user: session.user?.siteId,
+          user: session?.user?.siteId,
           email
         })
         .execute();

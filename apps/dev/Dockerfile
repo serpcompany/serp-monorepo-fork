@@ -10,10 +10,10 @@ ARG NUXT_UI_PRO_LICENSE
 
 WORKDIR /app
 COPY . .
-RUN  pnpm i && cd /app/apps/dev && pnpm build
-# RUN pnpm --filter @dev install --shamefully-hoist
-# RUN pnpm store prune
-# RUN pnpm --filter @dev run build
+# RUN  pnpm i && cd /app/apps/dev && pnpm build
+RUN pnpm --filter @dev install --shamefully-hoist
+RUN pnpm store prune
+RUN pnpm --filter @dev run build
 
 # Stage 2: Deploy
 FROM node:21-slim as deploy
