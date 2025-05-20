@@ -90,24 +90,9 @@ importers:
       '@nuxtjs/sitemap':
         specifier: ^7.0.0
         version: 7.2.4(h3@1.15.3)(vite@6.3.5)(vue@3.5.13)
-      '@serp/api':
+      '@serp/tools':
         specifier: workspace:^
-        version: link:../../packages/api
-      '@serp/auth':
-        specifier: workspace:^
-        version: link:../../packages/auth
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../../packages/configs
-      '@serp/db':
-        specifier: workspace:^
-        version: link:../../packages/db
-      '@serp/mail':
-        specifier: workspace:^
-        version: link:../../packages/mail
-      '@serp/notifications':
-        specifier: workspace:^
-        version: link:../../packages/notifications
+        version: link:../../packages/tools
       '@serp/types':
         specifier: workspace:^
         version: link:../../packages/types
@@ -212,19 +197,6 @@ importers:
         version: 3.24.2
 
   apps/daft-fm:
-    dependencies:
-      '@serp/tools':
-        specifier: workspace:^
-        version: link:../../packages/tools
-      '@serp/types':
-        specifier: workspace:^
-        version: link:../../packages/types
-      '@serp/ui':
-        specifier: workspace:^
-        version: link:../../packages/ui
-      '@serp/utils':
-        specifier: workspace:^
-        version: link:../../packages/utils
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.1.0
@@ -268,6 +240,18 @@ importers:
       '@nuxtjs/sitemap':
         specifier: ^7.0.0
         version: 7.2.4(h3@1.15.3)(vite@6.3.5)(vue@3.5.13)
+      '@serp/tools':
+        specifier: workspace:^
+        version: link:../../packages/tools
+      '@serp/types':
+        specifier: workspace:^
+        version: link:../../packages/types
+      '@serp/ui':
+        specifier: workspace:^
+        version: link:../../packages/ui
+      '@serp/utils':
+        specifier: workspace:^
+        version: link:../../packages/utils
       '@slack/web-api':
         specifier: ^7.9.1
         version: 7.9.1
@@ -540,22 +524,6 @@ importers:
         version: 3.24.2
 
   apps/serp-ai:
-    dependencies:
-      '@serp/stripe':
-        specifier: workspace:^
-        version: link:../../packages/stripe
-      '@serp/tools':
-        specifier: workspace:^
-        version: link:../../packages/tools
-      '@serp/types':
-        specifier: workspace:^
-        version: link:../../packages/types
-      '@serp/ui':
-        specifier: workspace:^
-        version: link:../../packages/ui
-      '@serp/utils':
-        specifier: workspace:^
-        version: link:../../packages/utils
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.1.0
@@ -599,6 +567,21 @@ importers:
       '@nuxtjs/sitemap':
         specifier: ^7.0.0
         version: 7.2.4(h3@1.15.3)(vite@6.3.5)(vue@3.5.13)
+      '@serp/stripe':
+        specifier: workspace:^
+        version: link:../../packages/stripe
+      '@serp/tools':
+        specifier: workspace:^
+        version: link:../../packages/tools
+      '@serp/types':
+        specifier: workspace:^
+        version: link:../../packages/types
+      '@serp/ui':
+        specifier: workspace:^
+        version: link:../../packages/ui
+      '@serp/utils':
+        specifier: workspace:^
+        version: link:../../packages/utils
       '@slack/web-api':
         specifier: ^7.9.1
         version: 7.9.1
