@@ -22,18 +22,6 @@
     "test:update": "vitest --run --coverage --update",
     "test:watch": "vitest --coverage"
   },
-  "dependencies": {
-    "@serp/api": "workspace:^",
-    "@serp/auth": "workspace:^",
-    "@serp/db": "workspace:^",
-    "@serp/mail": "workspace:^",
-    "@serp/notifications": "workspace:^",
-    "@serp/stripe": "workspace:^",
-    "@serp/tools": "workspace:^",
-    "@serp/types": "workspace:^",
-    "@serp/ui": "workspace:^",
-    "@serp/utils": "workspace:^"
-  },
   "devDependencies": {
     "@bg-dev/nuxt-s3": "2.0.2",
     "@eslint/eslintrc": "^3.1.0",
@@ -41,6 +29,11 @@
     "@iconify-json/lucide": "^1.2.14",
     "@iconify-json/simple-icons": "^1.2.30",
     "@infisical/cli": "^0.31.8",
+    "@serp/stripe": "workspace:^",
+    "@serp/tools": "workspace:^",
+    "@serp/types": "workspace:^",
+    "@serp/ui": "workspace:^",
+    "@serp/utils": "workspace:^",
     "@nuxt/content": "^3.4.0",
     "@nuxt/eslint": "^0.6.1",
     "@nuxt/icon": "^1.7.5",
