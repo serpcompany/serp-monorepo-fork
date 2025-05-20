@@ -1,10 +1,10 @@
 import { getDb } from '@serp/db/server/database';
 import {
-    category,
-    entity,
-    featuredSubscription
+  category,
+  entity,
+  featuredSubscription
 } from '@serp/db/server/database/schema';
-import { and, eq, or } from 'drizzle-orm';
+import { and, eq, or, sql } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -39,10 +39,10 @@ export default defineEventHandler(async (event) => {
       .where(
         and(
           eq(featuredSubscription.user, userId),
-          activeOnly ? eq(featuredSubscription.isActive, true) : undefined,
+          activeOnly ? eq(featuredSubscription.isActive, true) : sql`true`,
           modules.length
             ? or(...modules.map((mod) => eq(entity.module, mod)))
-            : undefined
+            : sql`true`,
         )
       )
       .execute();
