@@ -49,7 +49,7 @@
           description: 'Company claimed successfully.',
           icon: 'check-circle'
         });
-        isVerified.value = user.siteId;
+        isVerified.value = user?.siteId;
         modalOpen.value = false;
       } else {
         toast.add({

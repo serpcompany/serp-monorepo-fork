@@ -1,14 +1,14 @@
 import { getDb } from '@serp/db/server/database';
 import {
-  verification,
-  verificationRequest
+    verification,
+    verificationRequest
 } from '@serp/db/server/database/schema';
 import { eq } from 'drizzle-orm';
 import { defineEventHandler, readBody } from 'h3';
 
 export default defineEventHandler(async (event) => {
   const session = await requireUserSession(event);
-  const userId = session.user?.siteId;
+  const userId = session?.user?.siteId;
   if (!userId) return { status: 401, message: 'Unauthorized' };
 
   const { requestId, code } = (await readBody(event)) as {

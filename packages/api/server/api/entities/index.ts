@@ -61,7 +61,7 @@ export default defineEventHandler(async (event) => {
         .where(
           and(
             inArray(vote.entity, ids),
-            user?.siteId ? eq(vote.user, user.siteId) : sql`FALSE`
+            user?.siteId ? eq(vote.user, user?.siteId) : sql`FALSE`
           )
         )
         .execute();
@@ -170,7 +170,7 @@ export default defineEventHandler(async (event) => {
         vote,
         and(
           eq(entity.id, vote.entity),
-          user?.siteId ? eq(vote.user, user.siteId) : sql`FALSE`
+          user?.siteId ? eq(vote.user, user?.siteId) : sql`FALSE`
         )
       )
       .leftJoin(

@@ -2,7 +2,7 @@ import { useServerStripe } from '#stripe/server';
 
 export default defineEventHandler(async (event) => {
   const session = await requireUserSession(event);
-  const email = session.user?.email;
+  const email = session?.user?.email;
   if (!email) {
     return { status: 401, message: 'Unauthorized' };
   }

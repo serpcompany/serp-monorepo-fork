@@ -5,7 +5,7 @@ import { and, eq, not, sql } from 'drizzle-orm';
 export default defineEventHandler(async (event) => {
   try {
     const session = await getUserSession(event);
-    const userId = session.user?.siteId;
+    const userId = session?.user?.siteId;
 
     const { id } = getRouterParams(event);
     const { page = '1', pageSize = '10' } = getQuery(event);
@@ -67,8 +67,8 @@ export default defineEventHandler(async (event) => {
           ...usersReview[0],
           user: {
             id: usersReview[0].user,
-            name: session.user?.name || null,
-            image: session.user?.image || null
+            name: session?.user?.name || null,
+            image: session?.user?.image || null
           }
         };
       }

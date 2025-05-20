@@ -7,7 +7,7 @@ import { processSuccessfulPayment } from '../../utils/validPaymentIntentMapping'
 
 export default defineEventHandler(async (event) => {
   const session = await requireUserSession(event);
-  const email = session.user?.email;
+  const email = session?.user?.email;
   if (!email) {
     return {
       status: 401,
@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
         .insert(customer)
         .values({
           id: customer_.id,
-          user: session.user?.siteId,
+          user: session?.user?.siteId,
           email
         })
         .execute();
@@ -68,7 +68,7 @@ export default defineEventHandler(async (event) => {
         description,
         metadata: {
           email,
-          user: session.user?.siteId,
+          user: session?.user?.siteId,
           type,
           id,
           customerId: customer_.id,
@@ -100,7 +100,7 @@ export default defineEventHandler(async (event) => {
           id,
           customerId: customer_.id,
           secondaryId,
-          user: session.user?.siteId
+          user: session?.user?.siteId
         }
       });
       return {

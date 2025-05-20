@@ -1,15 +1,15 @@
 import { getDb } from '@serp/db/server/database';
 import {
-  category,
-  entity,
-  featuredSubscription
+    category,
+    entity,
+    featuredSubscription
 } from '@serp/db/server/database/schema';
 import { and, eq, or } from 'drizzle-orm';
 
 export default defineEventHandler(async (event) => {
   try {
     const session = await requireUserSession(event);
-    const userId = session.user?.siteId;
+    const userId = session?.user?.siteId;
     if (!userId) return { status: 401, message: 'Unauthorized' };
 
     const { activeOnly = true, module = '' } = getQuery(event);
