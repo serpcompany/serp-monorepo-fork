@@ -2,15 +2,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   extends: [
-    '@serp/notifications',
     '@serp/utils',
-    '@serp/mail',
-    '@serp/auth',
+    '@serp/stripe',
     '@serp/tools',
     '@serp/types',
-    '@serp/stripe',
-    '@serp/db',
-    '@serp/api',
     '@serp/ui'
   ],
   modules: [
