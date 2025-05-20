@@ -14,8 +14,6 @@ services:
       dockerfile: ./apps/dev/Dockerfile
     container_name: dev-app-staging
     restart: unless-stopped
-    ports:
-      - "3000:80"
     networks:
       - web_network
       - central-auth-network
