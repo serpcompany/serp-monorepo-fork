@@ -46,6 +46,11 @@ jobs:
           path: node_modules
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
 
+      - name: install build tools
+        run: |
+          sudo apt-get update -y && apt-get upgrade -y
+          sudo apt-get install -y git make g++ python3
+
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm install
