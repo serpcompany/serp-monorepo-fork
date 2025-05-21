@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.6.1",
-    "@serp/configs": "workspace:^",
     "@types/youtube": "^0.1.0",
     "@vue/test-utils": "^2.4.6",
     "eslint": "^9.14.0",
