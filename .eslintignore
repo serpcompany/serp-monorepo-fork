@@ -1,1 +1,3 @@
 packages/ui/templates/*
+**/.nuxt/**
+.nuxt/
