@@ -1,0 +1,4 @@
+# Use root level .eslintignore
+../../.eslintignore
+
+# Package-specific ignores (if any)
