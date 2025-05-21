@@ -1,20 +1,31 @@
+# System and editor files
 .DS_Store
 .git/
 .idea/
+.vscode/
+
+# Build and output directories
 .nuxt/
 **/.nuxt/
 **/.nuxt/**
-**/.nuxt/eslint.config.mjs
-**/.nuxt/**/*.mjs
 .output/
+**/.output/
 .playground/
 .turbo/
 .vercel/
-.vscode/
 .wrangler/
 build/
 coverage/
 dist/
+
+# Auto-generated files - explicitly listed by path and pattern
+**/.nuxt/eslint.config.mjs
+**/eslint.config.mjs
+packages/**/eslint.config.mjs
+apps/**/eslint.config.mjs
+**/.nuxt/**/*.mjs
+
+# Package & dependency files
 node_modules/
 npm-debug.log*
 package-lock.json
