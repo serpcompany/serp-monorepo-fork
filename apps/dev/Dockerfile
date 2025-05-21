@@ -1,5 +1,5 @@
 # Stage 1: Builder
-FROM node:21-slim as builder
+FROM node:22-slim as builder
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y git make g++ python3
 
@@ -16,7 +16,7 @@ RUN pnpm store prune
 RUN pnpm --filter @dev run build
 
 # Stage 2: Deploy
-FROM node:21-slim as deploy
+FROM node:22-slim as deploy
 COPY --from=builder /app/apps/dev/.output /app/output
 ENV HOST=0.0.0.0
 ENV PORT=80
