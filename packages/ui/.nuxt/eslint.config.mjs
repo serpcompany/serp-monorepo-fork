@@ -682,3 +682,4 @@ export function withNuxt(...customs) {
 }
 
 export default withNuxt;
+// Test comment
