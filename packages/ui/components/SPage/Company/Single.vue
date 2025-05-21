@@ -150,15 +150,17 @@
       class="bg-background sticky top-0 z-50 transition-all duration-300"
       :image="data.logo"
       :serply-link="data.serplyLink"
+      :verified="data.verified"
     >
-      <template #upvote>
-        <CompanyEditButton v-if="useAuth" :id="data.id" />
-        <CompanyVerificationButton
-          v-if="useAuth"
+      <template #name-trailing>
+        <CompanyVerification
           :id="data.id"
           :domain="data.slug"
-          :is-verified-prop="data.verification"
+          :verified="data.verification"
         />
+      </template>
+      <template #upvote>
+        <CompanyEditButton v-if="useAuth" :id="data.id" />
         <VoteButton
           v-if="useAuth"
           :id="data.id"
