@@ -88,7 +88,7 @@ jobs:
     strategy:
       matrix:
         os: [self-hosted]
-        node: [18]
+        node: [21]
 
     steps:
       - uses: actions/setup-node@v3
@@ -121,7 +121,7 @@ jobs:
             #     strategy:
             #       matrix:
             #         os: [self-hosted]
-            #         node: [18]
+            #         node: [21]
 
             #     steps:
             #       - uses: actions/setup-node@v3
