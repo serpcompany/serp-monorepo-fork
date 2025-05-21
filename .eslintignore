@@ -1,3 +1,6 @@
 packages/ui/templates/*
-**/.nuxt/**
 .nuxt/
+**/.nuxt/
+**/.nuxt/**
+**/.nuxt/eslint.config.mjs
+**/.nuxt/**/*.mjs
