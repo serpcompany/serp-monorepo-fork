@@ -1,6 +1,16 @@
-packages/ui/templates/*
-.nuxt/
-**/.nuxt/
-**/.nuxt/**
-**/.nuxt/eslint.config.mjs
-**/.nuxt/**/*.mjs
+# Auto-generated directories
+.nuxt
+**/.nuxt
+**/.output
+**/.next
+**/.vuepress
+**/dist
+
+# Specific auto-generated files
+esm/**/*.mjs
+**/*.min.js
+**/eslint.config.mjs
+
+# Package-specific paths
+packages/ui/templates/**
+packages/ui/.nuxt/**
