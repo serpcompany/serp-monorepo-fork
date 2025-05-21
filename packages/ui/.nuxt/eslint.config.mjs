@@ -302,6 +302,7 @@ configs.append(
           'WritableComputedRef',
           'requestIdleCallback',
           'cancelIdleCallback',
+          'setInterval',
           'useAlbum',
           'useAlbums',
           'useAllCompaniesForCategory',

@@ -4,16 +4,12 @@
   "private": true,
   "description": "Shared configuration files for SERP monorepo",
   "exports": {
-    "./eslint": "./eslint/eslint.config.mjs",
     "./prettier": {
       "import": "./prettier/index.mjs",
       "require": "./prettier/index.js"
-    },
-    "./tsconfig": "./tsconfig/base.json"
+    }
   },
   "workspaces": [
-    "eslint",
-    "tsconfig",
     "prettier"
   ]
 }
