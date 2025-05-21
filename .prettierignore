@@ -2,6 +2,10 @@
 .git/
 .idea/
 .nuxt/
+**/.nuxt/
+**/.nuxt/**
+**/.nuxt/eslint.config.mjs
+**/.nuxt/**/*.mjs
 .output/
 .playground/
 .turbo/
