@@ -1,10 +1,10 @@
 import { getDb } from '@serp/db/server/database';
 import {
-    category,
-    edit,
-    entity,
-    topic,
-    verification
+  category,
+  edit,
+  entity,
+  topic,
+  verification
 } from '@serp/db/server/database/schema';
 import { and, eq, inArray, sql } from 'drizzle-orm';
 

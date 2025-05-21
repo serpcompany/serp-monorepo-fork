@@ -49,7 +49,12 @@ export default defineEventHandler(async (event) => {
       const [v] = await getDb()
         .select({ direction: vote.direction })
         .from(vote)
-        .where(and(eq(vote.entity, id), user?.siteId ? eq(vote.user, user?.siteId) : sql`false`))
+        .where(
+          and(
+            eq(vote.entity, id),
+            user?.siteId ? eq(vote.user, user?.siteId) : sql`false`
+          )
+        )
         .limit(1)
         .execute();
 
@@ -130,7 +135,10 @@ export default defineEventHandler(async (event) => {
       .leftJoin(entityAggregate, eq(entity.id, entityAggregate.entity))
       .leftJoin(
         vote,
-        and(eq(entity.id, vote.entity), user?.siteId ? eq(vote.user, user?.siteId) : sql`false`)
+        and(
+          eq(entity.id, vote.entity),
+          user?.siteId ? eq(vote.user, user?.siteId) : sql`false`
+        )
       )
       .leftJoin(verification, eq(entity.id, verification.entity));
 

@@ -27,10 +27,7 @@
     { immediate: true }
   );
 
-  const { data } = await useFetch(
-    () =>
-      `${runtimeConfig.public.apiUrl}/albums?page=${page.value}&limit=${limit.value}`
-  );
+  const data = await useAlbums();
 
   useSeoMeta({
     title: 'Albums',

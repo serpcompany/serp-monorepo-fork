@@ -134,7 +134,8 @@ exports[`SPagePostGlossaryCollection Snapshot > renders with posts and categorie
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>
@@ -275,7 +276,8 @@ exports[`SPagePostGlossaryCollection Snapshot > renders with posts and categorie
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>
@@ -416,7 +418,8 @@ exports[`SPagePostGlossaryCollection Snapshot > renders with posts but no catego
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>
@@ -557,7 +560,8 @@ exports[`SPagePostGlossaryCollection Snapshot > renders with posts but no catego
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>

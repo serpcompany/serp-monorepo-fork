@@ -26,13 +26,7 @@
     { immediate: true }
   );
 
-  const { data } = await useFetch(
-    () =>
-      `${runtimeConfig.public.apiUrl}/artists?page=${page.value}&limit=${limit.value}`,
-    {
-      lazy: true
-    }
-  );
+  const data = await useArtists();
 
   useSeoMeta({
     title: 'Artists',

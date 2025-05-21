@@ -8,11 +8,7 @@ export default defineNuxtConfig({
     '@serp/mail',
     '@serp/notifications'
   ],
-  modules: [
-    '@nuxt/eslint',
-    '@unlok-co/nuxt-stripe',
-    '@nuxt/test-utils/module'
-  ],
+  modules: ['@nuxt/eslint', '@unlok-co/nuxt-stripe', '@nuxt/test-utils/module'],
   multiCache: {
     data: {
       enabled: true

@@ -1,9 +1,9 @@
 import { getDb } from '@serp/db/server/database';
 import {
-    category,
-    entity,
-    submitForm,
-    topic
+  category,
+  entity,
+  submitForm,
+  topic
 } from '@serp/db/server/database/schema';
 import { sendSlackNotification } from '@serp/notifications/server';
 import { and, eq, inArray } from 'drizzle-orm';

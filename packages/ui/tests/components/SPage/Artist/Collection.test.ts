@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars, @typescript-eslint/no-unused-vars */
-
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import SPageArtistCollection from '../../../../components/SPage/Artist/Collection.vue';
@@ -13,17 +11,14 @@ mockNuxtImport('useRuntimeConfig', () => () => ({
 
 mockNuxtImport('useSeoMeta', () => () => {});
 
-mockNuxtImport('useFetch', () => async (url: string, options: unknown) => {
-  return {
-    data: {
-      artists: [
-        { id: 1, name: 'Artist 1', slug: 'artist-1' },
-        { id: 2, name: 'Artist 2', slug: 'artist-2' }
-      ],
-      pagination: { totalItems: 2 }
-    }
-  };
-});
+mockNuxtImport('useArtists', () => () => ({
+  artists: [
+    { id: 1, name: 'Artist 1', slug: 'artist-1' },
+    { id: 2, name: 'Artist 2', slug: 'artist-2' }
+  ],
+  pagination: { totalItems: 2 }
+}));
+
 mockNuxtImport('useRouter', () => () => ({
   push: () => {},
   replace: () => {},

@@ -1,7 +1,7 @@
 import { getDb } from '@serp/db/server/database';
 import {
-    verification,
-    verificationRequest
+  verification,
+  verificationRequest
 } from '@serp/db/server/database/schema';
 import { eq } from 'drizzle-orm';
 import { defineEventHandler, readBody } from 'h3';

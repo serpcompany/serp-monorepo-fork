@@ -48,7 +48,8 @@ exports[`SPageToolCollection Snapshot > renders the default snapshot correctly 1
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>
