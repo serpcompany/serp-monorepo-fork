@@ -42,6 +42,7 @@
     "@nuxtjs/sitemap": "^7.0.0",
     "@serp/stripe": "workspace:^",
     "@serp/tools": "workspace:^",
+    "@serp/instrumentation": "workspace:^",
     "@serp/types": "workspace:^",
     "@serp/ui": "workspace:^",
     "@serp/utils": "workspace:^",

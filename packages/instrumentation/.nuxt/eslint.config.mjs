@@ -224,6 +224,8 @@ configs.append(
           'requestIdleCallback',
           'cancelIdleCallback',
           'setInterval',
+          'usePostHogFeatureFlagD',
+          'usePostHogFeatureFlag',
           'useNitroApp',
           'useRuntimeConfig',
           'useAppConfig',

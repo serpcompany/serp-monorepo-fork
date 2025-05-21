@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@serp/stripe',
     '@serp/tools',
     '@serp/types',
-    '@serp/ui'
+    '@serp/ui',
+    '@serp/instrumentation'
   ],
   modules: [
     '@nuxt/ui-pro',
