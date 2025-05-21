@@ -14,7 +14,8 @@ exports[`SFooter Snapshot > renders full config correctly 1`] = `
                 <!--v-if-->
               </button>
               <!--v-if-->
-              <!---->
+              <!--teleport start-->
+              <!--teleport end-->
             </div>
           </div>
           <div class="flex flex-col lg:grid grid-flow-col auto-cols-fr gap-8 xl:col-span-2">
@@ -75,7 +76,8 @@ exports[`SFooter Snapshot > renders minimal config with empty arrays correctly 1
                 <!--v-if-->
               </button>
               <!--v-if-->
-              <!---->
+              <!--teleport start-->
+              <!--teleport end-->
             </div>
           </div>
           <!--v-if-->

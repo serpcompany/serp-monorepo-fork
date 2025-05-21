@@ -87,7 +87,8 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>
@@ -181,7 +182,8 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts and categories (w
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>
@@ -265,7 +267,8 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts but no categories
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>
@@ -349,7 +352,8 @@ exports[`SPagePostBlogCollection Snapshot > renders with posts but no categories
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section>

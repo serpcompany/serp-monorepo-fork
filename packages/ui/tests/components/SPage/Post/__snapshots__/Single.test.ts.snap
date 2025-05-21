@@ -43,7 +43,8 @@ exports[`SPagePostSingle Snapshot > renders with basic post data (with auth) cor
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -145,7 +146,8 @@ exports[`SPagePostSingle Snapshot > renders with basic post data (without auth) 
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -197,7 +199,8 @@ exports[`SPagePostSingle Snapshot > renders with blog module (with auth) correct
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -297,7 +300,8 @@ exports[`SPagePostSingle Snapshot > renders with blog module (without auth) corr
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -467,7 +471,8 @@ exports[`SPagePostSingle Snapshot > renders with movies module (with auth) corre
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section><!-- Comments Section -->
@@ -567,7 +572,8 @@ exports[`SPagePostSingle Snapshot > renders with movies module (without auth) co
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section><!-- Comments Section -->

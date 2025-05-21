@@ -11,7 +11,7 @@ const postProcessLyrics = (lyrics: string) => {
 
 export const useSong = async (slug: string) => {
   const song = await useFetchWithCache<Recording>(
-    `/entity/${slug}&module=music_song`
+    `/entity/${slug}?module=music_songs`
   );
   if (song.lyrics) {
     song.lyrics = postProcessLyrics(song.lyrics);

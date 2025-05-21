@@ -18,11 +18,6 @@
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
 
-  // Get upvotes
-  const { upvotes } = (await useFetchWithCache<{ upvotes: string[] }>(
-    `/upvotes/${encodeURIComponent(song.slug)}?module=song`
-  )) || { upvotes: [] };
-
   // Get the full album data to access its recordings
   const fullAlbum = song.releaseGroup
     ? await useAlbum(song.releaseGroup.slug)
@@ -130,11 +125,13 @@
       serply-link="https://serp.ly/@daftfm/amazon/music/unlimited"
     >
       <template #upvote>
-        <UpvoteButton
+        <VoteButton
           v-if="useAuth"
-          :id="encodeURIComponent(song.slug)"
-          module="song"
-          :upvotes="upvotes"
+          :id="song.id"
+          module="music_songs"
+          :users-current-vote="song.usersCurrentVote"
+          :upvotes="song.numUpvotes"
+          :downvotes="song.numDownvotes"
         />
       </template>
     </MultipageHeaderMusic>

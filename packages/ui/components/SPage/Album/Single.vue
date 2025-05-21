@@ -3,6 +3,7 @@
     Artist, // Import Artist type
     ArtistReleaseGroup // Import ArtistReleaseGroup for typing
   } from '@serp/types/types';
+  import { useArtist } from '../../../../api/composables/useArtist';
 
   // Add a data attribute to help AdSense crawler identify content sections
   definePageMeta({
@@ -17,11 +18,6 @@
 
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
-
-  // Get upvotes
-  const { upvotes } = (await useFetchWithCache<{ upvotes: string[] }>(
-    `/upvotes/${encodeURIComponent(album.slug)}?module=album`
-  )) || { upvotes: [] };
 
   const genres = computed(() => {
     return album?.genres ? album.genres.join(', ') : '';
@@ -80,8 +76,8 @@
 
     if (artistSlug) {
       try {
-        const fetchedArtistData = await useFetchWithCache<Artist>(
-          `/artists/${encodeURIComponent(artistSlug)}`
+        const fetchedArtistData = await useArtist(
+          encodeURIComponent(artistSlug)
         );
         // Filter the releaseGroups, excluding the current album
         otherArtistAlbums.value = (
@@ -111,11 +107,13 @@
         />
       </template>
       <template #upvote>
-        <UpvoteButton
+        <VoteButton
           v-if="useAuth"
-          :id="encodeURIComponent(album.slug)"
-          module="album"
-          :upvotes="upvotes"
+          :id="album.id"
+          module="music_albums"
+          :users-current-vote="album.usersCurrentVote"
+          :upvotes="album.numUpvotes"
+          :downvotes="album.numDownvotes"
         />
       </template>
     </MultipageHeaderMusic>

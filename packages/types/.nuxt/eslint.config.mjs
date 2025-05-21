@@ -3,12 +3,12 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import typegen from '../../../node_modules/.pnpm/eslint-typegen@1.0.0_eslint@9.20.1/node_modules/eslint-typegen/dist/index.mjs';
+import typegen from '../../../node_modules/.pnpm/eslint-typegen@0.3.2_eslint@9.27.0/node_modules/eslint-typegen/dist/index.mjs';
 import {
   createConfigForNuxt,
   defineFlatConfigs,
   resolveOptions
-} from '../../../node_modules/.pnpm/@nuxt+eslint-config@1.1.0_@vue+compiler-sfc@3.5.14_eslint@9.20.1_typescript@5.7.3/node_modules/@nuxt/eslint-config/dist/flat.mjs';
+} from '../../../node_modules/.pnpm/@nuxt+eslint-config@0.6.2_eslint@9.27.0_typescript@5.8.3/node_modules/@nuxt/eslint-config/dist/flat.mjs';
 import { fileURLToPath } from 'url';
 
 const r = (...args) => fileURLToPath(new URL(...args, import.meta.url));
@@ -29,7 +29,7 @@ export const options = resolveOptions({
     middleware: ['middleware'],
     modules: ['modules'],
     servers: [],
-    root: [],
+    root: [r('..')],
     src: ['']
   }
 });
@@ -69,6 +69,7 @@ configs.append(
           'useScriptNpm',
           'useScriptUmamiAnalytics',
           'useScriptSnapchatPixel',
+          'useScriptRybbitAnalytics',
           'isVue2',
           'isVue3',
           'defineNuxtLink',

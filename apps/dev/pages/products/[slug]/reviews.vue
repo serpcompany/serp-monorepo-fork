@@ -10,7 +10,7 @@
 </script>
 <template>
   <SPageGenericServiceProvider
-    v-if="data?.type === 'service-provider'"
+    v-if="data?.module === 'service_provider'"
     :data="data"
   />
   <SPageCompanySingle v-else :data="data" />

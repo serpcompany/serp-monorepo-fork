@@ -42,7 +42,8 @@ exports[`SinglePostsPost Snapshot > renders with full post and auth disabled cor
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section><!-- Comments Section -->
@@ -92,7 +93,8 @@ exports[`SinglePostsPost Snapshot > renders with full post and auth enabled corr
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section><!-- Comments Section -->
@@ -192,7 +194,8 @@ exports[`SinglePostsPost Snapshot > renders with non-empty relatedPosts correctl
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section><!-- Comments Section -->
@@ -261,7 +264,8 @@ exports[`SinglePostsPost Snapshot > renders without video and minimal fields cor
           <!--v-if-->
         </button>
         <!--v-if-->
-        <!---->
+        <!--teleport start-->
+        <!--teleport end-->
       </div>
     </div>
   </section><!-- Comments Section -->

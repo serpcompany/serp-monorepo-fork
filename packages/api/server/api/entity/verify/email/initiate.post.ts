@@ -1,8 +1,8 @@
 import { getDb } from '@serp/db/server/database';
 import {
-    entity,
-    verification,
-    verificationRequest
+  entity,
+  verification,
+  verificationRequest
 } from '@serp/db/server/database/schema';
 import { sendEmail } from '@serp/mail/server';
 import crypto from 'crypto';

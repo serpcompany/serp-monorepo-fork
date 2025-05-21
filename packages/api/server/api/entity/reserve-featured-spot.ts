@@ -1,8 +1,8 @@
 import { getDb } from '@serp/db/server/database';
 import {
-    category,
-    entity,
-    featuredSubscription
+  category,
+  entity,
+  featuredSubscription
 } from '@serp/db/server/database/schema';
 import { and, eq, sql } from 'drizzle-orm';
 

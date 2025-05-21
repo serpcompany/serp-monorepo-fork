@@ -4,8 +4,8 @@ exports[`SPageSongCollection Snapshot > renders with defaults correctly 1`] = `
 "<div class="container py-20">
   <h1 class="py-10">Songs</h1>
   <div class="mt-2 grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-2">
-    <div><a href="" aria-label="song name">Song 1 - <span>Artist One <!--v-if--></span></a></div>
-    <div><a href="" aria-label="song name">Song 2 - <span>Artist Two <!--v-if--></span></a></div>
+    <div><a href="" aria-label="song name"><span>Song 1 - </span></a></div>
+    <div><a href="" aria-label="song name"><span>Song 2 - </span></a></div>
   </div>
   <div class="my-20 flex w-full justify-center">
     <nav aria-label="pagination">

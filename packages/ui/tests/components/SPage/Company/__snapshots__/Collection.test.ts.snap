@@ -154,7 +154,8 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section>
@@ -316,7 +317,8 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section>
@@ -468,7 +470,8 @@ exports[`SPageCompanyCollection Snapshot > renders correctly without categories 
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section>
@@ -620,7 +623,8 @@ exports[`SPageCompanyCollection Snapshot > renders correctly without categories 
             <!--v-if-->
           </button>
           <!--v-if-->
-          <!---->
+          <!--teleport start-->
+          <!--teleport end-->
         </div>
       </div>
     </section>

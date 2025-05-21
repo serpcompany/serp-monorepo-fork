@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
           activeOnly ? eq(featuredSubscription.isActive, true) : sql`true`,
           modules.length
             ? or(...modules.map((mod) => eq(entity.module, mod)))
-            : sql`true`,
+            : sql`true`
         )
       )
       .execute();
