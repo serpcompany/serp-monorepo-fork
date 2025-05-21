@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         os: [self-hosted]
-        node: [21]
+        node: [20]
 
     steps:
       - uses: actions/setup-node@v3
@@ -45,11 +45,6 @@ jobs:
         with:
           path: node_modules
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.yaml')) }}
-
-      - name: install build tools
-        run: |
-          apt-get update -y && apt-get upgrade -y
-          apt-get install -y git make g++ python3
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
