@@ -181,7 +181,8 @@ export default defineNuxtConfig({
           'https://*.serp.ai',
           'https://serp.co',
           'https://*.serp.co',
-          'https://embed.tawk.to'
+          'https://embed.tawk.to',
+          'https://*.adtrafficquality.google'
         ],
         'connect-src': ["'self'", 'https:', 'ws:'],
         'frame-src': [

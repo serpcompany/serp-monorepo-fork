@@ -64,7 +64,6 @@ export default defineNuxtConfig({
     }
   },
   security: {
-    strict: true,
     rateLimiter: false,
     headers: {
       contentSecurityPolicy: {
@@ -93,9 +92,25 @@ export default defineNuxtConfig({
           "'unsafe-inline'",
           'https://static.cloudflareinsights.com',
           'https://www.youtube.com',
+          'https://*.youtube.com',
           'https://www.youtube-nocookie.com',
+          'https://*.youtube-nocookie.com',
           'https://www.googletagmanager.com',
-          'https://googleads.g.doubleclick.net'
+          'https://*.googletagmanager.com',
+          'https://pagead2.googlesyndication.com',
+          'https://*.googlesyndication.com',
+          'https://googleads.g.doubleclick.net',
+          'https://*.doubleclick.net',
+          'https://*.googleapis.com',
+          'https://*.google-analytics.com',
+          'https://serp.ly',
+          'https://*.serp.ly',
+          'https://serp.ai',
+          'https://*.serp.ai',
+          'https://serp.co',
+          'https://*.serp.co',
+          'https://embed.tawk.to',
+          'https://*.adtrafficquality.google'
         ],
         'connect-src': [
           "'self'",
