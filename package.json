@@ -15,7 +15,9 @@
     "test:update": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test:update",
     "test:update:windows": "turbo run test:update",
     "test:watch": "turbo run test:watch",
-    "typecheck": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | tee reports/typecheck-errors.txt"
+    "typecheck": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | tee reports/typecheck-errors.txt",
+    "typecheck:ts7006": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | grep 'TS7006' && exit 1 || exit 0",
+    "typecheck:phase1": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | grep -E 'TS7006|TS7053|TS7034|TS7005' && exit 1 || exit 0"
   },
   "resolutions": {
     "unimport": "4.1.1",
