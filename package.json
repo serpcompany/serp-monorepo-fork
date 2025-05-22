@@ -14,7 +14,8 @@
     "test:windows": "turbo run test",
     "test:update": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test:update",
     "test:update:windows": "turbo run test:update",
-    "test:watch": "turbo run test:watch"
+    "test:watch": "turbo run test:watch",
+    "typecheck": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | tee reports/typecheck-errors.txt"
   },
   "resolutions": {
     "unimport": "4.1.1",
