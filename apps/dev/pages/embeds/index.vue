@@ -1,21 +1,21 @@
 <script setup lang="ts">
   const badges = [
     {
-      name: 'SERP Featured',
+      name: 'SERP Featured Trophy',
       url: 'https://embeds.serp.co/serp-featured-trophy.svg',
       path: 'serp-featured-trophy',
       width: 250,
       height: 50
     },
     {
-      name: 'SERP Verified',
+      name: 'SERP Verified Medium',
       url: 'https://embeds.serp.co/serp-verified-med.svg',
       path: 'serp-verified-med',
       width: 250,
       height: 50
     },
     {
-      name: 'SERP Verified',
+      name: 'SERP Verified Small',
       url: 'https://embeds.serp.co/serp-verified-small.svg',
       path: 'serp-verified-small',
       width: 250,
@@ -45,6 +45,7 @@
   ];
 
   const toast = useToast();
+  const customUrl = ref('');
 
   const copyToClipboard = (badge) => {
     // Generate UTM parameters using badge information
@@ -52,8 +53,9 @@
     const utmMedium = `badge`; // The medium type
     const utmCampaign = `badge-${badge.path}`; // Specific campaign identifier
 
-    // Create URL with UTM parameters
-    const badgeUrl = `https://serp.co/?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}`;
+    // Create URL with UTM parameters and optional custom URL
+    const baseUrl = customUrl.value ? customUrl.value : 'https://serp.co';
+    const badgeUrl = `${baseUrl}?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}`;
 
     // Use explicit width and height HTML attributes for consistent rendering across third-party sites
     const embedCode = `<a href="${badgeUrl}"><img src="https://embeds.serp.co/${badge.path}.svg" alt="${badge.name}" width="${badge.width}" height="${badge.height}" /></a>`;
@@ -95,6 +97,16 @@
           Click the button below each badge to copy its HTML code to your
           clipboard.
         </p>
+      </div>
+
+      <div class="mx-auto mb-8 max-w-md">
+        <UFormGroup
+          label="Custom URL (optional)"
+          help="Add a full URL to link to a specific website"
+          class="mx-auto flex items-center justify-center"
+        >
+          <UInput v-model="customUrl" placeholder="https://example.com" />
+        </UFormGroup>
       </div>
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
