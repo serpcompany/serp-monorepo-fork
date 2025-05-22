@@ -10,14 +10,15 @@ export default defineEventHandler(async (event) => {
 
     const { module } = getQuery(event);
 
+    // @todo - improve the typesafety of this after implementing zod
     const modules = module
       .split(',')
-      .map((mod) => mod.trim())
+      .map((mod: string) => mod.trim())
       .filter(Boolean);
 
     const whereConditions = [
       modules.length
-        ? or(...modules.map((mod) => eq(entity.module, mod)))
+        ? or(...modules.map((mod: string) => eq(entity.module, mod)))
         : sql`true`,
       eq(verification.user, userId)
     ];

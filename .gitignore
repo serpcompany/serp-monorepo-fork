@@ -73,5 +73,7 @@ node_modules/
 # OS specific
 # Task files
 tasks.json
-tasks/ 
+tasks/
 **/.claude/settings.local.json
+
+tsconfig.tsbuildinfo

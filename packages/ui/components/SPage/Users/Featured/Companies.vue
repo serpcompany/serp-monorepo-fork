@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import type { Company, Category } from '@serp/types/types';
+  
   const { loggedIn, user } = useUserSession();
 
   const loading = ref(false);
@@ -37,7 +39,7 @@
       if (companiesData && companiesData.entities?.length) {
         companies.value = companiesData.entities;
         companyOptions.value = companiesData.entities.map(
-          (company) => company.slug
+          (company: Company) => company.slug
         );
         availablePlacements.value = companiesData.availablePlacements;
         disabled.value = false;

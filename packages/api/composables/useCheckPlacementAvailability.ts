@@ -1,7 +1,8 @@
 export const useCheckPlacementAvailability = async (
-  placement,
-  id,
-  categorySlug = ''
+  // @todo - improve the typesafety of this after implementing zod
+  placement: string,
+  id: number | null,
+  categorySlug: string | null = ''
 ) => {
   if (!categorySlug || categorySlug === 'all') {
     return useFetchWithCache(

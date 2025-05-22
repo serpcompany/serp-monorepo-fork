@@ -45,7 +45,7 @@
     limit.value += parseInt(props.initialMessageLimit);
   }
 
-  function resize(event) {
+  function resize(event: Event) {
     const textarea = event.target;
     if (newComment.value === '') {
       textarea.style.height = '32px';
@@ -55,14 +55,14 @@
     }
   }
 
-  function expandTextarea(event) {
+  function expandTextarea(event: Event) {
     const textarea = event.target;
     textarea.style.height = 'auto';
     textarea.style.height = `${Math.max(textarea.scrollHeight, 60)}px`;
     isExpanded.value = true;
   }
 
-  function handleBlur(event) {
+  function handleBlur(event: Event) {
     setTimeout(() => {
       if (document.activeElement.closest('.action-buttons')) {
         return;
@@ -87,7 +87,7 @@
     }
   }
 
-  const getIndex = (id) =>
+  const getIndex = (id: string) =>
     props.comments.findIndex((comment) => comment.id === id);
 
   async function addComment() {
@@ -169,7 +169,7 @@
     }
   }
 
-  function deleteComment(index) {
+  function deleteComment(index: number) {
     comments.value.splice(index, 1);
   }
 
