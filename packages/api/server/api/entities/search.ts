@@ -43,9 +43,10 @@ export default defineEventHandler(async (event) => {
 
     const offset = (pageNumber - 1) * limitNumber;
 
+    // @todo - improve the typesafety of this after implementing zod
     const modules = module
       .split(',')
-      .map((mod) => mod.trim())
+      .map((mod: string) => mod.trim())
       .filter(Boolean);
 
     const parseFilters = (raw: string) =>
@@ -76,7 +77,7 @@ export default defineEventHandler(async (event) => {
 
     const whereConditions = [
       modules.length
-        ? or(...modules.map((mod) => eq(entity.module, mod)))
+        ? or(...modules.map((mod: string) => eq(entity.module, mod)))
         : sql`true`
     ];
 

@@ -18,6 +18,9 @@
     },
     "test:watch": {},
     "test:update": {},
+    "typecheck": {
+      "outputLogs": "new-only"
+    },
     "dev": {
       "cache": true,
       "persistent": true

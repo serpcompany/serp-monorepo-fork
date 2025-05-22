@@ -2,6 +2,7 @@
   import * as z from 'zod';
   import type { FormSubmitEvent } from '@nuxt/ui';
   import { v4 as uuidv4 } from 'uuid';
+  import type { Category } from '@serp/types/types';
 
   const { loggedIn, user } = useUserSession();
   if (!loggedIn.value) {
@@ -66,7 +67,8 @@
       company.description = submissionData.formData?.description;
       company.categories = submissionData.formData?.categories
         ? submissionData.formData?.categories.map(
-            (category) => categories.find((c) => c.id === category)?.name
+            (category: number) =>
+              categories.find((c: Category) => c.id === category)?.name
           )
         : [];
       company.logo = submissionData.formData?.logo;
@@ -91,7 +93,7 @@
     { key: 'description', label: 'RichDescription' }
   ];
 
-  function checkIfValidValue(value) {
+  function checkIfValidValue(value: string | string[]) {
     if (typeof value === 'string') return value.trim() !== '';
     if (Array.isArray(value)) return value.length > 0;
     return false;

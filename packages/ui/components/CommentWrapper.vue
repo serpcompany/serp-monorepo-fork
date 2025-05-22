@@ -35,7 +35,7 @@
     { immediate: true }
   );
 
-  const getIndex = (id) =>
+  const getIndex = (id: string) =>
     localState.replies.findIndex((comment) => comment.id === id);
 
   const emit = defineEmits([
@@ -318,7 +318,7 @@
     }
   }
 
-  function deleteReply(index) {
+  function deleteReply(index: number) {
     localState.replies.splice(index, 1);
 
     emit('delete-reply', {
@@ -331,7 +331,7 @@
     limit.value += parseInt(props.initialMessageLimit);
   }
 
-  function resize(event, isUpdate = false) {
+  function resize(event: Event, isUpdate = false) {
     const textarea = event.target;
     textarea.style.height = 'auto';
     textarea.style.height = `${textarea.scrollHeight}px`;

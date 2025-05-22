@@ -2,6 +2,7 @@ import { useDataCache } from '#nuxt-multi-cache/composables';
 import { getDb } from '@serp/db/server/database';
 import { entity } from '@serp/db/server/database/schema';
 import { and, eq, sql } from 'drizzle-orm';
+import type { Category } from '@serp/types/types';
 
 export default defineEventHandler(async (event) => {
   const { domain, category } = getQuery(event);
@@ -44,8 +45,9 @@ export default defineEventHandler(async (event) => {
     .execute();
 
   // get category name from entity category item with matching slug
+  // @todo - improve the typesafety of this after implementing zod
   const categoryName = company[0]?.categories.find(
-    (cat) => cat.slug === categorySlug
+    (cat: Category) => cat.slug === categorySlug
   )?.name;
 
   if (!company || company.length === 0) {

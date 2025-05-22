@@ -73,7 +73,8 @@ export default defineEventHandler(async (event) => {
         freshVotes.map((v) => [v.entityId, v.direction])
       );
 
-      const entities = value.entities.map((e) => ({
+      // @todo - improve the typesafety of this after implementing zod
+      const entities = value.entities.map((e: Entity) => ({
         ...e,
         ...aggsById[e.id],
         usersCurrentVote: votesById[e.id]
@@ -186,14 +187,15 @@ export default defineEventHandler(async (event) => {
         )
       );
 
+    // @todo - improve the typesafety of this after implementing zod
     const modules = module
       .split(',')
-      .map((m) => m.trim())
+      .map((m: string) => m.trim())
       .filter(Boolean);
 
     const whereConditions = [
       modules.length
-        ? or(...modules.map((m) => eq(entity.module, m)))
+        ? or(...modules.map((m: string) => eq(entity.module, m)))
         : sql`true`
     ];
 
