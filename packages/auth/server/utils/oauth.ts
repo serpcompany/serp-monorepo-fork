@@ -18,8 +18,11 @@ export interface OAuthUserData {
   siteId?: number;
 }
 
-// @todo - improve the typesafety of this after implementing zod  
-export const handleOAuthSuccess = async (event: H3Event, oauthUser: OAuthUserData) => {
+// @todo - improve the typesafety of this after implementing zod
+export const handleOAuthSuccess = async (
+  event: H3Event,
+  oauthUser: OAuthUserData
+) => {
   if (!oauthUser || !oauthUser.email) {
     // eslint-disable-next-line no-console
     console.error('No user data returned from OAuth provider');

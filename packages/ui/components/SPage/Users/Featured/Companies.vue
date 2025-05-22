@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import type { Company, Category } from '@serp/types/types';
-  
+
   const { loggedIn, user } = useUserSession();
 
   const loading = ref(false);

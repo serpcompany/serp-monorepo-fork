@@ -67,7 +67,8 @@
       company.description = submissionData.formData?.description;
       company.categories = submissionData.formData?.categories
         ? submissionData.formData?.categories.map(
-            (category: number) => categories.find((c: Category) => c.id === category)?.name
+            (category: number) =>
+              categories.find((c: Category) => c.id === category)?.name
           )
         : [];
       company.logo = submissionData.formData?.logo;
