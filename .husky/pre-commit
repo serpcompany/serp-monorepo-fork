@@ -15,6 +15,10 @@ pnpm lint
 echo "[husky]: Running script: pnpm test"
 pnpm test
 
+# Run TypeScript check for TS7006 errors (parameter implicitly has any type)
+echo "[husky]: Running script: pnpm typecheck:ts7006"
+pnpm typecheck:ts7006
+
 # Run Infisical scan on staged changes with baseline
 echo "[husky]: Running command: pnpm infisical scan git-changes --staged --verbose --baseline-path .reports/secrets-report.json"
 pnpm infisical scan git-changes --staged --verbose --baseline-path .reports/secrets-report.json

@@ -37,20 +37,35 @@ export function createConfig({
   const config = [
     {
       ignores: [
+        // Common directories to ignore
         'node_modules/',
         'dist/',
         '.nuxt/',
+        '**/.nuxt/',
+        '**/.nuxt/**/',
+        '**/eslint.config.mjs',
         '.playground/',
         'coverage/',
         '.github/',
         '.vscode/',
-        '.nuxt/',
         '.turbo/',
         '.wrangler/',
         '.data/',
         '.git/',
+        '.output/',
+        '**/.output/',
+        
+        // Package-specific patterns
+        'packages/ui/templates/',
+        'packages/ui/templates/**',
         'packages/ui/templates/nuxt-ui-landing/**',
         'packages/ui/templates/nuxt-ui-saas/**',
+        'packages/ui/.nuxt/**',
+        
+        // Auto-generated files
+        '**/*.min.js',
+        'esm/**/*.mjs',
+        
         ...additionalIgnores
       ]
     },

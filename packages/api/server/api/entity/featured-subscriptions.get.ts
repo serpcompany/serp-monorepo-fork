@@ -14,9 +14,10 @@ export default defineEventHandler(async (event) => {
 
     const { activeOnly = true, module = '' } = getQuery(event);
 
+    // @todo - improve the typesafety of this after implementing zod
     const modules = module
       .split(',')
-      .map((mod) => mod.trim())
+      .map((mod: string) => mod.trim())
       .filter(Boolean);
 
     const results = await getDb()
@@ -41,7 +42,7 @@ export default defineEventHandler(async (event) => {
           eq(featuredSubscription.user, userId),
           activeOnly ? eq(featuredSubscription.isActive, true) : sql`true`,
           modules.length
-            ? or(...modules.map((mod) => eq(entity.module, mod)))
+            ? or(...modules.map((mod: string) => eq(entity.module, mod)))
             : sql`true`
         )
       )

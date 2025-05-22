@@ -401,9 +401,6 @@ importers:
       '@nuxtjs/sitemap':
         specifier: ^7.0.0
         version: 7.3.0(h3@1.15.3)(vite@6.3.5)(vue@3.5.14)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../../packages/configs
       '@serp/stripe':
         specifier: workspace:^
         version: link:../../packages/stripe
@@ -734,9 +731,6 @@ importers:
       '@nuxtjs/sitemap':
         specifier: ^7.0.0
         version: 7.3.0(h3@1.15.3)(vite@6.3.5)(vue@3.5.14)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../../packages/configs
       '@serp/stripe':
         specifier: workspace:^
         version: link:../../packages/stripe
@@ -1038,9 +1032,6 @@ importers:
       '@nuxt/test-utils':
         specifier: ^3.14.4
         version: 3.19.0(@testing-library/vue@8.1.0)(@vue/test-utils@2.4.6)(jsdom@25.0.1)(playwright-core@1.52.0)(typescript@5.8.3)(vitest@2.1.9)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -1114,9 +1105,6 @@ importers:
       '@nuxt/test-utils':
         specifier: ^3.11.0
         version: 3.19.0(@testing-library/vue@8.1.0)(@vue/test-utils@2.4.6)(happy-dom@13.10.1)(typescript@5.8.3)(vitest@1.6.1)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@testing-library/jest-dom':
         specifier: ^6.4.2
         version: 6.6.3
@@ -1145,8 +1133,6 @@ importers:
         specifier: 3.5.14
         version: 3.5.14(typescript@5.8.3)
 
-  packages/configs: {}
-
   packages/db:
     dependencies:
       '@serp/types':
@@ -1165,9 +1151,6 @@ importers:
       '@nuxt/eslint':
         specifier: ^0.6.1
         version: 0.6.2(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -1223,9 +1206,6 @@ importers:
       '@nuxt/test-utils':
         specifier: ^3.14.4
         version: 3.19.0(@testing-library/vue@8.1.0)(@vue/test-utils@2.4.6)(jsdom@25.0.1)(playwright-core@1.52.0)(typescript@5.8.3)(vitest@2.1.9)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -1284,9 +1264,6 @@ importers:
       '@nuxt/eslint':
         specifier: ^0.6.1
         version: 0.6.2(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -1318,9 +1295,6 @@ importers:
       '@nuxt/eslint':
         specifier: ^0.6.1
         version: 0.6.2(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -1358,9 +1332,6 @@ importers:
       '@nuxt/test-utils':
         specifier: ^3.14.4
         version: 3.19.0(@testing-library/vue@8.1.0)(@vue/test-utils@2.4.6)(typescript@5.8.3)(vitest@2.1.9)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -1404,9 +1375,6 @@ importers:
       '@nuxt/test-utils':
         specifier: ^3.14.4
         version: 3.19.0(@testing-library/vue@8.1.0)(@vue/test-utils@2.4.6)(jsdom@25.0.1)(playwright-core@1.52.0)(typescript@5.8.3)(vitest@2.1.9)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -1455,9 +1423,6 @@ importers:
       '@nuxt/eslint':
         specifier: ^0.6.1
         version: 0.6.2(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@types/youtube':
         specifier: ^0.1.0
         version: 0.1.1
@@ -1519,9 +1484,6 @@ importers:
       '@nuxtjs/html-validator':
         specifier: ^1.8.2
         version: 1.8.2(vitest@2.1.9)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.16(tailwindcss@4.1.7)
@@ -1585,9 +1547,6 @@ importers:
       '@nuxt/eslint':
         specifier: ^0.6.1
         version: 0.6.2(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
-      '@serp/configs':
-        specifier: workspace:^
-        version: link:../configs
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6

@@ -31,7 +31,6 @@
     "@nuxt/test-utils": "^3.14.4",
     "@nuxt/ui-pro": "^3.1.2",
     "@nuxtjs/html-validator": "^1.8.2",
-    "@serp/configs": "workspace:^",
     "@tailwindcss/typography": "^0.5.15",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/vue": "^8.1.0",

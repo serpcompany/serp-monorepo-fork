@@ -20,7 +20,8 @@
     "pretest": "vitest --coverage --run",
     "test": "vitest --coverage --run",
     "test:update": "vitest --run --coverage --update",
-    "test:watch": "vitest --coverage"
+    "test:watch": "vitest --coverage",
+    "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
     "@bg-dev/nuxt-s3": "2.0.2",
@@ -40,7 +41,6 @@
     "@nuxtjs/html-validator": "^1.8.2",
     "@nuxtjs/seo": "^3.0.3",
     "@nuxtjs/sitemap": "^7.0.0",
-    "@serp/configs": "workspace:^",
     "@serp/stripe": "workspace:^",
     "@serp/tools": "workspace:^",
     "@serp/types": "workspace:^",

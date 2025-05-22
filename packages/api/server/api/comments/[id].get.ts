@@ -1,6 +1,7 @@
 import { getDb } from '@serp/db/server/database';
 import { comment } from '@serp/db/server/database/schema';
 import { sql } from 'drizzle-orm';
+import type { Comment } from '@serp/types/types';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -66,16 +67,17 @@ FROM full_tree;
     const flatComments = result[0]?.comments || [];
 
     // Convert the flat list into a nested structure.
-    const nestComments = (comments) => {
-      const commentMap = {};
+    // @todo - improve the typesafety of this after implementing zod
+    const nestComments = (comments: Comment[]) => {
+      const commentMap: Record<string, Comment> = {};
       // initialize map with each comment, and initialize replies array
-      comments.forEach((comment) => {
+      comments.forEach((comment: Comment) => {
         comment.replies = [];
         commentMap[comment.id] = comment;
       });
 
-      const nested = [];
-      comments.forEach((comment) => {
+      const nested: Comment[] = [];
+      comments.forEach((comment: Comment) => {
         // if comment has a parent, attach to parent's replies, otherwise it's a top-level comment.
         if (comment.parent_id) {
           if (commentMap[comment.parent_id]) {

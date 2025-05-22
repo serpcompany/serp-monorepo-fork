@@ -1,0 +1,4 @@
+# Use root level .eslintignore
+../../.eslintignore
+
+# App-specific ignores (if any)
