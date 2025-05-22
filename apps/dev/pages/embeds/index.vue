@@ -34,6 +34,13 @@
       path: 'serp-featured-small',
       width: 250,
       height: 50
+    },
+    {
+      name: 'SERP Shield',
+      url: 'https://embeds.serp.co/serp-shield-badge.svg',
+      path: 'serp-shield-badge',
+      width: 250,
+      height: 250
     }
   ];
 
@@ -49,7 +56,7 @@
     const badgeUrl = `https://serp.co/?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}`;
 
     // Use explicit width and height HTML attributes for consistent rendering across third-party sites
-    const embedCode = `<a href="${badgeUrl}"><img src="https://embeds.serp.co/${badge.path}.svg" alt="${badge.name}" width="250" height="50" /></a>`;
+    const embedCode = `<a href="${badgeUrl}"><img src="https://embeds.serp.co/${badge.path}.svg" alt="${badge.name}" width="${badge.width}" height="${badge.height}" /></a>`;
 
     navigator.clipboard
       .writeText(embedCode)
