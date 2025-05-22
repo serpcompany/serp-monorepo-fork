@@ -105,7 +105,10 @@
           help="Add a full URL to link to a specific website"
           class="mx-auto flex items-center justify-center"
         >
-          <UInput v-model="customUrl" placeholder="https://example.com" />
+          <UInput
+            v-model="customUrl"
+            placeholder="https://serp.co/products/best/cloud-gpu"
+          />
         </UFormGroup>
       </div>
 
