@@ -77,5 +77,4 @@ tasks/
 **/.claude/settings.local.json
 
 tsconfig.tsbuildinfo
-*tsconfig.tsbuildinfo
-
+**/tsconfig.tsbuildinfo
