@@ -87,7 +87,7 @@
     :show-buttons="false"
   />
   <main>
-    <div class="space-y-4">
+    <div class="mx-auto max-w-5xl space-y-4">
       <MCPServerCard
         v-for="server in data.servers"
         :key="server.slug"
