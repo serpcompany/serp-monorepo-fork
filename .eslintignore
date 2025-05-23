@@ -26,3 +26,6 @@ packages/ui/.nuxt/**
 # Auto-generated files
 **/*.min.js
 esm/**/*.mjs
+
+**/tsconfig.tsbuildinfo
+tsconfig.tsbuildinfo

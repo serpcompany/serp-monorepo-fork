@@ -1,18 +1,15 @@
 <script setup lang="ts">
-  const props = defineProps<{
+  interface Props {
     id: number | string;
     domain: string;
-    isVerifiedProp: number | boolean;
-  }>();
+  }
 
-  const { isVerifiedProp } = toRefs(props);
-  const isVerified = ref(isVerifiedProp.value);
-  watch(isVerifiedProp, (v) => (isVerified.value = v));
+  const props = defineProps<Props>();
+  const emit = defineEmits(['close']);
 
   const { loggedIn, user } = useUserSession();
   const toast = useToast();
 
-  const modalOpen = ref(false);
   const accountLoading = ref(false);
   const emailLoading = ref(false);
   const customEmail = ref('');
@@ -23,7 +20,7 @@
         id: 'company-verification-login',
         title: 'Login required',
         description: 'You need to login to claim this company.',
-        icon: 'exclamation-circle'
+        icon: 'lucide:info'
       });
       return;
     }
@@ -32,12 +29,13 @@
         id: 'claim-company-error',
         title: 'Error',
         description: 'No email found on your account.',
-        icon: 'i-heroicons-exclamation-circle'
+        icon: 'lucide:info'
       });
       return;
     }
 
     accountLoading.value = true;
+
     try {
       const res = await $fetch(`/api/entity/claim/${props.id}`, {
         method: 'POST'
@@ -47,16 +45,15 @@
           id: 'claim-company-success',
           title: 'Success',
           description: 'Company claimed successfully.',
-          icon: 'check-circle'
+          icon: 'lucide:circle-check'
         });
-        isVerified.value = user?.siteId;
-        modalOpen.value = false;
+        emit('close');
       } else {
         toast.add({
           id: 'claim-company-error',
           title: 'Error',
           description: `Failed to claim the company. - ${res.message}`,
-          icon: 'i-heroicons-exclamation-circle'
+          icon: 'lucide:info'
         });
       }
     } catch (error) {
@@ -64,7 +61,7 @@
         id: 'claim-company-error',
         title: 'Error',
         description: 'An error occurred while claiming the company.',
-        icon: 'i-heroicons-exclamation-circle'
+        icon: 'lucide:info'
       });
     } finally {
       accountLoading.value = false;
@@ -77,7 +74,7 @@
         id: 'company-verification-email-error',
         title: 'Error',
         description: 'Please enter an email address.',
-        icon: 'i-heroicons-exclamation-circle'
+        icon: 'lucide:info'
       });
       return;
     }
@@ -93,15 +90,15 @@
           id: 'company-verification-email-sent',
           title: 'Success',
           description: 'Verification email sent!',
-          icon: 'check-circle'
+          icon: 'lucide:circle-check'
         });
-        modalOpen.value = false;
+        emit('close');
       } else {
         toast.add({
           id: 'company-verification-email-error',
           title: 'Error',
           description: `Failed to send email. - ${res.error}`,
-          icon: 'i-heroicons-exclamation-circle'
+          icon: 'lucide:info'
         });
       }
     } catch (error) {
@@ -109,7 +106,7 @@
         id: 'company-verification-email-error',
         title: 'Error',
         description: 'An error occurred while sending verification email.',
-        icon: 'i-heroicons-exclamation-circle'
+        icon: 'lucide:info'
       });
     } finally {
       emailLoading.value = false;
@@ -118,58 +115,54 @@
 </script>
 
 <template>
-  <div class="flex items-center">
-    <div v-if="isVerified" class="flex items-center text-green-500">
-      <UIcon name="i-heroicons-check-circle" class="h-5 w-5" />
-      <span class="ml-2">Verified</span>
-    </div>
-    <div v-else>
-      <UModal
-        v-model:open="modalOpen"
-        title="Verify This Company"
-        description="Choose a verification method below."
-      >
-        <UButton color="primary" @click="modalOpen = true">
-          Claim This Company
-        </UButton>
-
-        <template #body>
-          <div class="space-y-6">
-            <div>
-              <p class="mb-2 font-medium">
-                Use your account email: (must be @{{ domain }})
-              </p>
-              <UButton
-                :loading="accountLoading"
-                color="success"
-                @click="claimWithAccount"
-              >
-                Use {{ user?.email }}
-              </UButton>
-            </div>
-
-            <hr />
-
-            <div>
-              <p class="mb-2 font-medium">
-                Or enter a different email: (must be @{{ domain }})
-              </p>
-              <UInput
-                v-model="customEmail"
-                placeholder="name@yourcompany.com"
-                class="mb-2"
-              />
-              <UButton
-                :loading="emailLoading"
-                color="secondary"
-                @click="sendVerificationEmail"
-              >
-                Send Verification Email
-              </UButton>
-            </div>
-          </div>
-        </template>
-      </UModal>
-    </div>
-  </div>
+  <UModal
+    title="Verify This Company"
+    description="Choose a verification method below."
+    :close="{ onClick: () => emit('close') }"
+    :ui="{
+      title: 'text-base'
+    }"
+  >
+    <template #body>
+      <div class="flex flex-col gap-y-6">
+        <div class="flex flex-col items-start gap-y-3">
+          <p class="text-sm font-medium">
+            Use your account email
+            <span class="text-muted">(must be @{{ domain }})</span>:
+          </p>
+          <UButtonGroup class="w-full">
+            <UBadge
+              color="neutral"
+              variant="outline"
+              size="lg"
+              class="flex-1"
+              :label="user?.email"
+            />
+            <UButton
+              :loading="accountLoading"
+              color="success"
+              label="Use this email"
+              @click="claimWithAccount"
+            />
+          </UButtonGroup>
+        </div>
+        <USeparator label="or" orientation="horizontal" />
+        <div class="flex flex-col items-start gap-y-3">
+          <p class="text-sm font-medium">
+            Use an different email
+            <span class="text-muted">(must be @{{ domain }})</span>:
+          </p>
+          <UButtonGroup class="w-full">
+            <UInput placeholder="name@yourcompany.com" class="w-full" />
+            <UButton
+              :loading="emailLoading"
+              color="secondary"
+              label="Send verification"
+              @click="sendVerificationEmail"
+            />
+          </UButtonGroup>
+        </div>
+      </div>
+    </template>
+  </UModal>
 </template>
