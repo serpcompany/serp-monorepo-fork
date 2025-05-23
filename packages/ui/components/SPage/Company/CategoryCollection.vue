@@ -47,35 +47,31 @@
 </script>
 
 <template>
-  <UPage>
-    <!-- hero -->
+  <div>
     <SHero
       :headline="`The Best ${data?.category?.name}`"
       :show-search-bar="false"
       :show-buttons="false"
     />
-
-    <UMain>
-      <!-- rows: companies -->
-      <div class="space-y-4">
+    <main class="space-y-20">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <CompanyCard
           v-for="company in data.companies"
           :key="company.slug"
           :company="company"
         />
       </div>
-
       <UPagination
         v-model:page="page"
         :total="data?.pagination?.totalItems"
         :items-per-page="limit"
         :sibling-count="3"
         aria-label="pagination"
-        class="mt-20 flex justify-center overflow-x-auto rounded-none"
+        class="flex justify-center overflow-x-auto rounded-none"
       />
 
       <!-- article -->
-      <section v-if="data?.category?.buyersGuide" class="mt-20">
+      <section v-if="data?.category?.buyersGuide">
         <CompanyArticleSection :article="data?.category?.buyersGuide" />
       </section>
 
@@ -102,9 +98,8 @@
         v-if="categories && categories.length"
         :categories="categories"
         headline="Categories"
-        class="mt-20"
         base-slug="products/best"
       />
-    </UMain>
-  </UPage>
+    </main>
+  </div>
 </template>
