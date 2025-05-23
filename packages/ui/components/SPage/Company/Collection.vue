@@ -38,35 +38,29 @@
 </script>
 
 <template>
-  <div class="pb-10">
-    <!-- hero -->
+  <div>
     <SHero
       headline="Products, Software & Services."
       subheadline="Discover top-rated software, tools & services."
       :show-search-bar="false"
       :show-buttons="false"
     />
-
-    <main>
-      <!-- rows: companies -->
-      <div class="space-y-4">
+    <main class="space-y-20">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <CompanyCard
           v-for="company in data.companies"
           :key="company.slug"
           :company="company"
         />
       </div>
-
       <UPagination
         v-model:page="page"
         :total="data?.pagination?.totalItems"
         :items-per-page="limit"
         :sibling-count="3"
         aria-label="pagination"
-        class="mt-20 flex justify-center overflow-x-auto rounded-none"
+        class="flex justify-center overflow-x-auto rounded-none"
       />
-
-      <!-- link hub -->
       <SLinkHub
         v-if="categories && categories.length"
         :categories="categories"
