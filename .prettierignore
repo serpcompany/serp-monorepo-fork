@@ -35,3 +35,6 @@ pnpm-workspace.yaml
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
+
+**/tsconfig.tsbuildinfo
+tsconfig.tsbuildinfo

@@ -28,13 +28,17 @@ exports[`CompanyCard Snapshot > renders company with expanded content correctly 
               <polyline data-v-5deb94c6="" points="15 3 21 3 21 9"></polyline>
               <line data-v-5deb94c6="" x1="10" y1="14" x2="21" y2="3"></line>
             </svg></a><!-- upvote button -->
-          <div data-v-5deb94c6="" class="flex w-full items-center sm:w-auto" module="company"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-up mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button><span class="mx-2 text-lg font-semibold">NaN</span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-down mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button></div>
+          <div data-v-5deb94c6="" module="company">
+            <div class="relative inline-flex -space-x-px"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-up shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button><span class="font-medium inline-flex items-center not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-xs gap-1 rounded-md ring ring-inset ring-accented text-default bg-default p-1 w-8 justify-center"><!--v-if--><span class="truncate">NaN</span>
+              <!--v-if--></span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-down shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -74,13 +78,17 @@ exports[`CompanyCard Snapshot > renders company with expanded content correctly 
               <polyline data-v-5deb94c6="" points="15 3 21 3 21 9"></polyline>
               <line data-v-5deb94c6="" x1="10" y1="14" x2="21" y2="3"></line>
             </svg></a><!-- upvote button -->
-          <div data-v-5deb94c6="" class="flex w-full items-center sm:w-auto" module="company"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-up mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button><span class="mx-2 text-lg font-semibold">NaN</span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-down mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button></div>
+          <div data-v-5deb94c6="" module="company">
+            <div class="relative inline-flex -space-x-px"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-up shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button><span class="font-medium inline-flex items-center not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-xs gap-1 rounded-md ring ring-inset ring-accented text-default bg-default p-1 w-8 justify-center"><!--v-if--><span class="truncate">NaN</span>
+              <!--v-if--></span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-down shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -120,13 +128,17 @@ exports[`CompanyCard Snapshot > renders featured company with complete details c
               <polyline data-v-5deb94c6="" points="15 3 21 3 21 9"></polyline>
               <line data-v-5deb94c6="" x1="10" y1="14" x2="21" y2="3"></line>
             </svg></a><!-- upvote button -->
-          <div data-v-5deb94c6="" class="flex w-full items-center sm:w-auto" module="company"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-up mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button><span class="mx-2 text-lg font-semibold">NaN</span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-down mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button></div>
+          <div data-v-5deb94c6="" module="company">
+            <div class="relative inline-flex -space-x-px"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-up shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button><span class="font-medium inline-flex items-center not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-xs gap-1 rounded-md ring ring-inset ring-accented text-default bg-default p-1 w-8 justify-center"><!--v-if--><span class="truncate">NaN</span>
+              <!--v-if--></span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-down shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -166,13 +178,17 @@ exports[`CompanyCard Snapshot > renders featured company with complete details c
               <polyline data-v-5deb94c6="" points="15 3 21 3 21 9"></polyline>
               <line data-v-5deb94c6="" x1="10" y1="14" x2="21" y2="3"></line>
             </svg></a><!-- upvote button -->
-          <div data-v-5deb94c6="" class="flex w-full items-center sm:w-auto" module="company"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-up mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button><span class="mx-2 text-lg font-semibold">NaN</span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-down mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button></div>
+          <div data-v-5deb94c6="" module="company">
+            <div class="relative inline-flex -space-x-px"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-up shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button><span class="font-medium inline-flex items-center not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-xs gap-1 rounded-md ring ring-inset ring-accented text-default bg-default p-1 w-8 justify-center"><!--v-if--><span class="truncate">NaN</span>
+              <!--v-if--></span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-down shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -213,13 +229,17 @@ exports[`CompanyCard Snapshot > renders non-featured company correctly (with aut
               <polyline data-v-5deb94c6="" points="15 3 21 3 21 9"></polyline>
               <line data-v-5deb94c6="" x1="10" y1="14" x2="21" y2="3"></line>
             </svg></a><!-- upvote button -->
-          <div data-v-5deb94c6="" class="flex w-full items-center sm:w-auto" module="company"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-up mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button><span class="mx-2 text-lg font-semibold">NaN</span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-down mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button></div>
+          <div data-v-5deb94c6="" module="company">
+            <div class="relative inline-flex -space-x-px"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-up shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button><span class="font-medium inline-flex items-center not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-xs gap-1 rounded-md ring ring-inset ring-accented text-default bg-default p-1 w-8 justify-center"><!--v-if--><span class="truncate">NaN</span>
+              <!--v-if--></span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-down shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -259,13 +279,17 @@ exports[`CompanyCard Snapshot > renders non-featured company correctly (without 
               <polyline data-v-5deb94c6="" points="15 3 21 3 21 9"></polyline>
               <line data-v-5deb94c6="" x1="10" y1="14" x2="21" y2="3"></line>
             </svg></a><!-- upvote button -->
-          <div data-v-5deb94c6="" class="flex w-full items-center sm:w-auto" module="company"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-up mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button><span class="mx-2 text-lg font-semibold">NaN</span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <!--v-if--><span class="flex items-center text-xl"><span class="iconify i-lucide:square-chevron-down mr-2 size-5" aria-hidden="true"></span><span class="text-lg"></span></span>
-              <!--v-if-->
-            </button></div>
+          <div data-v-5deb94c6="" module="company">
+            <div class="relative inline-flex -space-x-px"><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-up shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button><span class="font-medium inline-flex items-center not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-xs gap-1 rounded-md ring ring-inset ring-accented text-default bg-default p-1 w-8 justify-center"><!--v-if--><span class="truncate">NaN</span>
+              <!--v-if--></span><button type="button" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors not-only:first:rounded-e-none not-only:last:rounded-s-none not-last:not-first:rounded-none focus-visible:z-[1] text-sm gap-1.5 ring ring-inset ring-accented text-default bg-default hover:bg-elevated disabled:bg-default aria-disabled:bg-default focus:outline-none focus-visible:ring-2 focus-visible:ring-inverted p-1.5"><span class="iconify i-lucide:arrow-big-down shrink-0 size-5" aria-hidden="true"></span>
+                <!--v-if-->
+                <!--v-if-->
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
