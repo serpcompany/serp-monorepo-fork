@@ -12,8 +12,8 @@
 <template>
   <UCard
     :ui="{
-      root: 'divide-dashed',
-      body: 'p-5 sm:p-5',
+      root: 'flex flex-col divide-dashed hover:ring-(--ui-border-accented) transition-all',
+      body: 'p-5 sm:p-5 flex-grow',
       footer:
         'px-5 py-4 sm:px-5 sm:py-4 bg-gray-50 dark:bg-black/10 rounded-b-lg'
     }"
@@ -50,24 +50,25 @@
       <div class="flex flex-row items-center gap-3">
         <UTooltip :text="`${server?.stars || 0} Stars`">
           <div class="inline-flex items-center gap-1.5">
-            <UIcon name="lucide:star" class="size-3" />
+            <UIcon name="lucide:star" class="size-4" />
             <span class="text-muted text-xs">{{ server?.stars || 0 }}</span>
           </div>
         </UTooltip>
         <UTooltip :text="`${server?.forks || 0} Forks`">
           <div class="inline-flex items-center gap-1.5">
-            <UIcon name="lucide:git-fork" class="size-3" />
+            <UIcon name="lucide:git-fork" class="size-4" />
             <span class="text-muted text-xs">{{ server?.forks || 0 }}</span>
           </div>
         </UTooltip>
-        <NuxtLink
+        <UButton
           :to="server.serplyLink"
-          class="hover:text-highlighted ml-auto inline-flex items-center gap-1.5"
+          variant="ghost"
+          size="xs"
+          icon="lucide:external-link"
           target="_blank"
+          class="ml-auto"
           external
-        >
-          <UIcon name="lucide:external-link" class="size-3" />
-        </NuxtLink>
+        />
       </div>
     </template>
   </UCard>
