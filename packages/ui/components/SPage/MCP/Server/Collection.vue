@@ -78,65 +78,64 @@
 </script>
 
 <template>
-  <SHero
-    headline="MCP Servers"
-    :subheadline="
-      categorySlug
-        ? `Discover ${data.category.name} MCP Servers.`
-        : 'The largest collection of MCP Servers.'
-    "
-    :show-search-bar="false"
-    :show-buttons="false"
-  />
-  <main>
-    <div class="mx-auto max-w-5xl space-y-4">
-      <MCPServerCard
-        v-for="server in data.servers"
-        :key="server.slug"
-        :server="server"
+  <div>
+    <SHero
+      headline="MCP Servers"
+      :subheadline="
+        categorySlug
+          ? `Discover ${data.category.name} MCP Servers.`
+          : 'The largest collection of MCP Servers.'
+      "
+      :show-search-bar="false"
+      :show-buttons="false"
+    />
+    <main class="space-y-20">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <MCPServerCard
+          v-for="server in data.servers"
+          :key="server.slug"
+          :server="server"
+        />
+      </div>
+      <UPagination
+        v-model:page="page"
+        :total="data?.pagination?.totalItems"
+        :items-per-page="limit"
+        :sibling-count="3"
+        aria-label="pagination"
+        class="flex justify-center overflow-x-auto rounded-none"
       />
-    </div>
 
-    <UPagination
-      v-model:page="page"
-      :total="data?.pagination?.totalItems"
-      :items-per-page="limit"
-      :sibling-count="3"
-      aria-label="pagination"
-      class="mt-20 flex justify-center overflow-x-auto rounded-none"
-    />
+      <!-- article -->
+      <section v-if="data?.category?.buyersGuide">
+        <CompanyArticleSection :article="data?.category?.buyersGuide" />
+      </section>
 
-    <!-- article -->
-    <section v-if="data?.category?.buyersGuide" class="mt-20">
-      <CompanyArticleSection :article="data?.category?.buyersGuide" />
-    </section>
-
-    <!-- faqs -->
-    <UPageSection
-      v-if="data?.category?.faqs"
-      title="FAQs"
-      class="mx-auto max-w-5xl"
-    >
-      <UPageAccordion
-        :items="faqItems"
-        :ui="{ body: { class: 'prose dark:prose-invert' } }"
+      <!-- faqs -->
+      <UPageSection
+        v-if="data?.category?.faqs"
+        title="FAQs"
+        class="mx-auto max-w-5xl"
       >
-        <template #body="{ item }">
-          <div
-            class="prose dark:prose-invert max-w-full"
-            v-html="item.content"
-          ></div>
-        </template>
-      </UPageAccordion>
-    </UPageSection>
-
-    <SLinkHub
-      v-if="categories && categories.length"
-      :categories="categories"
-      headline="Categories"
-      class="mt-20"
-      base-slug="mcp/servers/category"
-    />
-  </main>
-  <NewsletterSignupPageSection />
+        <UPageAccordion
+          :items="faqItems"
+          :ui="{ body: { class: 'prose dark:prose-invert' } }"
+        >
+          <template #body="{ item }">
+            <div
+              class="prose dark:prose-invert max-w-full"
+              v-html="item.content"
+            ></div>
+          </template>
+        </UPageAccordion>
+      </UPageSection>
+      <SLinkHub
+        v-if="categories && categories.length"
+        :categories="categories"
+        headline="Categories"
+        base-slug="mcp/servers/category"
+      />
+      <NewsletterSignupPageSection />
+    </main>
+  </div>
 </template>
