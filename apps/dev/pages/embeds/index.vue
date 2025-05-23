@@ -74,7 +74,7 @@
     // Generate UTM parameters using badge information and company domain
     const utmSource = 'serp-embeds'; // The general source/platform
     const utmMedium = `badge`; // The medium type
-    const utmCampaign = companyDomain.value; // Use company domain as campaign identifier
+    const utmCampaign = encodeURIComponent(companyDomain.value); // Use company domain as campaign identifier
     const utmContent = linkTarget.value; // Use the target URL as content identifier
 
     // Create URL with UTM parameters
