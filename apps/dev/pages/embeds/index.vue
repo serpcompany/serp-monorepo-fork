@@ -39,23 +39,47 @@
       name: 'SERP Shield',
       url: 'https://embeds.serp.co/serp-shield-badge.svg',
       path: 'serp-shield-badge',
-      width: 250,
-      height: 250
+      width: 200,
+      height: 194
     }
   ];
 
   const toast = useToast();
-  const customUrl = ref('');
+  const companyDomain = ref('');
+  const linkTarget = ref('');
 
-  const copyToClipboard = (badge) => {
-    // Generate UTM parameters using badge information
+  const copyToClipboard = async (badge) => {
+    // Prompt user for company domain
+    const domain = prompt('Enter company domain (e.g., jace.ai):');
+
+    // If user cancels or enters empty string, use default
+    if (!domain) {
+      toast.add({
+        title: 'Domain not provided',
+        description: 'Using default UTM parameters instead.',
+        icon: 'i-lucide-info',
+        color: 'info'
+      });
+      return;
+    }
+
+    companyDomain.value = domain;
+
+    // Prompt user for the URL of their desired link target
+    const targetUrl = prompt('Enter the URL of your desired link target:');
+
+    // Store the target URL (even if empty)
+    linkTarget.value = targetUrl || '';
+
+    // Generate UTM parameters using badge information and company domain
     const utmSource = 'serp-embeds'; // The general source/platform
     const utmMedium = `badge`; // The medium type
-    const utmCampaign = `badge-${badge.path}`; // Specific campaign identifier
+    const utmCampaign = companyDomain.value; // Use company domain as campaign identifier
+    const utmContent = linkTarget.value; // Use the target URL as content identifier
 
-    // Create URL with UTM parameters and optional custom URL
-    const baseUrl = customUrl.value ? customUrl.value : 'https://serp.co';
-    const badgeUrl = `${baseUrl}?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}`;
+    // Create URL with UTM parameters
+    const baseUrl = 'https://serp.co';
+    const badgeUrl = `${baseUrl}?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}${utmContent ? `&utm_content=${encodeURIComponent(utmContent)}` : ''}`;
 
     // Use explicit width and height HTML attributes for consistent rendering across third-party sites
     const embedCode = `<a href="${badgeUrl}"><img src="https://embeds.serp.co/${badge.path}.svg" alt="${badge.name}" width="${badge.width}" height="${badge.height}" /></a>`;
@@ -97,19 +121,6 @@
           Click the button below each badge to copy its HTML code to your
           clipboard.
         </p>
-      </div>
-
-      <div class="mx-auto mb-8 max-w-md">
-        <UFormGroup
-          label="Custom URL (optional)"
-          help="Add a full URL to link to a specific website"
-          class="mx-auto flex items-center justify-center"
-        >
-          <UInput
-            v-model="customUrl"
-            placeholder="https://serp.co/products/best/cloud-gpu"
-          />
-        </UFormGroup>
       </div>
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

@@ -32,5 +32,6 @@
   "html.format.enable": false,
   "html.format.preserveNewLines": true,
   "html.format.wrapLineLength": 0,
-  "editor.formatOnSaveMode": "file"
+  "editor.formatOnSaveMode": "file",
+  "zencoder.enableRepoIndexing": true
 }
