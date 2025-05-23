@@ -32,108 +32,90 @@
 <template>
   <UCard
     :ui="{
-      root: 'hover:ring-(--ui-border-accented) transition-all',
-      body: 'p-5 sm:p-5'
+      root: 'flex flex-col divide-dashed transition-all',
+      body: 'p-5 sm:p-5 flex-grow',
+      footer: `px-5 py-4 sm:px-5 bg-gray-50 dark:bg-black/10 rounded-b-lg`
     }"
-    :variant="featured ? 'subtle' : 'outline'"
+    :class="[
+      featured
+        ? 'ring-secondary-400 hover:ring-secondary-300 dark:ring-secondary-600 dark:hover:ring-secondary-500 ring-2 lg:col-span-2'
+        : 'hover:ring-(--ui-border-accented)'
+    ]"
+    variant="outline"
   >
-    <div class="grid grid-cols-[auto_1fr] gap-5 sm:flex sm:flex-row">
-      <!-- Company Image -->
-      <template v-if="mainImage">
-        <div class="bg-muted size-30 border border-(--ui-border)">
-          <NuxtLink
-            :to="companyHyperlink"
-            class="transition-opacity hover:opacity-80"
-          >
-            <LazyNuxtImg
-              :src="mainImage"
-              :alt="company.name"
-              class="size-full object-cover"
-            />
-          </NuxtLink>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-row gap-4">
+        <div class="bg-muted size-auto rounded-sm border border-(--ui-border)">
+          <UAvatar
+            :ui="{ root: 'rounded-sm' }"
+            :src="mainImage"
+            icon="lucide:asterisk"
+            size="3xl"
+          />
         </div>
-      </template>
-
-      <!-- Company Details -->
-      <div
-        class="order-3 col-span-2 flex flex-1 flex-grow flex-col items-start justify-between gap-y-4 sm:order-2"
-      >
+        <div class="flex flex-1 items-center gap-x-2">
+          <h2 class="text-dark text-xl font-semibold">
+            <NuxtLink
+              :to="companyHyperlink"
+              class="transition-all hover:underline"
+            >
+              {{ company.name }}
+            </NuxtLink>
+          </h2>
+          <UButton
+            :to="company.serplyLink"
+            variant="outline"
+            color="neutral"
+            size="sm"
+            trailing-icon="lucide:external-link"
+            target="_blank"
+            label="Website"
+            class="ml-auto"
+            external
+          />
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <p class="text-muted text-sm">{{ company.excerpt }}</p>
         <div
-          :class="[featured ? 'gap-y-3' : 'gap-y-1']"
-          class="flex flex-col items-start justify-start"
+          v-if="Boolean(company.categories?.length)"
+          class="inline-flex flex-wrap items-center gap-2"
         >
-          <!-- Company Name and Featured Badge -->
-          <div class="inline-flex items-center gap-x-3">
-            <h2 class="text-dark text-xl font-semibold">
-              <NuxtLink
-                :to="companyHyperlink"
-                class="transition-all hover:underline"
-              >
-                {{ company.name }}
-              </NuxtLink>
-            </h2>
+          <template
+            v-for="category in company.categories.slice(0, 4)"
+            :key="category.slug"
+          >
             <UBadge
-              v-if="featured"
+              size="sm"
               variant="soft"
               color="secondary"
-              size="sm"
-              icon="lucide:chevrons-up"
-              label="Featured"
+              :label="category.name"
             />
-          </div>
-
-          <!-- Company One Liner -->
-          <p class="text-muted text-sm">{{ company.oneLiner }}</p>
-
-          <!-- Show Excerpt Only When Featured -->
-          <p
-            v-if="featured && company.excerpt"
-            class="text-muted line-clamp-3 text-sm"
-          >
-            {{ company.excerpt }}
-          </p>
+          </template>
         </div>
-
-        <!-- Show Company Categories Only When Featured -->
-        <template
-          v-if="featured && company.categories && company.categories.length"
-        >
-          <div class="flex flex-row flex-wrap gap-1">
-            <template
-              v-for="category in company.categories"
-              :key="category.slug"
-            >
-              <UBadge
-                size="sm"
-                color="neutral"
-                variant="soft"
-                :label="category.name"
-              />
-            </template>
-          </div>
-        </template>
       </div>
-
-      <!-- Right Side Buttons -->
-      <div
-        class="order-2 flex flex-row items-start justify-end gap-3 sm:order-3 sm:flex-col sm:items-end sm:justify-between"
-      >
+    </div>
+    <template #footer>
+      <div class="flex flex-row items-center gap-3">
         <VoteButton
           :id="company.id"
           :users-current-vote="company.usersCurrentVote"
           :upvotes="company.numUpvotes"
           :downvotes="company.numDownvotes"
+          size="sm"
           module="company"
         />
         <UButton
           :to="company.serplyLink"
+          class="ml-auto"
           color="neutral"
-          label="Website"
-          trailing-icon="lucide:external-link"
-          target="_blank"
           external
+          icon="lucide:bookmark"
+          size="sm"
+          target="_blank"
+          variant="outline"
         />
       </div>
-    </div>
+    </template>
   </UCard>
 </template>
