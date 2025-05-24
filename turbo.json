@@ -14,7 +14,7 @@
     "prettier": {},
     "test": {
       "dependsOn": ["lint"],
-       "outputLogs": "new-only"
+      "outputLogs": "new-only"
     },
     "test:watch": {},
     "test:update": {},

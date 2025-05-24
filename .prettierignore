@@ -17,6 +17,7 @@
 build/
 coverage/
 dist/
+reports/
 
 # Auto-generated files - explicitly listed by path and pattern
 **/.nuxt/eslint.config.mjs
@@ -36,5 +37,4 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 
-**/tsconfig.tsbuildinfo
 tsconfig.tsbuildinfo

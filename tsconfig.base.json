@@ -23,6 +23,10 @@
     "module": "ESNext",
     "noEmit": true,
 
+    // If your building for a library in a monorepo
+    // "composite": true,
+    // "declarationMap": true,
+    
     // If your code runs in the DOM
     "lib": ["es2022", "dom", "dom.iterable"],
 
