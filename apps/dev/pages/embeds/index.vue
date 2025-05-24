@@ -71,7 +71,9 @@
       companyDomain.value = domain;
 
       // Prompt user for the URL of their desired link target
-      const targetUrl = window.prompt('Enter the URL of your desired link target:');
+      const targetUrl = window.prompt(
+        'Enter the URL of your desired link target:'
+      );
 
       // Store the target URL (even if empty)
       linkTarget.value = targetUrl || '';

@@ -17,6 +17,7 @@
 build/
 coverage/
 dist/
+reports/
 
 # Auto-generated files - explicitly listed by path and pattern
 **/.nuxt/eslint.config.mjs
@@ -35,3 +36,4 @@ pnpm-workspace.yaml
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
+

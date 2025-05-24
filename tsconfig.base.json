@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-
     // Base Options
     "skipLibCheck": true, // Disables type checking on .d.ts files
     "target": "ESNext",
@@ -25,8 +24,8 @@
     "noEmit": true,
 
     // If your building for a library in a monorepo
-    "composite": true,
-    "declarationMap": true,
+    // "composite": true,
+    // "declarationMap": true,
 
     // If your code runs in the DOM
     "lib": ["es2022", "dom", "dom.iterable"],
@@ -36,10 +35,6 @@
 
     // Path aliases
   },
-  "include": [
-    "./**/*.ts",
-    "./**/*.vue",
-    "./.nuxt/nuxt.d.ts"
-  ],
+  "include": ["./**/*.ts", "./**/*.vue", "./.nuxt/nuxt.d.ts"],
   "exclude": ["node_modules", ".nuxt", ".output", "dist"]
 }
