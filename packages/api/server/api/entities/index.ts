@@ -7,7 +7,7 @@ import {
   featuredSubscription,
   vote
 } from '@serp/db/server/database/schema';
-import { and, asc, eq, inArray, or, sql } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray, or, sql } from 'drizzle-orm';
 
 import type { Entity, Pagination } from '@serp/types/types';
 
@@ -20,11 +20,13 @@ export default defineEventHandler(async (event) => {
       limit = 100,
       categorySlug = '',
       topicSlug = '',
+      name = '',
       module = '',
-      filters = ''
+      filters = '',
+      sort = ''
     } = getQuery(event);
 
-    const cacheKey = `entities-${module}-${categorySlug}-${topicSlug}-${filters}-${page}-${limit}`;
+    const cacheKey = `entities-${module}-${name}-${categorySlug}-${topicSlug}-${filters}-${sort}-${page}-${limit}`;
     const { value, addToCache } = await useDataCache(cacheKey, event);
     if (value) {
       const ids = value.entities.map((e: { id: number }) => e.id);
@@ -199,6 +201,12 @@ export default defineEventHandler(async (event) => {
         : sql`true`
     ];
 
+    if (name) {
+      whereConditions.push(
+        sql`lower(${entity.name}) ilike lower(${'%' + name + '%'})`
+      );
+    }
+
     if (categorySlug) {
       whereConditions.push(
         sql`
@@ -243,11 +251,23 @@ export default defineEventHandler(async (event) => {
     baseQuery = baseQuery.where(and(...whereConditions));
     totalQuery = totalQuery.where(and(...whereConditions));
 
+    const sorts = {
+      'name:asc': asc(entity.name),
+      'name:desc': desc(entity.name),
+      'createdAt:desc': desc(entity.createdAt)
+    };
+
+    const orderByList = [
+      asc(featuredSubscription.isActive),
+      asc(featuredSubscription.placement)
+    ];
+
+    if (sort && sorts[sort]) {
+      orderByList.push(sorts[sort]);
+    }
+
     baseQuery = baseQuery
-      .orderBy(
-        asc(featuredSubscription.isActive),
-        asc(featuredSubscription.placement)
-      )
+      .orderBy(...orderByList)
       .limit(limitNumber)
       .offset(offset);
 
