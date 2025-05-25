@@ -18,7 +18,7 @@
         'px-5 py-4 sm:px-5 sm:py-4 bg-gray-50 dark:bg-black/10 rounded-b-lg'
     }"
   >
-    <div class="flex flex-col gap-3">
+    <div class="flex h-full flex-col gap-3">
       <h2 class="text-base font-semibold">
         <NuxtLink
           :to="`/mcp/servers/${server.slug}`"
@@ -32,9 +32,12 @@
       </p>
       <div
         v-if="Boolean(server.categories?.length)"
-        class="flex flex-row flex-wrap items-center justify-start gap-1.5"
+        class="mt-auto flex flex-row flex-wrap items-center justify-start gap-1.5"
       >
-        <template v-for="category in server.categories" :key="category.slug">
+        <template
+          v-for="category in server.categories.slice(0, 3)"
+          :key="category.slug"
+        >
           <UBadge
             :as="NuxtLink"
             size="md"
