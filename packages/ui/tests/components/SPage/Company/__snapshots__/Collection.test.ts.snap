@@ -13,24 +13,22 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
   </div>
   <main>
     <div class="flex flex-col gap-y-6">
-      <div class="flex flex-col gap-4">
-        <div class="flex gap-4">
-          <div class="relative inline-flex items-center w-full"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:search shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-            <!--v-if-->
-          </div>
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-64" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-48" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
+      <div class="grid grid-cols-2 gap-4 md:flex md:flex-row">
+        <div class="relative inline-flex items-center col-span-2 w-full md:col-auto"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:search shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+          <!--v-if-->
         </div>
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-64" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-48" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
       </div>
       <div class="flex flex-col gap-y-6">
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -182,24 +180,22 @@ exports[`SPageCompanyCollection Snapshot > renders correctly with categories (wi
   </div>
   <main>
     <div class="flex flex-col gap-y-6">
-      <div class="flex flex-col gap-4">
-        <div class="flex gap-4">
-          <div class="relative inline-flex items-center w-full"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:refresh-cw shrink-0 text-dimmed size-5 animate-spin" aria-hidden="true"></span></span>
-            <!--v-if-->
-          </div>
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-64" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-48" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
+      <div class="grid grid-cols-2 gap-4 md:flex md:flex-row">
+        <div class="relative inline-flex items-center col-span-2 w-full md:col-auto"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:refresh-cw shrink-0 text-dimmed size-5 animate-spin" aria-hidden="true"></span></span>
+          <!--v-if-->
         </div>
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-64" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-48" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
       </div>
       <div class="flex flex-col gap-y-6">
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -323,24 +319,22 @@ exports[`SPageCompanyCollection Snapshot > renders correctly without categories 
   </div>
   <main>
     <div class="flex flex-col gap-y-6">
-      <div class="flex flex-col gap-4">
-        <div class="flex gap-4">
-          <div class="relative inline-flex items-center w-full"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:refresh-cw shrink-0 text-dimmed size-5 animate-spin" aria-hidden="true"></span></span>
-            <!--v-if-->
-          </div>
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-64" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-48" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
+      <div class="grid grid-cols-2 gap-4 md:flex md:flex-row">
+        <div class="relative inline-flex items-center col-span-2 w-full md:col-auto"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:refresh-cw shrink-0 text-dimmed size-5 animate-spin" aria-hidden="true"></span></span>
+          <!--v-if-->
         </div>
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-64" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-48" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
       </div>
       <div class="flex flex-col gap-y-6">
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -448,24 +442,22 @@ exports[`SPageCompanyCollection Snapshot > renders correctly without categories 
   </div>
   <main>
     <div class="flex flex-col gap-y-6">
-      <div class="flex flex-col gap-4">
-        <div class="flex gap-4">
-          <div class="relative inline-flex items-center w-full"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:refresh-cw shrink-0 text-dimmed size-5 animate-spin" aria-hidden="true"></span></span>
-            <!--v-if-->
-          </div>
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-64" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
-          <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-48" dir="ltr">
-            <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
-          </button>
-          <!--teleport start-->
-          <!--teleport end-->
-          <!---->
+      <div class="grid grid-cols-2 gap-4 md:flex md:flex-row">
+        <div class="relative inline-flex items-center col-span-2 w-full md:col-auto"><input type="text" placeholder="Search products..." class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ps-10" autocomplete="off" value=""><span class="absolute inset-y-0 start-0 flex items-center ps-3"><span class="iconify i-lucide:refresh-cw shrink-0 text-dimmed size-5 animate-spin" aria-hidden="true"></span></span>
+          <!--v-if-->
         </div>
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-64" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Category</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
+        <!----><button type="button" tabindex="0" aria-label="Show popup" aria-haspopup="listbox" aria-expanded="false" aria-controls="" data-state="closed" aria-disabled="false" class="relative group rounded-md inline-flex items-center focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-3 py-2 text-sm gap-2 text-highlighted bg-default ring ring-inset ring-accented focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary pe-10 w-full md:w-48" dir="ltr">
+          <!--v-if--><span class="truncate text-dimmed">Order by</span><span class="absolute inset-y-0 end-0 flex items-center pe-3"><span class="iconify i-lucide:chevrons-up-down shrink-0 text-dimmed size-5" aria-hidden="true"></span></span>
+        </button>
+        <!--teleport start-->
+        <!--teleport end-->
+        <!---->
       </div>
       <div class="flex flex-col gap-y-6">
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
