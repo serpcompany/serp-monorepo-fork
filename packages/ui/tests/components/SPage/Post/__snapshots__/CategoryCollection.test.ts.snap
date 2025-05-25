@@ -2,20 +2,13 @@
 
 exports[`SPagePostCategoryCollection Snapshot > renders with no posts (with auth) correctly 1`] = `
 "<div>
-  <div>
-    <div class="py-20">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="items-center">
-          <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 class="my-4 text-2xl font-bold text-pretty lg:text-5xl">
-              Category: undefined</h1>
-            <!--v-if-->
-            <div class="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-              <!--v-if-->
-              <!--v-if-->
-            </div>
-          </div>
-        </div>
+  <div class="py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+        <h1 class="text-3xl font-bold text-pretty lg:text-5xl">
+          Category: undefined</h1>
+        <!--v-if-->
+        <!--v-if-->
       </div>
     </div>
   </div>
@@ -40,15 +33,21 @@ exports[`SPagePostCategoryCollection Snapshot > renders with no posts (with auth
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="my-30 mt-20">
-      <div class="mx-auto">
-        <div class="pt-12">
-          <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
+    <section data-orientation="vertical" class="relative isolate mt-20">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-left">Categories</h2>
+          <!--v-if-->
+          <!--v-if-->
+          <!--v-if-->
         </div>
-        <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div class="border-t"><a href="/posts/category/tech/" class="mt-3 flex font-medium">Tech</a></div>
-          <div class="border-t"><a href="/posts/category/lifestyle/" class="mt-3 flex font-medium">Lifestyle</a></div>
-        </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"><a href="/posts/category/tech/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Tech</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a><a href="/posts/category/lifestyle/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Lifestyle</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a></div>
       </div>
     </section>
   </main>
@@ -57,20 +56,13 @@ exports[`SPagePostCategoryCollection Snapshot > renders with no posts (with auth
 
 exports[`SPagePostCategoryCollection Snapshot > renders with no posts (without auth) correctly 1`] = `
 "<div>
-  <div>
-    <div class="py-20">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="items-center">
-          <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 class="my-4 text-2xl font-bold text-pretty lg:text-5xl">
-              Category: undefined</h1>
-            <!--v-if-->
-            <div class="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-              <!--v-if-->
-              <!--v-if-->
-            </div>
-          </div>
-        </div>
+  <div class="py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+        <h1 class="text-3xl font-bold text-pretty lg:text-5xl">
+          Category: undefined</h1>
+        <!--v-if-->
+        <!--v-if-->
       </div>
     </div>
   </div>
@@ -95,15 +87,21 @@ exports[`SPagePostCategoryCollection Snapshot > renders with no posts (without a
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="my-30 mt-20">
-      <div class="mx-auto">
-        <div class="pt-12">
-          <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
+    <section data-orientation="vertical" class="relative isolate mt-20">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-left">Categories</h2>
+          <!--v-if-->
+          <!--v-if-->
+          <!--v-if-->
         </div>
-        <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div class="border-t"><a href="/posts/category/tech/" class="mt-3 flex font-medium">Tech</a></div>
-          <div class="border-t"><a href="/posts/category/lifestyle/" class="mt-3 flex font-medium">Lifestyle</a></div>
-        </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"><a href="/posts/category/tech/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Tech</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a><a href="/posts/category/lifestyle/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Lifestyle</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a></div>
       </div>
     </section>
   </main>
@@ -112,20 +110,13 @@ exports[`SPagePostCategoryCollection Snapshot > renders with no posts (without a
 
 exports[`SPagePostCategoryCollection Snapshot > renders with posts and categories (with auth) correctly 1`] = `
 "<div>
-  <div>
-    <div class="py-20">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="items-center">
-          <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 class="my-4 text-2xl font-bold text-pretty lg:text-5xl">
-              Category: undefined</h1>
-            <!--v-if-->
-            <div class="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-              <!--v-if-->
-              <!--v-if-->
-            </div>
-          </div>
-        </div>
+  <div class="py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+        <h1 class="text-3xl font-bold text-pretty lg:text-5xl">
+          Category: undefined</h1>
+        <!--v-if-->
+        <!--v-if-->
       </div>
     </div>
   </div>
@@ -182,15 +173,21 @@ exports[`SPagePostCategoryCollection Snapshot > renders with posts and categorie
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="my-30 mt-20">
-      <div class="mx-auto">
-        <div class="pt-12">
-          <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
+    <section data-orientation="vertical" class="relative isolate mt-20">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-left">Categories</h2>
+          <!--v-if-->
+          <!--v-if-->
+          <!--v-if-->
         </div>
-        <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div class="border-t"><a href="/posts/category/tech/" class="mt-3 flex font-medium">Tech</a></div>
-          <div class="border-t"><a href="/posts/category/lifestyle/" class="mt-3 flex font-medium">Lifestyle</a></div>
-        </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"><a href="/posts/category/tech/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Tech</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a><a href="/posts/category/lifestyle/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Lifestyle</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a></div>
       </div>
     </section>
   </main>
@@ -199,20 +196,13 @@ exports[`SPagePostCategoryCollection Snapshot > renders with posts and categorie
 
 exports[`SPagePostCategoryCollection Snapshot > renders with posts and categories (without auth) correctly 1`] = `
 "<div>
-  <div>
-    <div class="py-20">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="items-center">
-          <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 class="my-4 text-2xl font-bold text-pretty lg:text-5xl">
-              Category: undefined</h1>
-            <!--v-if-->
-            <div class="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-              <!--v-if-->
-              <!--v-if-->
-            </div>
-          </div>
-        </div>
+  <div class="py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+        <h1 class="text-3xl font-bold text-pretty lg:text-5xl">
+          Category: undefined</h1>
+        <!--v-if-->
+        <!--v-if-->
       </div>
     </div>
   </div>
@@ -269,15 +259,21 @@ exports[`SPagePostCategoryCollection Snapshot > renders with posts and categorie
           <!--v-if-->
         </button></div>
     </nav>
-    <section class="my-30 mt-20">
-      <div class="mx-auto">
-        <div class="pt-12">
-          <div><span class="inline-block py-4 text-3xl font-bold">Categories</span></div>
+    <section data-orientation="vertical" class="relative isolate mt-20">
+      <div class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:grid py-16 sm:py-24 lg:py-32 gap-8 sm:gap-16">
+        <div class="">
+          <!--v-if-->
+          <!--v-if-->
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-left">Categories</h2>
+          <!--v-if-->
+          <!--v-if-->
+          <!--v-if-->
         </div>
-        <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div class="border-t"><a href="/posts/category/tech/" class="mt-3 flex font-medium">Tech</a></div>
-          <div class="border-t"><a href="/posts/category/lifestyle/" class="mt-3 flex font-medium">Lifestyle</a></div>
-        </div>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"><a href="/posts/category/tech/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Tech</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a><a href="/posts/category/lifestyle/" class="focus-visible:outline-primary text-muted hover:text-default group flex items-center gap-3 text-base font-medium transition-all"><span class="iconify i-lucide:arrow-right text-dimmed size-4 transition-all group-hover:translate-x-1" aria-hidden="true"></span><span>Lifestyle</span>
+            <hr class="min-w-2 flex-1 border-(--ui-border)">
+          </a></div>
       </div>
     </section>
   </main>
