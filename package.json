@@ -11,19 +11,19 @@
     "prepare": "husky install",
     "prettier": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run prettier",
     "test": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test",
-    "test:windows": "turbo run test",
     "test:update": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run test:update",
     "test:update:windows": "turbo run test:update",
     "test:watch": "turbo run test:watch",
+    "test:windows": "turbo run test",
     "typecheck": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | tee reports/typecheck-errors.txt",
-    "typecheck:ts7006": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | grep 'TS7006' && echo 'TS7006 errors found - build failed!' && exit 1 || echo 'No TS7006 errors found - build passed!'",
-    "typecheck:phase1": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | grep -E 'TS7006|TS7053|TS7034|TS7005' && exit 1 || exit 0"
+    "typecheck:phase1": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | grep -E 'TS7006|TS7053|TS7034|TS7005' && exit 1 || exit 0",
+    "typecheck:ts7006": "NODE_OPTIONS='--no-warnings=ExperimentalWarning' turbo run typecheck 2>&1 | grep 'TS7006' && echo 'TS7006 errors found - build failed!' && exit 1 || echo 'No TS7006 errors found - build passed!'"
   },
   "resolutions": {
+    "@vue/server-renderer": "3.5.14",
     "unimport": "4.1.1",
-    "vue-tsc": "2.2.0",
     "vue": "3.5.14",
-    "@vue/server-renderer": "3.5.14"
+    "vue-tsc": "2.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.0",
@@ -38,5 +38,8 @@
     "turbo": "^2.4.4",
     "typescript": "^5.7.3"
   },
-  "packageManager": "pnpm@8.15.6"
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": "^22.16.0"
+  }
 }

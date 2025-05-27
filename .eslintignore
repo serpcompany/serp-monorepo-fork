@@ -27,5 +27,4 @@ packages/ui/.nuxt/**
 **/*.min.js
 esm/**/*.mjs
 
-**/tsconfig.tsbuildinfo
 tsconfig.tsbuildinfo

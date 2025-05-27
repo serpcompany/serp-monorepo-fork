@@ -1,21 +1,21 @@
 <script setup lang="ts">
   const badges = [
     {
-      name: 'SERP Featured',
+      name: 'SERP Featured Trophy',
       url: 'https://embeds.serp.co/serp-featured-trophy.svg',
       path: 'serp-featured-trophy',
       width: 250,
       height: 50
     },
     {
-      name: 'SERP Verified',
+      name: 'SERP Verified Medium',
       url: 'https://embeds.serp.co/serp-verified-med.svg',
       path: 'serp-verified-med',
       width: 250,
       height: 50
     },
     {
-      name: 'SERP Verified',
+      name: 'SERP Verified Small',
       url: 'https://embeds.serp.co/serp-verified-small.svg',
       path: 'serp-verified-small',
       width: 250,
@@ -34,41 +34,81 @@
       path: 'serp-featured-small',
       width: 250,
       height: 50
+    },
+    {
+      name: 'SERP Shield',
+      url: 'https://embeds.serp.co/serp-shield-badge.svg',
+      path: 'serp-shield-badge',
+      width: 200,
+      height: 194
     }
   ];
 
   const toast = useToast();
+  const companyDomain = ref('');
+  const linkTarget = ref('');
 
-  const copyToClipboard = (badge) => {
-    // Generate UTM parameters using badge information
-    const utmSource = 'serp-embeds'; // The general source/platform
-    const utmMedium = `badge`; // The medium type
-    const utmCampaign = `badge-${badge.path}`; // Specific campaign identifier
+  // Ensure this function only runs on client-side
+  const copyToClipboard = async (badge) => {
+    // Skip if we're not in a browser environment
+    if (typeof window === 'undefined') return;
 
-    // Create URL with UTM parameters
-    const badgeUrl = `https://serp.co/?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}`;
+    try {
+      // Prompt user for company domain
+      const domain = window.prompt('Enter company domain (e.g., jace.ai):');
 
-    // Use explicit width and height HTML attributes for consistent rendering across third-party sites
-    const embedCode = `<a href="${badgeUrl}"><img src="https://embeds.serp.co/${badge.path}.svg" alt="${badge.name}" width="250" height="50" /></a>`;
-
-    navigator.clipboard
-      .writeText(embedCode)
-      .then(() => {
+      // If user cancels or enters empty string, show message and return
+      if (!domain) {
         toast.add({
-          title: 'Copied to clipboard!',
-          description: 'Paste the code on your clipboard onto your website.',
-          icon: 'i-lucide-check-circle',
-          color: 'success'
+          title: 'Domain not provided',
+          description: 'Using default UTM parameters instead.',
+          icon: 'i-lucide-info',
+          color: 'info'
         });
-      })
-      .catch(() => {
-        toast.add({
-          title: 'Failed to copy',
-          description: 'Please try again or copy manually.',
-          icon: 'i-lucide-alert-circle',
-          color: 'danger'
-        });
+        return;
+      }
+
+      companyDomain.value = domain;
+
+      // Prompt user for the URL of their desired link target
+      const targetUrl = window.prompt(
+        'Enter the URL of your desired link target:'
+      );
+
+      // Store the target URL (even if empty)
+      linkTarget.value = targetUrl || '';
+
+      // Generate UTM parameters using badge information and company domain
+      const utmSource = 'serp-embeds'; // The general source/platform
+      const utmMedium = `badge`; // The medium type
+      const utmCampaign = companyDomain.value; // Use company domain as campaign identifier
+      const utmContent = linkTarget.value; // Use the target URL as content identifier
+
+      // Create URL with UTM parameters
+      const baseUrl = 'https://serp.co';
+      const badgeUrl = `${baseUrl}?utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}${utmContent ? `&utm_content=${encodeURIComponent(utmContent)}` : ''}`;
+
+      // Use explicit width and height HTML attributes for consistent rendering across third-party sites
+      const embedCode = `<a href="${badgeUrl}"><img src="https://embeds.serp.co/${badge.path}.svg" alt="${badge.name}" width="${badge.width}" height="${badge.height}" /></a>`;
+
+      // Copy to clipboard
+      await navigator.clipboard.writeText(embedCode);
+
+      toast.add({
+        title: 'Copied to clipboard!',
+        description: 'Paste the code on your clipboard onto your website.',
+        icon: 'i-lucide-check-circle',
+        color: 'success'
       });
+    } catch (error) {
+      console.error('Error in copyToClipboard:', error);
+      toast.add({
+        title: 'Failed to copy',
+        description: 'Please try again or copy manually.',
+        icon: 'i-lucide-alert-circle',
+        color: 'danger'
+      });
+    }
   };
 
   definePageMeta({
