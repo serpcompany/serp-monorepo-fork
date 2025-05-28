@@ -3,7 +3,7 @@ import { mockReadBody } from '../../../setup';
 
 // Mock the mail module
 const mockSendEmail = vi.fn().mockResolvedValue({});
-vi.mock('@serp/mail/server', () => ({
+vi.mock('@serp/utils/server', () => ({
   sendEmail: mockSendEmail
 }));
 

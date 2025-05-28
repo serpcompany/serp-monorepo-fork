@@ -4,7 +4,7 @@ import {
   verification,
   verificationRequest
 } from '@serp/db/server/database/schema';
-import { sendEmail } from '@serp/mail/server';
+import { sendEmail } from '@serp/utils/server';
 import crypto from 'crypto';
 import { and, eq } from 'drizzle-orm';
 import { defineEventHandler, readBody } from 'h3';

@@ -5,7 +5,7 @@ import { eq, and } from 'drizzle-orm';
 import crypto from 'crypto';
 
 // Mock the mail module
-vi.mock('@serp/mail/server', () => ({
+vi.mock('@serp/utils/server', () => ({
   sendEmail: vi.fn().mockResolvedValue({})
 }));
 
@@ -37,7 +37,7 @@ describe('Entity Verify Email Initiate Post API', () => {
     globalThis.requireUserSession = mockRequireUserSession;
 
     // Import the handler
-    const { sendEmail } = await import('@serp/mail/server');
+    const { sendEmail } = await import('@serp/utils/server');
     mockSendEmail = sendEmail;
 
     // Mock environment variables

@@ -1010,15 +1010,15 @@ importers:
       '@serp/db':
         specifier: workspace:^
         version: link:../db
-      '@serp/mail':
-        specifier: workspace:^
-        version: link:../mail
       '@serp/notifications':
         specifier: workspace:^
         version: link:../notifications
       '@serp/types':
         specifier: workspace:^
         version: link:../types
+      '@serp/utils':
+        specifier: workspace:^
+        version: link:../utils
       nuxt-multi-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -1245,40 +1245,6 @@ importers:
       vitest:
         specifier: ^2.1.5
         version: 2.1.9(happy-dom@15.11.7)(jsdom@25.0.1)
-      vue:
-        specifier: 3.5.14
-        version: 3.5.14(typescript@5.8.3)
-
-  packages/mail:
-    dependencies:
-      '@serp/types':
-        specifier: workspace:^
-        version: link:../types
-      form-data:
-        specifier: ^4.0.2
-        version: 4.0.2
-      mailgun.js:
-        specifier: ^12.0.1
-        version: 12.0.1
-    devDependencies:
-      '@nuxt/eslint':
-        specifier: ^0.6.1
-        version: 0.6.2(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
-      '@vue/test-utils':
-        specifier: ^2.4.6
-        version: 2.4.6
-      eslint:
-        specifier: ^9.14.0
-        version: 9.27.0
-      nuxt:
-        specifier: ^3.17.3
-        version: 3.17.4(drizzle-orm@0.36.4)(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.8.3
-      vitest:
-        specifier: ^1.2.2
-        version: 1.6.1(happy-dom@13.10.1)
       vue:
         specifier: 3.5.14
         version: 3.5.14(typescript@5.8.3)
@@ -1547,6 +1513,12 @@ importers:
       '@nuxt/eslint':
         specifier: ^0.6.1
         version: 0.6.2(eslint@9.27.0)(typescript@5.8.3)(vite@6.3.5)
+      '@vue-email/components':
+        specifier: ^0.0.21
+        version: 0.0.21(typescript@5.8.3)(vue@3.5.14)
+      '@vue-email/render':
+        specifier: ^0.0.9
+        version: 0.0.9(typescript@5.8.3)
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -1559,6 +1531,9 @@ importers:
       typescript:
         specifier: ^5.7.3
         version: 5.8.3
+      use-email:
+        specifier: ^0.0.9
+        version: 0.0.9
       vitest:
         specifier: ^1.2.2
         version: 1.6.1(happy-dom@13.10.1)
@@ -6372,6 +6347,24 @@ packages:
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
     dev: true
 
+  /@selderee/plugin-htmlparser2@0.11.0:
+    resolution: {integrity: sha512-P33hHGdldxGabLFjPPpaTxVolMrzrcegejx+0GxjrIb9Zv48D8yAIA/QTDR2dFl7Uz7urX8aX6+5bCZslr+gWQ==}
+    dependencies:
+      domhandler: 5.0.3
+      selderee: 0.11.0
+    dev: true
+
+  /@shikijs/core@1.29.2:
+    resolution: {integrity: sha512-vju0lY9r27jJfOY4Z7+Rt/nIOjzJpZ3y+nYpqtUZInVoXQ/TJZcfGnNOGnKjFdVZb8qexiCuSlZRKcGfhhTTZQ==}
+    dependencies:
+      '@shikijs/engine-javascript': 1.29.2
+      '@shikijs/engine-oniguruma': 1.29.2
+      '@shikijs/types': 1.29.2
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+      hast-util-to-html: 9.0.5
+    dev: true
+
   /@shikijs/core@3.4.2:
     resolution: {integrity: sha512-AG8vnSi1W2pbgR2B911EfGqtLE9c4hQBYkv/x7Z+Kt0VxhgQKcW7UNDVYsu9YxwV6u+OJrvdJrMq6DNWoBjihQ==}
     dependencies:
@@ -6380,6 +6373,14 @@ packages:
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
+  /@shikijs/engine-javascript@1.29.2:
+    resolution: {integrity: sha512-iNEZv4IrLYPv64Q6k7EPpOCE/nuvGiKl7zxdq0WFuRPF5PAE9PRo2JGq/d8crLusM59BRemJ4eOqrFrC4wiQ+A==}
+    dependencies:
+      '@shikijs/types': 1.29.2
+      '@shikijs/vscode-textmate': 10.0.2
+      oniguruma-to-es: 2.3.0
+    dev: true
+
   /@shikijs/engine-javascript@3.4.2:
     resolution: {integrity: sha512-1/adJbSMBOkpScCE/SB6XkjJU17ANln3Wky7lOmrnpl+zBdQ1qXUJg2GXTYVHRq+2j3hd1DesmElTXYDgtfSOQ==}
     dependencies:
@@ -6387,16 +6388,35 @@ packages:
       '@shikijs/vscode-textmate': 10.0.2
       oniguruma-to-es: 4.3.3
 
+  /@shikijs/engine-oniguruma@1.29.2:
+    resolution: {integrity: sha512-7iiOx3SG8+g1MnlzZVDYiaeHe7Ez2Kf2HrJzdmGwkRisT7r4rak0e655AcM/tF9JG/kg5fMNYlLLKglbN7gBqA==}
+    dependencies:
+      '@shikijs/types': 1.29.2
+      '@shikijs/vscode-textmate': 10.0.2
+    dev: true
+
   /@shikijs/engine-oniguruma@3.4.2:
     resolution: {integrity: sha512-zcZKMnNndgRa3ORja6Iemsr3DrLtkX3cAF7lTJkdMB6v9alhlBsX9uNiCpqofNrXOvpA3h6lHcLJxgCIhVOU5Q==}
     dependencies:
       '@shikijs/types': 3.4.2
       '@shikijs/vscode-textmate': 10.0.2
 
+  /@shikijs/langs@1.29.2:
+    resolution: {integrity: sha512-FIBA7N3LZ+223U7cJDUYd5shmciFQlYkFXlkKVaHsCPgfVLiO+e12FmQE6Tf9vuyEsFe3dIl8qGWKXgEHL9wmQ==}
+    dependencies:
+      '@shikijs/types': 1.29.2
+    dev: true
+
   /@shikijs/langs@3.4.2:
     resolution: {integrity: sha512-H6azIAM+OXD98yztIfs/KH5H4PU39t+SREhmM8LaNXyUrqj2mx+zVkr8MWYqjceSjDw9I1jawm1WdFqU806rMA==}
     dependencies:
       '@shikijs/types': 3.4.2
+
+  /@shikijs/themes@1.29.2:
+    resolution: {integrity: sha512-i9TNZlsq4uoyqSbluIcZkmPL9Bfi3djVxRnofUHwvx/h6SRW3cwgBC5SML7vsDcWyukY0eCzVN980rqP6qNl9g==}
+    dependencies:
+      '@shikijs/types': 1.29.2
+    dev: true
 
   /@shikijs/themes@3.4.2:
     resolution: {integrity: sha512-qAEuAQh+brd8Jyej2UDDf+b4V2g1Rm8aBIdvt32XhDPrHvDkEnpb7Kzc9hSuHUxz0Iuflmq7elaDuQAP9bHIhg==}
@@ -6408,6 +6428,13 @@ packages:
     dependencies:
       '@shikijs/core': 3.4.2
       '@shikijs/types': 3.4.2
+
+  /@shikijs/types@1.29.2:
+    resolution: {integrity: sha512-VJjK0eIijTZf0QSTODEXCqinjBn0joAHQ+aPSBzrv4O2d/QSbsMw+ZeSRx03kV34Hy7NzUvV/7NqfYGRLrASmw==}
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+    dev: true
 
   /@shikijs/types@3.4.2:
     resolution: {integrity: sha512-zHC1l7L+eQlDXLnxvM9R91Efh2V4+rN3oMVS2swCBssbj2U/FBwybD1eeLaq8yl/iwT+zih8iUbTBCgGZOYlVg==}
@@ -7775,6 +7802,211 @@ packages:
       '@nodelib/fs.walk': 3.0.1
     dev: true
 
+  /@vue-email/body@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-JxZb1upJTnt6tLKszqHfrCWTpioWuG7eZXneUmCBr0YVt6gI781dSAgUQASTBprENnO+M2sNsarszoo7jGZNOQ==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/button@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-Su1iKBpfzF03SqLhxxIGDm2ZgpnXh+yD8kvLQ9+V0COepXOSdVQD5Ovif14uKGweafXSMkyQSi5lqmnVIace3A==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/code-block@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-NuOAY3dhWCwnywQ9lguLWqh+2BDKr1UM7AkV/ejDJwfX/GLZnlN9EEJRYOVhFnGwXOcJnS27NmvjZHaRweZfWA==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      shiki: 1.29.2
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/code-inline@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-FN9WPQBwWWumpPIAN/++oly9/hpUfioVokb7nfM/U0hEOS3mGsVjYPZNiX/oGOAHrAF83qOqgIFcd9ipVMtefg==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/column@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-L1tYu3ZqoqcSNa5GK8wEKQKuvUBlsWeSA3RqKlkLrc+dR+uitcyCcbYsoE/N2tgvzZ1poykE/S6VIcrqH/zL9A==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/components@0.0.21(typescript@5.8.3)(vue@3.5.14):
+    resolution: {integrity: sha512-xtL9vdWgBpq2B4OqbOvW9s9+5fF8bZamNHCBNYkFMzGg7Ne+SWk/vZI0LhCeMqWUkodnCvCoW/i7IYGjw5veHw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      '@vue-email/body': 0.0.3(vue@3.5.14)
+      '@vue-email/button': 0.0.3(vue@3.5.14)
+      '@vue-email/code-block': 0.0.3(vue@3.5.14)
+      '@vue-email/code-inline': 0.0.3(vue@3.5.14)
+      '@vue-email/column': 0.0.3(vue@3.5.14)
+      '@vue-email/container': 0.0.3(vue@3.5.14)
+      '@vue-email/font': 0.0.3(vue@3.5.14)
+      '@vue-email/head': 0.0.3(vue@3.5.14)
+      '@vue-email/heading': 0.0.3(vue@3.5.14)
+      '@vue-email/hr': 0.0.3(vue@3.5.14)
+      '@vue-email/html': 0.0.3(vue@3.5.14)
+      '@vue-email/img': 0.0.3(vue@3.5.14)
+      '@vue-email/link': 0.0.3(vue@3.5.14)
+      '@vue-email/markdown': 0.0.7(vue@3.5.14)
+      '@vue-email/preview': 0.0.3(vue@3.5.14)
+      '@vue-email/render': 0.0.9(typescript@5.8.3)
+      '@vue-email/row': 0.0.3(vue@3.5.14)
+      '@vue-email/section': 0.0.3(vue@3.5.14)
+      '@vue-email/style': 0.0.3(vue@3.5.14)
+      '@vue-email/tailwind': 0.2.0(vue@3.5.14)
+      '@vue-email/text': 0.0.3(vue@3.5.14)
+      vue: 3.5.14(typescript@5.8.3)
+    transitivePeerDependencies:
+      - typescript
+    dev: true
+
+  /@vue-email/container@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-L+9VZ3RbCgyPaV54QCQsOAe9lAvq549JULEmH3QRDgHsIaFE3Yaddc1zMJKdbwH7ugiaRPRFrM2paR57IS6sWw==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/font@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-X9vwUTKjPeFuh06BkYbFVM3rdZggLo7hJ3SHgJ09qBF7e0J7zZx5KLjkeYzKTWfHlM1fx9XtNdpQ35UKyIpwUg==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/head@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-RobskTPhRQ18aHFcwOe1eorGDd3BCotXJy2YfZF9VRHvw1MtV5M/AQ0eqUUgnNuNrxFGobZtxZJMu4+EE2ToUQ==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/heading@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-cUxlLDuRHEdLn+CZWehsUuJjWNnDVC1LAK1iKtZl++J9xGE1l4lrxaBFdhIZctH2yoZZLGm8OHvUJiYrke9YIg==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/hr@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-DNSi4CrsgRJRstTIB8ILcCqg0rWIIMKZ1fmSVgHoEBfgiV9I4m/6wKv2Rzg1AxkYldy5w1YhwVx0NfBTCHlL7A==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/html@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-kjUBwwWcgNoJ6jEmZW7gkdSXZzy6rcJ0jV4507TZlF6PRsu4FaCpeI6WHnDexdXIfCeAIwZqeAQOJHASHJd2mw==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/img@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-lFDavbzdbOXo2VK8Fq/YPFB/2ZolOaToC/oFR9fQlw2hA9n1TTiEZZK5D7en62FSD9gPG1P7eQ81tOt6/Tc6+A==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/link@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-AvX5wxXACrxqyLaooIDQBsz/8Q6FDSVGDg0Lo1opUZKEW80s68zI+FUhI3kuByVEogzIhfdpq9rc1yGmkUUh8A==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/markdown@0.0.7(vue@3.5.14):
+    resolution: {integrity: sha512-AxMpxo0A20lFiED7l1nJy6Y+fDYHknYW6u1HZ7F2QbDUihtinwAWU9pBFDX9SSHg9Ihkf3KeitvGf4YHiYlXRA==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      marked: 7.0.4
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/preview@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-e9qLDsP5+f5KZQhiVGjI/d/x5NfLfYusjI9C4bewwXM6bYJo1i5WRRzX6SM7sygKEk0ZbKqnzPqbnSWtABuzDw==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/render@0.0.9(typescript@5.8.3):
+    resolution: {integrity: sha512-FShvnLSoys3y+30uIO4ZuBSsXKGaj/VOB+CfNxhgxLmFsLbwKwUZQgJVAmXviuuSC5xpWQCOEPQ8P7oEEYa0WA==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      html-to-text: 9.0.5
+      js-beautify: 1.15.4
+      vue: 3.5.14(typescript@5.8.3)
+    transitivePeerDependencies:
+      - typescript
+    dev: true
+
+  /@vue-email/row@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-/wnkRMFJl5WTehD3/ryn7taJs42Vk7K1xUH37Q5R5T8tu1lBnAhwWcDvUeqaH/7+N4weELEBjQdKa9F6fqYlcA==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/section@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-DPvDBmf3jPZGw8ZoIgs/lS3yt8H0BXMLniR0aTa6FhBPWJsXXaaQHDPY6h7jfeCgppgAoDRLZqiMnZXfqSTUWw==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/style@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-1t1I1EFJ77N4AC0qb1WYUfSOsFXTUUR2gxnbg88dsXHiaMiBlyokqy50wnn4/FrubUqbOFmseCz+4nSZzGg5bA==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/tailwind@0.2.0(vue@3.5.14):
+    resolution: {integrity: sha512-/DNEMhvEuZa9OptICLelwh4Rh4Lh54GtoTkQgCAV0/4qvAgbAmjUMr0f7GsincdxoPrFwpTofaKAxMFm6ZO0xA==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
+  /@vue-email/text@0.0.3(vue@3.5.14):
+    resolution: {integrity: sha512-xn6MYicnXyFeV72nNTDZylOL7ut60clYUR2bqMDKkW6+XD6qWp6LGAx4b8sE0kADgu7MTq23zbU9kA/cebhk8w==}
+    peerDependencies:
+      vue: 3.5.14
+    dependencies:
+      vue: 3.5.14(typescript@5.8.3)
+    dev: true
+
   /@vue-macros/common@1.16.1(vue@3.5.14):
     resolution: {integrity: sha512-Pn/AWMTjoMYuquepLZP813BIcq8DTZiNCoaceuNlvaYuOTd8DqBZWc5u0uOMQZMInwME1mdSmmBAcTluiV9Jtg==}
     engines: {node: '>=16.14.0'}
@@ -8705,6 +8937,7 @@ packages:
 
   /base-64@1.0.0:
     resolution: {integrity: sha512-kwDPIFCGx0NZHog36dj+tHiwP4QMzsZ3AgMViUBKI0+V5n4U0ufTCUMhnQ04diaRI8EX/QcPfql7zlhZ7j4zgg==}
+    dev: true
 
   /base64-js@0.0.8:
     resolution: {integrity: sha512-3XSA2cR/h/73EzlXXdU6YNycmYI7+kicTxks4eJg2g39biHR84slg2+des+p7iHYhbRg/udIS4TD53WabcOUkw==}
@@ -10219,6 +10452,10 @@ packages:
 
   /embla-carousel@8.6.0:
     resolution: {integrity: sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA==}
+    dev: true
+
+  /emoji-regex-xs@1.0.0:
+    resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
     dev: true
 
   /emoji-regex-xs@2.0.1:
@@ -12376,6 +12613,17 @@ packages:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
     dev: true
 
+  /html-to-text@9.0.5:
+    resolution: {integrity: sha512-qY60FjREgVZL03vJU6IfMV4GDjGBIoOyvuFdpBDIX9yTlDw0TjxVBQp+P8NvpdIXNJvfWBTNul7fsAQJq2FNpg==}
+    engines: {node: '>=14'}
+    dependencies:
+      '@selderee/plugin-htmlparser2': 0.11.0
+      deepmerge: 4.3.1
+      dom-serializer: 2.0.0
+      htmlparser2: 8.0.2
+      selderee: 0.11.0
+    dev: true
+
   /html-validate@8.18.2(vitest@2.1.9):
     resolution: {integrity: sha512-X/ahjDnTZe1VjoPz+w7zGe5I5/os8PLQ+c5C9ak6etV0nNK9gPbwbGaP9BQoSQuQx0mszw5khDjP1ffnXx+1OA==}
     engines: {node: '>= 16.14'}
@@ -12414,6 +12662,15 @@ packages:
 
   /html-whitespace-sensitive-tag-names@3.0.1:
     resolution: {integrity: sha512-q+310vW8zmymYHALr1da4HyXUQ0zgiIwIicEfotYPWGN0OJVEN/58IJ3A4GBYcEq3LGAZqKb+ugvP0GNB9CEAA==}
+
+  /htmlparser2@8.0.2:
+    resolution: {integrity: sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==}
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      domutils: 3.2.2
+      entities: 4.5.0
+    dev: true
 
   /htmlparser2@9.1.0:
     resolution: {integrity: sha512-5zfg6mHUoaer/97TxnGpxmbR7zJtPwIYFMZ/H5ucTlPZhKvtum05yiPK3Mgai3a0DyVxv7qYqoweaEd2nrYQzQ==}
@@ -13437,6 +13694,10 @@ packages:
       readable-stream: 2.3.8
     dev: true
 
+  /leac@0.6.0:
+    resolution: {integrity: sha512-y+SqErxb8h7nE/fiEX07jsbuhrpO9lL8eca7/Y1nuWV2moNlXhyd59iDGcRf6moVyDMbmTNzL40SUyrFU/yDpg==}
+    dev: true
+
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -13801,6 +14062,7 @@ packages:
       url-join: 4.0.1
     transitivePeerDependencies:
       - debug
+    dev: true
 
   /make-dir@3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
@@ -13822,6 +14084,12 @@ packages:
 
   /markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
+
+  /marked@7.0.4:
+    resolution: {integrity: sha512-t8eP0dXRJMtMvBojtkcsA7n48BkauktUKzfkPSCq85ZMTJ0v76Rke4DYz01omYpPTUh4p/f7HePgRo3ebG8+QQ==}
+    engines: {node: '>= 16'}
+    hasBin: true
+    dev: true
 
   /marky@1.3.0:
     resolution: {integrity: sha512-ocnPZQLNpvbedwTy9kNrQEsknEfgvcLMvOtz3sFeWApDq1MXH1TqkCIx58xlpESsfwQOnuBO9beyQuNGzVvuhQ==}
@@ -15217,6 +15485,14 @@ packages:
   /oniguruma-parser@0.12.1:
     resolution: {integrity: sha512-8Unqkvk1RYc6yq2WBYRj4hdnsAxVze8i7iPfQr8e4uSP3tRv0rpZcbGUDvxfQQcdwHt/e9PrMvGCsa8OqG9X3w==}
 
+  /oniguruma-to-es@2.3.0:
+    resolution: {integrity: sha512-bwALDxriqfKGfUufKGGepCzu9x7nJQuoRoAFp4AnwehhC2crqrDIAP/uN2qdlsAvSMpeRC3+Yzhqc7hLmle5+g==}
+    dependencies:
+      emoji-regex-xs: 1.0.0
+      regex: 5.1.1
+      regex-recursion: 5.1.1
+    dev: true
+
   /oniguruma-to-es@4.3.3:
     resolution: {integrity: sha512-rPiZhzC3wXwE59YQMRDodUwwT9FZ9nNBwQQfsd1wfdtlKEyCdRV0avrTcSZ5xlIvGRVPd/cx6ZN45ECmS39xvg==}
     dependencies:
@@ -15502,6 +15778,13 @@ packages:
     dependencies:
       entities: 6.0.0
 
+  /parseley@0.12.1:
+    resolution: {integrity: sha512-e6qHKe3a9HWr0oMRVDTRhKce+bRO8VGQR3NyVwcjwrbhMmFCX9KszEV35+rn4AdilFAq9VPxP/Fe1wC9Qjd2lw==}
+    dependencies:
+      leac: 0.6.0
+      peberminta: 0.9.0
+    dev: true
+
   /parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
     engines: {node: '>= 0.8'}
@@ -15565,6 +15848,10 @@ packages:
   /pathval@2.0.0:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
     engines: {node: '>= 14.16'}
+    dev: true
+
+  /peberminta@0.9.0:
+    resolution: {integrity: sha512-XIxfHpEuSJbITd1H3EeQwpcZbTLHc+VVr8ANI9t5sit565tsI4/xK3KWTUFE2e6QiangUkh3B0jihzmGnNrRsQ==}
     dev: true
 
   /pend@1.2.0:
@@ -16360,6 +16647,13 @@ packages:
       which-builtin-type: 1.2.1
     dev: true
 
+  /regex-recursion@5.1.1:
+    resolution: {integrity: sha512-ae7SBCbzVNrIjgSbh7wMznPcQel1DNlDtzensnFxpiNpXt1U2ju/bHugH422r+4LAVS1FpW1YCwilmnNsjum9w==}
+    dependencies:
+      regex: 5.1.1
+      regex-utilities: 2.3.0
+    dev: true
+
   /regex-recursion@6.0.2:
     resolution: {integrity: sha512-0YCaSCq2VRIebiaUviZNs0cBz1kg5kVS2UKUfNIx8YVs1cN3AV7NTctO5FOKBA+UT2BPJIWZauYHPqJODG50cg==}
     dependencies:
@@ -16367,6 +16661,12 @@ packages:
 
   /regex-utilities@2.3.0:
     resolution: {integrity: sha512-8VhliFJAWRaUiVvREIiW2NXXTmHs4vMNnSzuJVhscgmGav3g9VDxLrQndI3dZZVVdp0ZO/5v0xmX516/7M9cng==}
+
+  /regex@5.1.1:
+    resolution: {integrity: sha512-dN5I359AVGPnwzJm2jN1k0W9LPZ+ePvoOeVMMfqIMFz53sSwXkxaJoxr50ptnsC771lK95BnTrVSZxq0b9yCGw==}
+    dependencies:
+      regex-utilities: 2.3.0
+    dev: true
 
   /regex@6.0.1:
     resolution: {integrity: sha512-uorlqlzAKjKQZ5P+kTJr3eeJGSVroLKoHmquUj4zHWuR+hEyNqlXsSKlYYF5F4NI6nl7tWCs0apKJ0lmfsXAPA==}
@@ -16816,6 +17116,12 @@ packages:
   /secure-json-parse@4.0.0:
     resolution: {integrity: sha512-dxtLJO6sc35jWidmLxo7ij+Eg48PM/kleBsxpC8QJE0qJICe+KawkDQmvCMZUr9u7WKVHgMW6vy3fQ7zMiFZMA==}
 
+  /selderee@0.11.0:
+    resolution: {integrity: sha512-5TF+l7p4+OsnP8BCCvSyZiSPc4x4//p5uPwK8TCnVPJYRmU2aYKMpOXvw8zM5a5JvuuCGN1jmsMwuU2W02ukfA==}
+    dependencies:
+      parseley: 0.12.1
+    dev: true
+
   /semver@5.7.2:
     resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
     hasBin: true
@@ -16942,6 +17248,19 @@ packages:
   /shell-quote@1.8.2:
     resolution: {integrity: sha512-AzqKpGKjrj7EM6rKVQEPpB288oCfnrEIuyoT9cyF4nmGa7V8Zk6f7RRqYisX8X9m+Q7bd632aZW4ky7EhbQztA==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /shiki@1.29.2:
+    resolution: {integrity: sha512-njXuliz/cP+67jU2hukkxCNuH1yUi4QfdZZY+sMr5PPrIyXSu5iTb/qYC4BiWWB0vZ+7TbdvYUCeL23zpwCfbg==}
+    dependencies:
+      '@shikijs/core': 1.29.2
+      '@shikijs/engine-javascript': 1.29.2
+      '@shikijs/engine-oniguruma': 1.29.2
+      '@shikijs/langs': 1.29.2
+      '@shikijs/themes': 1.29.2
+      '@shikijs/types': 1.29.2
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
     dev: true
 
   /shiki@3.4.2:
@@ -18364,6 +18683,7 @@ packages:
 
   /url-join@4.0.1:
     resolution: {integrity: sha512-jk1+QP6ZJqyOiuEI9AEWQfju/nB2Pw466kbA0LEZljHwKeMgd9WrAEgEGxjPDD2+TNbbb37rTyhEfrCXfuKXnA==}
+    dev: true
 
   /urlpattern-polyfill@10.1.0:
     resolution: {integrity: sha512-IGjKp/o0NL3Bso1PymYURCJxMPNAf/ILOpendP9f5B6e1rTJgdgiOvgfoT8VxCAdY+Wisb9uhGaJJf3yZ2V9nw==}
@@ -18371,6 +18691,12 @@ packages:
 
   /urlpattern-polyfill@8.0.2:
     resolution: {integrity: sha512-Qp95D4TPJl1kC9SKigDcqgyM2VDVO4RiJc2d4qe5GrYm+zbIQCWWKAFaJNQ4BhdFeDGwBmAxqJBwWSJDb9T3BQ==}
+    dev: true
+
+  /use-email@0.0.9:
+    resolution: {integrity: sha512-j1q09CB5Hspsa1TZehJQX67SMqIGcoPri3I5grZ+4/y3Anb8M84oauBlUKxgoXyqNnp5VV6DPxTcRYfeAlktWQ==}
+    dependencies:
+      ofetch: 1.4.1
     dev: true
 
   /util-deprecate@1.0.2:

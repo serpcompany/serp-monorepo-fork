@@ -21,6 +21,9 @@
     "nuxt": "^3.17.3",
     "typescript": "^5.7.3",
     "vitest": "^1.2.2",
+    "@vue-email/components": "^0.0.21",
+    "@vue-email/render": "^0.0.9",
+    "use-email": "^0.0.9",
     "vue": "latest"
   }
 }

@@ -1,4 +1,4 @@
-import { sendEmail } from '@serp/mail/server';
+import { sendEmail } from '@serp/utils/server';
 import { defineEventHandler, readBody } from 'h3';
 
 const hasText = (v: string) => v.trim() !== '';
