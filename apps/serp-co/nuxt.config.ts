@@ -231,8 +231,12 @@ export default defineNuxtConfig({
           'https://www.google.com',
           'https://maps.google.com',
 
-          // Ads
+          // GOOGLE ADS
+          'https://pagead2.googlesyndication.com',
           'https://*.googlesyndication.com',
+          'https://googleads.g.doubleclick.net',
+          'https://*.doubleclick.net',
+          'https://*.googleapis.com',
 
           // Other embeds
           'https://js.stripe.com' // ← Changed from https://stripe.com for Stripe Elements
