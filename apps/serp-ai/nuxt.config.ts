@@ -68,6 +68,12 @@ export default defineNuxtConfig({
   security: {
     strict: true,
     rateLimiter: false,
+    nonce: true, // Enable nonce for CSP
+    ssg: {
+      meta: true,
+      hashScripts: true,
+      hashStyles: false // Disable hash for styles to avoid hydration issues
+    },
     headers: {
       contentSecurityPolicy: {
         'default-src': ["'self'"],
@@ -75,6 +81,8 @@ export default defineNuxtConfig({
         // SCRIPT SOURCES - Fixed domain issues
         'script-src-elem': [
           "'self'",
+          "'nonce-{{nonce}}'", // Add nonce support
+          "'strict-dynamic'", // Enable strict-dynamic for better security
 
           // YOUR OWN INFRASTRUCTURE (all domains)
           'https://serp.co',
@@ -213,9 +221,6 @@ export default defineNuxtConfig({
         ]
       },
       crossOriginEmbedderPolicy: 'unsafe-none'
-    },
-    ssg: {
-      hashStyles: false
     }
   },
   $development: {
@@ -226,6 +231,8 @@ export default defineNuxtConfig({
           'script-src-elem': [
             "'self'",
             "'unsafe-eval'", // ← REQUIRED for Vite HMR
+            "'nonce-{{nonce}}'", // Add nonce support for dev
+            "'strict-dynamic'", // Enable strict-dynamic for dev
 
             // YOUR OWN INFRASTRUCTURE (all domains)
             'https://serp.co',
