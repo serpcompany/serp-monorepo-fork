@@ -38,12 +38,9 @@ jobs:
           infisical run --domain=https://secrets.serp.co --token=${{ secrets.INFISICAL_ACCESS_TOKEN_SERP_MONOREPO_FORK }} --projectId=${{ secrets.INFISICAL_PROJECT_ID_DEV }} -- pnpm build
 
       - name: Deploy to Netlify
-        uses: netlify/actions/cli@master
-        with:
-          args: deploy --dir=apps/dev/.output/public --site=${{ secrets.NETLIFY_SITE_ID_DEV }} --message="Preview for PR #${{ github.event.number }}"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --dir=apps/dev/.output/public --site=${{ secrets.NETLIFY_SITE_ID_DEV }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --message="Preview for PR #${{ github.event.number }}"
 
       - name: Comment PR with preview URL
         uses: actions/github-script@v6
