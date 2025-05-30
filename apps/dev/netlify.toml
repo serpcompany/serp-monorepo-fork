@@ -1,6 +1,7 @@
 [build]
   publish = ".output/public"
   command = "npm run build"
+  base = "apps/dev"
 
 [build.environment]
   NODE_VERSION = "22.16.0"
