@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  nitro: {
+    preset: process.env.NETLIFY ? 'netlify' : undefined
+  },
   extends: [
     '@serp/utils',
     '@serp/stripe',

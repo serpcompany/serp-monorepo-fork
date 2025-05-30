@@ -1,0 +1,64 @@
+name: dev_netlify_preview
+
+on:
+  pull_request:
+    paths:
+      - packages/**
+      - apps/dev/**
+    types: [opened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  netlify_preview:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Use Node.js 22.16.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build dev app with Infisical secrets
+        run: |
+          cd apps/dev
+          infisical run --domain=https://secrets.serp.co --token=${{ secrets.INFISICAL_ACCESS_TOKEN_SERP }} --projectId=${{ secrets.INFISICAL_PROJECT_ID_DEV }} -- pnpm build
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=apps/dev/.output/public --message="Preview for PR #${{ github.event.number }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
+
+      - name: Comment PR with preview URL
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: deployment } = await github.rest.repos.listDeployments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              environment: 'netlify'
+            });
+            
+            if (deployment.length > 0) {
+              const previewUrl = `https://deploy-preview-${{ github.event.number }}--${process.env.NETLIFY_SITE_ID}.netlify.app`;
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `🚀 **Preview deployed!**\n\n📱 Preview URL: ${previewUrl}\n\n_Deployed from ${context.sha.substring(0, 7)}_`
+              });
+            }
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_DEV }}
