@@ -40,7 +40,7 @@ jobs:
       - name: Deploy to Netlify
         run: |
           npm install -g netlify-cli
-          netlify deploy --prod --dir=apps/dev/.output/public --site=${{ secrets.NETLIFY_SITE_ID_DEV }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --message="Preview for PR #${{ github.event.number }}" --alias=pr-${{ github.event.number }}
+          netlify deploy --dir=apps/dev/.output/public --site=${{ secrets.NETLIFY_SITE_ID_DEV }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --message="Preview for PR #${{ github.event.number }}"
 
       - name: Comment PR with preview URL
         uses: actions/github-script@v6
@@ -53,7 +53,7 @@ jobs:
             });
             
             if (deployment.length > 0) {
-              const previewUrl = `https://pr-${{ github.event.number }}--${process.env.NETLIFY_SITE_ID}.netlify.app`;
+              const previewUrl = `https://deploy-preview-${{ github.event.number }}--${process.env.NETLIFY_SITE_ID}.netlify.app`;
               
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
