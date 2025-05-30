@@ -1,6 +1,6 @@
 [build]
   publish = ".output/public"
-  command = "npm run build"
+  command = "echo 'Already built by GitHub Actions'"
   base = "apps/dev"
 
 [build.environment]
