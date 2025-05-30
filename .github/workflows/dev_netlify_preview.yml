@@ -27,15 +27,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build dev app
+      - name: Install Infisical CLI
+        run: |
+          curl -1sLf 'https://dl.cloudsmith.io/public/infisical/infisical-cli/setup.deb.sh' | sudo -E bash
+          sudo apt-get update && sudo apt-get install -y infisical
+
+      - name: Build dev app with Infisical secrets
         run: |
           cd apps/dev
-          pnpm build
-        env:
-          NUXT_PUBLIC_SITE_NAME: "Dev Preview"
-          NUXT_PUBLIC_URL: "https://deploy-preview-${{ github.event.number }}--${{ secrets.NETLIFY_SITE_ID_DEV }}.netlify.app"
-          NODE_ENV: production
-          ROBOTS_ENV: staging
+          infisical run --domain=https://secrets.serp.co --token=${{ secrets.INFISICAL_ACCESS_TOKEN_SERP_MONOREPO_FORK }} --projectId=${{ secrets.INFISICAL_PROJECT_ID_DEV }} -- pnpm build
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
