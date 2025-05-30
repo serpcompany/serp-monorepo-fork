@@ -35,7 +35,7 @@
     { immediate: true }
   );
 
-  const getIndex = (id) =>
+  const getIndex = (id: string) =>
     localState.replies.findIndex((comment) => comment.id === id);
 
   const emit = defineEmits([
@@ -66,7 +66,7 @@
   const isAuthorOrAdmin = computed(
     () =>
       loggedIn.value &&
-      (user?.value?.email === props.comment.email || user?.value?.isAdmin)
+      (user?.value?.siteId === props.comment.user_id || user?.value?.isAdmin)
   );
 
   const displayedReplies = computed(() =>
@@ -170,7 +170,10 @@
       return;
     }
 
-    if (user?.value?.email !== props.comment.email && !user?.value?.isAdmin) {
+    if (
+      user?.value?.siteId !== props.comment.user_id &&
+      !user?.value?.isAdmin
+    ) {
       toast.add({
         id: 'update-comment-author',
         title: 'Permission denied',
@@ -255,7 +258,10 @@
       return;
     }
 
-    if (user?.value?.email !== props.comment.email && !user?.value?.isAdmin) {
+    if (
+      user?.value?.siteId !== props.comment.user_id &&
+      !user?.value?.isAdmin
+    ) {
       toast.add({
         id: 'delete-comment-author',
         title: 'Permission denied',
@@ -312,7 +318,7 @@
     }
   }
 
-  function deleteReply(index) {
+  function deleteReply(index: number) {
     localState.replies.splice(index, 1);
 
     emit('delete-reply', {
@@ -325,7 +331,7 @@
     limit.value += parseInt(props.initialMessageLimit);
   }
 
-  function resize(event, isUpdate = false) {
+  function resize(event: Event, isUpdate = false) {
     const textarea = event.target;
     textarea.style.height = 'auto';
     textarea.style.height = `${textarea.scrollHeight}px`;
@@ -335,7 +341,7 @@
   }
 
   async function reply() {
-    if (!loggedIn.value || !user?.value?.email) {
+    if (!loggedIn.value || !user?.value?.siteId) {
       toast.add({
         id: 'reply-comment-login',
         title: 'Login required',
@@ -381,7 +387,7 @@
       if (response.value.message && response.value.message === 'success') {
         const newReply = {
           id: response.value.id,
-          email: user.value.email,
+          user_id: user.value.siteId,
           name: user.value.name,
           image: user.value.image,
           content: replyMessage.value,

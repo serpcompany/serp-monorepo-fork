@@ -29,7 +29,7 @@
   });
 
   useSeoMeta({
-    title: () => `${data.categoryName} Posts`
+    title: () => `${data.category?.name} Posts`
   });
 </script>
 
@@ -38,7 +38,7 @@
     <SHero
       :headline="
         `
-    Category: ${data.categoryName}` ||
+    Category: ${data.category?.name}` ||
         'If this is showing call 911, because something is very wrong.'
       "
       :show-search-bar="false"

@@ -16,11 +16,6 @@
   const config = useRuntimeConfig();
   const useAuth = config.public.useAuth;
 
-  // Get upvotes
-  const { upvotes } = (await useFetchWithCache<{ upvotes: string[] }>(
-    `/upvotes/${encodeURIComponent(artist.slug)}?module=artist`
-  )) || { upvotes: [] };
-
   const genres = computed(() => {
     return artist?.genres ? artist.genres.join(', ') : '';
   });
@@ -84,11 +79,13 @@
       serply-link="https://serp.ly/@daftfm/amazon/music/unlimited"
     >
       <template #upvote>
-        <UpvoteButton
+        <VoteButton
           v-if="useAuth"
-          :id="encodeURIComponent(artist.slug)"
-          module="artist"
-          :upvotes="upvotes"
+          :id="artist.id"
+          module="music_artists"
+          :users-current-vote="artist.usersCurrentVote"
+          :upvotes="artist.numUpvotes"
+          :downvotes="artist.numDownvotes"
         />
       </template>
     </MultipageHeaderMusic>

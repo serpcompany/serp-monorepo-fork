@@ -12,6 +12,12 @@ let config_: Record<string, unknown> = {
     useAuth: false
   }
 };
+let songData_: unknown = {};
+let upvotesData_: unknown = { upvotes: [] };
+
+mockNuxtImport('useRuntimeConfig', () => () => config_);
+mockNuxtImport('useSong', () => () => songData_);
+mockNuxtImport('useFetchWithCache', () => () => upvotesData_);
 
 const scenarios: [
   string,
@@ -79,11 +85,8 @@ describe('SPageSongSingle Snapshot', () => {
     'renders %s correctly',
     async (desc: string, { config, song, upvotes }) => {
       config_ = config;
-      mockNuxtImport('useRuntimeConfig', () => () => config_);
-      globalThis.useSong = () => song;
-      globalThis.useFetchWithCache = () => ({
-        upvotes
-      });
+      songData_ = song;
+      upvotesData_ = { upvotes };
 
       const html = await ComponentRender(
         `SPageSongSingle - ${desc}`,

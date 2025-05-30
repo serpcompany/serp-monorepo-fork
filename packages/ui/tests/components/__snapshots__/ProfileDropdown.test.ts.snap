@@ -3,7 +3,7 @@
 exports[`ProfileDropdown Snapshot > renders when logged in correctly 1`] = `
 "<div class="relative">
   <!-- Avatar trigger -->
-  <div><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-(--ui-bg-elevated) size-10 text-xl cursor-pointer transition-opacity hover:opacity-80"><img width="40" height="40" data-nuxt-img="" srcset="https://example.com/test.jpg 1x, https://example.com/test.jpg 2x" role="button" class="h-full w-full rounded-[inherit] object-cover" src="https://example.com/test.jpg"></span></div><!-- Slideover menu -->
+  <div><span class="inline-flex items-center justify-center shrink-0 select-none overflow-hidden rounded-full align-middle bg-elevated size-10 text-xl cursor-pointer transition-opacity hover:opacity-80"><img width="40" height="40" data-nuxt-img="" srcset="https://example.com/test.jpg 1x, https://example.com/test.jpg 2x" role="button" class="h-full w-full rounded-[inherit] object-cover" src="https://example.com/test.jpg"></span></div><!-- Slideover menu -->
   <!--v-if-->
   <!--teleport start-->
   <!--teleport end-->
@@ -12,7 +12,7 @@ exports[`ProfileDropdown Snapshot > renders when logged in correctly 1`] = `
 
 exports[`ProfileDropdown Snapshot > renders when not logged in correctly 1`] = `
 "<!-- Login button for logged-out users -->
-<a href="/login" class="inline-flex items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors py-1.5 gap-1.5 text-(--ui-primary) hover:bg-(--ui-primary)/10 focus-visible:bg-(--ui-primary)/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent dark:text-primary-100 text-md rounded-md border border-neutral-300 px-6 font-medium">
+<a href="/login" class="inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors py-1.5 gap-1.5 text-primary hover:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent dark:text-primary-100 text-md rounded-md border border-neutral-300 px-6 font-medium">
   <!--v-if--> Login
   <!--v-if-->
 </a>"

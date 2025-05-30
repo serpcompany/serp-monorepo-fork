@@ -1,6 +1,5 @@
 <script setup lang="ts">
-  import { useMCPServer } from '../../../../../utils/composables/useMCPServer';
-
+  import type { Faq } from '@serp/types/types';
   const router = useRouter();
   const route = useRoute();
   const page = ref(Number(route.query.page) || 1);
@@ -61,7 +60,8 @@
     if (!data?.category?.faqs || !data?.category?.faqs.length) {
       return [];
     }
-    return data?.category?.faqs.map((faq) => ({
+    // @todo - improve the typesafety of this after implementing zod
+    return data?.category?.faqs.map((faq: Faq) => ({
       label: faq.question,
       content: faq.answer
     }));

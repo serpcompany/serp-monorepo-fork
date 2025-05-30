@@ -6,7 +6,7 @@ import { ref } from 'vue';
 import StripeCard from '../../components/StripeCard.vue';
 import ComponentRender from '../componentRender';
 
-(globalThis as unknown).useClientStripe = async () => ({
+mockNuxtImport('useClientStripe', () => async () => ({
   stripe: {
     elements: (options: unknown) => ({
       create: (type: string) => ({
@@ -15,7 +15,7 @@ import ComponentRender from '../componentRender';
     }),
     confirmPayment: async () => ({ error: null })
   }
-});
+}));
 
 mockNuxtImport('useColorMode', () => () => ref('light'));
 

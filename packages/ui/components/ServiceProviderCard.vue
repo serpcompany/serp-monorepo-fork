@@ -2,6 +2,9 @@
   import type { ServiceProvider } from '@serp/types/types';
   import { computed, ref } from 'vue';
 
+  const config = useRuntimeConfig();
+  const useAuth = config.public.useAuth;
+
   const props = defineProps({
     serviceProvider: {
       type: Object as PropType<ServiceProvider>,
@@ -187,10 +190,13 @@
 
             <!-- upvote button -->
             <div class="flex justify-between">
-              <UpvoteButton
+              <VoteButton
+                v-if="useAuth"
                 :id="serviceProvider.id"
-                module="serviceProvider"
-                :upvotes="serviceProvider.upvotes || []"
+                module="service_provider"
+                :users-current-vote="serviceProvider.usersCurrentVote"
+                :upvotes="serviceProvider.numUpvotes"
+                :downvotes="serviceProvider.numDownvotes"
               />
               <BookmarkButton
                 :id="serviceProvider.id"

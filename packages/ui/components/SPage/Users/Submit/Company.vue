@@ -2,6 +2,7 @@
   import * as z from 'zod';
   import type { FormSubmitEvent } from '@nuxt/ui';
   import { v4 as uuidv4 } from 'uuid';
+  import type { Category } from '@serp/types/types';
 
   const { loggedIn, user } = useUserSession();
   if (!loggedIn.value) {
@@ -54,27 +55,29 @@
       if (submissionData.approved) {
         navigateTo(`/products/${submissionData.domain}/reviews/`);
       }
-      company.id = submissionData.id;
-      company.name = submissionData.name;
-      company.domain = submissionData.domain;
+      company.id = submissionData.formData?.id;
+      company.name = submissionData.formData?.name;
+      company.domain = submissionData.formData?.domain;
       company.tags =
-        submissionData.tags && submissionData.tags.length > 0
-          ? submissionData.tags.join(',')
+        submissionData.formData?.tags &&
+        submissionData.formData?.tags.length > 0
+          ? submissionData.formData?.tags.join(',')
           : '';
-      company.oneLiner = submissionData.oneLiner;
-      company.description = submissionData.description;
-      company.categories = submissionData.categories
-        ? submissionData.categories.map(
-            (category) => categories.find((c) => c.id === category)?.name
+      company.oneLiner = submissionData.formData?.oneLiner;
+      company.description = submissionData.formData?.description;
+      company.categories = submissionData.formData?.categories
+        ? submissionData.formData?.categories.map(
+            (category: number) =>
+              categories.find((c: Category) => c.id === category)?.name
           )
         : [];
-      company.logo = submissionData.logo;
-      company.pricing = submissionData.pricing
-        ? submissionData.pricing.split(',')
+      company.logo = submissionData.formData?.logo;
+      company.pricing = submissionData.formData?.pricing
+        ? submissionData.formData.pricing
         : [];
-      uuid = submissionData.uuid;
-      isVerified.value = submissionData.backlinkVerified;
-      isPriority.value = submissionData.isPriority;
+      uuid = submissionData.formData?.uuid;
+      isVerified.value = submissionData.formData?.backlinkVerified;
+      isPriority.value = submissionData.formData?.isPriority;
       existingForm.value = true;
     }
   }
@@ -90,7 +93,7 @@
     { key: 'description', label: 'RichDescription' }
   ];
 
-  function checkIfValidValue(value) {
+  function checkIfValidValue(value: string | string[]) {
     if (typeof value === 'string') return value.trim() !== '';
     if (Array.isArray(value)) return value.length > 0;
     return false;
@@ -255,11 +258,14 @@
         uuid
       };
 
-      const { data: response, error } = await useFetch('/api/company/submit', {
-        method: 'POST',
-        headers: useRequestHeaders(['cookie']),
-        body: payload
-      });
+      const { data: response, error } = await useFetch(
+        '/api/entity/submit?module=company',
+        {
+          method: 'POST',
+          headers: useRequestHeaders(['cookie']),
+          body: payload
+        }
+      );
 
       if (error.value) {
         throw new Error(`Failed to save company - ${error.value.message}`);
@@ -291,7 +297,7 @@
     try {
       loading.value = true;
       const { data: response, error } = await useFetch(
-        `/api/company/submit-verify-backlink?id=${submissionId}`,
+        `/api/entity/submit-verify-backlink?id=${submissionId}&module=company`,
         {
           method: 'POST',
           headers: useRequestHeaders(['cookie'])

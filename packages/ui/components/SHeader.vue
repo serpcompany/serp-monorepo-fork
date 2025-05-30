@@ -3,7 +3,7 @@
   const appConfig = useAppConfig();
   const router = useRouter();
 
-  const submitOptions_ =
+  const submitOptions_: Array<{ label: string; to: string }> =
     appConfig.site?.submitOptions ||
     (config.public.submitOptions as Array<{
       label: string;
@@ -26,7 +26,7 @@
 
   const toast = useToast();
 
-  const handleSubmitOptionSelect = (item) => {
+  const handleSubmitOptionSelect = (item: { label: string; to: string }) => {
     if (!loggedIn.value) {
       toast.add({
         id: 'login-err',

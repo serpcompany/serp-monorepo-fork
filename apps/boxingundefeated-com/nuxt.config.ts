@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  extends: ['@serp/ui', '@serp/types', '@serp/utils'],
+  extends: ['@serp/utils', '@serp/tools', '@serp/types', '@serp/ui'],
   modules: [
     '@nuxt/ui-pro',
     '@nuxtjs/html-validator',

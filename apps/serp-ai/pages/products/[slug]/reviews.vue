@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import type { Faq } from '@serp/types/types';
   const route = useRoute();
   const router = useRouter();
   const { slug } = route.params;
@@ -11,7 +12,8 @@
   const faqItems = computed(() => {
     if (!data?.faqs) return [];
 
-    return data?.faqs.map((faq) => ({
+    // @todo - improve the typesafety of this after implementing zod
+    return data?.faqs.map((faq: Faq) => ({
       label: faq.question,
       content: faq.answer
     }));

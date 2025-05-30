@@ -12,7 +12,7 @@
   }
 
   useSeoMeta({
-    title: () => data.title
+    title: () => data.title || data.name
   });
 </script>
 

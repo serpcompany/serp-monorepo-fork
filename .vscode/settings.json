@@ -32,5 +32,13 @@
   "html.format.enable": false,
   "html.format.preserveNewLines": true,
   "html.format.wrapLineLength": 0,
-  "editor.formatOnSaveMode": "file"
+  "editor.formatOnSaveMode": "file",
+  "zencoder.enableRepoIndexing": true,
+  "terminal.integrated.profiles.osx": {
+    "zsh (nvm)": {
+      "path": "zsh",
+      "args": ["-c", "nvm use 22.16.0; exec zsh"]
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh (nvm)"
 }

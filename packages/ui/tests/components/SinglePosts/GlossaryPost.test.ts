@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, no-unused-vars  */
-
 import { mockNuxtImport } from '@nuxt/test-utils/runtime';
 import { describe, expect, it } from 'vitest';
 import GlossaryPost from '../../../components/SinglePosts/GlossaryPost.vue';
@@ -7,12 +5,20 @@ import ComponentRender from '../../componentRender';
 import '../../mockUseUserSession';
 
 let runtimeConfig: Record<string, unknown> = { public: { useAuth: true } };
+let commentsData_: unknown = { comments: [] };
+
 mockNuxtImport('useHead', () => () => {});
+mockNuxtImport('useRuntimeConfig', () => () => runtimeConfig);
+mockNuxtImport('usePostComments', () => async () => commentsData_);
 
 describe('SinglePostsGlossaryPost Snapshot', () => {
   const scenarios: [
     string,
-    { config: Record<string, unknown>; props: { data: unknown } }
+    {
+      config: Record<string, unknown>;
+      props: { data: unknown };
+      comments: unknown;
+    }
   ][] = [
     [
       'with full post and auth enabled',
@@ -33,6 +39,15 @@ describe('SinglePostsGlossaryPost Snapshot', () => {
             ],
             upvotes: ['test@test.com']
           }
+        },
+        comments: {
+          comments: [
+            {
+              id: 1,
+              content: 'Test comment',
+              replies: []
+            }
+          ]
         }
       }
     ],
@@ -53,6 +68,15 @@ describe('SinglePostsGlossaryPost Snapshot', () => {
             ],
             upvotes: []
           }
+        },
+        comments: {
+          comments: [
+            {
+              id: 1,
+              content: 'Test comment',
+              replies: []
+            }
+          ]
         }
       }
     ],
@@ -70,7 +94,8 @@ describe('SinglePostsGlossaryPost Snapshot', () => {
             comments: [],
             upvotes: []
           }
-        }
+        },
+        comments: { comments: [] }
       }
     ],
     [
@@ -89,29 +114,17 @@ describe('SinglePostsGlossaryPost Snapshot', () => {
             comments: [],
             upvotes: ['test@test.com']
           }
-        }
+        },
+        comments: { comments: [] }
       }
     ]
   ];
 
   it.each(scenarios)(
     'renders %s correctly',
-    async (desc: string, { config, props }) => {
+    async (desc: string, { config, props, comments }) => {
       runtimeConfig = config;
-      mockNuxtImport('useRuntimeConfig', () => () => runtimeConfig);
-      globalThis.usePostComments = async (id: number) => {
-        return {
-          comments: props.comments
-            ? [
-                {
-                  id: 1,
-                  content: 'Test comment',
-                  replies: []
-                }
-              ]
-            : []
-        };
-      };
+      commentsData_ = comments;
 
       const html = await ComponentRender(
         `GlossaryPost ${desc}`,

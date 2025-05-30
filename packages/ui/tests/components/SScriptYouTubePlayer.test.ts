@@ -6,15 +6,19 @@ import { ref } from 'vue';
 import SScriptYouTubePlayer from '../../components/SScriptYouTubePlayer.vue';
 import ComponentRender from '../componentRender';
 
-if (typeof globalThis.YT === 'undefined') {
-  globalThis.YT = {
-    Player: class {
-      playVideo() {}
-      loadVideoById(id: string) {}
-    },
-    ready: (callback: () => void) => callback()
-  };
-}
+// Mock YT object (this is a global browser object)
+globalThis.YT = {
+  Player: class {
+    playVideo() {}
+    loadVideoById(id: string) {}
+  },
+  ready: (callback: () => void) => callback()
+};
+
+// Also define YouTube for the component's code
+globalThis.YouTube = {
+  ready: (callback: () => void) => callback()
+};
 
 mockNuxtImport('useHead', () => () => {});
 mockNuxtImport('useScriptTriggerElement', () => () => ({ ssrAttrs: {} }));

@@ -8,11 +8,11 @@ exports[`SPageToolCombineCsvFiles Snapshot > renders the default snapshot correc
       <p data-testid="subtitle" class="sm:text-md text-left text-base md:text-center">Merge multiple spreadsheet or excel files like .csv, .xls and .xlxs.</p>
     </section><!-- box -->
     <div class="flex justify-center">
-      <div class="relative inline-flex items-center mb-10"><input type="file" class="w-full rounded-[calc(var(--ui-radius)*1.5)] border-0 placeholder:text-(--ui-text-dimmed) focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-text-highlighted) bg-(--ui-bg) ring ring-inset ring-(--ui-border-accented) file:me-1.5 file:font-medium file:text-(--ui-text-muted) file:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-(--ui-primary)" autocomplete="off" multiple="" accept=".csv,.xls,.xlsx">
+      <div class="relative inline-flex items-center mb-10"><input type="file" class="w-full rounded-md border-0 placeholder:text-dimmed focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-highlighted bg-default ring ring-inset ring-accented file:me-1.5 file:font-medium file:text-muted file:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary" autocomplete="off" multiple="" accept=".csv,.xls,.xlsx">
         <!--v-if-->
         <!--v-if-->
       </div>
-    </div><!-- button --><button type="button" class="rounded-[calc(var(--ui-radius)*1.5)] font-medium items-center focus:outline-hidden disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-(--ui-bg) bg-(--ui-primary) hover:bg-(--ui-primary)/75 disabled:bg-(--ui-primary) aria-disabled:bg-(--ui-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--ui-primary) mx-auto flex">
+    </div><!-- button --><button type="button" class="rounded-md font-medium items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 text-inverted bg-primary hover:bg-primary/75 disabled:bg-primary aria-disabled:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary mx-auto flex">
       <!--v-if-->Submit
       <!--v-if-->
     </button>

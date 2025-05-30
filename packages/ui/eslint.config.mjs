@@ -6,7 +6,7 @@ import { createConfig } from '../../eslint.config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Create base config first
+/// Create base config first
 const baseConfig = createConfig({
   quiet: false,
   additionalRules: {},

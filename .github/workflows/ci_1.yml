@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         os: [self-hosted]
-        node: [18]
+        node: [22.16.0]
 
     steps:
       - uses: actions/setup-node@v3
@@ -55,3 +55,6 @@ jobs:
 
       - name: Test
         run: pnpm test
+
+      - name: TypeScript Check - No TS7006 errors
+        run: pnpm typecheck:ts7006

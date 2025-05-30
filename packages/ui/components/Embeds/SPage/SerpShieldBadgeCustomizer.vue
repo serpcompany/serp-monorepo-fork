@@ -1,6 +1,11 @@
 <script setup lang="ts">
   import { ref } from 'vue';
 
+  interface ShieldData {
+    categoryName: string;
+    productDomain: string;
+  }
+
   const config = useRuntimeConfig();
   const baseUrl = config.public.siteUrl || '';
 
@@ -20,7 +25,8 @@
   const showEmbedCode = ref(false);
 
   // Update the form data when inputs change (but don't update preview yet)
-  function handleFormUpdate(updatedData) {
+  // @todo - improve the typesafety of this after implementing zod
+  function handleFormUpdate(updatedData: ShieldData) {
     formData.value = { ...updatedData };
   }
 

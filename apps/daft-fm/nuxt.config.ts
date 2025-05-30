@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  extends: ['@serp/ui', '@serp/types', '@serp/utils'],
+  extends: ['@serp/utils', '@serp/tools', '@serp/types', '@serp/ui'],
   modules: [
     '@nuxt/ui-pro',
     '@nuxtjs/html-validator',
@@ -63,77 +63,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-  security: {
-    strict: true,
-    rateLimiter: false,
-    headers: {
-      contentSecurityPolicy: {
-        'style-src': ["'self'", "'unsafe-inline'"],
-        'img-src': [
-          "'self'",
-          'data:',
-          'https:',
-          'https://*.doubleclick.net',
-          'https://*.google-analytics.com',
-          'https://*.googleapis.com',
-          'https://googleads.g.doubleclick.net'
-        ],
-        'script-src': [
-          "'self'",
-          "'unsafe-inline'",
-          'https://static.cloudflareinsights.com',
-          'https://*.doubleclick.net',
-          'https://*.googletagmanager.com',
-          'https://*.google-analytics.com',
-          'https://*.googleapis.com',
-          'https://googleads.g.doubleclick.net'
-        ],
-        'script-src-elem': [
-          "'self'",
-          "'unsafe-inline'",
-          'https://static.cloudflareinsights.com',
-          'https://www.youtube.com',
-          'https://www.youtube-nocookie.com',
-          'https://www.googletagmanager.com',
-          'https://googleads.g.doubleclick.net'
-        ],
-        'connect-src': [
-          "'self'",
-          'https:',
-          'ws:',
-          'https://*.doubleclick.net',
-          'https://*.google-analytics.com',
-          'https://*.googleapis.com',
-          'https://googleads.g.doubleclick.net'
-        ],
-        'frame-src': [
-          'https://www.youtube-nocookie.com',
-          'https://www.youtube.com',
-          'https://*.serp.ly',
-          'https://*.serp.ai',
-          'https://*.serp.co',
-          'https://googleads.g.doubleclick.net'
-        ],
-        'default-src': ["'self'"]
-      },
-      permissionsPolicy: {
-        'picture-in-picture': [
-          'self',
-          '"https://www.youtube-nocookie.com"',
-          '"https://www.youtube.com"'
-        ],
-        fullscreen: [
-          'self',
-          '"https://www.youtube-nocookie.com"',
-          '"https://www.youtube.com"'
-        ]
-      },
-      crossOriginEmbedderPolicy: 'unsafe-none'
-    },
-    ssg: {
-      hashStyles: false
-    }
-  },
   $production: {
     scripts: {
       registry: {
@@ -144,13 +73,6 @@ export default defineNuxtConfig({
           client: 'ca-pub-2343633734899216', // infisical-scan:ignore
           autoAds: true
         }
-      }
-    }
-  },
-  $development: {
-    security: {
-      headers: {
-        contentSecurityPolicy: false
       }
     }
   },

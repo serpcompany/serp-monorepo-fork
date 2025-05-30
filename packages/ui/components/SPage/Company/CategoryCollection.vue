@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import type { Faq } from '@serp/types/types';
+
   const router = useRouter();
   const route = useRoute();
 
@@ -16,7 +18,8 @@
     if (!data?.category?.faqs || !data?.category?.faqs.length) {
       return [];
     }
-    return data?.category?.faqs.map((faq) => ({
+    // @todo - improve the typesafety of this after implementing zod
+    return data?.category?.faqs.map((faq: Faq) => ({
       label: faq.question,
       content: faq.answer
     }));
