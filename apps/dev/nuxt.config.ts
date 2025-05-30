@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@serp/ui'
   ],
   modules: [
+    '@nuxthub/core',
     '@nuxt/ui-pro',
     '@nuxtjs/seo',
     '@nuxtjs/sitemap',

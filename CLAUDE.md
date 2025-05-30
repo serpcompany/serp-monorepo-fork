@@ -1,0 +1,1 @@
+- we are deploying to NuxtHub NOT Netlify
