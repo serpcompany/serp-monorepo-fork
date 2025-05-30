@@ -40,7 +40,7 @@ jobs:
       - name: Deploy to Netlify
         run: |
           npm install -g netlify-cli
-          netlify deploy --dir=apps/dev/.output/public --site=${{ secrets.NETLIFY_SITE_ID_DEV }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --message="Preview for PR #${{ github.event.number }}"
+          netlify deploy --filter="apps/dev" --dir=apps/dev/.output/public --site=${{ secrets.NETLIFY_SITE_ID_DEV }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --message="Preview for PR #${{ github.event.number }}"
 
       - name: Comment PR with preview URL
         uses: actions/github-script@v6
